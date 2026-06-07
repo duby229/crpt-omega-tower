@@ -29,6 +29,8 @@ of a ramified cover (Hartshorne [1977] §III.10). In discrete dynamics: the
 non-injective locus of the map (Katok & Hasselblatt [1995]).
 
 ### Invariant Horizon / Kernel-Congruence Predicate H_I
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.1.D2 | `H_I` | H_I(x) | **Novel** |
 **Synopsis:** An element x has an invariant horizon (H_I(x) = ⊤) when all of its H_S-siblings have identical orbit signatures. That is, the elements that project to the same image as x are indistinguishable by their internal structure. H_I refines H_S: it asks not just whether siblings exist, but whether they are observationally uniform. H_I = ⊤ with H_S = ⊤ means x lives in a 'uniform cluster' — a horizon without internal differentiation.
 
@@ -55,6 +57,8 @@ and **z ≡_{sig_M} x** denotes the **congruence relation**: z and x have identi
 This congruence partitions ker(ρ_M, ρ_M(x)) into **congruence classes** of signature equivalence.
 
 ### Invariant-Invisibility: Kernel Congruence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.1.D3 | `Ker-Cong` | ker(ρ_M, y) | **Reframed** |
 **Synopsis:** The kernel congruence ker(ρ_M, y) = ρ_M^{-1}(y) is the set of all elements that the projection operator maps to y in one step — the complete preimage of y. This is the per-image fiber relevant to computing H_S and H_I. When |ker(ρ_M, ρ_M(x))| > 1, element x has structural siblings.
 
@@ -94,6 +98,8 @@ This makes H_I a genuine CRPT innovation: detecting invisible kernel congruences
 the orbit signature observable
 
 ### Abstraction Depth Horizon H_O
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.1.D4 | `H_O` | H_O(x) | **Novel** |
 **Synopsis:** The depth horizon H_O(x) = ⊤ when d_M(x) = 1: element x is exactly one projection step from a fixed point. H_O identifies the boundary layer of the convergent regime — elements adjacent to Fix(ρ_M). These are the elements whose immediate projection image is already canonical.
 
@@ -113,6 +119,8 @@ directly.
 ### Orbit Signature
 
 ### Orbit Signature — Native Form
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.1.D5 | `sig_M-NM` | | **Novel** |
 **Synopsis:** The orbit signature sig_M(x) aggregates the observable features of x's reduction orbit into a single comparable value. Two elements with the same signature are indistinguishable by the observer framework. The signature is the input to H_I: H_I(x) = ⊤ means all siblings of x share the same orbit signature value, so the observer cannot use signature differences to tell them apart.
 
@@ -149,6 +157,8 @@ marks where that compression is **total** — the preimages become signature-ind
 ### Signature Depth Implication and Limits of sig_M
 
 ### Signature Depth Implication
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.1.T1 | `Sig-Dep` | | **Novel** |
 **Synopsis:** The Signature Dependence theorem establishes that the orbit signature sig_M(x) = (H_S(x), d_M(x)) is the minimal signature needed to determine H_I: two elements sharing the same orbit signature are necessarily in the same H_I class. No coarser signature suffices.
 
@@ -162,6 +172,8 @@ sig_M(x) = sig_M(y) ⟹ d_M(x) = d_M(y)
 *Proof.* derivation height is the third component of the orbit signature. ∎
 
 ### sig_M is not a sufficient NFC invariant
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L3.1.R1 | `sig-Insuf` |  | **Novel** |
 **Synopsis:** This remark explains the scope of the signature dependence theorem: the orbit signature has full discriminating power within a single fiber (where all elements share the same canonical form) but does not discriminate between elements of different fibers.
 
@@ -233,6 +245,8 @@ are disjoint: K(y₁) ∩ K(y₂) = ∅ whenever y₁ ≠ y₂. Therefore the H_
 problem decomposes into independent sub-problems, one per kernel.
 
 ### H_I Well-Definedness — General Kernel Theorem
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.1.T2 | `H_I-WD` | | **Novel** |
 **Synopsis:** H_I well-definedness: the H_I predicate is well-defined on elements, not just on fibers. This is proved by the two-case kernel theorem: when a fiber ker(ρ_M, y) is a singleton, H_I is vacuously ⊤; when the fiber has multiple elements, H_I depends only on the multiset of orbit signatures within the fiber, which is the same for all elements in the fiber.
 
@@ -319,6 +333,8 @@ No step requires K to be finite or countable. The argument applies identically
 to uncountable kernels (e.g., continuous gauge orbits in physics instantiations). ✓ ∎
 
 ### H_I Decision Criterion
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L3.1.C1 | `H_I-Dec` | | **Novel** |
 **Synopsis:** H_I is effectively decidable from derivation heights: H_I(x) = ⊤ if and only if all siblings of x have the same d_M value. Comparing natural numbers is simpler than comparing arbitrary signatures. This corollary makes H_I computationally tractable for all finite CRPT models.
 
@@ -345,6 +361,8 @@ arising in continuous/topological models (e.g., gauge orbits in quantum field
 theory instantiations).
 
 ### What sig_M classifies
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L3.1.R2 | `sig-Class` |  | **Novel** |
 **Synopsis:** Remark on orbit signature independence: sig_M(x) = sig_M(y) does not imply x ≃_M y. Two elements can have the same local structure (same depth, same sibling count) while converging to different fixed points. The orbit signature classifies local position, not global destination.
 
@@ -361,6 +379,8 @@ form x converges to. Equal the orbit signature values imply equal local structur
 imply NFC membership coincidence.
 
 ### Where sig_M has full discriminating power
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L3.1.R3 | `sig-Full` |  | **Novel** |
 **Synopsis:** The extended orbit signature sig_M^+(x) = (sig_M(x), CNF_M(x)) is a complete invariant: sig_M^+(x) = sig_M^+(y) implies x ≃_M y. Adding the canonical form to the orbit signature gives the full observational fingerprint. This remark clarifies where the orbit signature alone is insufficient.
 
@@ -375,6 +395,8 @@ multiple normal forms (λ-calculus, abstract algebra), NFC classification requir
 CFix(ρ_M)(x) or model-specific identity conditions beyond the orbit signature.
 
 ### Correct sufficient invariant
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L3.1.R4 | `CNF-Suf` |  | **Novel** |
 **Synopsis:** The extended orbit signature sig_M^+(x) = (sig_M(x), CNF_M(x)) is a sufficient discriminant: sig_M^+(x) = sig_M^+(y) implies x ≃_M y. Adding the canonical form to the orbit signature gives a complete observational fingerprint. The plain orbit signature sig_M alone is not sufficient for discrimination across different fibers.
 
@@ -392,6 +414,8 @@ predicates H_S, H_I, H_O *mean* as limits of discernibility under abstraction.
 All ingredients are from §L2.4–8. No new axioms are introduced.
 
 ### Horizon Profile and Class
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.1.D6 | `HP` | HP_M(x) | **Novel** |
 **Synopsis:** The horizon profile HP_M(x) is the triple (H_S(x), H_I(x), H_O(x)) packaged as a single three-bit value. It is the input to the six-class partition function and the primary datum used by the observer triple to classify elements.
 
@@ -407,6 +431,8 @@ Reg(x) ∈ {↓, ∞} is the regime tag from `Reg-Strat` (L2.2.D3). Let Class(x)
 be the six-class label determined by the Q1/Q2/Q3 pattern (L3.2).
 
 ### Horizons as Abstraction Limits
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.1.T3 | `Hor-Abs` | | **Novel** |
 **Synopsis:** The Horizon Abstraction theorem establishes that the horizon profile HP_M is a complete invariant for the six-class partition: two elements are in the same class if and only if they have the same horizon profile. The six-class partition is exactly the quotient of 𝒰_M by the HP_M equivalence.
 
@@ -490,6 +516,8 @@ not on the choice of representative. This is the **kernel-locality** property.
 
 ### H_I Respects Kernel Congruence (Observable Equivalence)
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.1.T4 | `H_I-KernelLocal` | | **Novel** |
 **Synopsis:** H_I is kernel-local: if x and y are in the same kernel fiber (ρ_M(x) = ρ_M(y)), then H_I(x) = H_I(y). The H_I predicate depends only on the fiber structure at ρ_M(x), not on any property distinguishing x from y within the fiber. This locality is what makes H_I a well-defined predicate on fibers rather than just on elements.
 
@@ -606,6 +634,8 @@ two independent Boolean variables (Q1, Q2) generates a Boolean algebra. The thir
 depends on Q2 (it is vacuous when Q2 = ⊥), creating a lattice stratification.
 
 ### Independent Boolean Predicates
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.2.D2 | `Bool-Pred` | | **Novel** |
 **Synopsis:** The Boolean classification predicates encode the six-class partition as a mapping from the eight Boolean combinations of (H_S, H_I, H_O) to the class labels {A, B, C, D, E, F}. Class A: all three ⊥. Class B: H_S ⊤, H_I ⊤, H_O ⊥. Class C: H_S ⊤, H_I ⊥. Class D: H_O ⊤, H_S ⊥. Class E: H_O ⊤, H_S ⊤. Class F: H_S ⊥, H_I ⊤, H_O ⊥ (empty).
 
@@ -699,6 +729,8 @@ Under this ordering, the six classes form a **stratified Boolean poset** (not a 
 category-theoretic sense, but a Boolean stratification).
 
 ### Six Classes Partition μT_{ρ,M} as Boolean Stratification
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.2.T1 | `6-Part` | | **Novel** |
 **Synopsis:** The six-class partition assigns every element of 𝒰_M to exactly one of five non-empty classes (Class F is proved empty by L3.2.T2) based on the three boolean horizon predicates H_S, H_I, H_O. Class A: all three ⊥ (no horizon, not boundary). Class B: H_S ⊤, H_I ⊤ (uniform cluster, not boundary). Class C: H_S ⊤, H_I ⊥ (non-uniform cluster). Class D: H_O ⊤, H_S ⊥ (isolated boundary). Class E: H_O ⊤, H_S ⊤ (boundary with siblings). This partition is the structural backbone of the observer theory in L4.
 
@@ -746,6 +778,8 @@ with 6 atoms. ✓ ∎
  are incorrect; those elements are Class E. See `F=∅` (L3.2.T2).
 
 ### Class F = ∅ in Every Deterministic CRPT Model
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.2.T2 | `F=∅` |  | **Novel** |
 **Synopsis:** Class F would consist of elements with H_S = ⊥ and H_I = ⊤ but without H_O — isolated elements (no siblings) that nonetheless satisfy the uniform-sibling condition. This class is provably empty: H_I is vacuously satisfied (and hence uninformative) when H_S = ⊥, so no element can non-trivially occupy Class F. This reduces the six boolean combinations to five active classes.
 
@@ -824,6 +858,8 @@ H_S^{top}(x) := ⊤ if lim_{n→∞} ρ_M^n(x) has multiple topological pre-imag
 Measures whether the limit point is topologically "ramified" (appears as limit of multiple distinct orbits in ∞_M, not just x's own orbit).
 
 ### Convergence-Rate Invisibility Horizon H_I^{top}
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.2.D4 | `H_I^top` | H_I^{top} | **Novel** |
 **Synopsis:** The topological invariant horizon H_I^{top}(x) for elements of ∞_M is defined using the topological limit structure from PA-WN_top: H_I^{top}(x) = ⊤ when all elements in the topological fiber of x (elements with the same topological limit) share the same orbit signature. This is the persistent-regime analogue of H_I.
 
@@ -842,6 +878,8 @@ For ramified limits, measures whether distinct orbits approaching the same limit
 Define predicates Q1^{top}, Q2^{top}, Q3^{top}:
 
 ### ∞_M Boolean Predicates
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.2.D5 | `Q-top` | Q1^{top}, Q2^{top}, Q3^{top} | **Novel** |
 **Synopsis:** The topological classification predicates Q1^{top}, Q2^{top}, Q3^{top} for ∞_M elements: Q1^{top}(x) = (x ∈ Fix(ρ_M^p)) for the canonical period p; Q2^{top}(x) = H_S^{top}(x); Q3^{top}(x) = H_I^{top}(x). These are the persistent-regime analogues of the convergent-regime classification predicates Q1, Q2, Q3.
 
@@ -860,6 +898,8 @@ Q3^{top}(x) := H_I^{top}(x) (indistinguishable rate, dependent on Q2^{top})
 where **Lim_M := range(CFix(ρ_M)) ∩ Limits(𝒯) ∩ ∞_M** is the set of limit points actually reached by ∞_M elements.
 
 ### Twelve-Class Partition
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.2.D6 | `12-Part` | 12-classes | **Novel** |
 **Synopsis:** The twelve-class partition definition for the combined model M (both regimes): the six-class partition of ↓_M and the six-class partition of ∞_M (Classes A*–E* analogously) together give twelve classes. This is the full classification framework when both regimes are non-empty.
 
@@ -886,6 +926,8 @@ Elements of ∞_M partition into six classes by (Q1^{top}, Q2^{top}, Q3^{top}):
 ### Properties of the Twelve-Class Partition
 
 ### Twelve-Class Partition Exhaustive & Exclusive on 𝒰
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.2.T3 | `12-Part-EE` |  | **Novel** |
 **Synopsis:** The twelve-class partition theorem: the twelve classes exhaustively and disjointly partition 𝒰_M = ↓_M ⊔ ∞_M. Each element belongs to exactly one of the twelve classes. Class F (convergent) and Class F* (persistent) are both empty.
 
@@ -908,6 +950,8 @@ Under native axiom system (PA-WN globally, PA-WN_top on ∞_M, PA-Conf on all):
 **Overall:** 𝒰 exhaustively partitions into 6 + 6 = 12 disjoint classes. ✓ ∎
 
 ### Pure WF Specialization
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.2.T4 | `WF-Back` |  | **Novel** |
 **Synopsis:** The well-founded backwards theorem: the six-class partition of ↓_M is recovered from the twelve-class partition by restricting to the convergent-regime classes A through E. The convergent-regime partition is the special case of the twelve-class partition where the persistent-regime classes are all empty.
 
@@ -923,6 +967,8 @@ All theorems referencing classes A–F remain unchanged
 *Proof.* If ∞_M = ∅, then no element satisfies Q1^{top}. By `12-Part` (L3.2.D6), classes A_∞–F_∞ are empty. The native partition reduces to the classical six-class partition. ✓ ∎
 
 ### Signature Stratification Across Both Regimes
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L3.2.C1 | `Sig-Strat` |  | **Novel** |
 **Synopsis:** The signature stratification corollary: the orbit signature stratifies the twelve-class partition into a two-dimensional grid — convergent/persistent (regime dimension) × A/B/C/D/E (class dimension). The horizon predicates give the class dimension; the regime indicator gives the first dimension.
 
@@ -988,6 +1034,8 @@ the closure of the tail of the orbit (Katok & Hasselblatt [1995], L1.1). Equival
 $y ∈ ω(x)$ iff there exists a subsequence $n_i → ∞$ with $f^{n_i}(x) → y$.
 
 ### SC-1: ω-Limit Bisimulation Fixation
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D2 | `SC-1` | SC-1 | **Novel** |
 **Synopsis:** Scope Condition SC-1 requires that the persistent orbit of x is eventually periodic: there exist n ≥ 0 and p ≥ 1 such that ρ_M^{n+p}(x) ≃_M ρ_M^n(x) for all further iterates. SC-1 is the weakest scope condition; it admits the periodic canonical form CNF∞_M.
 
@@ -1005,6 +1053,8 @@ where $ω_≈(x) := \{[y]_≈ : y ∈ ω(x)\}$ is the ω-limit set in the bisimu
 The condition asserts that the orbit eventually enters and remains in a single bisimulation equivalence class.
 
 ### SC-2: Eventual Periodicity of Horizon Signature
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D3 | `SC-2` | SC-2 | **Novel** |
 **Synopsis:** Scope Condition SC-2 requires that the orbit is eventually periodic and the period is stable under the projection operator: the period p does not change after step n. SC-2 implies SC-1 and is required for the orbit spectrum to be a well-defined probability measure.
 
@@ -1021,6 +1071,8 @@ $sig_M : 𝒰_M → \{⊤,⊥\} × \{⊤,⊥\} × ℕ$ (symbolic dynamics). The 
 finitely many steps, the orbit signature repeats with some minimal period p.
 
 ### SC-3: Eventual Periodicity of Valuation Sequence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D4 | `SC-3` | SC-3 | **Novel** |
 **Synopsis:** Scope Condition SC-3 requires that the orbit trace OT(x) is eventually periodic with a computable period. SC-3 is the effective version of SC-1, required for algorithmic orbit analysis.
 
@@ -1037,6 +1089,8 @@ where PV denotes the step-wise path valuation (`VS` (L4.3.D1)).
 The condition asserts that the sequence of valuations along the orbit eventually repeats.
 
 ### SC-4: Finite Symbolic Orbit [Bounded ω-Limit Set]
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D5 | `SC-4-Def` |  | **Reframed** |
 **Synopsis:** Scope Condition SC-4 (finite symbolic orbit): the persistent orbit of x visits only finitely many distinct bisimulation classes — equivalently, its ω-limit set ω_≈(x) is finite. This is the symbolic-dynamics condition that the orbit's symbolic image is ultimately periodic.
 
@@ -1055,6 +1109,8 @@ dynamical systems (Katok & Hasselblatt [1995], L1.1). In symbolic dynamics, it i
 symbolic image of the orbit is ultimately periodic (eventually enters a finite cycle in the quotient space).
 
 ### SC-4 ⟹ Eventual Periodicity
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T1 | `SC4-EP` |  | **Imported** |
 **Synopsis:** SC-4 implies eventual periodicity: an orbit visiting only finitely many bisimulation classes must eventually cycle, so ∃N, p≥1 with [ρ_M^{n+p}(x)]_≈ = [ρ_M^n(x)]_≈ for all n ≥ N. Minimal period 1 gives Type P (SC-1 holds); period ≥ 2 gives Type EP.
 
@@ -1079,6 +1135,8 @@ $ω_≈(x) = \{[ρ_M^n(x)]_≈ : n ≥ N\}$ consists of the classes on the event
 with $|ω_≈(x)|$ equal to the minimal period. ∎
 
 ### SC-4 ⟹ SC-2 and SC-3
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T2 | `SC4-23` |  | **Novel** |
 **Synopsis:** SC-4 implies SC-2 and SC-3: since SC-4 makes the quotient orbit eventually periodic, the orbit-signature sequence and the valuation sequence — both functions of the bisimulation class — are eventually periodic as well.
 
@@ -1095,6 +1153,8 @@ giving SC-2(x) and SC-3(x). ∎
 ### Definition and Existence
 
 ### Canonical Orbit Invariant CNF∞_M: ω-Limit Quotient
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D6 | `CNF∞-Def` | CNF∞_M(x) | **Novel** |
 **Synopsis:** The persistent canonical form CNF∞_M(x) is defined for SC-1 elements as the unique bisimulation class in ω_≈(x) that is a fixed point of the p-fold iterated projection operator (where p = CPD(σ)). It is the persistent-regime canonical form: the stable reference point of the eventually-periodic orbit.
 
@@ -1140,6 +1200,8 @@ So CNF∞ and CFix share a *pattern* (extract an orbit invariant from a quotient
 CNF∞ is partial and the lowest rung of the necessarily-hierarchical persistent classifier.
 
 ### CNF∞ Existence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T3 | `CNF∞-Ex` |  | **Novel** |
 **Synopsis:** Persistent canonical form existence: for every SC-1 element x, CNF∞_M(x) exists. The proof uses the eventual periodicity guaranteed by SC-1 to show that ω_≈(x) is finite and contains at least one element fixed by ρ_M^p.
 
@@ -1162,6 +1224,8 @@ Thus |ω_≈(x)| = 1. Finally c is a fixpoint of the induced quotient map
 is the unique element of ω_≈(x) and a ρ̄_M-fixpoint, well-defined for every SC-1 element. ∎
 
 ### CNF∞ Uniqueness
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T4 | `CNF∞-Uniq` |  | **Novel** |
 **Synopsis:** Persistent canonical form uniqueness: for every SC-1 element x, CNF∞_M(x) is unique. This follows from the confluence of the projection operator applied to the periodic orbit: the orbit visits the canonical form at every period-length step and no other fixed point of ρ_M^p is in ω_≈(x).
 
@@ -1217,6 +1281,8 @@ AOI₁ carries the full tail-trace equivalence class while ≃∞ carries only t
 the converse does not hold in general.
 
 ### ≃∞ is an Equivalence Relation
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T5 | `≃∞-Eq` |  | **Novel** |
 **Synopsis:** ≃∞ is an equivalence relation: persistent orbit equivalence is reflexive, symmetric, and transitive on ∞_M — immediate from equality of ω-limit sets.
 
@@ -1228,6 +1294,8 @@ the converse does not hold in general.
 Transitivity: ω_≈(x) = ω_≈(y) ∧ ω_≈(y) = ω_≈(z) ⟹ ω_≈(x) = ω_≈(z). ✓ ∎
 
 ### Persistent Orbit Quotient Q∞_M
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D8 | `Q∞` | Q∞_M | **Novel** |
 **Synopsis:** The persistent orbit quotient Q∞_M := ∞_M/≃∞ is the set of distinct ω-limit sets of persistent orbits — the ∞_M counterpart of the abstraction quotient Q_M. Its SC-4-restricted subquotient is the NWF quotient Q_M^* used to build Lift∞.
 
@@ -1249,6 +1317,8 @@ Q_M^* = Q∞_M. In general, Q∞_M is the proper universal quotient and Q_M^* is
 constructively tractable approximation from which `Lift∞` (L8.5.D2) is built.
 
 ### Unified Semantic Domain Sem(M)
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D9 | `Sem` | Sem(M) | **Novel** |
 **Synopsis:** The unified semantic domain Sem(M) := Q_M ⊔ Q∞_M is the disjoint union of the convergent orbit quotient and the persistent orbit quotient, with a regime-aware semantic projection π_sem : 𝒰_M → Sem(M). It is the semantic base through which the observer triple factors.
 
@@ -1285,6 +1355,8 @@ the query signature and Q∞_M are the **terminating IR** and **persistent IR** 
 resting on the universal axiom PA-Reach (L1.3.Ax2).
 
 ### Reachability Depth n_M
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D10 | `n-Reach` | n_M(x) | **Novel** |
 **Synopsis:** The reachability depth n_M(x) is the least index at which the orbit signature sig_M stabilizes — the NWF dual of the derivation height d_M. Where d_M counts steps until the orbit itself becomes constant (reaches Fix), n_M counts steps until the orbit *signature* becomes constant; the element keeps moving, but its observable signature is fixed.
 
@@ -1302,6 +1374,8 @@ n_M(x) = min{n : sig_M∘ρ_M^n is constant} (the signature becomes constant). B
 ℕ-valued ranks — d_M under PA-WN, n_M under PA-Reach.
 
 ### CPer Existence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T6 | `CPer-Ex` | | **Novel** |
 **Synopsis:** For every persistent element x ∈ ∞_M, the canonical persistent representative CPer_M(x) exists — totally. This is the NWF dual of CNF-Ex, and existence is exactly the content of the universal axiom PA-Reach.
 
@@ -1316,6 +1390,8 @@ CPer_M(x) = ρ_M^{n_M(x)}(x) exists for every persistent x. Totality on ∞_M is
 CNF-Ex's totality on ↓_M (`CNF-Ex` (L2.4.T1)), with PA-Reach in the role of PA-WN. ∎
 
 ### CPer Uniqueness
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T7 | `CPer-Uniq` | | **Novel** |
 **Synopsis:** The reachability depth n_M(x) and the stabilized signature sig_M(CPer_M(x)) are uniquely determined by x — the NWF dual of CNF-Uniq. Where WF uniqueness rests on confluence (Church–Rosser), NWF uniqueness rests on determinism of the strategy ρ_M together with minimality of the stabilization index.
 
@@ -1334,6 +1410,8 @@ assumes from n_M(x) onward — unique. Independence of the chosen orbit represen
 uniqueness comes from *determinism* of ρ_M — the two faces of the projection strategy.) ∎
 
 ### CPer Stability
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T8 | `CPer-Stab` | | **Novel** |
 **Synopsis:** The stabilized signature is invariant under further projection — sig_M(CPer_M(ρ_M(x))) = sig_M(CPer_M(x)) — and the reachability depth decreases by one per step, n_M(ρ_M(x)) = max(n_M(x) − 1, 0). These are the NWF duals of CNF-Stab (idempotence) and Depth-Dec (rank decrement).
 
@@ -1354,6 +1432,8 @@ signature is sig_M(CPer_M(x)) by (iii). **(iii)** Immediate from the definition 
 the same canonical signature — is the dual of `CNF-Stab` (L2.4.T3). ∎
 
 ### WF/NWF Canonical-Form Duality
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T9 | `WF-NWF-Dual` | | **Novel** |
 **Synopsis:** The convergent and persistent canonical-form theories are dual, but the duality is *graded*. At the total-representative level it is a clean 1:1 correspondence (d_M↔n_M, CFix↔CPer, PA-WN↔PA-Reach). At the complete-classifier level it is *necessarily* asymmetric: the single complete invariant CFix dualizes to a *hierarchy* (the AOI hierarchy), because SC-Imp proves no single persistent invariant exists. The asymmetry the duality exhibits is a theorem, not a gap.
 

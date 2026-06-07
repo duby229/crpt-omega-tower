@@ -30,6 +30,8 @@ the structural guarantee — no silent divergence, no degenerate trajectory weig
 is universal.
 
 ### Coalgebraic Observable / Behavioral Functor
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.1.D1 | `Behav-F` |  | **Imported** |
 **Synopsis:** The behavioral functor maps each CRPT model to its observer triple and maps each homomorphism to the corresponding map between observer triples. It is the categorical formalization of the claim that the observer architecture is a functor-level construct — not just a per-model definition but a transformation that commutes with model homomorphisms.
 
@@ -45,6 +47,8 @@ about M's orbits. The observer triple's three components realize this at the syn
 ### Path Valuation (Trajectory Observable)
 
 ### Path Valuation / Weighted Trajectory Observable
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.1.D2 | `PV-Obs` |  | **Reframed** |
 **Synopsis:** The point-value observer assigns a numerical observable value to each element based solely on its current projection-orbit position: the canonical form, derivation height, and horizon profile at that point. It is the simplest observer type — it sees only the element itself, not its history or context.
 
@@ -73,6 +77,8 @@ The interpretation depends on context:
 ### Horizon Classifier (Structural Observable)
 
 ### Horizon Classifier / Structural Observable
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.1.D3 | `HC-Obs` |  | **Novel** |
 **Synopsis:** The horizon-constrained observer is a point-value observer that is additionally constrained by the horizon profile: its output changes discontinuously at the H_O boundary (depth 1) and at H_S transitions. This models observers that react to structural branching.
 
@@ -97,6 +103,8 @@ at a non-injective collapse point? Is the collapse ambiguous (indistinguishable)
 ### Regime Discriminator (Persistence Observable)
 
 ### Regime Discriminator / Persistence Observable
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.1.D4 | `RD-Obs` |  | **Novel** |
 **Synopsis:** The regime-dependent observer uses different observation strategies for convergent and persistent elements: induction-based observation for ↓_M elements and coinduction-based observation for ∞_M elements. This is the canonical CRPT observer, implementing the native regime stratification at the observational level.
 
@@ -121,6 +129,8 @@ from aperiodic ones (NWF).
 ### The Observer Triple as Unified Observable
 
 ### Coalgebraic Observable Triple
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.1.D5 | `Obs-Triple` | | **Novel** |
 **Synopsis:** The observer triple 𝒪_M = (O_M, Gate_M, the orbit signature) is a formal characterisation of the observability structure inherent in model M. It is not an external measurement device — it reveals the model's own internal observability architecture. O_M specifies which elements are observable; Gate_M controls access between regimes; the orbit signature assigns comparable signatures to observable elements. Together they determine which elements can be distinguished by any query in the query signature.
 
@@ -147,6 +157,8 @@ The observer is constant on ≃_M classes in ↓_M and on ≃∞ classes in ∞_
 it separates elements only up to their regime-specific orbit equivalence.
 
 ### Coalgebraic Observable is Fully Derived / Constructible
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.1.T1 | `Obs-Const` | | **Novel** |
 **Synopsis:** The observer triple 𝒪_M = (PV, H, D) is fully derived from prior definitions with no new axioms: PV from the path valuation (L4.3), H from the six-class horizon partition (L3.2), D from the regime partition (L2.2). The observer architecture is a consequence of the substrate, not an independent postulate.
 
@@ -163,6 +175,8 @@ The observer triple 𝒪 = (PV, H, D) is constructible from prior definitions wi
 All three components are functions defined on previously established structures. No new axioms. ✓ ∎
 
 ### Coalgebraic Terminology & Origins
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L4.1.R2 | `Coal-Term` |  | **Reframed** |
 **Synopsis:** This remark explains the three alternative names for the observer triple and why 'observer triple' is preferred. 'Orbit characterisation triple' emphasises the orbit-classification function. 'Behavioral signature' emphasises the behavioral identification role. 'Observer triple' is preferred because it captures the epistemological role: it represents what can be known about an element by a projection-based observer.
 
@@ -229,6 +243,8 @@ Cross-regime reachability necessarily uses →_σ rather than →_ρ, because �
 μT_{ρ,M} into μT_{ρ,M} (`↓-Closed` (L2.2.T1)); this is why GR is stated over →_σ.
 
 ### Regime Connectedness — RT
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.2.T1 | `Reg-Conn` | | **Novel** |
 **Synopsis:** The regime connectivity theorem: under Gateway Reachability, every persistent element is reachable from some convergent element via a gateway. The two regimes are not completely separate worlds — there is always a →_σ-path from the well-founded side to any persistent element. This is a structural property of →_σ, independent of PA-Reach (which constrains ρ_M on ∞_M).
 
@@ -262,6 +278,8 @@ V = (V, +, ·, 0, 1) where (V, +, 0) is a commutative monoid, (V, ·, 1) is a mo
 (ℝ₊, +, ×, 0, 1); (ℕ, +, ×, 0, 1); (B, ∨, ∧, ⊥, ⊤) the Boolean semiring.
 
 ### Step Weighting
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.3.D2 | `Step-W` | w(x, y) | **Imported** |
 **Synopsis:** The step weighting function w assigns a semiring value to each single reduction step x →_ρ y. Multiplicative composition of step weights along a reduction path gives the weight of the entire path. The projection valuation accumulates these weights using the semiring multiplication.
 
@@ -271,6 +289,8 @@ A *step weighting* is a function
 w : →_ρ → V assigning a value to each reduction step.
 
 ### Finite Reduction Histories
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.3.D3 | `FRH` |  | **Imported** |
 **Synopsis:** The set of finite reduction histories ℋ_finite(x) from x is the tree of all finite reduction paths starting at x. Each node of the tree is a reduction step; each leaf is either a normal form or a maximal finite prefix. The projection valuation is defined by summing over all paths in this tree.
 
@@ -284,6 +304,8 @@ histories from x* is:
 The empty history ε_x has x₀ = x and n = 0.
 
 ### Projection Valuation — WF
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.3.D4 | `PV-WF` |  | **Reframed** |
 **Synopsis:** The finite reduction history set ℋ_finite(x) and its path enumeration: paths in ℋ_finite(x) are finite sequences x = x₀ →_ρ x₁ →_ρ ... →_ρ xₙ. The empty path ε_x (length 0) has weight 1 (the semiring unit). The projection valuation is the sum of weights of all paths.
 
@@ -300,6 +322,8 @@ PV is the *multiplicative accumulation of step-weights* along the history.
 ### WF Projection Valuation
 
 ### PV-1: WF Existence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.3.T1 | `PV1` | | **Novel** |
 **Synopsis:** The Projection Valuation Theorem: for any semiring V and step-weighting function w, the projection valuation PV_M assigns to each element x ∈ ↓_M the sum PV_M(x) = Σ_{h ∈ ℋ_finite(x)} prod_i(w(hᵢ)) over all finite reduction histories from x. This valuation is well-defined (the sum is finite under PA-WN), invariant under ≃_M (observationally equivalent elements receive equal valuations), and strictly monotone under the projection operator.
 
@@ -319,6 +343,8 @@ Step 3 (PV-mult): PV(h₁ ∘ h₂) = ∏ w-values along h₁ then h₂ = PV(h�
 by associativity of · in V. ✓ ∎
 
 ### PV-1C: Orbit Valuation
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L4.3.C1 | `PV1C` |  | **Novel** |
 **Synopsis:** The projection valuation corollary: the projection valuation PV_M is the unique numerical function on 𝒰_M that is (1) invariant under ≃_M, (2) strictly monotone under the projection operator on ↓_M, and (3) constant on persistent orbits after stabilization. These three conditions characterise it up to rescaling.
 
@@ -340,6 +366,8 @@ edges along the ρ_M-orbit) and finiteness by PA-WN. ✓ ∎
 ### NWF Projection Valuation
 
 ### Infinite Reduction Histories from x
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.3.D5 | `IRH-x` |  | **Imported** |
 **Synopsis:** The persistent regime projection valuation extends the finite-history valuation to elements of ∞_M using the scope conditions and the coinductive structure from PA-CoInd. For SC-1 elements, the persistent valuation converges to a limit determined by the periodic orbit's accumulated weight.
 
@@ -351,6 +379,8 @@ For x ∈ νT_{ρ,M}:
 ```
 
 ### PV∞ — NWF Valuation
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.3.D6 | `PV∞` |  | **Novel** |
 **Synopsis:** The infinite projection valuation PV∞(h) := lim_{n→∞} PV(h|_n) extends the projection valuation to infinite reduction histories by taking the limit of finite-prefix valuations in a topologised semiring.
 
@@ -364,6 +394,8 @@ PV∞(h) := lim_{n→∞} PV(h|_n)
 where h|_n is the finite prefix of h of length n.
 
 ### PV-2: NWF Existence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.3.T2 | `PV2` |  | **Novel** |
 **Synopsis:** The orbit valuation PV_{orbit}(x) = Σ_{h ∈ ℋ_finite(x)} PV(h) is the total weight of all finite reduction histories from x. Under PA-WN, this sum is finite (the tree ℋ_finite(x) is finite). The orbit valuation is the projection valuation's primary output.
 
@@ -378,6 +410,8 @@ orbit is eventually periodic; the sequence PV(h|_n) stabilises or has a
 well-defined limiting product under the semiring's topology. ✓ ∎
 
 ### PV Duality — DU-3
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.3.T3 | `PV-Dual` |  | **Novel** |
 **Synopsis:** The projection valuation duality theorem: the orbit valuation PV_M(x) and the fixpoint valuation PV_M^{fix}(f) = w(f) satisfy PV_M(x) = PV_M^{fix}(CNF_M(x)) · w-path(x, CNF_M(x)), where w-path is the accumulated weight of the canonical path from x to its fixpoint. Valuation of an element factors through the valuation of its canonical form.
 
@@ -421,6 +455,8 @@ theorems (DU-1 through DU-3 below) apply uniformly across all model profiles; na
 models automatically receive regime-stratified interpretations by this mechanism.
 
 ### ρ-Predecessor Operator
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.4.D1 | `Pre_ρ-14` | Pre_ρ(X) | **Imported** |
 **Synopsis:** The ρ-predecessor operator Pre_ρ(X) := { x ∈ 𝒰_M | ρ_M(x) ∈ X } collects the elements whose one-step projection image lands in X. It is the projection-operator instance of the standard predecessor transformer.
 
@@ -432,6 +468,8 @@ Pre_ρ(X) := { x ∈ 𝒰_M | ρ_M(x) ∈ X }.
 ```
 
 ### Regime Fixpoint Operators
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.4.D2 | `Reg-FPO` |  | **Reframed** |
 **Synopsis:** The regime fixpoint operators T_conv(X) := Fix(ρ_M) ∪ Pre_ρ(X) and T_pers(X) := (𝒰_M \ Fix(ρ_M)) ∩ Pre_ρ(X) are monotone transformers on (𝒫(𝒰_M), ⊆) whose least and greatest fixpoints reconstruct the convergent and persistent regimes.
 
@@ -445,6 +483,8 @@ T_pers(X) := (𝒰_M \ Fix(ρ_M)) ∩ Pre_ρ(X).
 ```
 
 ### Monotonicity of T_conv and T_pers
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L4.4.L1 | `T-Mono` |  | **Imported** |
 **Synopsis:** Both regime fixpoint operators T_conv and T_pers are monotone on (𝒫(𝒰_M), ⊆), so by Knaster–Tarski each has well-defined least and greatest fixpoints — the precondition for the regime fixpoint construction.
 
@@ -456,6 +496,8 @@ T_conv and T_pers are monotone.
 preserves inclusion. Hence T_conv(X) ⊆ T_conv(Y) and T_pers(X) ⊆ T_pers(Y). ∎
 
 ### Regimes as Least/Greatest Fixpoints
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.4.T1 | `Reg-FP` |  | **Reframed** |
 **Synopsis:** Regimes as fixpoints: the convergent regime ↓_M is the least fixpoint μT_conv and the persistent regime ∞_M is the greatest fixpoint νT_pers of the regime operators. This gives the regime partition an order-theoretic (μ/ν) characterization.
 
@@ -494,6 +536,8 @@ every x ∈ X: x ∉ Fix(ρ_M) and ρ_M(x) ∈ X. Iterating yields ρ_M^n(x) ∈
 for all n, so x ∈ O. Hence X ⊆ O. Therefore O = νT_pers. ∎
 
 ### RP-1 / CP-1 Convention
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.4.D3 | `RP-CP1` |  | **Reframed** |
 **Synopsis:** The RP-1/CP-1 conventions name the two fixpoint disciplines of projection reasoning: RP-1 is convergent-regime least-fixpoint reasoning through μT_conv, and CP-1 is persistent-regime greatest-fixpoint reasoning through νT_pers.
 
@@ -503,6 +547,8 @@ for all n, so x ∈ O. Hence X ⊆ O. Therefore O = νT_pers. ∎
 `CP-1` denotes NWF greatest-fixpoint projection reasoning on (𝒫(𝒰_M), ⊆) through νT_pers.
 
 ### RP-2 / CP-2 Convention
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.4.D4 | `RP-CP2` |  | **Reframed** |
 **Synopsis:** The RP-2/CP-2 conventions name the two proof principles: RP-2 is induction on derivation height over μT_{ρ,M}, and CP-2 is co-induction via Park's Lemma on T_pers (P ⊆ T_pers(P) ⟹ P ⊆ νT_pers).
 
@@ -512,6 +558,8 @@ for all n, so x ∈ O. Hence X ⊆ O. Therefore O = νT_pers. ∎
 `CP-2` denotes co-induction via Park's Lemma on T_pers: P ⊆ T_pers(P) ⟹ P ⊆ νT_pers.
 
 ### DU-1: Fixpoint Duality
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.4.T2 | `FP-Dual` |  | **Reframed** |
 **Synopsis:** Fixpoint duality (DU-1): convergent-regime recursive projection builds least fixpoints μF, while persistent-regime co-recursive projection builds greatest fixpoints νF; the two are order-duals (smallest pre-fixpoint vs largest post-fixpoint) by Knaster–Tarski. WF reasoning is least-fixpoint reasoning; NWF reasoning is greatest-fixpoint reasoning.
 
@@ -528,6 +576,8 @@ WF reasoning is least-fixpoint reasoning, and NWF reasoning is greatest-fixpoint
 reasoning. ∎
 
 ### DU-2: Induction/Co-Induction Duality
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.4.T3 | `Ind-CoInd` |  | **Imported** |
 **Synopsis:** Induction/co-induction duality (DU-2): well-founded induction over derivation height (RP-2) on the least fixpoint ↓_M and Park-style coinduction (CP-2) on the greatest fixpoint ∞_M are formally dual proof principles, by Knaster–Tarski on the complete lattice (𝒫(𝒰_M), ⊆).
 
@@ -548,6 +598,8 @@ P ⊆ T_pers(P) ⟹ P ⊆ νT_pers. The two principles are dual by Knaster-Tarsk
 the complete lattice (𝒫(𝒰_M), ⊆). ∎
 
 ### DU-3: PV Duality
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.4.T4 | `PV-Dual-14` |  | **Novel** |
 **Synopsis:** PV duality (DU-3): the WF path valuation PV (over finite histories) and the NWF limit valuation PV∞ (over infinite histories) are one construction at different granularities — PV∞(h) = lim_{n→∞} PV(h|_n). Finite and persistent valuation coincide in the limit.
 
@@ -598,6 +650,8 @@ d_M(ρ_M(x)) = d_M(x) − 1.
 *Proof.* `Depth-Dec` (L2.3.T2). ∎
 
 ### PD-4: Orbit Non-Injectivity Beyond Horizon
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.5.T1 | `PD4` |  | **Novel** |
 **Synopsis:** Orbit non-injectivity beyond the horizon: for j > d_M(x), ρ_M^j collapses x to its canonical fixpoint, so the j-step pre-image of x is exactly its NFC class NFC_M(CFix(ρ_M)(x)). Past the derivation-height horizon the projection is maximally non-injective — no inverse can separate elements of the same fiber.
 
@@ -614,6 +668,8 @@ The preimage under ρ_M^j is the entire NFC class; no inverse can distinguish
 elements within it. ∎
 
 ### IH-1: Inversion Horizon
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.5.T2 | `IH` |  | **Novel** |
 **Synopsis:** The inversion horizon H(x) := d_M(x) is the depth beyond which ρ_M^j cannot invert x: for every j > H(x), x's entire NFC class maps to a single point. It marks where one-step invertibility is irrecoverably lost.
 
@@ -626,6 +682,8 @@ H(x) := d_M(x) is the inversion horizon of x ∈ μT_{ρ,M}. For j > H(x):
 *Proof.* `PD4` (L4.5.T1) with j > d_M(x). ∎
 
 ### IH-1.1
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L4.5.C2 | `IH1.1` |  | **Imported** |
 **Synopsis:** The inversion horizon is always finite: H(x) = d_M(x) ∈ ℕ for every x ∈ μT_{ρ,M}, since derivation height is a finite natural number in the convergent regime.
 
@@ -636,6 +694,8 @@ H(x) = d_M(x) ∈ ℕ for all x ∈ μT_{ρ,M}.
 *Proof.* H(x) := d_M(x) by definition (`IH` (L4.5.T2)); d_M(x) ∈ ℕ by `d-WD` (L2.3.T1). ∎
 
 ### IH-1.2
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L4.5.C3 | `IH1.2` |  | **Novel** |
 **Synopsis:** The structural horizon coincides with the one-step inversion ambiguity: H_S(x) = ⊤ iff x is not uniquely recoverable from ρ_M(x). The ramification locus is exactly where one-step projection loses injectivity.
 
@@ -648,6 +708,8 @@ H_S(x) = ⊤ iff x is not uniquely recoverable from
 ρ_M(y) = ρ_M(x) iff x cannot be uniquely recovered from ρ_M(x). ∎
 
 ### Co-Projection Depth CPD
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.5.D1 | `CPD` | CPD(x) | **Novel** |
 **Synopsis:** The Canonical Period CPD(σ) is the minimal period of a periodic persistent orbit in orbit class σ. For SC-1 elements, CPD(σ) is the first p ≥ 1 such that ρ_M^p(x) ≃_M x for x in class σ. CPD generalises derivation height d_M to the persistent regime.
 
@@ -663,6 +725,8 @@ For Type P elements (SC-1), CPD(x) = 1 and N(x) coincides with the SC-1 stabilis
 index. For Type EP elements (SC-4 ∧ ¬SC-1), CPD(x) ≥ 2 (`OTC` (L6.2.D1)).
 
 ### CPD-1: Co-Projection Depth is Finite
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.5.T3 | `CPD-Fin` |  | **Novel** |
 **Synopsis:** The canonical period is finite: under PA-NWF + PA-Bisim + SC-4, CPD(x) ∈ ℕ for every x in the persistent regime satisfying SC-4. The bisimulation-quotient orbit is eventually periodic with a finite minimal period.
 
@@ -681,6 +745,8 @@ all k ≥ 0. The orbit on S is periodic. The minimum period p_min ≤ p is well-
 and finite. N(x) exists in ℕ by `SC4-EP` (L3.3.T1) (eventual periodicity). Hence CPD(x) = p_min ∈ ℕ. ∎
 
 ### CIH-1: Co-Inversion Horizon
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.5.T4 | `CIH` |  | **Novel** |
 **Synopsis:** The Canonical Inversion Horizon CIH(x) is the derivation height at which the orbit of x reaches its canonical inversion point. Elements with CIH(x) = 1 are at the boundary between the convergent and persistent regimes; those with larger CIH have a longer convergent prefix before entering their persistent cycle.
 
@@ -765,6 +831,8 @@ projection), which satisfies RP-1. This is covered by Case 1 with F₂ constant.
 In all four cases the composition is a valid projection operator. ∎
 
 ### SP-2: Fixpoint
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.6.T2 | `SP2` |  | **Novel** |
 **Synopsis:** Self-Projection Theorem SP2: the observer triple 𝒪_M, when regarded as an element of the meta-observer model, satisfies the observer consistency condition with respect to its own classification. The observer triple consistently classifies the projection system that defines it — there is no self-referential inconsistency in applying the observer framework to the observer itself.
 
@@ -778,6 +846,8 @@ stabilises by well-foundedness of ℕ at some k with d_M(xₖ) = d_M(xₖ₊₁)
 proj(xₖ) = xₖ. NWF case: PA-CoInd gives νF.(νF.x) ≃_M νF.x (maximality). ∎
 
 ### Admissible Encoding
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.6.D1 | `Enc` |  | **Novel** |
 **Synopsis:** An admissible encoding Enc : Terms(CRPT) × 𝒰_M → 𝒰_M represents CRPT-computable terms as substrate elements, subject to injectivity on terms, WF and NWF faithfulness (it reduces to the term's projection result in each regime), and compositionality.
 
@@ -794,6 +864,8 @@ terms (built from variables, ρ_M, composition, and fixpoint constructors), sati
 - **(Enc-4) Compositionality:** Enc(t₁ ∘ t₂, x) ≃_M Enc(t₁, Enc(t₂, x)).
 
 ### SP-3: Conditional Universality
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.6.T3 | `SP3` |  | **Novel** |
 **Synopsis:** Self-Projection Theorem SP3: under the encoding Enc, the image Enc(𝒪_M) is a fixed point of the projection operator on M'. This is the formal content of Self-Projection: the observer triple is stable under the meta-projection, confirming that the observer architecture does not change when projected through its own observational lens.
 
@@ -832,6 +904,8 @@ A *perturbation* of ρ_M is a function
 |{x ∈ 𝒰_M | ρ'_M(x) ≠ ρ_M(x)}| < ∞ (finitely many points differ).
 
 ### CPEP
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.7.D2 | `CPEP` | CPEP | **Novel** |
 **Synopsis:** A substrate has the Coherent Perturbation Existence Property (CPEP) if every ρ_M-perturbation leaves the persistent canonical orbit invariant CNF∞ unchanged — i.e. no finite perturbation of ρ_M is detectable in the orbit tails of the persistent regime.
 
@@ -843,6 +917,8 @@ CNF∞_{M'}(x) = CNF∞_M(x) for all x ∈ νT_{ρ,M} (the canonical orbit invar
 perturbation-stable).
 
 ### CPEP is Independent of PA-*
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.7.T1 | `CPEP-Ind` |  | **Novel** |
 **Synopsis:** CPEP independence: the Coherent Perturbation Extension Property is independent of the PA-* axioms — neither CPEP nor ¬CPEP is provable from PA-WN…PA-Reach. Witnessed by two models (M_cohere satisfying CPEP, M_absorb failing it) that both satisfy all PA-* axioms.
 
@@ -889,6 +965,8 @@ NFC class is the normal-form fiber NFC_M(f) = μT_{ρ,M} (`≃-Eq` (L2.5.T1)), s
 CPEP holds trivially. ✓ ∎
 
 ### Reflective/Absorbing
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.7.D3 | `Refl-Abs-D` |  | **Novel** |
 **Synopsis:** A substrate is *reflective* if every non-fixpoint convergent element admits a coherent perturbation into the persistent regime whose persistent canonical form CNF∞ matches its convergent canonical form; it is *absorbing* if no such perturbation exists. This dichotomy classifies how perturbations propagate to orbit tails.
 
@@ -900,6 +978,8 @@ CNF∞_M(x') = [CFix(ρ_M)(x)]_≈. It is *absorbing* if for all such perturbati
 CNF∞_M(x') ≠ [CFix(ρ_M)(x)]_≈.
 
 ### Reflective/Absorbing Dichotomy
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.7.T2 | `Refl-Abs-T` |  | **Novel** |
 **Synopsis:** The reflective/absorbing dichotomy determines CPEP: a reflective substrate satisfies CPEP, an absorbing substrate fails it, and mixed substrates satisfy only partial CPEP (the ∀x condition fails). This links the perturbation-propagation classification to the coherent-perturbation property.
 
@@ -935,6 +1015,8 @@ six-class partition (L3.2).
 
 ### Class F: Definition and Characterization
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.8.D1 | `ClassF-Def` | | **Novel** |
 **Synopsis:** Class F is defined as the set of elements satisfying H_S = ⊥ (no siblings) and H_I = ⊤ (uniform siblings) and H_O = ⊥ (not at the boundary). This combination is logically contradictory in deterministic models: H_I = ⊤ is vacuously true when H_S = ⊥ (there are no siblings to be uniform), so H_I carries no structural content when H_S = ⊥.
 
@@ -954,6 +1036,8 @@ any of its defining predicates ever simultaneously false.
 
 ### NO-F Theorem: Class F is Always Empty
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.8.T1 | `NO-F` | Class_F = ∅ | **Novel** |
 **Synopsis:** The Class F Emptiness theorem: in any deterministic CRPT model, Class F is empty. Class F would require H_S(x) = ⊥ (no siblings) and H_I(x) = ⊤ (uniform siblings) simultaneously. But H_I(x) = ⊤ is vacuously satisfied and structurally uninformative when H_S(x) = ⊥ — there are no siblings to be uniform. No element can non-trivially occupy Class F, so the class is empty in every deterministic CRPT model. Five active classes remain.
 

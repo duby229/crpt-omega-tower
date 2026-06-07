@@ -21,6 +21,8 @@ scope. The fixed point of this application is established by Lω.5.T1.
 
 ### Lω.1.D1 — Self-Substrate 𝒰_CRPT with Topology and Bisimilarity
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | Lω.1.D1 | `U_CRPT` | 𝒰_CRPT | **Novel** |
 **Synopsis:** The self-substrate 𝒰_CRPT is the collection of all labeled formal constructs in the CRPT ω-tower (L0 through L8 and Lω itself), viewed as mathematical objects to which CRPT's own machinery is applied. The reduction relation →_{ρ_CRPT} is the logical dependency relation: X →_{ρ_CRPT} Y means Y is a direct prerequisite of X. This turns the tower itself into a CRPT substrate.
 
@@ -56,6 +58,8 @@ with relations and topology:
 
 ### Lω.1.T1 — Self-Substrate is a CRPT Model
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | Lω.1.T1 | `Self-Model` | | **Novel** |
 **Synopsis:** The self-substrate theorem establishes that (𝒰_CRPT, →_{ρ_CRPT}, →_{σ_CRPT}, 𝒯_CRPT) is a valid CRPT model satisfying all the substrate conditions and axiom profiles. CRPT is not merely self-referential in name — it passes its own formal criteria for being a CRPT model. This is the foundational fact that makes Lω non-trivial.
 
@@ -133,6 +137,8 @@ requirements (TopSep on 𝒯_CRPT), and all axioms in the pure WF profile. ∎
 
 ### Lω.2.T1 — Self-Horizon Classification of the Anchor
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | Lω.2.T1 | `Self-Horiz` | | **Novel** |
 **Synopsis:** The Self-Horizon Classification assigns each anchor construct X ∈ 𝒰_CRPT to its six-class partition class under the self-substrate. The substrate definition L1.1.D1 is Class E (it is a fixed point of the dependency relation with multiple constructs depending on it). All other constructs are Class A (no siblings, not at the boundary) or Class D (no siblings, at the boundary layer — one dependency step from L1.1.D1).
 
@@ -164,7 +170,7 @@ Lω          ∞ / self          —        Self-referential: applies HOA to �
 H_I = ⊥ (all constructs are distinguishable by their structural roles and
 depth values). L1.1.D1 is Class E: the unique fixpoint with non-trivial fiber.*
 
-*Proof.* Apply the HOA (`Bool-Pred` L3.2.D2; `Six-Part` L3.2.T1) with
+*Proof.* Apply the HOA (`Bool-Pred` L3.2.D2; `6-Part` L3.2.T1) with
 π := ρ_CRPT:
 
 - **Fix(ρ_CRPT) = {L1.1.D1}:** The substrate definition is the unique construct
@@ -221,6 +227,8 @@ depth values). L1.1.D1 is Class E: the unique fixpoint with non-trivial fiber.*
 
 ### Lω.3.D1 — Rank Function m_CRPT
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | Lω.3.D1 | `m_CRPT` | m_CRPT(X) | **Novel** |
 **Synopsis:** The rank function m_CRPT(X) = k when X is a construct in level Lk (m_CRPT(X) ∈ {0, 1, ..., 8, ω}). This is the derivation height of X in the self-substrate: it counts how many dependency steps are needed to reach L1.1.D1 from X. Level indices directly encode derivation heights in the self-application.
 
@@ -243,6 +251,8 @@ corresponding range of the rank order.
 
 ### Lω.4.T1 — Tower of Towers Structure
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | Lω.4.T1 | `Tower-of-Towers` | | **Novel** |
 **Synopsis:** The Tower of Towers theorem: applying the Lift construction to the self-substrate 𝒰_CRPT produces a tower Lift(Self_CRPT), Lift²(Self_CRPT), ... whose levels are themselves isomorphic to towers of CRPT models. The self-application produces the most complex object the CRPT tower construction can generate — a tower whose elements are themselves towers.
 
@@ -274,6 +284,8 @@ FMA(Q_{Mₙ}) reach an atomic fixpoint q ∈ Q_{Mₙ} in |w|−1 steps). ∎
 
 ### Lω.5.T1 — Self-Consistency Fixed Point
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | Lω.5.T1 | `Self-FP` | | **Novel** |
 **Synopsis:** The Self-Consistency Fixed Point theorem: the level structure of the ω-tower is the unique fixed point of the meta-HOA operation. CRPT applied to its own constructs recovers exactly those constructs in exactly their existing arrangement.
 
@@ -334,7 +346,7 @@ n = 1 (it is constant from the first application). The fixed point of the operat
 "apply HOA and reorganize" is the level structure itself, with L1.1.D1 as its
 unique Class E element. ✓
 
-By `Six-Part` (L3.2.T1) instantiated at π := ρ_CRPT, the Class E assignment
+By `6-Part` (L3.2.T1) instantiated at π := ρ_CRPT, the Class E assignment
 of L1.1.D1 is the correct output. The fixed point is unique and stable. ∎
 
 *Remark Lω.5.R1 (The anchor is self-consistent).* `Self-FP` (Lω.5.T1) is the
@@ -359,6 +371,8 @@ self-substrate projection, the anchor is one.
 
 *Purpose.* Anchor Fractality. This section proves that the ω-tower, as a self-applied CRPT model, is fractal in the sense of L8.9: its tail is self-similar to the whole. The fractality claim is internal to CRPT — provable within the theory — and introduces no new objects beyond the tower already constructed.*
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | Lω.6.T1 | `Anchor-Fractal` | Frac(Self_CRPT) | **Novel** |
 **Synopsis:** The anchor fractality theorem shows that the ω-tower, viewed as a CRPT model under the self-application, exhibits the same fractal structure as every CRPT tower (L8.9.T2): its query signature Q_{CRPT} and local structure replicate at every level. The self-application does not produce a qualitatively different object — it produces exactly the same kind of fractal tower that CRPT builds for any base model, confirming the theory's internal coherence.
 
@@ -393,6 +407,8 @@ Self_CRPT. Hence Frac(Self_CRPT). ∎
 
 ### Lω.6.C1 — The Fractal Claim is Internal to CRPT
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | Lω.6.C1 | `Fractal-Internal` | | **Novel** |
 **Synopsis:** The fractality of the ω-tower is internal to CRPT: the proof that the anchor is a CRPT-fractal projection system (L8.9.T2) applies to Self_CRPT without any external axioms. The self-application does not require any new mathematical resources not already present in the tower.
 
@@ -410,6 +426,8 @@ internal to CRPT. ∎
 
 ### Lω.6.C2 — No Internal ω-State is Introduced
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | Lω.6.C2 | `No-Internal-ω-State` | | **Novel** |
 **Synopsis:** No internal ω-state is introduced by the self-application: 𝒰_CRPT is a finite set, every dependency chain terminates at L1.1.D1 in finitely many steps, and Lω.7.T1 confirms ∞_{CRPT} = ∅. The 'ω' in 'ω-tower' is a tower-level index, not a persistent orbit.
 
@@ -473,8 +491,8 @@ CRPT towers; Lω proves that the anchor is one of those towers under self-applic
 | PA-Reach | Regime Reachability (novel) | L1.3 |
 | ρ_M | Projection operator (ARS standard name: reduction strategy, Baader & Nipkow L1.2 Def. 2.1.19) | §3.1 |
 | Fix(ρ_M) | Fixpoint set | L2.1 |
-| ↓_M | Convergent regime = {x ∈ 𝒰_M | ∃n : ρ_M^n(x) ∈ Fix(ρ_M)} = μT_conv | L2.2 |
-| ∞_M | Persistent regime = {x ∈ 𝒰_M | ∀n : ρ_M^n(x) ∉ Fix(ρ_M)}; note ∞_M ⊆ Div(→_ρ) but inclusion may be strict | L2.2 |
+| ↓_M | Convergent regime = {x ∈ 𝒰_M \| ∃n : ρ_M^n(x) ∈ Fix(ρ_M)} = μT_conv | L2.2 |
+| ∞_M | Persistent regime = {x ∈ 𝒰_M \| ∀n : ρ_M^n(x) ∉ Fix(ρ_M)}; note ∞_M ⊆ Div(→_ρ) but inclusion may be strict | L2.2 |
 | d_M(x) | Derivation height / strategy length (CRPT local: abstraction depth) | L2.3 |
 | CFix(ρ_M)(x) | Canonical normal-form map | L2.4 |
 | NFC_M(f) | Normal-form fiber (CRPT notation: NFC_M(f)) | L2.5 |
@@ -548,6 +566,8 @@ CRPT towers; Lω proves that the anchor is one of those towers under self-applic
 
 ### Lω.7.L1 — CRPT-Acyclic: The Self-Reduction is Acyclic
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | Lω.7.L1 | `CRPT-Acyclic` | | **Novel** |
 **Synopsis:** The dependency relation →_{ρ_CRPT} on 𝒰_CRPT is acyclic: no construct depends on itself directly or indirectly. The proof uses the tower-level stratification: if X ∈ Lk and X →_{ρ_CRPT} Y, then Y ∈ Lj with j < k. A strictly decreasing sequence of natural numbers cannot cycle.
 
@@ -584,6 +604,8 @@ Therefore →_{ρ_CRPT} is acyclic. ✓  ∎
 
 ### Self-CRPT-Finite: The Self-Application Universe is Finite
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | Lω.7.R1 | `Self-CRPT-Finite` | | **Novel** |
 **Synopsis:** The self-substrate universe 𝒰_CRPT is finite: it consists of all labeled constructs in L0–L8 and Lω, and each level Lk contains finitely many labeled items (definitions, theorems, lemmas, corollaries, remarks). The union over finitely many levels of finite sets is finite. This finiteness, combined with acyclicity, gives ∞_{CRPT} = ∅ without requiring any sophisticated argument.
 
@@ -610,6 +632,8 @@ Two anchor constructs are bisimilar iff they reduce to the same primitive depend
 
 ### Lω.7.T1 — CRPT-WF: The Self-Application is Pure Well-Founded
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | Lω.7.T1 | `CRPT-WF` | | **Novel** |
 **Synopsis:** When CRPT is applied to itself, the self-substrate 𝒰_CRPT is pure well-founded: ∞_{CRPT} = ∅. Every construct in the tower (every definition, theorem, lemma) eventually depends on L1.1.D1 (the substrate definition) in finitely many dependency steps, and L1.1.D1 depends on nothing. The theory has no circular dependencies — it is acyclic and terminates.
 
@@ -644,6 +668,8 @@ Two anchor constructs are bisimilar iff they reduce to the same primitive depend
 
 ### Lω.7.T2 — Lω-FixedPt-Unique: L1.1.D1 is the Unique Projective Fixed Point
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | Lω.7.T2 | `Lω-FixedPt-Unique` | | **Novel** |
 **Synopsis:** L1.1.D1 is the unique projective fixed point: Fix(ρ_CRPT) = {L1.1.D1}. Every other construct depends on at least one prior construct.
 

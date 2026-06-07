@@ -23,6 +23,8 @@ depth(t₁ · t₂) := 1 + max(depth(t₁), depth(t₂))
 ```
 
 ### Well-foundedness of FMA
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L8.1.L1 | `FMA-WF` | | **Imported** |
 **Synopsis:** Every element of FMA(A) has finite depth — the free monoid contains only finite words — so the algebra is well-founded, with no infinite descending composition chains.
 
@@ -32,6 +34,8 @@ Every t ∈ FMA(A) has
 depth(t) ∈ ℕ. *Proof.* By the inductive construction. ∎
 
 ### Unique Decomposition
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L8.1.L2 | `FMA-UD` | | **Imported** |
 **Synopsis:** Every element of FMA(A) has a unique decomposition as a sequence of atoms: the free monoid structure ensures that concatenation is unambiguous and reversible. This unique decomposition is what makes the canonical projection on FMA(A) deterministic — there is always a unique 'first atom' to strip.
 
@@ -41,6 +45,8 @@ Every non-atomic t ∈ FMA(A) has
 a unique pair (t₁, t₂) with t = (t₁ · t₂). *Proof.* By the inductive definition. ∎
 
 ### Canonical Projection Strategy on FMA(A)
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.1.D2 | `FMA-Proj` | ρ_FMA | **Novel** |
 **Synopsis:** The canonical projection on FMA(Q_M) is defined by: atoms map to themselves (fixed points), and non-atomic words map to the same word with their first atom stripped. This is the natural left-to-right reduction strategy on the free monoidal algebra, and it satisfies C1 (determinism) and C3 (fixpoint stability) by construction.
 
@@ -55,6 +61,8 @@ to be the abstraction function on FMA(A) in `Lift-Compat` (L8.3.T4) below.
 ```
 
 ### ρ_MMA satisfies C1 and C3
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L8.1.L3 | `FMA-C1C3` | | **Novel** |
 **Synopsis:** The canonical projection on FMA(Q_M) satisfies conditions C1 (determinism: exactly one projection step from each element) and C3 (fixpoint stability: atoms are fixed points) required by the CRPT substrate definition. C2 (bisimulation equivariance) also holds because the projection depends only on the observable structure of the word.
 
@@ -67,6 +75,8 @@ for all a ∈ A = Fix(ρ_MMA). ✓ ∎
 ## L8.2 — The Lift Operator
 
 ### Abstraction Quotient
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.2.D1 | `Ab-Quot-28` | Q_M | **Novel** |
 **Synopsis:** The abstraction quotient Q_M = ↓_M/≃_M at L8: this is the same object as L7.1.D3 (Ab-Quot), restated at L8 for use in the Lift definition. Q_M is the set of fiber equivalence classes; its elements become the atoms of FMA(Q_M).
 
@@ -83,6 +93,8 @@ with |Q_M| = |Fix(ρ_M)| (by the CNF-Fibre Theorem L2.5).
 domain is Sem(M) = Q_M ⊔ Q∞_M (`Sem` (L3.3.D9)).*
 
 ### Free Lift of M
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.2.D2 | `Lift-Def` | Lift(M) | **Novel** |
 **Synopsis:** The Lift operator takes a CRPT model M and constructs a new, strictly richer CRPT model Lift(M) whose universe is FMA(Q_M) — the free monoidal algebra on M's query signature. Lift does not step inside M; it ascends above M, treating M's canonical equivalence classes as atomic generators and building all formal compositions thereof. Repeating Lift produces the tower Tower(M) = {M, Lift(M), Lift²(M), …}.
 
@@ -101,6 +113,8 @@ where:
 - **Fixpoints (abstraction substrate):** Fix(ρ_{Lift(M)}) = Q_M ⊆ FMA(Q_M) (the atomic terms)
 
 ### Canonical Inclusion
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.2.D3 | `Can-Incl` | | **Novel** |
 **Synopsis:** The canonical inclusion ι_M : Q_M ↪ FMA(Q_M) sends each fiber equivalence class q ∈ Q_M to the one-atom word 'q' in FMA(Q_M). This makes Q_M a subset of the universe of Lift(M), identifying M's canonical observables as atomic generators of the lifted model.
 
@@ -111,8 +125,8 @@ each q ∈ Q_M to the corresponding atomic term atom(q) ∈ FMA(Q_M). ι_M is in
 by `FMA-UD` (L8.1.L2).
 
 ### Fixpoints-to-Basics
-
-### Fixpoints-to-Basics
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.2.T1 | `Fix-Bas` | | **Novel** |
 **Synopsis:** The Fixpoints-to-Basics theorem establishes Fix(ρ_{Lift(M)}) = ι_M(Q_M): the fixed points of the projection operator on Lift(M) are exactly the one-atom words — the images of the original canonical observables under the canonical inclusion. 'Basics' in the name refers to these atomic fixed points.
 
@@ -146,6 +160,8 @@ d_{Lift(M)}(ι_M(NFC_M(f))) = 0. ✓
 f := CFix(ρ_M)(x). ✓ ∎
 
 ### Interpretation of Fixpoints-to-Basics
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L8.2.R1 | `Fix-Bas-Int` |  | **Novel** |
 **Synopsis:** Fixpoints-to-Basics interpretation: the theorem Fix(ρ_{Lift(M)}) = ι_M(Q_M) can be read in two directions. Forward: the fixed points of the lifted projection operator are exactly the atomic generators — the 'basic' elements from which all compound elements are built. Backward: every atomic generator is already in canonical position, requiring no further projection.
 
@@ -169,6 +185,8 @@ indiscernible equivalence classes at level n become generative atoms at level n+
 whose compositions create new discernible structure.
 
 ### Abstraction Depth in Lift(M) Measures Fiber Composition
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L8.2.C1 | `Lift-Depth` | | **Novel** |
 **Synopsis:** Derivation height in Lift(M) equals word length in FMA(Q_M): d_{Lift(M)}(w) = |w| - 1 for words of length |w| ≥ 1 (atoms have depth 0). Each projection step strips one atom, so depth counts exactly how many stripping steps remain.
 
@@ -186,7 +204,8 @@ d_{Lift(M)}(t) = k − 1
 at level k are inherited as unresolvable identifications at level k+1. All ingredients
 are from §L2.5–8 (NFC fibers, horizons) and L8.2 (Fixpoints-to-Basics). No new axioms.
 
-### Horizon Inheritance Under Lift
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.2.T2 | `Hor-Lift` | | **Novel** |
 **Synopsis:** Horizon Inheritance under Lift: the horizon class of a word in Lift(M) is determined by the horizon class of the word's first atom in M. Specifically, a word w has H_S = ⊤ in Lift(M) if and only if its first atom has H_S = ⊤ in M. This means the tower inherits the complete horizon structure from the base model.
 
@@ -237,6 +256,8 @@ of no return in the tower.
 ## L8.3 — PA-* Preservation under Lift
 
 ### Lift preserves PA-WN
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.3.T1 | `Lift-WN` | | **Novel** |
 **Synopsis:** Lift preserves PA-WN: if M satisfies PA-WN (every element in ↓_M reaches a fixed point), then Lift(M) satisfies PA-WN. Since FMA(Q_M) consists only of finite words and the projection operator strictly reduces word length, every element of Lift(M) is in ↓_{Lift(M)} — PA-WN holds trivially.
 
@@ -249,6 +270,8 @@ strictly decreases depth_MMA: depth_MMA(ρ_MMA(t₁·t₂)) = depth_MMA(t₁) < 
 Since depth_MMA ∈ ℕ and strictly decreases at each step, no infinite chain exists. ✓ ∎
 
 ### Lift preserves PA-Conf
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.3.T2 | `Lift-Conf` | | **Novel** |
 **Synopsis:** Lift preserves PA-Conf: if M satisfies PA-Conf (all projection paths from any element converge), then Lift(M) satisfies PA-Conf. The projection operator on FMA(Q_M) is deterministic (C1), so there is only one projection path from each element — confluence holds trivially.
 
@@ -267,6 +290,8 @@ arises in instantiations where the projection strategy must choose among competi
 reductions (Graph Rewriting L2.1, Proof Nets L2.1). ∎
 
 ### Lift preserves WF-Canon structure on the WF stratum
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.3.T3 | `Lift-WFCanon` | | **Novel** |
 **Synopsis:** Lift preserves the WF-Canon structure: if M is a WF-Canon model (satisfying PA-WN + PA-Conf + PA-Fix, from which WF-Canon follows as a theorem at L2), then Lift(M) is also a WF-Canon model. All three axioms are verified for the free monoidal algebra with its canonical projection.
 
@@ -283,6 +308,8 @@ every WF-term in Lift(M) reaches a canonical fixpoint representative. This prese
 WF-Canon-1/2 behavior under Lift on the WF stratum. ✓ ∎
 
 ### Lift of a CRPT model is CRPT-compatible
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.3.T4 | `Lift-Compat` | | **Novel** |
 **Synopsis:** Lift compatibility asserts that Lift(M) is itself a valid CRPT model — it inherits all the structural properties (PA-WN, PA-Conf, PA-Fix, the substrate conditions) from M. This is the theorem that makes the tower well-formed: each level is a genuine CRPT model, not merely a set with some inherited notation.
 
@@ -295,6 +322,8 @@ WF-Canon-1/2 behavior under Lift on the WF stratum. ✓ ∎
 ## L8.4 — Tower Sequence and Faithful Embedding
 
 ### CRPT Tower generated by M
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.4.D1 | `Tower` | Tower(M) | **Novel** |
 **Synopsis:** The tower Tower(M₀) = (M₀, M₁, M₂, …) where Mₙ₊₁ = Lift(Mₙ) is the central object of L8. Each level is a strictly richer CRPT model: more elements, same observational vocabulary (Q_{Mₙ} ≅ Q_{M₀} by L8.4.T2), but growing expressive power as formal compositions nest deeper. The tower is infinite (L8.10.T2) and fractal (L8.9.T2): its tail is self-similar to the whole.
 
@@ -308,6 +337,8 @@ Tower(M₀) := (M₀, M₁, M₂, ...)
 where Mₙ₊₁ := Lift(Mₙ), with canonical inclusions ι_n : Q_{Mₙ} ↪ 𝒰_{Mₙ₊₁}.
 
 ### Tower Existence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.4.T1 | `Twr-Ex` | | **Novel** |
 **Synopsis:** Tower Existence: for any CRPT model M₀, the tower Tower(M₀) = (M₀, M₁, M₂, ...) with M_{n+1} = Lift(Mₙ) exists as a well-defined infinite sequence of CRPT models. Each level is a valid CRPT model by the Lift Compatibility theorem (L8.3.T4), and the sequence is infinite by the Tower Infiniteness theorem (L8.10.T2).
 
@@ -320,6 +351,8 @@ Tower(M₀) is well-defined and every level Mₙ satisfies PA-WN + PA-Conf.
 PA-Conf (`Lift-WN` (L8.3.T1), `Lift-Conf` (L8.3.T2)). Apply repeatedly. ✓ ∎
 
 ### NFC Partition is a Tower Invariant
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.4.T2 | `NFC-TInv` | | **Novel** |
 **Synopsis:** The NFC Tower Invariance theorem: Q_{M_n} ≅ Q_{M₀} for all n ≥ 0. The query signature is preserved across all tower levels. The atoms of Lift(Mₙ) are exactly the canonical observables of Mₙ, which are isomorphic to those of M₀. The tower grows in universe size but not in observational vocabulary.
 
@@ -342,6 +375,8 @@ fibers: Mₙ encodes all depth-n compositions of the base fibers.
 ### Faithful Embedding of Levels
 
 ### Faithful Embedding
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.4.T3 | `Faith-Emb` | ι_{0→n} | **Reframed** |
 **Synopsis:** The faithful embedding theorem: for each n, the canonical inclusion ι_{M_n} : Q_{M_n} ↪ 𝒰_{M_{n+1}} is a faithful CRPT homomorphism — it preserves all four substrate components and is injective. This means each tower level embeds into the next as an observationally distinguishable sub-model.
 
@@ -362,6 +397,8 @@ Preservation of the model homomorphism conditions (`Hom` (L5.2.D1)):
 ## L8.5 — NWF-Extended Lift*
 
 ### NWF Abstraction Quotient
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.5.D1 | `NWF-Quot` | Q_M^* | **Novel** |
 **Synopsis:** The NWF abstraction quotient Q_M^* is the analogue of Q_M for the persistent regime: Q_M^* = ∞_M / ≃∞_M is the set of persistent orbit equivalence classes. Elements of Q_M^* are the 'persistent observables' — the canonical representatives of infinite orbit classes. Q_M^* is the generator set for the NWF-extended Lift Lift*(M).
 
@@ -381,6 +418,8 @@ proper universal persistent quotient. In models where all ∞_M elements satisfy
 Q_M^* = Q∞_M.
 
 ### NWF-Extended Lift
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.5.D2 | `Lift∞` | Lift∞(M) | **Novel** |
 **Synopsis:** The NWF-extended Lift Lift∞(M) has universe FMA(Q_M ⊔ Q_M^*), where Q_M^* is the persistent abstraction quotient. Atoms from Q_M are fixed points of the projection operator; atoms from Q_M^* generate periodic orbits of period CPD(σ). Lift∞(M) is the CRPT model that admits genuine non-well-founded persistent structure by design.
 
@@ -396,6 +435,8 @@ the periodic orbit structure of ∞_M: each σ ∈ Q_M^* generates a periodic el
 with minimal period CPD(σ) (as defined in `CPD` (L4.5.D1)).
 
 ### NWF Abstraction Classes Become Periodic Substrate
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.5.T1 | `NWF-Per` | | **Novel** |
 **Synopsis:** The NWF Periodicity theorem: for each persistent orbit class σ ∈ Q_M^*, the corresponding element ι^*_M(σ) ∈ 𝒰_{Lift*(M)} has a periodic projection orbit with period exactly CPD(σ). The extended lift faithfully represents the periodic structure of persistent orbits as actual periodicity in the lifted model.
 
@@ -413,6 +454,8 @@ is assigned a periodic term with minimal period CPD(σ). The cofree coalgebra
 construction (Rutten 2000; Jacobs 2016 L3.2) guarantees this. ✓ ∎
 
 ### NWF-Extended Lift satisfies PA-NWF
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.5.T2 | `Lift∞-NWF` |  | **Novel** |
 **Synopsis:** Lift∞(M) satisfies PA-NWF: its persistent regime ∞_{Lift∞(M)} is non-empty. Every atom ι^*_M(σ) for σ ∈ Q_M^* with CPD(σ) ≥ 1 belongs to ∞_{Lift∞(M)} because its projection orbit is periodic and thus infinite. The NWF-extended lift is genuinely non-well-founded by construction.
 
@@ -488,6 +531,8 @@ set {t | ρ_{Lift(M)}(t) = ι_M(q)} = {ι_M(q)} ∪ {(ι_M(q)·r) | r ∈ 𝒰_{
 H_I = ⊤. Class C. ✓ ∎
 
 ### The Duality Stated Plainly
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L8.6.R1 | `Dual-Stat-Plai` |  | **Novel** |
 **Synopsis:** Plain-language statement of Horizontal-Vertical Duality: what the projection operator cannot distinguish within one tower level (elements in the same fiber, H_S = ⊤), the next tower level can distinguish (their fiber classes become distinct atoms). Moving up one tower level resolves exactly the horizontal ambiguity present at the current level.
 
@@ -507,6 +552,8 @@ in Lift) are dual facets of the same construction:
  read in two directions.
 
 ### Tower Horizon Characterization
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.6.T2 | `Twr-Hor` |  | **Novel** |
 **Synopsis:** The Tower Horizon Characterization: an element x ∈ Mₙ is at the tower horizon if and only if it is at the H_O boundary layer (d_{M_n}(x) = 1) of Mₙ. Tower-horizon elements are exactly those one step from the fixed points of Mₙ — these fixed points become the atoms of Mₙ₊₁.
 
@@ -530,6 +577,8 @@ Fix(ρ_{Mₙ}) arise as ι_{n-1}(NFC_{Mₙ₋₁}(f)) for some f, and have H_S =
 |Q_{Mₙ₋₁}| ≥ 2 (`HV-Dual` (L8.6.T1) iii). ✓ ∎
 
 ### Information Loss at the Tower Horizon
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.6.T3 | `Info-Loss` | | **Novel** |
 **Synopsis:** The Information Loss at Tower Horizon theorem quantifies what is lost when projecting within a tower level: elements that are observationally equivalent (≃_{M_n}) but structurally distinct (not equal) become indistinguishable by the canonical form map. The information encoded in their structural differences is the information that the next tower level recovers.
 
@@ -546,6 +595,8 @@ so ι_n maps both x and y to the same element of 𝒰_{Mₙ₊₁}. The distinct
 is not expressible in 𝒰_{Mₙ₊₁}. ✓ ∎
 
 ### σ-Paths within ↓_M Fibers Are Not a Third Regime
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.6.T4 | `σ-Not3rd` |  | **Novel** |
 **Synopsis:** The σ-paths-are-not-a-third-regime theorem: elements connected by the structural relation →_σ but not by the reduction relation →_ρ are not a third regime of the CRPT model. They are part of the existing regime structure — specifically, they are elements in the same fiber (H_S = ⊤) but on different 'branches' of the fiber.
 
@@ -605,6 +656,8 @@ The σ-paths yᵢ →_σ^M yᵢ₊₁ are within the normal-form fiber NFC_M(f),
 new morphism in →_σ^{Lift(M)} is induced. ✓ ∎
 
 ### The Meaning of L8.6 Non-Third-Regime Theorem
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L8.6.R2 | `29.4-Meaning` |  | **Novel** |
 **Synopsis:** Interpretation of the σ-not-a-third-regime theorem: within-fiber →_σ-structure is not a third regime but is collapsed by the free lift and re-expressed as vertical infinity at the next tower level, linking to Infinity Duality.
 
@@ -626,6 +679,8 @@ are dual manifestations of the same phenomenon expressed in different directions
 tower unfolds (`Inf-Dual` (L2.2.T7)).
 
 ### Enriched Lift Resolution: Free Lift is Categorically Minimal
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.6.T5 | `Lift-Min` |  | **Novel** |
 **Synopsis:** The free lift is categorically minimal among CRPT-compatible enriched lifts: any enriched lift either equals the free lift or adds model-specific data that the next tower level discards.
 
@@ -683,6 +738,8 @@ by `σ-Not3rd` (L8.6.T4) iii–iv (applied at level n+1). The enriched structure
 exactly one additional level, then is collapsed. ✓ ∎
 
 ### Resolution of OR-5 Enriched Lift Question
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L8.6.R3 | `OR5-Lift` |  | **Novel** |
 **Synopsis:** OR5 Lift remark: the five Observational Requirements are preserved under each application of the Lift operator. OR5-1 (infinite tower), OR5-2 (query-signature invariance), OR5-3 (faithful embedding), OR5-4 (horizontal-to-vertical resolution), OR5-5 (self-similarity) — each is inherited at every tower level by the Lift construction.
 
@@ -709,6 +766,8 @@ theory (L2.4) and the Lift/Tower construction (L8.2–L8.5). All ingredients are
 established in prior sections. No new axioms.
 
 ### Tower Image
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.6.D1 | `Twr-Img` | TwrImg(M₀) | **Novel** |
 **Synopsis:** The tower image Img_n(M₀) is the image of the n-th canonical inclusion ι_{M_0} ∘ ... ∘ ι_{M_{n-1}}: Q_{M₀} ↪ 𝒰_{M_n}. It captures which elements of Mₙ directly represent observables of the base model M₀. The tower image grows sparser at each level as the universe expands.
 
@@ -732,6 +791,8 @@ x, y ∈ 𝒰^{(0)} have x^{(k)} = y^{(k)} iff they belong to the same NFC fiber
 level k-1, i.e., CNF_{M^{(k-1)}}(x^{(k-1)}) = CNF_{M^{(k-1)}}(y^{(k-1)}).
 
 ### Tower-Discernibility
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.6.D2 | `Twr-Disc` | Disc_k(x, y) | **Novel** |
 **Synopsis:** Tower discriminability measures whether two elements that are indistinguishable at level Mₙ become distinguishable at a higher level Mₖ (k > n). An element pair (x, y) is eventually discriminated if there exists k such that the tower image at level k distinguishes x and y. Discriminability is the tower's resolution power.
 
@@ -752,6 +813,8 @@ Let x, y ∈ 𝒰^{(0)}. For each k ≥ 0:
  exist k ≥ 0 and n ∈ ℕ such that ρ^{(k)\,n}(x^{(k)}) ≉^{(k)} ρ^{(k)\,n}(y^{(k)}).
 
 ### Discernibility as Survival Under Recursive Projection and Lift
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.6.T6 | `Disc-Surv` |  | **Novel** |
 **Synopsis:** Discriminability Survival: if two elements are distinguishable at level Mₙ, they remain distinguishable at all higher levels Mₖ (k > n). The tower never collapses distinctions — it can only create new distinctions. The tower's discriminability is monotone increasing.
 
@@ -792,8 +855,8 @@ Hence at each level x^{(k)} and y^{(k)} induce the same atoms/composites. No
 structure at any level separates them. ✓ ∎
 
 ### Tower-Horizon Abstraction Thesis
-
-### Tower-Horizon Abstraction Thesis
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.6.T7 | `Twr-AThesis` |  | **Novel** |
 **Synopsis:** The Tower Abstraction Thesis: every structural distinction between elements that is expressible in the language of CRPT is eventually made visible at some tower level. The tower has complete discriminability: it separates every structurally distinct pair. This is the CRPT completeness theorem for the tower.
 
@@ -871,6 +934,8 @@ source and target maps sₙ, tₙ : 𝒞_{n+1} → 𝒞_n; composition maps
 satisfying globularity, associativity, unit, and interchange axioms (Street 1987, L1.1).
 
 ### Tower ω-Category 𝒞^Tower_{M₀}
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.7.D2 | `Twr-ωCat` | 𝒞^Twr | **Novel** |
 **Synopsis:** The tower ω-category is the ω-dimensional categorical structure whose n-cells are the n-natural-transformations between n-1-functors between tower-level models. It organises all the tower's Lift maps, natural transformations, and higher coherence data into a single coherent object.
 
@@ -884,6 +949,8 @@ Given Tower(M₀):
 - **Identities:** id_n(x) := ι_n(x) for x ∈ Q_{Mₙ} = Fix(ρ_{Mₙ}) (the embedding into Mₙ₊₁)
 
 ### The Tower is a Strict ω-Category
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.7.T1 | `Twr-ωCat-T` |  | **Novel** |
 **Synopsis:** The Tower ω-Category Theorem: Tower(M₀) with the Lift maps as 1-cells, natural transformations as 2-cells, and modifications as 3-cells (and so on) is a strict ω-category in the sense of Leinster [2004]. All coherence conditions are automatically satisfied because the Lift maps compose strictly.
 
@@ -914,6 +981,8 @@ algebra construction: FMA(Q_M) imposes no equations, so no non-identity coherenc
 maps arise. 𝒞^Tower_{M₀} is strict. ✓ ∎
 
 ### Strict ω-categories are rare
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L8.7.R1 | `ω-Cat-Rare` |  | **Reframed** |
 **Synopsis:** Strict ω-categories are rare among naturally-occurring ones (most are weak); the CRPT tower is strict because the free monoidal algebra imposes no non-identity coherence morphisms.
 
@@ -925,6 +994,8 @@ no choices among coherence data. This strictness follows from the freeness of th
 algebra construction.
 
 ### Conditional Coarsening of the Self-Substrate Tower
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.7.T2 | `Self-Ont` |  | **Novel** |
 **Synopsis:** The Self-Ontological Soundness theorem: the tower ω-category structure is self-ontologically sound — it can describe itself as an object within the theory. The tower's own structure is a 0-cell in the ω-category of ω-categories. This is the tower's contribution to Lω's self-application.
 
@@ -958,6 +1029,8 @@ preserves dependency ordering and is a valid coarsening. Minimality of the rank 
 follows from using individual ranks as blocks. ✓ ∎
 
 ### Notation for L7–L8 symbols
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L8.7.R2 | `Nota-L7L8` |  | **Novel** |
 **Synopsis:** A reference table of the notation introduced across L7–L8 — the Galois maps α_M/γ_M, the quotient projection π_M, the abstraction quotient Q_M, and the tower and Lift symbols.
 
@@ -1065,6 +1138,8 @@ Thus the native system is a **conservative extension** of the pure-WF profile: i
 ### Model Instantiation Validation
 
 ### Hybrid Framework Covers OR-5 Test Cases
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.8.T2 | `OR5-Cover` |  | **Novel** |
 **Synopsis:** OR5 Coverage: the five Observational Requirement 5 conditions (the tower must (1) be infinite, (2) preserve the query signature, (3) embed faithfully, (4) resolve horizontal ambiguity, and (5) be self-similar) are all satisfied by the CRPT tower. Each OR5 condition corresponds to a specific theorem proved in L8.4–L8.9.
 
@@ -1132,6 +1207,8 @@ Therefore each of the three OR-5 test models satisfies the hybrid axiom system, 
 ### Structural Invariance: Functoriality and Naturality
 
 ### Hybrid Framework is Functorial on Mod_CRPT
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.8.T3 | `OR5-Func` |  | **Novel** |
 **Synopsis:** OR5 Functoriality: the five OR5 coverage conditions are preserved under CRPT homomorphisms — if φ : M₁ → M₂ is a CRPT homomorphism, the induced tower map Tower(φ) : Tower(M₁) → Tower(M₂) satisfies all five OR5 conditions component-wise.
 
@@ -1153,6 +1230,8 @@ The functor preserves:
 *Proof.* The definitions of CFix(ρ_M) (`Rec-Proj` (L2.1.D4)-hybrid), the orbit signature (`sig_M-NM` (L3.1.D5)-hybrid), and class membership (L3.2–9.3) are natural with respect to model homomorphisms Φ : M₁ → M₂. Given Φ, the hybrid invariants transfer: CNF_{M₂}(Φ(x)) = Φ(CNF_{M₁}(x)), etc. By `Twr-Func` (L7.3.T2) together with `F-Func` (L7.3.T1), the framework is functorial. ✓ ∎
 
 ### Naturality of Regime Partition
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L8.8.C1 | `Reg-Nat` |  | **Novel** |
 **Synopsis:** Regime Naturality corollary: the regime partition ↓_M ⊔ ∞_M is natural in M — for every CRPT homomorphism φ : M₁ → M₂, φ maps ↓_{M₁} into ↓_{M₂} and ∞_{M₁} into ∞_{M₂}. The regime assignment is a natural transformation from the identity functor to itself.
 
@@ -1213,6 +1292,8 @@ horizon invariants proved above.
 
 *Purpose.* Fractal Structure of the Tower. This section proves that every CRPT tower is fractal: the tail Tower(M₀) starting from any level Mₙ is isomorphic (as a sequence of CRPT models) to Tower(M₀) itself. The tower is self-similar under the Lift operation.*
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.9.D1 | `Twr-Tail` | Tail_k(Tower(M)) | **Imported** |
 **Synopsis:** The k-tail Tail_k(Tower(M)) of a tower is the sub-sequence (M_k, M_{k+1}, …) starting at level k, carrying the inherited Lift transitions.
 
@@ -1226,6 +1307,8 @@ with the inherited transition maps Lift : M_{k+i} → M_{k+i+1}.
 
 ### L8.9.T1 — Tower Tail Self-Similarity
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.9.T1 | `Twr-Tail-Sim` | | **Novel** |
 **Synopsis:** The Tower Tail Self-Similarity theorem: for any n ≥ 0, the tower tail (Mₙ, Mₙ₊₁, Mₙ₊₂, ...) is isomorphic to the original tower (M₀, M₁, M₂, ...) as a sequence of CRPT models. This makes every tower level the 'starting level' of a tower isomorphic to the whole.
 
@@ -1259,6 +1342,8 @@ maps, giving an isomorphism of ω-indexed diagrams. ∎
 
 ### L8.9.D2 — CRPT-Fractal Projection System
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.9.D2 | `CRPT-Fractal` | Frac(M) | **Novel** |
 **Synopsis:** A CRPT-Fractal projection system is a projection system in which the tower construction produces a tail-self-similar tower. The defining property is that the query signature is preserved exactly under Lift (NFC Tower Invariance), which is what makes each level a 'scaled copy' of the base.
 
@@ -1287,6 +1372,8 @@ This definition adds no axiom to CRPT. It names the joint content of Lift closur
 
 ### L8.9.T2 — CRPT Tower Fractality
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.9.T2 | `Twr-Fractal` | | **Novel** |
 **Synopsis:** Every CRPT tower is fractal in the precise sense that the query signature and the structural relations of Lift(M) mirror those of M — the tower's local structure at any level replicates the structure of the base. This is not a metaphor: it is a theorem proved from the definition of Lift and the FMA construction. The fractality of the tower is what allows the self-application of Lω to close consistently.
 
@@ -1343,6 +1430,8 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 
 *Purpose.* Supplementary Structural Lemmas. This section provides formal proofs of structural properties that complete the tower theory: the properties of →_σ^{Lift}, the inclusion →_ρ ⊆ →_σ for lifted models, the pure well-foundedness of every Lift(M), the strict infiniteness of the tower, and the cardinality analysis of the query signature.*
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L8.10.L1 | `Prop-σ-Lift` | | **Novel** |
 **Synopsis:** This lemma catalogues the four key structural properties of the lifted structural relation →_σ^{Lift}: it is non-reflexive, partially symmetric (symmetric on the commutativity component, asymmetric on the reduction component), not transitively closed, and contains →_ρ^{Lift} as a subset. These properties ensure →_σ^{Lift} behaves correctly as a structural relation in Lift(M), satisfying the substrate conditions of L1.1.D1.
 
@@ -1379,6 +1468,8 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 
 ### L8.10.T1 — Lift-Red-Struc: Reduction Includes in Structure for Lift
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.10.T1 | `Lift-Red-Struc` | | **Novel** |
 **Synopsis:** The inclusion →_ρ^{Lift} ⊆ →_σ^{Lift} for the lifted model mirrors the fundamental substrate requirement →_ρ ⊆ →_σ of L1.1.D1. Every reduction step in Lift(M) is also a structural connection. This confirms that the Lift operator respects the two-relation architecture of CRPT and does not accidentally merge the distinct roles of projection and observation.
 
@@ -1402,6 +1493,8 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 
 ### L8.10.C2 — Lift-Pure-WF: Lift of Any Model is Pure WF
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L8.10.C2 | `Lift-Pure-WF` | | **Novel** |
 **Synopsis:** Regardless of whether the base model M has a non-empty persistent regime (∞_M ≠ ∅), its lift Lift(M) is always pure well-founded: ∞_{Lift(M)} = ∅. The reason is that FMA(Q_M) contains only finite words, and ρ_{Lift(M)} strictly decreases word length at each step until reaching atoms (the query signature). There are no infinite FMA-words, so no persistent orbits arise. The NWF theory of the base is absorbed into the atom set Q_M.
 
@@ -1436,6 +1529,8 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 
 ### L8.10.T2 — Tower-Inf: The CRPT Tower is Strictly Infinite
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L8.10.T2 | `Tower-Inf` | | **Novel** |
 **Synopsis:** The tower Tower(M₀) is strictly infinite: no two distinct levels Mₙ and Mₖ (n ≠ k) are isomorphic as CRPT models. The proof is by cardinality: 𝒰_{Lift(M)} = FMA(Q_M) is strictly larger than 𝒰_M when |Q_M| ≥ 2, because FMA contains all finite compositions of the query signature elements, not just the query signature itself. The tower never 'loops back' to a previously seen level.
 
@@ -1472,6 +1567,8 @@ Therefore the tower is strictly infinite. ✓  ∎
 
 ### Q_M-Card: Cardinality of the Query Signature
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L8.10.R3 | `Q_M-Card` | | **Novel** |
 **Synopsis:** The query signature Q_M may have any cardinality. For finite Q_M (|Q_M| < ω): FMA(Q_M) is countably infinite. For countably infinite Q_M: FMA(Q_M) is also countably infinite. For uncountable Q_M: FMA(Q_M) is uncountable. In all cases the tower is well-defined and all structural theorems hold; cardinality only affects the scale of the tower, not its existence or properties.
 

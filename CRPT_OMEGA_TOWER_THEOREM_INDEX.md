@@ -12,7 +12,7 @@
 ### L0 — Universal Projection Framework
 
 | Label | Short Name | Tag | Type |
-|-------|-----------|-----|------|--------|
+|-------|-----------|-----|------|
 | L0.1.D1 | Projection System | `ProjSys` | Definition |
 | L0.1.D2 | Fiber & Observable Equivalence | `Fiber` | Definition |
 | L0.1.D3 | π-Observability | `Obs_π` | Definition |
@@ -32,7 +32,7 @@
 ### L1 — CRPT Substrate, Axioms, Regimes, and Modes
 
 | Label | Short Name | Tag | Type |
-|-------|-----------|-----|------|--------|
+|-------|-----------|-----|------|
 | L1.1.D1 | CRPT Substrate | `Sub` | Definition |
 | L1.1.D2 | Normal Forms | `NF` | Definition |
 | L1.1.D3 | n-Step Reduction | `n-Step` | Definition |
@@ -54,7 +54,7 @@
 ### L2 — Projection, Regime, Depth, Canonical Form, and Fibers
 
 | Label | Short Name | Tag | Type |
-|-------|-----------|-----|------|--------|
+|-------|-----------|-----|------|
 | L2.1.D1 | Projection Operator ρ_M | `ρ_M` | Definition |
 | L2.1.D2 | Iterated Projection ρ_M^n | `ρ^n` | Definition |
 | L2.1.D3 | Fixed-Point Set Fix(ρ_M) | `Fix` | Definition |
@@ -84,7 +84,7 @@
 ### L3 — Horizon, Classification, and Persistent Canonical Invariants
 
 | Label | Short Name | Tag | Type |
-|-------|-----------|-----|------|--------|
+|-------|-----------|-----|------|
 | L3.1.D1 | Structural Horizon H_S | `H_S` | Definition |
 | L3.1.D2 | Invariant Horizon H_I | `H_I` | Definition |
 | L3.1.D3 | Kernel Congruence | `Ker-Cong` | Definition |
@@ -111,7 +111,7 @@
 ### L4 — Observer, Gateway, Valuation, Duality, Self-Projection, and Perturbation
 
 | Label | Short Name | Tag | Type |
-|-------|-----------|-----|------|--------|
+|-------|-----------|-----|------|
 | L4.1.D1 | Behavioral Functor | `Behav-F` | Definition |
 | L4.1.D2 | Point-Value Observer | `PV-Obs` | Definition |
 | L4.1.D3 | Horizon-Constrained Observer | `HC-Obs` | Definition |
@@ -132,9 +132,9 @@
 ### L5 — Model Algebra, Homomorphisms, and Model Theory
 
 | Label | Short Name | Tag | Type |
-|-------|-----------|-----|------|--------|
-| L4.8/L5.1.D1–D7 | Model Algebra Operations (∘, ∩, ×, /, ∪, Spec) | Multiple | Definitions | Novel/Imported |
-| L4.8/L5.1.T1–T5 | Algebra Law Theorems | Multiple | Theorems | Novel/Imported |
+|-------|-----------|-----|------|
+| L4.8/L5.1.D1–D7 | Model Algebra Operations (∘, ∩, ×, /, ∪, Spec) | Multiple | Definitions |
+| L4.8/L5.1.T1–T5 | Algebra Law Theorems | Multiple | Theorems |
 | L5.2.D1 | Model Homomorphism Hom | `Hom` | Definition |
 | L5.2.T1 | Mod_CRPT Category | `Mod-Cat` | Theorem |
 | L5.2.D3 | Regime-Restricted Isomorphism | `R-Iso` | Definition |
@@ -153,7 +153,7 @@
 ### L6 — Persistent Orbit Invariants, NWF Horizons, Model Selection, and Degeneracy
 
 | Label | Short Name | Tag | Type |
-|-------|-----------|-----|------|--------|
+|-------|-----------|-----|------|
 | L6.1.D1–D3 | Orbit Type (OT, OS, OC) | `OT`, `OS`, `OC` | Definitions |
 | L6.1.T1–T4 | AOI Impossibility Theorems | `AOI1`–`AOI-Mast` | Theorems |
 | L6.2.D1 | Orbit-Type Classification (AP/EP/P) | `OTC` | Definition |
@@ -174,7 +174,7 @@
 ### L7 — Categorical Collapse, Functoriality, and Model-Theory Fibration
 
 | Label | Short Name | Tag | Type |
-|-------|-----------|-----|------|--------|
+|-------|-----------|-----|------|
 | L7.1.D1 | Galois Insertion α_M ⊣ γ_M | `GI` | Definition |
 | L7.1.T1 | Galois Connection | `GC` | Theorem |
 | L7.1.C1–C3 | GC Corollaries | `GC1`–`GC3` | Corollaries |
@@ -190,7 +190,7 @@
 | L7.1.T5 | Persistent Galois Connection (graded; SC-Imp) | `GC∞` | Theorem |
 | L7.2.D1 | Category Mod_CRPT | `Mod_CRPT` | Definition |
 | L7.2.T1 | Mod_CRPT is a Category (≃-quotient hom-sets) | `Mod-Cat-Q` | Theorem |
-| L7.2.D2–D2 | ω-Category Structure / Natural Transformations | `ω-Cat`, `η-Nat` | Definitions | Reframed/Imported |
+| L7.2.D2–D2 | ω-Category Structure / Natural Transformations | `ω-Cat`, `η-Nat` | Definitions |
 | L7.2.T2 | η Composition | `η-Comp` | Theorem |
 | L7.2.T3 | Lift as Endofunctor | `Lift-Endo` | Theorem |
 | L7.2.D5 | Collapse Functor | `Coll-F` | Definition |
@@ -200,7 +200,7 @@
 ### L8 — Tower Construction and Horizontal-Vertical Duality
 
 | Label | Short Name | Tag | Type |
-|-------|-----------|-----|------|--------|
+|-------|-----------|-----|------|
 | L8.1.D1 | Free Monoidal Algebra FMA | `FMA` | Definition |
 | L8.1.L1 | FMA Well-Foundedness | `FMA-WF` | Lemma |
 | L8.1.L2 | FMA Unique Decomposition | `FMA-UD` | Lemma |
@@ -231,7 +231,7 @@
 | L8.6.D1–D2 | Tower Image / Discriminability | `Twr-Img`, `Twr-Disc` | Definitions |
 | L8.6.T6 | Discriminability Survival | `Disc-Surv` | Theorem |
 | L8.6.T7 | Tower Abstraction Thesis | `Twr-AThesis` | Theorem |
-| L8.7.D2–D2 | Tower ω-Category / ω-Cat Structure | `Twr-ωCat`, `ω-Cat-Str` | Definitions | Novel/Imported |
+| L8.7.D2–D2 | Tower ω-Category / ω-Cat Structure | `Twr-ωCat`, `ω-Cat-Str` | Definitions |
 | L8.7.T2 | Self-Ontological Soundness | `Self-Ont` | Theorem |
 | L8.7.T1 | Tower ω-Category Theorem | `Twr-ωCat-T` | Theorem |
 | L8.8.T1 | Axiom Completeness-Consistency | `Ax-CC` | Theorem |
@@ -242,17 +242,17 @@
 | L8.9.T1 | Tower Tail Self-Similarity | `Twr-Tail-Sim` | Theorem |
 | L8.9.D2 | CRPT-Fractal Projection System | `CRPT-Fractal` | Definition |
 | L8.9.T2 | Every CRPT Tower is Fractal | `Twr-Fractal` | Theorem |
-| **L8.10.L1** | **Properties of →_σ^{Lift}** | **`Prop-σ-Lift`** | **Lemma** | **Novel ** |
-| **L8.6.T1** | **→_ρ^{Lift} ⊆ →_σ^{Lift}** | **`Lift-Red-Struc`** | **Theorem** | **Novel ** |
-| **L8.6.C1** | **Substrate Compatibility of Lift** | — | **Corollary** | **Novel ** |
-| **L8.10.C2** | **Lift Creates Pure WF Models** | **`Lift-Pure-WF`** | **Corollary** | **Novel ** |
-| **L8.6.T3** | **Tower is Strictly Infinite** | **`Tower-Inf`** | **Theorem** | **Novel ** |
-| **L8.10.R3** | **Q_M Cardinality** | **`Q_M-Card`** | **Remark** | **Novel ** |
+| **L8.10.L1** | **Properties of →_σ^{Lift}** | **`Prop-σ-Lift`** | **Lemma** |
+| **L8.6.T1** | **→_ρ^{Lift} ⊆ →_σ^{Lift}** | **`Lift-Red-Struc`** | **Theorem** |
+| **L8.6.C1** | **Substrate Compatibility of Lift** | — | **Corollary** |
+| **L8.10.C2** | **Lift Creates Pure WF Models** | **`Lift-Pure-WF`** | **Corollary** |
+| **L8.6.T3** | **Tower is Strictly Infinite** | **`Tower-Inf`** | **Theorem** |
+| **L8.10.R3** | **Q_M Cardinality** | **`Q_M-Card`** | **Remark** |
 
 ### Lω — Meta-CRPT: CRPT Applied to Itself
 
 | Label | Short Name | Tag | Type |
-|-------|-----------|-----|------|--------|
+|-------|-----------|-----|------|
 | Lω.1.D1 | Self-Substrate 𝒰_CRPT | `U_CRPT` | Definition |
 | Lω.1.T1 | Self-Substrate is CRPT Model | `Self-Model` | Theorem |
 | Lω.2.T1 | Self-Horizon Classification | `Self-Horiz` | Theorem |
@@ -262,10 +262,10 @@
 | Lω.6.T1 | Anchor Fractality Theorem | `Anchor-Fractal` | Theorem |
 | Lω.6.C1 | Fractal Claim is Internal | `Fractal-Internal` | Corollary |
 | Lω.6.C2 | No Internal ω-State Introduced | `No-Internal-ω-State` | Corollary |
-| **Lω.7.L1** | **→_{ρ_CRPT} is Acyclic** | **`CRPT-Acyclic`** | **Lemma** | **Novel ** |
-| **Lω.7.R1** | **Self_CRPT Universe is Finite** | **`Self-CRPT-Finite`** | **Remark** | **Novel ** |
-| **Lω.7.T1** | **∞_{CRPT} = ∅** | **`CRPT-WF`** | **Theorem** | **Novel ** |
-| **Lω.7.T2** | **L1.1.D1 is the Unique Projective Fixed Point** | **`Lω-FixedPt-Unique`** | **Theorem** | **Novel ** |
+| **Lω.7.L1** | **→_{ρ_CRPT} is Acyclic** | **`CRPT-Acyclic`** | **Lemma** |
+| **Lω.7.R1** | **Self_CRPT Universe is Finite** | **`Self-CRPT-Finite`** | **Remark** |
+| **Lω.7.T1** | **∞_{CRPT} = ∅** | **`CRPT-WF`** | **Theorem** |
+| **Lω.7.T2** | **L1.1.D1 is the Unique Projective Fixed Point** | **`Lω-FixedPt-Unique`** | **Theorem** |
 
 > **Bold rows** indicate theorems added at the Lω level.
 

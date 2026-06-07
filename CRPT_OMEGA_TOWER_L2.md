@@ -70,6 +70,8 @@ imposes no constraint. It is not a condition on ρ_M.
 ### Iteration
 
 ### Strategy Iteration ρ_Mⁿ
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L2.1.D2 | `ρ^n` | ρ_M^n | **Imported** |
 **Synopsis:** The n-fold application ρ_M^n(x) is the result of applying the projection operator n times in sequence starting from x. For x ∈ ↓_M, there exists n = d_M(x) such that ρ_M^n(x) ∈ Fix(ρ_M). This iterated application is the constructive definition of canonical form computation.
 
@@ -84,6 +86,8 @@ For n ∈ ℕ:
 ### Fixpoints
 
 ### Fixpoint Set
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L2.1.D3 | `Fix` | Fix(ρ_M) | **Reframed** |
 **Synopsis:** The fixed-point set Fix(ρ_M) contains all elements that the projection operator maps to themselves. Under PA-Fix, Fix(ρ_M) equals the set of normal forms NF(→_ρ). Fixed points are the terminal objects of the projection operator — they represent elements that have reached their canonical position.
 
@@ -94,6 +98,8 @@ Fix(ρ_M) := { x ∈ 𝒰_M | ρ_M(x) = x }
 ```
 
 ### NF ⊆ Fix
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.1.T1 | `NF⊆Fix` |  | **Imported** |
 **Synopsis:** Every normal form is a ρ_M-fixpoint: if x has no outgoing →_ρ-edge then C1 forces ρ_M(x) = x, so NF(→_ρ) ⊆ Fix(ρ_M). (PA-Fix gives the converse, hence equality.)
 
@@ -106,6 +112,8 @@ x →_ρ ρ_M(x) cannot hold (no outgoing →_ρ-edges), we must have ρ_M(x) = 
 So x ∈ Fix(ρ_M). ∎
 
 ### Fix = NF
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.1.T2 | `Fix=NF` | | **Novel** |
 **Synopsis:** Under PA-Fix, the converse also holds: every fixed point is a normal form. This axiom closes the equivalence Fix(ρ_M) = NF(→_ρ), making the two notions interchangeable in any CRPT model satisfying PA-Fix.
 
@@ -117,6 +125,8 @@ Fix(ρ_M) = NF(→_ρ).
 By C1, ρ_M(x) = x requires NF(x). Hence x ∈ NF(→_ρ). ∎
 
 ### Dead-End Lemma
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.1.T3 | `Dead-End` | | **Novel** |
 **Synopsis:** Dead-end fixed points are fixed points that are reachable only from themselves — no other element's projection orbit passes through them. These are the 'absorbing' or 'sink' nodes of the reduction graph. Classifying fixed points into dead-ends and non-dead-ends is relevant for the NFC fiber structure.
 
@@ -147,6 +157,8 @@ established in §L2.1–5. The concept of *Galois insertion* is imported from Co
 Cousot [1977] L2.2.
 
 ### Recursive Projection
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L2.1.D4 | `Rec-Proj` | CFix(ρ_M) | **Novel** |
 **Synopsis:** The canonical fixpoint map CFix(ρ_M)(x) sends each convergent element x to the unique fixed point that its projection orbit reaches. It is equivalent to CNF_M(x) and provides an alternative notation emphasising the fixpoint (rather than the canonical form) perspective.
 
@@ -168,6 +180,8 @@ Nipkow [1998] §2.1 Thm. 2.1.15). The NWF analog CNF∞_M(x) for x ∈ ∞_M is 
 *co-recursive projection* (`CNF∞-Def` (L3.3.D6)).
 
 ### Fixpoints are ρ_M-stable
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L2.1.L1 | `Fix-Stab` | | **Imported** |
 **Synopsis:** Fixed points are stable under reduction: if x is a fixed point and x reduces to y, then y = x. This is a standard ARS result that follows from the definition of fixed point and the determinism condition C1. It ensures that fixed points cannot 'escape' by being reduced.
 
@@ -180,6 +194,8 @@ and all k ∈ ℕ: ρ_M^k(f) = f.
 ρ_M^{k+1}(f) = ρ_M(ρ_M^k(f)) = ρ_M(f) = f [IH, then f ∈ Fix(ρ_M)]. ∎
 
 ### Unique Reachable Fixpoint
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L2.1.L2 | `UF` | | **Novel** |
 **Synopsis:** Under PA-WN and scoped confluence, every convergent element x has a unique fixed point that its projection orbit reaches. Two different projection paths from x cannot lead to two different fixed points. This is the uniqueness half of the canonical form theorem.
 
@@ -232,6 +248,8 @@ proved above, and Fix-Stab states ρ_M^j(f') = f' for all f' ∈ Fix(ρ_M), j �
 In every admissible case f = CFix(ρ_M)(x). ∎
 
 ### Recursive Projection = Abstraction
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.1.T4 | `RP=Abs` | | **Novel** |
 **Synopsis:** Recursive Projection equals Abstraction: the canonical fixpoint map CFix(ρ_M) is exactly the abstraction map α_M of the Galois insertion α_M ⊣ γ_M proved in L7. Computing the canonical form by iterating the projection operator is the same operation as abstracting an element to its equivalence class.
 
@@ -309,7 +327,9 @@ Pre_ρ(X) := { x ∈ 𝒰_M | ρ_M(x) ∈ X }
 the set of elements whose ρ_M-image lies in X.
 
 ### Regime Operators T_conv and T_pers
-| **Definition** | L2.2.D2 | `T^{conv` | pers}, T^{conv}, T^{pers} | **Reframed** |
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Definition** | L2.2.D2 | `T^{conv/pers}` | T^{conv}, T^{pers} | **Reframed** |
 **Synopsis:** Convergent and persistent templates partition the predecessor set into elements coming from ↓_M (convergent predecessors, T^{conv}) and elements coming from ∞_M (persistent predecessors, T^{pers}). This typed predecessor partition connects the regime structure to the fiber structure underlying the horizon predicates.
 
 Tarski [1955]; Cousot & Cousot [1977] POPL
@@ -322,6 +342,8 @@ T_{ρ,M}^{pers}(X) := (𝒰_M ∖ Fix(ρ_M)) ∩ Pre_ρ(X) (persistent regime op
 ```
 
 ### Monotonicity
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L2.2.L1 | `L-Mono` |  | **Imported** |
 **Synopsis:** Level monotonicity: the derivation height d_M is strictly monotone under the projection operator on ↓_M: if x ∈ ↓_M and x is not a fixed point, then d_M(ρ_M(x)) = d_M(x) − 1 < d_M(x). Each projection step strictly decreases derivation height, ensuring termination.
 
@@ -333,6 +355,8 @@ T_{ρ,M}^{conv} and T_{ρ,M}^{pers} are monotone.
 preserve inclusion. Hence both operators are monotone. ∎
 
 ### Native Regime Stratification
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L2.2.D3 | `Reg-Strat` | | **Novel** |
 **Synopsis:** Native regime stratification is the methodological principle of treating the two regimes with different proof methods: induction for convergent elements (using derivation height as the induction measure) and coinduction for persistent elements (using PA-CoInd / the asymptotic orbit invariant). All proofs in L3–L8 follow this regime-stratified strategy implicitly.
 
@@ -357,6 +381,8 @@ A substrate (𝒰_M, →_ρ, →_σ, ρ_M) satisfies *native regime stratificati
 ### Fixed-Point Definitions
 
 ### Convergent Regime ↓_M
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L2.2.D4 | `↓_M` | ↓_M | **Novel** |
 **Synopsis:** The convergent regime ↓_M contains every element of 𝒰_M whose ρ_M-orbit eventually reaches a fixed point in finitely many steps. Elements in ↓_M are the well-founded part of the model — they have canonical forms, derivation heights, and participate in the six-class partition of L3.
 
@@ -372,6 +398,8 @@ The *convergent regime* (elements with finite abstraction depth) is the least fi
 x ∈ ↓_M iff some iterate of ρ_M(x) reaches a fixpoint. The notation ↓_M ("downward") emphasizes the direction of abstraction: elements progress downward through finite abstraction steps toward their canonical form.
 
 ### Persistent Regime ∞_M
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L2.2.D5 | `∞_M` | ∞_M | **Novel** |
 **Synopsis:** The persistent regime ∞_M is the complement of ↓_M: elements whose ρ_M-orbit never terminates. These are the non-well-founded elements. They cannot be assigned a finite derivation height, and their 'canonical form' (if any) is defined coinductively via the persistent canonical form CNF∞_M of L3.3.
 
@@ -404,6 +432,8 @@ The regime operators use Fix(ρ_M), not NF(→_ρ), because the partition is def
 ### Closure and Partition Theorems
 
 ### ↓_M is ρ_M-Closed
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.2.T1 | `↓-Closed` |  | **Novel** |
 **Synopsis:** The convergent regime ↓_M is closed under the projection operator: if x ∈ ↓_M and x reduces to y, then y ∈ ↓_M with d_M(y) = d_M(x) − 1. Reduction always moves toward the fixed-point set, never away from it. This is the monotone-depth property of the projection operator.
 
@@ -416,6 +446,8 @@ Tarski [1955]
 so ρ_M(x) ∈ ↓_M. ∎
 
 ### ∞_M is ρ_M-Closed
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.2.T2 | `∞-Closed` |  | **Novel** |
 **Synopsis:** The persistent regime ∞_M is also closed under the projection operator: if x ∈ ∞_M then ρ_M(x) ∈ ∞_M. Once an orbit enters the persistent regime it never leaves. This closure makes ↓_M and ∞_M invariant under the projection operator.
 
@@ -427,6 +459,8 @@ Aczel [1988] Ch. 1
 But then m+1 witnesses x ∈ ↓_M, contradicting x ∈ ∞_M. ∎
 
 ### Partition
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.2.T3 | `Part` |  | **Novel** |
 **Synopsis:** The regime partition theorem: 𝒰_M = ↓_M ⊔ ∞_M is an exhaustive disjoint partition. Every element is either in the convergent regime or the persistent regime, with no overlap. This follows from the definition of ↓_M and ∞_M as complements.
 
@@ -443,6 +477,8 @@ no axiom. It is stated as a theorem (rather than a remark) only because it is a
 named result that appears in cross-references.
 
 ### PA-WN Gives Terminating-Path Witnesses
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.2.T4 | `PA-WN-Tot` |  | **Imported** |
 **Synopsis:** Under PA-WN, every element has a terminating path to a normal form under the reduction relation. This is a direct consequence of PA-WN and confirms that the convergent regime is total when ∞_M = ∅.
 
@@ -455,6 +491,8 @@ terminating →_ρ-path from x to some normal form y. No additional derivation i
 needed. ∎
 
 ### PA-NWF ⟹ νT_{ρ,M} ≠ ∅
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.2.T5 | `PA-NWF-NE` |  | **Imported** |
 **Synopsis:** Under PA-NWF, the persistent regime ∞_M is non-empty. This is the minimal content of the non-well-founded axiom.
 
@@ -477,6 +515,8 @@ continuously reveals or cycles through distinctions).
 ### The Two-Regime Completeness Theorem
 
 ### Regime Completeness — Two Regimes Exactly
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.2.T6 | `Reg-Compl` |  | **Novel** |
 **Synopsis:** Under PA-WN, every element has a terminating path to a normal form. This is a direct restatement of PA-WN: the axiom asserts that the convergent regime is all of 𝒰_M when ∞_M = ∅, or that every element in ↓_M has a terminating reduction path.
 
@@ -525,6 +565,8 @@ existing regime, determined by CFix(ρ_M) (convergent case) or orbit containment
 (persistent case). Therefore exactly two regimes exist on any fixed model M. ∎
 
 ### Regime Notation - Canonical
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.2.R1 | `Reg-Nota` |  | **Novel** |
 **Synopsis:** The canonical regime notation: ↓_M (convergent) and ∞_M (persistent) are the primary CRPT notations. The fixed-point theory notations μT_{ρ,M} and νT_{ρ,M} are alternative formal definitions equivalent to ↓_M and ∞_M respectively, used when the fixed-point theoretic perspective clarifies a proof.
 
@@ -541,6 +583,8 @@ Formal notation in proofs (when fixed-point theory requires precision):
 The regime symbols are canonical: ↓_M and ∞_M are used throughout CRPT.
 
 ### Vertical vs Horizontal Infinity: Why σ-Structure is NOT a Third Regime
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.2.R2 | `Vert-Horiz` |  | **Novel** |
 **Synopsis:** This remark establishes that the structural relation →_σ does not create a third regime. Elements connected horizontally (within the same fiber via →_σ) are already classified as convergent or persistent by their position relative to Fix(ρ_M). Horizontal connectivity is not a new regime; it is a within-regime structural property.
 
@@ -679,6 +723,8 @@ No appeal to PA-WN or PA-NWF is needed — the partition is a property of the
 definitions, not of any axiom. ∎
 
 ### Axiom Coverage
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.2.T9 | `Ax-Cov` |  | **Novel** |
 **Synopsis:** The axiom coverage theorem: the convergent-regime axioms (PA-WN, PA-Conf, PA-Fix) and persistent-regime axioms (PA-NWF, PA-CoInd, PA-Prod, PA-WN_top, PA-Bisim, PA-Reach), together with the Gateway structure (→_σ interface), cover all structurally distinct cases of the regime partition.
 
@@ -721,6 +767,8 @@ The three categories are exhaustive because every element of 𝒰 is in ↓_M or
 (`Reg-Compl` (L2.2.T6)), and every property either concerns one regime or their interaction. ∎
 
 ### No Third Paradigm Within the Substrate Interface
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.2.T10 | `No-3rd` |  | **Novel** |
 **Synopsis:** The no-third-regime theorem: there is no consistent axiom system that would introduce a third regime beyond ↓_M and ∞_M. Any proposed third class 𝒫_M would either be a subset of ↓_M, a subset of ∞_M, or empty — the regime dichotomy is logically exhaustive.
 
@@ -788,6 +836,8 @@ x ≤_ρ y :⟺ ∃k ∈ ℕ : ρ_M^k(x) = y
 the reflexive-transitive relation "y is reachable from x by ρ_M iteration."
 
 ### ≤_ρ is a Partial Order under PA-Conf
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L2.3.L1 | `≤ρ-PO` |  | **Imported** |
 **Synopsis:** The derivation-height order ≤_ρ on ↓_M is a partial order: it is reflexive (d_M(x) ≤ d_M(x)), antisymmetric (x ≤_ρ y and y ≤_ρ x implies d_M(x) = d_M(y)), and transitive. Well-foundedness follows from the fact that d_M takes values in ℕ, which has no infinite descending chains.
 
@@ -816,6 +866,8 @@ downstream uses (the reachability poset interacts with Church-Rosser uniqueness 
 ### Rank Function Definition
 
 ### Rank Function / Derivation Height, notation d_M
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L2.3.D2 | `d_M` | d_M | **Reframed** |
 **Synopsis:** The derivation height d_M(x) counts the minimum ρ_M-steps needed to reach Fix(ρ_M) from x. Depth 0 = already a fixed point; depth 1 = boundary layer (H_O = ⊤ in L3). This gives ↓_M a well-founded rank ordering used throughout the horizon theory.
 
@@ -853,6 +905,8 @@ In the native regime-stratified setting (L1.2–L1.5, `Reg-Strat` (L2.2.D3)), th
 `d-WD` (L2.3.T1) transfers: derivation height is well-defined on all of 𝒰, with ℕ-values on ↓_M and ∞ on ∞_M. The model includes the persistent regime via this extension.
 
 ### d_M is Well-Defined on μT_{ρ,M}
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.3.T1 | `d-WD` |  | **Imported** |
 **Synopsis:** The derivation height d_M(x) is well-defined on the convergent regime: for every x ∈ ↓_M the set {n | ρ_M^n(x) ∈ Fix(ρ_M)} is non-empty, so its minimum d_M(x) ∈ ℕ exists.
 
@@ -865,6 +919,8 @@ non-empty. ℕ is well-ordered, so every non-empty subset of ℕ has a minimum.
 Therefore min S(x) exists and equals d_M(x). ∎
 
 ### Strict Depth Decrease
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.3.T2 | `Depth-Dec` |  | **Imported** |
 **Synopsis:** Strict depth decrease: for a non-fixpoint convergent element, one projection step reduces derivation height by exactly one — d_M(ρ_M(x)) = d_M(x) − 1. The height strictly decreases along every ρ_M-orbit until the fixpoint is reached.
 
@@ -881,6 +937,8 @@ Suppose d_M(ρ_M(x)) = j < k-1. Then ρ_M^j(ρ_M(x)) = ρ_M^{j+1}(x) ∈ Fix(ρ_
 with j+1 < k. This contradicts k = min S(x). So d_M(ρ_M(x)) = k-1. ∎
 
 ### Fixpoints have Depth Zero
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.3.T3 | `Fix-D0` |  | **Imported** |
 **Synopsis:** Fixpoints have depth zero: d_M(x) = 0 for every x ∈ Fix(ρ_M), since ρ_M^0(x) = x already lies in Fix(ρ_M). This is the base case of the derivation-height clock.
 
@@ -891,6 +949,8 @@ For x ∈ Fix(ρ_M): d_M(x) = 0.
 *Proof.* ρ_M⁰(x) = x ∈ Fix(ρ_M), so 0 ∈ S(x) and d_M(x) = min S(x) = 0. ∎
 
 ### d_M is a Well-Founded Measure on μT_{ρ,M}
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L2.3.C1 | `d-WFM` |  | **Imported** |
 **Synopsis:** The derivation height induces a well-founded measure on ↓_M: every non-empty subset of ↓_M has a minimal element under ≤_ρ (namely, any element with the minimum d_M value in the subset). This makes structural induction on d_M valid.
 
@@ -951,6 +1011,8 @@ is injective on equivalence classes, ensuring that no discernible information is
 ### Existence and Uniqueness
 
 ### CNF Existence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.4.T1 | `CNF-Ex` |  | **Imported** |
 **Synopsis:** Canonical form existence: every convergent element reaches a normal form — for x ∈ ↓_M, ρ_M^{d_M(x)}(x) ∈ NF(→_ρ). Hence the canonical form CFix(ρ_M)(x) exists and is a genuine normal form.
 
@@ -965,6 +1027,8 @@ Fix(ρ_M) = NF(→_ρ) by `Fix=NF` (L2.1.T2). So ρ_M^n(x) ∈ NF(→_ρ). ∎
 C1 condition). So ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M) = NF(→_ρ) in all settings.
 
 ### CNF Uniqueness — Orbit-Scoped Uniqueness
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.4.T2 | `CNF-Uniq` | | **Novel** |
 **Synopsis:** Under PA-WN and scoped confluence, the canonical form map CNF_M(x) = ρ_M^{d_M(x)}(x) is the unique element of Fix(ρ_M) reachable from x. Two elements x, y have the same canonical form if and only if they are observationally equivalent (x ≃_M y).
 
@@ -990,6 +1054,8 @@ for the abstract reduction system (𝒰_M, →_ρ). Under PA-WN + PA-Conf, CFix(
 well-defined total function μT_{ρ,M} → NF(→_ρ).
 
 ### CNF Stability
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.4.T3 | `CNF-Stab` |  | **Imported** |
 **Synopsis:** Canonical form stability (idempotence): applying the canonical form map to a canonical form returns it unchanged — CFix(ρ_M)(CFix(ρ_M)(x)) = CFix(ρ_M)(x). Canonical forms are fixed points of the abstraction map.
 
@@ -1002,6 +1068,8 @@ so ρ_M(CFix(ρ_M)(x)) = CFix(ρ_M)(x). Then d_M(CFix(ρ_M)(x)) = 0 (`Fix-D0` (L
 CFix(ρ_M)(CFix(ρ_M)(x)) = ρ_M⁰(CFix(ρ_M)(x)) = CFix(ρ_M)(x). ∎
 
 ### of the Church-Rosser Theorem
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L2.4.C1 | `CR-Cor` |  | **Imported** |
 **Synopsis:** The canonical representative corollary: for each fiber NFC_M(f), the element f itself is the canonical representative — the unique element of NFC_M(f) ∩ Fix(ρ_M). The fixed point f is simultaneously a member of its own fiber and the fiber's canonical form.
 
@@ -1023,6 +1091,8 @@ immediately from the definitions and the Church-Rosser theorem (`CNF-Uniq` (L2.4
 All ingredients are established in §L1.2–L1.5–6. No new axioms are introduced.
 
 ### Level-0 Abstraction
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L2.4.D2 | `Abs-L0` |  | **Novel** |
 **Synopsis:** The abstraction quotient at L2 (restated from L0): the map x ↦ NFC_M(CNF_M(x)) sends each element to its fiber equivalence class. This is the same construction as the L0 quotient 𝒰/≃_π instantiated to the CRPT projection operator.
 
@@ -1037,6 +1107,8 @@ Abs_M(x) := CFix(ρ_M)(x)
 where CFix(ρ_M) is the canonical normal form map of `Rec-Proj` (L2.1.D4).
 
 ### Abstraction = Recursive Projection
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.4.T4 | `Abs=RP` |  | **Novel** |
 **Synopsis:** Abstraction equals recursive projection: the abstraction map Abs_M(x) is computed by iterating ρ_M — ρ_M^{d_M(x)}(x) on ↓_M (reaching the fixpoint) and lim_{n→∞} ρ_M^n(x) on ∞_M (the topological limit). Abstraction is recursive projection to the canonical form.
 
@@ -1079,6 +1151,8 @@ canonical representative. Together they yield the abstraction map Abs_M = CFix(�
 ### WF-Canon: Complete Proofs
 
 ### WF-Canon Complete Proof
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.4.T5 | `WF-Canon-Pf` |  | **Novel** |
 **Synopsis:** The well-founded canonicalisation proof: under PA-WN and scoped confluence, the canonical form map CNF_M is well-defined on all of ↓_M. The proof proceeds by well-founded induction on derivation height: the base case (fixed points) is immediate, and the inductive step uses scoped confluence to show all reduction paths from x agree on their canonical form.
 
@@ -1152,6 +1226,8 @@ the canonical pre-image (normal-form or limit-point fiber) of y: the set of all 
 Together: NFC_M(y) partitions 𝒰 by destination (normal forms or limits).
 
 ### Church-Rosser Orbit Equivalence, notation ≃_M
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L2.5.D2 | `≃_M` | ≃_M | **Novel** |
 **Synopsis:** Observable (orbit) equivalence: x ≃_M y holds when x and y share the same canonical normal form / limit, CFix(ρ_M)(x) = CFix(ρ_M)(y). It is the regime-agnostic equivalence relating elements indistinguishable by their canonical form, on both ↓_M and ∞_M.
 
@@ -1166,6 +1242,8 @@ x and y are *orbit-equivalent* if they have the same canonical normal form (or l
 *Remark.* Under PA-Conf, this definition is equivalent to the orbit-coincidence characterization (`CNF=CR` (L2.5.T2)), and it extends directly to the native regime-stratified setting. ≃_M is regime-agnostic: it works identically on both finitary (↓_M) and topological (∞_M) regimes.
 
 ### ≃_M is an Equivalence Relation
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.5.T1 | `≃-Eq` |  | **Novel** |
 **Synopsis:** ≃_M is an equivalence relation: observable equivalence is reflexive, symmetric, and transitive on 𝒰_M — immediate from equality of canonical forms CFix(ρ_M).
 
@@ -1179,6 +1257,8 @@ Symmetry: if CFix(ρ_M)(x) = CFix(ρ_M)(y), then CFix(ρ_M)(y) = CFix(ρ_M)(x). 
 Transitivity: if CFix(ρ_M)(x) = CFix(ρ_M)(y) and CFix(ρ_M)(y) = CFix(ρ_M)(z), then CFix(ρ_M)(x) = CFix(ρ_M)(z). ✓ ∎
 
 ### Orbit-Coincidence Biconditional under PA-WN + PA-Conf
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L2.5.L1 | `Orb-Bic` |  | **Novel** |
 **Synopsis:** Orbit-coincidence biconditional: for convergent x, y, they have the same canonical form iff their orbits reach a common reduct — CFix(ρ_M)(x) = CFix(ρ_M)(y) ⟺ ∃z with x →_ρ* z and y →_ρ* z. This is the Church-Rosser characterization underlying ≃_M.
 
@@ -1195,6 +1275,8 @@ CFix(ρ_M)(x) = CFix(ρ_M)(y) ⟺ ∃z ∈ 𝒰 : x →_ρ* z ∧ y →_ρ* z
 (⇐) Let z satisfy x →_ρ* z and y →_ρ* z. By PA-WN, pick c₁ ∈ NF(→_ρ) with z →_ρ* c₁; composing paths gives x →_ρ* c₁ and y →_ρ* c₁. Since x →_ρ* CFix(ρ_M)(x) (by `Rec-Proj` (L2.1.D4)) and CFix(ρ_M)(x) ∈ NF(→_ρ), PA-Conf applied to x yields w with CFix(ρ_M)(x) →_ρ* w and c₁ →_ρ* w. Both CFix(ρ_M)(x) and c₁ are normal forms, so they cannot reduce further; hence w = CFix(ρ_M)(x) = c₁. By the identical argument applied to y, CFix(ρ_M)(y) = c₁. Therefore CFix(ρ_M)(x) = CFix(ρ_M)(y). ✓ ∎
 
 ### CNF-Fiber = Church-Rosser Quotient
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L2.5.T2 | `CNF=CR` | | **Novel** |
 **Synopsis:** The canonical representative fiber theorem: CNF_M(x) = CNF_M(y) if and only if x ≃_M y. This is the fundamental connection between the canonical form computation and observational equivalence. The canonical form map is exactly the quotient map from 𝒰_M to its observational equivalence classes.
 
@@ -1209,6 +1291,8 @@ That is, the CNF-equality relation ≃_M (`≃_M` (L2.5.D2)) coincides with the 
 *Proof.* x ≃_M y iff CFix(ρ_M)(x) = CFix(ρ_M)(y) by `≃_M` (L2.5.D2). By `Orb-Bic` (L2.5.L1), CFix(ρ_M)(x) = CFix(ρ_M)(y) iff ∃z ∈ 𝒰 : x →_ρ* z ∧ y →_ρ* z. The composition of these equivalences gives the stated biconditional. ∎
 
 ### Partition into NFC Classes — Native Form
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L2.5.C1 | `NFC-Part-NM` |  | **Novel** |
 **Synopsis:** The normal-form fiber partition at L2: the collection {NFC_M(f) | f ∈ Fix(ρ_M)} is a partition of ↓_M. Non-emptiness: each f ∈ NFC_M(f). Disjointness: NFC_M(f₁) ∩ NFC_M(f₂) = ∅ when f₁ ≠ f₂. Exhaustiveness: every x ∈ ↓_M belongs to NFC_M(CNF_M(x)). The index set of this partition is Fix(ρ_M) = Q_M.
 

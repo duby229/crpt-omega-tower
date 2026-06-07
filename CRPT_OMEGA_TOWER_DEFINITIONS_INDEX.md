@@ -30,7 +30,7 @@
 | ≈ | Bisimilarity relation | L1.1.D7 | L1 | Coinductive greatest fixed point |
 | ≈_CRPT | Bisimilarity in self-application | Lω.1.D1 | Lω | |
 | = | Mathematical identity | (standard) | All | Distinct from ≃_M |
-| Fix(ρ_M) | Fixed-point set of ρ_M | L2.1.D3 | L2 | {x | ρ_M(x) = x} |
+| Fix(ρ_M) | Fixed-point set of ρ_M | L2.1.D3 | L2 | {x \| ρ_M(x) = x} |
 | CNF_M(x) | Canonical normal form of x in M | L2.4.D1 | L2 | Endpoint of ρ_M-orbit |
 | CFix(ρ_M)(x) | Canonical fixpoint of x | L2.1.D4 | L2 | = CNF_M(x) in deterministic case |
 | NFC_M(f) | Normal-form fiber of f in M | L2.5.D1 | L2 | {x ∈ 𝒰_M \| CNF_M(x) = f} |

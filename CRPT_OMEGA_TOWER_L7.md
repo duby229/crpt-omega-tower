@@ -34,6 +34,8 @@ general order-theoretic setting is required because the posets are the model-spe
 ρ_M-reachability order and the degenerate equality order on fixpoints.
 
 ### Galois Connection — Full Biconditional
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.1.T1 | `GC` |  | **Novel** |
 **Synopsis:** The Galois Connection theorem establishes the adjointness α_M ⊣ γ_M: the abstraction map α_M and concretisation map γ_M satisfy x ≤ γ_M(α_M(x)) and α_M(γ_M(f)) = f for all x ∈ 𝒰_M and f ∈ Q_M. This means abstracting and concretising always produces something above x in the reduction order, and the round-trip concretisation-then-abstraction is the identity.
 
@@ -53,6 +55,8 @@ of the fixpoint reached), and C1 (Step-or-Fix property). No additional structure
 is required. ∎
 
 ### GC1 — Retraction
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L7.1.C1 | `GC1` |  | **Novel** |
 **Synopsis:** Corollary: the abstraction map α_M is surjective — every element of Q_M is the canonical form of some element of 𝒰_M. This follows immediately from the Galois connection: α_M ∘ γ_M = id_{Q_M}.
 
@@ -64,6 +68,8 @@ is required. ∎
 k = 0 witnesses ρ_M^0(f) = f), so CFix(ρ_M)(f) = f. Thus α_M(γ_M(f)) = CFix(ρ_M)(f) = f. ∎
 
 ### GC2 — Upper Adjunction
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L7.1.C2 | `GC2` |  | **Novel** |
 **Synopsis:** Corollary: the concretisation map γ_M is injective — distinct elements of Q_M give distinct canonical representatives in 𝒰_M. No two fiber classes share a canonical representative.
 
@@ -77,6 +83,8 @@ x ≤_ρ CFix(ρ_M)(x), so ∃k = d_M(x): ρ_M^k(x) = CFix(ρ_M)(x), giving x �
 By `≃_M` (L2.5.D2), x ≃_M CFix(ρ_M)(x) = γ_M(α_M(x)). ∎
 
 ### GC3 — Preserves Equivalence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L7.1.C3 | `GC3` |  | **Novel** |
 **Synopsis:** Corollary: the unit of the Galois connection η_x = γ_M(α_M(x)) satisfies η_x ≃_M x — the canonical representative of x's fiber class is observationally equivalent to x. The round-trip abstraction-then-concretisation preserves observational equivalence.
 
@@ -95,6 +103,8 @@ strictly stronger than the three corollaries individually.
 ### The Collapse Map as Epimorphism and Kernel Structure
 
 ### Canonical Epimorphism / Quotient Projection
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L7.1.D2 | `Quot-Proj` | π_M | **Reframed** |
 **Synopsis:** The quotient projection π_M : 𝒰_M → Q_M sends each element to its fiber equivalence class. It is surjective (every class has at least one element), and its fibers are exactly the normal-form fibers NFC_M(f). This is the CRPT instantiation of the standard quotient map.
 
@@ -107,6 +117,8 @@ The *canonical quotient projection* is the epimorphism:
 where Q_M := ↓_M/≃_M = {NFC_M(f) | f ∈ Fix(ρ_M)} is the **abstraction quotient**.
 
 ### π_M is Surjective / Epic
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L7.1.L1 | `π-Sur` |  | **Novel** |
 **Synopsis:** Surjectivity of the quotient projection: every element of Q_M = ↓_M/≃_M is the image of at least one element of 𝒰_M under π_M. This is immediate from the definition of the quotient.
 
@@ -116,6 +128,8 @@ where Q_M := ↓_M/≃_M = {NFC_M(f) | f ∈ Fix(ρ_M)} is the **abstraction quo
 F ∈ Q_M, there exists x ∈ ↓_M with π_M(x) = F (choose any x ∈ F).
 
 ### Kernel of Epimorphism / Fiber Characterisation
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.1.T2 | `Ker-Fib` | | **Novel** |
 **Synopsis:** The Kernel Fibration theorem establishes that the kernel of the quotient projection π_M — the equivalence relation ker(π_M) = {(x,y) | π_M(x) = π_M(y)} = ≃_M — is a CRPT fibration: the canonical projection on fibers is itself a CRPT projection operator on the quotient. This makes the quotient structure a genuine CRPT model.
 
@@ -134,6 +148,8 @@ For each f ∈ Fix(ρ_M), the preimage fiber is:
 ```
 
 ### Abstraction Quotient as Fiber Space
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L7.1.D3 | `Ab-Quot` | Q_M | **Novel** |
 **Synopsis:** The abstraction quotient Q_M = ↓_M/≃_M is the set of observational equivalence classes of convergent elements. Each class [x] ∈ Q_M is a normal-form fiber NFC_M(f) for some f ∈ Fix(ρ_M). Q_M is the universe of Lift(M): its elements become the atomic generators of the free monoidal algebra FMA(Q_M).
 
@@ -151,6 +167,8 @@ consisting of all convergent elements with the same canonical abstraction f.
 ### The Duality: Abstraction Equals Collapse / Functional Representation
 
 ### Abstraction-Collapse Duality / Functorial Representation
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.1.T3 | `Abs-Coll` | | **Novel** |
 **Synopsis:** The Abstraction-Collapse Duality theorem: Collapse(M) is the model whose universe is Q_M with the quotient projection as its projection operator, and the Galois insertion α_M ⊣ γ_M realises the duality α_M = π_M (abstraction = collapse) and γ_M = canonical section (concretisation = section of π_M).
 
@@ -202,6 +220,8 @@ For any x ∈ ↓_M:
 **(iv):** Semantics equivalence follows from the definitions. ∎
 
 ### Two Complementary Framings of the Same Structure
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L7.1.R1 | `2-Frame` |  | **Novel** |
 **Synopsis:** The abstraction-collapse duality can be described in two complementary framings. The abstraction framing focuses on the reduction trajectory x → ρ_M(x) → ... → CNF_M(x), treating the projection operator as a reduction strategy. The collapse framing focuses on the quotient map π_M: 𝒰_M → Q_M, treating the canonical form as an equivalence class. Both framings describe the same mathematical object — the Galois insertion — and are interchangeable for all formal purposes.
 
@@ -237,6 +257,8 @@ a CRPT model by its observable equivalence yields another valid CRPT model.
 
 ### Collapse Operator Definition
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L7.1.D4 | `Collapse-Def` | Collapse(M) | **Novel** |
 **Synopsis:** The Collapse operator at L7: Collapse(M) is the CRPT model with universe 𝒰_M/≃_M (its convergent part is the abstraction quotient Q_M = ↓_M/≃_M), projection operator ρ_{Collapse(M)} = [ρ_M(−)] (the quotient of ρ_M), and structural relation →_σ^{Collapse} = [→_σ] (the quotient of →_σ). Collapse is the categorical left adjoint to the canonical inclusion Mod_{CRPT,WF} ↪ Mod_CRPT.
 
@@ -268,6 +290,8 @@ pure-WF (`Collapse-Model` (L7.1.T4)).
 
 ### Collapse is a CRPT Model
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.1.T4 | `Collapse-Model` | | **Novel** |
 **Synopsis:** The Collapse Model theorem: Collapse(M) is a valid CRPT model, and it is a **pure-WF** one — every ≃_M-class is a fixpoint and ρ_{Collapse} = id. This is forced, not optional: ρ_M always preserves the canonical form / limit (ρ_M(x) ≃_M x), so the induced operator on ≃_M-classes is the identity. Collapse(M) is therefore the discrete model of M's canonical observables — the reflector onto pure-WF models (`Collapse-Def` (L7.1.D4)). The persistent dynamics of M are not lost but *relocated* to the persistent abstraction Q∞_M via the dual Galois insertion `GI∞` (L7.1.D5).
 
@@ -329,6 +353,8 @@ hierarchy (`AOI-Unif` (L6.3.D10)).
 
 ### Quotient Projection is a Model Homomorphism
 
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L7.1.C4 | `Collapse-Hom` | | **Novel** |
 **Synopsis:** The Collapse Homomorphism theorem: the quotient map π_M : 𝒰_M → Q_M is a CRPT homomorphism from M to Collapse(M). It satisfies all four conditions Φ_R, Φ_E, Φ_ρ, Φ_LA, making π_M the canonical surjective homomorphism from any model to its collapsed form.
 
@@ -351,6 +377,8 @@ whole story (ρ_{Collapse} = id). The persistent regime carries its own dual abs
 onto the persistent canonical classes.
 
 ### Persistent Galois Insertion α∞ ⊣ γ∞
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L7.1.D5 | `GI∞` | α∞_M ⊣ γ∞_M | **Novel** |
 **Synopsis:** The persistent dual of the Galois insertion `GI` (L7.1.D1): α∞ abstracts each persistent element to its ω-limit class (its ≃∞-class in Q∞_M), and γ∞ selects a representative orbit. It is the ∞_M-regime abstraction; together with α_M on ↓_M it assembles into the regime-aware semantic projection π_sem onto Sem(M).
 
@@ -372,6 +400,8 @@ abstraction α∞ together are the regime-aware semantic projection
 α_M; the persistent content abstracted away by Collapse is precisely the image of α∞.
 
 ### Persistent Galois Connection
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.1.T5 | `GC∞` | | **Novel** |
 **Synopsis:** The persistent Galois insertion satisfies the three adjunction identities dual to `GC1`–`GC3` (L7.1.C1–C3): α∞ ∘ γ∞ = id (retraction), γ∞ ∘ α∞ ⊒ id in the ≃∞-preorder (unit), and α∞ preserves ≃∞. By `SC-Imp` (L6.3.T1) the *complete* persistent abstraction is graded: GC∞ is the ≃∞ (ω-limit) level, refined by the AOI hierarchy.
 
@@ -436,6 +466,8 @@ A model may satisfy any subset of {PA-WN, PA-Conf, PA-Fix, PA-NWF, PA-CoInd, PA-
 **Identity:** id_M(x) := x
 
 ### Mod_CRPT is a Category (with ≃-Quotient Hom-Sets)
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.2.T1 | `Mod-Cat-Q` |  | **Novel** |
 **Synopsis:** That Mod_CRPT is a category — objects CRPT models, morphisms CRPT homomorphisms, with identities, associativity, and closure under composition — is proved in full at `Mod-Cat` (L5.2.T1) and is not repeated here. L7's added content is the morphism-equality convention the functorial layer requires: hom-sets are taken up to ≃-pointwise equality (Φ ≈ Φ′ iff Φ(x) ≃ Φ′(x) for all x). This relation is a congruence for composition (via Φ_E), so it yields a well-defined quotient category Mod_CRPT_≃ in which ρ-preservation (Φ_ρ) and the Lift ⊣ Collapse triangle identities (`Lift⊣Coll` (L7.2.T4)) hold as strict equalities, not merely up to ≃.
 
@@ -459,6 +491,8 @@ By transitivity of ≃_{M₃}, Ψ(Φ(x)) ≃_{M₃} Ψ′(Φ′(x)); since x was
 ### ω-Categories and Natural Transformations
 
 ### ω-Category in CRPT
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L7.2.D2 | `ω-Cat` | C^ω_CRPT | **Imported** |
 **Synopsis:** The tower Tower(M₀) carries an ω-category structure: the tower levels are 0-cells, the Lift maps Mₙ → Mₙ₊₁ are 1-cells, natural transformations between Lift maps are 2-cells, and so on for each finite dimension. This infinite-dimensional categorical structure organises the tower's levels into a coherent whole.
 
@@ -473,6 +507,8 @@ where each M^n is a model, each F_n : M^n → M^{n+1} is a model homomorphism, a
 The M^n are the **layers** or **dimensions** of the ω-category (corresponding to rank levels in the Free Lift tower).
 
 ### Natural Transformation between ω-Categories
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L7.2.D3 | `η-Nat` | η: F₁→F₂ | **Imported** |
 **Synopsis:** A natural transformation η : F ⟹ G between CRPT functors assigns to each CRPT model M a CRPT homomorphism η_M : F(M) → G(M) such that for every CRPT homomorphism φ : M → N, G(φ) ∘ η_M = η_N ∘ F(φ). Natural transformations are the 2-cells of the ω-category structure on the tower.
 
@@ -491,6 +527,8 @@ M'^n ---F'_n---> M'^{n+1}
 That is: η_{n+1} ∘ F_n ≃ F'_n ∘ η_n.
 
 ### Composition of Natural Transformations
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.2.T2 | `η-Comp` |  | **Imported** |
 **Synopsis:** Vertical composition of natural transformations: if η : F ⟹ G and ε : G ⟹ H, their vertical composite ε ∘ η : F ⟹ H is defined component-wise as (ε ∘ η)_M = ε_M ∘ η_M. This standard categorical operation is verified to produce a CRPT natural transformation.
 
@@ -503,6 +541,8 @@ If η : C ⇒ C' and μ : C' ⇒ C'' are natural transformations between ω-cate
 ### The Free Lift as a Functor
 
 ### Free Lift Functor Lift : Mod_CRPT → Mod_CRPT
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L7.2.D4 | `Lift-F` | Lift | **Novel** |
 **Synopsis:** The Lift Functor at L7: the Lift operator is an endofunctor on Mod_CRPT mapping each model M to Lift(M) and each homomorphism φ : M₁ → M₂ to Lift(φ) : Lift(M₁) → Lift(M₂). Functoriality — Lift(id) = id and Lift(ψ ∘ φ) = Lift(ψ) ∘ Lift(φ) — is verified from the free monoidal algebra construction.
 
@@ -524,6 +564,8 @@ where:
 (Full definition: see L7.3–27.4.)
 
 ### Lift is an Endofunctor on Mod_CRPT
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.2.T3 | `Lift-Endo` | | **Novel** |
 **Synopsis:** The Lift operator is an endofunctor on Mod_CRPT: it maps models to models (proved in L8.3) and maps CRPT homomorphisms φ : M₁ → M₂ to CRPT homomorphisms Lift(φ) : Lift(M₁) → Lift(M₂) by acting on the free monoidal algebra generators. Functoriality (Lift(id) = id, Lift(ψ ∘ φ) = Lift(ψ) ∘ Lift(φ)) is verified.
 
@@ -545,6 +587,8 @@ is a model homomorphism, with Lift(id_M) = id_{Lift(M)} and Lift(Ψ ∘ Φ) = Li
 ### The Collapse Functor and Adjoint Pair
 
 ### Collapse Functor Collapse : Mod_CRPT → Mod_CRPT
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L7.2.D5 | `Coll-F` | Collapse | **Novel** |
 **Synopsis:** The Collapse functor maps each CRPT model M to its collapsed model Collapse(M) = Q_M (the abstraction quotient with quotient projection as projection operator) and maps each CRPT homomorphism φ : M₁ → M₂ to the induced map Collapse(φ) : Q_{M₁} → Q_{M₂}. Collapse is the right adjoint to Lift in the Lift ⊣ Collapse adjunction.
 
@@ -559,6 +603,8 @@ the quotient model obtained by identifying all ρ_M-equivalent elements into equ
 Formally: 𝒰_{Collapse(M)} := {[x]_{≃_M} : x ∈ 𝒰_M}; [x] →_ρ [y] iff ∃x' ∈ [x], y' ∈ [y] : x' →_ρ y'; ρ_{Collapse(M)}([x]) := [ρ_M(x)].
 
 ### Lift ⊣ Collapse is an Adjoint Pair
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.2.T4 | `Lift⊣Coll` |  | **Novel** |
 **Synopsis:** Lift ⊣ Collapse adjunction: the free-lift functor is left adjoint to the collapse functor, with natural bijection Mod_CRPT(Lift(M), M′) ≅ Mod_CRPT(M, Collapse(M′)). Lifting then collapsing recovers the original model up to observational equivalence.
 
@@ -599,6 +645,8 @@ Well-definedness on equivalence classes follows from the fact that all represent
 Therefore Lift ⊣ Collapse. ∎
 
 ### Scope of the Two Collapse Adjunctions
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L7.2.R2 | `Coll-Adj-Scope` |  | **Novel** |
 **Synopsis:** Collapse carries two compatible adjoint roles, stated precisely. It is the *reflector* onto pure-WF models (Collapse ⊣ ι, left adjoint to the inclusion Mod_{CRPT,WF} ↪ Mod_CRPT, `Collapse-Def` (L7.1.D4)) and the *right* adjoint of the free-lift functor (Lift ⊣ Collapse, `Lift⊣Coll` (L7.2.T4)). A functor may be simultaneously a left and a right adjoint to different functors; there is no conflict. Both adjunctions are stated in the ≃-quotient category Mod_CRPT_≃ (`Mod-Cat-Q` (L7.2.T1)), where the triangle identities are strict.
 
@@ -624,6 +672,8 @@ up-to-≃ unit/counit of `Lift⊣Coll` (L7.2.T4) are equalities there, so the tr
 identities are strict and the adjunctions are honest (not merely bicategorical). ∎
 
 ### Regime Invariance of Categorical Structures
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L7.2.R1 | `Reg-Inv` |  | **Novel** |
 **Synopsis:** The Lift ⊣ Collapse adjunction holds in both the WF and NWF settings without modification. The adjunction is regime-invariant: whether models have persistent elements or not, the unit and counit of the adjunction are defined the same way and satisfy the triangle identities. The categorical machinery of L7.2 is regime-oblivious.
 
@@ -668,6 +718,8 @@ F(Φ) : F(M₁) ⇒ F(M₂)
 with components F(Φ)_n := Lift^n(Φ) : Lift^n(M₁) → Lift^n(M₂) (iterated application of Lift to Φ).
 
 ### F is a Functor Mod_CRPT → ωCat
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.3.T1 | `F-Func` | | **Novel** |
 **Synopsis:** The CRPT functor F : Mod_CRPT → ω-Cat is a genuine functor — it preserves identities (F(id_M) = id) and composition (F(ψ ∘ φ) = F(ψ) ∘ F(φ)), which follows from the levelwise functoriality of Lift on the tower.
 
@@ -697,6 +749,8 @@ Therefore F : Mod_CRPT → ωCat is a functor. ∎
 ### Tower Functoriality: Morphisms Induce Natural Transformations
 
 ### Tower Functoriality
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.3.T2 | `Twr-Func` |  | **Novel** |
 **Synopsis:** Tower functoriality: if Φ : M₁ → M₂ is a CRPT homomorphism, the induced maps Φₙ := Lift^n(Φ) : Lift^n(M₁) → Lift^n(M₂) form a natural transformation F(Φ) : F(M₁) ⇒ F(M₂) between the tower ω-categories. The tower construction is functorial: it commutes with model homomorphisms.
 
@@ -707,6 +761,8 @@ Let Φ : M₁ → M₂ be a model homomorphism. Then the family {Φ_n := Lift^n(
 *Proof.* Each Φ_n is a model homomorphism (by `Lift-Endo` (L7.2.T3)). Naturality (commutativity of tower diagrams) follows from functoriality of Lift. ✓ ∎
 
 ### Model Isomorphisms Induce Omega-Category Isomorphisms
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L7.3.C1 | `Iso-ωCat` |  | **Novel** |
 **Synopsis:** Tower isomorphism corollary: if Φ : M₁ → M₂ is a CRPT model isomorphism, then F(Φ) : F(M₁) → F(M₂) is an isomorphism of tower ω-categories. Isomorphic base models produce isomorphic towers. This confirms that the tower invariants are genuine model invariants.
 
@@ -736,6 +792,8 @@ full category-theory model.)
 ### Self-Application and Consistency
 
 ### Self-Application is Consistent
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.3.T3 | `Self-App` |  | **Novel** |
 **Synopsis:** The CRPT functor F is self-applicable: F can be applied to the meta-model Mod_CRPT itself (treating Mod_CRPT as a CRPT model under its dependency structure) to produce F(Mod_CRPT), an ω-category of increasingly abstract model categorisations. No circularity arises because the dependency structure is acyclic and well-founded.
 
@@ -758,6 +816,8 @@ Hence self-application is consistent under these conditions. ✓ ∎
 ### Model Theories as Fibers of a Fibration
 
 ### Model Theory Fibration
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L7.3.D2 | `Mod-Fib` | π_CRPT | **Novel** |
 **Synopsis:** The model-theory fibration: the CRPT functor F is a fibration over ω-Cat. The fiber over a tower ω-category T is the class of all CRPT models M with F(M) ≅ T. Different domain instantiations (set theory, type theory, process algebra) are different fibers of the same fibration — they have the same tower structure but different base models.
 
@@ -778,6 +838,8 @@ The **fiber over a point M ∈ Base** is:
 the collection of all ω-categories related to the instantiation of CRPT on model M.
 
 ### Model Theories as Fiber Objects
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.3.T4 | `Mod-Fib-T` |  | **Novel** |
 **Synopsis:** The fibration theorem: each model instantiation Φ : M₁ → M₂ (e.g., a ZFC-to-CRPT embedding) is a fiber map in the model-theory fibration. The natural transformation F(Φ) : F(M₁) ⇒ F(M₂) witnesses the fact that different domain theories with compatible reduction structures share tower-level structure.
 
@@ -790,6 +852,8 @@ Multiple model instantiations are **related by natural transformations**: if Φ 
 *Proof.* Immediate from `F-Func` (L7.3.T1) and 26.2. ✓ ∎
 
 ### Unified Architecture
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L7.3.R1 | `Unif-Arch` |  | **Novel** |
 **Synopsis:** The self-application of the CRPT functor at the meta-level anticipates Lω: applying F to the self-substrate 𝒰_CRPT (the collection of all tower constructs under their dependency relation) produces a tower whose fixed point is 𝒰_CRPT itself. This remark foreshadows the self-consistency fixed point theorem of Lω.5.
 

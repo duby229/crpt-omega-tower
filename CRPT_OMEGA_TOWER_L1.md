@@ -46,6 +46,8 @@ is part of the definition of what it means to be a substrate, not an axiom.
 All of the following are definitions. No axioms are required.
 
 ### Normal Form
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.1.D2 | `NF` | NF(→_ρ) | **Imported** |
 **Synopsis:** A normal form is an element that cannot be reduced further — it is already in its simplest form under the reduction relation. Normal forms are the resting states of the system; they become the canonical reference points for the equivalence classes defined in L2.
 
@@ -58,6 +60,8 @@ NF(x) :⟺ ¬∃y ∈ 𝒰 : x →_ρ y
 The set of normal forms is NF(→_ρ) := {x ∈ 𝒰 | NF(x)}.
 
 ### n-Step Reduction
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.1.D3 | `n-Step` | →_ρ^n | **Imported** |
 **Synopsis:** The n-step reduction relation →_ρ^n relates x to y when y is reachable from x in exactly n steps of the reduction relation. This is the iterative counterpart to the projection operator: while the projection operator selects one canonical step, n-step reduction allows all reachable paths. It is used in the axiom statements to quantify orbit length.
 
@@ -71,6 +75,8 @@ x →_ρⁿ⁺¹ y :⟺ ∃z ∈ 𝒰 : x →_ρ z ∧ z →_ρⁿ y
 Here ℕ is the ambient (meta-level) natural numbers; it is not yet an object of 𝒰.
 
 ### Reflexive-Transitive Closure
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.1.D4 | `RT*` | →_ρ* | **Imported** |
 **Synopsis:** The reflexive-transitive closure →_ρ* relates x to y when y is reachable from x in zero or more reduction steps. It is the standard ARS reachability relation and appears in the axiom PA-Reach and in the definitions of regimes.
 
@@ -84,6 +90,8 @@ immediately. Similarly define →_σ* using →_σ in place of →_ρ. By the in
 constraint, x →_ρ* y ⟹ x →_σ* y.
 
 ### Diverging Elements
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.1.D5 | `Div` | Div(→_ρ) | **Imported** |
 **Synopsis:** Divergence is the property of having an infinite reduction sequence — an element from which the reduction relation can be applied indefinitely without reaching a normal form. Elements that diverge are candidates for the persistent regime; those that do not are in the convergent regime.
 
@@ -100,6 +108,8 @@ The set Div(→_ρ) := {x ∈ 𝒰 | x ∈ Div(→_ρ)}.
 substrate. It depends on axioms added at L1.2–L1.5.
 
 ### Bisimulation
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.1.D6 | `Bisim` | | **Imported** |
 **Synopsis:** Bisimilarity ≈ is the largest bisimulation — the union of all bisimulations. Two elements are bisimilar exactly when they cannot be distinguished by any finite or infinite sequence of reductions. This is the finest observational equivalence derivable from the substrate structure alone.
 
@@ -111,6 +121,8 @@ A relation R ⊆ 𝒰 × 𝒰 is a *bisimulation on
 - *Backward:* ∀y' : y →_ρ y' ⟹ ∃x' : x →_ρ x' ∧ (x', y') ∈ R
 
 ### Bisimilarity
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.1.D7 | `Bisim~` | ≈ | **Imported** |
 **Synopsis:** Bisimilarity is the largest bisimulation — the union of all bisimulations. Two elements are bisimilar exactly when they cannot be distinguished by any finite or infinite sequence of reductions.
 
@@ -123,6 +135,8 @@ x ≈ y :⟺ ∃R (bisimulation) : (x, y) ∈ R
 ```
 
 ### Union of Bisimulations is a Bisimulation
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L1.1.L1 | `Bisim-Union` | | **Imported** |
 **Synopsis:** The union of any family of bisimulations is itself a bisimulation. This is the standard lemma that makes bisimilarity (the largest bisimulation) well-defined: we can take the union of all bisimulations without leaving the class of bisimulations.
 
@@ -136,6 +150,8 @@ Forward — if x →_ρ x', then ∃y' : y →_ρ y' ∧ (x', y') ∈ Rⱼ ⊆ �
 Backward — symmetric. ✓ ∎
 
 ### ≈ is an Equivalence Relation
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L1.1.L2 | `≈-Eq` | | **Imported** |
 **Synopsis:** Bisimilarity ≈ is an equivalence relation — reflexive, symmetric, and transitive — since the identity relation is a bisimulation and bisimulations are closed under inverse and composition.
 
@@ -202,6 +218,8 @@ Every element has a terminating →_ρ-path:
 *Remark (WN vs SN).* PA-WN asserts the *existence* of a terminating →_ρ-path — not that *all* →_ρ-paths terminate (strong normalisation). An element x ∈ ↓_M whose ρ_M-orbit terminates may still admit non-deterministic infinite →_ρ-branches; these do not affect x's regime membership or derivation height d_M(x), both defined via the ρ_M-orbit.
 
 ### PA-Conf — Confluence / Church-Rosser
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Axiom** | L1.2.Ax2 | `PA-Conf` | | **Imported** |
 **Synopsis:** PA-Conf (Confluence / Church-Rosser Property) requires that all →_ρ-paths from the same element converge. Together with PA-WN, confluence ensures normal forms are unique — the canonical form computed by iterating ρ_M does not depend on which →_ρ-path is taken.
 
@@ -220,6 +238,8 @@ All →_ρ-paths from the same element converge:
 *What it adds:* Without PA-Conf, different →_ρ-paths from the same element may reach different normal forms. Together with PA-WN, guarantees unique canonical abstraction CFix(ρ_M) in ↓_M.
 
 ### PA-Fix — Projection Fixpoint Stratification
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Axiom** | L1.2.Ax3 | `PA-Fix` | | **Novel** |
 **Synopsis:** PA-Fix requires that the fixpoints of the projection strategy ρ_M coincide exactly with the →_ρ-normal forms. This pins Fix(ρ_M) as the canonical terminal stratum of projection dynamics, preventing degenerate models where projection-fixpoints and reduction-normal-forms diverge.
 
@@ -236,6 +256,8 @@ Fixpoints of the projection strategy coincide with reduction normal forms:
 *What it adds:* A projection-level fixpoint boundary used by CFix and regime semantics. WF-Canon (L2) is theorem-level content over this boundary.
 
 ### PA Namespace Discipline
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.2.R1 | `PA-NS` | | **Novel** |
 **Synopsis:** The PA-* namespace is reserved exclusively for the nine projection axioms; WF-side orbit canonicalization (WF-Canon) is placed as a theorem and existential richness (LA-Rich) as a model-local axiom, so neither occupies a PA-* slot.
 
@@ -250,6 +272,8 @@ The PA-* namespace is reserved exclusively for Projection Axioms (nine total: PA
 These axioms govern the persistent regime ∞_M where elements never reach fixpoints finitely. PA-WN_top, when present, additionally equips a sub-class of ∞_M with topological mode (`Mode` (L1.4.D1)).
 
 ### PA-NWF — Non-Well-Foundedness / Divergence Existence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Axiom** | L1.2.Ax4 | `PA-NWF` | | **Imported** |
 **Synopsis:** PA-NWF (Non-Well-Foundedness) asserts that the substrate admits elements whose ρ_M-orbit never reaches a fixpoint — the persistent regime ∞_M is non-empty. This is the foundational topological-mode axiom and the dual of PA-WN under the WF/NWF duality. In pure WF models it is false; in native stratified models it asserts ∞_M ≠ ∅.
 
@@ -270,6 +294,8 @@ The substrate admits elements that never reach a fixpoint:
 *What it adds:* Without PA-NWF in native models, there would be no persistent regime. PA-NWF is the dual of PA-WN.
 
 ### PA-CoInd — Co-Induction / Park's Lemma / Greatest Fixed-Point Reasoning
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Axiom** | L1.2.Ax5 | `PA-CoInd` | | **Imported** |
 **Synopsis:** PA-CoInd (Co-Induction) asserts that every predicate closed under the co-induction functional is contained in the greatest fixpoint — this is Park's Lemma. It is the standard coinductive proof principle for the persistent regime. In full second-order logic it is derivable from PA-NWF (proved at `Ax-Ind` (L1.6.T1)); it is retained as an explicit axiom for portability across schema and Henkin-mode proof systems.
 
@@ -290,6 +316,8 @@ Every predicate closed under the co-induction functional is contained in the gre
 *What it adds:* Provides the coinductive proof principle. Without it, coinductive reasoning over ∞_M is not justified in weaker proof systems.
 
 ### PA-Prod — Productivity / Guardedness / Observable Content
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Axiom** | L1.2.Ax6 | `PA-Prod` | | **Novel** |
 **Synopsis:** PA-Prod (Productivity) requires that persistent elements produce observable content at every step of their orbit: each projection step must yield a new element satisfying the Observable Contract conditions OC-1 and OC-2. This prevents 'silent' non-termination and ensures that the persistent regime has genuine observational content.
 
@@ -344,6 +372,8 @@ preserves the axiom's logical content for downstream uses (`Obs-Const`
 *What it adds:* Excludes "silent divergence" where an element diverges without producing observables. Ensures ∞_M elements are actually productive. On ↓_M, ensures every intermediate ρ_M-step before reaching Fix(ρ_M) produces observable output.
 
 ### PA-WN_top — Topological Weak Normalisation / Asymptotic Convergence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Axiom** | L1.2.Ax7 | `PA-WN_top` | | **Novel** |
 **Synopsis:** PA-WN_top (Topological Weak Normalisation) requires that every persistent element has a unique topological limit point in 𝒯. This gives persistent orbits a 'destination' even when they never terminate, enabling the coinductive treatment of PA-CoInd. Without PA-WN_top, persistent orbits could wander without any asymptotic structure.
 
@@ -372,6 +402,8 @@ where 𝒯 is fixed by the substrate Sub = (𝒰, →_ρ, →_σ, 𝒯) and must
 *Standard Interpretation:* This is **full sequence convergence** (not merely the Bolzano-Weierstrass cluster-point property): the entire orbit sequence ρ_M^n(x) converges to L, not just a subsequence.
 
 ### Hausdorff Separation Condition
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.2.D1 | `TopSep` | TopSep(𝒯) | **Imported** |
 **Synopsis:** Topological separation (the Hausdorff / T₂ condition) requires that distinct limit points are separated by disjoint open sets. Under this condition, sequences have at most one limit. This is the minimal separation condition ensuring that topological limits in the substrate are unique — a prerequisite for PA-WN_top.
 
@@ -390,6 +422,8 @@ Banach spaces, metric spaces) are Hausdorff. When PA-WN_top is declared `Vacuous
 (pure WF case with ∞_M = ∅), TopSep imposes no constraint.
 
 ### Uniqueness of Topological Limits under TopSep
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L1.2.T1 | `TopSep-Uniq` | | **Imported** |
 **Synopsis:** Under the Hausdorff condition TopSep(𝒯), topological limits are unique, so the persistent-regime canonical form CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) is well-defined and single-valued on ∞_M.
 
@@ -403,6 +437,8 @@ Since ρ_M^n(x) → L₂: ∃N₂ : ∀n ≥ N₂ : ρ_M^n(x) ∈ U₂.
 For n ≥ max(N₁, N₂): ρ_M^n(x) ∈ U₁ ∩ U₂ = ∅. Contradiction. Hence L₁ = L₂. ∎
 
 ### Topological Limit via Metric/Order
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.2.D2 | `Top-Lim` | | **Imported** |
 **Synopsis:** The topological limit structure defines what it means for a sequence of elements to converge to a limit point in the topology 𝒯 of the substrate. This includes limit via neighborhood bases, metric convergence when 𝒯 is metrizable, and order-theoretic monotone limits. The substrate's topology must admit a well-defined limit notion for PA-WN_top to have content.
 
@@ -431,6 +467,8 @@ Both express convergence, but in different modes.
 ## L1.3 — Universal Axioms
 
 ### PA-Bisim — Bisimulation Congruence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Axiom** | L1.3.Ax1 | `PA-Bisim` | | **Reframed** |
 **Synopsis:** PA-Bisim requires that the projection operator respects bisimilarity: bisimilar elements project to bisimilar elements, and their projection orbits remain bisimilar throughout. This binds bisimulation theory to the canonical form computation: bisimilar elements must produce the same canonical form.
 
@@ -451,6 +489,8 @@ where ≃_M is the abstraction equivalence relation (`NFC-NM` (L2.5.D1)).
 *What it adds:* Connects bisimilarity to ρ-equivalence. Without it, bisimilar elements need not be orbit-equivalent.
 
 ### PA-Reach — Recursive Projection Horizon Stabilization
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Axiom** | L1.3.Ax2 | `PA-Reach` | | **Novel** |
 **Synopsis:** PA-Reach (Recursive Projection Horizon Stabilization) requires that for every persistent element x, the orbit signature sig_M(ρ_M^n(x)) eventually stabilizes as n increases. This is the most structurally original CRPT axiom: it guarantees that the observer triple can extract finite, canonical observable information from infinite orbits.
 
@@ -464,6 +504,9 @@ For every persistent element, recursive projection reaches and stabilizes at a h
 **Interpretation:** Recursive projection ρ_M, when applied to any persistent (non-terminating) element, eventually enters a stratum where the orbit signature sig_M becomes constant and remains constant under further projection. On ∞_M the orbit signature is the topological form sig_M(x) = (∞, limit_id, convergence_profile) (`sig_M-NM` (L3.1.D5)); its stabilization is what enables the observer to extract a canonical representative from the infinite productive object.
 
 **Definition — Canonical Persistent Representative:**
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.3.D1 | `CPer` | CPer_M(x) | **Novel** |
 **Synopsis:** The canonical persistent representative CPer_M(x) := ρ_M^{n(x)}(x) is the point on x's orbit where the orbit signature first stabilizes (n(x) is the reachability depth). PA-Reach guarantees n(x) exists, making CPer_M(x) the canonical finite descriptor of the infinite element x.
 
@@ -494,6 +537,8 @@ PA-Reach is fundamentally about what the recursive projection operator ρ_M can 
 *Rigorous Scope Note:* PA-Reach constrains sig_M — the orbit signature defined at L3.1 — which itself depends on horizons H_S, H_I, H_O defined in L3.1. Forward references are resolved by the logical ordering of the Anchor: horizon definitions (L3.1) logically precede this axiom in structure, even though L1.2–L1.5 introduces all axioms in compressed notation. The formal definitions of sig_M and H_S, H_I, H_O are at L3.1–8.2; the complete formal statement of PA-Reach in terms of these constructs is at L1.3 (present section). Both locations state the axiom consistently.
 
 ### PA-Reach — Structural Role and Impact on Theorems
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.3.R1 | `PA-Reach-Role` | | **Novel** |
 **Synopsis:** This analysis clarifies what PA-Reach actually does: it is not a connectivity axiom (it does not require elements to be reachable from others) but a recursive projection axiom (it constrains the long-run behavior of the projection operator on persistent orbits). This distinction matters for understanding which theorems require PA-Reach and which do not.
 
@@ -508,6 +553,8 @@ PA-Reach is fundamentally about what the recursive projection operator ρ_M can 
 *Theorems using PA-Reach:* `Reg-Conn` (L4.2.T1 — regime connectedness as projection property), `Hor-Lift` (L8.2.T2 — horizon inheritance under Lift, proved using PA-Reach on ρ_M), `Inf-Dual` (L2.2.T7 — infinity duality as a consequence of projection reachability).
 
 ### PA-Reach Closes the Reachability Gap: Observer Extraction Principle
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L1.3.T1 | `PA-Reach-ObsExt` | | **Novel** |
 **Synopsis:** The Observer Extraction Principle: PA-Reach closes the reachability gap between finite observers and infinite orbits. Without PA-Reach, an observer examining a persistent element could never extract a canonical, finite observable summary. With PA-Reach, the observer can always wait until the signature stabilizes and read off CPer_M(x).
 
@@ -538,6 +585,8 @@ We verify each component:
 *Consequence.* PA-Reach guarantees that every persistent orbit yields a canonical, stable, and recursively reachable orbit signature sig_M(CPer_M(x)). ∎
 
 ### PA-Reach Independence: Witness Model
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.3.R2 | `PA-Reach-Indep` | | **Novel** |
 **Synopsis:** PA-Reach is independent of the remaining eight PA-* axioms: there exists a model M_Reach satisfying all other axioms but not PA-Reach. This witness model has a persistent element whose orbit signature oscillates indefinitely, never stabilizing.
 
@@ -614,6 +663,8 @@ The three-tier analysis of L6 (`3-Tier` (L6.2.D2)) is exactly this mode-stratifi
 Consequently **regime ≠ mode**: there are two regimes but three modes, and "topological mode" must never be used as a synonym for the persistent regime.
 
 ### Regime Coexistence and Mode Coverage
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L1.4.T1 | `Mode-Comp` | | **Novel** |
 **Synopsis:** Regime coexistence: the WF and NWF axiom profiles are jointly consistent because they govern the disjoint regimes ↓_M and ∞_M, licensing the partition 𝒰_M = ↓_M ⊔ ∞_M and the regime-stratified proof methods. Mode coverage: the convergent regime is canonicalized in finitary mode; the persistent regime is canonicalized in asymptotic mode throughout and additionally in topological mode wherever PA-WN_top holds.
 
@@ -645,6 +696,8 @@ In a model M with regime partition 𝒰 = ↓_M ∐ ∞_M:
 - (iii) For x ∈ ↓_M: PA-WN_top is vacuously true (if x ∈ ↓_M and reaches a fixpoint finitely, it trivially has a limit—the fixpoint itself). For x ∈ ∞_M: PA-WN restricted to ∞_M would assert "∃n : ρ_M^n(x) ∈ Fix(ρ_M)," which is the logical negation of the defining condition of ∞_M (namely "∀n : ρ_M^n(x) ∉ Fix(ρ_M)"); thus PA-WN is false on ∞_M (mutual logical non-satisfaction, not a contradiction in the technical sense). The asymptotic apparatus (PA-Reach + PA-Bisim) governs ∞_M unconditionally; PA-WN_top, where declared, is substantively non-vacuous and certifies topological mode on the convergent sub-class of ∞_M. ✓ ∎
 
 ### Native Structure Consistency and Completeness
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L1.4.T2 | `Nat-CC` | | **Novel** |
 **Synopsis:** Native Structure Consistency: the nine PA-* axioms are mutually consistent, witnessed by the model ℕ ∪ (0,1] with the decrement operator (convergent on ℕ, topologically persistent on (0,1]). Native Completeness: the axiom system is regime-stratified-complete — it proves all true first-order statements about the regime structure.
 
@@ -694,6 +747,8 @@ x ∈ ↓_M ⟹ CFix(ρ_M)(x) ∈ Fix(ρ_M) ∧ x →_ρ* CFix(ρ_M)(x) (finitar
 - (iii) **WF-Specialization:** If ∞_M = ∅, all elements are in ↓_M. PA-WN_top is vacuous. PA-NWF is false, which simply reflects ∞_M = ∅ (no contradiction). The PA family reduces to projection axioms on the WF substrate, and WF-Canon remains theorem-level. This preserves PA-namespace discipline while keeping the pure-WF results unchanged. ✓ ∎
 
 ### Independence of PA-WN_top
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L1.4.T3 | `WNtop-Ind` | | **Novel** |
 **Synopsis:** PA-WN_top is independent of the remaining axioms, witnessed by the model M_ind = (ℤ, decrement, identity, discrete topology). In M_ind, every element is weakly normalizing (integer decrement terminates at 0 by a separate argument), but no element has a topological limit in the discrete topology.
 
@@ -749,6 +804,8 @@ Thus M_ind satisfies the remaining PA-family while failing PA-WN_top, establishi
 ### Native Duality Remarks
 
 ### Regime / Mode Terminology Discipline
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.4.R1 | `Nat-Reg` | | **Novel** |
 **Synopsis:** Terminology discipline for the two axes: "regime" and "WF/NWF" name the element orbit-fate dichotomy (↓_M / ∞_M); "finitary / topological / asymptotic mode" name the canonicalization apparatus. The axes coincide on ↓_M but diverge on ∞_M, so the vocabularies must not be used interchangeably.
 
@@ -762,6 +819,8 @@ The regime axis and the mode axis (`Mode` (L1.4.D1)) are distinct and are kept t
 4. Proof method follows the regime: induction on derivation height for ↓_M, coinduction (PA-CoInd; `AOI-BisInv` (L6.3.T3)) for ∞_M — the regime-stratified strategy `Reg-Strat` (L2.2.D3).
 
 ### The Infinity Duality Explained
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.4.R2 | `Inf-Dual-Expl` | | **Novel** |
 **Synopsis:** The Infinity Duality is a third, distinct duality — horizontal infinity (σ-branching within a fiber) versus vertical infinity (ρ-orbit non-termination). It is orthogonal to both the regime axis and the mode axis: it concerns directions of infinite structure that exchange roles across tower levels, not element orbit-fate and not canonicalization apparatus.
 
@@ -778,6 +837,8 @@ Vertical infinity:    ρ-orbit non-termination (persistent dynamics)
 The two exchange roles across tower levels (`Inf-Dual` (L2.2.T7), `σ-Not3rd` (L8.6.T4)): horizontal within-fiber structure at level Mₙ becomes vertical composition depth at Mₙ₊₁, and conversely. This *directional* duality is neither the regime dichotomy (↓_M / ∞_M) nor the finitary/topological/asymptotic mode distinction (`Mode` (L1.4.D1)); identifying it with either is a category error.
 
 ### Topological Structure as Substrate Data
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.4.R3 | `Top-Inst` | | **Novel** |
 **Synopsis:** The topology 𝒯 is a free parameter of the CRPT substrate. This remark gives three canonical instantiations: the discrete topology (PA-WN_top vacuous), the metric topology on a complete metric space (PA-WN_top = completeness condition), and the order topology on a complete lattice (PA-WN_top = directed-completeness). All three are valid CRPT substrates.
 
@@ -835,6 +896,8 @@ The four canonical scope values are:
 | `Fails` | PA-X is false in M — explicitly declared inapplicable |
 
 ### Scope is not status
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.5.R1 | `Scope-Status` | | **Novel** |
 **Synopsis:** The crucial distinction: Scoped(S) is not a weakening of Global — it is a precise, falsifiable statement about which elements satisfy the axiom's conclusion. An axiom is Scoped(S) only when S ≠ 𝒰_M and the axiom holds for all elements of S. This prevents scope from being used as an escape from falsification.
 
@@ -849,6 +912,8 @@ theorems in §L2.1–24 that depend on PA-Conf depend only on its orbit-level co
 `Scoped(ρ_M-orbits)` is sufficient for every such theorem.
 
 ### Scope Convention Formalised
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.5.R2 | `Conv-Form` | | **Novel** |
 **Synopsis:** The scope convention notation (G), (S), (V), (F) annotates each axiom's scope declaration inline with the formal statement, making scope explicit at the point of use rather than in a separate table.
 
@@ -866,6 +931,8 @@ a `Fails` axiom is actively false.
 ### Model-Local Axioms
 
 ### Model-Local Axiom Schema LA_M
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.5.D2 | `LA_M` | LA_M | **Novel** |
 **Synopsis:** The model-local axiom schema LA_M collects all axioms specific to a particular CRPT model M — facts that hold in M but are not consequences of the nine PA-* axioms alone. LA_M is the extension point for domain-specific axiomatizations built on the CRPT foundation.
 
@@ -888,6 +955,8 @@ When LA_M = ∅, the model introduces no local axioms (the standard case for pur
 and pure NWF foundational models).
 
 ### Observable Contract as proto-LA_M
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.5.R3 | `OC-LA_M` | | **Novel** |
 **Synopsis:** The Observable Contract (OC-1, OC-2) from PA-Prod is the prototype for model-local axioms: it is a condition specific to a model's orbit structure that the nine PA-* axioms do not determine. This remark formally recognises it as an instance of the LA_M schema.
 
@@ -898,6 +967,8 @@ OC-2) of `PA-Prod` (L1.2.Ax6) is the existing instance of this pattern: a model-
 predicate Observable : 𝒰_M → {⊤, ⊥} subject to two local conditions. `LA_M` (L1.5.D2) generalises this to an arbitrary finite set of such commitments.
 
 ### IC_M as proto-LA_M
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.5.R4 | `IC_M-LA_M` | | **Novel** |
 **Synopsis:** Model-specific identity conditions IC_M — axioms about which elements are equal — are another instance of LA_M. Different domain models (set theory, type theory, process algebra) have different identity axioms; IC_M collects them as model-local extensions.
 
@@ -913,6 +984,8 @@ provided their LA_M ⊇ {IC_M}.
 ### Model Axiom Profiles
 
 ### Model Axiom Profile
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.5.D3 | `PA-Profile` | PA-Profile_M | **Novel** |
 **Synopsis:** The axiom profile Profile(M) = (PA-Profile_M, LA_M) is the complete specification of the axioms that model M satisfies. Treating profiles as mathematical objects (not just as informal descriptions) enables the formal study of profile-preserving maps (homomorphisms) and profile-indexed model classes.
 
@@ -931,6 +1004,8 @@ where:
 - **LA_M** is the (possibly empty) set of model-local axioms over Σ_M.
 
 ### CRPT Model
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.5.D4 | `CRPT-Mod` | | **Novel** |
 **Synopsis:** A CRPT model is a substrate together with an axiom profile satisfying: (1) non-triviality (𝒰_M is non-empty), (2) profile consistency (the profile is satisfiable), and (3) the witness condition (a specific element witnessing the profile exists). This is the official definition of 'model' that the category Mod_CRPT is built from.
 
@@ -955,6 +1030,8 @@ equipped with an axiom profile Profile(M) = (PA-Profile_M, LA_M) such that:
 ### Consistency of Profiles
 
 ### Profile Consistency is Constructively Checkable
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L1.5.T1 | `Prof-CC` | decide(PA-Profile_M) | **Novel** |
 **Synopsis:** Profile consistency is constructively checkable: given a candidate model, one can verify each PA-* axiom against the model's structure in a finite computation (for finite models) or by providing an explicit witness (for infinite models). This makes CRPT model verification a concrete activity.
 
@@ -972,6 +1049,8 @@ Decidability follows from the finite size of both PA-Profile_M (nine entries) an
 LA_M (finite by assumption). ∎
 
 ### Scoped Confluence along ρ_M-orbits
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.5.D5 | `SC-Orb` | SC-Orb(M) | **Novel** |
 **Synopsis:** Scoped confluence along projection orbits is the first-order axiom schema that replaces the full PA-Conf axiom when only orbit-level confluence is needed. Many theorems that appear to require global confluence actually only need confluence along the specific orbits involved, which this scoped version provides.
 
@@ -988,6 +1067,8 @@ at most one element. Equivalently, the ρ_M-orbit cannot reach two distinct norm
 forms. This is a strictly weaker statement than global confluence of →_ρ.
 
 ### Scope Sufficiency for CFix(ρ_M)
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L1.5.T2 | `Scope-Suf` | | **Novel** |
 **Synopsis:** Scoped projection-orbit confluence is provably sufficient for all theorems in L2–L8 that cite PA-Conf: the canonical form uniqueness, regime partition, and tower construction all hold under this weaker condition. This means CRPT's results are available even in models where global confluence fails.
 
@@ -1021,6 +1102,8 @@ where →_ρ is non-confluent but ρ_M is a total deterministic function satisfy
 reinterpretation is required.
 
 ### LA_M Independence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L1.5.T3 | `LA-Ind` | | **Novel** |
 **Synopsis:** Model-local axioms are independent of the nine PA-* axioms: there exist models where every PA-* axiom holds but the model-local axiom fails, and vice versa. This independence means that LA_M genuinely extends the CRPT foundation rather than being redundant with it.
 
@@ -1073,7 +1156,7 @@ Models with LA_M = ∅ may omit the LA_M line.
 
 **Status of each axiom:**
 
-| Axiom | Independence |
+| Axiom | Status | Independence |
 |-------|--------|-------------|
 | PA-WN | Axiom | Independent by duality with PA-NWF |
 | PA-NWF | Axiom | Independent by duality with PA-WN |
@@ -1378,6 +1461,8 @@ iterating the successor-closure condition in the PA-CoInd antecedent and showing
 Therefore the full-SOL minimal basis is exactly the 8-axiom set above. ∎
 
 ### No Splitting
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.6.R1 | `No-Split` | | **Novel** |
 **Synopsis:** No profitable splitting exists for any of the basis axioms: none can be divided into two strictly weaker independent axioms that together imply it. This confirms the basis is minimal — removing or weakening any axiom would change the expressive power of the system.
 
