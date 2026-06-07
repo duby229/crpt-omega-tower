@@ -349,7 +349,16 @@ unique Class E element. ✓
 By `6-Part` (L3.2.T1) instantiated at π := ρ_CRPT, the Class E assignment
 of L1.1.D1 is the correct output. The fixed point is unique and stable. ∎
 
-*Remark Lω.5.R1 (The anchor is self-consistent).* `Self-FP` (Lω.5.T1) is the
+### The Anchor Is Self-Consistent
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | Lω.5.R1 | `Anchor-SelfConsist` | | **Novel** |
+**Synopsis:** Self-FP establishes that the anchor is self-consistent.
+
+**Source:** CRPT; from `Self-FP` (Lω.5.T1).
+
+`Self-FP` (Lω.5.T1) is the
 formal statement of the anchor's self-consistency: the theory correctly classifies
 its own content, the classification is stable under reapplication, and the structure
 that results is exactly the one presented here. CRPT is an instance of its own
@@ -370,6 +379,8 @@ self-substrate projection, the anchor is one.
 ### Lω.6.T1 — Anchor Fractality Theorem
 
 *Purpose.* Anchor Fractality. This section proves that the ω-tower, as a self-applied CRPT model, is fractal in the sense of L8.9: its tail is self-similar to the whole. The fractality claim is internal to CRPT — provable within the theory — and introduces no new objects beyond the tower already constructed.*
+
+### Anchor-Fractal Closure
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -445,7 +456,16 @@ levels L0–L8 used as the self-substrate; it does not contain a tower-limit sta
 Lift^n(Self_CRPT). Therefore the fractal theorem is an external ω-indexed
 statement about all finite scales, not the introduction of an internal ω-state. ∎
 
-*Remark Lω.6.R1 (Final framing).* The proved framing is:
+### Final Framing
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | Lω.6.R1 | `Final-Framing` | | **Novel** |
+**Synopsis:** The final framing of the self-application result.
+
+**Source:** CRPT; from `Anchor-Fractal` (Lω.6.T1).
+
+The proved framing is:
 
 ```
 CRPT is a fractal of projection systems.
@@ -660,7 +680,16 @@ Two anchor constructs are bisimilar iff they reduce to the same primitive depend
 
 (6) Since every element is in ↓_CRPT: ↓_CRPT = 𝒰_CRPT, so ∞_CRPT = 𝒰_CRPT \ ↓_CRPT = ∅. ✓  ∎
 
-*Remark Lω.7.R2.* This theorem is a formal extraction of the claim in Lω.1.T1(5) ("Regime partition: ↓_{CRPT} = 𝒰_CRPT … ∞_CRPT = ∅") with an explicit proof that uses only finiteness and acyclicity — neither requiring the full CRPT axiom apparatus nor circular self-reference.
+### Regime-Partition Extraction
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | Lω.7.R2 | `RegPart-Extract` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `CRPT-WF` (Lω.7.T1).
+
+This theorem is a formal extraction of the claim in Lω.1.T1(5) ("Regime partition: ↓_{CRPT} = 𝒰_CRPT … ∞_CRPT = ∅") with an explicit proof that uses only finiteness and acyclicity — neither requiring the full CRPT axiom apparatus nor circular self-reference.
 
 ---
 
@@ -691,7 +720,16 @@ Two anchor constructs are bisimilar iff they reduce to the same primitive depend
 
 **(c)** L1.1.D1 ∈ Fix(ρ_CRPT) = {L1.1.D1} so it is a fixpoint (depth 0). For Class E classification: H_S(L1.1.D1) = ⊤ requires |ρ_CRPT^{-1}(ρ_CRPT(L1.1.D1)) \ {L1.1.D1}| ≥ 1, i.e., there exist constructs other than L1.1.D1 that also reduce to L1.1.D1 (since all elements eventually reduce to L1.1.D1 in one or more steps, and ρ_CRPT selects the immediate predecessor, many constructs have ρ_CRPT(X) eventually equaling L1.1.D1). This is established in `Self-Horiz` (Lω.2.T1): L1.1.D1 is classified as Class E there. ✓  ∎
 
-*Remark Lω.7.R3.* The uniqueness claimed here is specifically for projective fixed points (elements fixed by ρ_CRPT itself). The stronger self-consistency fixed point of `Self-FP` (Lω.5.T1) — uniqueness of the level structure as a fixed point of the meta-HOA operation — is proved there and is a separate (stronger) claim. `Lω-FixedPt-Unique` provides the simpler building block that Fix(ρ_CRPT) is a singleton.
+### Scope of the Uniqueness Claim
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | Lω.7.R3 | `FixUniq-Scope` | | **Novel** |
+**Synopsis:** The uniqueness claim is specifically for projective fixed points.
+
+**Source:** CRPT; from `Lω-FixedPt-Unique` (Lω.7.T2) + `Self-FP` (Lω.5.T1).
+
+The uniqueness claimed here is specifically for projective fixed points (elements fixed by ρ_CRPT itself). The stronger self-consistency fixed point of `Self-FP` (Lω.5.T1) — uniqueness of the level structure as a fixed point of the meta-HOA operation — is proved there and is a separate (stronger) claim. `Lω-FixedPt-Unique` provides the simpler building block that Fix(ρ_CRPT) is a singleton.
 
 ---
 

@@ -95,7 +95,16 @@ x ≃_M y ⟹ α_M(x) = α_M(y).
 *Proof.* By the CNF-Fibre Theorem (`CNF=CR` (L2.5.T2)): x ≃_M y iff CFix(ρ_M)(x) = CFix(ρ_M)(y),
 i.e., α_M(x) = α_M(y). ∎
 
-*Remark L7.1.R2 (Relationship to L2.1).* `GC` (L7.1.T1) here is the L2.1 Galois
+### Relationship to L2.1
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L7.1.R2 | `GC-vs-L2.1` | | **Novel** |
+**Synopsis:** GC restates the L2.1 Galois connection in the (α_M, γ_M) notation.
+
+**Source:** CRPT; from `GC` (L7.1.T1) + `GI` (L7.1.D1).
+
+`GC` (L7.1.T1) here is the L2.1 Galois
 connection theorem in the (α_M, γ_M) notation of `GI` (L7.1.D1).
 Corollaries `GC1` (L7.1.C1)–`GC3` (L7.1.C3) are classical consequences of the biconditional, which is
 strictly stronger than the three corollaries individually.
@@ -343,7 +352,16 @@ x ≈ y ⟹ x ≃_{Collapse} y trivially. ✓
 
 Therefore Collapse(M) is a CRPT model, and a pure-WF one. ∎
 
-*Remark L7.1.R3 (degenerate horizons of the collapse).* Because Collapse(M) is discrete
+### Degenerate Horizons of the Collapse
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L7.1.R3 | `Collapse-DegHor` | | **Novel** |
+**Synopsis:** Why Collapse(M) has degenerate (Class E only) horizons.
+
+**Source:** CRPT; from `Collapse-Model` (L7.1.T4) + `GI∞` (L7.1.D5).
+
+Because Collapse(M) is discrete
 (every class an isolated fixpoint), its horizon structure is degenerate: the six-class
 partition (L3.2) reduces to **Class E** (the fixpoints) alone. This is consistent with
 Collapse being the *maximal* abstraction — it retains the canonical observables and
@@ -417,7 +435,16 @@ abstraction α∞ together are the regime-aware semantic projection
 The three identities are the verbatim ∞_M-duals of `GC1`–`GC3` (L7.1.C1–C3), with Fix(ρ_M)
 replaced by Q∞_M and ≃_M by ≃∞. ∎
 
-*Remark L7.1.R4 (graded abstraction; why a single insertion does not suffice).* On ↓_M the
+### Graded Abstraction
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L7.1.R4 | `Graded-Abs` | | **Novel** |
+**Synopsis:** Why a single Galois insertion cannot give the complete persistent abstraction.
+
+**Source:** CRPT; from `GC∞` (L7.1.T5) + `SC-Imp` (L6.3.T1).
+
+On ↓_M the
 Galois insertion lands on the *complete* invariant (CFix; `CNF=CR` (L2.5.T2)). On ∞_M,
 `SC-Imp` (L6.3.T1) shows no single bisimulation-invariant is complete, so α∞ — which lands
 on the ω-limit class ≃∞ — captures only the *asymptotic-support* level. The complete

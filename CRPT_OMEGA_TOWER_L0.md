@@ -52,7 +52,16 @@ x ≃_π y  :⟺  CNF_π(x) = CNF_π(y)   (equivalently: L_π(x) = L_π(y))
 ≃_π is an equivalence relation (reflexive, symmetric, transitive: immediate from
 equality of CNF_π values). The equivalence class [x]_{≃_π} = L_π(x).
 
-*Remark L0.1.R1 (Fiber as information complement).* L_π(x) collects every element
+### Fiber as Information Complement
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L0.1.R1 | `Fiber-InfoComp` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `Fiber` (L0.1.D2).
+
+L_π(x) collects every element
 that π cannot distinguish from x at the canonical level. The larger L_π(x), the
 more information the projection loses at x. The fiber is the exact certificate of
 the observability boundary at x — established formally by L0.1.T1 below.
@@ -171,7 +180,16 @@ For x ∈ Conv(π), CNF_π(x) := π^{d_π(x)}(x) where d_π(x) := min{n ∈ ℕ 
 by finite iteration; the persistent-regime canonical form (when it exists) is
 defined by L0.8.
 
-*Remark L0.2.R1 (Prior to axioms).* The dichotomy Conv(π) ∪ Pers(π) = 𝒰 is a
+### Regimes Prior to Axioms
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L0.2.R1 | `Reg-PreAx` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `Conv`, `Pers` (L0.2.D1).
+
+The dichotomy Conv(π) ∪ Pers(π) = 𝒰 is a
 logical consequence of the definition of Conv(π) and excluded middle. No axiom
 of any projection system is required. The PA-* axiom families of L1 are organized
 by this prior structure: their tripartite coverage (L0.2.T2) is forced by the
@@ -316,7 +334,16 @@ H_I^π(x) = ⊤ iff x lies in a non-trivial fiber AND all elements of that fiber
 are signature-indistinguishable from x. The ramification is observationally
 invisible.
 
-*Remark L0.3.R1 (Boundary layer vs. H_O^π).* The boundary layer predicate
+### Boundary Layer vs. H_O^Ï
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L0.3.R1 | `BdyLayer-HO` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `H_S^π`, `H_I^π`, `H_O^π` (L0.3.D1).
+
+The boundary layer predicate
 H_∂^π(x) := (d_π(x) = 1) — "x is one π-step from its canonical form" — is
 distinct from H_O^π(x). H_∂^π concerns non-fixpoints at depth 1. H_O^π
 concerns fixpoints with non-trivial fibers. They classify elements at different
@@ -691,7 +718,16 @@ orthogonal: changing x to a →_σ-related z with CNF_π(z) = CNF_π(x) leaves t
 orbit limit unchanged (the vertical record is the same) while changing the fiber
 position (the horizontal record differs). ∎
 
-*Remark L0.6.R1 (Relation to Inf-Dual).* `HV-Dual-Static` (L0.6.T1) is the
+### Relation to Inf-Dual
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L0.6.R1 | `HVDual-InfDual` | | **Novel** |
+**Synopsis:** How the static HV-duality (L0.6.T1) relates to the dynamic Inf-Dual.
+
+**Source:** CRPT; from `HV-Dual-Static` (L0.6.T1) + `Inf-Dual-U` (L0.5.T1).
+
+`HV-Dual-Static` (L0.6.T1) is the
 static version: horizontal = unobservable, vertical = observable, at a fixed tower
 level. `Inf-Dual-U` (L0.5.T1) is the dynamic version: the two kinds of infinity
 exchange roles across consecutive tower levels. Both are needed. L0.6.T1 grounds

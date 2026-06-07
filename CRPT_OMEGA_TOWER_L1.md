@@ -35,7 +35,16 @@ as axioms in L5.2 (and used by PA-WN_top / CFix in the topological regime).
 The inclusion constraint
 is part of the definition of what it means to be a substrate, not an axiom.
 
-*Remark L1.1.R1 (Why two relations).* The two-relation substrate serves two independent structural purposes:
+### Why Two Relations
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L1.1.R1 | `Two-Rel` | | **Novel** |
+**Synopsis:** Why the substrate carries two relations: →_ρ for projection and →_σ for structure.
+
+**Source:** CRPT; from `Sub` (L1.1.D1).
+
+The two-relation substrate serves two independent structural purposes:
 1. **→_ρ for recursive projection:** All core CRPT axioms (PA-WN, PA-Conf, PA-Fix, PA-NWF, PA-CoInd, PA-Prod, PA-Bisim) constrain the projection operator ρ_M acting on →_ρ.
 2. **→_σ for horizontal structure:** The structural relation →_σ is used in observation (L2.2), Gateway definition (L4.2), and regime connectivity analysis. The distinction is necessary because →_ρ is projection-sequential (determining what ρ_M reaches), while →_σ is structural-ambient (determining what observables see).
 
@@ -104,7 +113,16 @@ x ∈ Div(→_ρ) :⟺ ∃σ : ℕ → 𝒰 : σ(0) = x ∧ ∀n ∈ ℕ : σ(n)
 ```
 The set Div(→_ρ) := {x ∈ 𝒰 | x ∈ Div(→_ρ)}.
 
-*Remark L1.1.R2.* Whether Div(→_ρ) is empty or non-empty is not determined by the
+### Divergence Is Not Substrate-Determined
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L1.1.R2 | `Div-NotDet` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `Div` (L1.1.D5).
+
+Whether Div(→_ρ) is empty or non-empty is not determined by the
 substrate. It depends on axioms added at L1.2–L1.5.
 
 ### Bisimulation
@@ -168,11 +186,29 @@ transitive.
  (standard argument: follow R₁ forward then R₂ forward). Hence x ≈ y ∧ y ≈ z ⟹
  x ≈ z. ✓ ∎
 
-*Remark L1.1.R3.* The substrate does NOT assert that bisimilar elements are equal (x ≈ y
+### Bisimilarity Is Not Equality
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L1.1.R3 | `Bisim-NotEq` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `Bisim~` (L1.1.D7) + PA-Bisim (L1.3.Ax1).
+
+The substrate does NOT assert that bisimilar elements are equal (x ≈ y
 ⟹ x = y). That is the content of axiom `PA-Bisim` (L1.3.Ax1), stated at the axiom level.
 Here ≈ is defined as a congruence; its relationship to identity is axiom-governed.
 
-*Remark L1.1.R4 (Discernibility Interpretation).* Bisimilarity ≈ is the formal relation
+### Discernibility: Bisimilarity
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L1.1.R4 | `Disc-Bisim` | | **Novel** |
+**Synopsis:** Reading bisimilarity ≈ as the discernibility relation between elements.
+
+**Source:** CRPT; from `Bisim~` (L1.1.D7).
+
+Bisimilarity ≈ is the formal relation
 of **mutual indiscernibility**: x ≈ y means no distinction between x and y survives all
 forward and backward →_ρ-steps. This makes ≈ the canonical boundary between what
 is **discernible** (x ≉ y: some reduction path distinguishes them) and what is
@@ -503,7 +539,7 @@ For every persistent element, recursive projection reaches and stabilizes at a h
 
 **Interpretation:** Recursive projection ρ_M, when applied to any persistent (non-terminating) element, eventually enters a stratum where the orbit signature sig_M becomes constant and remains constant under further projection. On ∞_M the orbit signature is the topological form sig_M(x) = (∞, limit_id, convergence_profile) (`sig_M-NM` (L3.1.D5)); its stabilization is what enables the observer to extract a canonical representative from the infinite productive object.
 
-**Definition — Canonical Persistent Representative:**
+### Canonical Persistent Representative
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -1096,7 +1132,16 @@ assumption. If a particular result in those sections uses global confluence beyo
 orbit-uniqueness, that additional global-confluence hypothesis is required for that
 result. ∎
 
-*Corollary L1.5.C1 (CCS, π-calculus, Petri Nets are fully compliant).* Any model
+### CCS, Ï-Calculus, Petri Nets Are Compliant
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Corollary** | L1.5.C1 | `Proc-Compliant` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `LA_M` (L1.5.D2).
+
+Any model
 where →_ρ is non-confluent but ρ_M is a total deterministic function satisfying C1–C3
 (L2.1) is CRPT-compatible with PA-Conf declared `Scoped(ρ_M-orbits)`. No stochastic
 reinterpretation is required.

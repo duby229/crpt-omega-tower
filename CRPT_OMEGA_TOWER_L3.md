@@ -86,7 +86,16 @@ and the kernel-congruence formulation H_I(x) :⟺ H_S(x) ∧ (trivial congruence
 are mathematically identical; the kernel formulation emphasizes the category-theoretic and 
 algebraic structure.
 
-*Remark L3.1.R5 (Category-Theoretic Role).* H_I has no standard counterpart in classical ARS theory 
+### Category-Theoretic Role of H_I
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.1.R5 | `HI-CatRole` | | **Novel** |
+**Synopsis:** The category-theoretic role of H_I, which has no classical ARS counterpart.
+
+**Source:** CRPT; from `H_I` (L3.1.D2).
+
+H_I has no standard counterpart in classical ARS theory 
 or model theory. However, in **category theory / universal algebra**, the notion of **kernel-preserving 
 congruence** is well-established:
 - A map φ : X → Y is **kernel-preserving congruence** if for every y ∈ Y, the congruence 
@@ -112,7 +121,16 @@ H_O(x) :⟺ d_M(x) = 1
 H_O(x) holds if x is exactly one ρ_M-step from its canonical abstraction: x is
 in the *boundary layer* ∂μT_{ρ,M} := {x ∈ μT_{ρ,M} | d_M(x) = 1}.
 
-*Remark L3.1.R6.* H_O carries no information beyond d_M(x) = 1. It is a notational
+### H_O Is Notational
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.1.R6 | `HO-Notational` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `H_O` (L3.1.D4).
+
+H_O carries no information beyond d_M(x) = 1. It is a notational
 convenience for the six-class partition (L3.2). In formal statements, write d_M(x) = 1
 directly.
 
@@ -141,11 +159,29 @@ sig_M(x) := (∞, limit_id, convergence_profile) ∈ {∞} × Limits(𝒯) × �
 ```
 The topological operative signature: regime tag (∞), limit point (CFix(ρ_M)(x)), and convergence rate profile (how fast ρ_M^n(x) approaches its limit).
 
-*Remark L3.1.R7.* In the native regime-stratified framework, the orbit signature is regime-stratified. The H_S and H_I horizons apply to ↓_M elements (finitary branching structure); ∞_M elements instead carry convergence-rate / asymptotic information. Both components are observable (orbit-distinguishable) and capture the element's "behavioral signature."
+### Orbit Signature Is Regime-Stratified
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.1.R7 | `sig-RegStrat` | | **Novel** |
+**Synopsis:** The orbit signature is regime-stratified in the native framework.
+
+**Source:** CRPT; from `sig_M-NM` (L3.1.D5).
+
+In the native regime-stratified framework, the orbit signature is regime-stratified. The H_S and H_I horizons apply to ↓_M elements (finitary branching structure); ∞_M elements instead carry convergence-rate / asymptotic information. Both components are observable (orbit-distinguishable) and capture the element's "behavioral signature."
 
 For pure-WF specialization: pure WF models have ∞_M = ∅, so sig_M(x) always takes the first form (↓-regime, WF horizons).
 
-*Remark L3.1.R8 (Discernibility Interpretation).* The orbit signature sig_M(x) is the
+### Discernibility: Orbit Signature
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.1.R8 | `Disc-Sig` | | **Novel** |
+**Synopsis:** Reading the orbit signature sig_M(x) as a discernibility fingerprint.
+
+**Source:** CRPT; from `Sig-Dep` (L3.1.T1) + `sig_M-NM` (L3.1.D5).
+
+The orbit signature sig_M(x) is the
 **discernible fingerprint** of x — the complete set of structurally distinguishable
 properties that characterize x's position in the abstraction landscape. Elements with
 identical signatures are **observationally indiscernible**: no observer with access to
@@ -495,7 +531,16 @@ then the sig_M-uniformity condition fails: ∃z, z' ∈ ker(ρ_M, ρ_M(x)) with
 sig_M(z) ≠ sig_M(z'). Thus abstraction merges them at one step but the observer
 signature can still distinguish them: the collapse is resolvable. ✓ ∎
 
-*Remark L3.1.R9 (∞_M Horizon Story).* `Hor-Abs` (L3.1.T3) describes horizons for ↓_M elements
+### â_M Horizon Story
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.1.R9 | `Hor-InfStory` | | **Novel** |
+**Synopsis:** How horizons are described on the persistent regime ∞_M.
+
+**Source:** CRPT; from `Hor-Abs` (L3.1.T3) + `sig_M-NM` (L3.1.D5).
+
+`Hor-Abs` (L3.1.T3) describes horizons for ↓_M elements
 (where H_S, H_I, H_O are directly defined). For ∞_M elements, the native form
 of the orbit signature (`sig_M-NM` (L3.1.D5)) replaces the Boolean horizon predicates with a
 **convergence profile** — how fast ρ_M^n(x) approaches its topological limit.
@@ -612,7 +657,16 @@ representative x of the class. This is well-defined by the theorem. ✓
 *Purpose.* Orbit Signature and H_I Well-Definedness. This section defines the orbit signature sig_M(x) and proves that H_I is well-defined and computable: the uniform-sibling condition it tests is independent of the choice of representative in each fiber. It also establishes the kernel-locality theorem: H_I depends only on the local fiber structure.*
 
 
-*Remark L3.2.R1 (Discernibility Interpretation).* The six-class partition is the fundamental
+### Discernibility: Six-Class Partition
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.2.R1 | `Disc-6Part` | | **Novel** |
+**Synopsis:** Reading the six-class partition as the fundamental discernibility classification.
+
+**Source:** CRPT; from `6-Part` (L3.2.T1).
+
+The six-class partition is the fundamental
 **discernibility classification** of ↓_M. Each class represents a distinct position in
 the discernibility landscape: A and D are fully discernible (no collapse), B and E have
 resolvable collapse (siblings distinguishable by the orbit signature), C and F have unresolvable
@@ -758,7 +812,16 @@ subalgebra of {⊥,⊤}². The conditional predicate Q3, defined only when Q2 = 
 Q2 = ⊤ stratum into two sub-classes per Q1 value. The result is a **refined Boolean structure** 
 with 6 atoms. ✓ ∎
 
-*Remark L3.2.R2 (Logical vs. Occupied Classes).* `6-Part` (L3.2.T1) establishes the full six-class logical partition: all six classes A–F are logically distinct and mutually exclusive. A structural result proved below (`F=∅` (L3.2.T2)) shows that Class F is **never occupied** in any deterministic CRPT model. The logical partition therefore comprises five active classes (A, B, C, D, E) and one provably empty class (F).
+### Logical vs. Occupied Classes
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.2.R2 | `Logical-vs-Occupied` | | **Novel** |
+**Synopsis:** Logical classes versus the classes actually occupied in a given model.
+
+**Source:** CRPT; from `6-Part` (L3.2.T1) + `F=∅` (L3.2.T2).
+
+`6-Part` (L3.2.T1) establishes the full six-class logical partition: all six classes A–F are logically distinct and mutually exclusive. A structural result proved below (`F=∅` (L3.2.T2)) shows that Class F is **never occupied** in any deterministic CRPT model. The logical partition therefore comprises five active classes (A, B, C, D, E) and one provably empty class (F).
 
 **Standard Connections.** 
 - **Class A:** Regular convergent elements with injective ρ_M-structure. Abstractly: clean 
@@ -820,7 +883,16 @@ H_I(f) = ⊤ ⟺ ker(ρ_M, f) is d_M-uniform
 ```
 Since ker(ρ_M, f) is not derivation height-uniform, H_I(f) = ⊥. This contradicts H_I(f) = ⊤. □
 
-*Remark L3.2.R3.* The NWF-regime analogue Class F* (L6.4) is a distinct class and may be
+### NWF Class F* Is Distinct
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.2.R3 | `Fstar-Distinct` | | **Novel** |
+**Synopsis:** Why the NWF-regime Class F* is distinct from the WF Class F.
+
+**Source:** CRPT; from `6-Part` (L3.2.T1) + `sig_M-NM` (L3.1.D5).
+
+The NWF-regime analogue Class F* (L6.4) is a distinct class and may be
 occupied; the argument above uses d_M(z) = 1 for non-fixpoint ρ_M-preimages of a convergent-
 regime fixpoint, a property specific to ↓_M. The logical class definition is retained in
 `6-Part` (L3.2.T1) because class emptiness is a model-semantic property, not a structural
@@ -836,7 +908,16 @@ stratifies elements by abstraction depth; see the orbit signature (`sig_M-NM` (L
 
 The six-class partition (L3.2–9.2) applies to the convergent regime ↓_M. In the native regime-stratified framework (L1.2–L1.5, `Reg-Strat` (L2.2.D3)), a parallel six-class partition applies to the persistent regime ∞_M, yielding a **twelve-class total partition** of 𝒰.
 
-*Remark L3.2.R4.* The partition is regime-stratified, not regime-mixed: each element belongs to exactly one regime (↓_M or ∞_M by `Reg-Strat` (L2.2.D3)) and thus to exactly one class within that regime's six-class partition.
+### The Partition Is Regime-Stratified
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.2.R4 | `Part-RegStrat` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `Reg-Strat` (L2.2.D3).
+
+The partition is regime-stratified, not regime-mixed: each element belongs to exactly one regime (↓_M or ∞_M by `Reg-Strat` (L2.2.D3)) and thus to exactly one class within that regime's six-class partition.
 
 ### Topological Horizons on ∞_M (Parallel to H_S, H_I)
 
@@ -991,7 +1072,16 @@ stratifies 𝒰 into 12 classes by (regime, horizon-parameters).
 The construction in §L2.1–9 covers the convergent regime ↓_M (equivalently, μT_{ρ,M} in the pure-WF profile).
 This section covers the persistent regime ∞_M (equivalently, νT_{ρ,M} in the native stratified profile).
 
-*Remark L3.3.R1 (Hybrid Framework: Two Canonical Abstraction Forms).*
+### Hybrid Framework: Two Canonical Forms
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.3.R1 | `Hybrid-TwoCanon` | | **Novel** |
+**Synopsis:** The hybrid framework of two canonical abstraction forms, CFix and CNF∞.
+
+**Source:** CRPT; from `Reg-Strat` (L2.2.D3).
+
+
 In the hybrid framework (`Reg-Strat` (L2.2.D3), L1.4), every element has a canonical abstraction:
 
 - **For x ∈ ↓_M (convergent regime):** CFix(ρ_M)(x) ∈ NF(→_ρ), finitary normal form. Computed by finite ρ_M-iteration: ρ_M^{d_M(x)}(x). (Classical form.)
@@ -1182,7 +1272,16 @@ in 𝒰_M/≈. This is the **eventual bisimulation image** of x's orbit.
 - SC-1 asserts that $|ω_≈(x)| = 1$ (singleton ω-limit in the quotient)
 - CNF∞_M picks out this unique quotient class
 
-*Remark L3.3.R2 (where CNF∞ sits in the WF/NWF duality).* CNF∞_M is **not** the full
+### Where CNFâ Sits in the WF/NWF Duality
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.3.R2 | `CNFinf-Placement` | | **Novel** |
+**Synopsis:** Where CNF∞ sits in the graded WF/NWF duality (the SC-1 base layer).
+
+**Source:** CRPT; from `WF-NWF-Dual` (L3.3.T9) + `CPer` (L1.3.D1).
+
+CNF∞_M is **not** the full
 counterpart of CFix(ρ_M); the WF/NWF duality is *graded* (`WF-NWF-Dual` (L3.3.T9)), and
 CNF∞ occupies only its lowest rung:
 - The total dual of CFix (total on ↓_M via PA-WN) is **CPer** (total on ∞_M via the
@@ -1336,7 +1435,16 @@ the persistent orbit quotient. The *semantic projection* π_sem : 𝒰_M → Sem
 models), π_sem is well-defined on individual elements; at the abstract level, ≈-bisimilar
 elements map to the same class.
 
-*Remark L3.3.R3 (Semantic Base).* Sem(M) is the **semantic base** for the observer triple
+### The Semantic Base
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.3.R3 | `Sem-Base` | | **Novel** |
+**Synopsis:** Sem(M) as the semantic base through which the observer triple factors.
+
+**Source:** CRPT; from `Obs-Triple` (L4.1.D5).
+
+Sem(M) is the **semantic base** for the observer triple
 `Obs-Triple` (L4.1.D5) and for compiler IR design: the observer 𝒪 factors through
 π_sem (elements with the same orbit-equivalence class have the same behavioral
 signature), and IR types correspond to elements of Sem(M). The two components
@@ -1473,7 +1581,16 @@ dual and each universal on its regime. (ii) is `CNF=CR` (L2.5.T2) on the WF side
 AOI hierarchy (`AOI-Unif` (L6.3.D10)) supplies the complete classifier that SC-Imp shows
 must be hierarchical. ∎
 
-*Remark L3.3.R4 (the asymmetry is structural, not a rigor gap).* The persistent regime is
+### The Asymmetry Is Structural
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.3.R4 | `Asym-Structural` | | **Novel** |
+**Synopsis:** Why the WF/NWF asymmetry is structural (forced by SC-Imp), not a rigor gap.
+
+**Source:** CRPT; from `SC-Imp` (L6.3.T1).
+
+The persistent regime is
 *genuinely* richer than the convergent one: a convergent orbit ends (reaches a fixpoint),
 discarding its history, so one terminal value (CFix) suffices; a persistent orbit never
 ends, and its asymptotic behaviour can carry unbounded structure (aperiodic class

@@ -42,14 +42,32 @@ a canonical representative — information-discarding in the direction of Fix(ρ
 — rather than rule-driven syntactic simplification. C2 is the CRPT-required
 congruence condition with respect to ≈ (Milner [1980] §5: bisimulation equivariance).
 
-*Remark L2.1.R1 (Projection vs Abstraction).* That ρ_M is the projection operator is
+### Projection vs. Abstraction
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.1.R1 | `Proj-vs-Abs` | | **Novel** |
+**Synopsis:** Why ρ_M is the projection operator, and how projection differs from abstraction.
+
+**Source:** CRPT; from `RP=Abs` (L2.1.T4) + `ρ_M` (L2.1.D1).
+
+That ρ_M is the projection operator is
 established by definition (C1–C2). That the recursive projection CFix(ρ_M)(x) :=
 ρ_M^{d_M(x)}(x) is the *abstraction function* in the sense of Cousot & Cousot
 (1977) is a theorem (`RP=Abs` (L2.1.T4)), not part of the definition (`ρ_M` (L2.1.D1)). The two claims are
 distinct: ρ_M is defined as the projection operator; CFix(ρ_M) being the abstraction
 is derived from the PA-* axioms via the Galois connection theorem.
 
-*Remark L2.1.R2 (ρ_M as Regime-Neutral Projection).*
+### Ï_M as Regime-Neutral Projection
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.1.R2 | `Rho-RegNeutral` | | **Novel** |
+**Synopsis:** ρ_M acts uniformly on both regimes — it is regime-neutral.
+
+**Source:** CRPT; from `ρ_M` (L2.1.D1) + `Reg-Strat` (L2.2.D3).
+
+
 In the native regime-stratified framework (`Reg-Strat` (L2.2.D3), L1.2–L1.5), ρ_M operates
 identically in both ↓_M and ∞_M. What changes between regimes is the mode of
 convergence of the projection:
@@ -63,7 +81,16 @@ In both cases CFix(ρ_M)(x) is the canonical projection limit. All theorems abou
 ρ_M's properties (equivariance C2, depth decrease `Depth-Dec` (L2.3.T2), etc.) apply
 uniformly in both regimes.
 
-*Remark L2.1.R3 (C3 — idempotence on fixpoints).* For any x ∈ Fix(ρ_M), ρ_M(x) = x,
+### C3 â Idempotence on Fixpoints
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.1.R3 | `C3-Idem` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `ρ_M` (L2.1.D1).
+
+For any x ∈ Fix(ρ_M), ρ_M(x) = x,
 so ρ_M(ρ_M(x)) = ρ_M(x). This is immediate from the definition of Fix(ρ_M) and
 imposes no constraint. It is not a condition on ρ_M.
 
@@ -277,7 +304,16 @@ Therefore (α_M, γ_M) is a Galois insertion, and CFix(ρ_M) is the abstraction 
 *(←)* Assume f ∈ Fix(ρ_M) and x ≤_ρ f. By `UF` (L2.1.L2):
 {f ∈ Fix(ρ_M) | x ≤_ρ f} = {CFix(ρ_M)(x)}, so f = CFix(ρ_M)(x). ✓ ∎
 
-*Remark L2.1.R4 (No new axioms).* `RP=Abs` (L2.1.T4) uses PA-WN (existence of d_M(x) ∈ ℕ,
+### No New Axioms (RP=Abs)
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.1.R4 | `RPAbs-NoNewAx` | | **Novel** |
+**Synopsis:** RP=Abs introduces no axioms beyond PA-WN, PA-Conf, and C1.
+
+**Source:** CRPT; from `RP=Abs` (L2.1.T4); background in Cousot & Cousot [1977].
+
+`RP=Abs` (L2.1.T4) uses PA-WN (existence of d_M(x) ∈ ℕ,
 used in `UF` (L2.1.L2) via `Depth-Dec` (L2.3.T2) and `Fix-D0` (L2.3.T3)),
 PA-Conf (uniqueness of the fixpoint reached, via confluence), C1 (for the Step-or-Fix
 property underpinning `Depth-Dec` (L2.3.T2) and `Fix-D0` (L2.3.T3)), and
@@ -286,14 +322,32 @@ the definitions of ≤_ρ (`≤_ρ` (L2.3.D1)), derivation height (`derivation h
 alongside the PA-* system. The definition of Galois connection is imported from
 Cousot & Cousot [1977] L2.2 without modification.
 
-*Remark L2.1.R5 (Monotonicity is derivable).* The standard Moore closure definition
+### Monotonicity Is Derivable
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.1.R5 | `Mono-Deriv` | | **Novel** |
+**Synopsis:** Monotonicity of the projection is derivable, not a separate assumption.
+
+**Source:** CRPT; from `UF` (L2.1.L2).
+
+The standard Moore closure definition
 requires extensiveness, monotonicity, idempotence, and abstract range. In the CRPT
 setting, monotonicity is redundant: any map satisfying the other three conditions
 equals CFix(ρ_M) by `UF` (L2.1.L2), and CFix(ρ_M) is monotone (if x ≤_ρ y then CFix(ρ_M)(x) =
 CFix(ρ_M)(y) by Lemma L-CNF, proved in L2.4). The derivability of monotonicity from
 the determinism of ρ_M via C1 is specific to CRPT's orbit structure.
 
-*Remark L2.1.R6 (Discernibility interpretation).* Each step of the projection operator
+### Discernibility: Projection Step
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.1.R6 | `Disc-Proj` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `ρ_M` (L2.1.D1).
+
+Each step of the projection operator
 ρ_M systematically erases indiscernible structure. The recursive projection
 CFix(ρ_M)(x) retains only what is structurally distinguishable in [x]_{≃_M}: it is
 the discernibility limit of the projection process.
@@ -414,7 +468,16 @@ The *persistent regime* (elements with infinite abstraction depth) is the greate
 ```
 x ∈ ∞_M iff no iterate of ρ_M(x) reaches a fixpoint. The notation ∞_M ("infinite") emphasizes that elements in this regime never reach a fixpoint; abstraction depth is infinite.
 
-*Remark L2.2.R3 (Regime Operators in Pure and Native Settings).* 
+### Regime Operators in Pure and Native Settings
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.2.R3 | `RegOps-PureNative` | | **Novel** |
+**Synopsis:** How the regime operators behave in pure-WF versus native stratified settings.
+
+**Source:** CRPT; from `Reg-Strat` (L2.2.D3) + `Mode` (L1.4.D1).
+
+
 
 The regime operators use Fix(ρ_M), not NF(→_ρ), because the partition is defined via ρ_M-orbits. The distinction is important in both settings:
 
@@ -472,7 +535,16 @@ Baader & Nipkow [1998]
 ∀n : ρ_M^n(x) ∉ Fix(ρ_M) (x ∈ ∞_M). These are the two cases of classical excluded
 middle on the predicate x ∈ ↓_M. Disjointness: immediate from the definitions. ∎
 
-*Remark L2.2.R4.* `Part` (L2.2.T3) is a logical tautology given the definitions. It requires
+### The Regime Partition Is a Tautology
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.2.R4 | `Part-Taut` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `Part` (L2.2.T3).
+
+`Part` (L2.2.T3) is a logical tautology given the definitions. It requires
 no axiom. It is stated as a theorem (rather than a remark) only because it is a
 named result that appears in cross-references.
 
@@ -506,7 +578,16 @@ non-empty.
 By definition of ∞_M (`∞_M` (L2.2.D5)), this is equivalent to ∃x ∈ ∞_M.
 Therefore the persistent regime is non-empty. ∎
 
-*Remark L2.2.R5 (Discernibility Interpretation).* The regime partition classifies elements
+### Discernibility: Regime
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.2.R5 | `Disc-Regime` | | **Novel** |
+**Synopsis:** Reading the regime partition as a discernibility classification.
+
+**Source:** CRPT; from `↓_M` (L2.2.D4) + `∞_M` (L2.2.D5).
+
+The regime partition classifies elements
 by the **limit of their discernible content under abstraction**: ↓_M elements have
 finitely exhaustible discernibility (reduction terminates), while ∞_M elements have
 inexhaustible discernibility (reduction never terminates — infinite unfolding
@@ -672,7 +753,16 @@ This explains why:
 - **Horizon structure captures the transition:** The H_S/H_I classification identifies which elements are non-injective or ambiguous under the collapse — precisely those whose fiber has complex σ-structure.
 - **The tower mediates:** Lifting transforms one manifestation of infinity into another.
 
-*Remark L2.2.R6 (Dependency Note).* `Inf-Dual` (L2.2.T7) uses `Lift-Def` (L8.2.D2),
+### Inf-Dual Dependency Note
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.2.R6 | `InfDual-DepNote` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `Inf-Dual` (L2.2.T7) + `Lift-Def` (L8.2.D2).
+
+`Inf-Dual` (L2.2.T7) uses `Lift-Def` (L8.2.D2),
 `Fix-Bas` (L8.2.T1), and `NFC-TInv` (L8.4.T2). This dependency is non-circular:
 L8.1 does not depend on `Inf-Dual` (L2.2.T7). The placement in L2.2 is expository,
 while proof dependencies remain fully internal to this anchor.
@@ -859,7 +949,16 @@ Under PA-Conf (Church-Rosser),
  Choose a large enough that a(k+ℓ) ≥ d. Then ρ_M^{a(k+ℓ)}(x) = f (since a(k+ℓ) ≥ d).
  But ρ_M^{a(k+ℓ)}(x) = x. So x = f ∈ Fix(ρ_M), and y = ρ_M^k(f) = f = x. ✓ ∎
 
-*Remark L2.3.R1.* Antisymmetry of ≤_ρ follows from the deterministic (functional) nature of ρ_M and the
+### Antisymmetry of â¤_Ï
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.3.R1 | `leq-Antisym` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `d_M` (L2.3.D2).
+
+Antisymmetry of ≤_ρ follows from the deterministic (functional) nature of ρ_M and the
 finite reachability of fixpoints in μT_{ρ,M}. PA-Conf is included in the hypothesis for consistency with
 downstream uses (the reachability poset interacts with Church-Rosser uniqueness in L2.4).
 
@@ -889,10 +988,28 @@ Fix(ρ_M), so the following characterizations are equivalent:
 The CRPT local term is **abstraction depth**: d_M(x) measures how many abstraction steps are required
 to collapse x down to its canonical abstraction CFix(ρ_M)(x).
 
-*Remark L2.3.R2.* derivation height is defined only on μT_{ρ,M}. For x ∈ νT_{ρ,M}, the set {n | ρ_M^n(x) ∈ Fix(ρ_M)} is
+### Domain of Derivation Height
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.3.R2 | `dM-Domain` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `d_M` (L2.3.D2).
+
+derivation height is defined only on μT_{ρ,M}. For x ∈ νT_{ρ,M}, the set {n | ρ_M^n(x) ∈ Fix(ρ_M)} is
 empty, so d_M(x) is undefined. The rank function has no meaning for persistent/diverging elements.
 
-*Remark L2.3.R3 (Derivation Height in the Native Framework).*
+### Derivation Height in the Native Framework
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.3.R3 | `dM-Native` | | **Novel** |
+**Synopsis:** How derivation height extends across both regimes in the native framework.
+
+**Source:** CRPT; from `d-WD` (L2.3.T1) + `Reg-Strat` (L2.2.D3).
+
+
 In the native regime-stratified setting (L1.2–L1.5, `Reg-Strat` (L2.2.D3)), the concept of derivation height extends to all elements:
 
 - **For x ∈ ↓_M:** d_M(x) ∈ ℕ (finite derivation height), measured as the number of ρ_M iterations to reach a fixpoint. All existing theorems on d_M (`d-WD` (L2.3.T1), `Depth-Dec` (L2.3.T2), `Fix-D0` (L2.3.T3)) apply directly.
@@ -990,7 +1107,16 @@ CFix(ρ_M)(x) := {
 
 where the limit for ∞_M elements is taken in the model topology 𝒯 specified as part of the substrate (`Sub` (L1.1.D1), L1.2).
 
-*Remark L2.4.R1.* **Existence and Uniqueness in Native Form:**
+### Existence and Uniqueness (Native Form)
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.4.R1 | `CFix-ExUniq-Nat` | | **Novel** |
+**Synopsis:** Existence and uniqueness of the canonical form in native (both-regime) form.
+
+**Source:** CRPT; from `CNF-Ex` (L2.4.T1) + `TopSep-Uniq` (L1.2.T1).
+
+**Existence and Uniqueness in Native Form:**
 
 - **For x ∈ ↓_M:** CFix(ρ_M)(x) ∈ NF(→_ρ) exists by `CNF-Ex` (L2.4.T1).
  Uniqueness holds for the deterministic ρ_M-orbit (C1–C2). If PA-Conf is assumed
@@ -1002,7 +1128,16 @@ The definition unifies both regimes: CFix(ρ_M) is a total function on 𝒰, wit
 
 *Standard name.* In standard (pure WF) CRPT: CFix(ρ_M) is the canonical normal-form map (Baader & Nipkow §2.1, Church-Rosser normal form). In native CRPT: CFix(ρ_M) extends to analytic models via topological closure, generalizing the Church-Rosser property to topological limit convergence. Both are called **canonical** because they are unique: finitary uniqueness follows from PA-Conf, while topological uniqueness follows from `TopSep-Uniq` (L1.2.T1), i.e. PA-WN_top together with the explicit TopSep(𝒯) assumption. They represent the maximal abstraction of their fiber.
 
-*Remark L2.4.R2 (Discernibility Interpretation).* CFix(ρ_M)(x) is the **canonical discernible
+### Discernibility: Canonical Form
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.4.R2 | `Disc-CFix` | | **Novel** |
+**Synopsis:** Reading CFix(ρ_M)(x) as the canonical discernible representative of x.
+
+**Source:** CRPT; from `CFix-NM` (L2.4.D1).
+
+CFix(ρ_M)(x) is the **canonical discernible
 residue** of x: the unique representative that encodes all and only the discernible
 content of [x]_{≃_M}. Every element in this equivalence class shares the same
 canonical form — they are indiscernible with respect to the orbit structure. CFix(ρ_M)
@@ -1023,7 +1158,16 @@ For each x ∈ μT_{ρ,M}: ρ_M^{d_M(x)}(x) ∈ NF(→_ρ).
 *Proof.* Let n = d_M(x). By `derivation height` (L2.3.D2), ρ_M^n(x) ∈ Fix(ρ_M). Under PA-WN,
 Fix(ρ_M) = NF(→_ρ) by `Fix=NF` (L2.1.T2). So ρ_M^n(x) ∈ NF(→_ρ). ∎
 
-*Remark L2.4.R3.* Fix(ρ_M) = NF(→_ρ) unconditionally (`Fix=NF` (L2.1.T2), from the strengthened
+### Fix = NF Unconditionally
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.4.R3 | `FixNF-Uncond` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `Fix=NF` (L2.1.T2).
+
+Fix(ρ_M) = NF(→_ρ) unconditionally (`Fix=NF` (L2.1.T2), from the strengthened
 C1 condition). So ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M) = NF(→_ρ) in all settings.
 
 ### CNF Uniqueness — Orbit-Scoped Uniqueness
@@ -1049,7 +1193,16 @@ x ∈ μT_{ρ,M}, then by `derivation height` (L2.3.D2) there is a minimal d_M(x
 unique and therefore reaches a single NF element, namely f := ρ_M^{d_M(x)}(x).
 Hence no two distinct normal forms can be reached along the ρ_M-orbit. ∎
 
-*Remark L2.4.R4.* `CNF-Uniq` (L2.4.T2) is the Church-Rosser theorem (Baader & Nipkow Thm 2.1.15)
+### CNF-Uniq Is the ChurchâRosser Theorem
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.4.R4 | `CNFUniq-CR` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `CNF-Uniq` (L2.4.T2); background in Baader & Nipkow [1998].
+
+`CNF-Uniq` (L2.4.T2) is the Church-Rosser theorem (Baader & Nipkow Thm 2.1.15)
 for the abstract reduction system (𝒰_M, →_ρ). Under PA-WN + PA-Conf, CFix(ρ_M) is a
 well-defined total function μT_{ρ,M} → NF(→_ρ).
 
@@ -1082,7 +1235,16 @@ reaches CFix(ρ_M)(x) in exactly d_M(x) steps and no fewer.
 with `CNF-Ex` (L2.4.T1) and `CNF-Uniq` (L2.4.T2). No additional argument is required. The claim follows
 immediately from the definitions and the Church-Rosser theorem (`CNF-Uniq` (L2.4.T2)). ∎
 
-*Remark L2.4.R5.* `CR-Cor` (L2.4.C1) is a direct consequence of the Church-Rosser theorem applied to ρ_M.
+### Provenance of the CR Corollary
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.4.R5 | `CRCor-Prov` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `CR-Cor` (L2.4.C1).
+
+`CR-Cor` (L2.4.C1) is a direct consequence of the Church-Rosser theorem applied to ρ_M.
 
 ### Abstraction as Recursive Projection
 
@@ -1140,7 +1302,16 @@ Abs_M(x) = CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x). ✓
 In both cases, Abs_M(x) is the result of recursive projection by ρ_M — finite
 iteration to a fixpoint (↓_M) or infinite iteration to a topological limit (∞_M). ∎
 
-*Remark L2.4.R6 (Why "Recursive Projection").* The term "projection" is precise: each
+### Why "Recursive Projection"
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.4.R6 | `Why-RecProj` | | **Novel** |
+**Synopsis:** Why the term "recursive projection" is precise.
+
+**Source:** CRPT; from `CNF-Stab` (L2.4.T3).
+
+The term "projection" is precise: each
 application of ρ_M projects along the →_ρ relation toward a canonical form, and
 ρ_M² = ρ_M on Fix(ρ_M) (idempotence on fixpoints, `CNF-Stab` (L2.4.T3)). The recursion is
 the iteration ρ_M, ρ_M², ρ_M³, ...; the projection is the collapse from fiber to

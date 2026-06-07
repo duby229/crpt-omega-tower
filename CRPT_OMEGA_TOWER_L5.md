@@ -184,7 +184,16 @@ A *model homomorphism* is a function Φ_U : 𝒰_{M₁} → 𝒰_{M₂} satisfyi
  LA_{M₁}^i, then Φ_U(φ) — the image of φ under the substitution x ↦ Φ_U(x) — is
  satisfiable in M₂ (it need not be a theorem of LA_{M₂}, only non-contradicted by it).
 
-*Remark L5.2.R1 (Φ_LA is a compatibility condition, not full transport).* Φ_LA does not
+### Î¦_LA Is a Compatibility Condition
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L5.2.R1 | `PhiLA-Compat` | | **Novel** |
+**Synopsis:** Φ_LA is a compatibility condition, not full local-axiom transport.
+
+**Source:** CRPT; from `Hom` (L5.2.D1).
+
+Φ_LA does not
 require that every local axiom of M₁ become a theorem of M₂. It requires only that
 the image of each M₁ local axiom is *consistent* with M₂'s local axioms. This is
 the minimal condition ensuring that morphisms do not create contradictions when
@@ -409,7 +418,16 @@ A homomorphism Φ : M → D (`Hom` (L5.2.D1)) is a **faithful CRPT embedding**, 
 ```
 Combined with Φ_E (preservation of ≃), (Faith) gives x ≃_M y ⟺ Φ(x) ≃_D Φ(y): the embedding neither merges nor splits CRPT-equivalence classes. Equivalently, Φ reflects the complete invariant of ≃ in each regime — but those invariants are of *different shape* in the two regimes: on ↓_M a **single** complete invariant, d_M/CFix (`CNF=CR` (L2.5.T2)); on ∞_M, where `SC-Imp` (L6.3.T1) proves *no single* bisimulation-invariant can classify the regime, the **AOI hierarchy** (`AOI-Unif` (L6.3.D10)) together with the total canonical representative CPer (`CPer` (L1.3.D1)). The convergent invariant is single; the persistent one is necessarily hierarchical (see `WF-NWF-Dual` (L3.3.T9)).
 
-*Remark L5.2.R2 (why embedding, not isomorphism).* A domain D realising CRPT generally carries structure that ρ_D cannot see: in **Cat** the morphism dimension (bisimulation is "cardinality-blind to morphisms" — any two categories with equal |Ob| are ρ-bisimilar), in **HoTT** the higher paths, in **ZFA** the membership graph/decoration. The CRPT-reduct quotients this invisible structure away. Hence the instantiation map is injective and structure-reflecting (faithful) but not surjective: D does not collapse onto its CRPT-image wherever the invisible structure is non-trivial. CRPT is the faithful *image*, not the whole of D.
+### Why Embedding, Not Isomorphism
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L5.2.R2 | `Why-Embed` | | **Novel** |
+**Synopsis:** Why a CRPT instantiation is a faithful embedding, not an isomorphism.
+
+**Source:** CRPT; from `Inst-Emb` (L5.2.D4).
+
+A domain D realising CRPT generally carries structure that ρ_D cannot see: in **Cat** the morphism dimension (bisimulation is "cardinality-blind to morphisms" — any two categories with equal |Ob| are ρ-bisimilar), in **HoTT** the higher paths, in **ZFA** the membership graph/decoration. The CRPT-reduct quotients this invisible structure away. Hence the instantiation map is injective and structure-reflecting (faithful) but not surjective: D does not collapse onto its CRPT-image wherever the invisible structure is non-trivial. CRPT is the faithful *image*, not the whole of D.
 
 ### Regime-Restricted Isomorphism = Saturated Faithful Embedding
 | Type | Label | Tag | Notation | Status |
@@ -463,7 +481,16 @@ Then σ_dual maps the definition of `R-Iso` (L5.2.D3) onto that of `R-Iso∞` (L
 
 Hence Φ is an `R-Iso` iff σ_dual(Φ) is an `R-Iso∞`. The saturation characterisation transfers: on the skeletal-persistent fragment (orbit-type Type P, where the AOI hierarchy collapses to the single class CNF∞ = cardinality class) a persistent faithful embedding is surjective iff the persistent domain is CRPT-saturated — the verbatim dual of `Iso-Sat` (L5.2.T7). ∎
 
-*Remark L5.2.R3 (scope and deferred instances).* `Iso-Dual` establishes the *duality of the notions* and that each finite R-Iso has a persistent dual on the shift-convergent skeleton; it does **not** assert concrete persistent foundational isomorphisms. An instance Φ_ZC^∞ : ZFA ≅ Cat_{∞,sc} ≅ HoTT_{∞,sc} requires those domains as complete CRPT persistent models — separate work. (In the category instantiation the dual invariant is already pinned down: CNF∞ = cardinality class of Ob, orbit-type Type P — the exact NWF-dual of d_Cat = |Ob| with terminal 0_Cat.)
+### Scope and Deferred Instances
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L5.2.R3 | `IsoDual-Scope` | | **Novel** |
+**Synopsis:** Scope of Iso-Dual and the deferred concrete persistent instances.
+
+**Source:** CRPT; from `Iso-Dual` (L5.2.T8).
+
+`Iso-Dual` establishes the *duality of the notions* and that each finite R-Iso has a persistent dual on the shift-convergent skeleton; it does **not** assert concrete persistent foundational isomorphisms. An instance Φ_ZC^∞ : ZFA ≅ Cat_{∞,sc} ≅ HoTT_{∞,sc} requires those domains as complete CRPT persistent models — separate work. (In the category instantiation the dual invariant is already pinned down: CNF∞ = cardinality class of Ob, orbit-type Type P — the exact NWF-dual of d_Cat = |Ob| with terminal 0_Cat.)
 
 ---
 

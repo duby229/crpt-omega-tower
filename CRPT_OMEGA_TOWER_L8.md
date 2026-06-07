@@ -176,7 +176,16 @@ theorem of the tower, and it is the precise content of what "abstracting" means
 structurally: at each level, exactly the abstraction-class information is retained,
 and all finer distinctions are collapsed.
 
-*Remark L8.2.R2 (Discernibility Interpretation).* The Lift is a **discernibility engine**:
+### Discernibility: The Lift Engine
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L8.2.R2 | `Disc-Lift` | | **Novel** |
+**Synopsis:** Reading the Lift operator as a discernibility engine.
+
+**Source:** CRPT; from `Lift-Def` (L8.2.D2).
+
+The Lift is a **discernibility engine**:
 at each tower level, distinctions are erased (the entire fiber NFC_M(f) collapses
 to a single atom) and new distinctions are created (compositions of atoms in FMA(Q_M)
 produce structure that did not exist at the previous level in the tower sequence). The tower F(M) = (M, Lift(M),
@@ -245,7 +254,16 @@ equivalence class maps to a single atom a_f ∈ 𝒰_{M^{(k+1)}}. Therefore:
 - The indistinguishability is *inherited* as an identity (not merely bisimilarity)
  at the next tower level. ✓ ∎
 
-*Remark L8.2.R3 (Irreversibility of H_I Collapse).* `Hor-Lift` (L8.2.T2) establishes
+### Irreversibility of H_I Collapse
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L8.2.R3 | `HI-Irrev` | | **Novel** |
+**Synopsis:** Why the H_I collapse under Lift is irreversible.
+
+**Source:** CRPT; from `Hor-Lift` (L8.2.T2).
+
+`Hor-Lift` (L8.2.T2) establishes
 a **one-way gate** in the tower: once elements become H_I-indiscernible at level k,
 they are permanently identified at all subsequent levels k+1, k+2, .... This is
 because the Lift is functorial (`Lift-Endo` (L7.2.T3)): if two elements map to the same atom
@@ -283,7 +301,16 @@ If M satisfies PA-Conf, Lift(M) does.
 left-strip successor; atoms are fixed). A total-function ARS is trivially confluent:
 there is no branching, so all paths trivially converge. ✓
 
-*Remark L8.3.R1 (Degeneracy of PA-Conf at Lift).* PA-Conf in Lift(M) is degenerate —
+### Degeneracy of PA-Conf at Lift
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L8.3.R1 | `Conf-Deg-Lift` | | **Novel** |
+**Synopsis:** Why PA-Conf is degenerate in Lift(M).
+
+**Source:** CRPT; from `Lift-Conf` (L8.3.T2).
+
+PA-Conf in Lift(M) is degenerate —
 ρ_{Lift(M)} does not branch. This reflects the fact that FMA(Q_M) was designed to be
 maximally simple: it is the free algebra imposing no equations. Non-degenerate PA-Conf
 arises in instantiations where the projection strategy must choose among competing
@@ -368,7 +395,16 @@ The abstraction quotient does not change under lifting.
 exactly Q_{Mₙ}). Therefore Q_{Mₙ₊₁} = ℬ_{Mₙ₊₁}/≃_{Mₙ₊₁} = Fix(ρ_{Mₙ₊₁}) = Q_{Mₙ}.
 By induction: Q_{Mₙ} ≅ Q_{M₀} for all n. ✓ ∎
 
-*Remark L8.4.R1 (Interpretation).* The number of abstraction fibers is fixed by the base
+### Fiber-Count Interpretation
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L8.4.R1 | `FiberCount-Interp` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `Tower` (L8.4.D1).
+
+The number of abstraction fibers is fixed by the base
 model M₀. What changes between tower levels is the *composition structure* of those
 fibers: Mₙ encodes all depth-n compositions of the base fibers.
 
@@ -784,7 +820,16 @@ That is: at each level, take the canonical form of x^{(k)}, identify its fiber i
 Q_{M^{(k)}}, and embed it as the corresponding atom in M^{(k+1)} via the canonical
 inclusion ι_k (`Can-Incl` (L8.2.D3)).
 
-*Remark L8.6.R4.* The tower image x^{(k)} is always a fixpoint (atom) in M^{(k)} for
+### The Tower Image Is a Fixpoint
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L8.6.R4 | `TwrImg-Fix` | | **Novel** |
+**Synopsis:** The tower image x^{(k)} is always a fixpoint (atom) at its level.
+
+**Source:** CRPT; from `Twr-Img` (L8.6.D1).
+
+The tower image x^{(k)} is always a fixpoint (atom) in M^{(k)} for
 k ≥ 1, because ι_k maps into Fix(ρ_{M^{(k+1)}}). It records which equivalence class
 x belonged to at each level — the "identity as seen from level k." Two elements
 x, y ∈ 𝒰^{(0)} have x^{(k)} = y^{(k)} iff they belong to the same NFC fiber at
@@ -897,7 +942,16 @@ The tower decomposes abstraction into three orthogonal mechanisms:
 Discernibility is survival of distinctions under all three mechanisms across the
 entire tower. ∎
 
-*Remark L8.6.R5 (The Thesis Stated Plainly).* The Tower-Horizon Abstraction Thesis says:
+### The Thesis Stated Plainly
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L8.6.R5 | `Thesis-Plain` | | **Novel** |
+**Synopsis:** The Tower-Horizon Abstraction Thesis stated plainly.
+
+**Source:** CRPT; from `Twr-AThesis` (L8.6.T7).
+
+The Tower-Horizon Abstraction Thesis says:
 **abstraction is recursive projection; horizons are its limits; emergence is Lift;
 discernibility is survival.** Every element of 𝒰 is characterized by what survives
 iterated application of ρ_M (within levels) and Lift (between levels). What survives
@@ -1265,7 +1319,16 @@ The hybrid CRPT framework (Phases 1–7, across L1–L8) specifies:
 **Mathematical Status:** The framework in §L1.1–31 is internally integrated and
 specifies a coherent theorem architecture over the substrate quadruple.
 
-*Remark L8.8.R1 (Discernibility Thesis).* The Tower-Horizon Abstraction Thesis
+### The Discernibility Thesis
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L8.8.R1 | `Disc-Thesis` | | **Novel** |
+**Synopsis:** The discernibility reading of the Tower-Horizon Abstraction Thesis.
+
+**Source:** CRPT; from `Twr-AThesis` (L8.6.T7).
+
+The Tower-Horizon Abstraction Thesis
 (`Twr-AThesis` (L8.6.T7)) establishes that CRPT is a theory of **abstraction** whose core
 achievement is characterizing **discernibility**: what structural distinctions survive
 recursive projection (L2.4), which collapse at horizon boundaries (L3.3), how those
@@ -1291,6 +1354,8 @@ horizon invariants proved above.
 ### L8.9.D1 — Tower Tail
 
 *Purpose.* Fractal Structure of the Tower. This section proves that every CRPT tower is fractal: the tail Tower(M₀) starting from any level Mₙ is isomorphic (as a sequence of CRPT models) to Tower(M₀) itself. The tower is self-similar under the Lift operation.*
+
+### Tower Tail
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -1405,7 +1470,16 @@ L8.6.T1. Since n was arbitrary, the recurrence holds at every scale. ✓
 
 Therefore Tower(M) satisfies all clauses of L8.9.D2, so Frac(M). ∎
 
-*Remark L8.9.R1 (Linear spine vs. fractal structure).* Tower(M) is linearly
+### Linear Spine vs. Fractal Structure
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L8.9.R1 | `Spine-vs-Fractal` | | **Novel** |
+**Synopsis:** The tower's linear spine versus its fractal, self-similar tail.
+
+**Source:** CRPT; from `Twr-Fractal` (L8.9.T2).
+
+Tower(M) is linearly
 indexed by ℕ, but its proof structure is self-similar: every tail is again a
 Tower generated by the same Lift operator, the quotient Q is invariant across
 levels, and horizontal/vertical structure exchanges roles at every adjacent pair.
@@ -1429,6 +1503,8 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 ### L8.10.L1 — Prop-σ-Lift: Properties of →_σ^{Lift}
 
 *Purpose.* Supplementary Structural Lemmas. This section provides formal proofs of structural properties that complete the tower theory: the properties of →_σ^{Lift}, the inclusion →_ρ ⊆ →_σ for lifted models, the pure well-foundedness of every Lift(M), the strict infiniteness of the tower, and the cardinality analysis of the query signature.*
+
+### Properties of →_σ^{Lift}
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -1521,7 +1597,16 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 
 (6) Hence ∞_{Lift(M)} := 𝒰_{Lift(M)} \ ↓_{Lift(M)} = ∅. ✓  ∎
 
-*Remark L8.10.R1 (NWF base models).* Even when M is non-well-founded (∞_M ≠ ∅), Lift(M) discards the persistent regime by construction: Q_M := ↓_M/≃_M uses only the convergent stratum. The NWF stratum is handled separately by the extended lift Lift*(M) (L8.5, L8.1.7), which does admit a persistent regime by design.
+### NWF Base Models
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L8.10.R1 | `Lift-NWFbase` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `Lift-Pure-WF` (L8.10.C2).
+
+Even when M is non-well-founded (∞_M ≠ ∅), Lift(M) discards the persistent regime by construction: Q_M := ↓_M/≃_M uses only the convergent stratum. The NWF stratum is handled separately by the extended lift Lift*(M) (L8.5, L8.1.7), which does admit a persistent regime by design.
 
 ---
 
@@ -1559,7 +1644,16 @@ Suppose for contradiction that the tower terminates: ∃k such that Lift(Mₖ) �
 
 Therefore the tower is strictly infinite. ✓  ∎
 
-*Remark L8.10.R2 (Trivial case).* If |Q_{M₀}| = 1 (single-query model), then FMA(Q_{M₀}) ≅ ℕ (the free monoid on one generator), and Lift(M₀) is isomorphic to ℕ with successor, which is isomorphic to M₀ in the degenerate case. This is a degenerate model; all non-degenerate CRPT models have |Q_{M₀}| ≥ 2.
+### Trivial Single-Query Case
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L8.10.R2 | `Lift-TrivialQ` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `Tower-Inf` (L8.10.T2).
+
+If |Q_{M₀}| = 1 (single-query model), then FMA(Q_{M₀}) ≅ ℕ (the free monoid on one generator), and Lift(M₀) is isomorphic to ℕ with successor, which is isomorphic to M₀ in the degenerate case. This is a degenerate model; all non-degenerate CRPT models have |Q_{M₀}| ≥ 2.
 
 ---
 

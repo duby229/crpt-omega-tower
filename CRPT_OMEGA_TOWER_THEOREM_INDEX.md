@@ -3,7 +3,7 @@
 **Status:** CRPT ω-Tower  
 **Date:**   
 **Coverage:** All levels L0–L8, Lω  
-**Total:** 165 definitions · 243 theorems/lemmas/corollaries · 9 projection axioms
+**Total:** 165 definitions · 245 theorems/lemmas/corollaries · 107 remarks · 9 projection axioms
 
 ---
 

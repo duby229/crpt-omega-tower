@@ -194,7 +194,16 @@ Alternative terminology (all equivalent):
 - **Coalgebraic Signature Functor** — emphasizes the category-theoretic role
 - **Observable Triple** (formal name used below)
 
-*Remark L4.1.R4 (Discernibility Interpretation).* The observer triple 𝒪 extracts the
+### Discernibility: Observer Triple
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L4.1.R4 | `Disc-Obs` | | **Novel** |
+**Synopsis:** Reading the observer triple as a discernibility extractor.
+
+**Source:** CRPT; from `Obs-Triple` (L4.1.D5).
+
+The observer triple 𝒪 extracts the
 **maximally discernible information** from an element's orbit: trajectory weight (PV),
 structural position (H), and regime membership (M). Two elements with identical 𝒪
 are **observationally indiscernible** — no observer with access to these three
@@ -235,7 +244,16 @@ non-fixpoint convergent element has a →_σ-path to some persistent element:
 GR is a model-level structural property of →_σ, not one of the PA-* axioms and not a
 consequence of them. It holds vacuously when ∞_M = ∅.
 
-*Remark L4.2.R1 (Gateway Reachability vs PA-Reach).* GR is a →_σ-connectivity property
+### Gateway Reachability vs. PA-Reach
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L4.2.R1 | `GR-vs-Reach` | | **Novel** |
+**Synopsis:** Gateway reachability (a →_σ property) versus PA-Reach (a ρ_M property).
+
+**Source:** CRPT; from `GW` (L4.2.D1) + PA-Reach (L1.3.Ax2).
+
+GR is a →_σ-connectivity property
 and is distinct from PA-Reach. PA-Reach (L1.3) is a projection property: it asserts
 that the orbit signature sig_M stabilizes under ρ_M-iteration on ∞_M; it constrains
 ρ_M on the persistent regime and says nothing about cross-regime connectivity.
@@ -879,7 +897,16 @@ exists c_proj ∈ 𝒰_M such that for all x ∈ 𝒰_M: ρ_M*(Enc(c_proj, x)) �
 For x ∈ μT_{ρ,M}: Enc-2 gives Enc(t_proj, x) →* y ≃_M proj(x). For x ∈ νT_{ρ,M}: Enc-3
 gives the infinite path approximating proj(x). Compositions: Enc-4. ∎
 
-*Remark L4.6.R1.* SP-3 is a theorem under the explicit Enc hypothesis. Enc is not guaranteed
+### SP-3 Under the Enc Hypothesis
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L4.6.R1 | `SP3-Enc` | | **Novel** |
+**Synopsis:** SP-3 holds as a theorem under the explicit Enc (encoding) hypothesis.
+
+**Source:** CRPT; from `SP1` (L4.6.T1).
+
+SP-3 is a theorem under the explicit Enc hypothesis. Enc is not guaranteed
 by PA-* axioms; it is an additional realization structure (analogous to Gödel numbering).
 Enc is verified for λ-calculus (Church encoding), ZFC (ordinal coding), and coalgebra
 (structural encoding). For realizations without Enc, SP-3 does not apply.

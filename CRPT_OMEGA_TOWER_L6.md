@@ -2279,7 +2279,16 @@ statements ranging over all possible substrates. The degeneracy profile inherits
 this limitation: it is a meta-level statement about M, not an internal statement
 within M. ∎
 
-*Corollary L6.6.C1.* The full model classification table is a meta-level artifact
+### The Classification Table Is Meta-Level
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Corollary** | L6.6.C1 | `ClassTable-Meta` | | **Novel** |
+**Synopsis:** See the remark.
+
+**Source:** CRPT; from `Dege-Inv` (L6.6.D1).
+
+The full model classification table is a meta-level artifact
 derived from this anchor. It classifies implementations and instantiations; no
 implementation or instantiation can produce the full table from within itself.
 
