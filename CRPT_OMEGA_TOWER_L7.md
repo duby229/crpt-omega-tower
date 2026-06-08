@@ -484,10 +484,13 @@ The category Mod_CRPT has:
 
 A model may satisfy any subset of {PA-WN, PA-Conf, PA-Fix, PA-NWF, PA-CoInd, PA-Prod, PA-WN_top, PA-Bisim, PA-Reach}, or none.
 
-**Morphisms:** A model homomorphism Φ : M₁ → M₂ is a function Φ : 𝒰_{M₁} → 𝒰_{M₂} satisfying three conditions (from L5.2):
+**Morphisms:** A model homomorphism Φ : M₁ → M₂ is exactly a CRPT homomorphism in the canonical sense of `Hom` (L5.2.D1) — a function Φ : 𝒰_{M₁} → 𝒰_{M₂} satisfying its four conditions:
 - **Φ_R (Relation preservation):** x →_ρ y ⟹ Φ(x) →_ρ Φ(y)
 - **Φ_E (Equivalence preservation):** x ≃_{M₁} y ⟹ Φ(x) ≃_{M₂} Φ(y)
 - **Φ_ρ (Strategy compatibility):** Φ(ρ_{M₁}(x)) ≃_{M₂} ρ_{M₂}(Φ(x))
+- **Φ_LA (Local-axiom compatibility):** the pushforward of each local axiom of M₁ is consistent with LA_{M₂} (`Hom` (L5.2.D1))
+
+(The canonical homomorphism imposes no separate →_σ-preservation condition.)
 
 **Composition:** (Ψ ∘ Φ)(x) := Ψ(Φ(x)) 
 **Identity:** id_M(x) := x
@@ -850,7 +853,7 @@ Hence self-application is consistent under these conditions. ✓ ∎
 
 **Source:** CRPT; from `F-Func` (L7.3.T1).
 
-Consider the category Base of specific mathematical models to be classified (Foundations, Physics, Cognition, etc.). The CRPT functor induces a **fibration**:
+Consider the category Base of specific CRPT models to be classified. The CRPT functor induces a **fibration**:
 
 ```
 π : ωCat_CRPT → Base
@@ -868,15 +871,15 @@ the collection of all ω-categories related to the instantiation of CRPT on mode
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L7.3.T4 | `Mod-Fib-T` |  | **Novel** |
-**Synopsis:** The fibration theorem: each model instantiation Φ : M₁ → M₂ (e.g., a ZFC-to-CRPT embedding) is a fiber map in the model-theory fibration. The natural transformation F(Φ) : F(M₁) ⇒ F(M₂) witnesses the fact that different domain theories with compatible reduction structures share tower-level structure.
+**Synopsis:** The fibration theorem: each model instantiation Φ : M₁ → M₂ (a homomorphism between instantiations) is a fiber map in the model-theory fibration. The natural transformation F(Φ) : F(M₁) ⇒ F(M₂) witnesses the fact that different domain theories with compatible reduction structures share tower-level structure.
 
 **Source:** CRPT; from `Mod-Fib` (L7.3.D2) + `F-Func` (L7.3.T1).
 
-Each model instantiation (e.g., Foundations Theory, Physics Theory, Cognition Theory) is not a separate theoretical framework—it is the **fiber F(M)** where M is the specific model.
+Each model instantiation is not a separate theoretical framework—it is the **fiber F(M)** where M is the specific model.
 
-Multiple model instantiations are **related by natural transformations**: if Φ : M₁ → M₂ is a model homomorphism (e.g., relating Physics to Cognition via a common reduction structure), then F(Φ) : F(M₁) ⇒ F(M₂) is a natural transformation at all levels of the respective towers.
+Multiple model instantiations are **related by natural transformations**: if Φ : M₁ → M₂ is a model homomorphism (relating two instantiations via a common reduction structure), then F(Φ) : F(M₁) ⇒ F(M₂) is a natural transformation at all levels of the respective towers.
 
-*Proof.* Immediate from `F-Func` (L7.3.T1) and 26.2. ✓ ∎
+*Proof.* Immediate from `F-Func` (L7.3.T1) and `Mod-Fib` (L7.3.D2). ✓ ∎
 
 ### Unified Architecture
 | Type | Label | Tag | Notation | Status |
@@ -888,7 +891,7 @@ Multiple model instantiations are **related by natural transformations**: if Φ 
 
 All model instantiations follow the **same pattern** (apply the same functor F). All relationships are captured by **natural transformations** (model homomorphisms inducing morphisms of towers). The theoretical machinery is **unified**: one functor F.
 
-To instantiate CRPT to a new model M (e.g., Climate Science), one provides:
+To instantiate CRPT to a new model M, one provides:
 1. An encoding of M as a model (define 𝒰_M, →_ρ, →_σ, ρ_M)
 2. Verification of any desired axioms (PA-WN, PA-Conf, etc.)
 3. Identification of key reduction relations and normal forms

@@ -890,7 +890,7 @@ readings:
 Examples of approaches that might not reduce to WF/NWF:
 - **Predicative type theory** (neither fully WF nor NWF; restricted comprehension)
 - **Modal set theory** (accessibility relations add a third dimension)
-- **Quantum structures** (non-distributive lattice structure)
+- **Non-distributive lattice structures** (e.g. orthomodular lattices)
 
 These would require a richer substrate interface to accommodate. CRPT's analysis
 is conditional on the (𝒰, →_ρ, →_σ, 𝒯) interface; within that interface, the

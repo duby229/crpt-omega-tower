@@ -286,7 +286,7 @@ Status:
 Known limitations (acknowledged, not errors):
 - Categorical diagrams (8 total) are in ASCII format; graphical rendering deferred to future work
 - Implementation in Lean 4 in progress (current status: L0–L5 formalized, L6–Lω in progress)
-- Instantiation examples for applied domains (cognitive science, physics, etc.) in development (see 2_instantiation/ folder)
+- Instantiation examples for specific domains are developed separately (instantiation track), keeping this tower abstract and model-neutral
 
 ---
 

@@ -24,14 +24,14 @@ scope. The fixed point of this application is established by Lω.5.T1.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | Lω.1.D1 | `U_CRPT` | 𝒰_CRPT | **Novel** |
-**Synopsis:** The self-substrate 𝒰_CRPT is the collection of all labeled formal constructs in the CRPT ω-tower (L0 through L8 and Lω itself), viewed as mathematical objects to which CRPT's own machinery is applied. The reduction relation →_{ρ_CRPT} is the logical dependency relation: X →_{ρ_CRPT} Y means Y is a direct prerequisite of X. This turns the tower itself into a CRPT substrate.
+**Synopsis:** The self-substrate 𝒰_CRPT is the collection of all labeled formal constructs of the CRPT-proper tower (levels L1 through L8) together with the meta-level Lω, viewed as mathematical objects to which CRPT's own machinery is applied. (L0, the Universal Projection Framework that CRPT instantiates, is the external meta-foundation — independent of CRPT — and is not a member of the self-substrate; correspondingly L1.1.D1 is defined from scratch and is the unique dependency root.) The reduction relation →_{ρ_CRPT} is the logical dependency relation: X →_{ρ_CRPT} Y means Y is a direct prerequisite of X. This turns the tower itself into a CRPT substrate.
 
 **Source:** CRPT; from `Sub` (L1.1.D1) applied to the tower's own constructs.
 
 The *self-substrate* of CRPT is the class:
 ```
 𝒰_CRPT  :=  { all labelled constructs of the anchor: definitions, axioms,
-              theorems, lemmas, corollaries, remarks at levels L0–L8 }
+              theorems, lemmas, corollaries, remarks at levels L1–L8 (and Lω) }
 ```
 with relations and topology:
 ```
@@ -222,7 +222,7 @@ depth values). L1.1.D1 is Class E: the unique fixpoint with non-trivial fiber.*
 
 ## Lω.3 — Rank Ordering m_CRPT
 
-*Purpose.* Rank Ordering of Anchor Constructs. This section defines m_CRPT(X) — the rank of a construct X in the self-substrate — as its tower-level index (0 for L0, 1 for L1, …, ω for Lω). This rank extends the derivation height derivation height to the self-substrate and confirms that the self-substrate is well-founded.*
+*Purpose.* Rank Ordering of Anchor Constructs. This section defines m_CRPT(X) — the rank of a construct X in the self-substrate — as its tower-level index (1 for L1, 2 for L2, …, 8 for L8, ω for Lω; L0 is the external meta-foundation and is not ranked). This rank extends the derivation height derivation height to the self-substrate and confirms that the self-substrate is well-founded.*
 
 
 ### Lω.3.D1 — Rank Function m_CRPT
@@ -349,6 +349,17 @@ unique Class E element. ✓
 By `6-Part` (L3.2.T1) instantiated at π := ρ_CRPT, the Class E assignment
 of L1.1.D1 is the correct output. The fixed point is unique and stable. ∎
 
+### Self-Consistency, Not Generativity
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | Lω.5.R2 | `SelfCons-NotGen` | | **Novel** |
+**Synopsis:** Lω is a self-consistency certificate, not a generative decomposition: the forward dependency projection ρ_CRPT collapses every construct to the single root L1.1.D1, so the self-application reveals no structure finer than the rank strata. Any finer internal organization lives in the co-dependency (in-degree / ramification) direction, orthogonal to ρ_CRPT.
+
+**Source:** CRPT; from `Self-FP` (Lω.5.T1) + `Lω-FixedPt-Unique` (Lω.7.T2) + `Self-Horiz` (Lω.2.T1).
+
+`Self-FP` (Lω.5.T1) certifies that the tower is its own fixed point under self-application — a **self-consistency** result. It is not a generative decomposition: the forward dependency projection ρ_CRPT collapses every construct to the single root L1.1.D1 (`Lω-FixedPt-Unique` (Lω.7.T2)), so the self-application reveals no internal structure finer than the rank strata, and the resulting classification is flat (one Class E sink, all else Class B, `Self-Horiz` (Lω.2.T1)). Any finer internal organization of the theory would live in the *co-dependency* (in-degree / ramification) direction, which is orthogonal to the forward projection ρ_CRPT and outside the scope of this self-application.
+
 ### The Anchor Is Self-Consistent
 
 | Type | Label | Tag | Notation | Status |
@@ -451,7 +462,7 @@ Lift iterates.*
 *Proof.* By `Tower` (L8.4.D1), Tower(M) is the sequence (M₀, M₁, M₂, …) indexed
 by n ∈ ℕ with M_{n+1} := Lift(M_n). No clause of L8.2.D1 defines an object M_ω.
 By `the self-substrate universe` (Lω.1.D1), 𝒰_CRPT contains labelled constructs of the finite anchor
-levels L0–L8 used as the self-substrate; it does not contain a tower-limit state.
+levels L1–L8 (plus Lω) used as the self-substrate; it does not contain a tower-limit state.
 `Anchor-Fractal` (Lω.6.T1) applies `Twr-Fractal` only to finite iterates
 Lift^n(Self_CRPT). Therefore the fractal theorem is an external ω-indexed
 statement about all finite scales, not the introduction of an internal ω-state. ∎
@@ -627,14 +638,14 @@ Therefore →_{ρ_CRPT} is acyclic. ✓  ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | Lω.7.R1 | `Self-CRPT-Finite` | | **Novel** |
-**Synopsis:** The self-substrate universe 𝒰_CRPT is finite: it consists of all labeled constructs in L0–L8 and Lω, and each level Lk contains finitely many labeled items (definitions, theorems, lemmas, corollaries, remarks). The union over finitely many levels of finite sets is finite. This finiteness, combined with acyclicity, gives ∞_{CRPT} = ∅ without requiring any sophisticated argument.
+**Synopsis:** The self-substrate universe 𝒰_CRPT is finite: it consists of all labeled constructs in L1–L8 and Lω, and each level Lk contains finitely many labeled items (definitions, theorems, lemmas, corollaries, remarks). The union over finitely many levels of finite sets is finite. This finiteness, combined with acyclicity, gives ∞_{CRPT} = ∅ without requiring any sophisticated argument.
 
 
-The self-substrate 𝒰_CRPT consists of all labeled constructs of the anchor at levels L0–L8 plus Lω. The total number of labeled constructs is finite:
+The self-substrate 𝒰_CRPT consists of all labeled constructs of the anchor at levels L1–L8 plus Lω. The total number of labeled constructs is finite:
 ```
 |𝒰_CRPT|  <  ω
 ```
-This is immediate: each level Lk contains finitely many definitions, theorems, lemmas, corollaries, and remarks (each with a unique label of the form §k.n.Xm). The union over the finitely many levels L0–L8, Lω is therefore finite.
+This is immediate: each level Lk contains finitely many definitions, theorems, lemmas, corollaries, and remarks (each with a unique label of the form §k.n.Xm). The union over the finitely many levels L1–L8, Lω is therefore finite.
 
 **Consequences:**
 

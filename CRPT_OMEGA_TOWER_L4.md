@@ -1035,236 +1035,48 @@ substrates since the ∀x quantifier in `CPEP` (L4.7.D2) is not satisfied. ∎
 
 ## L4.8 — The Empty Field: Class F = ∅
 
-*Purpose.* This subsection formalizes the result that Class F — the class of elements
-that are non-injective, but indiscernible, and non-boundary — is always empty in
-deterministic CRPT models. This completes the structural architecture of the
-six-class partition (L3.2).
+*Purpose.* This subsection establishes, in the observer setting, that Class F — the fixpoint-stratum atom (Fix, H_S, H_I) = (⊤, ⊤, ⊤), a ramified fixpoint with signature-uniform preimages — is always empty in deterministic CRPT models, recovering `F=∅` (L3.2.T2) and completing the six-class architecture of L3.2.
 
 ### Class F: Definition and Characterization
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.8.D1 | `ClassF-Def` | | **Novel** |
-**Synopsis:** Class F is defined as the set of elements satisfying H_S = ⊥ (no siblings) and H_I = ⊤ (uniform siblings) and H_O = ⊥ (not at the boundary). This combination is logically contradictory in deterministic models: H_I = ⊤ is vacuously true when H_S = ⊥ (there are no siblings to be uniform), so H_I carries no structural content when H_S = ⊥.
+**Synopsis:** Class F is the fixpoint-stratum atom (Fix, H_S, H_I) = (⊤, ⊤, ⊤) of the six-class partition: a fixpoint with multiple ρ_M-preimages (H_S = ⊤) whose preimages are signature-uniform (H_I = ⊤). It is the fixpoint-stratum counterpart of Class C; this section elaborates, in the observer setting, why it is always empty (`F=∅` (L3.2.T2)).
 
-**Source:** L3.2 (six-class partition definition).
+**Source:** CRPT; from `6-Part` (L3.2.T1) + `H_S` (L3.1.D1) + `H_I` (L3.1.D2).
 
-Class F is defined as:
+Per the canonical six-class partition (`6-Part` (L3.2.T1)), Class F is the fixpoint-stratum atom
 ```
-Class_F := { x ∈ μT_{ρ,M} | ¬H_S(x) ∧ ¬H_I(x) ∧ ¬H_O(x) }
+Class_F := { f ∈ Fix(ρ_M) | H_S(f) ∧ H_I(f) },   (Fix, H_S, H_I) = (⊤, ⊤, ⊤)
 ```
+a fixpoint that is **ramified** (|ρ_M^{-1}(f)| > 1, `H_S` (L3.1.D1)) and whose preimage kernel is **signature-uniform** (`H_I` (L3.1.D2)). It is the fixpoint-stratum counterpart of the non-fixpoint Class C = (⊥, ⊤, ⊤).
 
-That is: elements that are (1) injective (¬H_S), (2) of uniform signature (¬H_I),
-and (3) not at depth 1 (¬H_O).
-
-**Equivalently:** Class_F excludes elements at horizon boundaries and collapse points.
-Per the six-class Boolean partition (L3.2.T1), F is the remaining "dead zone" if
-any of its defining predicates ever simultaneously false.
+*Note (H_I needs H_S).* H_I is contentful only when H_S = ⊤ (`H_I` (L3.1.D2): H_I(x) := H_S(x) ∧ ∀z ∈ ρ_M^{-1}(ρ_M(x)) : sig_M(z) = sig_M(x)). Class F therefore asks, of a *ramified* fixpoint, whether all of its preimages carry one orbit signature.
 
 ### NO-F Theorem: Class F is Always Empty
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.8.T1 | `NO-F` | Class_F = ∅ | **Novel** |
-**Synopsis:** The Class F Emptiness theorem: in any deterministic CRPT model, Class F is empty. Class F would require H_S(x) = ⊥ (no siblings) and H_I(x) = ⊤ (uniform siblings) simultaneously. But H_I(x) = ⊤ is vacuously satisfied and structurally uninformative when H_S(x) = ⊥ — there are no siblings to be uniform. No element can non-trivially occupy Class F, so the class is empty in every deterministic CRPT model. Five active classes remain.
+**Synopsis:** In every deterministic CRPT model, Class F is empty: a ramified fixpoint always has discernible preimages and so lands in Class E, never F. Structurally, a fixpoint f is its own preimage at depth 0 while any further preimage is a non-fixpoint at depth ≥ 1; the two carry different orbit signatures, forcing H_I(f) = ⊥. This is the observer-level restatement of `F=∅` (L3.2.T2).
 
-**Source:** CRPT structural constraint.
+**Source:** CRPT; from `F=∅` (L3.2.T2) + `H_I` (L3.1.D2) + `sig_M-NM` (L3.1.D5) + `Fix-D0` (L2.3.T3).
 
-In every deterministic CRPT model M (satisfying C1–C2 (`ρ_M` (L2.1.D1))):
+In every deterministic CRPT model M (conditions C1–C2, `ρ_M` (L2.1.D1)):
 ```
 Class_F = ∅
 ```
+— equivalently, no fixpoint satisfies (Fix, H_S, H_I) = (⊤, ⊤, ⊤); every ramified fixpoint has H_I = ⊥.
 
-That is: there exists no element x ∈ μT_{ρ,M} satisfying all three conditions
-¬H_S(x) ∧ ¬H_I(x) ∧ ¬H_O(x).
+**Corollary.** At most five classes — A, B, C, D, E — are occupied in any deterministic model.
 
-**Corollary.** The six-class partition reduces to a five-class partition in all
-deterministic models: only Classes A, B, C, D, E are ever non-empty.
+*Proof.* Let f ∈ Fix(ρ_M) with H_S(f) = ⊤, i.e. |ρ_M^{-1}(f)| > 1. Since ρ_M(f) = f, the fixpoint is its own preimage: f ∈ ρ_M^{-1}(f) with d_M(f) = 0 (`Fix-D0` (L2.3.T3)). As H_S(f) = ⊤ there is a further preimage y ∈ ρ_M^{-1}(f), y ≠ f. Then y ∉ Fix(ρ_M) (else ρ_M(y) = y ≠ f), so y is a non-fixpoint with ρ_M(y) = f and d_M(y) ≥ 1.
 
-**Proof.**
+The orbit signature carries the derivation-height component (`sig_M-NM` (L3.1.D5)), so sig_M(f) ≠ sig_M(y) (depths 0 and ≥ 1 differ). Hence the preimage kernel ρ_M^{-1}(f) is not signature-uniform, and by `H_I` (L3.1.D2), H_I(f) = ⊥.
 
-Assume for contradiction that Class_F is non-empty. Then ∃x ∈ μT_{ρ,M} with
-¬H_S(x) ∧ ¬H_I(x) ∧ ¬H_O(x).
+Thus every ramified fixpoint (H_S = ⊤) has H_I = ⊥: it lies in Class E = (Fix, ⊤, ⊥), never Class F = (Fix, ⊤, ⊤). No element occupies (⊤, ⊤, ⊤), so Class_F = ∅. This is the observer-setting restatement of `F=∅` (L3.2.T2), proved there from kernel d_M-non-uniformity (`H_I-Dec` (L3.1.C1)). ∎
 
-**Step 1: Unpack the assumptions.**
-
-(a) ¬H_S(x):
-    By `H_S` (L3.1.D1), H_S(x) := |ρ_M^{-1}(ρ_M(x))| > 1.
-    So ¬H_S(x) means |ρ_M^{-1}(ρ_M(x))| ≤ 1.
-    In a deterministic system (C1–C2), ρ_M is a function, so every y has a unique
-    image ρ_M(y). The only way to have ≤ 1 preimages is:
-    
-    Case (a1): |ρ_M^{-1}(ρ_M(x))| = 0
-    This means ρ_M(x) has no preimages. But x ∈ μT_{ρ,M}, so x ∈ 𝒰_M and
-    ρ_M(x) is defined. Contradiction. Case (a1) is impossible.
-    
-    Case (a2): |ρ_M^{-1}(ρ_M(x))| = 1
-    This means x is the unique preimage of ρ_M(x). So ρ_M is "locally injective"
-    at x. ✓
-
-Therefore, under ¬H_S(x), we have: ρ_M is injective at x; x is the unique
-preimage of ρ_M(x).
-
-(b) ¬H_I(x):
-    By `H_I` (L3.1.D2), H_I(x) := H_S(x) ∧ ∀z ∈ ρ_M^{-1}(ρ_M(x)) : sig_M(z) = sig_M(x).
-    
-    Since ¬H_S(x) from (a) above, the conjunction H_S(x) ∧ (...) is false.
-    Therefore ¬H_I(x) is automatically satisfied by ¬H_S(x).
-    
-    But the definition allows reading ¬H_I(x) as: "NOT[all preimages are
-    signature-uniform]". When H_S(x) = ⊥ (i.e., ¬H_S(x)), the entire
-    conditional collapses to ⊥. So ¬H_I(x) in the context of ¬H_S(x) means:
-    
-    Either (i) H_S(x) = ⊥ (which we have), OR (ii) there exist preimages
-    with different signatures. But (i) already holds, so (ii) is moot.
-    
-    Therefore ¬H_I(x) is consistent with ¬H_S(x). ✓
-
-(c) ¬H_O(x):
-    By `H_O` (L3.1.D4), H_O(x) := d_M(x) = 1.
-    So ¬H_O(x) means d_M(x) ≠ 1.
-    By PA-WN, d_M(x) ∈ ℕ₀ (`d-WD` (L2.3.T1)), so d_M(x) ∈ {0, 2, 3, 4, ...}.
-    
-    That is: x is either a fixpoint (d_M(x) = 0) or at depth ≥ 2 (d_M(x) ≥ 2). ✓
-
-**Step 2: Derive a contradiction.**
-
-Now we have determined:
-- x is at the unique preimage position of ρ_M(x) (from ¬H_S).
-- d_M(x) ∈ {0} ∪ {2, 3, 4, ...} (from ¬H_O).
-
-**Case 2.1: d_M(x) = 0.**
-Then x ∈ Fix(ρ_M). But H_O is defined only for non-fixpoints, or more precisely,
-the three-horizon system (H_S, H_I, H_O) partitions non-fixpoints. Class A is the
-class of fixpoints. If x ∈ Fix(ρ_M), then x ∈ Class_A by definition (L3.2.T1),
-not Class_F. Contradiction. Case 2.1 is impossible.
-
-**Case 2.2: d_M(x) ≥ 2.**
-Then x is at least 2 steps away from any fixpoint. In particular, x is not a
-depth-1 boundary element, so H_O(x) = ⊥, consistent with ¬H_O(x). ✓
-
-In Case 2.2, x is:
-- at depth ≥ 2 (non-boundary),
-- injective via ρ_M (¬H_S),
-- not signature-indiscernible (¬H_I by default, since ¬H_S makes the condition vacuous).
-
-By the six-class classification structure (`6-Part` (L3.2.T1)):
-
-The six classes partition non-fixpoints via three Boolean questions Q1, Q2, Q3:
-- Q1 (Fixpoint?): false for x (since d_M(x) ≥ 2 > 0).
-- Q2 (H_S?): false for x (given ¬H_S(x)).
-- Q3 (H_I?): false for x (given ¬H_I(x)).
-
-By the partition structure, the only non-fixpoint class with (Q2=false, Q3=false)
-corresponds to Class E (the class of elements with no ramification and no
-indiscernibility). But Class E is not the only class with Q2=⊥ and Q3=⊥.
-
-Actually, let's reconsider the Boolean table. From `6-Part` (L3.2.T1):
-
-| Class | Fixpoint | H_S | H_I | Classification |
-|:---:|:---:|:---:|:---:|:---|
-| A | ⊤ | — | — | Fixpoint |
-| B | ⊥ | ⊤ | ⊥ | Ramified, Discernible |
-| C | ⊥ | ⊤ | ⊤ | Ramified, Indiscernible |
-| D | ⊥ | ⊥ | — | Injective (no ramification), Discernible? |
-| E | ⊥ | ⊥ | ⊥ | Injective, Discernible |
-| F | ⊥ | ⊥ | ⊥ | Injective, Discernible (REDUNDANT with E) |
-
-Wait, the table shows that Class D, E, and F all have H_S=⊥. The distinction is:
-when H_S=⊥, we don't even ask about H_I; or if we do, H_I defaults to ⊥.
-
-So Classes D, E, and F are all characterized by H_S=⊥. The question is: what
-distinguishes D from E from F?
-
-Let me re-read L3.2 carefully. From the definition in the CRPT plan and the anchor:
-
-Classes are defined by:
-- Q1: d_M(x) = 0? (Is x a fixpoint?)
-- Q2: H_S(x)? (Is x at a non-injective collapse point?)
-- Q3: H_I(x)? (Are the preimages indiscernible?)
-
-Additional boundary check:
-- Q4: H_O(x)? (Is x at depth 1, the boundary layer?)
-
-The six classes are defined by combinations of Q1, Q2, Q3 *on the domain where they
-are defined*. Specifically:
-- If Q1=⊤ (x is a fixpoint): Class A. Questions Q2, Q3 don't apply.
-- If Q1=⊥ (x is non-fixpoint) AND Q4=⊤ (x at depth 1, boundary layer):
-  - Then by definition of boundary layer, x is "observationally at the edge of
-    abstraction", and H_O separates these elements as a dedicated class.
-    This is Class D.
-- If Q1=⊥ AND Q4=⊥ (non-fixpoint, non-boundary, i.e., d_M(x) ∈ {2,⊥,∞}):
-  - Now apply Q2, Q3:
-    - Q2=⊤, Q3=⊤ → Class C (ramified, indiscernible)
-    - Q2=⊤, Q3=⊥ → Class B (ramified, discernible)
-    - Q2=⊥, Q3=? → What is Q3 when Q2=⊥?
-    
-When Q2=⊥ (not ramified), the question H_I (about "are preimages indiscernible?")
-becomes vacuous: there is only ONE preimage, so they are trivially indiscernible.
-
-So the logic is:
-- If Q2=⊥ (injective), then H_I is "automatically ⊤" (vacuously true: the one
-  preimage is indiscernible from itself).
-  
-      Actually, reading `H_I` definition more carefully: H_I(x) := H_S(x) ∧ (...).
-      If H_S(x)=⊥, then the conjunction is ⊥, so H_I(x)=⊥.
-      
-      So when ¬H_S(x), we have ¬H_I(x) automatically.
-      
-      Therefore, for non-fixpoints with ¬H_S (i.e., Q2=⊥):
-      - We automatically have ¬H_I (i.e., Q3=⊥ as well).
-      
-So Q2=⊥ implies Q3=⊥. The classes with Q2=⊥, Q3=⊥ collapse to a single class
-of inj ective non-fixpoints. This should be Class E.
-
-**Therefore, there is no "Class F" distinct from Class E** — if an element is
-injective (¬H_S), then it automatically has ¬H_I, and such elements belong to
-Class E only.
-
-**Conclusion:**
-In Case 2.2, x has ¬H_S and automatically ¬H_I, so x should belong to Class E
-(injective, discernible, non-boundary). But Class E is precisely the set of
-non-fixpoints satisfying (Q1=⊥, Q2=⊥, Q3=⊥, Q4=⊥). We cannot have a separate
-class F with the same conditions.
-
-**Therefore, Class F := { x | ¬H_S ∧ ¬H_I ∧ ¬H_O } ⊆ Class E,**
-and since Class E is already defined by exactly these conditions, **Class F is
-either identical to Class E or empty.**
-
-But the definition of the six-class partition is exhaustive and disjoint (L3.2.T1).
-If F were identical to E, they would not partition; they would be the same class.
-By definition of the six classes as a partition, we have Class F ≠ Class E.
-
-Therefore **Class F must be empty: Class_F = ∅**. ✓
-
-**Alternative proof (via the six-class Boolean table).**
-
-The six classes arise from classifying elements by four predicates: (Fixpoint?,
-H_S?, H_I?, H_O?). The problem is that H_I is only defined when H_S=⊤ (by the
-definition of H_I, which includes H_S in its defining conjunction). Similarly,
-H_O is only defined when d_M(x) ≥ 1 (non-fixpoints).
-
-So the case split is:
-
-1. d_M(x) = 0 (fixpoint): Class A. H_S, H_I, H_O all undefined. ✓
-
-2. d_M(x) = 1 (boundary layer): Class D by definition. (H_O=⊤ here.) ✓
-
-3. d_M(x) ≥ 2 (non-boundary non-fixpoints):
-   Now H_O=⊥ by definition. Apply H_S:
-   
-   3a. H_S(x)=⊤ (ramified): Now apply H_I:
-       - H_I(x)=⊤ (indiscernible preimages) → Class C. ✓
-       - H_I(x)=⊥ (discernible preimages) → Class B. ✓
-   
-   3b. H_S(x)=⊥ (injective): Then H_I is defined as H_I(x) := H_S(x) ∧ (...) = ⊥.
-       So H_I(x)=⊥. We have a single class for all injectives:
-       - (d_M(x)≥2, H_S=⊥, H_I=⊥) → Class E. ✓
-
-There is no case that produces Class F. The six-class partition is covered by the
-above five cases (A, B, C, D, E). Class F is structurally unreachable.
-
-**Therefore, Class_F = ∅ in all CRPT models.** ✓ ∎
 
 **Corollary L4.8.C1 (Five-Class Partition).** The six-class system reduces to a five-class partition.
 Every element x ∈ μT_{ρ,M} belongs to exactly one of Classes A, B, C, D, E.

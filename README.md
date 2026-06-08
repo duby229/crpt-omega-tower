@@ -1,6 +1,6 @@
 # CRPT ω-Tower
 
-A self-contained formal development of **CRPT** (Convergent–Recursive Projection Theory):
+A self-contained formal development of **CRPT** (Compositional Recursive Projection Theory):
 a projection-axiom framework over a two-regime substrate (convergent ↓_M and persistent
 ∞_M), with canonical-form theory, horizon classification, an observer architecture, model
 algebra, a categorical self-structure, the Lift/Tower construction, and a self-application

@@ -176,16 +176,16 @@ theorem of the tower, and it is the precise content of what "abstracting" means
 structurally: at each level, exactly the abstraction-class information is retained,
 and all finer distinctions are collapsed.
 
-### Discernibility: The Lift Engine
+### Discernibility: The Lift Mechanism
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L8.2.R2 | `Disc-Lift` | | **Novel** |
-**Synopsis:** Reading the Lift operator as a discernibility engine.
+**Synopsis:** Reading the Lift operator as a discernibility mechanism.
 
 **Source:** CRPT; from `Lift-Def` (L8.2.D2).
 
-The Lift is a **discernibility engine**:
+The Lift is a **discernibility mechanism**:
 at each tower level, distinctions are erased (the entire fiber NFC_M(f) collapses
 to a single atom) and new distinctions are created (compositions of atoms in FMA(Q_M)
 produce structure that did not exist at the previous level in the tower sequence). The tower F(M) = (M, Lift(M),

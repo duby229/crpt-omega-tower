@@ -1508,41 +1508,39 @@ allows uniform treatment of instantiation, composition, and model transformation
 | **Definition** | L5.5.D1 | `Mod_CRPT-Cat` | Mod_CRPT | **Novel** |
 **Synopsis:** This definition formally establishes Mod_CRPT as a category, explicitly verifying identity and associativity. The Hom-Pres theorem confirms that CRPT homomorphisms compose to give CRPT homomorphisms — composition is closed in the category.
 
-**Source:** CRPT; from `Hom` (L5.2.D1) + `CRPT-Mod-18` (L5.1.D1); restates `Mod_CRPT` (L7.2.D1).
+**Source:** CRPT; from `Hom` (L5.2.D1) + `Mod-Cat` (L5.2.T1).
 
 The **category of CRPT models** Mod_CRPT is defined as:
 
 **Objects:**  All CRPT models M = (𝒰_M, →_ρ, →_σ, ρ_M, ≃_M, axiom profile) satisfying 
 the PA-axiom system (PA-WN, PA-Conf, PA-Fix, etc., with regime-specific profiles).
 
-**Morphisms:** A morphism Φ : M₁ → M₂ is a model homomorphism, i.e., a function
-Φ_𝒰 : 𝒰_{M₁} → 𝒰_{M₂} satisfying:
+**Morphisms:** A morphism Φ : M₁ → M₂ is a CRPT model homomorphism in the canonical sense of `Hom` (L5.2.D1): a function Φ_𝒰 : 𝒰_{M₁} → 𝒰_{M₂} satisfying its four conditions —
 
-**(Φ_ρ) Reduction preservation:**  x →_ρ y in M₁ ⟹ Φ_𝒰(x) →_ρ Φ_𝒰(y) in M₂
+- **Φ_R (reduction):**  x →_ρ y in M₁ ⟹ Φ_𝒰(x) →_ρ Φ_𝒰(y) in M₂
+- **Φ_E (equivalence):**  x ≃_{M₁} y ⟹ Φ_𝒰(x) ≃_{M₂} Φ_𝒰(y)
+- **Φ_ρ (projection):**  Φ_𝒰(ρ_{M₁}(x)) ≃_{M₂} ρ_{M₂}(Φ_𝒰(x)) for all x ∈ 𝒰_{M₁}
+- **Φ_LA (local-axiom compatibility):**  the pushforward of each local axiom of M₁ is consistent with LA_{M₂}
 
-**(Φ_σ) Structural preservation:**  x →_σ y in M₁ ⟹ Φ_𝒰(x) →_σ Φ_𝒰(y) in M₂
-
-**(Φ_ρ-op) Operator equivalence:**  Φ_𝒰(ρ_{M₁}(x)) ≃_{M₂} ρ_{M₂}(Φ_𝒰(x)) for all x ∈ 𝒰_{M₁}
-
-**(Φ_eq) Equivalence preservation:**  x ≃_{M₁} y in M₁ ⟹ Φ_𝒰(x) ≃_{M₂} Φ_𝒰(y) in M₂
+No separate →_σ-preservation condition is imposed; this is exactly `Hom` (L5.2.D1).
 
 **Composition:** For morphisms Φ : M₁ → M₂ and Ψ : M₂ → M₃, define the composite
 ```
 (Ψ ∘ Φ)_𝒰 : 𝒰_{M₁} → 𝒰_{M₃}  by  (Ψ ∘ Φ)_𝒰 := Ψ_𝒰 ∘ Φ_𝒰
 ```
-(function composition). This composite satisfies (Φ_ρ)–(Φ_eq) by transitivity.
+(function composition). This composite satisfies Φ_R–Φ_LA by transitivity.
 
 **Identity:** For each model M, the identity morphism id_M : M → M is the identity function
 ```
 (id_M)_𝒰 = id_{𝒰_M} : 𝒰_M → 𝒰_M
 ```
-which trivially satisfies (Φ_ρ)–(Φ_eq).
+which trivially satisfies Φ_R–Φ_LA.
 
 **Category axioms:**
-- (Associativity) (ψ ∘ φ) ∘ ψ = ψ ∘ (φ ∘ ψ) for all composable morphisms (by function composition associativity).
+- (Associativity) (χ ∘ ψ) ∘ φ = χ ∘ (ψ ∘ φ) for all composable morphisms (by function-composition associativity).
 - (Identity) For any Φ : M₁ → M₂: Φ ∘ id_{M₁} = Φ and id_{M₂} ∘ Φ = Φ (by function identity).
 
-Therefore Mod_CRPT is a category.
+Therefore Mod_CRPT is a category; the full verification of the category laws is `Mod-Cat` (L5.2.T1).
 
 ### Model Homomorphisms Preserve Structural Properties
 

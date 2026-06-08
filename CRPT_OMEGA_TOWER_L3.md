@@ -366,7 +366,7 @@ Therefore (1a) is the unique consistent solution: H_I(z) = ⊤ for all z ∈ K. 
 - Boolean case analysis (three exhaustive cases: all-⊤, all-⊥, mixed)
 
 No step requires K to be finite or countable. The argument applies identically
-to uncountable kernels (e.g., continuous gauge orbits in physics instantiations). ✓ ∎
+to uncountable kernels (e.g., continuous orbit spaces in topological models). ✓ ∎
 
 ### H_I Decision Criterion
 | Type | Label | Tag | Notation | Status |
@@ -393,8 +393,7 @@ value of every element is uniquely determined by the non-circular invariants H_S
 and derivation height alone. The seemingly self-referential definition resolves to an explicit,
 non-circular criterion: derivation height-uniformity within the kernel. This resolution holds
 for kernels of any cardinality, including the uncountable preimage structures
-arising in continuous/topological models (e.g., gauge orbits in quantum field
-theory instantiations).
+arising in continuous/topological models (e.g., continuous orbit spaces carrying a topology).
 
 ### What sig_M classifies
 | Type | Label | Tag | Notation | Status |
@@ -598,7 +597,7 @@ That is, ker(ρ_M, ρ_M(x)) and ker(ρ_M, ρ_M(y)) contain exactly the same elem
 Actually, by (1): ρ_M(x) ≃_M ρ_M(y) does NOT necessarily mean ρ_M(x) = ρ_M(y).
 It means they have the same signature. So we need to be more careful.
 
-**Step 1 (Revised): Direct proof using the orbit signature uniformity.**
+**Step 1: Direct proof using the orbit signature uniformity.**
 
 The definition of H_I(x) uses sig_M(z) for z ∈ ker(ρ_M, ρ_M(x)). By definition of ≃_M,
 the orbit signature is the same for x and y: sig_M(x) = sig_M(y) by (3).

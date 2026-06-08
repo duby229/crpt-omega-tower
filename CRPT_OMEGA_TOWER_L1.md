@@ -671,7 +671,7 @@ Thus M_Reach ⊨ {PA-WN, PA-Conf, PA-Fix, PA-NWF, PA-Prod, PA-Bisim} but M_Reach
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.4.D1 | `Mode` | | **Novel** |
-**Synopsis:** CRPT distinguishes two orthogonal classifications that earlier informal usage merged. A **regime** classifies an *element* by the fate of its ρ_M-orbit — convergent ↓_M if the orbit reaches a fixpoint, persistent ∞_M otherwise; regimes partition 𝒰_M and need no topology. A **canonicalization mode** classifies the *apparatus* by which an orbit is assigned a canonical form — finitary (termination at a fixpoint), topological (convergence to a 𝒯-limit), or asymptotic (stabilization of the orbit signature to an orbit-invariant). Modes are not a partition of 𝒰_M; they record how canonicalization is certified.
+**Synopsis:** CRPT distinguishes two orthogonal classifications. A **regime** classifies an *element* by the fate of its ρ_M-orbit — convergent ↓_M if the orbit reaches a fixpoint, persistent ∞_M otherwise; regimes partition 𝒰_M and need no topology. A **canonicalization mode** classifies the *apparatus* by which an orbit is assigned a canonical form — finitary (termination at a fixpoint), topological (convergence to a 𝒯-limit), or asymptotic (stabilization of the orbit signature to an orbit-invariant). Modes are not a partition of 𝒰_M; they record how canonicalization is certified.
 
 **Source:** CRPT; from `Rec-Proj` (L2.1.D4) + the regime partition (L2.2) + PA-WN (L1.2.Ax1) + PA-WN_top (L1.2.Ax7) + PA-Reach (L1.3.Ax2).
 
@@ -689,7 +689,7 @@ This is the well-founded / non-well-founded dichotomy at the level of element dy
 - **Asymptotic mode** — the orbit's observable signature stabilizes: the canonical form is an *orbit-invariant* (the asymptotic orbit invariant `AOI-Unif` (L6.3.D10)), not in general an element of 𝒰_M. Available on all of ∞_M; certified by PA-Reach + PA-Bisim.
 
 **Relationship between the axes.**
-- On ↓_M only finitary mode applies, and it is *coextensive* with the convergent regime — "finitary convergence" is by definition "reaching a fixpoint in finitely many steps." Asymptotic mode degenerates here to the reached fixpoint. This coincidence is why the two axes were historically conflated.
+- On ↓_M only finitary mode applies, and it is *coextensive* with the convergent regime — "finitary convergence" is by definition "reaching a fixpoint in finitely many steps." Asymptotic mode degenerates here to the reached fixpoint — which is why regime and mode coincide on the convergent regime.
 - On ∞_M the coincidence fails. Finitary mode never applies. **Asymptotic mode always applies; topological mode applies only where PA-WN_top holds.** Since PA-WN_top is independent of the other axioms (`WNtop-Ind` (L1.4.T3)), the persistent regime is strictly larger than the topological mode:
 ```
 ∞_M  =  (topological-mode part: PA-WN_top holds)  ⊎  (asymptotic-only part: no 𝒯-limit)
