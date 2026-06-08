@@ -8,9 +8,11 @@ level (Lω) in which the theory is applied to itself.
 
 ## Status
 
-**v1.0.0-rc1** — release candidate. The projection-axiom basis, the WF/NWF duality, and the
-categorical self-structure have been audited for internal consistency (cross-references,
-labelling, axiom-count, and proof rigor).
+**v1.0.0-rc2** — release candidate. The projection-axiom basis, the WF/NWF duality, and the
+categorical self-structure are audited for internal consistency (cross-references, labelling,
+axiom-count, and proof rigor). rc2 additionally repairs table rendering, gives every labelled
+item its own subsection, canonicalises the Class F and homomorphism definitions, resolves the
+L0 self-substrate status, and makes the tower model-neutral, legacy-free, and engine-free.
 
 ## Reading order
 

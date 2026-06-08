@@ -1,10 +1,20 @@
 # CRPT ω-Tower — Release Notes
 
-**Status:** CRPT ω-Tower  
-**Date:**   
+**Status:** v1.0.0-rc2 (release candidate)  
+**Date:** 2026-06-08  
 **Document set:** CRPT_OMEGA_TOWER_*.md (L0–L8, Lω, and support files)
 
 ---
+
+## Version 1.0.0-rc2 (2026-06-08)
+
+Changes since rc1, all on the same content (no theorem statements weakened):
+
+- **Rendering.** Every labelled item (Definition/Theorem/Lemma/Corollary/Remark/Axiom) now renders as a proper table; fixed duplicate headings, unescaped pipes in table cells, and the theorem-index column layout.
+- **Structure.** Every labelled item has its own subsection: 65 previously-inline remarks/corollaries were promoted to the standard heading + table (new stable tags) + Synopsis + Source.
+- **Consistency.** Canonicalised Class F to (Fix, H_S, H_I) = (⊤,⊤,⊤) with a correct emptiness proof; unified the model-homomorphism definition on Hom (L5.2.D1); resolved the L0 self-substrate status (L0 excluded; L1.1.D1 the unique root). Added remark Lω.5.R2 (self-consistency, not generativity).
+- **Abstractness.** Removed all applied-domain language (the tower is model-neutral), all legacy/historical phrasing, and all references to downstream tooling (engine-free). Theory name set to Compositional Recursive Projection Theory.
+- **Audit.** 0 dangling references, 0 tag/location mismatches, 0 mis-rendering table rows.
 
 ## Version 1.0
 
