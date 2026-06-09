@@ -1,10 +1,19 @@
 # CRPT ω-Tower — Release Notes
 
-**Status:** v1.0.0-rc2 (release candidate)  
-**Date:** 2026-06-08  
+**Status:** v1.0.0-rc3 (release candidate)  
+**Date:** 2026-06-09  
 **Document set:** CRPT_OMEGA_TOWER_*.md (L0–L8, Lω, and support files)
 
 ---
+
+## Version 1.0.0-rc3 (2026-06-09)
+
+Changes since rc2, all corrective (no theorem statements weakened):
+
+- **Structure.** Promoted the remaining substantive inline remarks (e.g. the WN-vs-SN remark in PA-WN) to standalone subsections with the standard heading + table + Synopsis + Source.
+- **Spec findings.** Resolved seven post-rc2 issues surfaced by the implementation audit: (1) the observer triple is invariant under bisimilarity ≈, not ≃_M — only the regime component is ≃_M-invariant (`Obs-Triple` (L4.1.D5), `Sem-Base` (L3.3.R3)); (2) bisimilarity defined on the labelled substrate so `PA-Bisim` is non-vacuous (`Bisim` (L1.1.D6)); (3) ≃_M made regime-aware — CFix-equality on ↓_M, ≃∞ on ∞_M in asymptotic mode (`≃_M` (L2.5.D2)); (4) FMA flat word-length grading; (5) standardised Lift strip convention; (6) Collapse(M) discrete with κ a morphism in Mod_CRPT_≃ (`Collapse-Hom` (L7.1.C4)); (7) L6.4 NWF horizons restated with asymptotic invariants only (≈, ≃∞, CPD), reserving topological forms for the PA-WN_top tier.
+- **References.** Corrected `Tag` (Label) citations to name the actual construct tag (`d_M` (L2.3.D2); removed a stale self-citation at L2.4.T5).
+- **Audit.** 0 dangling references, 0 tag/location mismatches, 0 mis-rendering table rows, balanced code fences.
 
 ## Version 1.0.0-rc2 (2026-06-08)
 

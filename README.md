@@ -8,11 +8,16 @@ level (Lω) in which the theory is applied to itself.
 
 ## Status
 
-**v1.0.0-rc2** — release candidate. The projection-axiom basis, the WF/NWF duality, and the
+**v1.0.0-rc3** — release candidate. The projection-axiom basis, the WF/NWF duality, and the
 categorical self-structure are audited for internal consistency (cross-references, labelling,
-axiom-count, and proof rigor). rc2 additionally repairs table rendering, gives every labelled
-item its own subsection, canonicalises the Class F and homomorphism definitions, resolves the
-L0 self-substrate status, and makes the tower model-neutral, legacy-free, and engine-free.
+axiom-count, and proof rigor). rc3 resolves seven post-rc2 spec findings from the
+implementation audit — the observer triple is bisimulation-invariant (not ≃_M-invariant),
+bisimilarity is defined on the labelled substrate, ≃_M is regime-aware (≃∞ on ∞_M), and the
+L6.4 NWF horizons use asymptotic invariants only — promotes the remaining substantive inline
+remarks to subsections, and corrects tag/location citations. rc2 repaired table rendering,
+gave every labelled item its own subsection, canonicalised the Class F and homomorphism
+definitions, resolved the L0 self-substrate status, and made the tower model-neutral,
+legacy-free, and engine-free.
 
 ## Reading order
 

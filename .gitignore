@@ -9,3 +9,6 @@ Thumbs.db
 # Claude Code local state (kept out of the repo)
 .claude/
 CLAUDE.local.md
+
+# Build / archive artifacts (the .md files are the source of truth)
+*.tar.gz
