@@ -1968,7 +1968,7 @@ into the three-level AOI theory.
 
 ## L6.4 — NWF Horizon Partition
 
-*Purpose.* NWF Horizon Predicates and Six-Class Partition for ∞_M. This section lifts the three horizon predicates H_S, H_I, H_O from the convergent regime ↓_M to the persistent regime ∞_M, obtaining H_S*, H_I*, H_O*. The coinductive definitions use AOI₁ in place of CNF_M. The resulting NWF six-class partition A*–F* mirrors the convergent-regime partition, with Class F* again provably empty.*
+*Purpose.* NWF Horizon Predicates and Six-Class Partition for ∞_M. This section lifts the three horizon predicates H_S, H_I, H_O from the convergent regime ↓_M to the persistent regime ∞_M, obtaining H_S*, H_I*, H_O*. The lifted predicates use only **asymptotic invariants** — bisimilarity ≈ (`Bisim` (L1.1.D6)), persistent orbit equivalence ≃∞ (`≃∞` (L3.3.D7)), and the canonical period CPD (`CPD` (L4.5.D1)) — in place of CNF_M; they are therefore total on all of ∞_M under SC-4 and do **not** invoke PA-WN_top or any topological-limit fiber. Where PA-WN_top holds, ≃∞ coincides with the topological-limit fiber (`≃_M` (L2.5.D2)), recovering the topological reading on that sub-class. The resulting NWF six-class partition A*–F* mirrors the convergent-regime partition, with Class F* again provably empty.*
 
 
 The six-class partition of L3.2 covers μT_{ρ,M}. The following covers νT_{ρ,M}.
@@ -1978,26 +1978,26 @@ All proofs in this section are self-contained.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L6.4.D1 | `H_S*` | H_S*(x) | **Novel** |
-**Synopsis:** The NWF Structural Horizon H_S*(x) for persistent elements is defined using the coinductive sibling relation: H_S*(x) = ⊤ when the topological fiber of x (elements sharing x's topological limit under PA-WN_top) has more than one element. This is the persistent-regime lifting of H_S, replacing the NFC fiber with the topological limit fiber.
+**Synopsis:** The NWF Structural Horizon H_S*(x) for persistent elements detects an asymptotic co-sibling: H_S*(x) = ⊤ when x has a non-bisimilar element y whose one-step image shares x's persistent orbit class ≃∞. This is the persistent-regime lifting of H_S, replacing the NFC fiber with the asymptotic (ω-limit) fiber — total on all of ∞_M, with no appeal to PA-WN_top.
 
-**Source:** CRPT; from `H_S` (L3.1.D1); persistent-regime lifting.
+**Source:** CRPT; from `H_S` (L3.1.D1); persistent-regime lifting via `≃∞` (L3.3.D7).
 
-For x ∈ νT_{ρ,M}:
+For x ∈ νT_{ρ,M} (≉ is non-bisimilarity, `Bisim` (L1.1.D6); ≃∞ is persistent orbit equivalence, `≃∞` (L3.3.D7)):
 ```
-H_S*(x) :⟺ ∃y ∈ ∞_M : y ≁_M x ∧ ρ_M(y) ≃_M ρ_M(x)
+H_S*(x) :⟺ ∃y ∈ ∞_M : y ≉ x ∧ ρ_M(y) ≃∞ ρ_M(x)
 ```
 
 ### H_I* — Invariant Co-Horizon
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L6.4.D2 | `H_I*` | H_I*(x) | **Novel** |
-**Synopsis:** The NWF Invariant Horizon H_I*(x) detects topological-fiber uniformity for persistent elements: H_I*(x) = ⊤ when all elements sharing x's topological limit have the same orbit signature. This is the persistent-regime lifting of H_I.
+**Synopsis:** The NWF Invariant Horizon H_I*(x) detects asymptotic-fiber uniformity for persistent elements: H_I*(x) = ⊤ when all asymptotic co-siblings of x (non-bisimilar elements whose one-step image shares x's ≃∞ class) carry the same persistent orbit signature sig_M*. This is the persistent-regime lifting of H_I, stated with asymptotic invariants only.
 
 **Source:** CRPT; from `H_I` (L3.1.D2) + `H_S*` (L6.4.D1).
 
-the orbit signature*(x) := (H_S*(x), CPD(x)).
+Writing the persistent orbit signature sig_M*(x) := (H_S*(x), CPD(x)) (`CPD` (L4.5.D1)):
 ```
-H_I*(x) :⟺ H_S*(x) ∧ ∀y : (y ≁_M x ∧ ρ_M(y) ≃_M ρ_M(x)) ⟹ sig_M*(y) = sig_M*(x)
+H_I*(x) :⟺ H_S*(x) ∧ ∀y : (y ≉ x ∧ ρ_M(y) ≃∞ ρ_M(x)) ⟹ sig_M*(y) = sig_M*(x)
 ```
 
 ### H_O* — Ontological Co-Horizon
@@ -2008,8 +2008,10 @@ H_I*(x) :⟺ H_S*(x) ∧ ∀y : (y ≁_M x ∧ ρ_M(y) ≃_M ρ_M(x)) ⟹ sig_M*
 
 **Source:** CRPT; from `H_O` (L3.1.D4) + `CPD` (L4.5.D1).
 
-H_O*(x) :⟺ ρ_M(x) ≃_M x
-(x is a co-fixpoint — period 1 in stable tail).
+```
+H_O*(x) :⟺ CPD(x) = 1
+```
+i.e. [ρ_M^{N(x)+1}(x)]_≈ = [ρ_M^{N(x)}(x)]_≈ (`CPD` (L4.5.D1)): x is a co-fixpoint — period 1 in the bisimulation-quotient stable tail. This is purely asymptotic (≈-based), total on ∞_M under SC-4, with no appeal to ≃_M or PA-WN_top.
 
 ### Six NWF Classes A*–F*
 | Type | Label | Tag | Notation | Status |
@@ -2044,7 +2046,7 @@ A*–F* are mutually exclusive and exhaustive on νT_{ρ,M}.
 *Proof.*
 **Mutual exclusivity:** Each class is defined by a distinct combination of
 (H_O*, H_S*, H_I*) values. For any x ∈ νT_{ρ,M}, each predicate has a unique truth value
-(H_O* = ρ_M(x)≃_Mx; H_S* = ∃y≁x:ρ_M(y)≃_Mρ_M(x); H_I* requires H_S*). So x
+(H_O* = (CPD(x)=1); H_S* = ∃y≉x:ρ_M(y)≃∞ρ_M(x); H_I* requires H_S*). So x
 satisfies exactly one combination. ✓
 
 **Exhaustiveness — all 16 combinations reduced to 6:**

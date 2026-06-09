@@ -10,17 +10,20 @@
 
 **Source:** Mac Lane [1971] *Categories for the Working Mathematician* §XI.1; Eilenberg & Mac Lane [1945] — free monoid / free monoidal algebra.
 
-Given a non-empty set A of *generators*, the free monoidal algebra FMA(A) is the
-inductive type:
+Given a non-empty set A of *generators*, the free monoidal algebra FMA(A) is the free
+monoid of finite words over A:
 ```
-FMA(A) ::= a for any a ∈ A (atomic term)
- | (t₁ · t₂) for any t₁, t₂ ∈ FMA(A) (composite term)
+FMA(A) := { a₁ a₂ ··· aₙ | n ≥ 1, each aᵢ ∈ A }   (atoms are the length-1 words a ∈ A)
 ```
-The *depth* of a term:
+with concatenation as the (associative) monoid product and ε as the unit. Because the monoid
+is free and associative, an element is a flat word; its *depth* (grading) is word length
+minus one:
 ```
-depth(a) := 0
-depth(t₁ · t₂) := 1 + max(depth(t₁), depth(t₂))
+depth(a₁ a₂ ··· aₙ) := n − 1     (so depth(a) = 0 for every atom a ∈ A)
 ```
+This flat grading is the one used throughout the tower (`Lift-Depth` (L8.2.C1), `Tower-Inf`
+(L8.10.T2)); `FMA-Proj` (L8.1.D2) strips one atom per step, so depth counts exactly the
+number of remaining steps.
 
 ### Well-foundedness of FMA
 | Type | Label | Tag | Notation | Status |
@@ -48,16 +51,18 @@ a unique pair (t₁, t₂) with t = (t₁ · t₂). *Proof.* By the inductive de
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.1.D2 | `FMA-Proj` | ρ_FMA | **Novel** |
-**Synopsis:** The canonical projection on FMA(Q_M) is defined by: atoms map to themselves (fixed points), and non-atomic words map to the same word with their first atom stripped. This is the natural left-to-right reduction strategy on the free monoidal algebra, and it satisfies C1 (determinism) and C3 (fixpoint stability) by construction.
+**Synopsis:** The canonical projection on FMA(Q_M) is defined by: atoms map to themselves (fixed points), and a non-atomic word maps to the word with its **last** atom stripped, so iterating converges to the **first** (leftmost) atom. This is the canonical reduction strategy on the free monoid, and it satisfies C1 (determinism) and C3 (fixpoint stability) by construction.
 
 **Source:** CRPT; left-canonical reduction strategy (Baader & Nipkow [1998] §2.1).
 
 *ARS standard name:* reduction strategy (Baader & Nipkow L1.2 Def. 2.1.19); proved
 to be the abstraction function on FMA(A) in `Lift-Compat` (L8.3.T4) below.
 ```
-ρ_MMA : FMA(A) → FMA(A)
-ρ_MMA(a) := a for a ∈ A (atomic: already at fixpoint)
-ρ_MMA(t₁ · t₂) := t₁ (left-canonical decomposition: strip right factor)
+ρ_FMA : FMA(A) → FMA(A)
+ρ_FMA(a) := a                      for a ∈ A (atom: already a fixpoint)
+ρ_FMA(a₁ a₂ ··· aₙ) := a₁ a₂ ··· a_{n−1}   for n ≥ 2 (strip the last atom)
+
+The canonical form of a word is therefore its first (leftmost) atom: CFix(ρ_FMA)(a₁ ··· aₙ) = a₁.
 ```
 
 ### ρ_MMA satisfies C1 and C3
@@ -107,7 +112,7 @@ Lift(M) := (FMA(Q_M), →_ρ^{Lift}, →_σ^{Lift}, ρ_{Lift(M)})
 ```
 where:
 - **Universe:** 𝒰_{Lift(M)} := FMA(Q_M)
-- **Abstraction relation:** t →_ρ^{Lift} t' iff t = (t₁ · t₂) and t' = t₁ (one left-strip)
+- **Abstraction relation:** t →_ρ^{Lift} t' iff t = (t₁ · t₂) and t' = t₁ (strip the last atom)
 - **Structural relation:** →_σ^{Lift} := →_ρ^{Lift} ∪ {((t₁·t₂), (t₂·t₁)) | t₁,t₂ ∈ FMA(Q_M)}
 - **Abstraction strategy:** ρ_{Lift(M)} := ρ_MMA
 - **Fixpoints (abstraction substrate):** Fix(ρ_{Lift(M)}) = Q_M ⊆ FMA(Q_M) (the atomic terms)
@@ -298,7 +303,7 @@ Since depth_MMA ∈ ℕ and strictly decreases at each step, no infinite chain e
 If M satisfies PA-Conf, Lift(M) does.
 
 *Proof.* ρ_{Lift(M)} is a total function (each non-atomic element has exactly one
-left-strip successor; atoms are fixed). A total-function ARS is trivially confluent:
+last-atom-strip successor; atoms are fixed). A total-function ARS is trivially confluent:
 there is no branching, so all paths trivially converge. ✓
 
 ### Degeneracy of PA-Conf at Lift
@@ -328,9 +333,9 @@ If M satisfies PA-WN, PA-Conf, and PA-Fix (hence WF-Canon hypotheses), Lift(M)
 preserves the WF canonicalization structure on its WF stratum.
 
 *Proof.* Let S ⊆ 𝒰_{Lift(M)} be ≈-closed and consistent. For any x ∈ 𝒰_{Lift(M)},
-the ρ_{Lift(M)}-orbit of x strips left-factors: ρ_{Lift(M)}^k(ι_M(q₁)·...·ι_M(qₙ))
-= ι_M(q_{k+1})·...·ι_M(qₙ) for k < n, then the fixpoint ι_M(q_n) for k ≥ n−1.
-Since the left-strip reduction eventually reduces any term to its rightmost atom,
+the ρ_{Lift(M)}-orbit of x strips the last atom: ρ_{Lift(M)}^k(ι_M(q₁)·...·ι_M(qₙ))
+= ι_M(q₁)·...·ι_M(q_{n−k}) for k < n, then the fixpoint ι_M(q₁) for k ≥ n−1.
+Since the reduction eventually reduces any term to its leftmost (first) atom,
 every WF-term in Lift(M) reaches a canonical fixpoint representative. This preserves
 WF-Canon-1/2 behavior under Lift on the WF stratum. ✓ ∎
 

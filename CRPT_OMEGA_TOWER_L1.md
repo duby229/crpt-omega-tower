@@ -129,20 +129,35 @@ substrate. It depends on axioms added at L1.2–L1.5.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.1.D6 | `Bisim` | | **Imported** |
-**Synopsis:** Bisimilarity ≈ is the largest bisimulation — the union of all bisimulations. Two elements are bisimilar exactly when they cannot be distinguished by any finite or infinite sequence of reductions. This is the finest observational equivalence derivable from the substrate structure alone.
+**Synopsis:** Bisimilarity ≈ is the largest bisimulation on the substrate read as a *labelled* transition system: each element carries its observable content, with the anchoring that distinct normal forms are distinct observables. Two elements are bisimilar exactly when no combination of observation and reduction distinguishes them. Because ≈ respects observation, it refines observable equivalence — so `PA-Bisim` is non-vacuous and models with many normal forms exist.
 
 **Source:** Park [1981] *Concurrency and Automata on Infinite Sequences*, LNCS 104, pp. 167–183; Milner [1989] *Communication and Concurrency* — bisimulation.
 
-A relation R ⊆ 𝒰 × 𝒰 is a *bisimulation on
-(𝒰, →_ρ)* if for all (x, y) ∈ R:
+The substrate is read as a **labelled** transition system: each element x carries an
+*observable* obs(x) — the content the substrate exposes at x — subject to the minimal
+anchoring requirement that **distinct normal forms are distinct observables** (obs ↾ NF(→_ρ)
+is injective: each normal form is its own atomic observable). A relation R ⊆ 𝒰 × 𝒰 is a
+*bisimulation on (𝒰, →_ρ, obs)* if for all (x, y) ∈ R:
+- *Observation:* obs(x) = obs(y); in particular x ∈ NF(→_ρ) ⟺ y ∈ NF(→_ρ), and if both are normal forms then x = y
 - *Forward:* ∀x' : x →_ρ x' ⟹ ∃y' : y →_ρ y' ∧ (x', y') ∈ R
 - *Backward:* ∀y' : y →_ρ y' ⟹ ∃x' : x →_ρ x' ∧ (x', y') ∈ R
+
+*Why the observation clause.* On the bare unlabelled system (𝒰, →_ρ) every normal form is
+vacuously bisimilar to every other (a normal form has no →_ρ-successors), so bare
+bisimulation collapses all normal forms — and then `PA-Bisim` (L1.3.Ax1) (≈ ⟹ ≃_M) would
+force a *unique* canonical form, contradicting a multi-element query signature Q_M and the
+six-class theory. The observation clause repairs this: ≈ refines the observable equivalence,
+keeping distinct normal forms (hence many canonical forms) apart, so `PA-Bisim` is
+non-vacuous. The persistent regime is anchored the same way — obs(x) carries the orbit's
+observable content (the Observable contract of `PA-Prod` (L1.2.Ax6) and the orbit signature
+`sig_M-NM` (L3.1.D5)) — so bisimilar persistent elements share their orbit signature, hence
+their ω-limit class (`≃∞` (L3.3.D7)), rather than all collapsing together.
 
 ### Bisimilarity
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.1.D7 | `Bisim~` | ≈ | **Imported** |
-**Synopsis:** Bisimilarity is the largest bisimulation — the union of all bisimulations. Two elements are bisimilar exactly when they cannot be distinguished by any finite or infinite sequence of reductions.
+**Synopsis:** Bisimilarity is the largest observation-respecting bisimulation (`Bisim` (L1.1.D6)): the union of all bisimulations on the labelled substrate. Two elements are bisimilar exactly when no combination of observation and reduction distinguishes them.
 
 **Source:** Park [1981] LNCS 104; Milner [1989] *Communication and Concurrency* — bisimilarity as the largest bisimulation (greatest fixed point).
 
@@ -543,6 +558,8 @@ Bisimilarity implies ρ-equivalence:
 ```
 
 where ≃_M is the abstraction equivalence relation (`NFC-NM` (L2.5.D1)).
+
+*Regime-aware conclusion.* The consequent x ≃_M y is read in the regime-aware sense of `≃_M` (L2.5.D2): on **↓_M** it is CFix-equality (bisimilar convergent elements share the finitary normal form); on **∞_M** under PA-WN_top it is equality of topological limits; and on **∞_M** in asymptotic mode (PA-WN_top absent) it is persistent orbit equivalence ≃∞ (`≃∞` (L3.3.D7)) — bisimilar persistent elements share the same ω-limit class. The observation clause of `Bisim` (L1.1.D6) is what keeps this non-vacuous: because ≈ already refines observation, the implication does not collapse distinct normal forms.
 
 *Standard Name:* Bisimulation congruence (Milner [1980], Park [1981]).
 

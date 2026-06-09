@@ -149,12 +149,21 @@ Three components:
 2. **H(x)** — Horizon structural class (position in abstraction landscape) 
 3. **D(x)** — Regime membership (convergent vs persistent)
 
-**Semantic Equivalence.** The observer factors through the unified semantic domain `Sem` (L3.3.D9):
-- For x, y ∈ ↓_M: x ≃_M y (`≃_M` (L2.5.D2)) ⟹ 𝒪(x) = 𝒪(y)
-- For x, y ∈ ∞_M: x ≃∞ y (`≃∞` (L3.3.D7)) ⟹ 𝒪(x) ≃_𝒪 𝒪(y) (see `AOI1-BisInv` (L6.1.T1))
+**Invariance.** The observer is a *behaviour*, hence invariant under bisimilarity ≈
+(`Bisim` (L1.1.D6)) — the finest substrate equivalence — and **not** under the coarser
+orbit-equivalence ≃_M (`≃_M` (L2.5.D2)):
+- For x, y ∈ ↓_M: x ≈ y ⟹ 𝒪(x) = 𝒪(y)
+- For x, y ∈ ∞_M: x ≈ y ⟹ 𝒪(x) ≃_𝒪 𝒪(y), the asymptotic observable comparing ω-limit classes ≃∞ (`≃∞` (L3.3.D7), `AOI1-BisInv` (L6.1.T1))
 
-The observer is constant on ≃_M classes in ↓_M and on ≃∞ classes in ∞_M;
-it separates elements only up to their regime-specific orbit equivalence.
+Because ≈ ⊆ ≃_M is *strict* (`PA-Bisim` (L1.3.Ax1)), bisimilarity is properly finer, and
+the observer separates elements *within* a single ≃_M class. Of the three components only
+the regime D(x) is ≃_M-invariant (≃_M does not cross regimes, `≃_M` (L2.5.D2)); the
+behavioural valuation PV and the horizon class H are **not** ≃_M-invariant. **Witness.** On a
+forward orbit a →_ρ b →_ρ c with also d →_ρ c, all of a, b, d share the canonical form
+CFix = c and so lie in one ≃_M class, yet PV accumulates distinct trajectories and H records
+distinct orbit positions — so 𝒪(a), 𝒪(b), 𝒪(d) are pairwise distinct. The ≃_M-invariant
+residue of 𝒪 is exactly the (regime, canonical-form) datum recorded by the semantic base
+`Sem` (L3.3.D9); the full observer refines it.
 
 ### Coalgebraic Observable is Fully Derived / Constructible
 | Type | Label | Tag | Notation | Status |

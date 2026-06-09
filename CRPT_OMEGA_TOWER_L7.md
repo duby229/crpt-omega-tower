@@ -321,8 +321,12 @@ has the same orbit tail, hence the same topological limit (`CFix-NM` (L2.4.D1)).
   transitivity; equivalently C2, bisimulation equivariance, `ρ_M` (L2.1.D1)). Hence
   ρ_{Collapse}([x]_≃) := [ρ_M(x)]_≃ is representative-independent.
 - By the key fact, [ρ_M(x)]_≃ = [x]_≃, so **ρ_{Collapse} = id_{Q_M}**. Likewise, if
-  x →_ρ y then y ≃_M x (y is on x's orbit to the same canonical form), so
-  →_ρ^{Collapse} relates each class only to itself. ✓
+  x →_ρ y then y ≃_M x (y is on x's orbit to the same canonical form), so x and y
+  fall in the **same** class. Hence **→_ρ^{Collapse} is empty** — every class is a
+  fixpoint of ρ_{Collapse} = id, i.e. a normal form — and Collapse(M) is **discrete**
+  (no reduction edges, not even self-loops). A reduction step of M maps under κ to an
+  *equality* of classes, not an edge; this is why κ is a homomorphism only in the
+  ≃-quotient category Mod_CRPT_≃ (`Collapse-Hom` (L7.1.C4)). ✓
 
 **Step 2: Collapse(M) is a pure-WF CRPT model.** With ρ_{Collapse} = id, every class is a
 fixpoint and a normal form: Fix(ρ_{Collapse}) = NF(→_ρ^{Collapse}) = Q_M = 𝒰_{Collapse(M)}.
@@ -374,18 +378,19 @@ hierarchy (`AOI-Unif` (L6.3.D10)).
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L7.1.C4 | `Collapse-Hom` | | **Novel** |
-**Synopsis:** The Collapse Homomorphism theorem: the quotient map π_M : 𝒰_M → Q_M is a CRPT homomorphism from M to Collapse(M). It satisfies all four conditions Φ_R, Φ_E, Φ_ρ, Φ_LA, making π_M the canonical surjective homomorphism from any model to its collapsed form.
+**Synopsis:** The Collapse Homomorphism theorem: the quotient map κ : 𝒰_M → Q_M is a CRPT homomorphism from M to Collapse(M) **in the ≃-quotient category Mod_CRPT_≃** (`Mod-Cat-Q` (L7.2.T1)), where Φ_R is interpreted up to ≃. Since Collapse(M) is discrete (ρ_{Collapse} = id, no reduction edges), a reduction step x →_ρ y maps to the *equality* κ(x) = κ(y) — because y ≃_M x — which satisfies Φ_R up to ≃ without requiring a literal edge. κ is the canonical surjective collapse homomorphism.
 
-**Source:** CRPT; from `Collapse-Def` (L7.1.D4) + `Hom` (L5.2.D1).
+**Source:** CRPT; from `Collapse-Def` (L7.1.D4) + `Hom` (L5.2.D1) + `Mod-Cat-Q` (L7.2.T1).
 
-The quotient projection κ : M → Collapse(M) defined by κ(x) = [x]_{≃_M} is a model homomorphism.
+The quotient projection κ : M → Collapse(M), κ(x) = [x]_{≃_M}, is a morphism in Mod_CRPT_≃.
 
-**Proof.** We verify the homomorphism conditions:
-- **(κ_R):** If x →_ρ y in M, then [x]_≃ →_ρ^{Collapse} [y]_≃ in Collapse(M) by definition.
-- **(κ_E):** If x ≃_M y, then [x]_≃ = [y]_≃ in Collapse(M), so they are trivially equivalent.
-- **(κ_ρ):** κ(ρ_M(x)) = [ρ_M(x)]_≃ = ρ_{Collapse}([x]_≃) = ρ_{Collapse}(κ(x)). ✓
+**Proof (in Mod_CRPT_≃, `Mod-Cat-Q` (L7.2.T1), where the morphism conditions are read up to ≃).**
+- **(κ_R, up to ≃):** If x →_ρ y in M, then y ≃_M x (the reduct lies on x's orbit to the same canonical form, under PA-Conf / orbit confluence), so κ(x) = [x]_≃ = [y]_≃ = κ(y). The up-to-≃ relation-preservation condition — κ(x) →_ρ^{Collapse} κ(y) **or** κ(x) ≃_{Collapse} κ(y) — holds because κ(x) = κ(y). (Collapse(M) is discrete: ρ_{Collapse} = id and there are no literal →_ρ^{Collapse} edges, so Φ_R can only be met up to ≃, the morphism-equality convention of `Mod-Cat-Q` (L7.2.T1).)
+- **(κ_E):** If x ≃_M y, then [x]_≃ = [y]_≃ in Collapse(M) — trivially ≃_{Collapse}-equivalent. ✓
+- **(κ_ρ):** κ(ρ_M(x)) = [ρ_M(x)]_≃ = [x]_≃ = ρ_{Collapse}([x]_≃) = ρ_{Collapse}(κ(x)) (using ρ_M(x) ≃_M x and ρ_{Collapse} = id). ✓
+- **(κ_LA):** the image of each local axiom of M is consistent with the local-axiom set of the discrete Collapse(M). ✓
 
-By the model homomorphism definition, κ is a model homomorphism. ✓ ∎
+Hence κ is a morphism in Mod_CRPT_≃ — the canonical surjective collapse homomorphism. The strict-Φ_R reading is recovered only on the trivial part (classes with no internal reduction); on classes that absorb a reduction step, Φ_R holds up to ≃, never as a literal self-loop. ∎
 
 ### Persistent Galois Insertion
 

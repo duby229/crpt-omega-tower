@@ -745,9 +745,9 @@ regardless of whether elements within f had infinite σ-structure. The entire ho
 - **The mapping:** Horizontal σ-structure of fiber f in Mₙ ↦ Horizontal σ-structure among fiber-atoms {ι_Mₙ(f) · ι_Mₙ(f')} in Mₙ₊₁
 - **Net effect:** The σ-infinity of ONE fiber at level Mₙ becomes the (potentially infinite) depth of multi-fiber compositions at level Mₙ₊₁
 
-*Proof.* (Parts (i) and (iv) reference the Lift construction of L8.1; see `Lift-Def` (L8.2.D2) for the free monoidal algebra FMA(Q_M) and the left-strip reduction ρ_{Lift(M)}.)
+*Proof.* (Parts (i) and (iv) reference the Lift construction of L8.1; see `Lift-Def` (L8.2.D2) for the free monoidal algebra FMA(Q_M) and the last-atom-strip reduction ρ_{Lift(M)} (strip the rightmost atom each step).)
 
-(i) Let f ∈ Fix(ρ_M) with |the normal-form fiber NFC_M(f)| = ∞ (infinitely many elements in the fiber). By construction of Lift(M) (`Lift-Def` (L8.2.D2)), each equivalence class [a]_{≃_M} for a ∈ the normal-form fiber NFC_M(f) maps to an atom ι_M([a]) ∈ FMA(Q_M). Since distinct elements of different fibers yield distinct atoms, for any n ∈ ℕ we can form the n-fold composition t_n := ι_M([a₁]) · ι_M([a₂]) · ... · ι_M([aₙ]) ∈ FMA(Q_M) where a₁, ..., aₙ are elements from (possibly distinct) fibers connected by →_σ-paths from x's fiber. The left-strip reduction ρ_{Lift(M)} removes the leftmost factor at each step: ρ_{Lift(M)}(t_n) = ι_M([a₂]) · ... · ι_M([aₙ]), so d_{Lift(M)}(t_n) = n − 1. As n → ∞, d_{Lift(M)}(t_n) → ∞, giving unbounded depth in Lift(M). ✓
+(i) Let f ∈ Fix(ρ_M) with |the normal-form fiber NFC_M(f)| = ∞ (infinitely many elements in the fiber). By construction of Lift(M) (`Lift-Def` (L8.2.D2)), each equivalence class [a]_{≃_M} for a ∈ the normal-form fiber NFC_M(f) maps to an atom ι_M([a]) ∈ FMA(Q_M). Since distinct elements of different fibers yield distinct atoms, for any n ∈ ℕ we can form the n-fold composition t_n := ι_M([a₁]) · ι_M([a₂]) · ... · ι_M([aₙ]) ∈ FMA(Q_M) where a₁, ..., aₙ are elements from (possibly distinct) fibers connected by →_σ-paths from x's fiber. The reduction ρ_{Lift(M)} removes the last atom at each step: ρ_{Lift(M)}(t_n) = ι_M([a₁]) · ... · ι_M([a_{n−1}]), so d_{Lift(M)}(t_n) = n − 1. As n → ∞, d_{Lift(M)}(t_n) → ∞, giving unbounded depth in Lift(M). ✓
 
 (ii) By `NFC-TInv` (L8.4.T2): Q_{Mₙ₊₁} = Q_{Mₙ} (abstraction quotient invariant). Elements not reaching a fixpoint at level Mₙ continue not to reach one at level Mₙ₊₁; the infinite tower persists. ✓
 
@@ -1427,7 +1427,7 @@ Together: NFC_M(y) partitions 𝒰 by destination (normal forms or limits).
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L2.5.D2 | `≃_M` | ≃_M | **Novel** |
-**Synopsis:** Observable (orbit) equivalence: x ≃_M y holds when x and y share the same canonical normal form / limit, CFix(ρ_M)(x) = CFix(ρ_M)(y). It is the regime-agnostic equivalence relating elements indistinguishable by their canonical form, on both ↓_M and ∞_M.
+**Synopsis:** Observable (orbit) equivalence: x ≃_M y holds when x and y share the same canonical form, CFix(ρ_M)(x) = CFix(ρ_M)(y). It is total and unconditional on ↓_M (CFix is the finitary normal form). On ∞_M, CFix is the topological limit and so requires PA-WN_top; without it the regime-general observable equivalence is persistent orbit equivalence ≃∞ (`≃∞` (L3.3.D7)), with which ≃_M agrees on the PA-WN_top sub-class.
 
 **Source:** CRPT; from `Rec-Proj` (L2.1.D4).
 
@@ -1436,6 +1436,8 @@ Define the relation ≃_M on 𝒰:
 x ≃_M y :⟺ CFix(ρ_M)(x) = CFix(ρ_M)(y)
 ```
 x and y are *orbit-equivalent* if they have the same canonical normal form (or limit point).
+
+*Regime-aware reading.* On **↓_M**, CFix(ρ_M)(x) is the finitary normal form (`CNF-Ex` (L2.4.T1)), so ≃_M is total and is exactly CFix-equality. On **∞_M**, CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) is the topological limit, which exists only under PA-WN_top (`TopSep-Uniq` (L1.2.T1)); so ≃_M is **partial** on ∞_M, defined precisely on the PA-WN_top sub-class. Where PA-WN_top is absent (asymptotic mode), the regime-general observable equivalence on ∞_M is persistent orbit equivalence ≃∞ (`≃∞` (L3.3.D7)), comparing ω-limit sets. The two **agree** on the PA-WN_top sub-class — a single topological limit L is exactly the singleton ω-limit set {[L]_≈}. Accordingly, `PA-Bisim` (L1.3.Ax1)'s conclusion x ≃_M y reads as CFix-equality on ↓_M and as ≃∞ on ∞_M in asymptotic mode.
 
 ### ≃_M and Orbit-Coincidence
 

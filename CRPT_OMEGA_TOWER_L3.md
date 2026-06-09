@@ -1427,7 +1427,7 @@ constructively tractable approximation from which `Lift∞` (L8.5.D2) is built.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D9 | `Sem` | Sem(M) | **Novel** |
-**Synopsis:** The unified semantic domain Sem(M) := Q_M ⊔ Q∞_M is the disjoint union of the convergent orbit quotient and the persistent orbit quotient, with a regime-aware semantic projection π_sem : 𝒰_M → Sem(M). It is the semantic base through which the observer triple factors.
+**Synopsis:** The unified semantic domain Sem(M) := Q_M ⊔ Q∞_M is the disjoint union of the convergent orbit quotient and the persistent orbit quotient, with a regime-aware semantic projection π_sem : 𝒰_M → Sem(M). It records the observer triple's ≃_M-invariant residue — each element's regime and orbit-equivalence class — which the full observer then refines.
 
 **Source:** CRPT; from `Q∞` (L3.3.D8) + `Ab-Quot-28` (L8.2.D1).
 
@@ -1448,15 +1448,19 @@ elements map to the same class.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L3.3.R3 | `Sem-Base` | | **Novel** |
-**Synopsis:** Sem(M) as the semantic base through which the observer triple factors.
+**Synopsis:** Sem(M) records the ≃_M-invariant residue of the observer triple — its (regime, canonical-form) datum — not the full observer.
 
 **Source:** CRPT; from `Obs-Triple` (L4.1.D5).
 
-Sem(M) is the **semantic base** for the observer triple
-`Obs-Triple` (L4.1.D5) and for compiler IR design: the observer 𝒪 factors through
-π_sem (elements with the same orbit-equivalence class have the same behavioral
-signature), and IR types correspond to elements of Sem(M). The two components
-the query signature and Q∞_M are the **terminating IR** and **persistent IR** respectively.
+Sem(M) is the **canonical-form base** for the observer triple `Obs-Triple` (L4.1.D5):
+the semantic projection π_sem records each element's regime and orbit-equivalence
+class (its convergent class in Q_M or persistent ω-limit class in Q∞_M). This is exactly
+the **≃_M-invariant residue** of the observer — the regime component D and the canonical
+form. The *full* observer 𝒪 does **not** factor through π_sem: its behavioural valuation PV
+and horizon class H separate elements *within* a single ≃_M class (`Obs-Triple` (L4.1.D5)),
+so 𝒪 factors through the strictly finer bisimilarity ≈ (`Bisim` (L1.1.D6)), not through
+π_sem. The two components Q_M and Q∞_M are the **terminating** and **persistent** canonical
+domains respectively.
 
 ---
 
