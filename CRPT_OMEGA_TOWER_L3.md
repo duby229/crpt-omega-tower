@@ -871,7 +871,7 @@ with ρ_M(z) = f.
 **(Step 2: z ∉ Fix(ρ_M).)** If z ∈ Fix(ρ_M) then ρ_M(z) = z. But ρ_M(z) = f and z ≠ f.
 Contradiction. So z ∉ Fix(ρ_M).
 
-**(Step 3: d_M(z) = 1.)** By `derivation height` (L2.3.D2),
+**(Step 3: d_M(z) = 1.)** By `d_M` (L2.3.D2),
 ```
 d_M(z) := min{ n ∈ ℕ | ρ_M^n(z) ∈ Fix(ρ_M) }
 ```
@@ -1480,7 +1480,7 @@ resting on the universal axiom PA-Reach (L1.3.Ax2).
 | **Definition** | L3.3.D10 | `n-Reach` | n_M(x) | **Novel** |
 **Synopsis:** The reachability depth n_M(x) is the least index at which the orbit signature sig_M stabilizes — the NWF dual of the derivation height d_M. Where d_M counts steps until the orbit itself becomes constant (reaches Fix), n_M counts steps until the orbit *signature* becomes constant; the element keeps moving, but its observable signature is fixed.
 
-**Source:** CRPT; from `CPer` (L1.3.D1) + `sig_M-NM` (L3.1.D5) + PA-Reach (L1.3.Ax2); dual of `derivation height` (L2.3.D2).
+**Source:** CRPT; from `CPer` (L1.3.D1) + `sig_M-NM` (L3.1.D5) + PA-Reach (L1.3.Ax2); dual of `d_M` (L2.3.D2).
 
 For x ∈ ∞_M:
 ```

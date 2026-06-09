@@ -280,7 +280,7 @@
 `Conv`, `Pers` (L0.2.D1) · `Regime-Dich` (L0.2.T1) · `↓_M` (L2.2.D4) · `∞_M` (L2.2.D5) · `Inf-Dual` (L2.2.T7) · `Reg-Exh` (L2.2.T8) · `CRPT-WF` (Lω.7.T1)
 
 ### Canonical Forms & Depth
-`NF` (L1.1.D2) · `Fix` (L2.1.D3) · `Fix=NF` (L2.1.T2) · `CFix-NM` (L2.4.D1) · `CNF-Uniq` (L2.4.T2) · `derivation height` (L2.3.D2) · `d-WD` (L2.3.T1) · `CNF∞-Def` (L3.3.D6)
+`NF` (L1.1.D2) · `Fix` (L2.1.D3) · `Fix=NF` (L2.1.T2) · `CFix-NM` (L2.4.D1) · `CNF-Uniq` (L2.4.T2) · `d_M` (L2.3.D2) · `d-WD` (L2.3.T1) · `CNF∞-Def` (L3.3.D6)
 
 ### Horizons (H_S, H_I, H_O)
 `H_S` (L3.1.D1) · `H_I` (L3.1.D2) · `H_O` (L3.1.D4) · `sig_M-NM` (L3.1.D5) · `H_I-WD` (L3.1.T2) · `H_I-WD-U` (L0.3.T2) · `Hor-Abs` (L3.1.T3) · `Hor-Lift` (L8.2.T2)

@@ -163,7 +163,7 @@ If x ∈ NF(→_ρ) then ρ_M(x) = x and
 d_M(x) = 0. If x ∉ NF(→_ρ) and x ∈ ↓_M, then ρ_M(x) ∈ ↓_M and
 d_M(ρ_M(x)) = d_M(x) - 1.
 
-*Proof.* (Here d_M(x) := min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)}, formalized as the rank function in `derivation height` (L2.3.D2).)
+*Proof.* (Here d_M(x) := min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)}, formalized as the rank function in `d_M` (L2.3.D2).)
 
 *First clause:* x ∈ NF(→_ρ) implies ρ_M(x) = x by `NF⊆Fix` (L2.1.T1). Since x ∈ Fix(ρ_M),
 we have ρ_M^0(x) = x ∈ Fix(ρ_M), so 0 ∈ {n | ρ_M^n(x) ∈ Fix(ρ_M)} and d_M(x) = 0. ✓
@@ -189,7 +189,7 @@ Cousot [1977] L2.2.
 | **Definition** | L2.1.D4 | `Rec-Proj` | CFix(ρ_M) | **Novel** |
 **Synopsis:** The canonical fixpoint map CFix(ρ_M)(x) sends each convergent element x to the unique fixed point that its projection orbit reaches. It is equivalent to CNF_M(x) and provides an alternative notation emphasising the fixpoint (rather than the canonical form) perspective.
 
-**Source:** CRPT; from `ρ_M` (L2.1.D1) + `derivation height` (L2.3.D2).
+**Source:** CRPT; from `ρ_M` (L2.1.D1) + `d_M` (L2.3.D2).
 
 [Note: CFix(ρ_M)(x) := ρ_M^{d_M(x)}(x) is a CRPT-novel construction.
 The abstraction-function concept is imported from Cousot & Cousot [1977] L2.2;
@@ -239,7 +239,7 @@ The recursive projection CFix(ρ_M)(x) is the unique fixpoint reachable from x b
 *Proof.* We show the set equals exactly {CFix(ρ_M)(x)}.
 
 *CFix(ρ_M)(x) ∈ Fix(ρ_M).* By `Rec-Proj` (L2.1.D4), CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x).
-By `derivation height` (L2.3.D2) (used here via its informal pre-introduction in L1.2–L1.5): d_M(x) =
+By `d_M` (L2.3.D2) (used here via its informal pre-introduction in L1.2–L1.5): d_M(x) =
 min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)}, so ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M) by definition of
 the minimum. Hence CFix(ρ_M)(x) ∈ Fix(ρ_M). ✓
 
@@ -317,7 +317,7 @@ Therefore (α_M, γ_M) is a Galois insertion, and CFix(ρ_M) is the abstraction 
 used in `UF` (L2.1.L2) via `Depth-Dec` (L2.3.T2) and `Fix-D0` (L2.3.T3)),
 PA-Conf (uniqueness of the fixpoint reached, via confluence), C1 (for the Step-or-Fix
 property underpinning `Depth-Dec` (L2.3.T2) and `Fix-D0` (L2.3.T3)), and
-the definitions of ≤_ρ (`≤_ρ` (L2.3.D1)), derivation height (`derivation height` (L2.3.D2)), and CFix(ρ_M)
+the definitions of ≤_ρ (`≤_ρ` (L2.3.D1)), derivation height (`d_M` (L2.3.D2)), and CFix(ρ_M)
 (`Rec-Proj` (L2.1.D4)). No conditions on what "abstraction" means are introduced
 alongside the PA-* system. The definition of Galois connection is imported from
 Cousot & Cousot [1977] L2.2 without modification.
@@ -955,7 +955,7 @@ Under PA-Conf (Church-Rosser),
 ≤_ρ is reflexive, transitive, and antisymmetric on μT_{ρ,M}. Therefore (μT_{ρ,M}, ≤_ρ) is a **poset**
 (partially ordered set).
 
-*Proof.* (Here d_M(x) := min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)}, formalized in `derivation height` (L2.3.D2).)
+*Proof.* (Here d_M(x) := min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)}, formalized in `d_M` (L2.3.D2).)
 
 - *Reflexivity:* ρ_M⁰(x) = x, so x ≤_ρ x. ✓
 - *Transitivity:* x ≤_ρ y and y ≤_ρ z imply ∃k, ℓ : ρ_M^k(x) = y and ρ_M^ℓ(y) = z.
@@ -1112,7 +1112,7 @@ measure: derivation height strictly decreases along ρ_M-orbits in μT_{ρ,M}.
 | **Definition** | L2.4.D1 | `CFix-NM` |  | **Novel** |
 **Synopsis:** The canonical fixpoint map CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x) is the unique fixed point reachable from x by the canonical number of projection steps. This is the explicit computation that the canonical form map performs.
 
-**Source:** CRPT; from `Rec-Proj` (L2.1.D4) + `derivation height` (L2.3.D2).
+**Source:** CRPT; from `Rec-Proj` (L2.1.D4) + `d_M` (L2.3.D2).
 
 The map CFix(ρ_M) : 𝒰 → (NF(→_ρ) ∪ Limits(𝒯)) is defined in a regime-dependent manner:
 
@@ -1173,7 +1173,7 @@ Baader & Nipkow [1998] §6.1
 
 For each x ∈ μT_{ρ,M}: ρ_M^{d_M(x)}(x) ∈ NF(→_ρ).
 
-*Proof.* Let n = d_M(x). By `derivation height` (L2.3.D2), ρ_M^n(x) ∈ Fix(ρ_M). Under PA-WN,
+*Proof.* Let n = d_M(x). By `d_M` (L2.3.D2), ρ_M^n(x) ∈ Fix(ρ_M). Under PA-WN,
 Fix(ρ_M) = NF(→_ρ) by `Fix=NF` (L2.1.T2). So ρ_M^n(x) ∈ NF(→_ρ). ∎
 
 ### Fix = NF Unconditionally
@@ -1206,7 +1206,7 @@ When PA-Conf is declared `Scoped(ρ_M-orbits)` (see L1.4, Scope Sufficiency for 
 orbit-scoped uniqueness stated here is sufficient for CFix(ρ_M) to be well-defined on μT_{ρ,M}.
 
 *Proof.* The ρ_M-orbit of x is the deterministic sequence (ρ_M^n(x))_{n∈ℕ}. If
-x ∈ μT_{ρ,M}, then by `derivation height` (L2.3.D2) there is a minimal d_M(x) with
+x ∈ μT_{ρ,M}, then by `d_M` (L2.3.D2) there is a minimal d_M(x) with
 ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M) = NF(→_ρ). Since ρ_M is a function, this orbit is
 unique and therefore reaches a single NF element, namely f := ρ_M^{d_M(x)}(x).
 Hence no two distinct normal forms can be reached along the ρ_M-orbit. ∎
@@ -1292,7 +1292,7 @@ where CFix(ρ_M) is the canonical normal form map of `Rec-Proj` (L2.1.D4).
 | **Theorem** | L2.4.T4 | `Abs=RP` |  | **Novel** |
 **Synopsis:** Abstraction equals recursive projection: the abstraction map Abs_M(x) is computed by iterating ρ_M — ρ_M^{d_M(x)}(x) on ↓_M (reaching the fixpoint) and lim_{n→∞} ρ_M^n(x) on ∞_M (the topological limit). Abstraction is recursive projection to the canonical form.
 
-**Source:** CRPT; from `Rec-Proj` (L2.1.D4) + `derivation height` (L2.3.D2).
+**Source:** CRPT; from `Rec-Proj` (L2.1.D4) + `d_M` (L2.3.D2).
 
 For all x ∈ 𝒰_M:
 ```
@@ -1306,7 +1306,7 @@ Abs_M(x) = {
 
 **Case 1: x ∈ ↓_M.** By `Reg-Strat` (L2.2.D3) and PA-WN, there exists a finite
 d_M(x) ∈ ℕ such that ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M), and ρ_M^k(x) ∉ Fix(ρ_M) for
-all k < d_M(x) (`PA-WN-Tot` (L2.2.T4), `derivation height` (L2.3.D2)). By `Fix=NF` (L2.1.T2), Fix(ρ_M) = NF(→_ρ)
+all k < d_M(x) (`PA-WN-Tot` (L2.2.T4), `d_M` (L2.3.D2)). By `Fix=NF` (L2.1.T2), Fix(ρ_M) = NF(→_ρ)
 under PA-WN. By `Rec-Proj` (L2.1.D4), CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x). Hence
 Abs_M(x) = CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x). ✓
 
@@ -1347,8 +1347,8 @@ canonical representative. Together they yield the abstraction map Abs_M = CFix(�
 
 **Source:** CRPT; from PA-WN (L1.2.Ax1) + PA-Conf (L1.2.Ax2) + `CNF-Ex` (L2.4.T1) + `CNF-Uniq` (L2.4.T2).
 
-*(Formal proof of `WF-Canon` (L2.4.T5), deferred to this point where all
-dependencies are in scope.)*
+*(Formal proof of the well-founded canonicalisation theorem, deferred to this
+point where all dependencies are in scope.)*
 
 **WF-Canon-1:** ∀x ∈ ↓_M : CFix(ρ_M)(x) ∈ Fix(ρ_M).
 
@@ -1356,7 +1356,7 @@ dependencies are in scope.)*
 ```
 CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x)
 ```
-By `d-WD` (L2.3.T1), d_M(x) ∈ ℕ is well-defined. By `derivation height` (L2.3.D2),
+By `d-WD` (L2.3.T1), d_M(x) ∈ ℕ is well-defined. By `d_M` (L2.3.D2),
 d_M(x) = min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)}. Therefore, by the definition of
 minimum, ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M). Hence CFix(ρ_M)(x) ∈ Fix(ρ_M). ∎
 
@@ -1364,7 +1364,7 @@ minimum, ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M). Hence CFix(ρ_M)(x) ∈ Fix(ρ_M). ∎
 
 *Proof.* Let f ∈ Fix(ρ_M). We exhibit x := f as the required witness.
 
-*Step 1: f ∈ ↓_M.* By `derivation height` (L2.3.D2), ↓_M = {x ∈ 𝒰_M | ∃n ∈ ℕ : ρ_M^n(x) ∈ Fix(ρ_M)}.
+*Step 1: f ∈ ↓_M.* By `d_M` (L2.3.D2), ↓_M = {x ∈ 𝒰_M | ∃n ∈ ℕ : ρ_M^n(x) ∈ Fix(ρ_M)}.
 Take n = 0: ρ_M^0(f) = f ∈ Fix(ρ_M). Hence f ∈ ↓_M. ✓
 
 *Step 2: CFix(ρ_M)(f) = f.* By `Fix-D0` (L2.3.T3), d_M(f) = 0 for all f ∈ Fix(ρ_M).

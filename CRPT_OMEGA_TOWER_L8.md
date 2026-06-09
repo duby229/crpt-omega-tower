@@ -157,7 +157,7 @@ Let M satisfy PA-WN + PA-Conf. Then:
 **(i)** ι_M(NFC_M(f)) = atom(NFC_M(f)) ∈ FMA(Q_M). By the definition of the canonical projection strategy on FMA(A), ρ_MMA(a) = a
 for all a ∈ Q_M. Therefore ι_M(NFC_M(f)) ∈ Fix(ρ_{Lift(M)}). ✓
 
-**(ii)** By `derivation height` (L2.3.D2): d_{Lift(M)}(x) = min{n | ρ_{Lift(M)}^n(x)
+**(ii)** By `d_M` (L2.3.D2): d_{Lift(M)}(x) = min{n | ρ_{Lift(M)}^n(x)
 ∈ Fix(ρ_{Lift(M)})}. Since ι_M(NFC_M(f)) ∈ Fix by (i), taking n=0 gives
 d_{Lift(M)}(ι_M(NFC_M(f))) = 0. ✓
 
