@@ -603,7 +603,16 @@ x ∈ 𝒰_{Mₙ} : x is a tower horizon point of level n
 ```
 These are the fixpoints (d_{Mₙ}(x) = 0) at which the collapse map is non-injective.
 
-*Remark.* This is distinct from H_O (`H_O` (L3.1.D4)), which characterises
+### Tower Horizon Points vs. H_O
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L8.6.R6 | `TwrHor-vs-HO` | | **Novel** |
+**Synopsis:** Tower horizon points sit at derivation height 0 (Classes E/F), distinct from H_O-positive elements at derivation height 1 (Classes B/C).
+
+**Source:** CRPT; from `H_O` (L3.1.D4) + `6-Part` (L3.2.T1).
+
+This is distinct from H_O (`H_O` (L3.1.D4)), which characterises
 d_{Mₙ}(x) = 1 (depth-1 elements, not fixpoints). Tower horizon points are at
 derivation height = 0 (Classes E/F, L3.2); H_O-positive elements are at derivation height = 1 (Classes B/C, L3.2).
 

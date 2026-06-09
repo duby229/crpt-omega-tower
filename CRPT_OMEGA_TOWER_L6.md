@@ -360,7 +360,15 @@ captures all orbit-trace distinctions. ✓
 is assumed. When PA-WN_top fails, no topological limit is guaranteed, and L3.2 does not
 apply; the only invariants are from Tier 1 (OT, orbit type, OC). ✓ ∎
 
-*Remark (The Correct Structural Answer for Non-Convergent Persistent Elements).*
+### Tools for Non-Convergent Persistent Elements
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L6.2.R1 | `NonConv-Answer` | | **Novel** |
+**Synopsis:** The three-tier framework (`3-Tier` (L6.2.D2)) is the structural answer to which analysis tools CRPT provides for ∞_M elements when PA-WN_top fails.
+
+**Source:** CRPT; from `3-Tier` (L6.2.D2).
+
 The three-tier framework (`3-Tier` (L6.2.D2)) provides the structurally correct response
 to the question: "What analysis tools does CRPT provide for ∞_M elements when
 PA-WN_top fails?" The answer has three components:
@@ -381,7 +389,16 @@ PA-WN_top fails?" The answer has three components:
 The Anchor's ∞_M machinery is therefore **complete at each tier**: it provides all
 information that is mathematically extractable under the given assumptions.
 
-*Remark (Relationship to L6.2 and L3.2).* The three-tier framework
+### Relationship to L6.2 and L3.2
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L6.2.R2 | `ThreeTier-Rel` | | **Novel** |
+**Synopsis:** The three-tier framework organises the existing ∞_M tools into a hierarchy: orbit-type classification (Tier 1, unconditional), the NWF six-class partition (Tier 2, under SC-4), and the twelve-class partition (Tier 3, under PA-WN_top).
+
+**Source:** CRPT; from `3-Tier` (L6.2.D2) + `6-Part` (L3.2.T1).
+
+The three-tier framework
 organises the pre-existing ∞_M tools into a coherent hierarchy:
 - L6.2 (NWF six-class partition A*–F*) = Tier 2, applicable under SC-4
 - L3.2 (twelve-class partition A_∞–F_∞) = Tier 3, applicable under PA-WN_top
@@ -1067,7 +1084,16 @@ The orbit spectrum: OS(σ)(C₀) = 1/2, OS(σ)(C₁) = 1/2. This is the uniform
 distribution on two classes — a perfectly well-defined invariant even though CNF∞
 fails.
 
-*Remark:* This shows that the orbit spectrum extends beyond SC-1-periodic orbits
+### Orbit Spectrum Beyond SC-1
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L6.3.R4 | `Spectrum-BeyondSC1` | | **Novel** |
+**Synopsis:** The orbit spectrum extends beyond SC-1-periodic orbits to all eventually periodic orbits, including those of period p > 1 that visit several distinct bisimulation classes.
+
+**Source:** CRPT; from `Spec-Def` (L6.3.D6).
+
+This shows that the orbit spectrum extends beyond SC-1-periodic orbits
 to all eventually periodic orbits (including those with period p > 1 visiting
 multiple distinct classes).
 

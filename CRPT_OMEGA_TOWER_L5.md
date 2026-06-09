@@ -775,7 +775,16 @@ Let NF(x) abbreviate ¬∃y:U (x →_ρ y) (`NF` (L1.1.D2) of anchor).
          "C2 (Bisimulation Equivariance): ρ preserves bisimilarity."
 ```
 
-*Remark on C2.* The bisimilarity ≈ is the definable second-order predicate
+### C2 Is a Second-Order Sentence
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L5.3.R5 | `C2-SOL` | | **Novel** |
+**Synopsis:** C2 (bisimulation equivariance) is a well-formed second-order sentence: bisimilarity is the definable predicate ∃R[(R is a bisimulation) ∧ R(x,y)] in L²(Σ_CRPT).
+
+**Source:** CRPT; from `Bisim` (L1.1.D6) + `SO-Ext` (L5.3.D6).
+
+The bisimilarity ≈ is the definable second-order predicate
 ∃R[(R-bisim) ∧ R(x, y)] where R-bisim expresses "R is a bisimulation on
 (U, the reduction relation)" (`Bisim` (L1.1.D6) of anchor). Since bisimulation is expressible in
 L^(2)(Σ_CRPT), C2 is a well-formed second-order sentence.

@@ -430,7 +430,16 @@ A substrate (𝒰_M, →_ρ, →_σ, ρ_M) satisfies *native regime stratificati
 
 (iii) The partition admits the **native axiom system**: the convergent-regime axioms on ↓_M (global PA-WN, with regime-sensitive use via scope semantics) and the persistent-regime axioms on ∞_M (PA-NWF, PA-CoInd, PA-Prod, and the optional PA-WN_top). Canonicalization then proceeds in finitary mode on ↓_M and in asymptotic mode on ∞_M, refined to topological mode wherever PA-WN_top holds (`Mode` (L1.4.D1)).
 
-*Remark.* This is not a new axiom constraint. The regime partition is specified by definitions (↓_M and ∞_M), and its exhaustiveness/disjointness are theorem consequences of those definitions. It is essential for native regime stratification (L1.2–L1.5) but automatically satisfied in pure WF/NWF models.
+### The Regime Partition Adds No Axiom
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.2.R7 | `RegPart-NoAxiom` | | **Novel** |
+**Synopsis:** The regime partition is not an axiom constraint: ↓_M and ∞_M are definitions, and their exhaustiveness and disjointness are theorem consequences of those definitions.
+
+**Source:** CRPT; from `Reg-Strat` (L2.2.D3) + `Part` (L2.2.T3).
+
+This is not a new axiom constraint. The regime partition is specified by definitions (↓_M and ∞_M), and its exhaustiveness/disjointness are theorem consequences of those definitions. It is essential for native regime stratification (L1.2–L1.5) but automatically satisfied in pure WF/NWF models.
 
 ### Fixed-Point Definitions
 
@@ -746,7 +755,16 @@ regardless of whether elements within f had infinite σ-structure. The entire ho
 
 (iv) Combining (i)–(iii): At level Mₙ, a fiber f with infinite σ-structure has elements that compose into terms of unbounded depth at level Mₙ₊₁ (by (i)). Yet each fiber — including its infinite σ-structure — collapses to a single depth-0 atom at level Mₙ₊₁ (by (iii)). The infinite σ-structure at level Mₙ is thus not lost but re-encoded: the composition of atoms from distinct fibers at Mₙ₊₁ recreates a new horizontal σ-dimension among those atoms, and the depth of their compositions constitutes the new vertical structure. By (ii), any element that was vertically infinite at Mₙ remains so at Mₙ₊₁. Therefore horizontal infinity at one level becomes vertical infinity at the next, completing the duality. ✓ ∎
 
-*Remark (Interpretation: The Infinity Cycle).* `Inf-Dual` (L2.2.T7) reveals a deep symmetry: infinities are not lost in the tower, they are **transformed**. Horizontal infinity (σ-branching within a fiber) at level Mₙ becomes vertical infinity (unbounded composition depth) at level Mₙ₊₁, which then becomes horizontal infinity again (σ-structure among composite atoms) when viewed at that level. The two notions of infinity are **dual facets of the same phenomenon**, expressed in different directions at consecutive tower levels.
+### The Infinity Cycle
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.2.R8 | `Infinity-Cycle` | | **Novel** |
+**Synopsis:** Horizontal (σ-branching within a fiber) and vertical (unbounded composition depth) infinity are dual facets of one phenomenon, transformed into one another at successive tower levels.
+
+**Source:** CRPT; from `Inf-Dual` (L2.2.T7).
+
+`Inf-Dual` (L2.2.T7) reveals a deep symmetry: infinities are not lost in the tower, they are **transformed**. Horizontal infinity (σ-branching within a fiber) at level Mₙ becomes vertical infinity (unbounded composition depth) at level Mₙ₊₁, which then becomes horizontal infinity again (σ-structure among composite atoms) when viewed at that level. The two notions of infinity are **dual facets of the same phenomenon**, expressed in different directions at consecutive tower levels.
 
 This explains why:
 - **Regimes capture vertical infinity:** The ↓_M/∞_M partition asks whether x eventually reaches fixpoint under ρ-iteration (termination question at one level).
@@ -1359,7 +1377,16 @@ Hence CFix(ρ_M)(f) = f. ✓
 *Conclusion.* Taking x = f: x ∈ ↓_M (Step 1) and CFix(ρ_M)(x) = f (Step 2).
 Therefore every fixpoint is the CFix-image of itself, witnessed by itself. ∎
 
-*Remark.* WF-Canon-2 shows that CFix(ρ_M) : ↓_M → Fix(ρ_M) is surjective (every
+### CFix Is Surjective onto Fix(ρ_M)
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.4.R7 | `CFix-Surj` | | **Novel** |
+**Synopsis:** CFix(ρ_M) : ↓_M → Fix(ρ_M) is surjective — immediate from Fix(ρ_M) ⊆ ↓_M (fixpoints have depth 0, `Fix-D0` (L2.3.T3)), with no model-specific assumptions.
+
+**Source:** CRPT; from `WF-Canon-Pf` (L2.4.T5) + `Fix-D0` (L2.3.T3).
+
+WF-Canon-2 shows that CFix(ρ_M) : ↓_M → Fix(ρ_M) is surjective (every
 fixpoint is in the range). This is non-trivial only if one imagines models where
 Fix(ρ_M) ⊄ ↓_M — but in CRPT, Fix(ρ_M) ⊆ ↓_M universally (fixpoints have
 depth 0, hence are convergent), and every fixpoint is trivially its own witness.
@@ -1410,7 +1437,16 @@ x ≃_M y :⟺ CFix(ρ_M)(x) = CFix(ρ_M)(y)
 ```
 x and y are *orbit-equivalent* if they have the same canonical normal form (or limit point).
 
-*Remark.* Under PA-Conf, this definition is equivalent to the orbit-coincidence characterization (`CNF=CR` (L2.5.T2)), and it extends directly to the native regime-stratified setting. ≃_M is regime-agnostic: it works identically on both finitary (↓_M) and topological (∞_M) regimes.
+### ≃_M and Orbit-Coincidence
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L2.5.R1 | `EquivM-OrbitCoin` | | **Novel** |
+**Synopsis:** Under PA-Conf, ≃_M coincides with the orbit-coincidence characterisation (`CNF=CR` (L2.5.T2)) and extends directly to the native regime-stratified setting.
+
+**Source:** CRPT; from `≃_M` (L2.5.D2) + `CNF=CR` (L2.5.T2).
+
+Under PA-Conf, this definition is equivalent to the orbit-coincidence characterization (`CNF=CR` (L2.5.T2)), and it extends directly to the native regime-stratified setting. ≃_M is regime-agnostic: it works identically on both finitary (↓_M) and topological (∞_M) regimes.
 
 ### ≃_M is an Equivalence Relation
 | Type | Label | Tag | Notation | Status |

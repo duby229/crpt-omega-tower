@@ -627,7 +627,16 @@ Lω depends on: L0–L8
 
 Therefore →_{ρ_CRPT} is acyclic. ✓  ∎
 
-*Remark.* Combined with finiteness of 𝒰_CRPT (see Lω.7.R1 below), acyclicity implies that every element of 𝒰_CRPT reaches Fix(ρ_CRPT) in finitely many steps (no infinite descending chains in a finite acyclic graph).
+### Acyclicity Implies Termination
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | Lω.7.R4 | `Acyc-Term` | | **Novel** |
+**Synopsis:** Acyclicity together with finiteness of 𝒰_CRPT implies every construct reaches Fix(ρ_CRPT) in finitely many steps — a finite acyclic graph has no infinite descending chains.
+
+**Source:** CRPT; from `CRPT-Acyclic` (Lω.7.L1) + `Self-CRPT-Finite` (Lω.7.R1).
+
+Combined with finiteness of 𝒰_CRPT (see Lω.7.R1 below), acyclicity implies that every element of 𝒰_CRPT reaches Fix(ρ_CRPT) in finitely many steps (no infinite descending chains in a finite acyclic graph).
 
 ---
 

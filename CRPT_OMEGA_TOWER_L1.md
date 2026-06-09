@@ -251,7 +251,16 @@ Every element has a terminating →_ρ-path:
 
 *What it adds:* Without PA-WN, ↓_M could be empty. PA-WN ensures the convergent regime is non-trivial and makes CFix(ρ_M) well-defined on ↓_M.
 
-*Remark (WN vs SN).* PA-WN asserts the *existence* of a terminating →_ρ-path — not that *all* →_ρ-paths terminate (strong normalisation). An element x ∈ ↓_M whose ρ_M-orbit terminates may still admit non-deterministic infinite →_ρ-branches; these do not affect x's regime membership or derivation height d_M(x), both defined via the ρ_M-orbit.
+### Weak vs Strong Normalisation
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L1.2.R2 | `WN-vs-SN` | | **Novel** |
+**Synopsis:** PA-WN asserts the *existence* of a terminating →_ρ-path, not strong normalisation (that *all* →_ρ-paths terminate); regime membership and derivation height are defined via the ρ_M-orbit, not all →_ρ-branches.
+
+**Source:** CRPT; from PA-WN (L1.2.Ax1).
+
+PA-WN asserts the *existence* of a terminating →_ρ-path — not that *all* →_ρ-paths terminate (strong normalisation). An element x ∈ ↓_M whose ρ_M-orbit terminates may still admit non-deterministic infinite →_ρ-branches; these do not affect x's regime membership or derivation height d_M(x), both defined via the ρ_M-orbit.
 
 ### PA-Conf — Confluence / Church-Rosser
 | Type | Label | Tag | Notation | Status |
@@ -375,7 +384,16 @@ where Observable(y) is a model-specific predicate (defined at instantiation) sat
  [observable steps have non-zero trajectory weight]
 ```
 
-*Remark (Observable Contract).* Condition (OC-1) means PA-Prod is non-trivial only
+### The Observable Contract
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L1.2.R3 | `Obs-Contract` | | **Novel** |
+**Synopsis:** How the Observable Contract works: OC-1 makes PA-Prod non-trivial only one step from a fixpoint; OC-2 ties Observable to the PV component of the observer triple, keeping the behavioural signature non-degenerate at every ρ_M-step.
+
+**Source:** CRPT; from PA-Prod (L1.2.Ax6).
+
+Condition (OC-1) means PA-Prod is non-trivial only
 when ρ_M(x) ∈ Fix(ρ_M) — i.e., when x is exactly one step from a fixpoint. In
 models where Observable is trivially true for all elements (Lambda Calculus, Streams,
 ZFA), PA-Prod holds vacuously. In models where fixpoints lack observable content
@@ -394,7 +412,16 @@ On ↓_M \ Fix(ρ_M), PA-Prod applies at each step until Fix(ρ_M) is reached:
 ∀n < d_M(x) : Observable(ρ_M^{n+1}(x)). After step d_M(x), the orbit is at
 a fixpoint and no further ρ_M-steps produce new content.
 
-*Remark.* For ↓_M \ Fix(ρ_M), the →_ρ relation terminates at normal forms
+### Single-Step Formulation of PA-Prod
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L1.2.R4 | `Prod-SingleStep` | | **Novel** |
+**Synopsis:** Why the single-step formulation of PA-Prod is the canonical global statement: on ↓_M \ Fix(ρ_M) the reduction terminates at normal forms (`Fix=NF` (L2.1.T2)), so no longer →_ρ-path exists.
+
+**Source:** CRPT; from PA-Prod (L1.2.Ax6) + `Fix=NF` (L2.1.T2).
+
+For ↓_M \ Fix(ρ_M), the →_ρ relation terminates at normal forms
 (Fix = NF, `Fix=NF` (L2.1.T2)), so there is no n-step →_ρ path for n > d_M(x).
 The single-step formulation is therefore the canonical global statement and
 preserves the axiom's logical content for downstream uses (`Obs-Const`
@@ -1059,7 +1086,16 @@ equipped with an axiom profile Profile(M) = (PA-Profile_M, LA_M) such that:
 3. **Witness:** The consistency is witnessed by an explicit model (the model itself,
  or a sub-model satisfying the declared scope).
 
-*Remark.* Condition 2 is strictly stronger than requiring only that some axiom holds: it requires the full declared profile to be jointly satisfiable. Condition 3 makes the consistency check constructive.
+### Profiles Must Be Jointly Satisfiable
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L1.5.R5 | `Profile-JointSat` | | **Novel** |
+**Synopsis:** Profile consistency requires the full declared axiom profile to be *jointly* satisfiable (Condition 2), with Condition 3 making the check constructive — strictly stronger than satisfying some single axiom.
+
+**Source:** CRPT; from `CRPT-Mod` (L1.5.D4).
+
+Condition 2 is strictly stronger than requiring only that some axiom holds: it requires the full declared profile to be jointly satisfiable. Condition 3 makes the consistency check constructive.
 
 ---
 

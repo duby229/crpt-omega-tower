@@ -386,7 +386,16 @@ abstraction depth. No iterative or coinductive computation is needed.
 *Proof.* By `H_I-WD` (L3.1.T2): H_I(x) = ⊤ iff ker(ρ_M, ρ_M(x)) is derivation height-uniform
 (Case 1), which is exactly ∀z ∈ ker(ρ_M, ρ_M(x)) : d_M(z) = d_M(x). ✓ ∎
 
-*Remark (Coinductive Circularity Fully Resolved).* `H_I-WD` (L3.1.T2) and
+### Coinductive Circularity Fully Resolved
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.1.R10 | `HI-CircResolved` | | **Novel** |
+**Synopsis:** The apparent coinductive circularity in H_I (H_I depends on the orbit signature, which contains H_I) is illusory: H_I is uniquely determined by H_S and derivation height alone (kernel d_M-uniformity), for kernels of any cardinality.
+
+**Source:** CRPT; from `H_I-WD` (L3.1.T2) + `H_I-Dec` (L3.1.C1).
+
+`H_I-WD` (L3.1.T2) and
 `H_I-Dec` (L3.1.C1) show that the apparent coinductive circularity in `H_I` (L3.1.D2)
 — where H_I depends on the orbit signature, which contains H_I — is **illusory**. The H_I
 value of every element is uniquely determined by the non-circular invariants H_S
