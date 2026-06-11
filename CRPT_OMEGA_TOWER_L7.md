@@ -537,9 +537,9 @@ An ω-category is a sequence:
 ```
 C = (D⁰, D¹, D², ..., {F_n : D_n → D_{n+1}}_{n≥0})
 ```
-where each M^n is a model, each F_n : M^n → M^{n+1} is a model homomorphism, and the sequence extends infinitely for all n ∈ ℕ.
+where each Dⁿ is a model, each F_n : Dⁿ → Dⁿ⁺¹ is a model homomorphism, and the sequence extends infinitely for all n ∈ ℕ.
 
-The M^n are the **layers** or **dimensions** of the ω-category (corresponding to rank levels in the Free Lift tower).
+The Dⁿ are the **layers** or **dimensions** of the ω-category (corresponding to rank levels in the Free Lift tower).
 
 ### Natural Transformation between ω-Categories
 | Type | Label | Tag | Notation | Status |

@@ -181,7 +181,7 @@ j + 1 < k, contradicting k = min{n | ρ_M^n(x) ∈ Fix}. So d_M(ρ_M(x)) = k −
 function of a Galois insertion between (↓_M, ≤_ρ) and (Fix(ρ_M), =). No new axioms
 are introduced. The proof uses PA-WN, PA-Conf, C1, and the definitions of ≤_ρ and derivation height
 established in §L2.1–5. The concept of *Galois insertion* is imported from Cousot &
-Cousot [1977] L2.2.
+Cousot [1977] §2.2.
 
 ### Recursive Projection
 | Type | Label | Tag | Notation | Status |
@@ -192,7 +192,7 @@ Cousot [1977] L2.2.
 **Source:** CRPT; from `ρ_M` (L2.1.D1) + `d_M` (L2.3.D2).
 
 [Note: CFix(ρ_M)(x) := ρ_M^{d_M(x)}(x) is a CRPT-novel construction.
-The abstraction-function concept is imported from Cousot & Cousot [1977] L2.2;
+The abstraction-function concept is imported from Cousot & Cousot [1977] §2.2;
 that CFix(ρ_M) instantiates it is proved in `RP=Abs` (L2.1.T4), not assumed here.
 The status "Imported" would be misleading; the definition is a novel CRPT construct.]
 
@@ -288,7 +288,7 @@ the pair:
 α_M : ↓_M → Fix(ρ_M) α_M(x) := CFix(ρ_M)(x) [recursive projection]
 γ_M : Fix(ρ_M) → ↓_M γ_M(f) := f [inclusion]
 ```
-satisfies the Galois connection biconditional (Cousot & Cousot [1977] L2.2):
+satisfies the Galois connection biconditional (Cousot & Cousot [1977] §2.2):
 ```
 ∀x ∈ ↓_M, ∀f ∈ Fix(ρ_M) : CFix(ρ_M)(x) = f ⟺ x ≤_ρ f
 ```
@@ -320,7 +320,7 @@ property underpinning `Depth-Dec` (L2.3.T2) and `Fix-D0` (L2.3.T3)), and
 the definitions of ≤_ρ (`≤_ρ` (L2.3.D1)), derivation height (`d_M` (L2.3.D2)), and CFix(ρ_M)
 (`Rec-Proj` (L2.1.D4)). No conditions on what "abstraction" means are introduced
 alongside the PA-* system. The definition of Galois connection is imported from
-Cousot & Cousot [1977] L2.2 without modification.
+Cousot & Cousot [1977] §2.2 without modification.
 
 ### Monotonicity Is Derivable
 
@@ -723,14 +723,14 @@ Elements can be:
 Let M satisfy PA-WN + PA-Conf, and let Lift(M) be its free lift (`Lift-Def` (L8.2.D2)). Then:
 
 **(i) Horizontal infinity in M maps to vertical infinity in Lift(M):**
-If x ∈ ↓_M ∩ (⋃_{f ∈ Fix(ρ_M)} G(f)) where G(f) = {y ∈ the normal-form fiber NFC_M(f) | ∃ infinite σ-path from y} (elements with infinite σ-structure in their fiber), then there exist d ∈ ℕ such that:
+If x ∈ ↓_M ∩ (⋃_{f ∈ Fix(ρ_M)} G(f)) where G(f) = {y ∈ the normal-form fiber NFC_M(f) | ∃ a σ-path from y visiting infinitely many distinct ≃_M-classes} (elements whose fiber opens onto an infinite atom supply), then the depths of the compositions are unbounded:
 ```
-inf{ d_{Lift(M)}(t) | t is a composition encoding x's σ-successors } = ∞
+sup{ d_{Lift(M)}(t) | t is a composition encoding x's σ-successors } = ∞
 ```
 That is: if x has infinite horizontal structure at level M, the lifting process creates terms in Lift(M) with arbitrarily large abstraction depth.
 
 **(ii) Vertical infinity in M remains vertical infinity in the limit tower:**
-If x ∈ ∞_M, then ι_{0→n}(NFC_M(x)) remains in ∞_{Mₙ} for all tower levels n ≥ 1.
+If x ∈ ∞_M, then x remains in the persistent regime at every tower level: ∞_M ⊆ ∞_{Mₙ} for all n ≥ 1 — no tower level converts a persistent element into a convergent one.
 
 **(iii) Depth reset at abstraction: The complete horizontal structure collapses:**
 For any f ∈ Fix(ρ_M), when the fiber the normal-form fiber NFC_M(f) is lifted as an atomic element to Lift(M):
@@ -747,9 +747,9 @@ regardless of whether elements within f had infinite σ-structure. The entire ho
 
 *Proof.* (Parts (i) and (iv) reference the Lift construction of L8.1; see `Lift-Def` (L8.2.D2) for the free monoidal algebra FMA(Q_M) and the last-atom-strip reduction ρ_{Lift(M)} (strip the rightmost atom each step).)
 
-(i) Let f ∈ Fix(ρ_M) with |the normal-form fiber NFC_M(f)| = ∞ (infinitely many elements in the fiber). By construction of Lift(M) (`Lift-Def` (L8.2.D2)), each equivalence class [a]_{≃_M} for a ∈ the normal-form fiber NFC_M(f) maps to an atom ι_M([a]) ∈ FMA(Q_M). Since distinct elements of different fibers yield distinct atoms, for any n ∈ ℕ we can form the n-fold composition t_n := ι_M([a₁]) · ι_M([a₂]) · ... · ι_M([aₙ]) ∈ FMA(Q_M) where a₁, ..., aₙ are elements from (possibly distinct) fibers connected by →_σ-paths from x's fiber. The reduction ρ_{Lift(M)} removes the last atom at each step: ρ_{Lift(M)}(t_n) = ι_M([a₁]) · ... · ι_M([a_{n−1}]), so d_{Lift(M)}(t_n) = n − 1. As n → ∞, d_{Lift(M)}(t_n) → ∞, giving unbounded depth in Lift(M). ✓
+(i) Let y ∈ G(f): a σ-path from y visits infinitely many distinct ≃_M-classes [a₁], [a₂], … (the hypothesis). By construction of Lift(M) (`Lift-Def` (L8.2.D2)), each visited class maps to an atom ι_M([aᵢ]) ∈ FMA(Q_M), and distinct classes yield distinct atoms — so the σ-path supplies an infinite atom stock. For any n ∈ ℕ form the n-fold composition t_n := ι_M([a₁]) · ι_M([a₂]) · ... · ι_M([aₙ]) ∈ FMA(Q_M) from the first n classes visited. The reduction ρ_{Lift(M)} removes the last atom at each step: ρ_{Lift(M)}(t_n) = ι_M([a₁]) · ... · ι_M([a_{n−1}]), so d_{Lift(M)}(t_n) = n − 1. As n → ∞, d_{Lift(M)}(t_n) → ∞: the supremum of the depths is ∞. ✓
 
-(ii) By `NFC-TInv` (L8.4.T2): Q_{Mₙ₊₁} = Q_{Mₙ} (abstraction quotient invariant). Elements not reaching a fixpoint at level Mₙ continue not to reach one at level Mₙ₊₁; the infinite tower persists. ✓
+(ii) By `NFC-TInv` (L8.4.T2): Q_{Mₙ₊₁} = Q_{Mₙ} (abstraction quotient invariant), so the fixpoint stock is tower-invariant. An element reaching no fixpoint at level Mₙ reaches none at level Mₙ₊₁; hence x ∈ ∞_M lies in ∞_{Mₙ} at every level — the persistent regime persists up the tower. ✓
 
 (iii) By `Fix-Bas` (L8.2.T1): Every fixpoint of Mₙ maps to depth 0 in Lift(Mₙ). This holds independent of internal structure. ✓
 
@@ -1001,7 +1001,7 @@ Fix(ρ_M), so the following characterizations are equivalent:
 - d_M(x) = min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)} (the defining formula above)
 - d_M(x) = the unique length of the ρ_M-chain from x to its fixpoint
 - Standard ARS terminology: derivation height / reduction length (Baader & Nipkow [1998] §2.1).
-- Standard order theory terminology: rank function (Diestel [2017] L3.2) on the poset of convergent elements.
+- Standard order theory terminology: rank function (Diestel [2017] §3.2) on the poset of convergent elements.
 
 The CRPT local term is **abstraction depth**: d_M(x) measures how many abstraction steps are required
 to collapse x down to its canonical abstraction CFix(ρ_M)(x).

@@ -64,7 +64,7 @@ of observable events (reduction steps) along the orbit.
 
 **Etymology & Standard Name.** 
 - **Category Theory / Coalgebra:** This is a *behavioral predicate* in the coalgebraic sense 
- (Rutten [2000] L1.2: observables extract observable properties from a system state).
+ (Rutten [2000] §1.2: observables extract observable properties from a system state).
 - **Formal Language Theory:** PV is a *path semiring valuation* or *weighted path function* 
  (Eilenberg [1974]; Droste, Kuich & Vogler [2009]): standard in weighted automata theory.
 - **Process Algebra:** PV is a *weighted behavioral trace* (Milner [1980] §2: traces are 
@@ -193,8 +193,8 @@ Rutten [2000] Universal coalgebra; De Nicola & Hennessy [1984] Testing equivalen
 
 The name "observer triple" originates from De Nicola & Hennessy [1984] **observational congruence** 
 in process algebra: an external observer interacting with a system can only distinguish systems 
-by what it can observe. The formal machinery now comes from coalgebra (Rutten [2000] Def (Projection Operator on (𝒰_M,the reduction relation), 
-Jacobs [2016] L2.3): an observable is a map from system states to behavioral spaces. Here, the observer 
+by what it can observe. The formal machinery now comes from coalgebra (Rutten [2000] §1; 
+Jacobs [2016] §2.3): an observable is a map from system states to behavioral spaces. Here, the observer 
 triple is the three-component observable that fully characterizes behavior under abstraction.
 
 Alternative terminology (all equivalent):
@@ -424,7 +424,7 @@ where h|_n is the finite prefix of h of length n.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.3.T2 | `PV2` |  | **Novel** |
-**Synopsis:** The orbit valuation PV_{orbit}(x) = Σ_{h ∈ ℋ_finite(x)} PV(h) is the total weight of all finite reduction histories from x. Under PA-WN, this sum is finite (the tree ℋ_finite(x) is finite). The orbit valuation is the projection valuation's primary output.
+**Synopsis:** Existence of the persistent valuation: under PA-NWF + PA-Prod + SC-1/2/3, the limit valuation PV∞(h) exists and is well-defined for every infinite history h ∈ ℋ_infinite(x). The finite-prefix valuations PV(h|_n) form a determined sequence whose stabilisation is guaranteed by the scope conditions; PV∞ is its limit. This is the persistent counterpart of the finite-history valuation `PV1` (L4.3.T1).
 
 **Source:** CRPT; from `PV∞` (L4.3.D6) + PA-NWF (L1.2.Ax4) + PA-Prod (L1.2.Ax6).
 
@@ -432,23 +432,40 @@ Under PA-NWF + PA-Prod + SC-1/2/3:
 PV∞(h) exists and is well-defined for all h ∈ ℋ_infinite(x).
 
 *Proof.* By PA-Prod, each h(n) ∈ ℋ_infinite(x) is observable. The sequence
-(PV(h|_n))_{n∈ℕ} is determined by the step-weights along h. Under SC-2/3, the
-orbit is eventually periodic; the sequence PV(h|_n) stabilises or has a
-well-defined limiting product under the semiring's topology. ✓ ∎
+(PV(h|_n))_{n∈ℕ} is determined by the step-weights along h. Under SC-2 the
+horizon-signature sequence is eventually periodic with stable period, and under SC-3
+the valuation sequence stabilises (`SC-2` (L3.3.D3), `SC-3` (L3.3.D4)); hence the
+sequence PV(h|_n) stabilises or has a well-defined limiting product under the
+semiring's topology. ✓ ∎
 
 ### PV Duality — DU-3
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.3.T3 | `PV-Dual` |  | **Novel** |
-**Synopsis:** The projection valuation duality theorem: the orbit valuation PV_M(x) and the fixpoint valuation PV_M^{fix}(f) = w(f) satisfy PV_M(x) = PV_M^{fix}(CNF_M(x)) · w-path(x, CNF_M(x)), where w-path is the accumulated weight of the canonical path from x to its fixpoint. Valuation of an element factors through the valuation of its canonical form.
+**Synopsis:** The projection valuation duality theorem: the valuation of a convergent element factors through the valuation of its canonical form — PV_M(x) = w-path(x, CNF_M(x)) · PV_M^{fix}(CNF_M(x)), where w-path is the accumulated weight of the canonical reduction path and PV_M^{fix} is the valuation of the fixpoint's own (constant) history. Element valuation = path contribution times canonical-form contribution.
 
-**Source:** CRPT; from `PV∞` (L4.3.D6) + `Rec-Proj` (L2.1.D4).
+**Source:** CRPT; from `PV-WF` (L4.3.D4) + `Step-W` (L4.3.D2) + `Rec-Proj` (L2.1.D4).
 
-PV∞ = lim PV: for each h ∈ ℋ_infinite(x),
-PV∞(h) = lim_{n→∞} PV(h|_n).
+For x ∈ ↓_M with canonical form f := CNF_M(x) reached along the canonical reduction
+path x →_ρ ρ_M(x) →_ρ ⋯ →_ρ ρ_M^{d_M(x)}(x) = f:
+```
+PV_M(x) = w-path(x, f) · PV_M^{fix}(f)
+```
+where
+```
+w-path(x, f) := ∏_{i=0}^{d_M(x)−1} w(ρ_M^i(x) →_ρ ρ_M^{i+1}(x))    (`Step-W` (L4.3.D2))
+PV_M^{fix}(f) := PV of the constant history at f                    (the fixpoint's own valuation)
+```
 
-*Proof.* By `PV∞` (L4.3.D6). The same structural valuation rules apply to finite and
-infinite paths; the distinction is the model. Under PA-Prod, the limit exists. ∎
+*Proof.* The canonical history of x decomposes as the concatenation of the finite
+canonical path from x to f (length d_M(x), `d_M` (L2.3.D2)) with the constant history
+at f (f ∈ Fix(ρ_M), so every further step is the trivial step at f). PV is
+multiplicative over path concatenation (`PV-WF` (L4.3.D4): the valuation of a history
+is the semiring product of its step weights, taken in path order), so the valuation of
+the concatenation is the product of the two factors: the accumulated path weight
+w-path(x, f), then the valuation of f's constant history, PV_M^{fix}(f). Well-definedness
+of the factorisation — independence of any choices — is `Rec-Proj` (L2.1.D4): the
+canonical path is the determined ρ_M-orbit. ∎
 
 ---
 
@@ -883,7 +900,13 @@ proj(xₖ) = xₖ. NWF case: PA-CoInd gives νF.(νF.x) ≃_M νF.x (maximality)
 An *admissible encoding* is a function
 Enc : Terms(CRPT) × 𝒰_M → 𝒰_M where Terms(CRPT) is the set of CRPT-computable
 terms (built from variables, ρ_M, composition, and fixpoint constructors), satisfying:
-- **(Enc-1) Injectivity on terms:** Enc(t₁, x) ≃_M Enc(t₂, x) ⟹ t₁ = t₂.
+- **(Enc-1) Injectivity on terms:** Enc(t₁, x) ≃_M Enc(t₂, x) ⟹ t₁ = t₂, where t₁ = t₂
+ is **denotational** equality of terms: ⟦t₁⟧ = ⟦t₂⟧ as functions 𝒰_M → 𝒰_M
+ (equivalently, Terms(CRPT) is quotiented by denotational equality before injectivity
+ is stated). Syntactic equality is too fine: by Enc-2 all proj-computing terms at a
+ convergent x land in one ≃_M fiber, yet syntactically distinct terms (e.g.
+ CFix(Var) and CFix(Var) ∘ Var) compute the same function — injectivity can only
+ separate terms that *denote* differently.
 - **(Enc-2) WF faithfulness:** For any term t computing proj via RP-1 and x ∈ μT_{ρ,M}:
  ∃n : Enc(t, x) →^n y with NF(y) and y ≃_M proj(x).
 - **(Enc-3) NWF faithfulness:** For any term t computing proj via CP-1 and x ∈ νT_{ρ,M}:

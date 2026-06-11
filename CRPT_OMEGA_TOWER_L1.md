@@ -133,10 +133,13 @@ substrate. It depends on axioms added at L1.2–L1.5.
 
 **Source:** Park [1981] *Concurrency and Automata on Infinite Sequences*, LNCS 104, pp. 167–183; Milner [1989] *Communication and Concurrency* — bisimulation.
 
-The substrate is read as a **labelled** transition system: each element x carries an
-*observable* obs(x) — the content the substrate exposes at x — subject to the minimal
-anchoring requirement that **distinct normal forms are distinct observables** (obs ↾ NF(→_ρ)
-is injective: each normal form is its own atomic observable). A relation R ⊆ 𝒰 × 𝒰 is a
+The substrate is read as a **labelled** transition system (𝒰, →_ρ, obs), where obs is the
+**derived** observation labelling `Obs-Lab` (L1.1.D8): a normal form is its own atomic
+observable, and a non-fixpoint emits the observable content of its projection step
+(the Observable Contract of PA-Prod (L1.2.Ax6)). The labelling is not an added primitive —
+it is definable from the substrate and contract data, and it satisfies the anchoring
+property **distinct normal forms are distinct observables** as a theorem
+(`Obs-Lab-WD` (L1.1.T1)(i)). A relation R ⊆ 𝒰 × 𝒰 is a
 *bisimulation on (𝒰, →_ρ, obs)* if for all (x, y) ∈ R:
 - *Observation:* obs(x) = obs(y); in particular x ∈ NF(→_ρ) ⟺ y ∈ NF(→_ρ), and if both are normal forms then x = y
 - *Forward:* ∀x' : x →_ρ x' ⟹ ∃y' : y →_ρ y' ∧ (x', y') ∈ R
@@ -148,9 +151,10 @@ bisimulation collapses all normal forms — and then `PA-Bisim` (L1.3.Ax1) (≈ 
 force a *unique* canonical form, contradicting a multi-element query signature Q_M and the
 six-class theory. The observation clause repairs this: ≈ refines the observable equivalence,
 keeping distinct normal forms (hence many canonical forms) apart, so `PA-Bisim` is
-non-vacuous. The persistent regime is anchored the same way — obs(x) carries the orbit's
-observable content (the Observable contract of `PA-Prod` (L1.2.Ax6) and the orbit signature
-`sig_M-NM` (L3.1.D5)) — so bisimilar persistent elements share their orbit signature, hence
+non-vacuous. The persistent regime is anchored the same way — along a persistent orbit
+the labelling emits the observation trace OT^obs_M(x) (`Obs-Lab` (L1.1.D8)), and the
+observation clause propagates coinductively, so bisimilar persistent elements have matched
+traces; they therefore share the persistent orbit signature (`sig_M-NM` (L3.1.D5)), hence
 their ω-limit class (`≃∞` (L3.3.D7)), rather than all collapsing together.
 
 ### Bisimilarity
@@ -166,6 +170,50 @@ bisimulation on (𝒰, →_ρ):
 ```
 x ≈ y :⟺ ∃R (bisimulation) : (x, y) ∈ R
 ```
+
+### Observation Labelling
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Definition** | L1.1.D8 | `Obs-Lab` | obs | **Novel** |
+**Synopsis:** The observation labelling obs assigns to every element the content the substrate exposes at it: a normal form is its own atomic observable, and a non-fixpoint emits the observable content of its projection step, supplied by the Observable Contract of PA-Prod. obs is derived — definable from Fix, ρ_M, and Observable — so the labelled reading of the substrate adds no primitive structure.
+
+**Source:** CRPT; from PA-Prod (L1.2.Ax6) + `Fix=NF` (L2.1.T2).
+
+The *observation labelling* is the function
+```
+obs : 𝒰 → NF(→_ρ) ⊔ O_M
+obs(x) := x                     if x ∈ Fix(ρ_M)    (a normal form is its own atomic observable)
+obs(x) := Observable(ρ_M(x))    if x ∉ Fix(ρ_M)    (the content emitted by x's projection step)
+```
+where (O_M, 0) is the pointed observable codomain of the Observable Contract
+(PA-Prod (L1.2.Ax6)), and Fix(ρ_M) = NF(→_ρ) by `Fix=NF` (L2.1.T2) — forward-referenced,
+as throughout L1. For x ∈ ∞_M the orbit emits the **observation trace**
+```
+OT^obs_M(x) := (obs(ρ_M^n(x)))_{n∈ℕ} ∈ (NF(→_ρ) ⊔ O_M)^ω
+```
+— the per-step observable content of the persistent orbit. The trace is the
+substrate-native record of "how the orbit behaves observably"; its tail-equivalence
+class is the persistent component of the orbit signature (`sig_M-NM` (L3.1.D5)).
+
+### Observation Labelling is Well-Defined and Anchored
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Theorem** | L1.1.T1 | `Obs-Lab-WD` | | **Novel** |
+**Synopsis:** The derived labelling satisfies every property the labelled bisimulation reads: obs ↾ NF is injective (it is the identity), normal forms and non-fixpoints take values in disjoint summands, and — by PA-Prod — no non-fixpoint is silent. obs is definable from Fix, ρ, and Observable, all carried by Σ_CRPT, so satisfaction of PA-Bisim is well-posed over the unextended signature.
+
+**Source:** CRPT; from `Obs-Lab` (L1.1.D8) + PA-Prod (L1.2.Ax6) + `Σ_CRPT` (L5.3.D10).
+
+The observation labelling obs of `Obs-Lab` (L1.1.D8) satisfies:
+
+(i) **NF-injectivity:** obs ↾ NF(→_ρ) is injective — distinct normal forms are distinct observables.
+
+(ii) **Regime separation:** x ∈ NF(→_ρ) ⟺ obs(x) lies in the NF(→_ρ) summand.
+
+(iii) **No silent labels (productivity):** for every x ∉ Fix(ρ_M), obs(x) ≠ 0; the labels of (𝒰, →_ρ, obs) are exactly the PA-Prod emissions.
+
+(iv) **Definability:** obs is Σ_CRPT-definable (`Σ_CRPT` (L5.3.D10)); no sort or symbol is added, and model-hood-as-satisfaction (`Mod-Corr` (L5.3.T1)) is well-posed for PA-Bisim (L1.3.Ax1).
+
+*Proof.* (i), (ii): immediate from the case split of `Obs-Lab` (L1.1.D8) — the first branch is the identity embedding NF(→_ρ) ↪ NF(→_ρ) ⊔ O_M (injective), and the two branches land in disjoint summands of the codomain. (iii): for x ∉ Fix(ρ_M), PA-Prod gives Observable(ρ_M(x)) ≠ 0 (OC-1 via the axiom), so obs(x) ≠ 0; OC-2 further ties the emission to a non-zero step weight w(x →_ρ ρ_M(x)) ≠ 0_V. (iv): the case split "x ∈ Fix" is the Σ_CRPT relation Fix, and both branches are Σ_CRPT-terms — the identity and Observable ∘ ρ — using only symbols already carried by Σ_CRPT (`Σ_CRPT` (L5.3.D10)). PA-Bisim therefore reads only derived structure. ∎
 
 ### Union of Bisimulations is a Bisimulation
 | Type | Label | Tag | Notation | Status |
@@ -385,19 +433,24 @@ Every predicate closed under the co-induction functional is contained in the gre
 
 Every non-fixpoint element produces observable content at its ρ_M-successor:
 ```
-∀x ∈ 𝒰 : (x ∉ Fix(ρ_M)) ⟹ Observable(ρ_M(x))
+∀x ∈ 𝒰 : (x ∉ Fix(ρ_M)) ⟹ Observable(ρ_M(x)) ≠ 0
 ```
 
-where Observable(y) is a model-specific predicate (defined at instantiation) satisfying:
+where Observable is a model-specific observable-content function (defined at instantiation) satisfying:
 
-**Observable Contract (OC).** Every instantiation must define Observable : 𝒰_M → {⊤, ⊥} such that:
+**Observable Contract (OC).** Every instantiation must define Observable : 𝒰_M → O_M, where (O_M, 0) is a *pointed set of observable contents* — 0 is the distinguished "no content" value, and the two-element instance O_M = {⊤, ⊥} with 0 = ⊥ is the minimal form, recovering Observable as a predicate — such that:
 ```
-(OC-1) ∀y ∈ 𝒰 : (y ∉ Fix(ρ_M)) ⟹ Observable(y)
+(OC-1) ∀y ∈ 𝒰 : (y ∉ Fix(ρ_M)) ⟹ Observable(y) ≠ 0
  [non-fixpoints are always observable]
 (OC-2) Observable is compatible with the PV component of the Observer Triple (L4.1):
- Observable(y) ⟹ w(x →_ρ y) ≠ 0_V for every x with ρ_M(x) = y
+ Observable(y) ≠ 0 ⟹ w(x →_ρ y) ≠ 0_V for every x with ρ_M(x) = y
  [observable steps have non-zero trajectory weight]
 ```
+
+The contract data (O_M, 0, Observable) is what grounds the observation labelling obs
+(`Obs-Lab` (L1.1.D8)): the labels of the labelled substrate are exactly the PA-Prod
+emissions, so productivity is the axiom that makes the labelled reading non-degenerate
+(no silent steps).
 
 ### The Observable Contract
 
@@ -494,7 +547,7 @@ TopSep(𝒯) :⟺ ∀L₁, L₂ ∈ 𝒰_M : L₁ ≠ L₂ ⟹
 ```
 Any two distinct points can be separated by disjoint open neighborhoods.
 
-*Standard name.* The T₂ separation axiom (Hausdorff [1914]; Munkres [2000] L8.8).
+*Standard name.* The T₂ separation axiom (Hausdorff [1914]; Munkres [2000] §17).
 All metric spaces satisfy TopSep. Standard instantiation topologies (ℝ, ℝⁿ,
 Banach spaces, metric spaces) are Hausdorff. When PA-WN_top is declared `Vacuous`
 (pure WF case with ∞_M = ∅), TopSep imposes no constraint.
@@ -572,32 +625,45 @@ where ≃_M is the abstraction equivalence relation (`NFC-NM` (L2.5.D1)).
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Axiom** | L1.3.Ax2 | `PA-Reach` | | **Novel** |
-**Synopsis:** PA-Reach (Recursive Projection Horizon Stabilization) requires that for every persistent element x, the orbit signature sig_M(ρ_M^n(x)) eventually stabilizes as n increases. This is the most structurally original CRPT axiom: it guarantees that the observer triple can extract finite, canonical observable information from infinite orbits.
+**Synopsis:** PA-Reach (Recursive Projection Horizon Stabilization) requires that recursive projection extract from every persistent orbit its canonical persistent representative CPer_M(x), in one of two modes mirroring the convergent regime's PA-WN / PA-WN_top pair: **finitary mode** — the ≈-class orbit becomes periodic after a finite transient n_M(x), the NWF dual of the derivation height d_M; **topological mode** — the orbit converges to its topological limit (PA-WN_top). Both modes are recursive projection axioms — constraints on the ρ_M-orbit — and both accomplish exactly the same extraction: a finite canonical observable from an infinite orbit.
 
-**Source:** CRPT; from `sig_M-NM` (L3.1.D5) + PA-NWF (L1.2.Ax4).
+**Source:** CRPT; from `Bisim~` (L1.1.D7) + PA-NWF (L1.2.Ax4) + PA-WN_top (L1.2.Ax7).
 
-For every persistent element, recursive projection reaches and stabilizes at a horizon-characterized region:
+For every persistent element, recursive projection reaches a canonical persistent representative, in one of two modes (`Mode` (L1.4.D1)):
 ```
-∀x ∈ ∞_M : ∃n ∈ ℕ : ∀j ≥ 0 : sig_M(ρ_M^(n+j)(x)) = sig_M(ρ_M^n(x))
+∀x ∈ ∞_M :
+  Finitary mode:     ∃n ∈ ℕ, p ≥ 1 : ∀j ≥ 0 : ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x)
+                     (the ≈-class orbit is periodic after a finite transient)
+  — or —
+  Topological mode:  CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) exists in 𝒯 (PA-WN_top)
+                     (the orbit converges to its topological limit)
 ```
 
-**Interpretation:** Recursive projection ρ_M, when applied to any persistent (non-terminating) element, eventually enters a stratum where the orbit signature sig_M becomes constant and remains constant under further projection. On ∞_M the orbit signature is the topological form sig_M(x) = (∞, limit_id, convergence_profile) (`sig_M-NM` (L3.1.D5)); its stabilization is what enables the observer to extract a canonical representative from the infinite productive object.
+**Interpretation:** Both modes state the same thing about ρ_M — recursive projection reaches, at finite observational cost, the canonical persistent representative CPer_M(x) (`CPer` (L1.3.D1)). The dichotomy is the persistent-regime mirror of the convergent regime's own two modes: there, the single meaning "ρ_M reaches the canonical *form*" comes finitarily (PA-WN: the orbit reaches Fix at depth d_M) or topologically (PA-WN_top: the orbit converges); here, the single meaning "ρ_M reaches the canonical *representative*" comes finitarily (the ≈-class orbit enters its recurrent cycle at depth n_M, `n-Reach` (L3.3.D10)) or topologically (the orbit converges, and the limit is the representative). In finitary mode the persistent orbit signature — the tail class of the observation trace (`sig_M-NM` (L3.1.D5), `Obs-Lab` (L1.1.D8)) — is finitely presented by the recurrent cycle; in topological mode it is supplied by the limit.
 
 ### Canonical Persistent Representative
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L1.3.D1 | `CPer` | CPer_M(x) | **Novel** |
-**Synopsis:** The canonical persistent representative CPer_M(x) := ρ_M^{n(x)}(x) is the point on x's orbit where the orbit signature first stabilizes (n(x) is the reachability depth). PA-Reach guarantees n(x) exists, making CPer_M(x) the canonical finite descriptor of the infinite element x.
+**Synopsis:** The canonical persistent representative CPer_M(x) is what PA-Reach guarantees recursive projection reaches: in finitary mode, the first point of the orbit's recurrent ≈-cycle, CPer_M(x) := ρ_M^{n_M(x)}(x) (n_M is the reachability depth); in topological mode, the topological limit, CPer_M(x) := CFix(ρ_M)(x). In either mode it is the canonical finite descriptor of the infinite element x.
 
-**Source:** CRPT; from PA-Reach (L1.3.Ax2) + `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from PA-Reach (L1.3.Ax2) + `Bisim~` (L1.1.D7).
 
 
-For x ∈ ∞_M, the **canonical persistent representative** is:
+For x ∈ ∞_M, the **canonical persistent representative** is, by the mode of PA-Reach
+(L1.3.Ax2) covering x:
 ```
-CPer_M(x) := ρ_M^{n(x)}(x)
+Finitary mode:     CPer_M(x) := ρ_M^{n_M(x)}(x)
+                   where n_M(x) is the smallest n witnessing the finitary mode —
+                   the least transient after which the ≈-class orbit is periodic
+                   (`n-Reach` (L3.3.D10))
+Topological mode:  CPer_M(x) := CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x)
 ```
-where n(x) is the smallest natural number such that sig_M(ρ_M^(n(x)+j)(x)) = sig_M(ρ_M^{n(x)}(x)) for all j ≥ 0. PA-Reach asserts that this n(x) exists for every x ∈ ∞_M, making CPer_M(x) well-defined.
+PA-Reach asserts that every x ∈ ∞_M is covered by at least one mode, making CPer_M(x)
+well-defined on all of ∞_M. Where both modes apply, the finitary representative
+determines the topological one: the recurrent ≈-cycle of CPer_M(x) converges to the
+limit, so the two extractions carry the same observable content.
 
 **Why PA-Reach is a Recursive Projection Axiom (not connectivity):**
 
@@ -614,7 +680,7 @@ PA-Reach is fundamentally about what the recursive projection operator ρ_M can 
 
 *Standard Name:* Novel to CRPT. In ARS theory, weak normalization and productivity (PA-WN + PA-NWF + PA-Prod) constrain reduction behavior but do not guarantee horizon stabilization. PA-Reach adds this guarantee, closing the reachability gap between infinite production and finite observability.
 
-*Rigorous Scope Note:* PA-Reach constrains sig_M — the orbit signature defined at L3.1 — which itself depends on horizons H_S, H_I, H_O defined in L3.1. Forward references are resolved by the logical ordering of the Anchor: horizon definitions (L3.1) logically precede this axiom in structure, even though L1.2–L1.5 introduces all axioms in compressed notation. The formal definitions of sig_M and H_S, H_I, H_O are at L3.1–8.2; the complete formal statement of PA-Reach in terms of these constructs is at L1.3 (present section). Both locations state the axiom consistently.
+*Rigorous Scope Note:* PA-Reach is stated entirely in substrate terms: the finitary mode uses bisimilarity ≈ (`Bisim~` (L1.1.D7)) and iteration of ρ_M; the topological mode uses the substrate topology 𝒯 and CFix (forward-referenced to L2, as throughout L1). The reachability depth n_M and its duality with the derivation height d_M are developed at `n-Reach` (L3.3.D10); the persistent orbit signature that PA-Reach renders finitely presentable is `sig_M-NM` (L3.1.D5). All locations state the axiom consistently.
 
 ### PA-Reach — Structural Role and Impact on Theorems
 | Type | Label | Tag | Notation | Status |
@@ -636,33 +702,33 @@ PA-Reach is fundamentally about what the recursive projection operator ρ_M can 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L1.3.T1 | `PA-Reach-ObsExt` | | **Novel** |
-**Synopsis:** The Observer Extraction Principle: PA-Reach closes the reachability gap between finite observers and infinite orbits. Without PA-Reach, an observer examining a persistent element could never extract a canonical, finite observable summary. With PA-Reach, the observer can always wait until the signature stabilizes and read off CPer_M(x).
+**Synopsis:** The Observer Extraction Principle: PA-Reach closes the reachability gap between finite observers and infinite orbits. Without PA-Reach, an observer examining a persistent element could never extract a canonical, finite observable summary. With PA-Reach, the canonical representative CPer_M(x) is reached at finite observational cost in either mode — by detecting the recurrent ≈-cycle (finitary) or by the topological limit (topological).
 
 **Source:** CRPT; from PA-Reach (L1.3.Ax2) + `CPer` (L1.3.D1) + `Rec-Proj` (L2.1.D4).
 
 PA-Reach guarantees that recursive projection ρ_M extracts a finite, observer-accessible slice from infinite productive objects:
 
-**(i) Horizon Stabilization:** For x ∈ ∞_M, there exists a finite n such that sig_M(ρ_M^n(x)) is the "asymptotic orbit signature" of x's orbit — it is constant on the entire future trajectory under ρ_M (independent of orbit signature of x itself if aperiodic).
+**(i) Reach:** For x ∈ ∞_M, recursive projection reaches CPer_M(x) — in finitary mode at the finite depth n_M(x) where the ≈-class orbit enters its recurrent cycle; in topological mode as the limit CFix(ρ_M)(x).
 
-**(ii) Observer Extraction:** The observer can extract the stabilized orbit signature sig_M(CPer_M(x)) as the canonical observable from the infinite element x without measuring infinitely far. This is the canonical, recursively reachable observable that the reachability gap demanded.
+**(ii) Observer Extraction:** The observer can extract from x a finite canonical observable — the recurrent ≈-cycle of CPer_M(x) (finitary mode) or the limit point (topological mode) — without measuring infinitely far. This finitely presents the persistent orbit signature (`sig_M-NM` (L3.1.D5)).
 
-**(iii) Stability Under Further Productivity:** Even as x continues to generate further infinite structure through ρ_M and →_σ transitions, the extracted observable sig_M(CPer_M(x)) does not change. The extraction is stable under continued production (by definition of CPer_M and PA-Reach).
+**(iii) Stability Under Further Productivity:** Even as x continues to generate further infinite structure through ρ_M and →_σ transitions, the extracted observable does not change: further ρ_M-steps move CPer_M(x) around its own recurrent cycle (finitary) or leave the limit fixed (topological).
 
-**(iv) Accessibility Without Traversal:** The observer needs to compute n (the reachability depth) but can do so by testing sig_M-uniformity: apply ρ_M repeatedly until sig_M is constant. This is computable in principle without full knowledge of the infinite object.
+**(iv) Accessibility Without Traversal:** In finitary mode the observer computes n_M(x) by cycle detection on the ≈-class orbit: iterate ρ_M, record the ≈-class of each iterate, and stop at the first recurrence of a class configuration. This requires only the finitary class data of finitely many iterates, never the full infinite object.
 
 *Proof.*
 
 We verify each component:
 
-**(i)** By PA-Reach: ∀x ∈ ∞_M : ∃n : ∀j ≥ 0 : sig_M(ρ_M^{n+j}(x)) = sig_M(ρ_M^n(x)). This defines the orbit signature as constant from step n onward. ✓
+**(i)** By PA-Reach, every x ∈ ∞_M is covered by a mode. Finitary: ∃n, p ≥ 1 : ∀j : ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x); the least such n is n_M(x) and CPer_M(x) = ρ_M^{n_M(x)}(x) is reached at finite depth. Topological: the orbit converges and CPer_M(x) = CFix(ρ_M)(x) is its limit. ✓
 
-**(ii)** For x ∈ ∞_M, define CPer_M(x) := ρ_M^{n(x)}(x) where n(x) is as in (i). The stabilized orbit signature sig_M(CPer_M(x)) is well-defined: by (i) it is invariant under further ρ_M-iteration, and by `Rec-Proj` (L2.1.D4) it depends only on x, not on the chosen orbit representative. It is recursively reachable (computable by iterating ρ_M until sig_M stabilizes). This is the canonical observable. ✓
+**(ii)** Finitary mode: from depth n_M(x) the ≈-class orbit cycles through the finite class sequence ([CPer_M(x)]_≈, [ρ_M(CPer_M(x))]_≈, …, period p) — a finite object that presents the tail class of the observation trace (`Obs-Lab` (L1.1.D8)), i.e. the persistent orbit signature. Topological mode: the limit point is the canonical observable, and by `Rec-Proj` (L2.1.D4) it depends only on x. ✓
 
-**(iii)** If x' ∈ →_σ^*(x) (x' is reachable from x via structural steps), then sig_M(x') is determined by the structural/horizon characterization of x', which may differ from sig_M(x). However, CPer_M(x) is defined *specifically* as the point where sig_M stabilizes, so sig_M(CPer_M(x)) is invariant under further ρ_M-steps by definition (item i). ✓
+**(iii)** Finitary mode: for j ≥ 0, ρ_M^j(CPer_M(x)) lies on the same recurrent cycle (periodicity), so the extracted cycle is invariant under further iteration. Topological mode: lim_{n} ρ_M^n(ρ_M^j(x)) = lim_n ρ_M^n(x) — shifting the orbit does not change its limit. ✓
 
-**(iv)** An algorithm to find n(x): initialize a witness set W ← {sig_M(x)}. For k = 1, 2, 3, ...: compute ρ_M(·) stepwise (apply ρ_M once), sample sig_M at the new iterate y_k, add sig_M(y_k) to W. If W becomes stationary (sig_M(y_k) was already seen in a prior step), then stabilization has occurred, and n(x) is the first index where stationarity is detected. This algorithm terminates by PA-Reach (guarantees n exists) but does not require knowing the full infinite structure—only the finitary orbit signature. ✓
+**(iv)** Cycle detection: iterate ρ_M from x, recording the sequence of ≈-classes; by (i) the sequence is eventually periodic, so some class pattern recurs after finitely many steps, and the first recurrence yields n_M(x) and the period p. The procedure consults only the ≈-classes of finitely many iterates. ✓
 
-*Consequence.* PA-Reach guarantees that every persistent orbit yields a canonical, stable, and recursively reachable orbit signature sig_M(CPer_M(x)). ∎
+*Consequence.* PA-Reach guarantees that every persistent orbit yields a canonical, stable, and recursively reachable finite observable: the recurrent cycle (or limit) of CPer_M(x). ∎
 
 ### PA-Reach Independence: Witness Model
 | Type | Label | Tag | Notation | Status |

@@ -3,7 +3,7 @@
 **Status:** v1.0.0-rc3 (release candidate)  
 **Date:** 2026-06-09  
 **Coverage:** All levels L0–L8, Lω  
-**Total:** 165 definitions · 245 theorems/lemmas/corollaries · 123 remarks · 9 projection axioms
+**Total:** 166 definitions · 246 theorems/lemmas/corollaries · 125 remarks · 9 projection axioms
 
 ---
 
@@ -40,6 +40,8 @@
 | L1.1.D5 | Divergence | `Div` | Definition |
 | L1.1.D6 | Bisimulation | `Bisim` | Definition |
 | L1.1.D7 | Bisimilarity Relation | `Bisim~` | Definition |
+| L1.1.D8 | Observation Labelling | `Obs-Lab` | Definition |
+| L1.1.T1 | Observation Labelling Well-Defined and Anchored | `Obs-Lab-WD` | Theorem |
 | L1.1.L1 | Bisimulation Union Closure | `Bisim-Union` | Lemma |
 | L1.1.L2 | Bisimilarity is Equivalence Relation | `≈-Eq` | Lemma |
 | L1.2.D2 | Topological Limit Structure | `Top-Lim` | Definition |

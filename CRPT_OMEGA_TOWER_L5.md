@@ -539,7 +539,7 @@ A signature with a single sort is a *one-sorted* or *single-sorted signature*.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.3.D2 | `L-Str` |  | **Imported** |
-**Synopsis:** The CRPT signature Σ_CRPT: the language of T_CRPT includes function symbols for the projection operator, predicate symbols for the reduction and structural relations, and constant symbols for the fixed points. The derived predicate symbols (H_S, H_I, H_O, d_M, CNF_M, etc.) are definable from the primitive signature.
+**Synopsis:** An L-structure interprets a signature: a carrier for each sort, a function on carriers for each function symbol, and a relation for each relation symbol. This is the standard model-theoretic notion of structure — the semantic half of the syntax/semantics pair. CRPT's instance is the Σ_CRPT-structure (`Σ_CRPT` (L5.3.D10)).
 
 **Source:** Chang & Keisler [1990] §1.3; Hodges [1997] §1.1 — L-structure.
 
@@ -558,7 +558,7 @@ symbol of L.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.3.D3 | `L-Th` |  | **Imported** |
-**Synopsis:** The model-correspondence functor Mod : T_CRPT-Mod → Mod_CRPT sends each first-order model of T_CRPT to the corresponding CRPT model. This functor is an equivalence of categories when restricted to models satisfying the full PA-* axiom system, confirming that T_CRPT is a faithful syntactic description of Mod_CRPT.
+**Synopsis:** An L-theory is a set of L-sentences over a signature; its models are the L-structures satisfying every sentence. This is the standard model-theoretic notion of theory — the syntactic half of the syntax/semantics pair. CRPT's instance is T_CRPT, the theory of the PA-* axioms over Σ_CRPT, whose model correspondence is `Mod-Corr` (L5.3.T1).
 
 **Source:** Chang & Keisler [1990] §1.5; Hodges [1997] §2.4 — L-theory.
 
@@ -678,7 +678,7 @@ The resulting structure is a (large) category in the sense of MacLane [1971].
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.3.D10 | `Σ_CRPT` | Σ_CRPT | **Novel** |
-**Synopsis:** The CRPT signature Σ_CRPT consists of: a sort symbol 𝒰 for the universe, a unary function symbol ρ for the projection operator, binary relation symbols →_ρ and →_σ for the reduction and structural relations, a binary relation symbol ≃ for observable equivalence, and a constant symbol 𝒯 for the topology. All derived notions (H_S, H_I, H_O, CNF_M, d_M, etc.) are Σ_CRPT-definable.
+**Synopsis:** The CRPT signature Σ_CRPT is many-sorted: sorts U (universe), Open (open sets of the substrate topology, with membership In), O (observable contents, pointed by the constant 0), and Bool; function symbols ρ : U → U and Observable : U → O; relation symbols →_ρ, →_σ, Fix, and In. The observation labelling obs, observable equivalence ≃, and bisimilarity ≈ are *not* signature primitives — obs is Σ_CRPT-definable from Fix, ρ, and Observable, and ≃/≈ are defined relations. All derived notions (H_S, H_I, H_O, CNF_M, d_M, etc.) are Σ_CRPT-definable.
 
 **Source:** CRPT; from `Lang-Sig` (L5.3.D1) + `Sub` (L1.1.D1).
 
@@ -692,14 +692,18 @@ where:
 - `U` — the *universe sort*. Elements of type `U` are the structures of the
   CRPT instantiation (abstract elements, terms, coalgebras, etc.).
 - `Open` — the sort of open sets of the substrate topology 𝒯 on `U`.
+- `O` — the sort of *observable contents*: the pointed codomain (O_M, 0) of the
+  Observable Contract (PA-Prod (L1.2.Ax6)), with a distinguished constant `0 : O`
+  ("no content"). The two-element instance O = {⊤, ⊥} with 0 = ⊥ is the minimal
+  form, recovering Observable as a predicate.
 - `Bool` — the standard two-element sort {⊤, ⊥}. (Used for predicate
   codomains; eliminable in favour of relation symbols but stated for clarity.)
 
 **Function symbols F_CRPT:**
 - `ρ : U → U` — the *projection function* (the projection operator, L2.1 of
   the anchor). Arity: one input of sort `U`, one output of sort `U`.
-- `Observable : U → Bool` — the *observable predicate* (OC-1/OC-2 of
-  PA-Prod; L1.2 of the anchor). Arity: one input `U`, output `Bool`.
+- `Observable : U → O` — the *observable-content function* (OC-1/OC-2 of
+  PA-Prod; L1.2 of the anchor). Arity: one input `U`, output `O`.
 
 **Relation symbols R_CRPT:**
 - `→_ρ ⊆ U × U` — the *reduction relation* (L1.1 of the anchor). Binary.
@@ -711,8 +715,13 @@ where:
 *Remark L5.3.1.1.* The bisimilarity relation ≈ is not in Σ_CRPT because it is
 defined from the reduction relation (`Bisim~` (L1.1.D7) of the anchor): x ≈ y iff there exists a
 bisimulation containing (x, y). It is definable in L^(2)(Σ_CRPT) by
-second-order quantification over bisimulation relations. Treating it as a
-defined relation preserves the minimality of Σ_CRPT.
+second-order quantification over bisimulation relations. Likewise the observation
+labelling obs (`Obs-Lab` (L1.1.D8)) is not a primitive: it is the Σ_CRPT-definable
+function obs(x) = x for Fix(x), obs(x) = Observable(ρ(x)) otherwise
+(`Obs-Lab-WD` (L1.1.T1)(iv)). The labelled bisimulation `Bisim` (L1.1.D6) and
+PA-Bisim therefore read only derived structure, and satisfaction-as-model-hood
+(`Mod-Corr` (L5.3.T1)) is well-posed over this signature. Treating ≈ and obs as
+defined preserves the minimality of Σ_CRPT.
 
 *Remark L5.3.1.2.* Topology is intrinsic to the substrate and is represented
 inside Σ_CRPT via the sort `Open` and the membership relation `In`. A model
@@ -720,9 +729,10 @@ thus carries topological structure internally, and PA-WN_top is a single axiom
 over that fixed substrate topology (not an external schema parameter).
 
 *Remark L5.3.1.3.* A Σ_CRPT-structure M consists of a carrier U^M, a domain
-Open^M of open sets, function symbols ρ^M and Observable^M, relations →_ρ^M,
+Open^M of open sets, a pointed carrier (O^M, 0^M) of observable contents,
+function symbols ρ^M and Observable^M : U^M → O^M, relations →_ρ^M,
 →_σ^M, Fix^M, and membership In^M ⊆ U^M × Open^M. This induces a topology
-𝒯^M represented by Open^M together with In^M.
+𝒯^M represented by Open^M together with In^M, and the derived labelling obs^M.
 No axioms are imposed by the signature alone; those come from T_CRPT (L5.2).
 
 ---
@@ -928,19 +938,23 @@ and outside PA-axiom namespace.
 **L5.3.2.11 PA-Reach (Recursive Projection Horizon Stabilization; L1.3 of anchor).**
 
 ```
-(PA-Reach) ∀x ∈ ∞_M : ∃n ∈ ℕ : ∀j ≥ 0 : sig_M(ρ_M^(n+j)(x)) = sig_M(ρ_M^n(x))
+(PA-Reach) ∀x ∈ ∞_M :
+   (∃n ∈ ℕ, p ≥ 1 : ∀j ≥ 0 : ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x))      [finitary mode]
+ ∨ (lim_{n→∞} ρ_M^n(x) exists in 𝒯)                               [topological mode]
 ```
 
 where ∞_M = {x ∈ 𝒰 | ∀k ∈ ℕ : ρ_M^k(x) ∉ Fix(ρ_M)} is the persistent regime,
-ρ_M is the projection operator, sig_M is the orbit signature (`sig_M-NM` (L3.1.D5);
-on ∞_M, sig_M(x) = (∞, limit_id, convergence_profile)), and n is the reachability
-depth (the point where the orbit signature stabilizes). Equivalently: for every
-persistent element x, recursive projection eventually reaches and remains in a region
-where the orbit signature is constant and does not change under further projection.
+ρ_M is the projection operator, ≈ is bisimilarity (`Bisim~` (L1.1.D7)), and the least
+finitary-mode witness n is the reachability depth n_M (`n-Reach` (L3.3.D10)).
+Equivalently: recursive projection reaches the canonical persistent representative
+CPer_M(x) (`CPer` (L1.3.D1)) — the entry point of the recurrent ≈-cycle (finitary mode)
+or the topological limit (topological mode); both modes are constraints on the ρ_M-orbit
+and both accomplish the same extraction.
 
-Expressible in L^(2)(Σ_CRPT) by: the orbit signature sig_M (`sig_M-NM` (L3.1.D5)),
-where H_S, H_I, H_O are defined via predicates on the Observable Contract (L5.2.9–10)
-and horizons (L3.1, anchor).
+Expressible in L^(2)(Σ_CRPT) by: second-order quantification over bisimulations for ≈
+(Remark L5.3.1.1), iteration of ρ, and the sort Open with In for the limit clause; the
+persistent orbit signature these modes render finitely presentable is `sig_M-NM`
+(L3.1.D5), with obs grounded in the Observable Contract (L5.2.9–10).
 
 **Semantic consequence (Observer Extraction):** For anyx ∈ ∞_M satisfying PA-Reach,
 the canonical persistent representative CPer_M(x) := ρ_M^n(x) (where n is the

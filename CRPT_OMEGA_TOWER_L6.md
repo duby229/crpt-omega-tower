@@ -261,7 +261,7 @@ This tier applies to **Types P and EP** only.
 - **CFix(ρ_M) on ∞_M:** lim_{n→∞} ρ_M^n(x) exists in the model topology (`Rec-Proj` (L2.1.D4) native form).
 - **Topological Horizons:** H_S^{top}, H_I^{top} (Definitions 9.3.1–9.3.2).
 - **Twelve-Class Partition A_∞–F_∞:** (L3.2) classifies ∞_M elements by topological horizon structure.
-- **Full orbit signature on ∞_M:** sig_M(x) = (∞, limit_id, convergence_profile) (`sig_M-NM` (L3.1.D5) native form).
+- **Full orbit signature on ∞_M:** sig_M(x) = (∞, [OT^obs_M(x)]_{~tail}) (`sig_M-NM` (L3.1.D5) native form); where PA-WN_top holds the trace's tail class determines the limit point.
 
 This tier applies to **all Types** when PA-WN_top holds, and subsumes Tier 2.
 
@@ -897,7 +897,7 @@ integers k < n for which the k-th iterate falls in class C.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L6.3.D5 | `OS-21B` | OS_M(x) | **Novel** |
-**Synopsis:** Orbit spectrum at L6.3: OS_M(x) : {A,B,C,D,E} → [0,1] defined by C ↦ freq(OT(x), C) when all five limits exist (SC-4). OS_M(x) is a probability measure on the five active classes capturing statistical long-run behavior.
+**Synopsis:** Orbit spectrum at L6.3: OS_M(x) : 𝒰_M/≈ → [0,1] defined by C ↦ freq_x(C) on the visited bisimulation classes B̃(x), where the limits exist. The domain is the ≈-class quotient — the reading that bisimulation invariance (`OS-BisInv` (L6.3.T7)) requires; a five-class horizon spectrum, when wanted, is the derived push-forward (`OS-Push` (L6.3.R5)).
 
 **Source:** CRPT; from `Freq` (L6.3.D4) + `OT-21B` (L6.3.D1).
 
@@ -914,11 +914,24 @@ defined on those classes C for which the limit exists.
 The *full orbit spectrum* is defined when freq_x(C) exists for ALL classes C ∈ B̃(x)
 (where B̃(x) = {[ρ_M^n(x)]_≈ | n ∈ ℕ} is the set of visited classes).
 
+### Five-Class Spectrum as Push-Forward
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L6.3.R5 | `OS-Push` | | **Novel** |
+**Synopsis:** The horizon-class spectrum over {A,B,C,D,E} is not the primitive object: it is the push-forward of the ≈-class spectrum along the classification map. The ≈-class spectrum is the bisimulation-invariant primitive; the five-class summary is derived from it by summation over each horizon class.
+
+**Source:** CRPT; from `OS-21B` (L6.3.D5) + `6-Part` (L3.2.T1).
+
+Composing with the horizon classification cl : 𝒰_M/≈ → {A, B, C, D, E} gives the
+*horizon-class spectrum* cl_*(OS_M(x))(K) := Σ_{C : cl(C) = K} OS_M(x)(C) — a derived,
+coarser summary. Invariance properties live at the ≈-class level (`OS-BisInv` (L6.3.T7));
+the push-forward inherits them but does not determine the primitive spectrum.
+
 ### Spectrum-Definite Orbit
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L6.3.D6 | `Spec-Def` | | **Novel** |
-**Synopsis:** Orbit spectrum formal definition: OS_M(x)(C) = freq(OT(x), C) when all limits exist and sum to 1. The SC-4 condition is precisely the requirement that all five limits exist.
+**Synopsis:** Spectrum-definiteness is existence, not normalisation: an orbit is spectrum-definite when freq_x(C) exists for every visited class C ∈ B̃(x). No sum condition is imposed — when B̃(x) is infinite, all frequencies can exist and each equal 0 (every class visited finitely often), a legitimate spectrum-definite orbit whose spectrum sums to 0. The frequencies sum to 1 exactly when B̃(x) is finite (`Freq-Sum` (L6.3.L2)).
 
 **Source:** CRPT; from `OS-21B` (L6.3.D5) + `SC-4-Def` (L3.3.D5).
 
@@ -934,12 +947,12 @@ An orbit Orb_M(x) is *spectrum-definite* if OS_M(x) is fully defined, i.e.:
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Lemma** | L6.3.L2 | `Freq-Sum` | | **Imported** |
-**Synopsis:** Asymptotic frequencies of a partition sum to 1: if the five class frequencies all exist, Σ_C freq(OT(x), C) = 1. Standard ergodic-theory result for finite partitions.
+**Synopsis:** Asymptotic frequencies of a finite partition sum to 1: for spectrum-definite x with **finitely many** visited classes, Σ_{C ∈ B̃(x)} freq_x(C) = 1. The finiteness hypothesis is essential — the imported result is for finite partitions, and it fails for infinite B̃(x): an orbit visiting countably many classes each finitely often is spectrum-definite with every frequency 0, summing to 0.
 
 **Source:** Standard measure theory — frequencies of a finite partition sum to 1; applied to `Freq` (L6.3.D4).
 
 
-For spectrum-definite x ∈ ∞_M:
+For spectrum-definite x ∈ ∞_M with **B̃(x) finite**:
 ```
 ∑_{C ∈ B̃(x)} OS_M(x)(C) = 1
 ```
@@ -950,10 +963,14 @@ For each n: ∑_{C ∈ B̃(x)} |{k < n | [ρ_M^k(x)]_≈ = C}| = n (every k < n 
 in exactly one class). Dividing by n:
 ∑_{C ∈ B̃(x)} (1/n)|{k < n | [ρ_M^k(x)]_≈ = C}| = 1.
 
-Taking the limit as n → ∞: if B̃(x) is finite, the sum of limits equals the limit
-of sums (finite sum). If B̃(x) is countably infinite, the dominated convergence
-theorem applies (each term is bounded by 1 and the sum is exactly 1 for each n).
-Therefore ∑_C freq_x(C) = 1. ∎
+Since B̃(x) is finite, the limit of the finite sum is the sum of the limits:
+∑_C freq_x(C) = lim_n 1 = 1. ∎
+
+*Failure for infinite B̃(x).* Interchange of limit and infinite sum is not available here:
+for an orbit visiting countably many classes each finitely often (every freq_x(C) = 0,
+spectrum-definite by `Spec-Def` (L6.3.D6)), ∑_C freq_x(C) = 0 ≠ 1 — mass escapes to
+infinity. The κ = 2 complexity class (`OC-21B` (L6.3.D9)) is inhabited by exactly such
+orbits, so no sum-to-1 clause may be built into spectrum-definiteness.
 
 ### Shift Invariance of Spectrum
 | Type | Label | Tag | Notation | Status |
@@ -1254,12 +1271,20 @@ OC_M(x)  :=  (κ(x), ρ(x))
 where:
 
 **(a) κ(x) ∈ {0, 1, 2, ω} — the complexity class:**
+
+κ reads the **recurrent (tail) classes**, not the transient prefix: writing
+B̃_∞(x) := { C ∈ B̃(x) | Rec_x(C) is infinite } (`Rec-Set` (L6.3.D7)) for the classes
+visited infinitely often,
 ```
-κ(x) = 0   if B̃(x) is a singleton (orbit stays in one class — SC-1 with N=0)
-κ(x) = 1   if B̃(x) is finite, |B̃(x)| > 1 (eventually periodic, SC-4 holds)
+κ(x) = 0   if B̃(x) is finite and B̃_∞(x) is a singleton (tail in one class — SC-1, any transient)
+κ(x) = 1   if B̃(x) is finite and |B̃_∞(x)| > 1 (eventually periodic with period > 1)
 κ(x) = 2   if B̃(x) is countably infinite and spectrum-definite
 κ(x) = ω   if B̃(x) is countably infinite and NOT spectrum-definite
 ```
+The asymptotic reading is forced by consistency: an SC-1 orbit with non-trivial transient
+visits |B̃(x)| > 1 classes but has singleton tail, and `OC-Per` (L6.3.T11) computes
+κ(x) = 0 for it. Transient classes carry zero asymptotic weight (`Spec-Shift` (L6.3.L3))
+and do not register in κ.
 
 **(b) ρ(x) ∈ Ord — the recurrence rank (a countable ordinal):**
 
@@ -1674,19 +1699,33 @@ periodic orbits under SC-1. We extend HTT to all SC-∞ orbits.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L6.3.D12 | `SC-k` | SC-k | **Novel** |
-**Synopsis:** The scope condition family SC-k (k ∈ {1,2,3,4,∞}): SC-1 = eventual periodicity; SC-2 = stable period; SC-3 = computable period; SC-4 = convergent asymptotic frequencies; SC-∞ = well-defined orbit complexity.
+**Synopsis:** The scope condition family SC-k (k ∈ {1,2,3,4,∞}) collected as a single graded definition, each member defined at its home label: SC-1 = eventually class-constant tail (singleton ω-limit set in 𝒰_M/≈ — not general eventual periodicity, which is SC-4 territory); SC-2 = stable horizon-signature period; SC-3 = stable valuation; SC-4 = convergent asymptotic frequencies; SC-∞ = all AOI components well-defined. The accompanying AOI-hierarchy clause expresses what the family grades: the depth at which the orbit's asymptotic invariant data stabilises.
 
 **Source:** CRPT; from `SC-1` (L3.3.D2)–`SC-4-Def` (L3.3.D5) + `SC-∞` (L6.3.D11).
 
 
-For x ∈ ∞_M, define the *AOI hierarchy*:
+The *scope condition family* collects the graded conditions on a persistent orbit:
+
+```
+SC-1(x)  — the tail is class-constant: ω_≈(x) is a singleton (`SC-1` (L3.3.D2))
+SC-2(x)  — the horizon-signature sequence is eventually periodic with stable period (`SC-2` (L3.3.D3))
+SC-3(x)  — the valuation sequence stabilises (`SC-3` (L3.3.D4))
+SC-4(x)  — all visit frequencies converge (`SC-4-Def` (L3.3.D5))
+SC-∞(x)  — AOI₁ is well-defined and the orbit is spectrum-definite (`SC-∞` (L6.3.D11))
+```
+
+What the family grades is the stabilisation of asymptotic invariant data along the
+orbit. For x ∈ ∞_M, define the *AOI hierarchy*:
 
 ```
 AOI-hierarchy_n(x)  :=  AOI_M(ρ_M^n(x))    for n ∈ ℕ
 ```
 
 The hierarchy *terminates* if the sequence AOI-hierarchy_n(x) stabilises:
-∃N : ∀n ≥ N : AOI_M(ρ_M^n(x)) = AOI_M(ρ_M^N(x)).
+∃N : ∀n ≥ N : AOI_M(ρ_M^n(x)) = AOI_M(ρ_M^N(x)). The least such N is the depth at
+which the orbit's asymptotic data is fully realized; the SC-k conditions are the
+successively stronger guarantees under which successive AOI components are defined
+and stable from that depth.
 
 ### AOI Hierarchy Terminates at ω for SC-∞ Orbits
 | Type | Label | Tag | Notation | Status |

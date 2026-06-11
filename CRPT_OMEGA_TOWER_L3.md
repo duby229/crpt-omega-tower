@@ -155,9 +155,32 @@ The finitary operative signature: regime tag (↓), ramification status (H_S), i
 
 **For x ∈ ∞_M:**
 ```
-sig_M(x) := (∞, limit_id, convergence_profile) ∈ {∞} × Limits(𝒯) × ℝ^ℕ
+sig_M(x) := (∞, [OT^obs_M(x)]_{~tail}) ∈ {∞} × ((NF(→_ρ) ⊔ O_M)^ω / ~_tail)
 ```
-The topological operative signature: regime tag (∞), limit point (CFix(ρ_M)(x)), and convergence rate profile (how fast ρ_M^n(x) approaches its limit).
+The persistent operative signature: regime tag (∞) and the **tail class of the
+observation trace** OT^obs_M(x) = (obs(ρ_M^n(x)))_{n∈ℕ} (`Obs-Lab` (L1.1.D8),
+`Tail-Eq` (L6.3.D2)) — what the orbit emits, up to finite prefix. Every comparison the
+signature supports is an equality of traces, matching the theory's native discernibility
+machinery (`Disc-Obs` (L4.1.R4)). Where PA-WN_top holds, the trace's tail class
+determines the limit point CFix(ρ_M)(x); the topological data is recovered, not
+postulated.
+
+### Persistent Signature and Metric Instantiations
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L3.1.R11 | `sig-Metric` | | **Novel** |
+**Synopsis:** How metric instantiations supply convergence-rate observables: a model with a metric topology codes its rate data (e.g. distance-to-limit observables, Hölder-class data) into the observable codomain O_M, so the observation trace carries the rates. Rate comparison is then trace tail-equivalence — a CRPT-native equality — and no external ordered-field apparatus (ℝ^ℕ profiles, exponent comparison) enters the signature itself.
+
+**Source:** CRPT; from `sig_M-NM` (L3.1.D5) + `Obs-Lab` (L1.1.D8) + PA-Prod (L1.2.Ax6).
+
+A metric instantiation (𝒰, d) makes convergence rates observable by choosing
+Observable to expose them: for example, Observable(y) may include the distance datum
+d(y, CFix(ρ_M)(y)) or a discretised rate class. The observation trace of an orbit then
+records its approach behaviour step by step, and two orbits have "the same rate" exactly
+when their traces are tail-equivalent (`Tail-Eq` (L6.3.D2)). Rate distinctions are thus
+instantiation-level content carried through O_M — the signature itself never compares
+real sequences or exponents, only traces for equality.
 
 ### Orbit Signature Is Regime-Stratified
 
@@ -168,7 +191,7 @@ The topological operative signature: regime tag (∞), limit point (CFix(ρ_M)(x
 
 **Source:** CRPT; from `sig_M-NM` (L3.1.D5).
 
-In the native regime-stratified framework, the orbit signature is regime-stratified. The H_S and H_I horizons apply to ↓_M elements (finitary branching structure); ∞_M elements instead carry convergence-rate / asymptotic information. Both components are observable (orbit-distinguishable) and capture the element's "behavioral signature."
+In the native regime-stratified framework, the orbit signature is regime-stratified. The H_S and H_I horizons apply to ↓_M elements (finitary branching structure); ∞_M elements instead carry their asymptotic information — the tail class of the observation trace (`Obs-Lab` (L1.1.D8)). Both components are observable (orbit-distinguishable) and capture the element's "behavioral signature."
 
 For pure-WF specialization: pure WF models have ∞_M = ∅, so sig_M(x) always takes the first form (↓-regime, WF horizons).
 
@@ -550,12 +573,13 @@ signature can still distinguish them: the collapse is resolvable. ✓ ∎
 
 `Hor-Abs` (L3.1.T3) describes horizons for ↓_M elements
 (where H_S, H_I, H_O are directly defined). For ∞_M elements, the native form
-of the orbit signature (`sig_M-NM` (L3.1.D5)) replaces the Boolean horizon predicates with a
-**convergence profile** — how fast ρ_M^n(x) approaches its topological limit.
+of the orbit signature (`sig_M-NM` (L3.1.D5)) replaces the Boolean horizon predicates with the
+**observation trace** — what the orbit emits, up to finite prefix (`Obs-Lab` (L1.1.D8)).
 The analogue of H_S in the persistent regime is non-injectivity of the limit
-map: multiple ∞_M elements can share the same limit point (different convergence
-rates to the same attractor). The analogue of H_I is whether the convergence
-profiles of co-limiting elements are distinguishable. By `PA-NWF-NE` (L2.2.T5), these persistent-regime structures
+map: multiple ∞_M elements can share the same limit point (distinct approach
+orbits to the same attractor). The analogue of H_I is whether the observation
+traces of co-limiting elements are tail-equivalent (`Tail-Eq` (L6.3.D2)) —
+indistinguishable approaches. By `PA-NWF-NE` (L2.2.T5), these persistent-regime structures
 are transformed into vertical (depth) structure at the next tower level, connecting
 the horizon theory of L3.1 to the tower theory of L8.1.
 
@@ -950,17 +974,21 @@ Measures whether the limit point is topologically "ramified" (appears as limit o
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.2.D4 | `H_I^top` | H_I^{top} | **Novel** |
-**Synopsis:** The topological invariant horizon H_I^{top}(x) for elements of ∞_M is defined using the topological limit structure from PA-WN_top: H_I^{top}(x) = ⊤ when all elements in the topological fiber of x (elements with the same topological limit) share the same orbit signature. This is the persistent-regime analogue of H_I.
+**Synopsis:** The topological invariant horizon H_I^{top}(x) for elements of ∞_M is defined using the topological limit structure from PA-WN_top: H_I^{top}(x) = ⊤ when the approach orbits sharing x's topological limit are observationally uniform — their observation traces are pairwise tail-equivalent. This is the persistent-regime analogue of H_I, stated as a CRPT-native trace equality.
 
-**Source:** CRPT; from `H_I` (L3.1.D2); persistent-regime form.
+**Source:** CRPT; from `H_I` (L3.1.D2) + `Obs-Lab` (L1.1.D8) + `Tail-Eq` (L6.3.D2); persistent-regime form.
 
 For x ∈ ∞_M:
 ```
-H_I^{top}(x) := ⊤ if H_S^{top}(x) = ⊤ AND convergence rates to CFix(ρ_M)(x) are indistinguishable
- := ⊥ if H_S^{top}(x) = ⊤ AND convergence rates are distinguishable (e.g., by Hölder exponent)
+H_I^{top}(x) := ⊤ if H_S^{top}(x) = ⊤ AND the observation traces of the orbits limiting to CFix(ρ_M)(x) are pairwise tail-equivalent
+ := ⊥ if H_S^{top}(x) = ⊤ AND some pair of those traces is not tail-equivalent
  := N/A if H_S^{top}(x) = ⊥
 ```
-For ramified limits, measures whether distinct orbits approaching the same limit exhibit observably different convergence speeds.
+For ramified limits, measures whether distinct orbits approaching the same limit are
+observationally uniform: "same rate" means tail-equivalent observation traces
+(`Obs-Lab` (L1.1.D8), `Tail-Eq` (L6.3.D2)). Metric instantiations supply rate
+observables through O_M (`sig-Metric` (L3.1.R11)); the predicate itself compares
+only traces for equality.
 
 ### Six Classes on ∞_M (Topological Analogues)
 
@@ -1000,17 +1028,22 @@ Elements of ∞_M partition into six classes by (Q1^{top}, Q2^{top}, Q3^{top}):
 
 | Class | Limit? | H_S^{top} | H_I^{top} | Description (∞_M Analogue) | 
 |:-----:|:------:|:---------:|:---------:|---|
-| D_∞ | ⊤ | ⊥ | N/A | Limit point, unique ∞_M-pre-image (isolated limit) |
-| E_∞ | ⊤ | ⊤ | ⊥ | Limit point, multiple ∞_M-pre-images, distinguishable rates |
-| F_∞ | ⊤ | ⊤ | ⊤ | Limit point, multiple ∞_M-pre-images, indistinguishable rates |
+| D_∞ | ⊤ | ⊥ | N/A | Limit point whose own orbit-limit is unramified (single approach orbit) |
+| E_∞ | ⊤ | ⊤ | ⊥ | Limit point whose own orbit-limit is ramified, approach traces distinguishable |
+| F_∞ | ⊤ | ⊤ | ⊤ | Limit point whose own orbit-limit is ramified, approach traces tail-equivalent |
 
 **Non-Limit Classes (Q1^{top} = ⊥) in ∞_M:**
 
 | Class | Limit? | H_S^{top} | H_I^{top} | Description (∞_M Analogue) |
 |:-----:|:------:|:---------:|:---------:|---|
-| A_∞ | ⊥ | ⊥ | N/A | Persistent, unique pre-image structure, clean approach to limit |
-| B_∞ | ⊥ | ⊤ | ⊥ | Persistent, ramified pre-images, distinguishable rates |
-| C_∞ | ⊥ | ⊤ | ⊤ | Persistent, ramified pre-images, indistinguishable rates |
+| A_∞ | ⊥ | ⊥ | N/A | Persistent, orbit-limit unramified (single approach orbit) |
+| B_∞ | ⊥ | ⊤ | ⊥ | Persistent, orbit-limit ramified, approach traces distinguishable |
+| C_∞ | ⊥ | ⊤ | ⊤ | Persistent, orbit-limit ramified, approach traces tail-equivalent |
+
+All rows read H_S^{top} and H_I^{top} **uniformly through x's own orbit-limit**
+(`H_S^top` (L3.2.D3)): for every x ∈ ∞_M — limit point or not — the predicates evaluate
+the ramification of lim_{n→∞} ρ_M^n(x) and the tail-equivalence of the traces approaching
+*it*. A limit point's row thus describes its own onward limit, not its own pre-images.
 
 ### Properties of the Twelve-Class Partition
 
@@ -1018,7 +1051,7 @@ Elements of ∞_M partition into six classes by (Q1^{top}, Q2^{top}, Q3^{top}):
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.2.T3 | `12-Part-EE` |  | **Novel** |
-**Synopsis:** The twelve-class partition theorem: the twelve classes exhaustively and disjointly partition 𝒰_M = ↓_M ⊔ ∞_M. Each element belongs to exactly one of the twelve classes. Class F (convergent) and Class F* (persistent) are both empty.
+**Synopsis:** The twelve-class partition theorem: the twelve classes exhaustively and disjointly partition 𝒰_M = ↓_M ⊔ ∞_M. Each element belongs to exactly one of the twelve classes. Class F (convergent) is provably empty (`F=∅` (L3.2.T2)); Class F_∞ (persistent) is **not** claimed empty — the kernel d_M-uniformity collapse that empties F is specific to ↓_M (`Fstar-Distinct` (L3.2.R3)), and F_∞ is a legitimate, inhabitable class: distinct orbits can converge to one limit with tail-equivalent observation traces.
 
 **Source:** CRPT; from `12-Part` (L3.2.D6).
 
@@ -1128,14 +1161,14 @@ For a discrete dynamical system $(X, f)$, the
 ```
 ω(x) := ∩_{n≥0} cl( {f^k(x) | k ≥ n} )
 ```
-the closure of the tail of the orbit (Katok & Hasselblatt [1995], L1.1). Equivalently:
+the closure of the tail of the orbit (Katok & Hasselblatt [1995] §1.1). Equivalently:
 $y ∈ ω(x)$ iff there exists a subsequence $n_i → ∞$ with $f^{n_i}(x) → y$.
 
 ### SC-1: ω-Limit Bisimulation Fixation
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D2 | `SC-1` | SC-1 | **Novel** |
-**Synopsis:** Scope Condition SC-1 requires that the persistent orbit of x is eventually periodic: there exist n ≥ 0 and p ≥ 1 such that ρ_M^{n+p}(x) ≃_M ρ_M^n(x) for all further iterates. SC-1 is the weakest scope condition; it admits the periodic canonical form CNF∞_M.
+**Synopsis:** Scope Condition SC-1 requires that the persistent orbit of x is eventually **class-constant**: from some index N onward, all iterates lie in a single bisimulation class — the ω-limit set in 𝒰_M/≈ is a singleton (period 1 in classes). General eventual periodicity with period p > 1 is strictly weaker territory (SC-4); the alternating two-class stream satisfies SC-4 but not SC-1 (`SC∞>SC1` (L6.3.T16)). SC-1 admits the periodic canonical form CNF∞_M.
 
 **Source:** CRPT; from PA-Reach (L1.3.Ax2) + `sig_M-NM` (L3.1.D5).
 
@@ -1203,7 +1236,7 @@ the orbit visits only **finitely many distinct bisimulation classes**. Equivalen
 $ω_≈(x)$ is **finite**.
 
 *Standard name.* This is the condition of **bounded symbolic orbit** or **finite ω-orbit** in discrete
-dynamical systems (Katok & Hasselblatt [1995], L1.1). In symbolic dynamics, it is the condition that the
+dynamical systems (Katok & Hasselblatt [1995] §1.1). In symbolic dynamics, it is the condition that the
 symbolic image of the orbit is ultimately periodic (eventually enters a finite cycle in the quotient space).
 
 ### SC-4 ⟹ Eventual Periodicity
@@ -1478,78 +1511,94 @@ resting on the universal axiom PA-Reach (L1.3.Ax2).
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D10 | `n-Reach` | n_M(x) | **Novel** |
-**Synopsis:** The reachability depth n_M(x) is the least index at which the orbit signature sig_M stabilizes — the NWF dual of the derivation height d_M. Where d_M counts steps until the orbit itself becomes constant (reaches Fix), n_M counts steps until the orbit *signature* becomes constant; the element keeps moving, but its observable signature is fixed.
+**Synopsis:** The reachability depth n_M(x) is the least transient after which the ≈-class orbit is periodic — the point where the orbit enters its recurrent cycle. It is the NWF dual of the derivation height d_M: where d_M counts steps until the orbit itself becomes constant (reaches Fix), n_M counts steps until the orbit's *class sequence* becomes periodic; the element keeps moving, but its observable behaviour repeats.
 
-**Source:** CRPT; from `CPer` (L1.3.D1) + `sig_M-NM` (L3.1.D5) + PA-Reach (L1.3.Ax2); dual of `d_M` (L2.3.D2).
+**Source:** CRPT; from `CPer` (L1.3.D1) + `Bisim~` (L1.1.D7) + PA-Reach (L1.3.Ax2); dual of `d_M` (L2.3.D2).
 
-For x ∈ ∞_M:
+For x ∈ ∞_M covered by the finitary mode of PA-Reach (L1.3.Ax2):
 ```
-n_M(x) := min { n ∈ ℕ : ∀ j ≥ 0,  sig_M(ρ_M^{n+j}(x)) = sig_M(ρ_M^n(x)) }
+n_M(x) := min { n ∈ ℕ : ∃ p ≥ 1 : ∀ j ≥ 0,  ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x) }
 ```
-PA-Reach asserts this set is non-empty, so n_M(x) ∈ ℕ is total on ∞_M, and
-CPer_M(x) = ρ_M^{n_M(x)}(x) (`CPer` (L1.3.D1)).
+The finitary mode asserts this set is non-empty, so n_M(x) ∈ ℕ is total on the
+finitary-mode sub-class, and CPer_M(x) = ρ_M^{n_M(x)}(x) (`CPer` (L1.3.D1)) is the first
+point of the orbit's recurrent ≈-cycle. On the topological-mode sub-class the
+representative is supplied by the limit instead: CPer_M(x) = CFix(ρ_M)(x), and no finite
+transient is involved.
 
 *Duality with d_M.* d_M(x) = min{n : ρ_M^n(x) ∈ Fix(ρ_M)} (the orbit becomes constant);
-n_M(x) = min{n : sig_M∘ρ_M^n is constant} (the signature becomes constant). Both are total
-ℕ-valued ranks — d_M under PA-WN, n_M under PA-Reach.
+n_M(x) = min{n : the class orbit from n is periodic} (the orbit's observable behaviour
+becomes recurrent). Both are ℕ-valued ranks in finitary mode — d_M under PA-WN, n_M under
+PA-Reach — and both have the same topological-mode counterpart: the 𝒯-limit (PA-WN_top),
+where reach is by convergence rather than at finite depth.
 
 ### CPer Existence
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T6 | `CPer-Ex` | | **Novel** |
-**Synopsis:** For every persistent element x ∈ ∞_M, the canonical persistent representative CPer_M(x) exists — totally. This is the NWF dual of CNF-Ex, and existence is exactly the content of the universal axiom PA-Reach.
+**Synopsis:** For every persistent element x ∈ ∞_M, the canonical persistent representative CPer_M(x) exists — totally. This is the NWF dual of CNF-Ex, and existence is exactly the content of the universal axiom PA-Reach: every persistent element is covered by one of its two modes.
 
 **Source:** CRPT; from PA-Reach (L1.3.Ax2) + `n-Reach` (L3.3.D10); dual of `CNF-Ex` (L2.4.T1).
 
-For every x ∈ ∞_M, n_M(x) ∈ ℕ and CPer_M(x) := ρ_M^{n_M(x)}(x) is defined.
+For every x ∈ ∞_M, CPer_M(x) is defined: ρ_M^{n_M(x)}(x) in finitary mode, CFix(ρ_M)(x)
+in topological mode.
 
-*Proof.* PA-Reach (L1.3.Ax2) states ∀x ∈ ∞_M ∃n ∀j≥0: sig_M(ρ_M^{n+j}(x)) = sig_M(ρ_M^n(x)).
-The set {n : ∀j≥0, sig_M(ρ_M^{n+j}(x)) = sig_M(ρ_M^n(x))} is therefore non-empty; as a
-non-empty subset of ℕ it has a least element, n_M(x) (`n-Reach` (L3.3.D10)). Hence
-CPer_M(x) = ρ_M^{n_M(x)}(x) exists for every persistent x. Totality on ∞_M is the dual of
-CNF-Ex's totality on ↓_M (`CNF-Ex` (L2.4.T1)), with PA-Reach in the role of PA-WN. ∎
+*Proof.* PA-Reach (L1.3.Ax2) states that every x ∈ ∞_M is covered by at least one mode.
+**Finitary mode:** the set {n : ∃p ≥ 1 : ∀j ≥ 0, ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x)} is
+non-empty; as a non-empty subset of ℕ it has a least element, n_M(x)
+(`n-Reach` (L3.3.D10)), and CPer_M(x) = ρ_M^{n_M(x)}(x) exists. **Topological mode:**
+the limit lim_{n→∞} ρ_M^n(x) exists in 𝒯 and CPer_M(x) = CFix(ρ_M)(x). Either way
+CPer_M(x) exists for every persistent x. Totality on ∞_M is the dual of CNF-Ex's totality
+on ↓_M (`CNF-Ex` (L2.4.T1)), with PA-Reach in the role of PA-WN. ∎
 
 ### CPer Uniqueness
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T7 | `CPer-Uniq` | | **Novel** |
-**Synopsis:** The reachability depth n_M(x) and the stabilized signature sig_M(CPer_M(x)) are uniquely determined by x — the NWF dual of CNF-Uniq. Where WF uniqueness rests on confluence (Church–Rosser), NWF uniqueness rests on determinism of the strategy ρ_M together with minimality of the stabilization index.
+**Synopsis:** The canonical persistent representative is uniquely determined by x — the NWF dual of CNF-Uniq. In finitary mode, the reachability depth n_M(x) and the recurrent ≈-cycle it enters are unique, by determinism of the strategy ρ_M together with minimality of the transient; in topological mode the limit is unique by topological separation. Where WF uniqueness rests on confluence (Church–Rosser), NWF uniqueness rests on determinism and separation.
 
-**Source:** CRPT; from `ρ_M` (L2.1.D1) (determinism, C1–C2) + `Rec-Proj` (L2.1.D4) + `n-Reach` (L3.3.D10); dual of `CNF-Uniq` (L2.4.T2).
+**Source:** CRPT; from `ρ_M` (L2.1.D1) (determinism, C1–C2) + `Rec-Proj` (L2.1.D4) + `n-Reach` (L3.3.D10) + `TopSep-Uniq` (L1.2.T1); dual of `CNF-Uniq` (L2.4.T2).
 
-For x ∈ ∞_M, n_M(x) is the unique least stabilization index and sig_M(CPer_M(x)) is the
-unique stabilized signature.
+For x ∈ ∞_M, CPer_M(x) is unique: in finitary mode, n_M(x) is the unique least transient
+and the recurrent ≈-cycle entered at CPer_M(x) is the unique extracted observable; in
+topological mode, the limit CFix(ρ_M)(x) is unique.
 
 *Proof.* ρ_M is a deterministic strategy (C1–C2, `ρ_M` (L2.1.D1)), so the orbit
-(ρ_M^n(x))_{n∈ℕ} is a single determined sequence. The stabilization set
-S(x) = {n : sig_M∘ρ_M^k constant for all k ≥ n} is thereby determined, and its least
-element n_M(x) is unique. For every n ≥ n_M(x), sig_M(ρ_M^n(x)) = sig_M(ρ_M^{n_M(x)}(x)) =
-sig_M(CPer_M(x)); so the stabilized signature is the single value the orbit signature
-assumes from n_M(x) onward — unique. Independence of the chosen orbit representative is
+(ρ_M^n(x))_{n∈ℕ} is a single determined sequence. **Finitary mode:** the transient set
+S(x) = {n : ∃p ≥ 1 : the class orbit from n is p-periodic} is thereby determined, and its
+least element n_M(x) is unique; the class cycle ([ρ_M^{n_M(x)+i}(x)]_≈)_{0 ≤ i < p} with
+minimal period p is the single recurrent behaviour the determined orbit settles into —
+unique. **Topological mode:** the limit is unique because 𝒯 is Hausdorff on the relevant
+sub-class (`TopSep-Uniq` (L1.2.T1)). Independence of the chosen orbit representative is
 `Rec-Proj` (L2.1.D4). (Dual mechanism: WF uniqueness comes from *confluence* of →_ρ; NWF
-uniqueness comes from *determinism* of ρ_M — the two faces of the projection strategy.) ∎
+finitary uniqueness comes from *determinism* of ρ_M, and topological uniqueness from
+*separation* — the faces of the projection strategy.) ∎
 
 ### CPer Stability
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T8 | `CPer-Stab` | | **Novel** |
-**Synopsis:** The stabilized signature is invariant under further projection — sig_M(CPer_M(ρ_M(x))) = sig_M(CPer_M(x)) — and the reachability depth decreases by one per step, n_M(ρ_M(x)) = max(n_M(x) − 1, 0). These are the NWF duals of CNF-Stab (idempotence) and Depth-Dec (rank decrement).
+**Synopsis:** The extracted observable is invariant under further projection — CPer_M(ρ_M(x)) lies on the same recurrent ≈-cycle as CPer_M(x) (finitary mode) or has the same limit (topological mode) — and the reachability depth decreases by one per step, n_M(ρ_M(x)) = max(n_M(x) − 1, 0). These are the NWF duals of CNF-Stab (idempotence) and Depth-Dec (rank decrement).
 
 **Source:** CRPT; from `n-Reach` (L3.3.D10) + PA-Reach (L1.3.Ax2); duals of `CNF-Stab` (L2.4.T3) and `Depth-Dec` (L2.3.T2).
 
-For x ∈ ∞_M: (i) n_M(ρ_M(x)) = max(n_M(x) − 1, 0); (ii) sig_M(CPer_M(ρ_M(x))) =
-sig_M(CPer_M(x)); (iii) for all m ≥ n_M(x), sig_M(ρ_M^m(x)) = sig_M(CPer_M(x)).
+For x ∈ ∞_M: (i) in finitary mode, n_M(ρ_M(x)) = max(n_M(x) − 1, 0); (ii) CPer_M(ρ_M(x))
+lies on the same recurrent ≈-cycle as CPer_M(x) (finitary mode) — and in topological mode
+CFix(ρ_M)(ρ_M(x)) = CFix(ρ_M)(x) — so the extracted observable, hence the persistent
+orbit signature (`sig_M-NM` (L3.1.D5)), is invariant; (iii) for all m ≥ n_M(x), ρ_M^m(x)
+lies on the recurrent ≈-cycle.
 
 *Proof.* The orbit of ρ_M(x) is the one-step shift of the orbit of x: ρ_M^n(ρ_M(x)) =
-ρ_M^{n+1}(x). **(i)** If n_M(x) = 0 the signature is constant from index 0, hence constant
-for ρ_M(x) as well, so n_M(ρ_M(x)) = 0. If n_M(x) = k ≥ 1, then sig_M∘ρ_M^· is constant
-from index k but not k−1; under the one-step shift, ρ_M(x)'s signature is constant from
-index k−1 but not k−2, so n_M(ρ_M(x)) = k−1. Hence n_M(ρ_M(x)) = max(n_M(x)−1, 0) — the
-dual of `Depth-Dec` (L2.3.T2). **(ii)** CPer_M(ρ_M(x)) = ρ_M^{n_M(ρ_M(x))}(ρ_M(x)) =
-ρ_M^{max(n_M(x)−1,0)+1}(x) = ρ_M^{max(n_M(x),1)}(x); since max(n_M(x),1) ≥ n_M(x), its
-signature is sig_M(CPer_M(x)) by (iii). **(iii)** Immediate from the definition of n_M(x)
-(`n-Reach` (L3.3.D10)). The idempotence analogue — projecting past stabilization returns
-the same canonical signature — is the dual of `CNF-Stab` (L2.4.T3). ∎
+ρ_M^{n+1}(x). **(i)** If n_M(x) = 0 the class orbit is periodic from index 0, hence
+periodic from 0 for ρ_M(x) as well, so n_M(ρ_M(x)) = 0. If n_M(x) = k ≥ 1, the class
+orbit is periodic from index k but not from k−1; under the one-step shift, ρ_M(x)'s class
+orbit is periodic from k−1 but not from k−2, so n_M(ρ_M(x)) = k−1. Hence n_M(ρ_M(x)) =
+max(n_M(x)−1, 0) — the dual of `Depth-Dec` (L2.3.T2). **(ii)** Finitary:
+CPer_M(ρ_M(x)) = ρ_M^{max(n_M(x)−1,0)+1}(x) = ρ_M^{max(n_M(x),1)}(x), a point of the
+recurrent cycle by (iii); the cycle, hence the trace tail class, is unchanged.
+Topological: shifting an orbit does not change its limit. **(iii)** Immediate from the
+definition of n_M(x) (`n-Reach` (L3.3.D10)): from n_M(x) the class orbit is periodic, so
+every later iterate lies on the cycle. The idempotence analogue — projecting past the
+transient returns the same canonical observable — is the dual of `CNF-Stab` (L2.4.T3). ∎
 
 ### WF/NWF Canonical-Form Duality
 | Type | Label | Tag | Notation | Status |
@@ -1564,7 +1613,7 @@ The correspondence:
 | | Convergent (↓_M, μ, induction) | Persistent (∞_M, ν, coinduction) |
 |---|---|---|
 | Totality axiom | PA-WN | PA-Reach (universal) |
-| Mode | finitary | asymptotic (+ topological where PA-WN_top) |
+| Mode | finitary (PA-WN); topological where PA-WN_top | finitary or topological (PA-Reach's two modes, mirrored) |
 | Rank | d_M (`d-WD` (L2.3.T1)) | n_M (`n-Reach` (L3.3.D10)) |
 | Rank decrement | d_M(ρ_M x) = d_M(x)−1 (`Depth-Dec` (L2.3.T2)) | n_M(ρ_M x) = max(n_M(x)−1,0) (`CPer-Stab` (L3.3.T8)) |
 | Canonical representative | CFix = ρ_M^{d_M(x)}(x) | CPer = ρ_M^{n_M(x)}(x) |
