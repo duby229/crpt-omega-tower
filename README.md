@@ -8,16 +8,21 @@ level (Lω) in which the theory is applied to itself.
 
 ## Status
 
-**v1.0.0-rc3** — release candidate. The projection-axiom basis, the WF/NWF duality, and the
+**v1.0.0-rc4** — release candidate. The projection-axiom basis, the WF/NWF duality, and the
 categorical self-structure are audited for internal consistency (cross-references, labelling,
-axiom-count, and proof rigor). rc3 resolves seven post-rc2 spec findings from the
-implementation audit — the observer triple is bisimulation-invariant (not ≃_M-invariant),
-bisimilarity is defined on the labelled substrate, ≃_M is regime-aware (≃∞ on ∞_M), and the
-L6.4 NWF horizons use asymptotic invariants only — promotes the remaining substantive inline
-remarks to subsections, and corrects tag/location citations. rc2 repaired table rendering,
-gave every labelled item its own subsection, canonicalised the Class F and homomorphism
-definitions, resolved the L0 self-substrate status, and made the tower model-neutral,
-legacy-free, and engine-free.
+axiom-count, and proof rigor). rc4 resolves twenty-one post-rc3 findings from the
+implementation audit and sharpens the axiomatic core: the observation labelling is *derived*
+from PA-Prod's Observable Contract (no new primitive; satisfaction-as-model-hood well-posed);
+PA-Reach states its meaning — every persistent orbit has a canonically representable
+asymptotic destination — with recurrence and convergence as realization *theorems*; the mode
+axis has exactly two values (recurrence/finitary, convergence/topological), with asymptotic
+orbit invariance re-housed as the analysis layer available in both modes; the persistent
+signature, horizons, spectrum, and complexity are stated in CRPT-native trace terms; and the
+persistent Class F_∞ emptiness claim is withdrawn. rc3 resolved seven post-rc2 findings
+(labelled bisimilarity, regime-aware ≃_M, asymptotic NWF horizons) and promoted the remaining
+inline remarks. rc2 repaired table rendering, gave every labelled item its own subsection,
+canonicalised the Class F and homomorphism definitions, resolved the L0 self-substrate
+status, and made the tower model-neutral, legacy-free, and engine-free.
 
 ## Reading order
 

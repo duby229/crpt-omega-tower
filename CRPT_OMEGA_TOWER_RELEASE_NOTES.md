@@ -1,10 +1,24 @@
 # CRPT ω-Tower — Release Notes
 
-**Status:** v1.0.0-rc3 (release candidate)  
-**Date:** 2026-06-09  
+**Status:** v1.0.0-rc4 (release candidate)  
+**Date:** 2026-06-11  
 **Document set:** CRPT_OMEGA_TOWER_*.md (L0–L8, Lω, and support files)
 
 ---
+
+## Version 1.0.0-rc4 (2026-06-11)
+
+Changes since rc3 (no theorem statements weakened; one axiom strengthened to its meaning):
+
+- **The observation labelling is derived, not primitive.** New `Obs-Lab` (L1.1.D8) defines obs from the Observable Contract of PA-Prod — a normal form is its own atomic observable; a non-fixpoint emits the content of its projection step — with `Obs-Lab-WD` (L1.1.T1) proving NF-injectivity, regime separation, no-silent-labels (productivity is what makes the labelled reading non-degenerate), and Σ_CRPT-definability, so model-hood-as-satisfaction (`Mod-Corr` (L5.3.T1)) is well-posed with no new primitive. The contract codomain is generalised to a pointed set (O_M, 0), Bool minimal; Σ_CRPT gains the sort O.
+- **PA-Reach is the meaning itself; the mechanisms are theorems.** PA-Reach (L1.3.Ax2) now asserts that every persistent orbit has a canonically representable asymptotic destination — ω_≈(x) non-empty, finite, ρ_M-closed, attracting — with CPer_M(x) its canonical representative. The reach mechanisms are realization theorems: recurrence (`PA-Reach-Fin` (L1.3.T2), eventual periodicity *derived* from PA-Bisim equivariance), convergence (`PA-Reach-Top` (L1.3.T3), the limit a fixpoint by continuity), and their composite (`PA-Reach-Decomp` (L1.3.T4)) — no third mechanism exists.
+- **Exactly two modes; "asymptotic" is the analysis layer.** `Mode` (L1.4.D1) redefined: a mode is a reach mechanism — recurrence (finitary) or convergence (topological) — the same pair serving both regimes (PA-WN's d_M / PA-Reach's n_M; PA-WN_top). Asymptotic orbit invariance is not a mode: the AOI is the invariant theory of the destination, defined unconditionally and finitely presentable in either mode. "Asymptotic mode" is purged tower-wide.
+- **The persistent signature is CRPT-native.** sig_M on ∞_M is the observation trace up to tail-equivalence (`sig_M-NM` (L3.1.D5)); H_I^top compares approach traces for tail-equivalence; the ℝ^ℕ profile and Hölder comparisons are demoted to an instantiation remark (`sig-Metric` (L3.1.R11)).
+- **Twelve-class partition corrected.** `12-Part-EE` (L3.2.T3) no longer claims F_∞ empty (the kernel-uniformity collapse is convergent-regime-specific; F_∞ is inhabitable); the class table reads every row uniformly through x's own orbit-limit.
+- **Spectrum and complexity corrected.** `Spec-Def` (L6.3.D6) is existence-only (no sum clause); `Freq-Sum` (L6.3.L2) scoped to finite B̃ with the infinite-B̃ failure exhibited; `OS-21B` (L6.3.D5) typed over bisimulation classes with the five-class spectrum as derived push-forward (`OS-Push` (L6.3.R5)); `OC-21B` (L6.3.D9) κ reads the recurrent tail classes; SC-1 synopses corrected to the singleton-tail reading; `SC-k` (L6.3.D12) defines the family it names.
+- **Encodings and the tower ω-category.** `Enc` (L4.6.D1) injectivity is denotational; `Twr-ωCat` (L8.7.D2) horizontal composition made explicit (left whiskering in-level under the strip-last convention; right action through the tower embeddings) with the interchange law scoped accordingly (`Twr-ωCat-T` (L8.7.T1)).
+- **Editorial.** PV2/PV-Dual synopses and proofs corrected (the duality is now actually stated and proved); L-Str/L-Th synopses describe their own definitions; Inf-Dual's quantifier and NFC slips repaired; source-line substitution artifacts fixed; ω-Cat notation unified.
+- **Audit.** 0 dangling references, 0 tag/location mismatches, 0 bare table rows, 0 duplicate labels, balanced fences. Totals: 166 definitions · 249 theorems/lemmas/corollaries · 125 remarks · 9 projection axioms.
 
 ## Version 1.0.0-rc3 (2026-06-09)
 
