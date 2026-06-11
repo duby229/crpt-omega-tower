@@ -3,7 +3,7 @@
 **Status:** v1.0.0-rc3 (release candidate)  
 **Date:** 2026-06-09  
 **Coverage:** All levels L0–L8, Lω  
-**Total:** 166 definitions · 246 theorems/lemmas/corollaries · 125 remarks · 9 projection axioms
+**Total:** 166 definitions · 249 theorems/lemmas/corollaries · 125 remarks · 9 projection axioms
 
 ---
 
@@ -49,6 +49,9 @@
 | L1.2.T1 | TopSep Uniqueness | `TopSep-Uniq` | Theorem |
 | L1.3.D1 | Continuous Persistence | `CPer` | Definition |
 | L1.3.T1 | PA-Reach Observable Extension | `PA-Reach-ObsExt` | Theorem |
+| L1.3.T2 | Finitary Realization of PA-Reach | `PA-Reach-Fin` | Theorem |
+| L1.3.T3 | Topological Realization of PA-Reach | `PA-Reach-Top` | Theorem |
+| L1.3.T4 | Decomposition of PA-Reach Realizations | `PA-Reach-Decomp` | Theorem |
 | L1.4.D1 | Regimes and Canonicalization Modes | `Mode` | Definition |
 | L1.4.T1 | Regime Coexistence and Mode Coverage | `Mode-Comp` | Theorem |
 | L1.4.T2 | Native CC | `Nat-CC` | Theorem |

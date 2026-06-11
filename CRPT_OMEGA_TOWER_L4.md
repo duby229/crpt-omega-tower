@@ -264,7 +264,8 @@ consequence of them. It holds vacuously when ∞_M = ∅.
 
 GR is a →_σ-connectivity property
 and is distinct from PA-Reach. PA-Reach (L1.3) is a projection property: it asserts
-that the orbit signature sig_M stabilizes under ρ_M-iteration on ∞_M; it constrains
+that every persistent ρ_M-orbit has a canonically representable asymptotic destination
+(reached by recurrence or convergence); it constrains
 ρ_M on the persistent regime and says nothing about cross-regime connectivity.
 Cross-regime reachability necessarily uses →_σ rather than →_ρ, because →_ρ maps
 μT_{ρ,M} into μT_{ρ,M} (`↓-Closed` (L2.2.T1)); this is why GR is stated over →_σ.

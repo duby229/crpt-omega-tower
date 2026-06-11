@@ -428,7 +428,7 @@ A substrate (𝒰_M, →_ρ, →_σ, ρ_M) satisfies *native regime stratificati
 - ρ_M(↓_M) ⊆ ↓_M (convergent regime is closed under ρ_M)
 - ρ_M(∞_M) ⊆ ∞_M (persistent regime is closed under ρ_M)
 
-(iii) The partition admits the **native axiom system**: the convergent-regime axioms on ↓_M (global PA-WN, with regime-sensitive use via scope semantics) and the persistent-regime axioms on ∞_M (PA-NWF, PA-CoInd, PA-Prod, and the optional PA-WN_top). Canonicalization then proceeds in finitary mode on ↓_M and in asymptotic mode on ∞_M, refined to topological mode wherever PA-WN_top holds (`Mode` (L1.4.D1)).
+(iii) The partition admits the **native axiom system**: the convergent-regime axioms on ↓_M (global PA-WN, with regime-sensitive use via scope semantics) and the persistent-regime axioms on ∞_M (PA-NWF, PA-CoInd, PA-Prod, and the optional PA-WN_top). Canonicalization then proceeds by recurrence on ↓_M (termination at depth d_M) and on ∞_M by the realizations of PA-Reach (L1.3.Ax2) — recurrence, or convergence wherever PA-WN_top holds, or their composite (`Mode` (L1.4.D1)).
 
 ### The Regime Partition Adds No Axiom
 
@@ -494,7 +494,7 @@ The regime operators use Fix(ρ_M), not NF(→_ρ), because the partition is def
 
 **Native CRPT (L1.2–L1.5, regime-stratified):** With the convergent-regime axioms on ↓_M (global PA-WN, used via scope semantics) and the persistent-regime axioms (PA-NWF, PA-CoInd, PA-Prod, and the optional PA-WN_top) on ∞_M:
 - Elements in ↓_M reach Fix(ρ_M) in finitely many steps (finitary mode).
-- Elements in ∞_M never reach Fix(ρ_M); they are canonicalized in asymptotic mode (the orbit invariant `AOI-Unif` (L6.3.D10)), and additionally in topological mode — converging to a 𝒯-limit — wherever PA-WN_top holds (`Mode` (L1.4.D1)).
+- Elements in ∞_M never reach Fix(ρ_M); their asymptotic destination is reached by recurrence — or by convergence to a 𝒯-limit wherever PA-WN_top holds, or by their composite (PA-Reach (L1.3.Ax2), `Mode` (L1.4.D1)) — and is analysed by the orbit invariant `AOI-Unif` (L6.3.D10) in either mode.
 - Partitioning via Fix(ρ_M) captures both regimes: an element either reaches a fixpoint (↓_M) or never does (∞_M).
 
 **Self-loop elements:** Fixed-point elements (in Fix(ρ_M)) are classified as convergent (they reach a fixpoint in 0 steps) even though they have outgoing →_ρ-edges. This is correct in both settings: they are normal forms, so they should not be classified as diverging.
@@ -842,7 +842,7 @@ definitions, not of any axiom. ∎
 as follows:*
 
 - *PA-WN governs ↓_M (the convergent regime): termination, confluence, saturation, extensionality*
-- *PA-NWF and the persistent-regime axioms (PA-CoInd, PA-Prod, PA-Bisim, PA-WN_top, PA-Reach) govern ∞_M: infinite paths, coinduction, productivity, bisimulation, topological convergence, orbit-signature stabilization*
+- *PA-NWF and the persistent-regime axioms (PA-CoInd, PA-Prod, PA-Bisim, PA-WN_top, PA-Reach) govern ∞_M: infinite paths, coinduction, productivity, bisimulation, topological convergence, asymptotic-destination reachability*
 - *The Gateway structure (→_σ connectivity) governs the interface between ↓_M and ∞_M*
 
 *No property of (𝒰, →_ρ, →_σ, ρ_M) lies outside this tripartite coverage.*
@@ -863,7 +863,7 @@ Any property P of (𝒰, →_ρ, →_σ, ρ_M) falls into one of three categorie
    PA-CoInd, PA-Prod, PA-Bisim, PA-WN_top, PA-Reach) provide a complete axiomatisation
    of persistent behaviour: infinite paths (PA-NWF), membership coinduction (PA-CoInd),
    evaluability (PA-Prod), behavioural equivalence (PA-Bisim), topological convergence
-   (PA-WN_top), and orbit-signature stabilization (PA-Reach).
+   (PA-WN_top), and asymptotic-destination reachability (PA-Reach).
 
 3. **P concerns the relationship between ↓_M and ∞_M.** Then P is governed by the
    Gateway structure — the Gateway predicate GW (L4.2.D1) and the Gateway Reachability
@@ -1437,7 +1437,7 @@ x ≃_M y :⟺ CFix(ρ_M)(x) = CFix(ρ_M)(y)
 ```
 x and y are *orbit-equivalent* if they have the same canonical normal form (or limit point).
 
-*Regime-aware reading.* On **↓_M**, CFix(ρ_M)(x) is the finitary normal form (`CNF-Ex` (L2.4.T1)), so ≃_M is total and is exactly CFix-equality. On **∞_M**, CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) is the topological limit, which exists only under PA-WN_top (`TopSep-Uniq` (L1.2.T1)); so ≃_M is **partial** on ∞_M, defined precisely on the PA-WN_top sub-class. Where PA-WN_top is absent (asymptotic mode), the regime-general observable equivalence on ∞_M is persistent orbit equivalence ≃∞ (`≃∞` (L3.3.D7)), comparing ω-limit sets. The two **agree** on the PA-WN_top sub-class — a single topological limit L is exactly the singleton ω-limit set {[L]_≈}. Accordingly, `PA-Bisim` (L1.3.Ax1)'s conclusion x ≃_M y reads as CFix-equality on ↓_M and as ≃∞ on ∞_M in asymptotic mode.
+*Regime-aware reading.* On **↓_M**, CFix(ρ_M)(x) is the finitary normal form (`CNF-Ex` (L2.4.T1)), so ≃_M is total and is exactly CFix-equality. On **∞_M**, CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) is the topological limit, which exists only under PA-WN_top (`TopSep-Uniq` (L1.2.T1)); so ≃_M is **partial** on ∞_M, defined precisely on the PA-WN_top sub-class. Where PA-WN_top is absent, the regime-general observable equivalence on ∞_M is persistent orbit equivalence ≃∞ (`≃∞` (L3.3.D7)), comparing ω-limit sets. The two **agree** on the PA-WN_top sub-class — a single topological limit L is exactly the singleton ω-limit set {[L]_≈}. Accordingly, `PA-Bisim` (L1.3.Ax1)'s conclusion x ≃_M y reads as CFix-equality on ↓_M and as ≃∞ on ∞_M where PA-WN_top is absent.
 
 ### ≃_M and Orbit-Coincidence
 

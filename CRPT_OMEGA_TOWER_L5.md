@@ -939,22 +939,25 @@ and outside PA-axiom namespace.
 
 ```
 (PA-Reach) ∀x ∈ ∞_M :
-   (∃n ∈ ℕ, p ≥ 1 : ∀j ≥ 0 : ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x))      [finitary mode]
- ∨ (lim_{n→∞} ρ_M^n(x) exists in 𝒯)                               [topological mode]
+   (R1) ω_≈(x) ≠ ∅                       [the asymptotic destination exists]
+   (R2) ω_≈(x) is finite and ρ_M-closed   [it is a finite ρ_M-cycle of classes]
+   (R3) the orbit is attracted to ω_≈(x)  [every neighbourhood absorbs a tail]
 ```
 
 where ∞_M = {x ∈ 𝒰 | ∀k ∈ ℕ : ρ_M^k(x) ∉ Fix(ρ_M)} is the persistent regime,
-ρ_M is the projection operator, ≈ is bisimilarity (`Bisim~` (L1.1.D7)), and the least
-finitary-mode witness n is the reachability depth n_M (`n-Reach` (L3.3.D10)).
-Equivalently: recursive projection reaches the canonical persistent representative
-CPer_M(x) (`CPer` (L1.3.D1)) — the entry point of the recurrent ≈-cycle (finitary mode)
-or the topological limit (topological mode); both modes are constraints on the ρ_M-orbit
-and both accomplish the same extraction.
+ρ_M is the projection operator, and ω_≈(x) is the ω-limit set of the ≈-class orbit
+(PA-Reach (L1.3.Ax2): classes visited cofinally, or classes of 𝒯-accumulation points).
+The axiom is the meaning itself — recursive projection reaches the canonical persistent
+representative CPer_M(x) (`CPer` (L1.3.D1)), the canonical representative of the
+destination. The reach mechanisms are theorems: recurrence (`PA-Reach-Fin` (L1.3.T2),
+with reachability depth n_M, `n-Reach` (L3.3.D10)), convergence
+(`PA-Reach-Top` (L1.3.T3)), and their composite (`PA-Reach-Decomp` (L1.3.T4)).
 
 Expressible in L^(2)(Σ_CRPT) by: second-order quantification over bisimulations for ≈
-(Remark L5.3.1.1), iteration of ρ, and the sort Open with In for the limit clause; the
-persistent orbit signature these modes render finitely presentable is `sig_M-NM`
-(L3.1.D5), with obs grounded in the Observable Contract (L5.2.9–10).
+(Remark L5.3.1.1), iteration of ρ for the cofinal-visit clause, and the sort Open with
+In for the accumulation clause; the persistent orbit signature the destination finitely
+presents is `sig_M-NM` (L3.1.D5), with obs grounded in the Observable Contract
+(L5.2.9–10).
 
 **Semantic consequence (Observer Extraction):** For anyx ∈ ∞_M satisfying PA-Reach,
 the canonical persistent representative CPer_M(x) := ρ_M^n(x) (where n is the

@@ -1515,37 +1515,38 @@ resting on the universal axiom PA-Reach (L1.3.Ax2).
 
 **Source:** CRPT; from `CPer` (L1.3.D1) + `Bisim~` (L1.1.D7) + PA-Reach (L1.3.Ax2); dual of `d_M` (L2.3.D2).
 
-For x ∈ ∞_M covered by the finitary mode of PA-Reach (L1.3.Ax2):
+For x ∈ ∞_M covered by the recurrence realization of PA-Reach (`PA-Reach-Fin` (L1.3.T2)):
 ```
 n_M(x) := min { n ∈ ℕ : ∃ p ≥ 1 : ∀ j ≥ 0,  ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x) }
 ```
-The finitary mode asserts this set is non-empty, so n_M(x) ∈ ℕ is total on the
-finitary-mode sub-class, and CPer_M(x) = ρ_M^{n_M(x)}(x) (`CPer` (L1.3.D1)) is the first
-point of the orbit's recurrent ≈-cycle. On the topological-mode sub-class the
+The recurrence realization asserts this set is non-empty, so n_M(x) ∈ ℕ is total on the
+recurrence sub-class, and CPer_M(x) = ρ_M^{n_M(x)}(x) (`CPer` (L1.3.D1)) is the first
+point of the orbit's recurrent ≈-cycle. On the convergence sub-class the
 representative is supplied by the limit instead: CPer_M(x) = CFix(ρ_M)(x), and no finite
 transient is involved.
 
 *Duality with d_M.* d_M(x) = min{n : ρ_M^n(x) ∈ Fix(ρ_M)} (the orbit becomes constant);
 n_M(x) = min{n : the class orbit from n is periodic} (the orbit's observable behaviour
-becomes recurrent). Both are ℕ-valued ranks in finitary mode — d_M under PA-WN, n_M under
-PA-Reach — and both have the same topological-mode counterpart: the 𝒯-limit (PA-WN_top),
+becomes recurrent). Both are ℕ-valued ranks under recurrence — d_M under PA-WN, n_M under
+PA-Reach — and both have the same convergence-mode counterpart: the 𝒯-limit (PA-WN_top),
 where reach is by convergence rather than at finite depth.
 
 ### CPer Existence
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T6 | `CPer-Ex` | | **Novel** |
-**Synopsis:** For every persistent element x ∈ ∞_M, the canonical persistent representative CPer_M(x) exists — totally. This is the NWF dual of CNF-Ex, and existence is exactly the content of the universal axiom PA-Reach: every persistent element is covered by one of its two modes.
+**Synopsis:** For every persistent element x ∈ ∞_M, the canonical persistent representative CPer_M(x) exists — totally. This is the NWF dual of CNF-Ex, and existence is exactly the content of the universal axiom PA-Reach: every persistent orbit has a canonically representable asymptotic destination.
 
 **Source:** CRPT; from PA-Reach (L1.3.Ax2) + `n-Reach` (L3.3.D10); dual of `CNF-Ex` (L2.4.T1).
 
-For every x ∈ ∞_M, CPer_M(x) is defined: ρ_M^{n_M(x)}(x) in finitary mode, CFix(ρ_M)(x)
-in topological mode.
+For every x ∈ ∞_M, CPer_M(x) is defined: ρ_M^{n_M(x)}(x) under the recurrence
+realization, CFix(ρ_M)(x) under the convergence realization (and the canonical element
+of the limit cycle in the composite case, `PA-Reach-Decomp` (L1.3.T4)).
 
-*Proof.* PA-Reach (L1.3.Ax2) states that every x ∈ ∞_M is covered by at least one mode.
-**Finitary mode:** the set {n : ∃p ≥ 1 : ∀j ≥ 0, ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x)} is
+*Proof.* PA-Reach (L1.3.Ax2) gives every x ∈ ∞_M an asymptotic destination ω_≈(x), realized by recurrence, convergence, or their composite (`PA-Reach-Decomp` (L1.3.T4)).
+**Recurrence realization (`PA-Reach-Fin` (L1.3.T2)):** the set {n : ∃p ≥ 1 : ∀j ≥ 0, ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x)} is
 non-empty; as a non-empty subset of ℕ it has a least element, n_M(x)
-(`n-Reach` (L3.3.D10)), and CPer_M(x) = ρ_M^{n_M(x)}(x) exists. **Topological mode:**
+(`n-Reach` (L3.3.D10)), and CPer_M(x) = ρ_M^{n_M(x)}(x) exists. **Convergence realization (`PA-Reach-Top` (L1.3.T3)):**
 the limit lim_{n→∞} ρ_M^n(x) exists in 𝒯 and CPer_M(x) = CFix(ρ_M)(x). Either way
 CPer_M(x) exists for every persistent x. Totality on ∞_M is the dual of CNF-Ex's totality
 on ↓_M (`CNF-Ex` (L2.4.T1)), with PA-Reach in the role of PA-WN. ∎
@@ -1554,20 +1555,20 @@ on ↓_M (`CNF-Ex` (L2.4.T1)), with PA-Reach in the role of PA-WN. ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T7 | `CPer-Uniq` | | **Novel** |
-**Synopsis:** The canonical persistent representative is uniquely determined by x — the NWF dual of CNF-Uniq. In finitary mode, the reachability depth n_M(x) and the recurrent ≈-cycle it enters are unique, by determinism of the strategy ρ_M together with minimality of the transient; in topological mode the limit is unique by topological separation. Where WF uniqueness rests on confluence (Church–Rosser), NWF uniqueness rests on determinism and separation.
+**Synopsis:** The canonical persistent representative is uniquely determined by x — the NWF dual of CNF-Uniq. Under recurrence, the reachability depth n_M(x) and the recurrent ≈-cycle it enters are unique, by determinism of the strategy ρ_M together with minimality of the transient; under convergence the limit is unique by topological separation. Where WF uniqueness rests on confluence (Church–Rosser), NWF uniqueness rests on determinism and separation.
 
 **Source:** CRPT; from `ρ_M` (L2.1.D1) (determinism, C1–C2) + `Rec-Proj` (L2.1.D4) + `n-Reach` (L3.3.D10) + `TopSep-Uniq` (L1.2.T1); dual of `CNF-Uniq` (L2.4.T2).
 
-For x ∈ ∞_M, CPer_M(x) is unique: in finitary mode, n_M(x) is the unique least transient
-and the recurrent ≈-cycle entered at CPer_M(x) is the unique extracted observable; in
-topological mode, the limit CFix(ρ_M)(x) is unique.
+For x ∈ ∞_M, CPer_M(x) is unique: under recurrence, n_M(x) is the unique least transient
+and the recurrent ≈-cycle entered at CPer_M(x) is the unique extracted observable; under
+convergence, the limit CFix(ρ_M)(x) is unique.
 
 *Proof.* ρ_M is a deterministic strategy (C1–C2, `ρ_M` (L2.1.D1)), so the orbit
-(ρ_M^n(x))_{n∈ℕ} is a single determined sequence. **Finitary mode:** the transient set
+(ρ_M^n(x))_{n∈ℕ} is a single determined sequence. **Recurrence:** the transient set
 S(x) = {n : ∃p ≥ 1 : the class orbit from n is p-periodic} is thereby determined, and its
 least element n_M(x) is unique; the class cycle ([ρ_M^{n_M(x)+i}(x)]_≈)_{0 ≤ i < p} with
 minimal period p is the single recurrent behaviour the determined orbit settles into —
-unique. **Topological mode:** the limit is unique because 𝒯 is Hausdorff on the relevant
+unique. **Convergence:** the limit is unique because 𝒯 is Hausdorff on the relevant
 sub-class (`TopSep-Uniq` (L1.2.T1)). Independence of the chosen orbit representative is
 `Rec-Proj` (L2.1.D4). (Dual mechanism: WF uniqueness comes from *confluence* of →_ρ; NWF
 finitary uniqueness comes from *determinism* of ρ_M, and topological uniqueness from
@@ -1577,12 +1578,12 @@ finitary uniqueness comes from *determinism* of ρ_M, and topological uniqueness
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.3.T8 | `CPer-Stab` | | **Novel** |
-**Synopsis:** The extracted observable is invariant under further projection — CPer_M(ρ_M(x)) lies on the same recurrent ≈-cycle as CPer_M(x) (finitary mode) or has the same limit (topological mode) — and the reachability depth decreases by one per step, n_M(ρ_M(x)) = max(n_M(x) − 1, 0). These are the NWF duals of CNF-Stab (idempotence) and Depth-Dec (rank decrement).
+**Synopsis:** The extracted observable is invariant under further projection — CPer_M(ρ_M(x)) lies on the same recurrent ≈-cycle as CPer_M(x) (recurrence) or has the same limit (convergence) — and the reachability depth decreases by one per step, n_M(ρ_M(x)) = max(n_M(x) − 1, 0). These are the NWF duals of CNF-Stab (idempotence) and Depth-Dec (rank decrement).
 
 **Source:** CRPT; from `n-Reach` (L3.3.D10) + PA-Reach (L1.3.Ax2); duals of `CNF-Stab` (L2.4.T3) and `Depth-Dec` (L2.3.T2).
 
-For x ∈ ∞_M: (i) in finitary mode, n_M(ρ_M(x)) = max(n_M(x) − 1, 0); (ii) CPer_M(ρ_M(x))
-lies on the same recurrent ≈-cycle as CPer_M(x) (finitary mode) — and in topological mode
+For x ∈ ∞_M: (i) under recurrence, n_M(ρ_M(x)) = max(n_M(x) − 1, 0); (ii) CPer_M(ρ_M(x))
+lies on the same recurrent ≈-cycle as CPer_M(x) (recurrence) — and under convergence
 CFix(ρ_M)(ρ_M(x)) = CFix(ρ_M)(x) — so the extracted observable, hence the persistent
 orbit signature (`sig_M-NM` (L3.1.D5)), is invariant; (iii) for all m ≥ n_M(x), ρ_M^m(x)
 lies on the recurrent ≈-cycle.
@@ -1592,10 +1593,10 @@ lies on the recurrent ≈-cycle.
 periodic from 0 for ρ_M(x) as well, so n_M(ρ_M(x)) = 0. If n_M(x) = k ≥ 1, the class
 orbit is periodic from index k but not from k−1; under the one-step shift, ρ_M(x)'s class
 orbit is periodic from k−1 but not from k−2, so n_M(ρ_M(x)) = k−1. Hence n_M(ρ_M(x)) =
-max(n_M(x)−1, 0) — the dual of `Depth-Dec` (L2.3.T2). **(ii)** Finitary:
+max(n_M(x)−1, 0) — the dual of `Depth-Dec` (L2.3.T2). **(ii)** Recurrence:
 CPer_M(ρ_M(x)) = ρ_M^{max(n_M(x)−1,0)+1}(x) = ρ_M^{max(n_M(x),1)}(x), a point of the
 recurrent cycle by (iii); the cycle, hence the trace tail class, is unchanged.
-Topological: shifting an orbit does not change its limit. **(iii)** Immediate from the
+Convergence: shifting an orbit does not change its limit. **(iii)** Immediate from the
 definition of n_M(x) (`n-Reach` (L3.3.D10)): from n_M(x) the class orbit is periodic, so
 every later iterate lies on the cycle. The idempotence analogue — projecting past the
 transient returns the same canonical observable — is the dual of `CNF-Stab` (L2.4.T3). ∎
@@ -1613,7 +1614,7 @@ The correspondence:
 | | Convergent (↓_M, μ, induction) | Persistent (∞_M, ν, coinduction) |
 |---|---|---|
 | Totality axiom | PA-WN | PA-Reach (universal) |
-| Mode | finitary (PA-WN); topological where PA-WN_top | finitary or topological (PA-Reach's two modes, mirrored) |
+| Mode | recurrence (PA-WN, depth d_M); convergence degenerate | recurrence or convergence or composite (PA-Reach realizations, mirrored) |
 | Rank | d_M (`d-WD` (L2.3.T1)) | n_M (`n-Reach` (L3.3.D10)) |
 | Rank decrement | d_M(ρ_M x) = d_M(x)−1 (`Depth-Dec` (L2.3.T2)) | n_M(ρ_M x) = max(n_M(x)−1,0) (`CPer-Stab` (L3.3.T8)) |
 | Canonical representative | CFix = ρ_M^{d_M(x)}(x) | CPer = ρ_M^{n_M(x)}(x) |
