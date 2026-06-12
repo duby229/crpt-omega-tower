@@ -148,7 +148,7 @@ property **distinct normal forms are distinct observables** as a theorem
 
 *Why the observation clause.* On the bare unlabelled system (𝒰, →_ρ) every normal form is
 vacuously bisimilar to every other (a normal form has no →_ρ-successors), so bare
-bisimulation collapses all normal forms — and then [`PA-Bisim` (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence) (≈ ⟹ ≃_M) would
+bisimulation collapses all normal forms — and then [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence) (≈ ⟹ ≃_M) would
 force a *unique* canonical form, contradicting a multi-element query signature Q_M and the
 six-class theory. The observation clause repairs this: ≈ refines the observable equivalence,
 keeping distinct normal forms (hence many canonical forms) apart, so `PA-Bisim` is
@@ -260,7 +260,7 @@ transitive.
 **Source:** CRPT; from [`Bisim~` (L1.1.D7)](CRPT_OMEGA_TOWER_L1.md#bisimilarity) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence).
 
 The substrate does NOT assert that bisimilar elements are equal (x ≈ y
-⟹ x = y). That is the content of axiom [`PA-Bisim` (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence), stated at the axiom level.
+⟹ x = y). That is the content of axiom [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence), stated at the axiom level.
 Here ≈ is defined as a congruence; its relationship to identity is axiom-governed.
 
 ### Discernibility: Bisimilarity
@@ -310,7 +310,7 @@ Every element has a terminating →_ρ-path:
 
 *Logical Status:*
 - **Pure WF (∞_M = ∅):** Globally satisfied over all of 𝒰. Every element has at least one terminating →_ρ-path.
-- **Native Stratified (both regimes):** Declared `Scoped(↓_M)`: holds for all x ∈ ↓_M. Regime-sensitive usage is handled via scope semantics ([`PA-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration)).
+- **Native Stratified (both regimes):** Declared `Scoped(↓_M)`: holds for all x ∈ ↓_M. Regime-sensitive usage is handled via scope semantics ([`Ax-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration)).
 - **Pure NWF (↓_M = ∅):** Not globally satisfied.
 
 *What it adds:* Without PA-WN, ↓_M could be empty. PA-WN ensures the convergent regime is non-trivial and makes CFix(ρ_M) well-defined on ↓_M.
@@ -367,12 +367,12 @@ Fixpoints of the projection strategy coincide with reduction normal forms:
 ### PA Namespace Discipline
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L1.2.R2 | `PA-NS` | | **Novel** |
+| **Remark** | L1.2.R2 | `Ax-NS` | | **Novel** |
 **Synopsis:** The PA-* namespace is reserved exclusively for the nine projection axioms; WF-side orbit canonicalization (WF-Canon) is placed as a theorem and existential richness (LA-Rich) as a model-local axiom, so neither occupies a PA-* slot.
 
 **Source:** CRPT; from the PA-* axiom system (L1.2, L1.3, L1.7).
 
-The PA-* namespace is reserved exclusively for Projection Axioms (nine total: the six regime-local step axioms PA-WN, PA-Conf, PA-Fix, PA-NWF, PA-CoInd, PA-Prod of L1.2; the topology-interface axiom PA-WN_top of L1.7; the two regime-universal orbit axioms PA-Bisim, PA-Reach of L1.3 — the namespace spans its sections; each axiom lives in its carrier's fiber). WF-side orbit canonicalization is placed as a theorem (WF-Canon, at L2), not an axiom. Existential richness is placed as a model-local axiom (LA-Rich(M)), not a PA axiom.
+The PA-* namespace is reserved exclusively for Projection Axioms (nine total: the six regime-local step axioms PA-WN, PA-Conf, PA-Fix, PA-NWF, PA-CoInd, PA-Prod of L1.2; the topology-interface axiom PA-WN_top of L1.7; the two regime-universal orbit axioms PA-Bisim, PA-Reach of L1.3 — the namespace spans its sections; each axiom lives in its carrier's fiber). **Namespace discipline:** no tag other than these nine may begin with "PA-". Meta-constructs *about* the axiom system use the "Ax-" prefix (`Ax-NS`, [`Ax-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration), [`Ax-Profile` (L1.5.D3)](CRPT_OMEGA_TOWER_L1.md#model-axiom-profile), [`Ax-Lat` (L5.4.T3)](CRPT_OMEGA_TOWER_L5.md#pa--profile-lattice), [`Ax-Ind` (L1.6.T1)](CRPT_OMEGA_TOWER_L1.md#axiom-independence)); theorems and remarks about a *specific* axiom drop the prefix and keep the mnemonic ([`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach), [`WN-Tot` (L2.2.T4)](CRPT_OMEGA_TOWER_L2.md#pa-wn-gives-terminating-path-witnesses), [`NWF-NE` (L2.2.T5)](CRPT_OMEGA_TOWER_L2.md#pa-nwf--νt_ρm--), [`Prod-Conn` (L4.1.R1)](CRPT_OMEGA_TOWER_L4.md#connection-to-pa-prod-observable)). Axioms are cited without backticks — [PA-WN (L1.2.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn--weak-normalisation) — distinguishing axiom citations from tag citations at sight. WF-side orbit canonicalization is placed as a theorem (WF-Canon, at L2), not an axiom. Existential richness is placed as a model-local axiom (LA-Rich(M)), not a PA axiom.
 
 ---
 
@@ -443,7 +443,7 @@ where Observable is a model-specific observable-content function (defined at ins
 ```
 (OC-1) ∀y ∈ 𝒰 : (y ∉ Fix(ρ_M)) ⟹ Observable(y) ≠ 0
  [non-fixpoints are always observable]
-(OC-2) Observable is compatible with the PV component of the Observer Triple (L4.1):
+(OC-2) Observable is compatible with the PV component of the observable triple (L4.1):
  Observable(y) ≠ 0 ⟹ w(x →_ρ y) ≠ 0_V for every x with ρ_M(x) = y
  [observable steps have non-zero trajectory weight]
 ```
@@ -458,7 +458,7 @@ emissions, so productivity is the axiom that makes the labelled reading non-dege
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.2.R3 | `Obs-Contract` | | **Novel** |
-**Synopsis:** How the Observable Contract works: OC-1 makes PA-Prod non-trivial only one step from a fixpoint; OC-2 ties Observable to the PV component of the observer triple, keeping the behavioural signature non-degenerate at every ρ_M-step.
+**Synopsis:** How the Observable Contract works: OC-1 makes PA-Prod non-trivial only one step from a fixpoint; OC-2 ties Observable to the PV component of the observable triple, keeping the behavioural signature non-degenerate at every ρ_M-step.
 
 **Source:** CRPT; from [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content).
 
@@ -468,7 +468,7 @@ models where Observable is trivially true for all elements (Lambda Calculus, Str
 ZFA), PA-Prod holds vacuously. In models where fixpoints lack observable content
 (QG: β(g*) = 0), the instantiation must handle the fixpoint-endpoint case explicitly
 (via the model's Observable contract, [`OC-LA_M` (L1.5.R3)](CRPT_OMEGA_TOWER_L1.md#observable-contract-as-proto-la_m)). Condition (OC-2) connects Observable to the
-Observer Triple (L4.1): Observable is the minimal boolean predicate ensuring the
+observable triple (L4.1): Observable is the minimal boolean predicate ensuring the
 PV trajectory observable has no zero factors at non-fixpoint steps, so the behavioral
 signature is well-defined and non-degenerate at every step of the ρ_M-orbit.
 
@@ -542,7 +542,7 @@ where ≃_M is the abstraction equivalence relation ([`NFC-NM` (L2.5.D1)](CRPT_O
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Axiom** | L1.3.Ax2 | `PA-Reach` | | **Novel** |
-**Synopsis:** PA-Reach (Recursive Projection Horizon Stabilization) is the meaning itself, stated once: every persistent orbit has a **canonically representable asymptotic destination** — the ω-limit set of its ≈-class orbit is non-empty, finite, ρ_M-closed, and attracts the orbit — and CPer_M(x) is that destination's canonical representative. How the destination is reached is not part of the axiom: the two reach mechanisms, **recurrence** (the class orbit enters its cycle at finite depth n_M) and **convergence** (the orbit has 𝒯-limits), are *realization theorems* ([`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach), [`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)), and every realization decomposes into these two ([`PA-Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)). This is a recursive projection axiom: it constrains only the asymptotics of the ρ_M-orbit.
+**Synopsis:** PA-Reach (Recursive Projection Horizon Stabilization) is the meaning itself, stated once: every persistent orbit has a **canonically representable asymptotic destination** — the ω-limit set of its ≈-class orbit is non-empty, finite, ρ_M-closed, and attracts the orbit — and CPer_M(x) is that destination's canonical representative. How the destination is reached is not part of the axiom: the two reach mechanisms, **recurrence** (the class orbit enters its cycle at finite depth n_M) and **convergence** (the orbit has 𝒯-limits), are *realization theorems* ([`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach), [`Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)), and every realization decomposes into these two ([`Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)). This is a recursive projection axiom: it constrains only the asymptotics of the ρ_M-orbit.
 
 **Source:** CRPT; from [`Bisim~` (L1.1.D7)](CRPT_OMEGA_TOWER_L1.md#bisimilarity) + [PA-NWF (L1.2.Ax4)](CRPT_OMEGA_TOWER_L1.md#pa-nwf--non-well-foundedness--divergence-existence).
 
@@ -572,11 +572,11 @@ from every infinite orbit a finite canonical observable — the destination cycl
 finite observational cost. It does not legislate a mechanism. The mechanisms are
 theorems: where the destination is *visited*, PA-Bisim equivariance forces the class
 orbit to be eventually periodic and the destination is the recurrent cycle entered at
-depth n_M ([`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach), [`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m)) — the NWF mirror of PA-WN's
+depth n_M ([`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach), [`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m)) — the NWF mirror of PA-WN's
 reach of Fix at depth d_M; where the orbit *converges*, the destination is the single
-fixpoint class of the limit ([`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)) — the reach PA-WN_top certifies;
+fixpoint class of the limit ([`Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)) — the reach PA-WN_top certifies;
 and in general the realization is convergence onto a recurrence
-([`PA-Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)) — the same two mechanisms composed, never a third. The
+([`Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)) — the same two mechanisms composed, never a third. The
 persistent orbit signature — the tail class of the observation trace ([`sig_M-NM`
 (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form), [`Obs-Lab` (L1.1.D8)](CRPT_OMEGA_TOWER_L1.md#observation-labelling)) — is finitely presented by the destination in every case.
 
@@ -594,19 +594,19 @@ For x ∈ ∞_M, the **canonical persistent representative** CPer_M(x) is the ca
 representative of the asymptotic destination ω_≈(x) ([PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization)), presented by
 the realization covering x:
 ```
-Recurrence (`PA-Reach-Fin` (L1.3.T2)):    CPer_M(x) := ρ_M^{n_M(x)}(x)
+Recurrence (`Reach-Fin` (L1.3.T2)):    CPer_M(x) := ρ_M^{n_M(x)}(x)
                    the entry point of the recurrent ≈-cycle, where n_M(x) is the least
                    transient after which the class orbit is periodic (`n-Reach` (L3.3.D10))
-Convergence (`PA-Reach-Top` (L1.3.T3)):   CPer_M(x) := CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x)
+Convergence (`Reach-Top` (L1.3.T3)):   CPer_M(x) := CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x)
                    the topological limit — the destination is its singleton class
-Composite (`PA-Reach-Decomp` (L1.3.T4)):  CPer_M(x) := the canonical element of the
+Composite (`Reach-Decomp` (L1.3.T4)):  CPer_M(x) := the canonical element of the
                    destination's limit cycle {L₀ →_ρ L₁ →_ρ ⋯ →_ρ L_{p−1} →_ρ L₀}
                    (the phase-aligned subsequence limit; unique by `TopSep-Uniq` (L1.7.T1))
 ```
 PA-Reach asserts the destination exists for every x ∈ ∞_M, making CPer_M(x) well-defined
 on all of ∞_M. Where several realizations apply, they present the same destination —
 the recurrent cycle, the limit, and the limit cycle carry the same observable content
-([`PA-Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)).
+([`Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)).
 
 **Why PA-Reach is a Recursive Projection Axiom (not connectivity):**
 
@@ -628,13 +628,13 @@ PA-Reach is fundamentally about what the recursive projection operator ρ_M can 
 ### PA-Reach — Structural Role and Impact on Theorems
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L1.3.R1 | `PA-Reach-Role` | | **Novel** |
+| **Remark** | L1.3.R1 | `Reach-Role` | | **Novel** |
 **Synopsis:** This analysis clarifies what PA-Reach actually does: it is not a connectivity axiom (it does not require elements to be reachable from others) but a recursive projection axiom (it constrains the long-run behavior of the projection operator on persistent orbits). This distinction matters for understanding which theorems require PA-Reach and which do not.
 
 **Source:** CRPT; from [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization).
 
 **Structural consequences:**
-1. **Observer Extraction Principle:** PA-Reach enables the observer triple (L4.1) to extract finite observables because recursive projection reaches the asymptotic destination — the finite canonical descriptor of infinite objects, presented by its recurrent cycle or limit.
+1. **Observer Extraction Principle:** PA-Reach enables the observable triple (L4.1) to extract finite observables because recursive projection reaches the asymptotic destination — the finite canonical descriptor of infinite objects, presented by its recurrent cycle or limit.
 2. **Regime Connectivity (derived, not primitive):** The fact that convergent elements can reach persistent regimes follows as a consequence of the regime partition definition (L2.2) combined with PA-Reach: the persistent regime is defined as ∞_M = {x | ∞_M - orbit}, and PA-Reach guarantees this regime has well-characterized recursive projection structure.
 3. **Gateway (*derived consequence*):** The Gateway definition (L4.2.D1) is compatible with PA-Reach: elements with →_σ-paths to ∞_M are precisely those whose fusion operator finds a persistent element (which PA-Reach ensures exists and is recursively characterized).
 4. **Tower Construction:** PA-Reach enters critical proofs in L8 — the Lift/Tower construction (L8.2–L8.4) and horizon inheritance ([`Hor-Lift` (L8.2.T2)](CRPT_OMEGA_TOWER_L8.md#horizon-inheritance-under-lift)). The tower's ability to collapse horizon-characterized fibers into atoms depends on PA-Reach: it guarantees that the horizons being collapsed are recursively determined, not ad-hoc equivalences.
@@ -644,8 +644,8 @@ PA-Reach is fundamentally about what the recursive projection operator ρ_M can 
 ### PA-Reach Closes the Reachability Gap: Observer Extraction Principle
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L1.3.T1 | `PA-Reach-ObsExt` | | **Novel** |
-**Synopsis:** The Observer Extraction Principle: PA-Reach closes the reachability gap between finite observers and infinite orbits. Without PA-Reach, an observer examining a persistent element could never extract a canonical, finite observable summary. With PA-Reach, the canonical representative CPer_M(x) is reached at finite observational cost in either realization — by detecting the recurrent ≈-cycle ([`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)) or by the topological limit ([`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)).
+| **Theorem** | L1.3.T1 | `Reach-ObsExt` | | **Novel** |
+**Synopsis:** The Observer Extraction Principle: PA-Reach closes the reachability gap between finite observers and infinite orbits. Without PA-Reach, an observer examining a persistent element could never extract a canonical, finite observable summary. With PA-Reach, the canonical representative CPer_M(x) is reached at finite observational cost in either realization — by detecting the recurrent ≈-cycle ([`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)) or by the topological limit ([`Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)).
 
 **Source:** CRPT; from [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) + [`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative) + [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection).
 
@@ -663,7 +663,7 @@ PA-Reach guarantees that recursive projection ρ_M extracts a finite, observer-a
 
 We verify each component:
 
-**(i)** By PA-Reach, every x ∈ ∞_M has a destination ω_≈(x), realized per [`PA-Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations). Recurrence: ∃n, p ≥ 1 : ∀j : ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x); the least such n is n_M(x) and CPer_M(x) = ρ_M^{n_M(x)}(x) is reached at finite depth ([`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)). Convergence: the orbit converges and CPer_M(x) = CFix(ρ_M)(x) is its limit ([`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)). ✓
+**(i)** By PA-Reach, every x ∈ ∞_M has a destination ω_≈(x), realized per [`Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations). Recurrence: ∃n, p ≥ 1 : ∀j : ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x); the least such n is n_M(x) and CPer_M(x) = ρ_M^{n_M(x)}(x) is reached at finite depth ([`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)). Convergence: the orbit converges and CPer_M(x) = CFix(ρ_M)(x) is its limit ([`Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)). ✓
 
 **(ii)** Recurrence realization: from depth n_M(x) the ≈-class orbit cycles through the finite class sequence ([CPer_M(x)]_≈, [ρ_M(CPer_M(x))]_≈, …, period p) — a finite object that presents the tail class of the observation trace ([`Obs-Lab` (L1.1.D8)](CRPT_OMEGA_TOWER_L1.md#observation-labelling)), i.e. the persistent orbit signature. Convergence realization: the limit point is the canonical observable, and by [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) it depends only on x. ✓
 
@@ -676,7 +676,7 @@ We verify each component:
 ### Finitary Realization of PA-Reach
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L1.3.T2 | `PA-Reach-Fin` | | **Novel** |
+| **Theorem** | L1.3.T2 | `Reach-Fin` | | **Novel** |
 **Synopsis:** The recurrence mechanism realizes PA-Reach: if the asymptotic destination is *visited* — some class of ω_≈(x) is visited cofinally — then the ≈-class orbit is eventually periodic. Eventual periodicity is derived, not assumed: PA-Bisim equivariance makes the class orbit function-generated, so a single recurrence forces the sequence to replay exactly. The destination is the recurrent cycle, entered at the finite depth n_M(x) — the NWF mirror of PA-WN's reach of Fix at depth d_M.
 
 **Source:** CRPT; from [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence) + [`Bisim~` (L1.1.D7)](CRPT_OMEGA_TOWER_L1.md#bisimilarity).
@@ -703,7 +703,7 @@ is n_M(x). ∎
 ### Topological Realization of PA-Reach
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L1.3.T3 | `PA-Reach-Top` | | **Novel** |
+| **Theorem** | L1.3.T3 | `Reach-Top` | | **Novel** |
 **Synopsis:** The convergence mechanism realizes PA-Reach: if the orbit 𝒯-converges, the destination is the singleton class of the limit, and the limit is a fixpoint — continuity of ρ_M turns "limit of the orbit" into "fixpoint of the operator", and Hausdorff separation makes it unique. This is the reach that PA-WN_top certifies; CPer_M(x) = CFix(ρ_M)(x).
 
 **Source:** CRPT; from [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) + [PA-WN_top (L1.7.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn_top--topological-weak-normalisation--asymptotic-convergence) + [`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep).
@@ -724,10 +724,10 @@ represented by the limit: CPer_M(x) = CFix(ρ_M)(x) = L. ∎
 ### Decomposition of PA-Reach Realizations
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L1.3.T4 | `PA-Reach-Decomp` | | **Novel** |
+| **Theorem** | L1.3.T4 | `Reach-Decomp` | | **Novel** |
 **Synopsis:** Every realization of PA-Reach decomposes into the two mechanisms — recurrence and convergence — composed: the destination ω_≈(x) is a finite ρ_M-cycle of classes (recurrence structure at the destination), and the orbit reaches it by entering it (recurrence) or by 𝒯-attraction onto it (convergence), with the pure realizations as the extreme cases. There is no third mechanism.
 
-**Source:** CRPT; from [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) + [`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach) + [`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach).
+**Source:** CRPT; from [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) + [`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach) + [`Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach).
 
 For every x ∈ ∞_M (under PA-Reach):
 
@@ -736,8 +736,8 @@ For every x ∈ ∞_M (under PA-Reach):
 
 (ii) **Reach is recurrence, convergence, or their composite.** The orbit reaches its
 destination by entering it (every tail class lies in the cycle — the recurrence face,
-[`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)), by converging to it (ω_≈(x) = {[CFix(x)]_≈} — the convergence
-face, [`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)), or by **convergence onto a recurrence**: the orbit is
+[`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)), by converging to it (ω_≈(x) = {[CFix(x)]_≈} — the convergence
+face, [`Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)), or by **convergence onto a recurrence**: the orbit is
 𝒯-attracted to a limit cycle {L₀, …, L_{p−1}} whose elements satisfy ρ_M(Lᵢ) = L_{i+1 mod p}
 — the cycle structure (recurrence) living at the limits (convergence).
 
@@ -746,16 +746,16 @@ face, [`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-
 the definition of ω_≈(x).
 
 *Proof.* (i) ρ̄_M is a well-defined function on classes (PA-Bisim equivariance, as in
-[`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)) and preserves accumulation: if the class orbit accumulates on
+[`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)) and preserves accumulation: if the class orbit accumulates on
 C, it accumulates on ρ̄_M(C) one step later (cofinal visits shift by one; 𝒯-accumulation
 points map to accumulation points by continuity of ρ_M). So ρ̄_M restricts to
 ω_≈(x) → ω_≈(x); a function from a finite set to itself whose every element is reachable
 from every other along the orbit's accumulation closes into a single cycle. (ii) If some
-destination class is visited cofinally, [`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach) gives eventual
+destination class is visited cofinally, [`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach) gives eventual
 periodicity — the orbit *enters* the cycle. Otherwise no destination class is visited
 cofinally, so every destination class arises from 𝒯-accumulation; attraction (R3) makes
 the orbit converge onto the set {L₀, …, L_{p−1}} of accumulation points, and continuity
-of ρ_M gives ρ_M(Lᵢ) = L_{i+1 mod p} as in [`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach) (applied to the
+of ρ_M gives ρ_M(Lᵢ) = L_{i+1 mod p} as in [`Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach) (applied to the
 phase subsequences ρ_M^{pn+i}(x), each converging by attraction and finiteness). With
 p = 1 this is exactly the pure convergence realization. (iii) By the definition of
 ω_≈(x): accumulation is cofinal visiting or 𝒯-accumulation; there is no third clause. ∎
@@ -763,7 +763,7 @@ p = 1 this is exactly the pure convergence realization. (iii) By the definition 
 ### PA-Reach Independence: Witness Model
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L1.3.R2 | `PA-Reach-Indep` | | **Novel** |
+| **Remark** | L1.3.R2 | `Reach-Indep` | | **Novel** |
 **Synopsis:** PA-Reach is independent of the remaining eight PA-* axioms: there exists a model M_Reach satisfying all other axioms but not PA-Reach. This witness model has a persistent element with **no asymptotic destination**: its orbit visits pairwise distinct classes, each exactly once, with no 𝒯-accumulation — ω_≈ = ∅, violating (R1).
 
 **Source:** CRPT; from [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization); independence via the M_Reach countermodel.
@@ -827,10 +827,10 @@ CRPT separates two distinct axes.
 This is the well-founded / non-well-founded dichotomy at the level of element dynamics. It is intrinsic to (𝒰_M, ρ_M), requires no topology, and is exhaustive and exclusive ([`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition)) — there is **no third regime**.
 
 **Mode axis (reach mechanism; two values).** A *mode* is the mechanism by which the ρ_M-orbit of x reaches its canonical object, and the apparatus that certifies the reach:
-- **Recurrence (finitary mode)** — the orbit reaches its canonical object *by visiting it*: equality of iterates in the ≈-quotient at finite depth. On ↓_M this is termination — the orbit reaches Fix(ρ_M) at depth d_M, a recurrent cycle of length 1 at a fixpoint (PA-WN). On ∞_M it is eventual periodicity — the class orbit enters its recurrent cycle at depth n_M ([`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)). Certified by finite-depth iterate equality; no topology needed.
-- **Convergence (topological mode)** — the orbit reaches its canonical object *as a 𝒯-limit*: CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) (an element of 𝒰_M). Certified by PA-WN_top with a Hausdorff topology ([`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep)); on ∞_M this is PA-Reach's convergence realization ([`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)). On ↓_M it degenerates: a reached fixpoint is trivially its own limit.
+- **Recurrence (finitary mode)** — the orbit reaches its canonical object *by visiting it*: equality of iterates in the ≈-quotient at finite depth. On ↓_M this is termination — the orbit reaches Fix(ρ_M) at depth d_M, a recurrent cycle of length 1 at a fixpoint (PA-WN). On ∞_M it is eventual periodicity — the class orbit enters its recurrent cycle at depth n_M ([`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)). Certified by finite-depth iterate equality; no topology needed.
+- **Convergence (topological mode)** — the orbit reaches its canonical object *as a 𝒯-limit*: CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) (an element of 𝒰_M). Certified by PA-WN_top with a Hausdorff topology ([`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep)); on ∞_M this is PA-Reach's convergence realization ([`Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)). On ↓_M it degenerates: a reached fixpoint is trivially its own limit.
 
-These are the only two mechanisms: every realization of canonical reach is recurrence, convergence, or their composite — convergence onto a recurrent limit cycle — and the composite introduces no third mechanism ([`PA-Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)).
+These are the only two mechanisms: every realization of canonical reach is recurrence, convergence, or their composite — convergence onto a recurrent limit cycle — and the composite introduces no third mechanism ([`Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)).
 
 **The analysis layer (not a mode).** The **asymptotic orbit invariant** ([`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi)) is the invariant theory *of* the destination — what the observer computes about an orbit's asymptotic behaviour (trace tail class, spectrum, complexity). It is defined for every persistent orbit unconditionally ([`AOI₁-WD` (L6.3.T2)](CRPT_OMEGA_TOWER_L6.md#aoi₁-is-well-defined)) and is **finitely presentable exactly where PA-Reach holds, in either mode**: under recurrence the cycle presents it; under convergence the limit presents it. The type signature shows why it is not a mode: modes reach canonical objects *in* 𝒰_M (a fixpoint, a cycle entry, a limit); the AOI is an invariant *about* orbits, not an element of 𝒰_M. Mode answers "how does the orbit arrive?"; analysis answers "what is computed about the destination?".
 
@@ -874,7 +874,7 @@ In a model M with regime partition 𝒰 = ↓_M ∐ ∞_M:
 - On ∞_M: PA-WN is false (no finitary termination); PA-Reach guarantees the asymptotic destination unconditionally, and PA-WN_top — an *independent*, optional axiom ([`WNtop-Ind` (L1.7.T2)](CRPT_OMEGA_TOWER_L1.md#independence-of-pa-wn_top)) — certifies the convergence mode on exactly the sub-class of ∞_M whose orbits have a 𝒯-limit. The AOI analysis layer ([`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi)) runs on all of ∞_M in either mode.
 
 *Proof.*
-- (i) By [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification), 𝒰 = ↓_M ∪ ∞_M. For x ∈ ↓_M: the ρ_M-orbit reaches Fix(ρ_M) by definition of ↓_M; PA-WN ensures the existence of at least one terminating →_ρ-path ([`PA-WN-Tot` (L2.2.T4)](CRPT_OMEGA_TOWER_L2.md#pa-wn-gives-terminating-path-witnesses)), so recurrence reaches the canonical object (a 1-cycle at the fixpoint, depth d_M). For x ∈ ∞_M: the ρ_M-orbit never reaches Fix(ρ_M) by definition of ∞_M; PA-NWF asserts such elements exist; [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) gives the destination ω_≈(x), realized by recurrence ([`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)), by convergence where PA-WN_top holds ([`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)), or by their composite ([`PA-Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)). ✓
+- (i) By [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification), 𝒰 = ↓_M ∪ ∞_M. For x ∈ ↓_M: the ρ_M-orbit reaches Fix(ρ_M) by definition of ↓_M; PA-WN ensures the existence of at least one terminating →_ρ-path ([`WN-Tot` (L2.2.T4)](CRPT_OMEGA_TOWER_L2.md#pa-wn-gives-terminating-path-witnesses)), so recurrence reaches the canonical object (a 1-cycle at the fixpoint, depth d_M). For x ∈ ∞_M: the ρ_M-orbit never reaches Fix(ρ_M) by definition of ∞_M; PA-NWF asserts such elements exist; [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) gives the destination ω_≈(x), realized by recurrence ([`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)), by convergence where PA-WN_top holds ([`Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)), or by their composite ([`Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)). ✓
 
 - (ii) Immediate from disjointness by definition: ↓_M = {x | ∃n : ρ_M^n(x) ∈ Fix(ρ_M)}, ∞_M = {x | ∀n : ρ_M^n(x) ∉ Fix(ρ_M)}. ✓
 
@@ -987,7 +987,7 @@ fails globally but holds on ρ_M-orbits.
 ### PA-* Scope Declaration
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L1.5.D1 | `PA-Scope` | | **Novel** |
+| **Definition** | L1.5.D1 | `Ax-Scope` | | **Novel** |
 **Synopsis:** The four-valued scope system classifies each PA-* axiom's applicability to a given model: Global (applies to all elements), Scoped(S) (applies precisely to the subset S), Vacuous (hypothesis is never satisfied, so the axiom holds trivially), and Fails (the conclusion fails for some element). This makes the axiom profiles precise rather than binary.
 
 **Source:** CRPT; from the PA-* axiom system (L1.2–L1.3).
@@ -1009,7 +1009,7 @@ The four canonical scope values are:
 | **Remark** | L1.5.R1 | `Scope-Status` | | **Novel** |
 **Synopsis:** The crucial distinction: Scoped(S) is not a weakening of Global — it is a precise, falsifiable statement about which elements satisfy the axiom's conclusion. An axiom is Scoped(S) only when S ≠ 𝒰_M and the axiom holds for all elements of S. This prevents scope from being used as an escape from falsification.
 
-**Source:** CRPT; from [`PA-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration).
+**Source:** CRPT; from [`Ax-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration).
 
 A `Scoped(S)` declaration is not a failure.
 It is a precise mathematical statement: PA-X is a theorem on S and is not claimed
@@ -1025,7 +1025,7 @@ theorems in §L2.1–24 that depend on PA-Conf depend only on its orbit-level co
 | **Remark** | L1.5.R2 | `Conv-Form` | | **Novel** |
 **Synopsis:** The scope convention notation (G), (S), (V), (F) annotates each axiom's scope declaration inline with the formal statement, making scope explicit at the point of use rather than in a separate table.
 
-**Source:** CRPT; from [`PA-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration).
+**Source:** CRPT; from [`Ax-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration).
 
 The convention
 "PA-WN restricted to ↓_M" is expressed as PA-WN declared `Scoped(↓_M)`.
@@ -1071,7 +1071,7 @@ and pure NWF foundational models).
 **Source:** CRPT; from [`LA_M` (L1.5.D2)](CRPT_OMEGA_TOWER_L1.md#model-local-axiom-schema-la_m) + [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content).
 
 The Observable Contract (OC-1,
-OC-2) of [`PA-Prod` (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content) is the existing instance of this pattern: a model-specific
+OC-2) of [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content) is the existing instance of this pattern: a model-specific
 observable-content function Observable : 𝒰_M → (O_M, 0) (minimal instance {⊤, ⊥}) subject to two local conditions. [`LA_M` (L1.5.D2)](CRPT_OMEGA_TOWER_L1.md#model-local-axiom-schema-la_m) generalises this to an arbitrary finite set of such commitments.
 
 ### IC_M as proto-LA_M
@@ -1094,10 +1094,10 @@ provided their LA_M ⊇ {IC_M}.
 ### Model Axiom Profile
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L1.5.D3 | `PA-Profile` | PA-Profile_M | **Novel** |
+| **Definition** | L1.5.D3 | `Ax-Profile` | PA-Profile_M | **Novel** |
 **Synopsis:** The axiom profile Profile(M) = (PA-Profile_M, LA_M) is the complete specification of the axioms that model M satisfies. Treating profiles as mathematical objects (not just as informal descriptions) enables the formal study of profile-preserving maps (homomorphisms) and profile-indexed model classes.
 
-**Source:** CRPT; from [`PA-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration) + [`LA_M` (L1.5.D2)](CRPT_OMEGA_TOWER_L1.md#model-local-axiom-schema-la_m).
+**Source:** CRPT; from [`Ax-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration) + [`LA_M` (L1.5.D2)](CRPT_OMEGA_TOWER_L1.md#model-local-axiom-schema-la_m).
 
 The *axiom profile* of model M is
 the pair
@@ -1117,7 +1117,7 @@ where:
 | **Definition** | L1.5.D4 | `CRPT-Mod` | | **Novel** |
 **Synopsis:** A CRPT model is a substrate together with an axiom profile satisfying: (1) non-triviality (𝒰_M is non-empty), (2) profile consistency (the profile is satisfiable), and (3) the witness condition (a specific element witnessing the profile exists). This is the official definition of 'model' that the category Mod_CRPT is built from.
 
-**Source:** CRPT; from [`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate) + [`PA-Profile` (L1.5.D3)](CRPT_OMEGA_TOWER_L1.md#model-axiom-profile).
+**Source:** CRPT; from [`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate) + [`Ax-Profile` (L1.5.D3)](CRPT_OMEGA_TOWER_L1.md#model-axiom-profile).
 
 A *CRPT model* M is
 a substrate (𝒰_M, →_ρ, →_σ, ρ_M) satisfying L1.1 conditions,
@@ -1152,7 +1152,7 @@ Condition 2 is strictly stronger than requiring only that some axiom holds: it r
 | **Theorem** | L1.5.T1 | `Prof-CC` | decide(PA-Profile_M) | **Novel** |
 **Synopsis:** Profile consistency is constructively checkable: given a candidate model, one can verify each PA-* axiom against the model's structure in a finite computation (for finite models) or by providing an explicit witness (for infinite models). This makes CRPT model verification a concrete activity.
 
-**Source:** CRPT; from [`PA-Profile` (L1.5.D3)](CRPT_OMEGA_TOWER_L1.md#model-axiom-profile) + [`CRPT-Mod` (L1.5.D4)](CRPT_OMEGA_TOWER_L1.md#crpt-model).
+**Source:** CRPT; from [`Ax-Profile` (L1.5.D3)](CRPT_OMEGA_TOWER_L1.md#model-axiom-profile) + [`CRPT-Mod` (L1.5.D4)](CRPT_OMEGA_TOWER_L1.md#crpt-model).
 
 For any model M with finite LA_M and a decidable PA-* profile, consistency of
 Profile(M) is verifiable by exhibiting the model itself (or an appropriate
@@ -1201,7 +1201,7 @@ is well-defined and unique. Moreover, any theorem in §L2.2–10 whose only use 
 PA-Conf is to deduce uniqueness of the normal form along a ρ_M-orbit remains
 valid under the `Scoped(ρ_M-orbits)` declaration.
 
-*Proof.* Let x ∈ ↓_M. By `PA-WN` (restricted to ↓_M) there exists n ∈ ℕ such that
+*Proof.* Let x ∈ ↓_M. By PA-WN (restricted to ↓_M) there exists n ∈ ℕ such that
 ρ_M^n(x) ∈ NF(→_ρ); let n₀ := d_M(x) be the minimal such n. By the definition of
 CFix(ρ_M) we take CFix(ρ_M)(x) := ρ_M^{n₀}(x). To prove well-definedness, suppose there is
 another m ∈ ℕ with ρ_M^m(x) ∈ NF(→_ρ). Then `Scoped(ρ_M-orbits)` implies
@@ -1213,7 +1213,7 @@ assumption. If a particular result in those sections uses global confluence beyo
 orbit-uniqueness, that additional global-confluence hypothesis is required for that
 result. ∎
 
-### CCS, Ï-Calculus, Petri Nets Are Compliant
+### CCS, π-Calculus, Petri Nets Are Compliant
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -1282,20 +1282,24 @@ Models with LA_M = ∅ may omit the LA_M line.
 
 ## L1.6 — Axiom Minimality and Independence
 
-**Status of each axiom:**
+**The full axiom matrix** — for each of the nine PA-* axioms: whether it is derivable
+from the others, whether it is independent (with the witnessing countermodel), and what
+falls if it is removed:
 
-| Axiom | Status | Independence |
-|-------|--------|-------------|
-| PA-WN | Axiom | Independent by duality with PA-NWF |
-| PA-NWF | Axiom | Independent by duality with PA-WN |
-| PA-Conf | Axiom | Independent — Countermodel M_Conf (new) |
-| PA-Fix | Axiom | Independent — Countermodel M_Fix (new) |
-| PA-CoInd | Axiom (portable); theorem in full SOL | Derived from PA-NWF under full SOL (proved in [`Ax-Ind` (L1.6.T1)](CRPT_OMEGA_TOWER_L1.md#axiom-independence)) |
-| PA-Prod | Axiom | Independent — Countermodel M_Prod (new) |
-| PA-WN_top | Axiom (conditional scope) | Independent — Countermodel M_ind ([`WNtop-Ind` (L1.7.T2)](CRPT_OMEGA_TOWER_L1.md#independence-of-pa-wn_top)) |
-| PA-Bisim | Axiom | Independent — Countermodel M_Bisim (new) |
-| PA-Reach | Axiom | Independent — Countermodel M_Reach (new) |
-| WF-Canon | THEOREM (not an axiom) | N/A — derived from PA-WN + PA-Conf + definitions |
+| Axiom | Derivable? | Independent? (witness) | Removable? — what falls |
+|-------|-----------|------------------------|-------------------------|
+| PA-WN | No | Yes — M_WN: the two-element ≈-cycle a →_ρ b →_ρ a (no fixpoints; all other axioms hold, PA-Reach by recurrence) | Finitary canonicalization on ↓_M: [`CNF-Ex` (L2.4.T1)](CRPT_OMEGA_TOWER_L2.md#cnf-existence), [`WN-Tot` (L2.2.T4)](CRPT_OMEGA_TOWER_L2.md#pa-wn-gives-terminating-path-witnesses), totality of d_M — the convergent canonical theory of L2.4 |
+| PA-Conf | No | Yes — M_Conf (below): one element with two distinct normal forms | Orbit-scoped uniqueness: [`CNF-Uniq` (L2.4.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-uniqueness--orbit-scoped-uniqueness), [`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient) — canonical forms exist but stop being unique per ≃-class |
+| PA-Fix | No | Yes — M_Fix (below) | Stability of the fixpoint stratum: [`Fix-Stab` (L2.1.L1)](CRPT_OMEGA_TOWER_L2.md#fixpoints-are-ρ_m-stable) and the Fix = NF reading degrade to per-model accidents |
+| PA-NWF | No | Yes — M_NWF: any finite pure-WF model (e.g. a →_ρ b, b fixed) satisfies all others, fails PA-NWF | The persistent regime may be empty: all of L3.3/L6 NWF theory becomes vacuous; [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality) loses its persistent leg |
+| PA-CoInd | **Yes** — from PA-NWF in full SOL ([`Ax-Ind` (L1.6.T1)](CRPT_OMEGA_TOWER_L1.md#axiom-independence)); not derivable in Henkin/schema semantics | Independent only under Henkin semantics | In full SOL: nothing (retained for portability). Under Henkin semantics: the coinduction proof principle — the proofs of [`AOI-BisInv` (L6.3.T3)](CRPT_OMEGA_TOWER_L6.md#bisimulation-invariance) and the ν-side of [`Ind-CoInd` (L4.4.T3)](CRPT_OMEGA_TOWER_L4.md#du-2-inductionco-induction-duality) lose their engine |
+| PA-Prod | No | Yes — M_Prod (below): silent step to an unobservable successor | Non-degeneracy of the labelled reading: [`Obs-Lab-WD` (L1.1.T1)](CRPT_OMEGA_TOWER_L1.md#observation-labelling-is-well-defined-and-anchored)(iii) fails (silent labels), and PV weights may vanish on steps (OC-2) |
+| PA-WN_top | No | Yes — M_ind ([`WNtop-Ind` (L1.7.T2)](CRPT_OMEGA_TOWER_L1.md#independence-of-pa-wn_top)) | The convergence mode on ∞_M: CFix is nowhere total on the persistent regime; [`Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach) becomes vacuous |
+| PA-Bisim | No | Yes — M_Bisim (below) | The quotient theory: ≈ no longer refines ≃_M, class-orbit functionality fails — [`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)'s derivation of eventual periodicity and the AOI bisimulation-invariance theorems fall |
+| PA-Reach | No | Yes — M_Reach ([`Reach-Indep` (L1.3.R2)](CRPT_OMEGA_TOWER_L1.md#pa-reach-independence-witness-model)): pairwise-distinct observables on an infinite chain, discrete 𝒯, ω_≈ = ∅ | Totality of the persistent canonical theory: [`CPer-Ex` (L3.3.T6)](CRPT_OMEGA_TOWER_L3.md#cper-existence), n_M, and the observer-extraction principle [`Reach-ObsExt` (L1.3.T1)](CRPT_OMEGA_TOWER_L1.md#pa-reach-closes-the-reachability-gap-observer-extraction-principle) on ∞_M |
+
+WF-Canon is a theorem ([`WF-Canon-Pf` (L2.4.T5)](CRPT_OMEGA_TOWER_L2.md#wf-canon-complete-proof)), not an axiom — derived from PA-WN +
+PA-Conf + definitions; it occupies no PA-* slot ([`Ax-NS` (L1.2.R2)](CRPT_OMEGA_TOWER_L1.md#pa-namespace-discipline)).
 
 **Note on axiom count:** The strict independence basis here has 8 PA axioms
 {PA-WN, PA-NWF, PA-Conf, PA-Fix, PA-Prod, PA-WN_top, PA-Bisim, PA-Reach} — each is
@@ -1327,16 +1331,6 @@ the targeted axiom is not derivable from the others.
 
 *Target:* Show PA-Conf is not derivable from {PA-WN, PA-Fix, PA-NWF, PA-CoInd,
 PA-Prod, PA-Bisim, PA-Reach}.
-
-*Construction:* Let 𝒰 = {a, b, c, d} with:
-- →_ρ: a →_ρ b, a →_ρ c, b →_ρ d, c →_ρ d
-- →_σ = →_ρ
-- ρ_M: ρ_M(a) = b (choosing left branch), ρ_M(b) = d, ρ_M(c) = d, ρ_M(d) = d
-
-*Verification:*
-- **PA-WN:** Every element reaches d (a normal form) in ≤ 2 steps. ✓
-- **PA-Conf fails:** a →_ρ* b →_ρ* d and a →_ρ* c →_ρ* d — this is actually
-  confluent (both paths reach d). We need non-confluence.
 
 *Construction:* Let 𝒰 = {a, b₁, b₂} with:
 - →_ρ: a →_ρ b₁, a →_ρ b₂
@@ -1462,7 +1456,7 @@ Let 𝒰 = {a, b, c, d} with:
 - **PA-WN:** c ∈ ↓_M: ρ_M(c) = d ∈ Fix, so d_M(c) = 1. ✓
 - **PA-Conf:** ρ_M is deterministic (total function). ✓
 - **PA-Fix:** Fixpoint stratum is explicit and stable under ρ_M in this finite model. ✓
-- **PA-Reach:** For ∞_M = {a, b}, the orbit of a cycles a → b → a → ..., and the orbit of b cycles b → a → b → .... The class orbit is periodic from n = 0 (recurrence realization, [`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach), with n_M = 0): the asymptotic destination ω_≈ is the recurrent cycle of classes — non-empty, finite, ρ_M-closed, and the orbit lies in it from the start. PA-Reach is satisfied. ✓
+- **PA-Reach:** For ∞_M = {a, b}, the orbit of a cycles a → b → a → ..., and the orbit of b cycles b → a → b → .... The class orbit is periodic from n = 0 (recurrence realization, [`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach), with n_M = 0): the asymptotic destination ω_≈ is the recurrent cycle of classes — non-empty, finite, ρ_M-closed, and the orbit lies in it from the start. PA-Reach is satisfied. ✓
 - **PA-Prod FAILS:** c ∉ Fix(ρ_M), but Observable(ρ_M(c)) = Observable(d) = ⊥. ✗
 
 *Conclusion:* M_Prod ⊨ {PA-NWF, PA-CoInd, PA-Bisim, PA-Reach, PA-WN,

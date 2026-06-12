@@ -20,7 +20,7 @@
 
 **For:** Pure mathematicians, logicians, proof theorists  
 **Goal:** Complete understanding of tower from foundation to meta-level  
-**Time:** ~4.5 hours
+**Time:** ∼4.5 hours
 
 ### Reading Sequence
 
@@ -76,7 +76,7 @@ After each level, ask:
 
 **For:** Category theorists, algebraic geometers, type theorists  
 **Goal:** Understand CRPT through the lens of functors, adjunctions, and universal properties  
-**Time:** ~1.5 hours
+**Time:** ∼1.5 hours
 
 ### Reading Sequence
 
@@ -113,7 +113,7 @@ After each level, ask:
 
 **For:** Computer scientists, formal verification researchers, programming language theorists  
 **Goal:** Understand CRPT as a theory of computational structure, fixpoints, and observability  
-**Time:** ~2.5 hours
+**Time:** ∼2.5 hours
 
 ### Reading Sequence
 
@@ -155,7 +155,7 @@ After each level, ask:
 
 **For:** Mathematical physicists, systems theorists, dynamicists  
 **Goal:** Understand CRPT as a theory of system dynamics, hierarchies, and self-reference  
-**Time:** ~2 hours
+**Time:** ∼2 hours
 
 ### Reading Sequence
 
@@ -219,21 +219,21 @@ After each level, ask:
 **Tier 1 (Introductory):** PREFACE, L0.overview, L1.intro
 - No proofs required
 - Intuitive explanations
-- ~1 hour
+- ∼1 hour
 
 **Tier 2 (Intermediate):** L0.full, L1–L2.full, L3–L4.intro
 - Begin reading proofs
 - Key theorems identified
-- ~2 hours
+- ∼2 hours
 
 **Tier 3 (Advanced):** L5–L7.full, L8.full
 - All proofs expected to be read
 - Advanced category theory or fixpoint theory
-- ~1.5 hours
+- ∼1.5 hours
 
 **Tier 4 (Expert):** Lω, interaction proofs, meta-theorems
 - Self-reference and circularity handled formally
-- ~1 hour
+- ∼1 hour
 
 ---
 
@@ -250,7 +250,7 @@ After each level, ask:
 ## Common Shortcuts
 
 **"I just want the executive summary":**
-Read PREFACE + L1 + L8 (~1 hour). You'll understand what CRPT is and why the tower exists.
+Read PREFACE + L1 + L8 (∼1 hour). You'll understand what CRPT is and why the tower exists.
 
 **"I want the category-theoretic essence":**
 Do Path B (1.5 hours). Focus on Mod_CRPT (L5) and functoriality (L7).

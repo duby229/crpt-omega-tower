@@ -102,7 +102,7 @@ This is **not** a substitute for reading the tower itself—it's a **navigation 
 | H_I(x) | Invariant horizon | L3 | L3–Lω |
 | H_O(x) | Depth horizon (boundary) | L3 | L3–L8 |
 | sig_M(x) | Signature (H_I classifier) | L3 | L3–Lω |
-| O_M | Observer triple | L4 | L4–Lω |
+| O_M | observable triple | L4 | L4–Lω |
 | Gate_M | Gateway (O_M component) | L4 | L4–L8 |
 
 ### Model Algebra & Categories
@@ -160,7 +160,7 @@ This is **not** a substitute for reading the tower itself—it's a **navigation 
 
 - **L4.1.T1 [Six-Class]:** Six-class partition {A,B,C,D,E,F} (Boolean lattice structure)
 - **L4.2.T1 [No-F]:** Class F is empty in deterministic models
-- **L4.3.T1 [Observer-Preserv]:** Observer triple preserves partition under homomorphisms
+- **L4.3.T1 [Observer-Preserv]:** observable triple preserves partition under homomorphisms
 
 ### Model Algebra (L5)
 
@@ -227,7 +227,7 @@ This is **not** a substitute for reading the tower itself—it's a **navigation 
 | Invariant horizon | H_I(x) | L3.1.D2 |
 | Depth horizon | H_O(x) | L3.1.D3 |
 | Signature | sig_M(x) | L3.1.D5 |
-| Observer triple | O_M | L4.1.D1 |
+| observable triple | O_M | L4.1.D1 |
 | Gateway | Gate_M | L4.2.D1 |
 
 ### Collapse & Functoriality (L5–L7)

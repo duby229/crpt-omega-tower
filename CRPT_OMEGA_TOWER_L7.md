@@ -57,7 +57,7 @@ is required. ∎
 ### GC1 — Retraction
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L7.1.C1 | `GC1` |  | **Novel** |
+| **Corollary** | L7.1.C1 | `GC1` |  | **Derived** |
 **Synopsis:** Corollary: the abstraction map α_M is surjective — every element of Q_M is the canonical form of some element of 𝒰_M. This follows immediately from the Galois connection: α_M ∘ γ_M = id_{Q_M}.
 
 **Source:** CRPT; corollary of [`GC` (L7.1.T1)](CRPT_OMEGA_TOWER_L7.md#galois-connection--full-biconditional).
@@ -70,7 +70,7 @@ k = 0 witnesses ρ_M^0(f) = f), so CFix(ρ_M)(f) = f. Thus α_M(γ_M(f)) = CFix(
 ### GC2 — Upper Adjunction
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L7.1.C2 | `GC2` |  | **Novel** |
+| **Corollary** | L7.1.C2 | `GC2` |  | **Derived** |
 **Synopsis:** Corollary: the concretisation map γ_M is injective — distinct elements of Q_M give distinct canonical representatives in 𝒰_M. No two fiber classes share a canonical representative.
 
 **Source:** CRPT; corollary of [`GC` (L7.1.T1)](CRPT_OMEGA_TOWER_L7.md#galois-connection--full-biconditional).
@@ -85,7 +85,7 @@ By [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-no
 ### GC3 — Preserves Equivalence
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L7.1.C3 | `GC3` |  | **Novel** |
+| **Corollary** | L7.1.C3 | `GC3` |  | **Derived** |
 **Synopsis:** Corollary: the unit of the Galois connection η_x = γ_M(α_M(x)) satisfies η_x ≃_M x — the canonical representative of x's fiber class is observationally equivalent to x. The round-trip abstraction-then-concretisation preserves observational equivalence.
 
 **Source:** CRPT; corollary of [`GC` (L7.1.T1)](CRPT_OMEGA_TOWER_L7.md#galois-connection--full-biconditional) via [`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient).
@@ -275,7 +275,7 @@ a CRPT model by its observable equivalence yields another valid CRPT model.
 | **Definition** | L7.1.D4 | `Collapse-Def` | Collapse(M) | **Novel** |
 **Synopsis:** The Collapse operator at L7: Collapse(M) is the CRPT model with universe 𝒰_M/≃_M (its convergent part is the abstraction quotient Q_M = ↓_M/≃_M), projection operator ρ_{Collapse(M)} = [ρ_M(−)] (the quotient of ρ_M), and structural relation →_σ^{Collapse} = [→_σ] (the quotient of →_σ). Collapse is the categorical left adjoint to the canonical inclusion Mod_{CRPT,WF} ↪ Mod_CRPT.
 
-**Source:** CRPT; from [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m) + [`Mod-/` (L5.1.D5)](CRPT_OMEGA_TOWER_L5.md#model-quotient-m₁).
+**Source:** CRPT; from [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m) + [`Mod-/` (L5.1.D4)](CRPT_OMEGA_TOWER_L5.md#model-quotient-m₁).
 
 For a CRPT model M, define the **collapse** of M by observable equivalence as:
 ```
@@ -802,7 +802,7 @@ Let Φ : M₁ → M₂ be a model homomorphism. Then the family {Φ_n := Lift^n(
 ### Model Isomorphisms Induce Omega-Category Isomorphisms
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L7.3.C1 | `Iso-ωCat` |  | **Novel** |
+| **Corollary** | L7.3.C1 | `Iso-ωCat` |  | **Derived** |
 **Synopsis:** Tower isomorphism corollary: if Φ : M₁ → M₂ is a CRPT model isomorphism, then F(Φ) : F(M₁) → F(M₂) is an isomorphism of tower ω-categories. Isomorphic base models produce isomorphic towers. This confirms that the tower invariants are genuine model invariants.
 
 **Source:** CRPT; corollary of [`Twr-Func` (L7.3.T2)](CRPT_OMEGA_TOWER_L7.md#tower-functoriality).
@@ -904,7 +904,7 @@ To instantiate CRPT to a new model M, one provides:
 1. An encoding of M as a model (define 𝒰_M, →_ρ, →_σ, ρ_M)
 2. Verification of any desired axioms (PA-WN, PA-Conf, etc.)
 3. Identification of key reduction relations and normal forms
-4. The tower F(M) and its classification (six-class partition, observer triple, etc.) follow automatically.
+4. The tower F(M) and its classification (six-class partition, observable triple, etc.) follow automatically.
 
 This is theoretically more elegant and computationally more systematic than maintaining separate model-specific theories.
 

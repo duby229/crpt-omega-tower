@@ -279,7 +279,7 @@ FMA(Q_{Mₙ}) reach an atomic fixpoint q ∈ Q_{Mₙ} in |w|−1 steps). ∎
 
 ## Lω.5 — Fixed Point of the Meta-Tower
 
-*Purpose.* Self-Consistency Fixed Point. This section proves the culminating theorem: the level structure of the ω-tower is the unique fixed point of the meta-HOA operation. Applying CRPT's classification machinery to 𝒰_CRPT recovers the ω-tower structure exactly. The theory closes without regress. **Scope division:** this section is the canonical home of the **tower-level self-conformance certificate**, anchored on the universal template of L0.10 ([`CRPT-Self-Cons` (L0.10.T2)](CRPT_OMEGA_TOWER_L0.md#l010t2--crpt-self-consistency)).*
+*Purpose.* Self-Consistency Fixed Point. This section proves the culminating theorem: the level structure of the ω-tower is the unique fixed point of the meta-HOA operation. Applying CRPT's classification machinery to 𝒰_CRPT recovers the ω-tower structure exactly. The theory closes without regress. **Scope division:** this section is the canonical home of the **tower-level self-conformance certificate**, anchored on the universal template of L0.10 ([`CRPT-Self-Cons` (L0.10.T2)](CRPT_OMEGA_TOWER_L0.md#crpt-self-consistency)).*
 
 
 ### Lω.5.T1 — Self-Consistency Fixed Point
@@ -289,7 +289,7 @@ FMA(Q_{Mₙ}) reach an atomic fixpoint q ∈ Q_{Mₙ} in |w|−1 steps). ∎
 | **Theorem** | Lω.5.T1 | `Self-FP` | | **Novel** |
 **Synopsis:** The Self-Consistency Fixed Point theorem: the level structure of the ω-tower is the unique fixed point of the meta-HOA operation. CRPT applied to its own constructs recovers exactly those constructs in exactly their existing arrangement.
 
-**Source:** CRPT; closes [`CRPT-Self-Cons` (L0.10.T2)](CRPT_OMEGA_TOWER_L0.md#l010t2--crpt-self-consistency); from [`Self-Model` (Lω.1.T1)](CRPT_OMEGA_TOWER_Lω.md#lω1t1--self-substrate-is-a-crpt-model) + [`m_CRPT` (Lω.3.D1)](CRPT_OMEGA_TOWER_Lω.md#lω3d1--rank-function-m_crpt).
+**Source:** CRPT; closes [`CRPT-Self-Cons` (L0.10.T2)](CRPT_OMEGA_TOWER_L0.md#crpt-self-consistency); from [`Self-Model` (Lω.1.T1)](CRPT_OMEGA_TOWER_Lω.md#lω1t1--self-substrate-is-a-crpt-model) + [`m_CRPT` (Lω.3.D1)](CRPT_OMEGA_TOWER_Lω.md#lω3d1--rank-function-m_crpt).
 
 *The CRPT anchor, organized by the level structure L0–L8, Lω, is the unique
 fixed point of the operation: "apply CRPT's HOA to CRPT's own content and
@@ -549,7 +549,7 @@ CRPT towers; Lω proves that the anchor is one of those towers under self-applic
 | PV | Path valuation = path semiring weight (Eilenberg 1974) | L4.1 |
 | H | Horizon classifier | L4.1 |
 | D | Regime discriminator (Persistence Observable) | L4.1 |
-| 𝒪 = (PV, H, D) | Observer Triple / Orbit Characterisation Triple | L4.1 |
+| 𝒪 = (PV, H, D) | observable triple / Orbit Characterisation Triple | L4.1 |
 | V = (V,+,·,0,1) | Value semiring | L4.3 |
 | w : →_ρ → V | Step weighting function | L4.3 |
 | ℋ_finite(x) | Finite reduction histories from x | L4.3 |
@@ -565,7 +565,7 @@ CRPT towers; Lω proves that the anchor is one of those towers under self-applic
 | Enc | Admissible encoding (SP-3 condition) | L4.6 |
 | CPEP | Coherent Perturbation Existence Property | L4.7 |
 | M₁ ∘ M₂, M₁ ∩ M₂, M₁ × M₂ | Model composition, intersection, product | L4.8/L5.1 |
-| M₁ ∪ M₂, M₁/~ | Model union, quotient | L4.8/L5.1 |
+| M₁ ∪ M₂, M₁/∼ | Model union, quotient | L4.8/L5.1 |
 | 𝟙, 𝟘 | Identity and zero models | L4.8/L5.1 |
 | Φ : M₁ → M₂ | Model homomorphism | L5.2 |
 | Mod_CRPT | Category of CRPT models; [CK90 L2.1] | L5.2 |
@@ -843,6 +843,102 @@ unobservable, hence not a boundary. (iv) Spec-Sub is deterministic (ρ_spec is a
 so [`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model) applies verbatim. (v) is the Lift construction applied to Spec-Sub:
 collapsing each fiber to an atom and re-presenting yields the next level — the tower's
 own architecture. ∎
+
+### The Rank Stratification of the Specification
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Definition** | Lω.8.D2 | `Spec-Rank` | r(x) | **Novel** |
+**Synopsis:** The rank of a construct is its derivation height in the specification substrate: r(x) := d_{Spec-Sub}(x), the length of its anchor chain down to a primitive. Ranks stratify the specification exactly as d_M stratifies any pure-WF CRPT model — this is the spec's own depth poset. The number of rank strata is revision-relative: new theorems extend anchor chains, so the maximum rank grows as the theory deepens, while every construct's rank is finite (well-foundedness of the anchor DAG).
+
+**Source:** CRPT; from [`Spec-Sub` (Lω.8.D1)](CRPT_OMEGA_TOWER_Lω.md#the-specification-substrate) + [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m).
+
+For x ∈ 𝒰_spec, the **rank** of x is its derivation height in Spec-Sub:
+```
+r(x) := d_{Spec-Sub}(x) = the length of the anchor chain x → ρ_spec(x) → ⋯ → primitive
+```
+The **rank strata** are the fibers of r: stratum 0 is the primitives (import-anchored
+constructs), stratum k+1 the constructs anchored one step above stratum k. Because
+Spec-Sub is pure-WF ([`Self-Sect` (Lω.8.T1)](CRPT_OMEGA_TOWER_Lω.md#sections-are-fibers)), r is total and finite, and the strata
+partition 𝒰_spec. The census records the current stratification
+(CRPT_OMEGA_TOWER_SECTION_MAP); the *count* of strata is a property of the revision,
+not of the framework — deeper derivations create higher ranks.
+
+### Ranks versus Levels
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Theorem** | Lω.8.T2 | `Rank-vs-Level` | | **Novel** |
+**Synopsis:** The specification carries two canonical stratifications and they do not coincide: the rank stratification (derivation height in Spec-Sub — the depth axis) and the level structure L0–L8, Lω (unions of section-fibers — the Lift axis). Neither refines the other: every level spans many ranks and every positive rank meets many levels, and level position is not monotone along anchor chains. The two are the spec-model's instance of the theory's own two axes — d_M versus tower level — and their interaction is Inf-Dual applied to the specification itself: a section's internal derivation depth is horizontal data that the level structure treats as a single atom.
+
+**Source:** CRPT; from [`Spec-Rank` (Lω.8.D2)](CRPT_OMEGA_TOWER_Lω.md#the-rank-stratification-of-the-specification) + [`Self-Sect` (Lω.8.T1)](CRPT_OMEGA_TOWER_Lω.md#sections-are-fibers) + [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality).
+
+In Spec-Sub:
+
+**(i) Two stratifications.** The rank function r stratifies 𝒰_spec by derivation height
+([`Spec-Rank` (Lω.8.D2)](CRPT_OMEGA_TOWER_Lω.md#the-rank-stratification-of-the-specification)); the level structure L0–L8, Lω stratifies it as unions of
+section-fibers — the Lift reading of [`Self-Sect` (Lω.8.T1)](CRPT_OMEGA_TOWER_Lω.md#sections-are-fibers)(v).
+
+**(ii) They do not coincide, in either direction.** Every level contains constructs of
+many ranks (a level's carriers sit low; its derived theory climbs several ranks above
+them), and every rank ≥ 1 contains constructs of many levels. Level position is not
+even monotone along anchor chains: the tower's documented forward references (L1's
+axioms anchoring on L2's operator; synthesis remarks anchoring ahead) mean ρ_spec can
+cross levels in both directions, while r decreases by exactly 1 at every step by
+construction.
+
+**(iii) The relationship is Inf-Dual, self-applied.** A section's content above its
+carrier — its internal rank-span — is *horizontal* structure within the section-fiber.
+The level structure collapses each fiber to an atom and orders the atoms by subject
+([`Self-Sect` (Lω.8.T1)](CRPT_OMEGA_TOWER_Lω.md#sections-are-fibers)(v)): exactly the Lift move, in which one level's horizontal
+(within-fiber, rank-spanning) structure becomes a single point of the next
+presentation stratum ([`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality)). Rank measures distance from the imports;
+level measures position in the tower of collapses. They are the specification's own
+d_M-axis and tower-axis — dual, not equal.
+
+**(iv) Consequently.** "The levels are the ranks of the specification" is false as an
+identity and true as a duality: the tower self-levels twice — by depth (rank) and by
+fiber (level) — and CRPT itself supplies the theorem that relates the two.
+
+*Proof.* (i) is definitional. (ii) is witnessed by the census: at the present revision
+the rank histogram spans strata 0–7 with every level's profile spanning at least four
+consecutive ranks, and the anchor chain of [`Obs-Nat` (L4.1.T2)](CRPT_OMEGA_TOWER_L4.md#naturality-of-the-semantic-residue) — an L4 construct of
+rank 7 anchored through L3 and L1 — crosses levels non-monotonically while its rank
+decreases strictly; the documented forward-reference convention licenses such
+crossings, so no level-monotonicity is available in principle. (iii) Each fiber
+Sec(c) = {c} ∪ ker(ρ_spec, c) contains its carrier at rank r(c) and members at ranks
+up to r(c) + k for the depth k of its internal derivation; the level structure maps
+Sec(c) to a single constituent of a level ([`Self-Sect` (Lω.8.T1)](CRPT_OMEGA_TOWER_Lω.md#sections-are-fibers)(i), (v)), discarding
+the rank-span — the collapse of horizontal structure to an atom that [`Inf-Dual`
+(L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality)(iii) describes. (iv) restates (ii) + (iii). ∎
+
+### The Status Classification
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Definition** | Lω.8.D3 | `Status` | | **Novel** |
+**Synopsis:** Every construct carries a status that classifies its relationship to its Source anchor — the provenance dimension of the Spec-Sub self-model. Five statuses, each with a mandatory body obligation: Imported (exact transport — term, notation, and meaning preserved; any deviation disqualifies), Specialized (an import restricted to a CRPT domain with no semantic change, stating the restriction), Reframed (maximal import plus the minimal delta required for a stated purpose, with a Reframing Note giving source form, delta, and justification), Derived (a consequence of prior constructs composed, with its derivation chain stated), and Novel (genuinely new content, with a Novelty Note crediting the maximal imported basis and stating precisely what is new and why it does not follow). The statuses are auditable by census, like the fiber structure itself.
+
+**Source:** CRPT; from [`Spec-Sub` (Lω.8.D1)](CRPT_OMEGA_TOWER_Lω.md#the-specification-substrate) + [`Self-Sect` (Lω.8.T1)](CRPT_OMEGA_TOWER_Lω.md#sections-are-fibers).
+
+Each construct's **status** classifies the relationship between the construct and its
+primary Source anchor:
+
+| Status | Criterion | Mandatory body obligation |
+|---|---|---|
+| **Imported** | Complete, correct transport: the source's term, notation, name, and meaning preserved exactly; CRPT contributes placement only | Precise source citation (work + §). Any deviation in term, notation, or meaning disqualifies the label |
+| **Specialized** | An imported construct restricted to a CRPT domain with **no semantic change** — the restriction is the only delta | A specialization clause: the general form, the source, and the restricting domain |
+| **Reframed** | Maximal import plus the **minimal delta required for the stated purpose** | A *Reframing Note*: source form → CRPT form, the exact delta, and the justification (mathematical reasons preferred; conceptual reasons admissible and stated as such) |
+| **Derived** | A consequence of imported or prior constructs composed; no new mathematical content beyond the composition | The derivation chain — which anchors compose, in one line |
+| **Novel** | Genuinely new content | A *Novelty Note*: the maximal imported basis (everything that is *not* new, credited), the precise statement of what **is** new, and why it does not follow from the basis |
+
+The status is part of the Spec-Sub self-model: where the anchor edge says *what* a
+construct rests on, the status says *how* — exact transport, restriction, principled
+modification, composition, or genuine addition. Misfiled statuses are sectioning
+defects in the sense of [`Self-Sect` (Lω.8.T1)](CRPT_OMEGA_TOWER_Lω.md#sections-are-fibers): an "Imported" construct that changes its
+source's meaning violates its own import; a "Novel" construct that merely composes its
+anchors dilutes the theory's real novelty claims. The census validates status values
+and, where stated, the body obligations.
 
 ### The Census Discipline
 

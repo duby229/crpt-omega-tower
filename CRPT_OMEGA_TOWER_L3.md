@@ -13,7 +13,7 @@
 | **Definition** | L3.1.D1 | `H_S` | H_S(x) | **Novel** |
 **Synopsis:** An element x has a structural horizon (H_S(x) = ⊤) when ρ_M is not injective at ρ_M(x) — that is, when x has at least one sibling: another element z ≠ x with ρ_M(z) = ρ_M(x). H_S detects branching in the reduction graph. Elements with H_S = ⊥ are structurally isolated — their canonical form uniquely identifies them. H_S is the first and coarsest of the three horizon predicates.
 
-**Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) + [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence).
+**Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) + [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#fiber-and-observable-equivalence).
 
 
 For x ∈ 𝒰_M:
@@ -161,7 +161,7 @@ The persistent operative signature: regime tag (∞) and the **tail class of the
 observation trace** OT^obs_M(x) = (obs(ρ_M^n(x)))_{n∈ℕ} ([`Obs-Lab` (L1.1.D8)](CRPT_OMEGA_TOWER_L1.md#observation-labelling),
 [`Tail-Eq` (L6.3.D2)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-on-traces)) — what the orbit emits, up to finite prefix. Every comparison the
 signature supports is an equality of traces, matching the theory's native discernibility
-machinery ([`Disc-Obs` (L4.1.R3)](CRPT_OMEGA_TOWER_L4.md#discernibility-observer-triple)). Where PA-WN_top holds, the trace's tail class
+machinery ([`Disc-Obs` (L4.1.R3)](CRPT_OMEGA_TOWER_L4.md#discernibility-observable-triple)). Where PA-WN_top holds, the trace's tail class
 determines the limit point CFix(ρ_M)(x); the topological data is recovered, not
 postulated.
 
@@ -484,7 +484,7 @@ All ingredients are from §L2.4–8. No new axioms are introduced.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.1.D6 | `HP` | HP_M(x) | **Novel** |
-**Synopsis:** The horizon profile HP_M(x) is the triple (H_S(x), H_I(x), H_O(x)) packaged as a single three-bit value. It is the input to the six-class partition function and the primary datum used by the observer triple to classify elements.
+**Synopsis:** The horizon profile HP_M(x) is the triple (H_S(x), H_I(x), H_O(x)) packaged as a single three-bit value. It is the input to the six-class partition function and the primary datum used by the observable triple to classify elements.
 
 **Source:** CRPT; from [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) + [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o).
 
@@ -507,7 +507,7 @@ be the six-class label determined by the Q1/Q2/Q3 pattern (L3.2).
 
 For any x ∈ 𝒰_M:
 
-**(1)** (*Ontological terminal — H_O*) If x ∈ ↓_M and H_O(x) = ⊤, then d_M(x) = 1
+**(1)** (*Depth terminal — H_O*) If x ∈ ↓_M and H_O(x) = ⊤, then d_M(x) = 1
 and ρ_M(x) = CFix(ρ_M)(x) = Abs_M(x); one application of ρ_M reaches the canonical
 form and no further ρ_M-reduction is possible (CFix(ρ_M)(x) is a fixpoint).
 
@@ -562,7 +562,7 @@ then the sig_M-uniformity condition fails: ∃z, z' ∈ ker(ρ_M, ρ_M(x)) with
 sig_M(z) ≠ sig_M(z'). Thus abstraction merges them at one step but the observer
 signature can still distinguish them: the collapse is resolvable. ✓ ∎
 
-### â_M Horizon Story
+### ∞_M Horizon Story
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -579,7 +579,7 @@ The analogue of H_S in the persistent regime is non-injectivity of the limit
 map: multiple ∞_M elements can share the same limit point (distinct approach
 orbits to the same attractor). The analogue of H_I is whether the observation
 traces of co-limiting elements are tail-equivalent ([`Tail-Eq` (L6.3.D2)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-on-traces)) —
-indistinguishable approaches. By [`PA-NWF-NE` (L2.2.T5)](CRPT_OMEGA_TOWER_L2.md#pa-nwf--νt_ρm--), these persistent-regime structures
+indistinguishable approaches. By [`NWF-NE` (L2.2.T5)](CRPT_OMEGA_TOWER_L2.md#pa-nwf--νt_ρm--), these persistent-regime structures
 are transformed into vertical (depth) structure at the next tower level, connecting
 the horizon theory of L3.1 to the tower theory of L8.1.
 
@@ -1140,7 +1140,7 @@ CFix(ρ_M) : 𝒰 → (NF(→_ρ) ∪ Limits(𝒯))
  { lim_{n→∞} ρ_M^n(x) [≡ CNF∞_M(x)] if x ∈ ∞_M
 ```
 
-No element of 𝒰 is outside the reach of one of these two forms ([`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition): 𝒰 = ↓_M ∐ ∞_M). The persistent regime ∞_M is governed by PA-WN_top ([`PA-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration), L1.4), which guarantees the topological limit exists; uniqueness follows from [`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep), i.e. the explicit TopSep(𝒯) requirement. See also L3.2 for the twelve-class partition stratifying both regimes.
+No element of 𝒰 is outside the reach of one of these two forms ([`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition): 𝒰 = ↓_M ∐ ∞_M). The persistent regime ∞_M is governed by PA-WN_top ([`Ax-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration), L1.4), which guarantees the topological limit exists; uniqueness follows from [`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep), i.e. the explicit TopSep(𝒯) requirement. See also L3.2 for the twelve-class partition stratifying both regimes.
 
 ### Stabilisation Conditions (Dynamical Systems Formulation)
 
@@ -1155,7 +1155,7 @@ of this orbit under a quotient map Q is $Q(\text{Orb}(x)) = (Q(x), Q(ρ_M(x)), Q
 ### ω-Limit Set
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L3.3.D1 | `ω-Lim` | ω(f, x) | **Imported** |
+| **Definition** | L3.3.D1 | `ω-Lim` | ω(f, x) | **Specialized** |
 **Synopsis:** The ω-limit set ω_≈(x) of a persistent element x is the set of bisimulation classes visited infinitely often by the projection orbit: ω_≈(x) = {[y]_≈ | ∀n ∃k ≥ n : [ρ_M^k(x)]_≈ = [y]_≈}. This is the persistent-regime analogue of the canonical form: it captures the 'destination' of the persistent orbit in the long run.
 
 **Source:** Birkhoff [1927]; Bhatia & Szegő [1970] — ω-limit sets of discrete dynamical systems; applied to [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
@@ -1246,7 +1246,7 @@ symbolic image of the orbit is ultimately periodic (eventually enters a finite c
 ### SC-4 ⟹ Eventual Periodicity
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L3.3.T1 | `SC4-EP` |  | **Imported** |
+| **Theorem** | L3.3.T1 | `SC4-EP` |  | **Specialized** |
 **Synopsis:** SC-4 implies eventual periodicity: an orbit visiting only finitely many bisimulation classes must eventually cycle, so ∃N, p≥1 with [ρ_M^{n+p}(x)]_≈ = [ρ_M^n(x)]_≈ for all n ≥ N. Minimal period 1 gives Type P (SC-1 holds); period ≥ 2 gives Type EP.
 
 **Source:** Bhatia & Szegő [1970] — recurrence under finite phase decomposition; applied to [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence).
@@ -1317,7 +1317,7 @@ in 𝒰_M/≈. This is the **eventual bisimulation image** of x's orbit.
 - SC-1 asserts that $|ω_≈(x)| = 1$ (singleton ω-limit in the quotient)
 - CNF∞_M picks out this unique quotient class
 
-### Where CNFâ Sits in the WF/NWF Duality
+### Where CNF∞ Sits in the WF/NWF Duality
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -1464,7 +1464,7 @@ constructively tractable approximation from which [`Lift∞` (L8.5.D2)](CRPT_OME
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D9 | `Sem` | Sem(M) | **Novel** |
-**Synopsis:** The unified semantic domain Sem(M) := Q_M ⊔ Q∞_M is the disjoint union of the convergent orbit quotient and the persistent orbit quotient, with a regime-aware semantic projection π_sem : 𝒰_M → Sem(M). It records the observer triple's ≃_M-invariant residue — each element's regime and orbit-equivalence class — which the full observer then refines.
+**Synopsis:** The unified semantic domain Sem(M) := Q_M ⊔ Q∞_M is the disjoint union of the convergent orbit quotient and the persistent orbit quotient, with a regime-aware semantic projection π_sem : 𝒰_M → Sem(M). It records the observable triple's ≃_M-invariant residue — each element's regime and orbit-equivalence class — which the full observer then refines.
 
 **Source:** CRPT; from [`Q∞` (L3.3.D8)](CRPT_OMEGA_TOWER_L3.md#persistent-orbit-quotient-q_m) + [`Ab-Quot-28` (L8.2.D1)](CRPT_OMEGA_TOWER_L8.md#abstraction-quotient).
 
@@ -1485,11 +1485,11 @@ elements map to the same class.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L3.3.R3 | `Sem-Base` | | **Novel** |
-**Synopsis:** Sem(M) records the ≃_M-invariant residue of the observer triple — its (regime, canonical-form) datum — not the full observer.
+**Synopsis:** Sem(M) records the ≃_M-invariant residue of the observable triple — its (regime, canonical-form) datum — not the full observer.
 
 **Source:** CRPT; from [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple).
 
-Sem(M) is the **canonical-form base** for the observer triple [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple):
+Sem(M) is the **canonical-form base** for the observable triple [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple):
 the semantic projection π_sem records each element's regime and orbit-equivalence
 class (its convergent class in Q_M or persistent ω-limit class in Q∞_M). This is exactly
 the **≃_M-invariant residue** of the observer — the regime component D and the canonical
@@ -1519,7 +1519,7 @@ resting on the universal axiom [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-r
 
 **Source:** CRPT; from [`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative) + [`Bisim~` (L1.1.D7)](CRPT_OMEGA_TOWER_L1.md#bisimilarity) + [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization); dual of [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m).
 
-For x ∈ ∞_M covered by the recurrence realization of PA-Reach ([`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)):
+For x ∈ ∞_M covered by the recurrence realization of PA-Reach ([`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)):
 ```
 n_M(x) := min { n ∈ ℕ : ∃ p ≥ 1 : ∀ j ≥ 0,  ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x) }
 ```
@@ -1545,12 +1545,12 @@ where reach is by convergence rather than at finite depth.
 
 For every x ∈ ∞_M, CPer_M(x) is defined: ρ_M^{n_M(x)}(x) under the recurrence
 realization, CFix(ρ_M)(x) under the convergence realization (and the canonical element
-of the limit cycle in the composite case, [`PA-Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)).
+of the limit cycle in the composite case, [`Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)).
 
-*Proof.* [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) gives every x ∈ ∞_M an asymptotic destination ω_≈(x), realized by recurrence, convergence, or their composite ([`PA-Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)).
-**Recurrence realization ([`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)):** the set {n : ∃p ≥ 1 : ∀j ≥ 0, ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x)} is
+*Proof.* [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) gives every x ∈ ∞_M an asymptotic destination ω_≈(x), realized by recurrence, convergence, or their composite ([`Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)).
+**Recurrence realization ([`Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)):** the set {n : ∃p ≥ 1 : ∀j ≥ 0, ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x)} is
 non-empty; as a non-empty subset of ℕ it has a least element, n_M(x)
-([`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m)), and CPer_M(x) = ρ_M^{n_M(x)}(x) exists. **Convergence realization ([`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)):**
+([`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m)), and CPer_M(x) = ρ_M^{n_M(x)}(x) exists. **Convergence realization ([`Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)):**
 the limit lim_{n→∞} ρ_M^n(x) exists in 𝒯 and CPer_M(x) = CFix(ρ_M)(x). Either way
 CPer_M(x) exists for every persistent x. Totality on ∞_M is the dual of CNF-Ex's totality
 on ↓_M ([`CNF-Ex` (L2.4.T1)](CRPT_OMEGA_TOWER_L2.md#cnf-existence)), with PA-Reach in the role of PA-WN. ∎

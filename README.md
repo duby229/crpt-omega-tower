@@ -45,4 +45,10 @@ both, as `` `Tag` (Label) ``, and every cross-reference is a **hyperlink** to th
 construct's subsection (projection axioms are cited without backticks, `PA-X (Label)`,
 likewise hyperlinked). Labels are placed by the fiber discipline of [`Self-Sect` (Lω.8.T1)](CRPT_OMEGA_TOWER_Lω.md#sections-are-fibers):
 a construct lives in the section of its primary Source anchor, and the section map
-(CRPT_OMEGA_TOWER_SECTION_MAP.md) records the resulting census.
+(CRPT_OMEGA_TOWER_SECTION_MAP.md) records the resulting census. Every construct carries
+one of five provenance **statuses** ([`Status` (Lω.8.D3)](CRPT_OMEGA_TOWER_Lω.md#the-status-classification)) — Imported (exact transport),
+Specialized (import restricted to a CRPT domain), Reframed (maximal import + minimal
+stated delta, with a Reframing Note), Derived (composition of priors, with its chain),
+Novel (genuinely new, with a Novelty Note crediting its basis) — each with a mandatory
+body obligation, auditable by census. The PA-* tag namespace is reserved for the nine
+projection axioms ([`Ax-NS` (L1.2.R2)](CRPT_OMEGA_TOWER_L1.md#pa-namespace-discipline)).

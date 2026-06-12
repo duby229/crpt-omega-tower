@@ -122,12 +122,12 @@ Of the 2³ = 8 boolean combinations of (H_S, H_I, H_O), only 5 non-empty classes
 
 ---
 
-## L2.4. The Observer Triple Is an Analytical Tool, Not a Measurement Agent
+## L2.4. The observable triple Is an Analytical Tool, Not a Measurement Agent
 
-**Pitfall:** Thinking of the Observer Triple (𝒪_M = (O_M, Gate_M, the orbit signature)) as an agent that "observes" elements in real time or changes the model structure.
+**Pitfall:** Thinking of the observable triple (𝒪_M = (O_M, Gate_M, the orbit signature)) as an agent that "observes" elements in real time or changes the model structure.
 
 **What it does** (L4.3):  
-The observer triple is a **formal characterization** of the observability structure of model M. It classifies elements into classes A–E based on:
+The observable triple is a **formal characterization** of the observability structure of model M. It classifies elements into classes A–E based on:
 - Gate_M: which elements are "visible" to the observer.
 - the orbit signature: the signature function that distinguishes observable elements.
 - O_M: the overall observer structure combining the above.
@@ -137,7 +137,7 @@ The observer triple is a **formal characterization** of the observability struct
 - Does NOT change 𝒰_M, →_ρ, or any other model component.
 - Does NOT "observe in time" — it is a static classification.
 
-The observer triple reveals the **inherent observability architecture** of M as it already is; it does not impose or alter that architecture.
+The observable triple reveals the **inherent observability architecture** of M as it already is; it does not impose or alter that architecture.
 
 **Where this matters:** L4 (observer definition), L5 (model algebra with homomorphisms), L6 (persistent orbits and observability).
 

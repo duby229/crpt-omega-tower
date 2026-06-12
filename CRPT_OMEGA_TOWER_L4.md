@@ -1,25 +1,25 @@
 # L4 — Observer, Gateway, Valuation, Duality, Self-Projection, and Perturbation
 
-## L4.1 — The Observer Triple
+## L4.1 — The observable triple
 
-*Purpose.* Observer Triple. This section defines the observer triple 𝒪_M = (O_M, Gate_M, the orbit signature) — the formal characterisation of M's observability architecture. The observer is not an external agent; it is a derived structure that reads off properties already determined by the substrate and horizon predicates.*
+*Purpose.* observable triple. This section defines the observable triple 𝒪_M = (O_M, Gate_M, the orbit signature) — the formal characterisation of M's observability architecture. The observer is not an external agent; it is a derived structure that reads off properties already determined by the substrate and horizon predicates.*
 
 
 **Remark L4.1.R3 (Coalgebra Foundation).** In coalgebra, an **observable** on a system is a function that extracts behavioral invariants
-from computation. The observer triple 𝒪 = (PV, H, D) is a three-component **coalgebraic observable** 
+from computation. The observable triple 𝒪 = (PV, H, D) is a three-component **coalgebraic observable** 
 that characterizes the behavioral essence of any element's orbit under ρ_M. It combines 
 trajectory weighting, structural classification, and regime membership into a unified behavioral signature.
 
 ### Connection to PA-Prod Observable
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L4.1.R1 | `PA-Prod-Conn` |  | **Novel** |
+| **Remark** | L4.1.R1 | `Prod-Conn` |  | **Novel** |
 **Synopsis:** The Observable(y) predicate used in PA-Prod is the existential shadow of the path-valuation (PV) observable: PA-Prod's Observable Contract (OC-1/OC-2) guarantees every non-fixpoint ρ_M-step carries non-zero trajectory weight, so the behavioral signature PV(orbit(x)) is well-defined on all orbits in both ↓_M and ∞_M.
 
 **Source:** CRPT; from [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content).
 
 The boolean predicate Observable(y)
-used in Axiom [`PA-Prod` (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content) is the *existential shadow* of the PV component defined
+used in Axiom [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content) is the *existential shadow* of the PV component defined
 below. PA-Prod's Observable Contract (OC-1, OC-2) guarantees that every non-fixpoint
 ρ_M-step carries non-zero trajectory weight, so the PV trajectory observable
 PV(orbit(x)) = ∏ w(xᵢ →_ρ xᵢ₊₁) never accumulates a zero factor at non-fixpoint
@@ -33,16 +33,22 @@ is universal.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.1.D1 | `Behav-F` |  | **Imported** |
-**Synopsis:** The behavioral functor maps each CRPT model to its observer triple and maps each homomorphism to the corresponding map between observer triples. It is the categorical formalization of the claim that the observer architecture is a functor-level construct — not just a per-model definition but a transformation that commutes with model homomorphisms.
+**Synopsis:** The behavioral functor maps each CRPT model to its observable triple and maps each homomorphism to the corresponding map between behavioral spaces. Its naturality is scoped, not global: the semantic residue (regime, canonical class) commutes with every model homomorphism ([`Obs-Nat` (L4.1.T2)](CRPT_OMEGA_TOWER_L4.md#naturality-of-the-semantic-residue)), while the full triple does not — PV and H are finer than ≃_M and unconstrained by the homomorphism conditions ([`Obs-Pres` (L4.1.T3)](CRPT_OMEGA_TOWER_L4.md#observer-preservation-profile)).
 
 **Source:** Rutten [2000] *Universal coalgebra* — coalgebraic observable / behavioural functor.
 
-A **coalgebraic observable** on model M is a natural transformation:
+A **coalgebraic observable** on model M is a map:
 ```
 𝒪 : 𝒰_M ⟶ 𝑶_M
 ```
 where 𝑶_M is a **behavioral space** (product of observables) encoding the essential information 
-about M's orbits. The observer triple's three components realize this at the syntactic level.
+about M's orbits. The observable triple's three components realize this at the syntactic level.
+
+*Naturality, scoped.* The transformation is natural exactly on its **semantic residue**:
+the (regime, canonical-class) component π_sem commutes with every model homomorphism
+([`Obs-Nat` (L4.1.T2)](CRPT_OMEGA_TOWER_L4.md#naturality-of-the-semantic-residue)). The full triple is **not** natural — no homomorphism condition
+constrains PV or H ([`Obs-Pres` (L4.1.T3)](CRPT_OMEGA_TOWER_L4.md#observer-preservation-profile)). The coalgebraic source's "natural
+transformation" applies, in CRPT, to the semantic component.
 
 ### Path Valuation (Trajectory Observable)
 
@@ -53,6 +59,8 @@ about M's orbits. The observer triple's three components realize this at the syn
 **Synopsis:** The point-value observer assigns a numerical observable value to each element based solely on its current projection-orbit position: the canonical form, derivation height, and horizon profile at that point. It is the simplest observer type — it sees only the element itself, not its history or context.
 
 **Source:** Eilenberg [1974]; Droste, Kuich & Vogler [2009] — weighted path / semiring valuation, reframed as the point-value projection observable.
+
+*Reframing Note.* **Source form:** the weighted path valuation of formal-language theory (Eilenberg [1974]; Droste–Kuich–Vogler [2009]) over arbitrary runs. **CRPT form:** the same semiring valuation taken along the canonical ρ_M-orbit. **The delta:** the path set — the orbit singled out by C1 replaces arbitrary runs; the valuation algebra transports verbatim. **Justification:** mathematical — determinism makes the orbit the canonical run, so the source theory applies without modification.
 
 For a reduction path π = (x₀, x₁, ..., xₙ) with xᵢ the reduction relation xᵢ₊₁:
 ```
@@ -79,10 +87,12 @@ The interpretation depends on context:
 ### Horizon Classifier / Structural Observable
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L4.1.D3 | `HC-Obs` |  | **Novel** |
+| **Definition** | L4.1.D3 | `HC-Obs` |  | **Derived** |
 **Synopsis:** The horizon-constrained observer is a point-value observer that is additionally constrained by the horizon profile: its output changes discontinuously at the H_O boundary (depth 1) and at H_S transitions. This models observers that react to structural branching.
 
 **Source:** CRPT; from [`Bool-Pred` (L3.2.D2)](CRPT_OMEGA_TOWER_L3.md#independent-boolean-predicates) + [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification).
+
+*Derivation:* the standard classifying-map pattern — an observable valued in a finite partition (Rutten [2000]) — composed with the six-class partition [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification); the mathematical content is the partition's, the classifier contributes composition only.
 
 The function:
 ```
@@ -126,18 +136,18 @@ which coinductive (persistent) or well-founded (convergent) operational semantic
 In symbolic dynamics (Katok & Hasselblatt [1995]), this distinguishes ultimately periodic orbits (WF) 
 from aperiodic ones (NWF).
 
-### The Observer Triple as Unified Observable
+### The observable triple as Unified Observable
 
 ### Coalgebraic Observable Triple
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L4.1.D5 | `Obs-Triple` | | **Novel** |
-**Synopsis:** The observer triple 𝒪_M = (O_M, Gate_M, the orbit signature) is a formal characterisation of the observability structure inherent in model M. It is not an external measurement device — it reveals the model's own internal observability architecture. O_M specifies which elements are observable; Gate_M controls access between regimes; the orbit signature assigns comparable signatures to observable elements. Together they determine which elements can be distinguished by any query in the query signature.
+**Synopsis:** The observable triple 𝒪_M = (O_M, Gate_M, the orbit signature) is a formal characterisation of the observability structure inherent in model M. It is not an external measurement device — it reveals the model's own internal observability architecture. O_M specifies which elements are observable; Gate_M controls access between regimes; the orbit signature assigns comparable signatures to observable elements. Together they determine which elements can be distinguished by any query in the query signature.
 
 **Source:** CRPT; from [`PV-Obs` (L4.1.D2)](CRPT_OMEGA_TOWER_L4.md#path-valuation--weighted-trajectory-observable) + [`HC-Obs` (L4.1.D3)](CRPT_OMEGA_TOWER_L4.md#horizon-classifier--structural-observable) + [`RD-Obs` (L4.1.D4)](CRPT_OMEGA_TOWER_L4.md#regime-discriminator--persistence-observable).
 
 
-The **observer triple** (formally,
+The **observable triple** (formally,
 the **coalgebraic observable**) is the unified behavioral signature:
 ```
 𝒪 : 𝒰_M → (V × {A,B,C,D,E,F} × {WF, NWF})
@@ -155,7 +165,7 @@ orbit-equivalence ≃_M ([`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosse
 - For x, y ∈ ↓_M: x ≈ y ⟹ 𝒪(x) = 𝒪(y)
 - For x, y ∈ ∞_M: x ≈ y ⟹ 𝒪(x) ≃_𝒪 𝒪(y), the asymptotic observable comparing ω-limit classes ≃∞ ([`≃∞` (L3.3.D7)](CRPT_OMEGA_TOWER_L3.md#--persistent-orbit-equivalence), [`AOI1-BisInv` (L6.1.T1)](CRPT_OMEGA_TOWER_L6.md#aoi-1-bisimulation-invariance))
 
-Because ≈ ⊆ ≃_M is *strict* ([`PA-Bisim` (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence)), bisimilarity is properly finer, and
+Because ≈ ⊆ ≃_M is *strict* ([PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence)), bisimilarity is properly finer, and
 the observer separates elements *within* a single ≃_M class. Of the three components only
 the regime D(x) is ≃_M-invariant (≃_M does not cross regimes, [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m)); the
 behavioural valuation PV and the horizon class H are **not** ≃_M-invariant. **Witness.** On a
@@ -169,11 +179,11 @@ residue of 𝒪 is exactly the (regime, canonical-form) datum recorded by the se
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.1.T1 | `Obs-Const` | | **Novel** |
-**Synopsis:** The observer triple 𝒪_M = (PV, H, D) is fully derived from prior definitions with no new axioms: PV from the path valuation (L4.3), H from the six-class horizon partition (L3.2), D from the regime partition (L2.2). The observer architecture is a consequence of the substrate, not an independent postulate.
+**Synopsis:** The observable triple 𝒪_M = (PV, H, D) is fully derived from prior definitions with no new axioms: PV from the path valuation (L4.3), H from the six-class horizon partition (L3.2), D from the regime partition (L2.2). The observer architecture is a consequence of the substrate, not an independent postulate.
 
 **Source:** CRPT; from [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple) + [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content).
 
-The observer triple 𝒪 = (PV, H, D) is constructible from prior definitions without any new axioms:
+The observable triple 𝒪 = (PV, H, D) is constructible from prior definitions without any new axioms:
 
 *Proof.* 
 - **PV Component:** Requires only a weighting function w : →_ρ → V (which may be the constant 
@@ -183,11 +193,67 @@ The observer triple 𝒪 = (PV, H, D) is constructible from prior definitions wi
 - **D Component:** Defined from the regime partition μT_{ρ,M} ∐ νT_{ρ,M} (L2.2, [`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition)). ✓
 All three components are functions defined on previously established structures. No new axioms. ✓ ∎
 
+### Naturality of the Semantic Residue
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Theorem** | L4.1.T2 | `Obs-Nat` | | **Novel** |
+**Synopsis:** The semantic projection is natural: for every model homomorphism Φ : M₁ → M₂, the square Sem(Φ) ∘ π_sem^{M₁} = π_sem^{M₂} ∘ Φ commutes up to ≃ — regimes map to regimes and canonical classes to canonical classes. This is the precise naturality content of the behavioral functor; it lives on the ≃-quotient category, where Φ_E and Φ_ρ supply exactly the two commutations needed.
+
+**Source:** CRPT; from [`Sem` (L3.3.D9)](CRPT_OMEGA_TOWER_L3.md#unified-semantic-domain-semm) + [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) + [`Reg-Nat` (L8.8.C1)](CRPT_OMEGA_TOWER_L8.md#naturality-of-regime-partition).
+
+For every homomorphism Φ : M₁ → M₂ ([`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂)) and every x ∈ 𝒰_{M₁}:
+```
+π_sem^{M₂}(Φ(x))  =  Sem(Φ)(π_sem^{M₁}(x))
+```
+where Sem(Φ) maps a convergent class [x]_{≃} to [Φ(x)]_{≃} and a persistent ω-limit
+class to its Φ-image. The square commutes in Mod_CRPT_≃.
+
+*Proof.* **Regime component:** Φ preserves the regime partition ([`Reg-Nat` (L8.8.C1)](CRPT_OMEGA_TOWER_L8.md#naturality-of-regime-partition)),
+so π_sem's case split is respected. **Convergent classes:** x ≃_{M₁} y ⟹ Φ(x) ≃_{M₂} Φ(y)
+(Φ_E), so [x]_{≃} ↦ [Φ(x)]_{≃} is well-defined; and Φ(CFix(x)) ≃_{M₂} CFix(Φ(x)) by
+iterating Φ_ρ along the canonical orbit, so the class assignment commutes with
+canonicalization. **Persistent classes:** Φ_R maps the orbit of x onto the orbit of Φ(x)
+(up to ≃ at each step, Φ_ρ), so classes visited cofinally map to classes visited
+cofinally and 𝒯-accumulation points to accumulation points where declared — the ω-limit
+class of x maps into that of Φ(x). Both components of π_sem commute; the square holds. ∎
+
+### Observer Preservation Profile
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Theorem** | L4.1.T3 | `Obs-Pres` | | **Novel** |
+**Synopsis:** What model homomorphisms preserve of the observable triple, component by component: the regime D always; the canonical class up to ≃ always; the horizon class H and the path valuation PV in general not — no homomorphism condition constrains them, and ≃-equivalent elements already differ in H within a single model. This preservation profile is exact: it states everything that is preserved and exhibits the failure for everything that is not.
+
+**Source:** CRPT; from [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple) + [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) + [`Obs-Nat` (L4.1.T2)](CRPT_OMEGA_TOWER_L4.md#naturality-of-the-semantic-residue).
+
+For every homomorphism Φ : M₁ → M₂ and x ∈ 𝒰_{M₁}:
+
+(i) **D is preserved:** D(Φ(x)) = D(x) — regimes map to regimes ([`Reg-Nat` (L8.8.C1)](CRPT_OMEGA_TOWER_L8.md#naturality-of-regime-partition)).
+
+(ii) **The canonical class is preserved up to ≃:** Φ(CFix(x)) ≃_{M₂} CFix(Φ(x))
+([`Obs-Nat` (L4.1.T2)](CRPT_OMEGA_TOWER_L4.md#naturality-of-the-semantic-residue)).
+
+(iii) **H is not preserved in general:** there are homomorphisms with
+H(Φ(x)) ≠ H(x). *Witness:* take x with H_S(x) = ⊤ by a sibling y (ρ(y) = ρ(x), y ≉ x)
+and Φ collapsing the ≃-class (e.g. the quotient κ into Collapse(M),
+[`Collapse-Hom` (L7.1.C4)](CRPT_OMEGA_TOWER_L7.md#quotient-projection-is-a-model-homomorphism)): the image has a single preimage, H_S drops to ⊥. The four
+homomorphism conditions never mention fiber multiplicity, so nothing forbids this.
+
+(iv) **PV is not preserved in general:** path valuations are computed against each
+model's own step weighting w ([`Step-W` (L4.3.D2)](CRPT_OMEGA_TOWER_L4.md#step-weighting)), and [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) imposes no
+weight condition; a target model re-weighting the image steps changes PV while
+remaining a homomorphism. *Witness:* identity on the universe with w₂ ≠ w₁.
+
+*Proof.* Clauses (i) and (ii) are `Reg-Nat` (L8.8.C1) and `Obs-Nat` (L4.1.T2) respectively; clauses (iii) and (iv) are established by their stated witnesses (the collapse quotient for H; re-weighting for PV). ∎
+
+*Consequence.* Expectations that homomorphisms transport the full observable triple are
+false by design: the transportable content is exactly the semantic residue (D, canonical
+class) — the natural part ([`Obs-Nat` (L4.1.T2)](CRPT_OMEGA_TOWER_L4.md#naturality-of-the-semantic-residue)); H and PV are model-relative observables.
+
 ### Coalgebraic Terminology & Origins
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L4.1.R2 | `Coal-Term` |  | **Reframed** |
-**Synopsis:** This remark explains the three alternative names for the observer triple and why 'observer triple' is preferred. 'Orbit characterisation triple' emphasises the orbit-classification function. 'Behavioral signature' emphasises the behavioral identification role. 'Observer triple' is preferred because it captures the epistemological role: it represents what can be known about an element by a projection-based observer.
+**Synopsis:** This remark explains the three alternative names for the observable triple and why 'observable triple' is preferred. 'Orbit characterisation triple' emphasises the orbit-classification function. 'Behavioral signature' emphasises the behavioral identification role. 'observable triple' is preferred because it captures the epistemological role: it represents what can be known about an element by a projection-based observer.
 
 **Source:** Rutten [2000] *Universal Coalgebra*; De Nicola & Hennessy [1984] *Testing Equivalences for Processes*; applied to [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple).
 
@@ -203,21 +269,21 @@ Alternative terminology (all equivalent):
 - **Coalgebraic Signature Functor** — emphasizes the category-theoretic role
 - **Observable Triple** (formal name used below)
 
-### Discernibility: Observer Triple
+### Discernibility: observable triple
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L4.1.R3 | `Disc-Obs` | | **Novel** |
-**Synopsis:** Reading the observer triple as a discernibility extractor.
+**Synopsis:** Reading the observable triple as a discernibility extractor.
 
 **Source:** CRPT; from [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple).
 
-The observer triple 𝒪 extracts the
+The observable triple 𝒪 extracts the
 **maximally discernible information** from an element's orbit: trajectory weight (PV),
 structural position (H), and regime membership (M). Two elements with identical 𝒪
 are **observationally indiscernible** — no observer with access to these three
 components can distinguish them. Conversely, elements with different 𝒪 values are
-guaranteed discernible. The observer triple is thus the **minimal sufficient
+guaranteed discernible. The observable triple is thus the **minimal sufficient
 statistic** for CRPT-style discernibility.
 
 ---
@@ -308,7 +374,7 @@ V = (V, +, ·, 0, 1) where (V, +, 0) is a commutative monoid, (V, ·, 1) is a mo
 ### Step Weighting
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L4.3.D2 | `Step-W` | w(x, y) | **Imported** |
+| **Definition** | L4.3.D2 | `Step-W` | w(x, y) | **Specialized** |
 **Synopsis:** The step weighting function w assigns a semiring value to each single reduction step x →_ρ y. Multiplicative composition of step weights along a reduction path gives the weight of the entire path. The projection valuation accumulates these weights using the semiring multiplication.
 
 **Source:** Kuich & Salomaa [1986] — weighted transitions; applied to [`VS` (L4.3.D1)](CRPT_OMEGA_TOWER_L4.md#value-semiring-v) over →_ρ.
@@ -319,7 +385,7 @@ w : →_ρ → V assigning a value to each reduction step.
 ### Finite Reduction Histories
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L4.3.D3 | `FRH` |  | **Imported** |
+| **Definition** | L4.3.D3 | `FRH` |  | **Specialized** |
 **Synopsis:** The set of finite reduction histories ℋ_finite(x) from x is the tree of all finite reduction paths starting at x. Each node of the tree is a reduction step; each leaf is either a normal form or a maximal finite prefix. The projection valuation is defined by summing over all paths in this tree.
 
 **Source:** Baader & Nipkow [1998] — finite reduction sequences; Kuich & Salomaa [1986]; applied to [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
@@ -396,7 +462,7 @@ edges along the ρ_M-orbit) and finiteness by PA-WN. ✓ ∎
 ### Infinite Reduction Histories from x
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L4.3.D5 | `IRH-x` |  | **Imported** |
+| **Definition** | L4.3.D5 | `IRH-x` |  | **Specialized** |
 **Synopsis:** The persistent regime projection valuation extends the finite-history valuation to elements of ∞_M using the scope conditions and the coinductive structure from PA-CoInd. For SC-1 elements, the persistent valuation converges to a limit determined by the periodic orbit's accumulated weight.
 
 **Source:** Baader & Nipkow [1998] — infinite reduction sequences; applied to [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m); the persistent counterpart of [`FRH` (L4.3.D3)](CRPT_OMEGA_TOWER_L4.md#finite-reduction-histories).
@@ -502,7 +568,7 @@ models automatically receive regime-stratified interpretations by this mechanism
 ### ρ-Predecessor Operator
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L4.4.D1 | `Pre_ρ-14` | Pre_ρ(X) | **Imported** |
+| **Definition** | L4.4.D1 | `Pre_ρ-14` | Pre_ρ(X) | **Specialized** |
 **Synopsis:** The ρ-predecessor operator Pre_ρ(X) := { x ∈ 𝒰_M | ρ_M(x) ∈ X } collects the elements whose one-step projection image lands in X. It is the projection-operator instance of the standard predecessor transformer.
 
 **Source:** Cousot & Cousot [1977] POPL — predecessor (pre-) operator; applied to [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
@@ -530,7 +596,7 @@ T_pers(X) := (𝒰_M \ Fix(ρ_M)) ∩ Pre_ρ(X).
 ### Monotonicity of T_conv and T_pers
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lemma** | L4.4.L1 | `T-Mono` |  | **Imported** |
+| **Lemma** | L4.4.L1 | `T-Mono` |  | **Specialized** |
 **Synopsis:** Both regime fixpoint operators T_conv and T_pers are monotone on (𝒫(𝒰_M), ⊆), so by Knaster–Tarski each has well-defined least and greatest fixpoints — the precondition for the regime fixpoint construction.
 
 **Source:** Tarski [1955] — monotonicity (hypothesis of the Knaster–Tarski theorem); applied to [`Pre_ρ-14` (L4.4.D1)](CRPT_OMEGA_TOWER_L4.md#ρ-predecessor-operator).
@@ -623,7 +689,7 @@ reasoning. ∎
 ### DU-2: Induction/Co-Induction Duality
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L4.4.T3 | `Ind-CoInd` |  | **Imported** |
+| **Theorem** | L4.4.T3 | `Ind-CoInd` |  | **Specialized** |
 **Synopsis:** Induction/co-induction duality (DU-2): well-founded induction over derivation height (RP-2) on the least fixpoint ↓_M and Park-style coinduction (CP-2) on the greatest fixpoint ∞_M are formally dual proof principles, by Knaster–Tarski on the complete lattice (𝒫(𝒰_M), ⊆).
 
 **Source:** Knaster [1928]; Tarski [1955]; Park [1981] LNCS 104 — induction/coinduction duality; applied to [`Reg-FP` (L4.4.T1)](CRPT_OMEGA_TOWER_L4.md#regimes-as-leastgreatest-fixpoints).
@@ -820,7 +886,7 @@ for all n ≥ N(x) ([`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-or
 
 ## L4.6 — Self-Projection
 
-*Purpose.* Self-Projection. This section proves that the observer triple 𝒪_M is a fixed point of the projection operator when ρ_M is applied to the observer's own outputs. The observer structure is self-consistent with the projection it observes.*
+*Purpose.* Self-Projection. This section proves that the observable triple 𝒪_M is a fixed point of the projection operator when ρ_M is applied to the observer's own outputs. The observer structure is self-consistent with the projection it observes.*
 
 
 *Notation 16.0 (Fixpoint-Operator Convention for Projections).* In this section,
@@ -833,7 +899,7 @@ WF projections are RP-1 (least-fixpoint based) and NWF projections are CP-1
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.6.T1 | `SP1` |  | **Novel** |
-**Synopsis:** The self-projection theorem: the observer triple 𝒪_M, when treated as an element of a suitable CRPT model of observer triples, is a fixed point of the projection operator on that model. The observer structure is self-consistent: observing the observer produces the same observer. This is the first instance of CRPT's self-referential closure, culminating in Lω.
+**Synopsis:** The self-projection theorem: the observable triple 𝒪_M, when treated as an element of a suitable CRPT model of observable triples, is a fixed point of the projection operator on that model. The observer structure is self-consistent: observing the observer produces the same observer. This is the first instance of CRPT's self-referential closure, culminating in Lω.
 
 **Source:** CRPT; from [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple).
 
@@ -879,7 +945,7 @@ In all four cases the composition is a valid projection operator. ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.6.T2 | `SP2` |  | **Novel** |
-**Synopsis:** Self-Projection Theorem SP2: the observer triple 𝒪_M, when regarded as an element of the meta-observer model, satisfies the observer consistency condition with respect to its own classification. The observer triple consistently classifies the projection system that defines it — there is no self-referential inconsistency in applying the observer framework to the observer itself.
+**Synopsis:** Self-Projection Theorem SP2: the observable triple 𝒪_M, when regarded as an element of the meta-observer model, satisfies the observer consistency condition with respect to its own classification. The observable triple consistently classifies the projection system that defines it — there is no self-referential inconsistency in applying the observer framework to the observer itself.
 
 **Source:** CRPT; from [`SP1` (L4.6.T1)](CRPT_OMEGA_TOWER_L4.md#sp-1-closure).
 
@@ -918,7 +984,7 @@ terms (built from variables, ρ_M, composition, and fixpoint constructors), sati
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L4.6.T3 | `SP3` |  | **Novel** |
-**Synopsis:** Self-Projection Theorem SP3: under the encoding Enc, the image Enc(𝒪_M) is a fixed point of the projection operator on M'. This is the formal content of Self-Projection: the observer triple is stable under the meta-projection, confirming that the observer architecture does not change when projected through its own observational lens.
+**Synopsis:** Self-Projection Theorem SP3: under the encoding Enc, the image Enc(𝒪_M) is a fixed point of the projection operator on M'. This is the formal content of Self-Projection: the observable triple is stable under the meta-projection, confirming that the observer architecture does not change when projected through its own observational lens.
 
 **Source:** CRPT; from [`Enc` (L4.6.D1)](CRPT_OMEGA_TOWER_L4.md#admissible-encoding) + [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple).
 
@@ -948,7 +1014,7 @@ Enc is verified for λ-calculus (Church encoding), ZFC (ordinal coding), and coa
 
 ## L4.7 — Coherent Perturbation
 
-*Purpose.* Coherent Perturbation. This section defines coherent perturbation — a structured modification of M's reduction strategy that preserves the observer triple — and proves that coherent perturbations form a group under composition. This is the stability theory of the CRPT observer architecture.*
+*Purpose.* Coherent Perturbation. This section defines coherent perturbation — a structured modification of M's reduction strategy that preserves the observable triple — and proves that coherent perturbations form a group under composition. This is the stability theory of the CRPT observer architecture.*
 
 
 ### ρ_M-Perturbation

@@ -359,7 +359,7 @@ WF-Canon-1/2 behavior under Lift on the WF stratum. ✓ ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L8.4.D1 | `Tower` | Tower(M) | **Novel** |
-**Synopsis:** The tower Tower(M₀) = (M₀, M₁, M₂, …) where Mₙ₊₁ = Lift(Mₙ) is the central object of L8. Each level is a strictly richer CRPT model: more elements, same observational vocabulary (Q_{Mₙ} ≅ Q_{M₀} by L8.4.T2), but growing expressive power as formal compositions nest deeper. The tower is infinite (L8.10.T2) and fractal (L8.9.T2): its tail is self-similar to the whole.
+**Synopsis:** The tower Tower(M₀) = (M₀, M₁, M₂, …) where Mₙ₊₁ = Lift(Mₙ) is the central object of L8. Each level properly embeds in the next — growth in the embedding order, never surjective — while from level 1 onward the isomorphism type stabilizes ([`Twr-Growth` (L8.4.T4)](CRPT_OMEGA_TOWER_L8.md#tower-growth-resolution)): the tower grows in embedding structure and compositional depth, not in isomorphism type, with the same observational vocabulary at every level (Q_{Mₙ} ≅ Q_{M₀} by L8.4.T2). The tower is infinite (L8.10.T2) and fractal (L8.9.T2): its tail is self-similar to the whole.
 
 **Source:** CRPT; from [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m) + [`Lift-Compat` (L8.3.T4)](CRPT_OMEGA_TOWER_L8.md#lift-of-a-crpt-model-is-crpt-compatible).
 
@@ -436,6 +436,48 @@ Preservation of the model homomorphism conditions ([`Hom` (L5.2.D1)](CRPT_OMEGA_
 - **Φ_R:** ι maps fixpoints of level 0 to fixpoints of level n ([`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics) i). ✓
 - **Φ_E:** ι_{0→n}(q₁) ≃_{Mₙ} ι_{0→n}(q₂) iff q₁ = q₂ (injectivity). ✓
 - **Φ_ρ:** ρ_{Mₙ}(ι_{0→n}(q)) = ι_{0→n}(q) (fixpoints are fixed). ✓ ∎
+
+### Tower Growth Resolution
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Theorem** | L8.4.T4 | `Twr-Growth` | | **Novel** |
+**Synopsis:** The tower-growth trichotomy: (i) every level properly embeds in the next — the canonical inclusion is injective and never surjective, so the tower grows strictly in the embedding order at every step; (ii) the isomorphism type stabilizes after one Lift — Mₙ₊₁ ≅ Mₙ for all n ≥ 1, the element-wise form of tail self-similarity; (iii) at the base, M₀ ≅ M₁ exactly when M₀ is itself free on its own query signature — in particular every finite model has M₀ ≇ M₁. Consequently there is no strictness theorem Mₙ ≇ Mₙ₊₁ for n ≥ 1: its negation is a theorem, and "growth" means embedding structure and compositional depth, never cardinality or isomorphism type.
+
+**Source:** CRPT; from [`NFC-TInv` (L8.4.T2)](CRPT_OMEGA_TOWER_L8.md#nfc-partition-is-a-tower-invariant) + [`FMA-UD` (L8.1.L2)](CRPT_OMEGA_TOWER_L8.md#unique-decomposition) + [`Can-Incl` (L8.2.D3)](CRPT_OMEGA_TOWER_L8.md#canonical-inclusion).
+
+For Tower(M₀) with Mₙ₊₁ = Lift(Mₙ) = FMA(Q_{Mₙ}):
+
+**(i) Embedding growth, at every level.** The canonical inclusion ι_{Mₙ} : Q_{Mₙ} ↪ 𝒰_{Mₙ₊₁}
+([`Can-Incl` (L8.2.D3)](CRPT_OMEGA_TOWER_L8.md#canonical-inclusion)) is injective and **never surjective**: its image is exactly the
+one-atom words, while FMA(Q_{Mₙ}) contains words of every length k ≥ 1.
+
+**(ii) Isomorphism-type stabilization.** For all n ≥ 1:
+```
+Mₙ₊₁ ≅ Mₙ     (indeed Mₙ ≅ M₁ for all n ≥ 1)
+```
+
+**(iii) Base dichotomy.** M₀ ≅ M₁ iff M₀ is itself free on its own query signature
+(M₀ ≅ FMA(Q_{M₀}) as CRPT models). In particular, every **finite** model with Q_{M₀} ≠ ∅
+has M₀ ≇ M₁, since FMA(Q_{M₀}) is countably infinite.
+
+*Proof.* **(i)** Injectivity is [`FMA-UD` (L8.1.L2)](CRPT_OMEGA_TOWER_L8.md#unique-decomposition) (distinct atoms decompose distinctly).
+Non-surjectivity: for any q ∈ Q_{Mₙ} the two-atom word q·q ∈ FMA(Q_{Mₙ}) is not an atom
+([`FMA-UD` (L8.1.L2)](CRPT_OMEGA_TOWER_L8.md#unique-decomposition): unique decomposition has length 2 ≠ 1), hence not in the image of
+ι_{Mₙ}; Q_{Mₙ} ≠ ∅ whenever 𝒰_{M₀} ≠ ∅ under PA-WN. **(ii)** By [`NFC-TInv` (L8.4.T2)](CRPT_OMEGA_TOWER_L8.md#nfc-partition-is-a-tower-invariant),
+Q_{Mₙ} ≅ Q_{M₀} for every n. A bijection of generator sets induces an isomorphism of free
+monoidal algebras (freeness: extend the bijection atom-wise to words; it commutes with
+concatenation and with the strip-last reduction, hence is a CRPT isomorphism). Therefore
+Mₙ₊₁ = FMA(Q_{Mₙ}) ≅ FMA(Q_{M₀}) = M₁ for every n ≥ 1, and in particular Mₙ₊₁ ≅ Mₙ.
+This is the element-wise form of tail self-similarity ([`Twr-Tail-Sim` (L8.9.T1)](CRPT_OMEGA_TOWER_L8.md#l89t1--tower-tail-self-similarity)): the
+tower's isomorphism type is eventually constant — after exactly one Lift. **(iii)** If
+M₀ ≅ FMA(Q_{M₀}) then M₀ ≅ M₁ by definition of M₁. Conversely M₀ ≅ M₁ = FMA(Q_{M₀})
+*is* freeness of M₀ on its own query signature. For finite M₀ with Q_{M₀} ≠ ∅:
+|FMA(Q_{M₀})| = ℵ₀ > |𝒰_{M₀}|, so no isomorphism exists. ∎
+
+*Consequence.* The conjecture "Mₙ ≇ Mₙ₊₁ for all n" is **false**: it fails at every
+n ≥ 1. The tower's growth is real but lives in the embedding order (i) and in
+compositional depth ([`Lift-Depth` (L8.2.C1)](CRPT_OMEGA_TOWER_L8.md#abstraction-depth-in-liftm-measures-fiber-composition)), not in isomorphism type (ii) — exactly
+what fractality requires.
 
 ## L8.5 — NWF-Extended Lift*
 
@@ -930,8 +972,8 @@ with tower Tower(M) = (M^{(k)})_{k≥0}. Then:
 **(1)** (*Within each level*) For every k ≥ 0, abstraction in M^{(k)} is exactly
 recursive projection by ρ^{(k)} to canonical forms CNF_{M^{(k)}} ([`Abs=RP` (L2.4.T4)](CRPT_OMEGA_TOWER_L2.md#abstraction--recursive-projection)
 applied levelwise). Horizons H_S^{(k)}, H_I^{(k)}, H_O^{(k)} classify where
-abstraction is non-injective (H_S), invisibly collapsing (H_I), or ontologically
-terminal (H_O) ([`Hor-Abs` (L3.1.T3)](CRPT_OMEGA_TOWER_L3.md#horizons-as-abstraction-limits)).
+abstraction is non-injective (H_S), invisibly collapsing (H_I), or at the depth
+boundary (H_O) ([`Hor-Abs` (L3.1.T3)](CRPT_OMEGA_TOWER_L3.md#horizons-as-abstraction-limits)).
 
 **(2)** (*Between levels*) Emergent ontology at level k+1 is generated by Lift from
 stabilized recursive projections at level k. Fibers NFC_{M^{(k)}}(f) are collapsed
@@ -1321,7 +1363,7 @@ The functor preserves:
 ### Naturality of Regime Partition
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L8.8.C1 | `Reg-Nat` |  | **Novel** |
+| **Corollary** | L8.8.C1 | `Reg-Nat` |  | **Derived** |
 **Synopsis:** Regime Naturality corollary: the regime partition ↓_M ⊔ ∞_M is natural in M — for every CRPT homomorphism φ : M₁ → M₂, φ maps ↓_{M₁} into ↓_{M₂} and ∞_{M₁} into ∞_{M₂}. The regime assignment is a natural transformation from the identity functor to itself.
 
 **Source:** CRPT; corollary of [`OR5-Func` (L8.8.T3)](CRPT_OMEGA_TOWER_L8.md#hybrid-framework-is-functorial-on-mod_crpt).
@@ -1371,7 +1413,7 @@ achievement is characterizing **discernibility**: what structural distinctions s
 recursive projection (L2.4), which collapse at horizon boundaries (L3.3), how those
 collapses are inherited through the tower (L8.2), and what survives across all tower
 levels (L8.6). Bisimilarity ≈ defines the discernibility criterion (L1.1); horizons
-define its limits (§L3.1–9); the observer triple extracts its maximal summary (L4.1);
+define its limits (§L3.1–9); the observable triple extracts its maximal summary (L4.1);
 the lift regenerates discernibility structure at higher levels (L8.1).
 
 ---

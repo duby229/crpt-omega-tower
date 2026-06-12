@@ -45,10 +45,10 @@
 | L1.1.L1 | Bisimulation Union Closure | `Bisim-Union` | Lemma |
 | L1.1.L2 | Bisimilarity is Equivalence Relation | `≈-Eq` | Lemma |
 | L1.3.D1 | Continuous Persistence | `CPer` | Definition |
-| L1.3.T1 | PA-Reach Observable Extension | `PA-Reach-ObsExt` | Theorem |
-| L1.3.T2 | Finitary Realization of PA-Reach | `PA-Reach-Fin` | Theorem |
-| L1.3.T3 | Topological Realization of PA-Reach | `PA-Reach-Top` | Theorem |
-| L1.3.T4 | Decomposition of PA-Reach Realizations | `PA-Reach-Decomp` | Theorem |
+| L1.3.T1 | PA-Reach Observable Extension | `Reach-ObsExt` | Theorem |
+| L1.3.T2 | Finitary Realization of PA-Reach | `Reach-Fin` | Theorem |
+| L1.3.T3 | Topological Realization of PA-Reach | `Reach-Top` | Theorem |
+| L1.3.T4 | Decomposition of PA-Reach Realizations | `Reach-Decomp` | Theorem |
 | L1.4.D1 | Regimes and Canonicalization Modes | `Mode` | Definition |
 | L1.4.T1 | Regime Coexistence and Mode Coverage | `Mode-Comp` | Theorem |
 | L1.4.T2 | Native CC | `Nat-CC` | Theorem |
@@ -123,8 +123,10 @@
 | L4.1.D2 | Point-Value Observer | `PV-Obs` | Definition |
 | L4.1.D3 | Horizon-Constrained Observer | `HC-Obs` | Definition |
 | L4.1.D4 | Regime-Dependent Observer | `RD-Obs` | Definition |
-| L4.1.D5 | Observer Triple 𝒪_M | `Obs-Triple` | Definition |
+| L4.1.D5 | observable triple 𝒪_M | `Obs-Triple` | Definition |
 | L4.1.T1 | Observer Consistency | `Obs-Const` | Theorem |
+| L4.1.T2 | Naturality of the Semantic Residue | `Obs-Nat` | Theorem |
+| L4.1.T3 | Observer Preservation Profile | `Obs-Pres` | Theorem |
 | L4.2.D1 | Gateway GW | `GW` | Definition |
 | L4.2.T1 | Regime Connectivity | `Reg-Conn` | Theorem |
 | L4.3.D1–D4 | Projection Valuation (VS, Step-W, FRH, PV-WF) | `PV1...PV-WF` | Definitions |
@@ -140,7 +142,7 @@
 
 | Label | Short Name | Tag | Type |
 |-------|-----------|-----|------|
-| L5.1.D1–D7 | Model Algebra Operations (∘, ∩, ×, /, ∪, Spec) | Multiple | Definitions |
+| L5.1.D1–D6 | Model Algebra Operations (∩, ×, /∼, ∪, Spec — partial meet ∩) | Multiple | Definitions |
 | L5.1.T1–T5 | Algebra Law Theorems | Multiple | Theorems |
 | L5.2.D1 | Model Homomorphism Hom | `Hom` | Definition |
 | L5.2.T1 | Mod_CRPT Category | `Mod-Cat` | Theorem |
@@ -231,6 +233,7 @@
 | L8.4.D1 | Tower Sequence Tower(M) | `Tower` | Definition |
 | L8.4.T1 | Tower Existence | `Twr-Ex` | Theorem |
 | L8.4.T2 | NFC Partition is Tower Invariant (Q_{M_n} ≅ Q_M) | `NFC-TInv` | Theorem |
+| L8.4.T4 | Tower Growth Resolution (trichotomy) | `Twr-Growth` | Theorem |
 | L8.4.T3 | Faithful Embedding of Tower Levels | `Faith-Emb` | Theorem |
 | L8.5.D1 | NWF Abstraction Quotient Q_M^* | `NWF-Quot` | Definition |
 | L8.5.D2 | NWF-Extended Lift Lift*(M) | `Lift∞` | Definition |
@@ -280,6 +283,9 @@
 | **Lω.7.T2** | **L1.1.D1 is the Unique Projective Fixed Point** | **`Lω-FixedPt-Unique`** | **Theorem** |
 | **Lω.8.D1** | **The Specification Substrate** | **`Spec-Sub`** | **Definition** |
 | **Lω.8.T1** | **Sections are Fibers** | **`Self-Sect`** | **Theorem** |
+| **Lω.8.D2** | **Rank Stratification of the Specification** | **`Spec-Rank`** | **Definition** |
+| **Lω.8.D3** | **The Status Classification** | **`Status`** | **Definition** |
+| **Lω.8.T2** | **Ranks versus Levels** | **`Rank-vs-Level`** | **Theorem** |
 | **Lω.8.R1** | **The Census Discipline** | **`Sect-Census`** | **Remark** |
 
 > **Bold rows** indicate theorems added at the Lω level.
@@ -289,16 +295,16 @@
 ## Part II — Index by Concept
 
 ### Projection & Fibers
-[`ProjSys` (L0.1.D1)](CRPT_OMEGA_TOWER_L0.md#l01d1--projection-system) · [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence) · [`Obs_π` (L0.1.D3)](CRPT_OMEGA_TOWER_L0.md#l01d3--π-observability) · [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) · [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) · [`NFC-NM` (L2.5.D1)](CRPT_OMEGA_TOWER_L2.md#normal-form-fiber--native-form) · [`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient) · [`Ab-Quot-28` (L8.2.D1)](CRPT_OMEGA_TOWER_L8.md#abstraction-quotient)
+[`ProjSys` (L0.1.D1)](CRPT_OMEGA_TOWER_L0.md#projection-system) · [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#fiber-and-observable-equivalence) · [`Obs_π` (L0.1.D3)](CRPT_OMEGA_TOWER_L0.md#π-observability) · [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) · [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) · [`NFC-NM` (L2.5.D1)](CRPT_OMEGA_TOWER_L2.md#normal-form-fiber--native-form) · [`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient) · [`Ab-Quot-28` (L8.2.D1)](CRPT_OMEGA_TOWER_L8.md#abstraction-quotient)
 
 ### Regimes (↓_M, ∞_M)
-`Conv`, [`Pers` (L0.2.D1)](CRPT_OMEGA_TOWER_L0.md#l02d1--convergent-and-persistent-elements) · [`Regime-Dich` (L0.2.T1)](CRPT_OMEGA_TOWER_L0.md#l02t1--universal-regime-dichotomy) · [`↓_M` (L2.2.D4)](CRPT_OMEGA_TOWER_L2.md#convergent-regime-_m) · [`∞_M` (L2.2.D5)](CRPT_OMEGA_TOWER_L2.md#persistent-regime-_m) · [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality) · [`Reg-Exh` (L2.2.T8)](CRPT_OMEGA_TOWER_L2.md#regime-exhaustiveness) · [`CRPT-WF` (Lω.7.T1)](CRPT_OMEGA_TOWER_Lω.md#lω7t1--crpt-wf-the-self-application-is-pure-well-founded)
+`Conv`, [`Pers` (L0.2.D1)](CRPT_OMEGA_TOWER_L0.md#convergent-and-persistent-elements) · [`Regime-Dich` (L0.2.T1)](CRPT_OMEGA_TOWER_L0.md#universal-regime-dichotomy) · [`↓_M` (L2.2.D4)](CRPT_OMEGA_TOWER_L2.md#convergent-regime-_m) · [`∞_M` (L2.2.D5)](CRPT_OMEGA_TOWER_L2.md#persistent-regime-_m) · [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality) · [`Reg-Exh` (L2.2.T8)](CRPT_OMEGA_TOWER_L2.md#regime-exhaustiveness) · [`CRPT-WF` (Lω.7.T1)](CRPT_OMEGA_TOWER_Lω.md#lω7t1--crpt-wf-the-self-application-is-pure-well-founded)
 
 ### Canonical Forms & Depth
 [`NF` (L1.1.D2)](CRPT_OMEGA_TOWER_L1.md#normal-form) · [`Fix` (L2.1.D3)](CRPT_OMEGA_TOWER_L2.md#fixpoint-set) · [`Fix=NF` (L2.1.T2)](CRPT_OMEGA_TOWER_L2.md#fix--nf) · [`CFix-NM` (L2.4.D1)](CRPT_OMEGA_TOWER_L2.md#canonical-normal-form-map--native-form) · [`CNF-Uniq` (L2.4.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-uniqueness--orbit-scoped-uniqueness) · [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m) · [`d-WD` (L2.3.T1)](CRPT_OMEGA_TOWER_L2.md#d_m-is-well-defined-on-μt_ρm) · [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient)
 
 ### Horizons (H_S, H_I, H_O)
-[`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) · [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) · [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o) · [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form) · [`H_I-WD` (L3.1.T2)](CRPT_OMEGA_TOWER_L3.md#h_i-well-definedness--general-kernel-theorem) · [`H_I-WD-U` (L0.3.T2)](CRPT_OMEGA_TOWER_L0.md#l03t2--h_i-well-definedness--universal-kernel-theorem) · [`Hor-Abs` (L3.1.T3)](CRPT_OMEGA_TOWER_L3.md#horizons-as-abstraction-limits) · [`Hor-Lift` (L8.2.T2)](CRPT_OMEGA_TOWER_L8.md#horizon-inheritance-under-lift)
+[`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) · [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) · [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o) · [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form) · [`H_I-WD` (L3.1.T2)](CRPT_OMEGA_TOWER_L3.md#h_i-well-definedness--general-kernel-theorem) · [`H_I-WD-U` (L0.3.T2)](CRPT_OMEGA_TOWER_L0.md#h_i-well-definedness--universal-kernel-theorem) · [`Hor-Abs` (L3.1.T3)](CRPT_OMEGA_TOWER_L3.md#horizons-as-abstraction-limits) · [`Hor-Lift` (L8.2.T2)](CRPT_OMEGA_TOWER_L8.md#horizon-inheritance-under-lift)
 
 ### Six-Class Partition
 [`Bool-Pred` (L3.2.D2)](CRPT_OMEGA_TOWER_L3.md#independent-boolean-predicates) · [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification) · [`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model)
@@ -333,9 +339,9 @@
 
 | Source | Items (approx.) | Examples |
 |--------|----------------|---------|
-| **Imported** (ARS, bisimulation, category theory, fiber theory) | ~45 | `Bisim`, `≈-Eq`, `FMA`, `GI`, `η-Comp` |
-| **Reframed** (anchor concepts presented in new organizational layer) | ~12 | `H_O`, `Ab-Quot-28`, `Quot-Proj`, `Lift∞` |
-| **Novel CRPT** (original constructions) | ~100+ | `H_S`, `H_I`, `ρ_M`, `6-Part`, `F=∅`, `HV-Dual`, `Self-FP` |
+| **Imported** (ARS, bisimulation, category theory, fiber theory) | ∼45 | `Bisim`, `≈-Eq`, `FMA`, `GI`, `η-Comp` |
+| **Reframed** (anchor concepts presented in new organizational layer) | ∼12 | `H_O`, `Ab-Quot-28`, `Quot-Proj`, `Lift∞` |
+| **Novel CRPT** (original constructions) | ∼100+ | `H_S`, `H_I`, `ρ_M`, `6-Part`, `F=∅`, `HV-Dual`, `Self-FP` |
 | **Novel CRPT** (L8–Lω supplementary) | 10 | `Prop-σ-Lift`, `Lift-Red-Struc`, `Lift-Pure-WF`, `Tower-Inf`, `CRPT-Acyclic`, `CRPT-WF`, `Lω-FixedPt-Unique`, `Q_M-Card`, `Self-CRPT-Finite` |
 
 ---

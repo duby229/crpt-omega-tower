@@ -196,7 +196,7 @@ The specification achieves the following formal properties:
 | CRPT_OMEGA_TOWER_THEOREM_INDEX.md | Complete theorem/definition index | 280 |
 | CRPT_OMEGA_TOWER_DEFINITIONS_INDEX.md | Symbol reference and notation rules | 220 |
 | CRPT_OMEGA_TOWER_RELEASE_NOTES.md | This document | 220 |
-| **Total** | | **~12,838 lines** |
+| **Total** | | **∼12,838 lines** |
 
 ---
 

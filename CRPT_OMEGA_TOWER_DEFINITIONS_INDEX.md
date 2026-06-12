@@ -46,7 +46,7 @@
 | H_O^π | Universal H_O (L0 form) | L0.3.D1 | L0 | w.r.t. projection π |
 | sig_M(x) | Orbit signature of x | L3.1.D5 | L3 | Classifies preimage uniformity |
 | HP_M(x) | Horizon predicate | L3.1.D6 | L3 | Combined horizon indicator |
-| 𝒪_M | Observer Triple (O_M, Gate_M, sig_M) | L4.1.D5 | L4 | Formal observability characterization |
+| 𝒪_M | observable triple (O_M, Gate_M, sig_M) | L4.1.D5 | L4 | Formal observability characterization |
 | GW(x) | Gateway predicate | L4.2.D1 | L4 | Regime connectivity |
 | CPD(σ) | Canonical period | L4.5.D2 | L4 | For NWF elements |
 | ker(ρ_M, y) | Kernel congruence at y | L3.1.D3 | L3 | {x \| ρ_M(x) = y} |

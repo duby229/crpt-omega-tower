@@ -261,7 +261,7 @@ This tier applies to **Types P and EP** only.
 - **CFix(ρ_M) on ∞_M:** lim_{n→∞} ρ_M^n(x) exists in the model topology ([`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) native form).
 - **Topological Horizons:** H_S^{top}, H_I^{top} (Definitions 9.3.1–9.3.2).
 - **Twelve-Class Partition A_∞–F_∞:** (L3.2) classifies ∞_M elements by topological horizon structure.
-- **Full orbit signature on ∞_M:** sig_M(x) = (∞, [OT^obs_M(x)]_{~tail}) ([`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form) native form); where PA-WN_top holds the trace's tail class determines the limit point.
+- **Full orbit signature on ∞_M:** sig_M(x) = (∞, [OT^obs_M(x)]_{∼tail}) ([`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form) native form); where PA-WN_top holds the trace's tail class determines the limit point.
 
 This tier applies to **all Types** when PA-WN_top holds, and subsumes Tier 2.
 
@@ -565,13 +565,13 @@ class of the n-th iterate of x under ρ_M.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L6.3.D2 | `Tail-Eq` | | **Reframed** |
-**Synopsis:** Tail equivalence on Q_M^ω: two sequences s, t are tail-equivalent (s ~ t) when they agree from some index onward — ∃N : ∀n ≥ N, s(n) = t(n). Tail equivalence captures 'eventual sameness' of infinite sequences, ignoring finite prefixes.
+**Synopsis:** Tail equivalence on Q_M^ω: two sequences s, t are tail-equivalent (s ∼ t) when they agree from some index onward — ∃N : ∀n ≥ N, s(n) = t(n). Tail equivalence captures 'eventual sameness' of infinite sequences, ignoring finite prefixes.
 
 **Source:** CRPT; from [`OT-21B` (L6.3.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace); reframes tail equivalence of sequences.
 
 
 Two orbit traces OT_M(x) and OT_M(y) are *tail-equivalent*, written
-OT_M(x) ~_tail OT_M(y), if their tails eventually agree:
+OT_M(x) ∼_tail OT_M(y), if their tails eventually agree:
 
 ```
 OT_M(x) ~_tail OT_M(y)  :⟺  ∃m, n ∈ ℕ : ∀k ∈ ℕ :
@@ -584,24 +584,24 @@ That is, after discarding finite initial segments, the two traces become identic
 ### Tail Equivalence is an Equivalence Relation
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lemma** | L6.3.L1 | `Tail-EqRel` | | **Imported** |
-**Synopsis:** Tail equivalence ~ is an equivalence relation on Q_M^ω: reflexivity (s ~ s trivially), symmetry (s ~ t implies t ~ s), and transitivity (s ~ t and t ~ u implies s ~ u using the max of the two threshold indices). Standard verification.
+| **Lemma** | L6.3.L1 | `Tail-EqRel` | | **Specialized** |
+**Synopsis:** Tail equivalence ∼ is an equivalence relation on Q_M^ω: reflexivity (s ∼ s trivially), symmetry (s ∼ t implies t ∼ s), and transitivity (s ∼ t and t ∼ u implies s ∼ u using the max of the two threshold indices). Standard verification.
 
 **Source:** Standard set theory — equivalence-relation axioms; applied to [`Tail-Eq` (L6.3.D2)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-on-traces).
 
 
-~_tail is reflexive, symmetric, and transitive on (𝒰_M/≈)^ω.
+∼_tail is reflexive, symmetric, and transitive on (𝒰_M/≈)^ω.
 
 *Proof.*
 
-*Reflexivity:* OT_M(x) ~_tail OT_M(x). Take m = n = 0. Then ∀k:
+*Reflexivity:* OT_M(x) ∼_tail OT_M(x). Take m = n = 0. Then ∀k:
 [ρ_M^{0+k}(x)]_≈ = [ρ_M^{0+k}(x)]_≈. ✓
 
-*Symmetry:* If OT_M(x) ~_tail OT_M(y) with witnesses m, n, then
-OT_M(y) ~_tail OT_M(x) with witnesses n, m. ✓
+*Symmetry:* If OT_M(x) ∼_tail OT_M(y) with witnesses m, n, then
+OT_M(y) ∼_tail OT_M(x) with witnesses n, m. ✓
 
-*Transitivity:* If OT_M(x) ~_tail OT_M(y) with witnesses m₁, n₁ and
-OT_M(y) ~_tail OT_M(z) with witnesses m₂, n₂, then:
+*Transitivity:* If OT_M(x) ∼_tail OT_M(y) with witnesses m₁, n₁ and
+OT_M(y) ∼_tail OT_M(z) with witnesses m₂, n₂, then:
 ```
 ∀k : [ρ_M^{m₁+k}(x)]_≈ = [ρ_M^{n₁+k}(y)]_≈
 ∀k : [ρ_M^{m₂+k}(y)]_≈ = [ρ_M^{n₂+k}(z)]_≈
@@ -619,7 +619,7 @@ For any k ∈ ℕ:
 - From the second relation with offset max(n₁, m₂) - m₂ + k:
   [ρ_M^{max(n₁,m₂) + k}(y)]_≈ = [ρ_M^{n₂ + max(n₁,m₂) - m₂ + k}(z)]_≈
 
-Therefore: [ρ_M^{M+k}(x)]_≈ = [ρ_M^{N+k}(z)]_≈ for all k. So OT_M(x) ~_tail OT_M(z). ✓ ∎
+Therefore: [ρ_M^{M+k}(x)]_≈ = [ρ_M^{N+k}(z)]_≈ for all k. So OT_M(x) ∼_tail OT_M(z). ✓ ∎
 
 ### The Asymptotic Orbit Invariant (Level 1)
 
@@ -627,7 +627,7 @@ Therefore: [ρ_M^{M+k}(x)]_≈ = [ρ_M^{N+k}(z)]_≈ for all k. So OT_M(x) ~_tai
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L6.3.D3 | `AOI₁` | AOI₁(x) | **Novel** |
-**Synopsis:** The level-1 asymptotic orbit invariant AOI₁(x) is the tail-equivalence class [OT(x)]_~ of the orbit trace. It captures the eventual behavior of the orbit — what the orbit does in the long run after discarding any finite transient prefix.
+**Synopsis:** The level-1 asymptotic orbit invariant AOI₁(x) is the tail-equivalence class [OT(x)]_∼ of the orbit trace. It captures the eventual behavior of the orbit — what the orbit does in the long run after discarding any finite transient prefix.
 
 **Source:** CRPT; from [`OT-21B` (L6.3.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace) + [`Tail-Eq` (L6.3.D2)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-on-traces).
 
@@ -643,7 +643,7 @@ AOI₁(x)  :=  [OT_M(x)]_{~_tail}  ∈  (𝒰_M / ≈)^ω / ~_tail
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L6.3.T2 | `AOI₁-WD` | | **Novel** |
-**Synopsis:** AOI₁ is well-defined: [OT(x)]_~ depends only on x (not on any choice of representative) and is invariant under ≃_M by AOI-1 bisimulation invariance. AOI₁ is therefore a genuine observable invariant.
+**Synopsis:** AOI₁ is well-defined: [OT(x)]_∼ depends only on x (not on any choice of representative) and is invariant under ≃_M by AOI-1 bisimulation invariance. AOI₁ is therefore a genuine observable invariant.
 
 **Source:** CRPT; from [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`Tail-EqRel` (L6.3.L1)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-is-an-equivalence-relation).
 
@@ -659,15 +659,15 @@ OT_M(x) = ([ρ_M^n(x)]_≈)_{n∈ℕ} is well-defined:
 - [ρ_M^n(x)]_≈ is a well-defined bisimulation class (≈ is an equivalence
   relation on 𝒰_M by [`≈-Eq` (L1.1.L2)](CRPT_OMEGA_TOWER_L1.md#-is-an-equivalence-relation), with ≈ defined at [`Bisim~` (L1.1.D7)](CRPT_OMEGA_TOWER_L1.md#bisimilarity)).
 
-The quotient (𝒰_M/≈)^ω / ~_tail is well-defined because ~_tail is an equivalence
-relation ([`Tail-EqRel` (L6.3.L1)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-is-an-equivalence-relation)). Therefore AOI₁(x) = [OT_M(x)]_{~_tail} exists and is
+The quotient (𝒰_M/≈)^ω / ∼_tail is well-defined because ∼_tail is an equivalence
+relation ([`Tail-EqRel` (L6.3.L1)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-is-an-equivalence-relation)). Therefore AOI₁(x) = [OT_M(x)]_{∼_tail} exists and is
 unique. ∎
 
 ### Bisimulation Invariance
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L6.3.T3 | `AOI-BisInv` | | **Novel** |
-**Synopsis:** AOI bisimulation invariance (full proof): if x ≈ y then AOI₁(x) = AOI₁(y). The proof uses PA-Bisim to show [ρ_M^n(x)]_≈ = [ρ_M^n(y)]_≈ for all n by induction, giving OT(x) = OT(y) pointwise and hence [OT(x)]_~ = [OT(y)]_~.
+**Synopsis:** AOI bisimulation invariance (full proof): if x ≈ y then AOI₁(x) = AOI₁(y). The proof uses PA-Bisim to show [ρ_M^n(x)]_≈ = [ρ_M^n(y)]_≈ for all n by induction, giving OT(x) = OT(y) pointwise and hence [OT(x)]_∼ = [OT(y)]_∼.
 
 **Source:** CRPT; from [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence).
 
@@ -676,7 +676,7 @@ For x, y ∈ ∞_M: if x ≈ y, then AOI₁(x) = AOI₁(y).
 
 *Proof.*
 
-Assume x ≈ y. We need to show OT_M(x) ~_tail OT_M(y), i.e., ∃m, n :
+Assume x ≈ y. We need to show OT_M(x) ∼_tail OT_M(y), i.e., ∃m, n :
 ∀k : [ρ_M^{m+k}(x)]_≈ = [ρ_M^{n+k}(y)]_≈.
 
 **Claim:** [ρ_M^n(x)]_≈ = [ρ_M^n(y)]_≈ for all n ∈ ℕ.
@@ -699,7 +699,7 @@ Applied to u = ρ_M^n(x), v = ρ_M^n(y): ρ_M^{n+1}(x) ≈ ρ_M^{n+1}(y). ✓
 
 *End of claim.* We have [ρ_M^n(x)]_≈ = [ρ_M^n(y)]_≈ for all n. Therefore
 OT_M(x) = OT_M(y) (pointwise equality of sequences), which implies
-OT_M(x) ~_tail OT_M(y) (with m = n = 0). Therefore AOI₁(x) = AOI₁(y). ∎
+OT_M(x) ∼_tail OT_M(y) (with m = n = 0). Therefore AOI₁(x) = AOI₁(y). ∎
 
 ### AOI₁ Proves Pointwise Orbit-Trace Equality
 | Type | Label | Tag | Notation | Status |
@@ -718,7 +718,7 @@ propagates through ρ_M at every step, not just eventually.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L6.3.T4 | `AOI-CNF∞` | | **Novel** |
-**Synopsis:** AOI₁ extends CNF∞_M: for SC-1 elements, the tail-equivalence class [OT(x)]_~ completely determines CNF∞_M(x). AOI₁ is therefore at least as fine as CNF∞_M on the SC-1 stratum, and strictly finer on aperiodic elements where CNF∞_M is undefined.
+**Synopsis:** AOI₁ extends CNF∞_M: for SC-1 elements, the tail-equivalence class [OT(x)]_∼ completely determines CNF∞_M(x). AOI₁ is therefore at least as fine as CNF∞_M on the SC-1 stratum, and strictly finer on aperiodic elements where CNF∞_M is undefined.
 
 **Source:** CRPT; from [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient).
 
@@ -744,7 +744,7 @@ onward are in the same bisimulation class [ρ_M^N(x)]_≈. The tail of the trace
 
 Similarly for y: the tail from position N' is constant ([ρ_M^{N'}(y)]_≈, ...).
 
-If AOI₁(x) = AOI₁(y), then OT_M(x) ~_tail OT_M(y): ∃m, n : ∀k :
+If AOI₁(x) = AOI₁(y), then OT_M(x) ∼_tail OT_M(y): ∃m, n : ∀k :
 [ρ_M^{m+k}(x)]_≈ = [ρ_M^{n+k}(y)]_≈. Taking m ≥ N and n ≥ N', the constant
 tails must match: [ρ_M^N(x)]_≈ = [ρ_M^{N'}(y)]_≈. But [ρ_M^N(x)]_≈ = CNF∞(x)
 and [ρ_M^{N'}(y)]_≈ = CNF∞(y). Therefore CNF∞(x) = CNF∞(y). ∎
@@ -768,7 +768,7 @@ injective (distinct CNF∞ values map to distinct AOI₁ values).
 
 *Proof of well-definedness:* If CNF∞(x) = CNF∞(y), then [ρ_M^{N_x}(x)]_≈ =
 [ρ_M^{N_y}(y)]_≈. The tails of OT_M(x) and OT_M(y) are eventually constant
-at the same class. Therefore OT_M(x) ~_tail OT_M(y), i.e., AOI₁(x) = AOI₁(y).
+at the same class. Therefore OT_M(x) ∼_tail OT_M(y), i.e., AOI₁(x) = AOI₁(y).
 So ι does not depend on which x represents CNF∞(x). ✓
 
 *Proof of injectivity:* By [`AOI-CNF∞` (L6.3.T4)](CRPT_OMEGA_TOWER_L6.md#extension-of-cnf) above — AOI₁(x) = AOI₁(y) implies
@@ -780,7 +780,7 @@ CNF∞(x) = CNF∞(y) for periodic orbits. ✓ ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L6.3.T5 | `AOI-Const` | | **Novel** |
-**Synopsis:** AOI₁ constructivity: [OT(x)]_~ is computable from the orbit for SC-3 elements (computable period). For AP elements, AOI₁(x) may be a Π₂⁰ set in the Borel hierarchy — computable in the limit but not in general primitive recursive.
+**Synopsis:** AOI₁ constructivity: [OT(x)]_∼ is computable from the orbit for SC-3 elements (computable period). For AP elements, AOI₁(x) may be a Π₂⁰ set in the Borel hierarchy — computable in the limit but not in general primitive recursive.
 
 **Source:** CRPT; from [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`SC-3` (L3.3.D4)](CRPT_OMEGA_TOWER_L3.md#sc-3-eventual-periodicity-of-valuation-sequence).
 
@@ -807,7 +807,7 @@ Each step is computable:
    ρ_M^k(x) ≈ ρ_M^j(x) for previously seen orbit elements).
 3. The finite prefix OT_M^{≤n}(x) is a finite sequence of bisimulation classes,
    computable in O(n²) bisimulation checks (each new element against all previous ones).
-4. AOI₁(x) = [OT_M(x)]_{~_tail} is the tail-equivalence class of the full sequence.
+4. AOI₁(x) = [OT_M(x)]_{∼_tail} is the tail-equivalence class of the full sequence.
 
 The orbit trace is *coinductively generated*: at each step, we observe the current
 bisimulation class (head) and advance to the next iterate (tail). This is exactly
@@ -946,7 +946,7 @@ An orbit Orb_M(x) is *spectrum-definite* if OS_M(x) is fully defined, i.e.:
 ### Frequency Sum
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lemma** | L6.3.L2 | `Freq-Sum` | | **Imported** |
+| **Lemma** | L6.3.L2 | `Freq-Sum` | | **Specialized** |
 **Synopsis:** Asymptotic frequencies of a finite partition sum to 1: for spectrum-definite x with **finitely many** visited classes, Σ_{C ∈ B̃(x)} freq_x(C) = 1. The finiteness hypothesis is essential — the imported result is for finite partitions, and it fails for infinite B̃(x): an orbit visiting countably many classes each finitely often is spectrum-definite with every frequency 0, summing to 0.
 
 **Source:** Standard measure theory — frequencies of a finite partition sum to 1; applied to [`Freq` (L6.3.D4)](CRPT_OMEGA_TOWER_L6.md#visit-frequency).
@@ -1491,7 +1491,7 @@ AOI_M(x)  :=  ( AOI₁(x),  AOI₂(x),  AOI₃(x) )
 ```
 
 where:
-- **AOI₁(x)** = [OT_M(x)]_{~_tail} ∈ (𝒰_M/≈)^ω / ~_tail — the orbit trace
+- **AOI₁(x)** = [OT_M(x)]_{∼_tail} ∈ (𝒰_M/≈)^ω / ∼_tail — the orbit trace
   (Level 1; finest; always defined)
 - **AOI₂(x)** = OS_M(x) : 𝒰_M/≈ → [0,1] — the orbit spectrum
   (Level 2; intermediate; defined when spectrum-definite)
@@ -1524,7 +1524,7 @@ That is:
 
 **(a) AOI₁ refines AOI₂:**
 
-If AOI₁(x) = AOI₁(y), then OT_M(x) ~_tail OT_M(y): there exist m, n such that
+If AOI₁(x) = AOI₁(y), then OT_M(x) ∼_tail OT_M(y): there exist m, n such that
 ∀k : [ρ_M^{m+k}(x)]_≈ = [ρ_M^{n+k}(y)]_≈.
 
 For any class C: 
@@ -1754,7 +1754,7 @@ We show each component stabilises:
 **AOI₁ stabilises immediately (at N = 0):**
 
 By definition, OT_M(ρ_M^n(x)) is the tail of OT_M(x) starting at position n.
-For any m, n: OT_M(ρ_M^m(x)) ~_tail OT_M(ρ_M^n(x)) (take the witnesses n-m
+For any m, n: OT_M(ρ_M^m(x)) ∼_tail OT_M(ρ_M^n(x)) (take the witnesses n-m
 and 0 if n ≥ m, or 0 and m-n otherwise). Therefore AOI₁(ρ_M^n(x)) = AOI₁(x)
 for all n. AOI₁ is stable from the start. ✓
 
@@ -2041,7 +2041,7 @@ Writing the persistent orbit signature sig_M*(x) := (H_S*(x), CPD(x)) ([`CPD` (L
 H_I*(x) :⟺ H_S*(x) ∧ ∀y : (y ≉ x ∧ ρ_M(y) ≃∞ ρ_M(x)) ⟹ sig_M*(y) = sig_M*(x)
 ```
 
-### H_O* — Ontological Co-Horizon
+### H_O* — Depth Co-Horizon
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L6.4.D3 | `H_O*` | H_O*(x) | **Novel** |
@@ -2060,7 +2060,7 @@ i.e. [ρ_M^{N(x)+1}(x)]_≈ = [ρ_M^{N(x)}(x)]_≈ ([`CPD` (L4.5.D1)](CRPT_OMEGA
 | **Definition** | L6.4.D4 | `A*-F*` | A*–F* | **Novel** |
 **Synopsis:** The NWF Six-Class Partition A*–F* classifies elements of ∞_M by their NWF horizon predicates (H_S*, H_I*, H_O*). Class A*: all three ⊥. Class B*: H_S* ⊤, H_I* ⊤, H_O* ⊥. Class C*: H_S* ⊤, H_I* ⊥. Class D*: H_O* ⊤, H_S* ⊥. Class E*: H_O* ⊤, H_S* ⊤. Class F*: H_S* ⊥, H_I* ⊤, H_O* ⊥ (provably empty).
 
-**Source:** CRPT; from [`H_S*` (L6.4.D1)](CRPT_OMEGA_TOWER_L6.md#h_s--structural-co-horizon) + [`H_I*` (L6.4.D2)](CRPT_OMEGA_TOWER_L6.md#h_i--invariant-co-horizon) + [`H_O*` (L6.4.D3)](CRPT_OMEGA_TOWER_L6.md#h_o--ontological-co-horizon).
+**Source:** CRPT; from [`H_S*` (L6.4.D1)](CRPT_OMEGA_TOWER_L6.md#h_s--structural-co-horizon) + [`H_I*` (L6.4.D2)](CRPT_OMEGA_TOWER_L6.md#h_i--invariant-co-horizon) + [`H_O*` (L6.4.D3)](CRPT_OMEGA_TOWER_L6.md#h_o--depth-co-horizon).
 
 Classify x ∈ νT_{ρ,M} under PA-NWF + PA-Bisim + SC-4:
 

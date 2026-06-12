@@ -196,7 +196,7 @@ You want the full formal development: L0 → L1–L2 → L3–L4 → L5–L7 →
 
 Each level depends on earlier ones, so read sequentially. Every definition has a formal proof. All imported results are cited.
 
-**Time:** ~4 hours for careful reading
+**Time:** ∼4 hours for careful reading
 
 ---
 
@@ -213,7 +213,7 @@ Read: L0, L5, L7, L8.
 
 Skip L1–L4 and L6 for now (they develop CRPT concretely, which you can pick up later).
 
-**Time:** ~1.5 hours
+**Time:** ∼1.5 hours
 
 ---
 
@@ -231,7 +231,7 @@ Read: L0, L1–L4, L6, L8.
 
 Skip L5 and L7 for now (they emphasize categorical structure; come back when you need functoriality).
 
-**Time:** ~2.5 hours
+**Time:** ∼2.5 hours
 
 ---
 
