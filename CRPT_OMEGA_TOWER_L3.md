@@ -13,7 +13,7 @@
 | **Definition** | L3.1.D1 | `H_S` | H_S(x) | **Novel** |
 **Synopsis:** An element x has a structural horizon (H_S(x) = ⊤) when ρ_M is not injective at ρ_M(x) — that is, when x has at least one sibling: another element z ≠ x with ρ_M(z) = ρ_M(x). H_S detects branching in the reduction graph. Elements with H_S = ⊥ are structurally isolated — their canonical form uniquely identifies them. H_S is the first and coarsest of the three horizon predicates.
 
-**Source:** CRPT; from `ρ_M` (L2.1.D1) + `Fiber` (L0.1.D2).
+**Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) + [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence).
 
 
 For x ∈ 𝒰_M:
@@ -34,7 +34,7 @@ non-injective locus of the map (Katok & Hasselblatt [1995]).
 | **Definition** | L3.1.D2 | `H_I` | H_I(x) | **Novel** |
 **Synopsis:** An element x has an invariant horizon (H_I(x) = ⊤) when all of its H_S-siblings have identical orbit signatures. That is, the elements that project to the same image as x are indistinguishable by their internal structure. H_I refines H_S: it asks not just whether siblings exist, but whether they are observationally uniform. H_I = ⊤ with H_S = ⊤ means x lives in a 'uniform cluster' — a horizon without internal differentiation.
 
-**Source:** CRPT; from `H_S` (L3.1.D1) + `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) + [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
 
 For x ∈ 𝒰_M:
@@ -93,7 +93,7 @@ algebraic structure.
 | **Remark** | L3.1.R1 | `HI-CatRole` | | **Novel** |
 **Synopsis:** The category-theoretic role of H_I, which has no classical ARS counterpart.
 
-**Source:** CRPT; from `H_I` (L3.1.D2).
+**Source:** CRPT; from [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i).
 
 H_I has no standard counterpart in classical ARS theory 
 or model theory. However, in **category theory / universal algebra**, the notion of **kernel-preserving 
@@ -128,7 +128,7 @@ in the *boundary layer* ∂μT_{ρ,M} := {x ∈ μT_{ρ,M} | d_M(x) = 1}.
 | **Remark** | L3.1.R2 | `HO-Notational` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `H_O` (L3.1.D4).
+**Source:** CRPT; from [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o).
 
 H_O carries no information beyond d_M(x) = 1. It is a notational
 convenience for the six-class partition (L3.2). In formal statements, write d_M(x) = 1
@@ -142,7 +142,7 @@ directly.
 | **Definition** | L3.1.D5 | `sig_M-NM` | | **Novel** |
 **Synopsis:** The orbit signature sig_M(x) aggregates the observable features of x's reduction orbit into a single comparable value. Two elements with the same signature are indistinguishable by the observer framework. The signature is the input to H_I: H_I(x) = ⊤ means all siblings of x share the same orbit signature value, so the observer cannot use signature differences to tell them apart.
 
-**Source:** CRPT; from the horizon predicates `H_S` (L3.1.D1), `H_I` (L3.1.D2), `H_O` (L3.1.D4).
+**Source:** CRPT; from the horizon predicates [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s), [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i), [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o).
 
 
 The orbit signature extends to all of 𝒰 in a regime-dependent form:
@@ -158,10 +158,10 @@ The finitary operative signature: regime tag (↓), ramification status (H_S), i
 sig_M(x) := (∞, [OT^obs_M(x)]_{~tail}) ∈ {∞} × ((NF(→_ρ) ⊔ O_M)^ω / ~_tail)
 ```
 The persistent operative signature: regime tag (∞) and the **tail class of the
-observation trace** OT^obs_M(x) = (obs(ρ_M^n(x)))_{n∈ℕ} (`Obs-Lab` (L1.1.D8),
-`Tail-Eq` (L6.3.D2)) — what the orbit emits, up to finite prefix. Every comparison the
+observation trace** OT^obs_M(x) = (obs(ρ_M^n(x)))_{n∈ℕ} ([`Obs-Lab` (L1.1.D8)](CRPT_OMEGA_TOWER_L1.md#observation-labelling),
+[`Tail-Eq` (L6.3.D2)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-on-traces)) — what the orbit emits, up to finite prefix. Every comparison the
 signature supports is an equality of traces, matching the theory's native discernibility
-machinery (`Disc-Obs` (L4.1.R3)). Where PA-WN_top holds, the trace's tail class
+machinery ([`Disc-Obs` (L4.1.R3)](CRPT_OMEGA_TOWER_L4.md#discernibility-observer-triple)). Where PA-WN_top holds, the trace's tail class
 determines the limit point CFix(ρ_M)(x); the topological data is recovered, not
 postulated.
 
@@ -172,13 +172,13 @@ postulated.
 | **Remark** | L3.1.R3 | `sig-Metric` | | **Novel** |
 **Synopsis:** How metric instantiations supply convergence-rate observables: a model with a metric topology codes its rate data (e.g. distance-to-limit observables, Hölder-class data) into the observable codomain O_M, so the observation trace carries the rates. Rate comparison is then trace tail-equivalence — a CRPT-native equality — and no external ordered-field apparatus (ℝ^ℕ profiles, exponent comparison) enters the signature itself.
 
-**Source:** CRPT; from `sig_M-NM` (L3.1.D5) + `Obs-Lab` (L1.1.D8) + PA-Prod (L1.2.Ax6).
+**Source:** CRPT; from [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form) + [`Obs-Lab` (L1.1.D8)](CRPT_OMEGA_TOWER_L1.md#observation-labelling) + [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content).
 
 A metric instantiation (𝒰, d) makes convergence rates observable by choosing
 Observable to expose them: for example, Observable(y) may include the distance datum
 d(y, CFix(ρ_M)(y)) or a discretised rate class. The observation trace of an orbit then
 records its approach behaviour step by step, and two orbits have "the same rate" exactly
-when their traces are tail-equivalent (`Tail-Eq` (L6.3.D2)). Rate distinctions are thus
+when their traces are tail-equivalent ([`Tail-Eq` (L6.3.D2)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-on-traces)). Rate distinctions are thus
 instantiation-level content carried through O_M — the signature itself never compares
 real sequences or exponents, only traces for equality.
 
@@ -189,9 +189,9 @@ real sequences or exponents, only traces for equality.
 | **Remark** | L3.1.R4 | `sig-RegStrat` | | **Novel** |
 **Synopsis:** The orbit signature is regime-stratified in the native framework.
 
-**Source:** CRPT; from `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
-In the native regime-stratified framework, the orbit signature is regime-stratified. The H_S and H_I horizons apply to ↓_M elements (finitary branching structure); ∞_M elements instead carry their asymptotic information — the tail class of the observation trace (`Obs-Lab` (L1.1.D8)). Both components are observable (orbit-distinguishable) and capture the element's "behavioral signature."
+In the native regime-stratified framework, the orbit signature is regime-stratified. The H_S and H_I horizons apply to ↓_M elements (finitary branching structure); ∞_M elements instead carry their asymptotic information — the tail class of the observation trace ([`Obs-Lab` (L1.1.D8)](CRPT_OMEGA_TOWER_L1.md#observation-labelling)). Both components are observable (orbit-distinguishable) and capture the element's "behavioral signature."
 
 For pure-WF specialization: pure WF models have ∞_M = ∅, so sig_M(x) always takes the first form (↓-regime, WF horizons).
 
@@ -202,15 +202,15 @@ For pure-WF specialization: pure WF models have ∞_M = ∅, so sig_M(x) always 
 | **Remark** | L3.1.R5 | `Disc-Sig` | | **Novel** |
 **Synopsis:** Reading the orbit signature sig_M(x) as a discernibility fingerprint.
 
-**Source:** CRPT; from `Sig-Dep` (L3.1.T1) + `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [`Sig-Dep` (L3.1.T1)](CRPT_OMEGA_TOWER_L3.md#signature-depth-implication) + [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
 The orbit signature sig_M(x) is the
 **discernible fingerprint** of x — the complete set of structurally distinguishable
 properties that characterize x's position in the abstraction landscape. Elements with
 identical signatures are **observationally indiscernible**: no observer with access to
-horizon status, depth, or canonical form can tell them apart (`Sig-Dep` (L3.1.T1)). Horizons
+horizon status, depth, or canonical form can tell them apart ([`Sig-Dep` (L3.1.T1)](CRPT_OMEGA_TOWER_L3.md#signature-depth-implication)). Horizons
 H_S and H_I together classify the **limits of discernibility**: H_S marks where the
-projection operator (= abstraction function, `RP=Abs` (L2.1.T4)) is non-injective (structural information is compressed), and H_I
+projection operator (= abstraction function, [`RP=Abs` (L2.1.T4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection--abstraction)) is non-injective (structural information is compressed), and H_I
 marks where that compression is **total** — the preimages become signature-indiscernible.
 
 ### Signature Depth Implication and Limits of sig_M
@@ -221,7 +221,7 @@ marks where that compression is **total** — the preimages become signature-ind
 | **Theorem** | L3.1.T1 | `Sig-Dep` | | **Novel** |
 **Synopsis:** The Signature Dependence theorem establishes that the orbit signature sig_M(x) = (H_S(x), d_M(x)) is the minimal signature needed to determine H_I: two elements sharing the same orbit signature are necessarily in the same H_I class. No coarser signature suffices.
 
-**Source:** CRPT; from `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
 Under PA-WN + PA-Conf:
 ```
@@ -236,7 +236,7 @@ sig_M(x) = sig_M(y) ⟹ d_M(x) = d_M(y)
 | **Remark** | L3.1.R6 | `sig-Insuf` |  | **Novel** |
 **Synopsis:** This remark explains the scope of the signature dependence theorem: the orbit signature has full discriminating power within a single fiber (where all elements share the same canonical form) but does not discriminate between elements of different fibers.
 
-**Source:** CRPT; from `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
 The claim
 sig_M(x) = sig_M(y) ⟹ x ≃_M y is **false** in general.
@@ -255,7 +255,7 @@ By the mutual consistency argument proved here: sig_M(a) = (⊤, ⊤, 2) = sig_M
 to the recursive equations defining H_I(a) and H_I(a') is H_I(a) = H_I(a') = ⊤.
 
 Recall H_I(a) := H_S(a) ∧ ∀z ∈ ρ_M⁻¹(ρ_M(a)) : sig_M(z) = sig_M(a)
-(`H_I` (L3.1.D2)). H_S(a) = ⊤ (from the preimage count above).
+([`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i)). H_S(a) = ⊤ (from the preimage count above).
 ρ_M⁻¹(ρ_M(a)) = ρ_M⁻¹(b_A) = {a, a'}.
 So H_I(a) = ⊤ iff sig_M(a') = sig_M(a).
 sig_M(a) = (⊤, H_I(a), 2) and sig_M(a') = (⊤, H_I(a'), 2) (H_S(a')=⊤ and d_M(a')=2 by the same calculations).
@@ -286,13 +286,13 @@ sub-systems are structurally isomorphic but terminate at different endpoints.
 The counterexample above (L3.2) demonstrated H_I well-definedness for a specific
 2-element kernel via case analysis. The following theorem establishes existence and
 uniqueness of the H_I assignment for **arbitrary kernels**, including uncountable
-ones. This resolves the coinductive circularity in `H_I` (L3.1.D2) in full generality.
+ones. This resolves the coinductive circularity in [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) in full generality.
 
 ### Kernel Independence of H_I
 | **Observation** | L3.2.Obs1 | `H_I-KI` |  | **Novel** |
 **Synopsis:** The orbit signature sig_M(x) captures the observable structure of x's position in the reduction graph: H_S tells whether x has siblings, d_M gives x's depth, and together they determine H_I. The key observation is that H_I is determined entirely by the orbit signatures of x's siblings, not by any property of their own orbits.
 
-**Source:** CRPT; from `H_I` (L3.1.D2) + `Ker-Cong` (L3.1.D3).
+**Source:** CRPT; from [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`Ker-Cong` (L3.1.D3)](CRPT_OMEGA_TOWER_L3.md#invariant-invisibility-kernel-congruence).
 
 The H_I equations are
 **kernel-local**: for each y ∈ 𝒰_M, the H_I values of elements in K(y) := ker(ρ_M, y)
@@ -309,7 +309,7 @@ problem decomposes into independent sub-problems, one per kernel.
 | **Theorem** | L3.1.T2 | `H_I-WD` | | **Novel** |
 **Synopsis:** H_I well-definedness: the H_I predicate is well-defined on elements, not just on fibers. This is proved by the two-case kernel theorem: when a fiber ker(ρ_M, y) is a singleton, H_I is vacuously ⊤; when the fiber has multiple elements, H_I depends only on the multiset of orbit signatures within the fiber, which is the same for all elements in the fiber.
 
-**Source:** CRPT; from `H_I` (L3.1.D2) + `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
 Let K = ker(ρ_M, y)
 be any kernel with |K| ≥ 2. Then the system of Boolean equations
@@ -332,7 +332,7 @@ This holds for kernels of **arbitrary cardinality** (finite, countable, or uncou
 *Proof.*
 
 **Preliminary.** Since |K| ≥ 2, every z ∈ K satisfies |K| = |ρ_M⁻¹(ρ_M(z))| > 1,
-so H_S(z) = ⊤ for all z ∈ K (`H_S` (L3.1.D1)). Thus H_S is uniformly ⊤ across K.
+so H_S(z) = ⊤ for all z ∈ K ([`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s)). Thus H_S is uniformly ⊤ across K.
 The non-H_I components of the orbit signature are all externally determined:
 sig_M(z) = (⊤, H_I(z), d_M(z)), and d_M(z) is fixed by the substrate.
 
@@ -397,7 +397,7 @@ to uncountable kernels (e.g., continuous orbit spaces in topological models). �
 | **Corollary** | L3.1.C1 | `H_I-Dec` | | **Novel** |
 **Synopsis:** H_I is effectively decidable from derivation heights: H_I(x) = ⊤ if and only if all siblings of x have the same d_M value. Comparing natural numbers is simpler than comparing arbitrary signatures. This corollary makes H_I computationally tractable for all finite CRPT models.
 
-**Source:** CRPT; from `H_I-WD` (L3.1.T2).
+**Source:** CRPT; from [`H_I-WD` (L3.1.T2)](CRPT_OMEGA_TOWER_L3.md#h_i-well-definedness--general-kernel-theorem).
 
 For any x ∈ 𝒰_M with H_S(x) = ⊤:
 ```
@@ -406,7 +406,7 @@ H_I(x) = ⊤ ⟺ ∀z ∈ ker(ρ_M, ρ_M(x)) : d_M(z) = d_M(x)
 The H_I value is fully determined by whether all siblings share the same
 abstraction depth. No iterative or coinductive computation is needed.
 
-*Proof.* By `H_I-WD` (L3.1.T2): H_I(x) = ⊤ iff ker(ρ_M, ρ_M(x)) is derivation height-uniform
+*Proof.* By [`H_I-WD` (L3.1.T2)](CRPT_OMEGA_TOWER_L3.md#h_i-well-definedness--general-kernel-theorem): H_I(x) = ⊤ iff ker(ρ_M, ρ_M(x)) is derivation height-uniform
 (Case 1), which is exactly ∀z ∈ ker(ρ_M, ρ_M(x)) : d_M(z) = d_M(x). ✓ ∎
 
 ### Coinductive Circularity Fully Resolved
@@ -416,10 +416,10 @@ abstraction depth. No iterative or coinductive computation is needed.
 | **Remark** | L3.1.R7 | `HI-CircResolved` | | **Novel** |
 **Synopsis:** The apparent coinductive circularity in H_I (H_I depends on the orbit signature, which contains H_I) is illusory: H_I is uniquely determined by H_S and derivation height alone (kernel d_M-uniformity), for kernels of any cardinality.
 
-**Source:** CRPT; from `H_I-WD` (L3.1.T2) + `H_I-Dec` (L3.1.C1).
+**Source:** CRPT; from [`H_I-WD` (L3.1.T2)](CRPT_OMEGA_TOWER_L3.md#h_i-well-definedness--general-kernel-theorem) + [`H_I-Dec` (L3.1.C1)](CRPT_OMEGA_TOWER_L3.md#h_i-decision-criterion).
 
-`H_I-WD` (L3.1.T2) and
-`H_I-Dec` (L3.1.C1) show that the apparent coinductive circularity in `H_I` (L3.1.D2)
+[`H_I-WD` (L3.1.T2)](CRPT_OMEGA_TOWER_L3.md#h_i-well-definedness--general-kernel-theorem) and
+[`H_I-Dec` (L3.1.C1)](CRPT_OMEGA_TOWER_L3.md#h_i-decision-criterion) show that the apparent coinductive circularity in [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i)
 — where H_I depends on the orbit signature, which contains H_I — is **illusory**. The H_I
 value of every element is uniquely determined by the non-circular invariants H_S
 and derivation height alone. The seemingly self-referential definition resolves to an explicit,
@@ -433,7 +433,7 @@ arising in continuous/topological models (e.g., continuous orbit spaces carrying
 | **Remark** | L3.1.R8 | `sig-Class` |  | **Novel** |
 **Synopsis:** Remark on orbit signature independence: sig_M(x) = sig_M(y) does not imply x ≃_M y. Two elements can have the same local structure (same depth, same sibling count) while converging to different fixed points. The orbit signature classifies local position, not global destination.
 
-**Source:** CRPT; from `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
 sig_M(x) = (H_S(x), H_I(x), d_M(x))
 is a structural invariant capturing:
@@ -451,7 +451,7 @@ imply NFC membership coincidence.
 | **Remark** | L3.1.R9 | `sig-Full` |  | **Novel** |
 **Synopsis:** The extended orbit signature sig_M^+(x) = (sig_M(x), CNF_M(x)) is a complete invariant: sig_M^+(x) = sig_M^+(y) implies x ≃_M y. Adding the canonical form to the orbit signature gives the full observational fingerprint. This remark clarifies where the orbit signature alone is insufficient.
 
-**Source:** CRPT; from `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
 In any model with a
 unique normal form |NF(→_ρ)| = 1 (e.g. ZFC/HF with CNF = ∅; Category Theory with
@@ -471,7 +471,7 @@ CRPT; Baader & Nipkow [1998]
 
 Define sig_M⁺(x) := (sig_M(x), CFix(ρ_M)(x)).
 Then sig_M⁺(x) = sig_M⁺(y) ⟹ x ≃_M y trivially (CFix(ρ_M)(x) = CFix(ρ_M)(y) is exactly
-x ≃_M y by the CNF-Fibre `CNF=CR` (L2.5.T2)). This is sufficient but tautological: the
+x ≃_M y by the CNF-Fibre [`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient)). This is sufficient but tautological: the
 sufficiency comes entirely from including CFix(ρ_M), not from the orbit signature itself.
 
 ### Horizons as Structured Limits of Abstraction
@@ -486,7 +486,7 @@ All ingredients are from §L2.4–8. No new axioms are introduced.
 | **Definition** | L3.1.D6 | `HP` | HP_M(x) | **Novel** |
 **Synopsis:** The horizon profile HP_M(x) is the triple (H_S(x), H_I(x), H_O(x)) packaged as a single three-bit value. It is the input to the six-class partition function and the primary datum used by the observer triple to classify elements.
 
-**Source:** CRPT; from `H_S` (L3.1.D1) + `H_I` (L3.1.D2) + `H_O` (L3.1.D4).
+**Source:** CRPT; from [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) + [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o).
 
 For x ∈ 𝒰_M, define its
 *horizon profile* as:
@@ -494,7 +494,7 @@ For x ∈ 𝒰_M, define its
 H(x) := (H_S(x), H_I(x), H_O(x), Reg(x))
 ```
 where H_S, H_I, H_O are the horizon predicates (Definitions 8.1–8.3) and
-Reg(x) ∈ {↓, ∞} is the regime tag from `Reg-Strat` (L2.2.D3). Let Class(x) ∈ {A,B,C,D,E,F}
+Reg(x) ∈ {↓, ∞} is the regime tag from [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification). Let Class(x) ∈ {A,B,C,D,E,F}
 be the six-class label determined by the Q1/Q2/Q3 pattern (L3.2).
 
 ### Horizons as Abstraction Limits
@@ -503,7 +503,7 @@ be the six-class label determined by the Q1/Q2/Q3 pattern (L3.2).
 | **Theorem** | L3.1.T3 | `Hor-Abs` | | **Novel** |
 **Synopsis:** The Horizon Abstraction theorem establishes that the horizon profile HP_M is a complete invariant for the six-class partition: two elements are in the same class if and only if they have the same horizon profile. The six-class partition is exactly the quotient of 𝒰_M by the HP_M equivalence.
 
-**Source:** CRPT; from `HP` (L3.1.D6) + `6-Part` (L3.2.T1).
+**Source:** CRPT; from [`HP` (L3.1.D6)](CRPT_OMEGA_TOWER_L3.md#horizon-profile-and-class) + [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification).
 
 For any x ∈ 𝒰_M:
 
@@ -527,22 +527,22 @@ remain structurally distinguishable by their orbit signatures.
 
 *Proof.*
 
-**(1)** By `H_O` (L3.1.D4), H_O(x) = ⊤ iff d_M(x) = 1, which requires x ∈ ↓_M
-(H_O is defined on μT_{ρ,M} ⊆ ↓_M). Then by `Abs=RP` (L2.4.T4):
+**(1)** By [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o), H_O(x) = ⊤ iff d_M(x) = 1, which requires x ∈ ↓_M
+(H_O is defined on μT_{ρ,M} ⊆ ↓_M). Then by [`Abs=RP` (L2.4.T4)](CRPT_OMEGA_TOWER_L2.md#abstraction--recursive-projection):
 ```
 Abs_M(x) = CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x) = ρ_M(x)
 ```
-Since CFix(ρ_M)(x) ∈ Fix(ρ_M) (`CNF-Stab` (L2.4.T3)), no further ρ_M-reduction is possible. ✓
+Since CFix(ρ_M)(x) ∈ Fix(ρ_M) ([`CNF-Stab` (L2.4.T3)](CRPT_OMEGA_TOWER_L2.md#cnf-stability)), no further ρ_M-reduction is possible. ✓
 
-**(2)** By `H_I` (L3.1.D2), H_I(x) = ⊤ iff H_S(x) = ⊤ and
+**(2)** By [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i), H_I(x) = ⊤ iff H_S(x) = ⊤ and
 ∀z ∈ ker(ρ_M, ρ_M(x)) : sig_M(z) = sig_M(x). Thus any two preimages z, z' share
 the same signature. Now, if additionally CFix(ρ_M)(z) = CFix(ρ_M)(z') (i.e. z, z' are in
 the same normal-form fiber NFC_M(f)), then z ≃_M z' by definition of ≃_M
-(`≃_M` (L2.5.D2): x ≃_M y ⟺ CFix(ρ_M)(x) = CFix(ρ_M)(y)). The preimages are
+([`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m): x ≃_M y ⟺ CFix(ρ_M)(x) = CFix(ρ_M)(y)). The preimages are
 *orbit-equivalent* (≃_M-indiscernible) within each fiber: no observer with access
 to CFix(ρ_M) can distinguish them.
 
-Note: PA-Bisim (L1.3.Ax1) asserts ≈ ⊆ ≃_M (bisimilarity implies orbit-equivalence), not the converse. Orbit-equivalent elements need not be bisimilar — two elements with the same canonical form can exhibit different →_ρ-branching structure.
+Note: [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence) asserts ≈ ⊆ ≃_M (bisimilarity implies orbit-equivalence), not the converse. Orbit-equivalent elements need not be bisimilar — two elements with the same canonical form can exhibit different →_ρ-branching structure.
 
 **Conclusion for part (2):** H_I(x) = ⊤ implies that all preimages
 z, z' ∈ ker(ρ_M, ρ_M(x)) with CFix(ρ_M)(z) = CFix(ρ_M)(z') satisfy z ≃_M z'.
@@ -557,7 +557,7 @@ single fiber where all elements share CFix(ρ_M)(z) = f, this holds by definitio
 ≃_M. H_I = ⊤ then implies that all elements within the fiber are sig_M-indistinguishable
 and orbit-equivalent. ✓
 
-**(3)** By `H_S` (L3.1.D1), H_S(x) = ⊤ iff |ker(ρ_M, ρ_M(x))| > 1. If H_I(x) = ⊥,
+**(3)** By [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s), H_S(x) = ⊤ iff |ker(ρ_M, ρ_M(x))| > 1. If H_I(x) = ⊥,
 then the sig_M-uniformity condition fails: ∃z, z' ∈ ker(ρ_M, ρ_M(x)) with
 sig_M(z) ≠ sig_M(z'). Thus abstraction merges them at one step but the observer
 signature can still distinguish them: the collapse is resolvable. ✓ ∎
@@ -569,17 +569,17 @@ signature can still distinguish them: the collapse is resolvable. ✓ ∎
 | **Remark** | L3.1.R11 | `Hor-InfStory` | | **Novel** |
 **Synopsis:** How horizons are described on the persistent regime ∞_M.
 
-**Source:** CRPT; from `Hor-Abs` (L3.1.T3) + `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [`Hor-Abs` (L3.1.T3)](CRPT_OMEGA_TOWER_L3.md#horizons-as-abstraction-limits) + [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
-`Hor-Abs` (L3.1.T3) describes horizons for ↓_M elements
+[`Hor-Abs` (L3.1.T3)](CRPT_OMEGA_TOWER_L3.md#horizons-as-abstraction-limits) describes horizons for ↓_M elements
 (where H_S, H_I, H_O are directly defined). For ∞_M elements, the native form
-of the orbit signature (`sig_M-NM` (L3.1.D5)) replaces the Boolean horizon predicates with the
-**observation trace** — what the orbit emits, up to finite prefix (`Obs-Lab` (L1.1.D8)).
+of the orbit signature ([`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form)) replaces the Boolean horizon predicates with the
+**observation trace** — what the orbit emits, up to finite prefix ([`Obs-Lab` (L1.1.D8)](CRPT_OMEGA_TOWER_L1.md#observation-labelling)).
 The analogue of H_S in the persistent regime is non-injectivity of the limit
 map: multiple ∞_M elements can share the same limit point (distinct approach
 orbits to the same attractor). The analogue of H_I is whether the observation
-traces of co-limiting elements are tail-equivalent (`Tail-Eq` (L6.3.D2)) —
-indistinguishable approaches. By `PA-NWF-NE` (L2.2.T5), these persistent-regime structures
+traces of co-limiting elements are tail-equivalent ([`Tail-Eq` (L6.3.D2)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-on-traces)) —
+indistinguishable approaches. By [`PA-NWF-NE` (L2.2.T5)](CRPT_OMEGA_TOWER_L2.md#pa-nwf--νt_ρm--), these persistent-regime structures
 are transformed into vertical (depth) structure at the next tower level, connecting
 the horizon theory of L3.1 to the tower theory of L8.1.
 
@@ -587,7 +587,7 @@ the horizon theory of L3.1 to the tower theory of L8.1.
 
 ## H_I Kernel-Locality Theorem
 
-*Purpose.* This subsection formalizes what informally was captured in `H_I-WD` (L3.1.T2):
+*Purpose.* This subsection formalizes what informally was captured in [`H_I-WD` (L3.1.T2)](CRPT_OMEGA_TOWER_L3.md#h_i-well-definedness--general-kernel-theorem):
 that H_I(x) depends only on the equivalence class of x under observable equivalence ≃_M,
 not on the choice of representative. This is the **kernel-locality** property.
 
@@ -598,7 +598,7 @@ not on the choice of representative. This is the **kernel-locality** property.
 | **Theorem** | L3.1.T4 | `H_I-KernelLocal` | | **Novel** |
 **Synopsis:** H_I is kernel-local: if x and y are in the same kernel fiber (ρ_M(x) = ρ_M(y)), then H_I(x) = H_I(y). The H_I predicate depends only on the fiber structure at ρ_M(x), not on any property distinguishing x from y within the fiber. This locality is what makes H_I a well-defined predicate on fibers rather than just on elements.
 
-**Source:** CRPT; from `H_I` (L3.1.D2) + `Ker-Cong` (L3.1.D3).
+**Source:** CRPT; from [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`Ker-Cong` (L3.1.D3)](CRPT_OMEGA_TOWER_L3.md#invariant-invisibility-kernel-congruence).
 
 *For all x, y ∈ 𝒰_M:*
 
@@ -613,7 +613,7 @@ By definition, x ≃_M y means:
 (2) CFix(ρ_M)(x) = CFix(ρ_M)(y), and  
 (3) sig_M(x) = sig_M(y) (L2.5.D2, criterion C2).
 
-We show H_I(x) = H_I(y) using the definition `H_I` (L3.1.D2):
+We show H_I(x) = H_I(y) using the definition [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i):
 
 **H_I(x) := H_S(x) ∧ ∀z ∈ ker(ρ_M, ρ_M(x)) : sig_M(z) = sig_M(x)**
 
@@ -635,7 +635,7 @@ It means they have the same signature. So we need to be more careful.
 The definition of H_I(x) uses sig_M(z) for z ∈ ker(ρ_M, ρ_M(x)). By definition of ≃_M,
 the orbit signature is the same for x and y: sig_M(x) = sig_M(y) by (3).
 
-H_S(x) = |ker(ρ_M, ρ_M(x))| > 1 (by `H_S` (L3.1.D1)). 
+H_S(x) = |ker(ρ_M, ρ_M(x))| > 1 (by [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s)). 
 Since ≃_M is defined via SIG-DEP and C2, and the orbit signature depends on H_S, H_I, derivation height (for ↓_M regime),
 we have: H_S(x) = H_S(y) by (3), since sig_M(x) = sig_M(y) includes the H_S component.
 
@@ -664,7 +664,7 @@ Since x ≃_M y means sig_M(x) = sig_M(y), the condition becomes:
 
 Since sig_M(x) = sig_M(y), these two conditions are symmetrically identical. ✓
 
-Alternatively, by the well-definedness theorem `H_I-WD` (L3.1.T2), the H_I assignment
+Alternatively, by the well-definedness theorem [`H_I-WD` (L3.1.T2)](CRPT_OMEGA_TOWER_L3.md#h_i-well-definedness--general-kernel-theorem), the H_I assignment
 is determined by the derivation height-uniformity of each kernel, independent of which specific
 representative of an equivalence class is chosen. Therefore h_I(x) = H_I(y) whenever
 x ≃_M y (they lie in kernels with the same derivation height-uniformity profile).  ✓
@@ -696,7 +696,7 @@ representative x of the class. This is well-defined by the theorem. ✓
 | **Remark** | L3.2.R1 | `Disc-6Part` | | **Novel** |
 **Synopsis:** Reading the six-class partition as the fundamental discernibility classification.
 
-**Source:** CRPT; from `6-Part` (L3.2.T1).
+**Source:** CRPT; from [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification).
 
 The six-class partition is the fundamental
 **discernibility classification** of ↓_M. Each class represents a distinct position in
@@ -725,7 +725,7 @@ depends on Q2 (it is vacuous when Q2 = ⊥), creating a lattice stratification.
 | **Definition** | L3.2.D2 | `Bool-Pred` | | **Novel** |
 **Synopsis:** The Boolean classification predicates encode the six-class partition as a mapping from the eight Boolean combinations of (H_S, H_I, H_O) to the class labels {A, B, C, D, E, F}. Class A: all three ⊥. Class B: H_S ⊤, H_I ⊤, H_O ⊥. Class C: H_S ⊤, H_I ⊥. Class D: H_O ⊤, H_S ⊥. Class E: H_O ⊤, H_S ⊤. Class F: H_S ⊥, H_I ⊤, H_O ⊥ (empty).
 
-**Source:** CRPT; from `H_S` (L3.1.D1) + `H_I` (L3.1.D2) + `H_O` (L3.1.D4).
+**Source:** CRPT; from [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) + [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o).
 
 Define three binary
 predicates on μT_{ρ,M}:
@@ -773,7 +773,7 @@ The six-class partition classifies each x ∈ μT_{ρ,M} by the value (Q1(x), Q2
 |:-----:|:---:|:---:|:---:|-------------|:--------:|
 | D | ⊤ | ⊥ | N/A | Fixpoint, single preimage (isolated) | (⊤,⊥) |
 | E | ⊤ | ⊤ | ⊥ | Fixpoint, multiple preimages, distinguishable | (⊤,⊤,⊥) |
-| F | ⊤ | ⊤ | ⊤ | Fixpoint, multiple preimages, indistinguishable (**logically defined; proved empty in L3.2 `F=∅` (L3.2.T2)**) | (⊤,⊤,⊤) |
+| F | ⊤ | ⊤ | ⊤ | Fixpoint, multiple preimages, indistinguishable (**logically defined; proved empty in L3.2 [`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model)**) | (⊤,⊤,⊤) |
 
 **Non-Fixpoint Classes (Q1 = ⊥):**
 
@@ -820,7 +820,7 @@ category-theoretic sense, but a Boolean stratification).
 | **Theorem** | L3.2.T1 | `6-Part` | | **Novel** |
 **Synopsis:** The six-class partition assigns every element of 𝒰_M to exactly one of five non-empty classes (Class F is proved empty by L3.2.T2) based on the three boolean horizon predicates H_S, H_I, H_O. Class A: all three ⊥ (no horizon, not boundary). Class B: H_S ⊤, H_I ⊤ (uniform cluster, not boundary). Class C: H_S ⊤, H_I ⊥ (non-uniform cluster). Class D: H_O ⊤, H_S ⊥ (isolated boundary). Class E: H_O ⊤, H_S ⊤ (boundary with siblings). This partition is the structural backbone of the observer theory in L4.
 
-**Source:** CRPT; from `Bool-Pred` (L3.2.D2) + `H_S` (L3.1.D1) + `H_I` (L3.1.D2) + `H_O` (L3.1.D4).
+**Source:** CRPT; from [`Bool-Pred` (L3.2.D2)](CRPT_OMEGA_TOWER_L3.md#independent-boolean-predicates) + [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) + [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o).
 
 
 Classes A–F are mutually exclusive and jointly exhaustive on μT_{ρ,M}, forming the atoms of a Boolean 
@@ -851,9 +851,9 @@ with 6 atoms. ✓ ∎
 | **Remark** | L3.2.R2 | `Logical-vs-Occupied` | | **Novel** |
 **Synopsis:** Logical classes versus the classes actually occupied in a given model.
 
-**Source:** CRPT; from `6-Part` (L3.2.T1) + `F=∅` (L3.2.T2).
+**Source:** CRPT; from [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification) + [`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model).
 
-`6-Part` (L3.2.T1) establishes the full six-class logical partition: all six classes A–F are logically distinct and mutually exclusive. A structural result proved below (`F=∅` (L3.2.T2)) shows that Class F is **never occupied** in any deterministic CRPT model. The logical partition therefore comprises five active classes (A, B, C, D, E) and one provably empty class (F).
+[`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification) establishes the full six-class logical partition: all six classes A–F are logically distinct and mutually exclusive. A structural result proved below ([`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model)) shows that Class F is **never occupied** in any deterministic CRPT model. The logical partition therefore comprises five active classes (A, B, C, D, E) and one provably empty class (F).
 
 **Standard Connections.** 
 - **Class A:** Regular convergent elements with injective ρ_M-structure. Abstractly: clean 
@@ -866,11 +866,11 @@ with 6 atoms. ✓ ∎
  fixpoint with no coalescence.
 - **Class E:** Normal forms with resolvable ramification. Abstractly: fixpoint with 
  distinguishable one-step convergent predecessors.
-- **Class F:** Structurally empty class (proved in `F=∅` (L3.2.T2) below). The defining
+- **Class F:** Structurally empty class (proved in [`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model) below). The defining
  conditions Q1=⊤, H_S=⊤, H_I=⊤ are logically consistent but simultaneously unrealizable
- in any deterministic CRPT model: for every fixpoint f with H_S(f) = ⊤, `H_I-Dec` (L3.1.C1)
+ in any deterministic CRPT model: for every fixpoint f with H_S(f) = ⊤, [`H_I-Dec` (L3.1.C1)](CRPT_OMEGA_TOWER_L3.md#h_i-decision-criterion)
  forces H_I(f) = ⊥. Claims that Class F is occupied (e.g., CFix(ρ_M) in ZFC, Cat, HoTT)
- are incorrect; those elements are Class E. See `F=∅` (L3.2.T2).
+ are incorrect; those elements are Class E. See [`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model).
 
 ### Class F = ∅ in Every Deterministic CRPT Model
 | Type | Label | Tag | Notation | Status |
@@ -878,7 +878,7 @@ with 6 atoms. ✓ ∎
 | **Theorem** | L3.2.T2 | `F=∅` |  | **Novel** |
 **Synopsis:** Class F would consist of elements with H_S = ⊥ and H_I = ⊤ but without H_O — isolated elements (no siblings) that nonetheless satisfy the uniform-sibling condition. This class is provably empty: H_I is vacuously satisfied (and hence uninformative) when H_S = ⊥, so no element can non-trivially occupy Class F. This reduces the six boolean combinations to five active classes.
 
-**Source:** CRPT; from `6-Part` (L3.2.T1) + `H_I` (L3.1.D2).
+**Source:** CRPT; from [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification) + [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i).
 
 
 In any deterministic CRPT model (𝒰_M, ρ_M, the structural relation), Class F is empty:
@@ -888,14 +888,14 @@ Class F = { x ∈ μT_{ρ,M} | Q1(x) = ⊤ ∧ H_S(x) = ⊤ ∧ H_I(x) = ⊤ } =
 
 *Proof.* Suppose for contradiction that f ∈ Class F. Then f ∈ Fix(ρ_M), H_S(f) = ⊤, and H_I(f) = ⊤. We derive a contradiction in six steps.
 
-**(Step 1: Non-fixpoint preimage exists.)** H_S(f) = ⊤ implies |ρ_M⁻¹(f)| > 1 (`H_S` (L3.1.D1):
+**(Step 1: Non-fixpoint preimage exists.)** H_S(f) = ⊤ implies |ρ_M⁻¹(f)| > 1 ([`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s):
 since f ∈ Fix(ρ_M), ρ_M(f) = f, hence |ρ_M⁻¹(ρ_M(f))| = |ρ_M⁻¹(f)| > 1). Thus ∃z ≠ f
 with ρ_M(z) = f.
 
 **(Step 2: z ∉ Fix(ρ_M).)** If z ∈ Fix(ρ_M) then ρ_M(z) = z. But ρ_M(z) = f and z ≠ f.
 Contradiction. So z ∉ Fix(ρ_M).
 
-**(Step 3: d_M(z) = 1.)** By `d_M` (L2.3.D2),
+**(Step 3: d_M(z) = 1.)** By [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m),
 ```
 d_M(z) := min{ n ∈ ℕ | ρ_M^n(z) ∈ Fix(ρ_M) }
 ```
@@ -908,8 +908,8 @@ Therefore d_M(z) = 1.
 d_M(f) = 0, Step 4) and z (with d_M(z) = 1, Step 3). Since 0 ≠ 1, ker(ρ_M, f) is NOT
 derivation height-uniform.
 
-**(Step 6: Contradiction via `H_I-Dec` (L3.1.C1).)** Since f ∈ Fix(ρ_M): ρ_M(f) = f, so
-ker(ρ_M, ρ_M(f)) = ker(ρ_M, f), which is not derivation height-uniform (Step 5). By `H_I-Dec` (L3.1.C1):
+**(Step 6: Contradiction via [`H_I-Dec` (L3.1.C1)](CRPT_OMEGA_TOWER_L3.md#h_i-decision-criterion).)** Since f ∈ Fix(ρ_M): ρ_M(f) = f, so
+ker(ρ_M, ρ_M(f)) = ker(ρ_M, f), which is not derivation height-uniform (Step 5). By [`H_I-Dec` (L3.1.C1)](CRPT_OMEGA_TOWER_L3.md#h_i-decision-criterion):
 ```
 H_I(f) = ⊤ ⟺ ker(ρ_M, f) is d_M-uniform
 ```
@@ -922,23 +922,23 @@ Since ker(ρ_M, f) is not derivation height-uniform, H_I(f) = ⊥. This contradi
 | **Remark** | L3.2.R3 | `Fstar-Distinct` | | **Novel** |
 **Synopsis:** Why the NWF-regime Class F* is distinct from the WF Class F.
 
-**Source:** CRPT; from `6-Part` (L3.2.T1) + `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification) + [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
 The NWF-regime analogue Class F* (L6.4) is a distinct class and may be
 occupied; the argument above uses d_M(z) = 1 for non-fixpoint ρ_M-preimages of a convergent-
 regime fixpoint, a property specific to ↓_M. The logical class definition is retained in
-`6-Part` (L3.2.T1) because class emptiness is a model-semantic property, not a structural
+[`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification) because class emptiness is a model-semantic property, not a structural
 inconsistency: Class F is a provably unoccupied logical slot in every deterministic CRPT model.
 
 **Notation.** The boundary layer ∂μT_{ρ,M} := {x ∈ μT_{ρ,M} | d_M(x) = 1} intersects all 
 non-fixpoint classes (A, B, C) at depth 1. Within any class, the rank function derivation height further 
-stratifies elements by abstraction depth; see the orbit signature (`sig_M-NM` (L3.1.D5)).
+stratifies elements by abstraction depth; see the orbit signature ([`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form)).
 
 ---
 
 ## Native Regime Extension: Twelve-Class Partition (6 per Regime)
 
-The six-class partition (L3.2–9.2) applies to the convergent regime ↓_M. In the native regime-stratified framework (L1.2–L1.5, `Reg-Strat` (L2.2.D3)), a parallel six-class partition applies to the persistent regime ∞_M, yielding a **twelve-class total partition** of 𝒰.
+The six-class partition (L3.2–9.2) applies to the convergent regime ↓_M. In the native regime-stratified framework (L1.2–L1.5, [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification)), a parallel six-class partition applies to the persistent regime ∞_M, yielding a **twelve-class total partition** of 𝒰.
 
 ### The Partition Is Regime-Stratified
 
@@ -947,9 +947,9 @@ The six-class partition (L3.2–9.2) applies to the convergent regime ↓_M. In 
 | **Remark** | L3.2.R4 | `Part-RegStrat` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `Reg-Strat` (L2.2.D3).
+**Source:** CRPT; from [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification).
 
-The partition is regime-stratified, not regime-mixed: each element belongs to exactly one regime (↓_M or ∞_M by `Reg-Strat` (L2.2.D3)) and thus to exactly one class within that regime's six-class partition.
+The partition is regime-stratified, not regime-mixed: each element belongs to exactly one regime (↓_M or ∞_M by [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification)) and thus to exactly one class within that regime's six-class partition.
 
 ### Topological Horizons on ∞_M (Parallel to H_S, H_I)
 
@@ -961,7 +961,7 @@ For x ∈ ∞_M, define topological analogues of the structural horizons:
 | **Definition** | L3.2.D3 | `H_S^top` | H_S^{top} | **Novel** |
 **Synopsis:** The persistent regime analogues of the horizon predicates H_S^{top}, H_I^{top}, H_O^{top} are defined for elements of ∞_M using the topological limit structure from PA-WN_top in place of the canonical form. These are the L3 predecessors of the full NWF horizon predicates developed in L6.
 
-**Source:** CRPT; from `H_S` (L3.1.D1); persistent-regime form.
+**Source:** CRPT; from [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s); persistent-regime form.
 
 For x ∈ ∞_M:
 ```
@@ -976,7 +976,7 @@ Measures whether the limit point is topologically "ramified" (appears as limit o
 | **Definition** | L3.2.D4 | `H_I^top` | H_I^{top} | **Novel** |
 **Synopsis:** The topological invariant horizon H_I^{top}(x) for elements of ∞_M is defined using the topological limit structure from PA-WN_top: H_I^{top}(x) = ⊤ when the approach orbits sharing x's topological limit are observationally uniform — their observation traces are pairwise tail-equivalent. This is the persistent-regime analogue of H_I, stated as a CRPT-native trace equality.
 
-**Source:** CRPT; from `H_I` (L3.1.D2) + `Obs-Lab` (L1.1.D8) + `Tail-Eq` (L6.3.D2); persistent-regime form.
+**Source:** CRPT; from [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`Obs-Lab` (L1.1.D8)](CRPT_OMEGA_TOWER_L1.md#observation-labelling) + [`Tail-Eq` (L6.3.D2)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-on-traces); persistent-regime form.
 
 For x ∈ ∞_M:
 ```
@@ -986,8 +986,8 @@ H_I^{top}(x) := ⊤ if H_S^{top}(x) = ⊤ AND the observation traces of the orbi
 ```
 For ramified limits, measures whether distinct orbits approaching the same limit are
 observationally uniform: "same rate" means tail-equivalent observation traces
-(`Obs-Lab` (L1.1.D8), `Tail-Eq` (L6.3.D2)). Metric instantiations supply rate
-observables through O_M (`sig-Metric` (L3.1.R3)); the predicate itself compares
+([`Obs-Lab` (L1.1.D8)](CRPT_OMEGA_TOWER_L1.md#observation-labelling), [`Tail-Eq` (L6.3.D2)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-on-traces)). Metric instantiations supply rate
+observables through O_M ([`sig-Metric` (L3.1.R3)](CRPT_OMEGA_TOWER_L3.md#persistent-signature-and-metric-instantiations)); the predicate itself compares
 only traces for equality.
 
 ### Six Classes on ∞_M (Topological Analogues)
@@ -1000,7 +1000,7 @@ Define predicates Q1^{top}, Q2^{top}, Q3^{top}:
 | **Definition** | L3.2.D5 | `Q-top` | Q1^{top}, Q2^{top}, Q3^{top} | **Novel** |
 **Synopsis:** The topological classification predicates Q1^{top}, Q2^{top}, Q3^{top} for ∞_M elements: Q1^{top}(x) = (x ∈ Fix(ρ_M^p)) for the canonical period p; Q2^{top}(x) = H_S^{top}(x); Q3^{top}(x) = H_I^{top}(x). These are the persistent-regime analogues of the convergent-regime classification predicates Q1, Q2, Q3.
 
-**Source:** CRPT; from `H_S^top` (L3.2.D3) + `H_I^top` (L3.2.D4).
+**Source:** CRPT; from [`H_S^top` (L3.2.D3)](CRPT_OMEGA_TOWER_L3.md#topological-structural-horizon-h_stop) + [`H_I^top` (L3.2.D4)](CRPT_OMEGA_TOWER_L3.md#convergence-rate-invisibility-horizon-h_itop).
 
 Define:
 ```
@@ -1020,7 +1020,7 @@ where **Lim_M := range(CFix(ρ_M)) ∩ Limits(𝒯) ∩ ∞_M** is the set of li
 | **Definition** | L3.2.D6 | `12-Part` | 12-classes | **Novel** |
 **Synopsis:** The twelve-class partition definition for the combined model M (both regimes): the six-class partition of ↓_M and the six-class partition of ∞_M (Classes A*–E* analogously) together give twelve classes. This is the full classification framework when both regimes are non-empty.
 
-**Source:** CRPT; from `6-Part` (L3.2.T1) + `Q-top` (L3.2.D5).
+**Source:** CRPT; from [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification) + [`Q-top` (L3.2.D5)](CRPT_OMEGA_TOWER_L3.md#_m-boolean-predicates).
 
 Elements of ∞_M partition into six classes by (Q1^{top}, Q2^{top}, Q3^{top}):
 
@@ -1041,7 +1041,7 @@ Elements of ∞_M partition into six classes by (Q1^{top}, Q2^{top}, Q3^{top}):
 | C_∞ | ⊥ | ⊤ | ⊤ | Persistent, orbit-limit ramified, approach traces tail-equivalent |
 
 All rows read H_S^{top} and H_I^{top} **uniformly through x's own orbit-limit**
-(`H_S^top` (L3.2.D3)): for every x ∈ ∞_M — limit point or not — the predicates evaluate
+([`H_S^top` (L3.2.D3)](CRPT_OMEGA_TOWER_L3.md#topological-structural-horizon-h_stop)): for every x ∈ ∞_M — limit point or not — the predicates evaluate
 the ramification of lim_{n→∞} ρ_M^n(x) and the tail-equivalence of the traces approaching
 *it*. A limit point's row thus describes its own onward limit, not its own pre-images.
 
@@ -1051,9 +1051,9 @@ the ramification of lim_{n→∞} ρ_M^n(x) and the tail-equivalence of the trac
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L3.2.T3 | `12-Part-EE` |  | **Novel** |
-**Synopsis:** The twelve-class partition theorem: the twelve classes exhaustively and disjointly partition 𝒰_M = ↓_M ⊔ ∞_M. Each element belongs to exactly one of the twelve classes. Class F (convergent) is provably empty (`F=∅` (L3.2.T2)); Class F_∞ (persistent) is **not** claimed empty — the kernel d_M-uniformity collapse that empties F is specific to ↓_M (`Fstar-Distinct` (L3.2.R3)), and F_∞ is a legitimate, inhabitable class: distinct orbits can converge to one limit with tail-equivalent observation traces.
+**Synopsis:** The twelve-class partition theorem: the twelve classes exhaustively and disjointly partition 𝒰_M = ↓_M ⊔ ∞_M. Each element belongs to exactly one of the twelve classes. Class F (convergent) is provably empty ([`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model)); Class F_∞ (persistent) is **not** claimed empty — the kernel d_M-uniformity collapse that empties F is specific to ↓_M ([`Fstar-Distinct` (L3.2.R3)](CRPT_OMEGA_TOWER_L3.md#nwf-class-f-is-distinct)), and F_∞ is a legitimate, inhabitable class: distinct orbits can converge to one limit with tail-equivalent observation traces.
 
-**Source:** CRPT; from `12-Part` (L3.2.D6).
+**Source:** CRPT; from [`12-Part` (L3.2.D6)](CRPT_OMEGA_TOWER_L3.md#twelve-class-partition).
 
 Under native axiom system (PA-WN globally, PA-WN_top on ∞_M, PA-Conf on all):
 ```
@@ -1063,8 +1063,8 @@ Under native axiom system (PA-WN globally, PA-WN_top on ∞_M, PA-Conf on all):
 ```
 
 *Proof.* 
-**Regime Partition Exhaustiveness:** By `Part` (L2.2.T3), 𝒰 = ↓_M ∐ ∞_M (`Reg-Strat` (L2.2.D3)).
-**Within ↓_M:** Classes A–F partition ↓_M (`6-Part` (L3.2.T1)), exhaustive and exclusive.
+**Regime Partition Exhaustiveness:** By [`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition), 𝒰 = ↓_M ∐ ∞_M ([`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification)).
+**Within ↓_M:** Classes A–F partition ↓_M ([`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification)), exhaustive and exclusive.
 **Within ∞_M:** Classes A_∞–F_∞ partition ∞_M by the same stratified Boolean logic applied to topological horizons.
  - Q1^{top} ∈ {⊤, ⊥}: partitions ∞_M into limit points vs. non-limits (2 parts)
  - Q2^{top} ∈ {⊤, ⊥}: partitions each into ramified vs. non-ramified (4 parts total)
@@ -1077,7 +1077,7 @@ Under native axiom system (PA-WN globally, PA-WN_top on ∞_M, PA-Conf on all):
 | **Theorem** | L3.2.T4 | `WF-Back` |  | **Novel** |
 **Synopsis:** The well-founded backwards theorem: the six-class partition of ↓_M is recovered from the twelve-class partition by restricting to the convergent-regime classes A through E. The convergent-regime partition is the special case of the twelve-class partition where the persistent-regime classes are all empty.
 
-**Source:** CRPT; from `12-Part` (L3.2.D6).
+**Source:** CRPT; from [`12-Part` (L3.2.D6)](CRPT_OMEGA_TOWER_L3.md#twelve-class-partition).
 
 For pure WF (PA-WN globally, ∞_M = ∅):
 ```
@@ -1086,7 +1086,7 @@ Classes A_∞–F_∞ are empty
 All theorems referencing classes A–F remain unchanged
 ```
 
-*Proof.* If ∞_M = ∅, then no element satisfies Q1^{top}. By `12-Part` (L3.2.D6), classes A_∞–F_∞ are empty. The native partition reduces to the classical six-class partition. ✓ ∎
+*Proof.* If ∞_M = ∅, then no element satisfies Q1^{top}. By [`12-Part` (L3.2.D6)](CRPT_OMEGA_TOWER_L3.md#twelve-class-partition), classes A_∞–F_∞ are empty. The native partition reduces to the classical six-class partition. ✓ ∎
 
 ### Signature Stratification Across Both Regimes
 | Type | Label | Tag | Notation | Status |
@@ -1094,9 +1094,9 @@ All theorems referencing classes A–F remain unchanged
 | **Corollary** | L3.2.C1 | `Sig-Strat` |  | **Novel** |
 **Synopsis:** The signature stratification corollary: the orbit signature stratifies the twelve-class partition into a two-dimensional grid — convergent/persistent (regime dimension) × A/B/C/D/E (class dimension). The horizon predicates give the class dimension; the regime indicator gives the first dimension.
 
-**Source:** CRPT; from `12-Part` (L3.2.D6) + `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [`12-Part` (L3.2.D6)](CRPT_OMEGA_TOWER_L3.md#twelve-class-partition) + [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
-The orbit signature sig_M (`sig_M-NM` (L3.1.D5)-native):
+The orbit signature sig_M ([`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form)-native):
 ```
 ↓_M elements: sig_M(x) = (↓, H_S(x), H_I(x), d_M(x), CFix(ρ_M)(x))
 ∞_M elements: sig_M(x) = (∞, CFix(ρ_M)(x), convergence_rate(x))
@@ -1120,10 +1120,10 @@ This section covers the persistent regime ∞_M (equivalently, νT_{ρ,M} in the
 | **Remark** | L3.3.R1 | `Hybrid-TwoCanon` | | **Novel** |
 **Synopsis:** The hybrid framework of two canonical abstraction forms, CFix and CNF∞.
 
-**Source:** CRPT; from `Reg-Strat` (L2.2.D3).
+**Source:** CRPT; from [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification).
 
 
-In the hybrid framework (`Reg-Strat` (L2.2.D3), L1.4), every element has a canonical abstraction:
+In the hybrid framework ([`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification), L1.4), every element has a canonical abstraction:
 
 - **For x ∈ ↓_M (convergent regime):** CFix(ρ_M)(x) ∈ NF(→_ρ), finitary normal form. Computed by finite ρ_M-iteration: ρ_M^{d_M(x)}(x). (Classical form.)
 - **For x ∈ ∞_M (persistent regime):** CFix(ρ_M)(x) ∈ Limits(𝒯), topological limit point. Computed as lim_{n→∞} ρ_M^n(x) under PA-WN_top. (Native extension.)
@@ -1136,7 +1136,7 @@ CFix(ρ_M) : 𝒰 → (NF(→_ρ) ∪ Limits(𝒯))
  { lim_{n→∞} ρ_M^n(x) [≡ CNF∞_M(x)] if x ∈ ∞_M
 ```
 
-No element of 𝒰 is outside the reach of one of these two forms (`Part` (L2.2.T3): 𝒰 = ↓_M ∐ ∞_M). The persistent regime ∞_M is governed by PA-WN_top (`PA-Scope` (L1.5.D1), L1.4), which guarantees the topological limit exists; uniqueness follows from `TopSep-Uniq` (L1.7.T1), i.e. the explicit TopSep(𝒯) requirement. See also L3.2 for the twelve-class partition stratifying both regimes.
+No element of 𝒰 is outside the reach of one of these two forms ([`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition): 𝒰 = ↓_M ∐ ∞_M). The persistent regime ∞_M is governed by PA-WN_top ([`PA-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration), L1.4), which guarantees the topological limit exists; uniqueness follows from [`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep), i.e. the explicit TopSep(𝒯) requirement. See also L3.2 for the twelve-class partition stratifying both regimes.
 
 ### Stabilisation Conditions (Dynamical Systems Formulation)
 
@@ -1168,9 +1168,9 @@ $y ∈ ω(x)$ iff there exists a subsequence $n_i → ∞$ with $f^{n_i}(x) → 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L3.3.D2 | `SC-1` | SC-1 | **Novel** |
-**Synopsis:** Scope Condition SC-1 requires that the persistent orbit of x is eventually **class-constant**: from some index N onward, all iterates lie in a single bisimulation class — the ω-limit set in 𝒰_M/≈ is a singleton (period 1 in classes). General eventual periodicity with period p > 1 is strictly weaker territory (SC-4); the alternating two-class stream satisfies SC-4 but not SC-1 (`SC∞>SC1` (L6.3.T16)). SC-1 admits the periodic canonical form CNF∞_M.
+**Synopsis:** Scope Condition SC-1 requires that the persistent orbit of x is eventually **class-constant**: from some index N onward, all iterates lie in a single bisimulation class — the ω-limit set in 𝒰_M/≈ is a singleton (period 1 in classes). General eventual periodicity with period p > 1 is strictly weaker territory (SC-4); the alternating two-class stream satisfies SC-4 but not SC-1 ([`SC∞>SC1` (L6.3.T16)](CRPT_OMEGA_TOWER_L6.md#sc--generalises-sc-1)). SC-1 admits the periodic canonical form CNF∞_M.
 
-**Source:** CRPT; from PA-Reach (L1.3.Ax2) + `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) + [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
 x ∈ νT_{ρ,M} satisfies SC-1 if
 the ω-limit set of x under ρ_M is **constant** in the bisimulation quotient 𝒰_M/≈:
@@ -1189,7 +1189,7 @@ The condition asserts that the orbit eventually enters and remains in a single b
 | **Definition** | L3.3.D3 | `SC-2` | SC-2 | **Novel** |
 **Synopsis:** Scope Condition SC-2 requires that the orbit is eventually periodic and the period is stable under the projection operator: the period p does not change after step n. SC-2 implies SC-1 and is required for the orbit spectrum to be a well-defined probability measure.
 
-**Source:** CRPT; from PA-Reach (L1.3.Ax2) + `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) + [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
 x ∈ νT_{ρ,M} satisfies SC-2 if
 the orbit signature sequence is **eventually periodic**:
@@ -1207,14 +1207,14 @@ finitely many steps, the orbit signature repeats with some minimal period p.
 | **Definition** | L3.3.D4 | `SC-3` | SC-3 | **Novel** |
 **Synopsis:** Scope Condition SC-3 requires that the orbit trace OT(x) is eventually periodic with a computable period. SC-3 is the effective version of SC-1, required for algorithmic orbit analysis.
 
-**Source:** CRPT; from PA-Reach (L1.3.Ax2) + `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) + [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
 x ∈ νT_{ρ,M} satisfies SC-3 if
 the path valuation sequence is **eventually periodic**:
 ```
 SC-3(x) :⟺ ∃N ∈ ℕ, ∃p ∈ ℕ, p > 0 : ∀n ≥ N : PV(ρ_M^n(x) →^{(n)} → ρ_M^{n+1}(x)) = PV(ρ_M^{n+p}(x) →^{(n+p)} → ρ_M^{n+p+1}(x))
 ```
-where PV denotes the step-wise path valuation (`VS` (L4.3.D1)).
+where PV denotes the step-wise path valuation ([`VS` (L4.3.D1)](CRPT_OMEGA_TOWER_L4.md#value-semiring-v)).
 
 *Standard name.* Eventual periodicity in a **weighted symbolic system** (Droste, Kuich & Vogler [2009], Handbook of Weighted Automata).
 The condition asserts that the sequence of valuations along the orbit eventually repeats.
@@ -1225,7 +1225,7 @@ The condition asserts that the sequence of valuations along the orbit eventually
 | **Definition** | L3.3.D5 | `SC-4-Def` |  | **Reframed** |
 **Synopsis:** Scope Condition SC-4 (finite symbolic orbit): the persistent orbit of x visits only finitely many distinct bisimulation classes — equivalently, its ω-limit set ω_≈(x) is finite. This is the symbolic-dynamics condition that the orbit's symbolic image is ultimately periodic.
 
-**Source:** CRPT; from `SC-1` (L3.3.D2)–`SC-3` (L3.3.D4); reframes eventual periodicity of orbits.
+**Source:** CRPT; from [`SC-1` (L3.3.D2)](CRPT_OMEGA_TOWER_L3.md#sc-1-ω-limit-bisimulation-fixation)–[`SC-3` (L3.3.D4)](CRPT_OMEGA_TOWER_L3.md#sc-3-eventual-periodicity-of-valuation-sequence); reframes eventual periodicity of orbits.
 
 x ∈ νT_{ρ,M} satisfies SC-4 if:
 ```
@@ -1271,11 +1271,11 @@ with $|ω_≈(x)|$ equal to the minimal period. ∎
 | **Theorem** | L3.3.T2 | `SC4-23` |  | **Novel** |
 **Synopsis:** SC-4 implies SC-2 and SC-3: since SC-4 makes the quotient orbit eventually periodic, the orbit-signature sequence and the valuation sequence — both functions of the bisimulation class — are eventually periodic as well.
 
-**Source:** CRPT; from `SC-4-Def` (L3.3.D5) + `SC-2` (L3.3.D3) + `SC-3` (L3.3.D4).
+**Source:** CRPT; from [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set) + [`SC-2` (L3.3.D3)](CRPT_OMEGA_TOWER_L3.md#sc-2-eventual-periodicity-of-horizon-signature) + [`SC-3` (L3.3.D4)](CRPT_OMEGA_TOWER_L3.md#sc-3-eventual-periodicity-of-valuation-sequence).
 
 Under PA-NWF: SC-4(x) ⟹ SC-2(x) and SC-4(x) ⟹ SC-3(x).
 
-*Proof.* By `SC4-EP` (L3.3.T1), SC-4(x) implies the quotient orbit is eventually periodic.
+*Proof.* By [`SC4-EP` (L3.3.T1)](CRPT_OMEGA_TOWER_L3.md#sc-4--eventual-periodicity), SC-4(x) implies the quotient orbit is eventually periodic.
 The signature sequence (sig(ρ_M^n(x)))_{n∈ℕ} and valuation sequence (PV at step n)_{n∈ℕ}
 are determined by the quotient orbit (since sig and PV depend only on the bisimulation
 class). An eventually periodic orbit induces eventually periodic sig and PV sequences,
@@ -1289,7 +1289,7 @@ giving SC-2(x) and SC-3(x). ∎
 | **Definition** | L3.3.D6 | `CNF∞-Def` | CNF∞_M(x) | **Novel** |
 **Synopsis:** The persistent canonical form CNF∞_M(x) is defined for SC-1 elements as the unique bisimulation class in ω_≈(x) that is a fixed point of the p-fold iterated projection operator (where p = CPD(σ)). It is the persistent-regime canonical form: the stable reference point of the eventually-periodic orbit.
 
-**Source:** CRPT; from `CPer` (L1.3.D1) + `SC-4-Def` (L3.3.D5).
+**Source:** CRPT; from [`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set).
 
 For x ∈ νT_{ρ,M}, define:
 ```
@@ -1320,20 +1320,20 @@ in 𝒰_M/≈. This is the **eventual bisimulation image** of x's orbit.
 | **Remark** | L3.3.R2 | `CNFinf-Placement` | | **Novel** |
 **Synopsis:** Where CNF∞ sits in the graded WF/NWF duality (the SC-1 base layer).
 
-**Source:** CRPT; from `WF-NWF-Dual` (L3.3.T9) + `CPer` (L1.3.D1).
+**Source:** CRPT; from [`WF-NWF-Dual` (L3.3.T9)](CRPT_OMEGA_TOWER_L3.md#wfnwf-canonical-form-duality) + [`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative).
 
 CNF∞_M is **not** the full
-counterpart of CFix(ρ_M); the WF/NWF duality is *graded* (`WF-NWF-Dual` (L3.3.T9)), and
+counterpart of CFix(ρ_M); the WF/NWF duality is *graded* ([`WF-NWF-Dual` (L3.3.T9)](CRPT_OMEGA_TOWER_L3.md#wfnwf-canonical-form-duality)), and
 CNF∞ occupies only its lowest rung:
 - The total dual of CFix (total on ↓_M via PA-WN) is **CPer** (total on ∞_M via the
-  *universal* PA-Reach, `CPer` (L1.3.D1)); the dual of the rank d_M is the reachability
-  depth n_M (`n-Reach` (L3.3.D10)). This is the clean 1:1 level of the duality.
+  *universal* PA-Reach, [`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative)); the dual of the rank d_M is the reachability
+  depth n_M ([`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m)). This is the clean 1:1 level of the duality.
 - CNF∞_M is the **SC-1 base layer**: defined only for eventually class-constant orbits,
   where it equals the bisimulation class [CPer_M(x)]_≈. Outside SC-1 (Type AP / aperiodic)
   it is undefined, and the orbit must be classified by the full **AOI hierarchy**
-  (`AOI-Unif` (L6.3.D10)).
+  ([`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi)).
 - A *single* complete invariant of CFix's kind is **provably impossible** on ∞_M
-  (`SC-Imp` (L6.3.T1)); CNF∞ captures only the periodic fragment.
+  ([`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility)); CNF∞ captures only the periodic fragment.
 
 So CNF∞ and CFix share a *pattern* (extract an orbit invariant from a quotient) but are
 **not** dual at the same level: CFix is total and a single complete invariant, whereas
@@ -1345,21 +1345,21 @@ CNF∞ is partial and the lowest rung of the necessarily-hierarchical persistent
 | **Theorem** | L3.3.T3 | `CNF∞-Ex` |  | **Novel** |
 **Synopsis:** Persistent canonical form existence: for every SC-1 element x, CNF∞_M(x) exists. The proof uses the eventual periodicity guaranteed by SC-1 to show that ω_≈(x) is finite and contains at least one element fixed by ρ_M^p.
 
-**Source:** CRPT; from `CNF∞-Def` (L3.3.D6) + PA-Reach (L1.3.Ax2).
+**Source:** CRPT; from [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient) + [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization).
 
 Under PA-NWF + PA-Bisim, for every x with SC-1(x): CNF∞_M(x) is well-defined as a
 bisimulation class. (SC-2/SC-3 are not required for existence of the class; they
 additionally make the orbit valuation/spectrum periodic.)
 
-*Proof.* By SC-1(x) (`SC-1` (L3.3.D2)) there is a stabilisation index N with
+*Proof.* By SC-1(x) ([`SC-1` (L3.3.D2)](CRPT_OMEGA_TOWER_L3.md#sc-1-ω-limit-bisimulation-fixation)) there is a stabilisation index N with
 [ρ_M^n(x)]_≈ = [ρ_M^N(x)]_≈ =: c for all n ≥ N. We show ω_≈(x) = {c}:
 - **c ∈ ω_≈(x).** The class c recurs at every index n ≥ N, hence occurs cofinally;
-  so c ∈ liminf_{n→∞}{[ρ_M^k(x)]_≈ : k ≥ n} = ω_≈(x) (`ω-Lim` (L3.3.D1)).
+  so c ∈ liminf_{n→∞}{[ρ_M^k(x)]_≈ : k ≥ n} = ω_≈(x) ([`ω-Lim` (L3.3.D1)](CRPT_OMEGA_TOWER_L3.md#ω-limit-set)).
 - **ω_≈(x) ⊆ {c}.** Any class in the liminf must occur cofinally in the orbit; but
   every orbit class of index ≥ N equals c, so no class other than c occurs cofinally.
 
 Thus |ω_≈(x)| = 1. Finally c is a fixpoint of the induced quotient map
-ρ̄_M([y]_≈) := [ρ_M(y)]_≈ — well-defined under PA-Bisim (`CNF∞-BQF` (L5.1.T5)) — since
+ρ̄_M([y]_≈) := [ρ_M(y)]_≈ — well-defined under PA-Bisim ([`CNF∞-BQF` (L5.1.T5)](CRPT_OMEGA_TOWER_L5.md#cnf-as-bisimulation-quotient-fixpoint)) — since
 ρ̄_M(c) = [ρ_M(ρ_M^N(x))]_≈ = [ρ_M^{N+1}(x)]_≈ = c (as N+1 ≥ N). Hence CNF∞_M(x) := c
 is the unique element of ω_≈(x) and a ρ̄_M-fixpoint, well-defined for every SC-1 element. ∎
 
@@ -1369,17 +1369,17 @@ is the unique element of ω_≈(x) and a ρ̄_M-fixpoint, well-defined for every
 | **Theorem** | L3.3.T4 | `CNF∞-Uniq` |  | **Novel** |
 **Synopsis:** Persistent canonical form uniqueness: for every SC-1 element x, CNF∞_M(x) is unique. This follows from the confluence of the projection operator applied to the periodic orbit: the orbit visits the canonical form at every period-length step and no other fixed point of ρ_M^p is in ω_≈(x).
 
-**Source:** CRPT; from `CNF∞-Def` (L3.3.D6) + PA-Bisim (L1.3.Ax1).
+**Source:** CRPT; from [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence).
 
 Under SC-1(x): CNF∞_M(x) is unique — it is the only element of ω_≈(x), and the
 only ρ̄_M-fixpoint class to which the orbit stabilises.
 
-*Proof.* By `CNF∞-Ex` (L3.3.T3), SC-1(x) gives ω_≈(x) = {c} with c = [ρ_M^N(x)]_≈ a
+*Proof.* By [`CNF∞-Ex` (L3.3.T3)](CRPT_OMEGA_TOWER_L3.md#cnf-existence), SC-1(x) gives ω_≈(x) = {c} with c = [ρ_M^N(x)]_≈ a
 ρ̄_M-fixpoint. Uniqueness is then immediate on two counts: (i) ω_≈(x) is a singleton,
 so c is the *only* candidate canonical class; (ii) any ρ̄_M-fixpoint class c′ lying in
 ω_≈(x) satisfies c′ = c, since the set has exactly one element. Hence CNF∞_M(x) = c is
 unique. (For eventually-periodic orbits, SC-4 — finitely many visited classes,
-`SC4-EP` (L3.3.T1) — is the orbit-type condition that *guarantees* SC-1; given SC-1,
+[`SC4-EP` (L3.3.T1)](CRPT_OMEGA_TOWER_L3.md#sc-4--eventual-periodicity) — is the orbit-type condition that *guarantees* SC-1; given SC-1,
 uniqueness needs no further hypothesis.) ∎
 
 ### Persistent Orbit Equivalence ≃∞
@@ -1390,17 +1390,17 @@ uniqueness needs no further hypothesis.) ∎
 | **Definition** | L3.3.D7 | `≃∞` | ≃∞ | **Novel** |
 **Synopsis:** Persistent orbit equivalence: x ≃∞ y holds when x and y have the same ω-limit set, ω_≈(x) = ω_≈(y) — i.e. their orbits asymptotically visit the same bisimulation classes. It is the ∞_M analogue of observable equivalence ≃_M, with quotient Q∞_M = ∞_M/≃∞.
 
-**Source:** CRPT; from `CNF∞-Def` (L3.3.D6).
+**Source:** CRPT; from [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient).
 
 For x, y ∈ ∞_M define:
 ```
 x ≃∞ y  :⟺  ω_≈(x) = ω_≈(y)
 ```
 where ω_≈(x) := {[z]_≈ : z ∈ ω(x)} is the ω-limit set of x's orbit in the
-bisimulation quotient (`ω-Lim` (L3.3.D1)).
+bisimulation quotient ([`ω-Lim` (L3.3.D1)](CRPT_OMEGA_TOWER_L3.md#ω-limit-set)).
 
 x and y are *persistently orbit-equivalent* iff their orbits share the same
-asymptotic bisimulation class structure. ≃∞ is the ∞_M analogue of `≃_M` (L2.5.D2):
+asymptotic bisimulation class structure. ≃∞ is the ∞_M analogue of [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m):
 
 | | ↓_M | ∞_M |
 |---|---|---|
@@ -1408,14 +1408,14 @@ asymptotic bisimulation class structure. ≃∞ is the ∞_M analogue of `≃_M`
 | **Equivalence** | ≃_M : same canonical form | ≃∞ : same ω-limit set |
 | **Quotient** | Q_M = ↓_M/≃_M | Q∞_M = ∞_M/≃∞ |
 
-*On SC-1 elements:* ω_≈(x) = {CNF∞_M(x)} (singleton by `CNF∞-Def` (L3.3.D6));
+*On SC-1 elements:* ω_≈(x) = {CNF∞_M(x)} (singleton by [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient));
 ≃∞ restricts to CNF∞-equality: x ≃∞ y ⟺ CNF∞_M(x) = CNF∞_M(y).
 
 *On general ∞_M elements:* ≃∞ compares the full ω-limit set. For aperiodic
 (Type AP) elements the ω-limit set may not be a singleton; two AP elements are
 ≃∞-equivalent iff their orbits asymptotically visit the same bisimulation classes.
 
-*Relationship to AOI₁:* `AOI₁` (L6.3.D3) refines ≃∞ on SC-∞ orbits —
+*Relationship to AOI₁:* [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) refines ≃∞ on SC-∞ orbits —
 AOI₁ carries the full tail-trace equivalence class while ≃∞ carries only the
 ω-limit set (the asymptotic support). AOI₁(x) = AOI₁(y) ⟹ x ≃∞ y;
 the converse does not hold in general.
@@ -1426,7 +1426,7 @@ the converse does not hold in general.
 | **Theorem** | L3.3.T5 | `≃∞-Eq` |  | **Novel** |
 **Synopsis:** ≃∞ is an equivalence relation: persistent orbit equivalence is reflexive, symmetric, and transitive on ∞_M — immediate from equality of ω-limit sets.
 
-**Source:** CRPT; from `≃∞` (L3.3.D7).
+**Source:** CRPT; from [`≃∞` (L3.3.D7)](CRPT_OMEGA_TOWER_L3.md#--persistent-orbit-equivalence).
 
 ≃∞ is reflexive, symmetric, and transitive on ∞_M.
 
@@ -1439,22 +1439,22 @@ Transitivity: ω_≈(x) = ω_≈(y) ∧ ω_≈(y) = ω_≈(z) ⟹ ω_≈(x) = ω
 | **Definition** | L3.3.D8 | `Q∞` | Q∞_M | **Novel** |
 **Synopsis:** The persistent orbit quotient Q∞_M := ∞_M/≃∞ is the set of distinct ω-limit sets of persistent orbits — the ∞_M counterpart of the abstraction quotient Q_M. Its SC-4-restricted subquotient is the NWF quotient Q_M^* used to build Lift∞.
 
-**Source:** CRPT; from `≃∞` (L3.3.D7) + `sig_M-NM` (L3.1.D5).
+**Source:** CRPT; from [`≃∞` (L3.3.D7)](CRPT_OMEGA_TOWER_L3.md#--persistent-orbit-equivalence) + [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form).
 
 ```
 Q∞_M  :=  ∞_M / ≃∞  =  { ω_≈(x) | x ∈ ∞_M }
 ```
 the set of distinct ω-limit sets of ∞_M orbits under the bisimulation quotient.
-Q∞_M is the *persistent orbit quotient* of M — the ∞_M counterpart of `Ab-Quot-28` (L8.2.D1).
+Q∞_M is the *persistent orbit quotient* of M — the ∞_M counterpart of [`Ab-Quot-28` (L8.2.D1)](CRPT_OMEGA_TOWER_L8.md#abstraction-quotient).
 
-*Relationship to Q_M^*:* The NWF abstraction quotient `NWF-Quot` (L8.5.D1) is the
+*Relationship to Q_M^*:* The NWF abstraction quotient [`NWF-Quot` (L8.5.D1)](CRPT_OMEGA_TOWER_L8.md#nwf-abstraction-quotient) is the
 SC-4-restricted subquotient:
 ```
 Q_M^*  =  { [x]_{≃∞} | x ∈ ∞_M, x satisfies SC-4 }  ⊆  Q∞_M
 ```
 In models where every ∞_M element satisfies SC-4 (e.g., all periodic domain models),
 Q_M^* = Q∞_M. In general, Q∞_M is the proper universal quotient and Q_M^* is the
-constructively tractable approximation from which `Lift∞` (L8.5.D2) is built.
+constructively tractable approximation from which [`Lift∞` (L8.5.D2)](CRPT_OMEGA_TOWER_L8.md#nwf-extended-lift) is built.
 
 ### Unified Semantic Domain Sem(M)
 | Type | Label | Tag | Notation | Status |
@@ -1462,12 +1462,12 @@ constructively tractable approximation from which `Lift∞` (L8.5.D2) is built.
 | **Definition** | L3.3.D9 | `Sem` | Sem(M) | **Novel** |
 **Synopsis:** The unified semantic domain Sem(M) := Q_M ⊔ Q∞_M is the disjoint union of the convergent orbit quotient and the persistent orbit quotient, with a regime-aware semantic projection π_sem : 𝒰_M → Sem(M). It records the observer triple's ≃_M-invariant residue — each element's regime and orbit-equivalence class — which the full observer then refines.
 
-**Source:** CRPT; from `Q∞` (L3.3.D8) + `Ab-Quot-28` (L8.2.D1).
+**Source:** CRPT; from [`Q∞` (L3.3.D8)](CRPT_OMEGA_TOWER_L3.md#persistent-orbit-quotient-q_m) + [`Ab-Quot-28` (L8.2.D1)](CRPT_OMEGA_TOWER_L8.md#abstraction-quotient).
 
 ```
 Sem(M)  :=  Q_M  ⊔  Q∞_M
 ```
-the disjoint union of the terminating orbit quotient (`Ab-Quot-28` (L8.2.D1)) and
+the disjoint union of the terminating orbit quotient ([`Ab-Quot-28` (L8.2.D1)](CRPT_OMEGA_TOWER_L8.md#abstraction-quotient)) and
 the persistent orbit quotient. The *semantic projection* π_sem : 𝒰_M → Sem(M) is:
 - For x ∈ ↓_M: π_sem(x) := [x]_{≃_M} ∈ Q_M
 - For x ∈ ∞_M: π_sem(x) := ω_≈(x) ∈ Q∞_M
@@ -1483,15 +1483,15 @@ elements map to the same class.
 | **Remark** | L3.3.R3 | `Sem-Base` | | **Novel** |
 **Synopsis:** Sem(M) records the ≃_M-invariant residue of the observer triple — its (regime, canonical-form) datum — not the full observer.
 
-**Source:** CRPT; from `Obs-Triple` (L4.1.D5).
+**Source:** CRPT; from [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple).
 
-Sem(M) is the **canonical-form base** for the observer triple `Obs-Triple` (L4.1.D5):
+Sem(M) is the **canonical-form base** for the observer triple [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple):
 the semantic projection π_sem records each element's regime and orbit-equivalence
 class (its convergent class in Q_M or persistent ω-limit class in Q∞_M). This is exactly
 the **≃_M-invariant residue** of the observer — the regime component D and the canonical
 form. The *full* observer 𝒪 does **not** factor through π_sem: its behavioural valuation PV
-and horizon class H separate elements *within* a single ≃_M class (`Obs-Triple` (L4.1.D5)),
-so 𝒪 factors through the strictly finer bisimilarity ≈ (`Bisim` (L1.1.D6)), not through
+and horizon class H separate elements *within* a single ≃_M class ([`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple)),
+so 𝒪 factors through the strictly finer bisimilarity ≈ ([`Bisim` (L1.1.D6)](CRPT_OMEGA_TOWER_L1.md#bisimulation)), not through
 π_sem. The two components Q_M and Q∞_M are the **terminating** and **persistent** canonical
 domains respectively.
 
@@ -1500,12 +1500,12 @@ domains respectively.
 ### Persistent Canonical Form: Total Dual and Hierarchical Completeness
 
 *Purpose.* The convergent regime has a clean canonical-form theory: a total rank d_M
-(`d-WD` (L2.3.T1)), a total canonical form CFix with existence/uniqueness/stability
+([`d-WD` (L2.3.T1)](CRPT_OMEGA_TOWER_L2.md#d_m-is-well-defined-on-μt_ρm)), a total canonical form CFix with existence/uniqueness/stability
 (`CNF-Ex`/`CNF-Uniq`/`CNF-Stab` (L2.4.T1–T3)), and a *single* complete ≃-invariant
-(`CNF=CR` (L2.5.T2)). This subsection supplies the persistent dual at the level where a
+([`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient)). This subsection supplies the persistent dual at the level where a
 1:1 dual exists — and states precisely where, and why, it cannot. The earlier CNF∞ layer
 (L3.3.D6–T4) is partial (SC-1 only); the dual developed here is **total** on all of ∞_M,
-resting on the universal axiom PA-Reach (L1.3.Ax2).
+resting on the universal axiom [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization).
 
 ### Reachability Depth n_M
 | Type | Label | Tag | Notation | Status |
@@ -1513,14 +1513,14 @@ resting on the universal axiom PA-Reach (L1.3.Ax2).
 | **Definition** | L3.3.D10 | `n-Reach` | n_M(x) | **Novel** |
 **Synopsis:** The reachability depth n_M(x) is the least transient after which the ≈-class orbit is periodic — the point where the orbit enters its recurrent cycle. It is the NWF dual of the derivation height d_M: where d_M counts steps until the orbit itself becomes constant (reaches Fix), n_M counts steps until the orbit's *class sequence* becomes periodic; the element keeps moving, but its observable behaviour repeats.
 
-**Source:** CRPT; from `CPer` (L1.3.D1) + `Bisim~` (L1.1.D7) + PA-Reach (L1.3.Ax2); dual of `d_M` (L2.3.D2).
+**Source:** CRPT; from [`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative) + [`Bisim~` (L1.1.D7)](CRPT_OMEGA_TOWER_L1.md#bisimilarity) + [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization); dual of [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m).
 
-For x ∈ ∞_M covered by the recurrence realization of PA-Reach (`PA-Reach-Fin` (L1.3.T2)):
+For x ∈ ∞_M covered by the recurrence realization of PA-Reach ([`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)):
 ```
 n_M(x) := min { n ∈ ℕ : ∃ p ≥ 1 : ∀ j ≥ 0,  ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x) }
 ```
 The recurrence realization asserts this set is non-empty, so n_M(x) ∈ ℕ is total on the
-recurrence sub-class, and CPer_M(x) = ρ_M^{n_M(x)}(x) (`CPer` (L1.3.D1)) is the first
+recurrence sub-class, and CPer_M(x) = ρ_M^{n_M(x)}(x) ([`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative)) is the first
 point of the orbit's recurrent ≈-cycle. On the convergence sub-class the
 representative is supplied by the limit instead: CPer_M(x) = CFix(ρ_M)(x), and no finite
 transient is involved.
@@ -1537,19 +1537,19 @@ where reach is by convergence rather than at finite depth.
 | **Theorem** | L3.3.T6 | `CPer-Ex` | | **Novel** |
 **Synopsis:** For every persistent element x ∈ ∞_M, the canonical persistent representative CPer_M(x) exists — totally. This is the NWF dual of CNF-Ex, and existence is exactly the content of the universal axiom PA-Reach: every persistent orbit has a canonically representable asymptotic destination.
 
-**Source:** CRPT; from PA-Reach (L1.3.Ax2) + `n-Reach` (L3.3.D10); dual of `CNF-Ex` (L2.4.T1).
+**Source:** CRPT; from [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) + [`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m); dual of [`CNF-Ex` (L2.4.T1)](CRPT_OMEGA_TOWER_L2.md#cnf-existence).
 
 For every x ∈ ∞_M, CPer_M(x) is defined: ρ_M^{n_M(x)}(x) under the recurrence
 realization, CFix(ρ_M)(x) under the convergence realization (and the canonical element
-of the limit cycle in the composite case, `PA-Reach-Decomp` (L1.3.T4)).
+of the limit cycle in the composite case, [`PA-Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)).
 
-*Proof.* PA-Reach (L1.3.Ax2) gives every x ∈ ∞_M an asymptotic destination ω_≈(x), realized by recurrence, convergence, or their composite (`PA-Reach-Decomp` (L1.3.T4)).
-**Recurrence realization (`PA-Reach-Fin` (L1.3.T2)):** the set {n : ∃p ≥ 1 : ∀j ≥ 0, ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x)} is
+*Proof.* [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) gives every x ∈ ∞_M an asymptotic destination ω_≈(x), realized by recurrence, convergence, or their composite ([`PA-Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)).
+**Recurrence realization ([`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach)):** the set {n : ∃p ≥ 1 : ∀j ≥ 0, ρ_M^{n+j+p}(x) ≈ ρ_M^{n+j}(x)} is
 non-empty; as a non-empty subset of ℕ it has a least element, n_M(x)
-(`n-Reach` (L3.3.D10)), and CPer_M(x) = ρ_M^{n_M(x)}(x) exists. **Convergence realization (`PA-Reach-Top` (L1.3.T3)):**
+([`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m)), and CPer_M(x) = ρ_M^{n_M(x)}(x) exists. **Convergence realization ([`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)):**
 the limit lim_{n→∞} ρ_M^n(x) exists in 𝒯 and CPer_M(x) = CFix(ρ_M)(x). Either way
 CPer_M(x) exists for every persistent x. Totality on ∞_M is the dual of CNF-Ex's totality
-on ↓_M (`CNF-Ex` (L2.4.T1)), with PA-Reach in the role of PA-WN. ∎
+on ↓_M ([`CNF-Ex` (L2.4.T1)](CRPT_OMEGA_TOWER_L2.md#cnf-existence)), with PA-Reach in the role of PA-WN. ∎
 
 ### CPer Uniqueness
 | Type | Label | Tag | Notation | Status |
@@ -1557,20 +1557,20 @@ on ↓_M (`CNF-Ex` (L2.4.T1)), with PA-Reach in the role of PA-WN. ∎
 | **Theorem** | L3.3.T7 | `CPer-Uniq` | | **Novel** |
 **Synopsis:** The canonical persistent representative is uniquely determined by x — the NWF dual of CNF-Uniq. Under recurrence, the reachability depth n_M(x) and the recurrent ≈-cycle it enters are unique, by determinism of the strategy ρ_M together with minimality of the transient; under convergence the limit is unique by topological separation. Where WF uniqueness rests on confluence (Church–Rosser), NWF uniqueness rests on determinism and separation.
 
-**Source:** CRPT; from `ρ_M` (L2.1.D1) (determinism, C1–C2) + `Rec-Proj` (L2.1.D4) + `n-Reach` (L3.3.D10) + `TopSep-Uniq` (L1.7.T1); dual of `CNF-Uniq` (L2.4.T2).
+**Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) (determinism, C1–C2) + [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) + [`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m) + [`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep); dual of [`CNF-Uniq` (L2.4.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-uniqueness--orbit-scoped-uniqueness).
 
 For x ∈ ∞_M, CPer_M(x) is unique: under recurrence, n_M(x) is the unique least transient
 and the recurrent ≈-cycle entered at CPer_M(x) is the unique extracted observable; under
 convergence, the limit CFix(ρ_M)(x) is unique.
 
-*Proof.* ρ_M is a deterministic strategy (C1–C2, `ρ_M` (L2.1.D1)), so the orbit
+*Proof.* ρ_M is a deterministic strategy (C1–C2, [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m)), so the orbit
 (ρ_M^n(x))_{n∈ℕ} is a single determined sequence. **Recurrence:** the transient set
 S(x) = {n : ∃p ≥ 1 : the class orbit from n is p-periodic} is thereby determined, and its
 least element n_M(x) is unique; the class cycle ([ρ_M^{n_M(x)+i}(x)]_≈)_{0 ≤ i < p} with
 minimal period p is the single recurrent behaviour the determined orbit settles into —
 unique. **Convergence:** the limit is unique because 𝒯 is Hausdorff on the relevant
-sub-class (`TopSep-Uniq` (L1.7.T1)). Independence of the chosen orbit representative is
-`Rec-Proj` (L2.1.D4). (Dual mechanism: WF uniqueness comes from *confluence* of →_ρ; NWF
+sub-class ([`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep)). Independence of the chosen orbit representative is
+[`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection). (Dual mechanism: WF uniqueness comes from *confluence* of →_ρ; NWF
 finitary uniqueness comes from *determinism* of ρ_M, and topological uniqueness from
 *separation* — the faces of the projection strategy.) ∎
 
@@ -1580,12 +1580,12 @@ finitary uniqueness comes from *determinism* of ρ_M, and topological uniqueness
 | **Theorem** | L3.3.T8 | `CPer-Stab` | | **Novel** |
 **Synopsis:** The extracted observable is invariant under further projection — CPer_M(ρ_M(x)) lies on the same recurrent ≈-cycle as CPer_M(x) (recurrence) or has the same limit (convergence) — and the reachability depth decreases by one per step, n_M(ρ_M(x)) = max(n_M(x) − 1, 0). These are the NWF duals of CNF-Stab (idempotence) and Depth-Dec (rank decrement).
 
-**Source:** CRPT; from `n-Reach` (L3.3.D10) + PA-Reach (L1.3.Ax2); duals of `CNF-Stab` (L2.4.T3) and `Depth-Dec` (L2.3.T2).
+**Source:** CRPT; from [`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m) + [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization); duals of [`CNF-Stab` (L2.4.T3)](CRPT_OMEGA_TOWER_L2.md#cnf-stability) and [`Depth-Dec` (L2.3.T2)](CRPT_OMEGA_TOWER_L2.md#strict-depth-decrease).
 
 For x ∈ ∞_M: (i) under recurrence, n_M(ρ_M(x)) = max(n_M(x) − 1, 0); (ii) CPer_M(ρ_M(x))
 lies on the same recurrent ≈-cycle as CPer_M(x) (recurrence) — and under convergence
 CFix(ρ_M)(ρ_M(x)) = CFix(ρ_M)(x) — so the extracted observable, hence the persistent
-orbit signature (`sig_M-NM` (L3.1.D5)), is invariant; (iii) for all m ≥ n_M(x), ρ_M^m(x)
+orbit signature ([`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form)), is invariant; (iii) for all m ≥ n_M(x), ρ_M^m(x)
 lies on the recurrent ≈-cycle.
 
 *Proof.* The orbit of ρ_M(x) is the one-step shift of the orbit of x: ρ_M^n(ρ_M(x)) =
@@ -1593,13 +1593,13 @@ lies on the recurrent ≈-cycle.
 periodic from 0 for ρ_M(x) as well, so n_M(ρ_M(x)) = 0. If n_M(x) = k ≥ 1, the class
 orbit is periodic from index k but not from k−1; under the one-step shift, ρ_M(x)'s class
 orbit is periodic from k−1 but not from k−2, so n_M(ρ_M(x)) = k−1. Hence n_M(ρ_M(x)) =
-max(n_M(x)−1, 0) — the dual of `Depth-Dec` (L2.3.T2). **(ii)** Recurrence:
+max(n_M(x)−1, 0) — the dual of [`Depth-Dec` (L2.3.T2)](CRPT_OMEGA_TOWER_L2.md#strict-depth-decrease). **(ii)** Recurrence:
 CPer_M(ρ_M(x)) = ρ_M^{max(n_M(x)−1,0)+1}(x) = ρ_M^{max(n_M(x),1)}(x), a point of the
 recurrent cycle by (iii); the cycle, hence the trace tail class, is unchanged.
 Convergence: shifting an orbit does not change its limit. **(iii)** Immediate from the
-definition of n_M(x) (`n-Reach` (L3.3.D10)): from n_M(x) the class orbit is periodic, so
+definition of n_M(x) ([`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m)): from n_M(x) the class orbit is periodic, so
 every later iterate lies on the cycle. The idempotence analogue — projecting past the
-transient returns the same canonical observable — is the dual of `CNF-Stab` (L2.4.T3). ∎
+transient returns the same canonical observable — is the dual of [`CNF-Stab` (L2.4.T3)](CRPT_OMEGA_TOWER_L2.md#cnf-stability). ∎
 
 ### WF/NWF Canonical-Form Duality
 | Type | Label | Tag | Notation | Status |
@@ -1607,7 +1607,7 @@ transient returns the same canonical observable — is the dual of `CNF-Stab` (L
 | **Theorem** | L3.3.T9 | `WF-NWF-Dual` | | **Novel** |
 **Synopsis:** The convergent and persistent canonical-form theories are dual, but the duality is *graded*. At the total-representative level it is a clean 1:1 correspondence (d_M↔n_M, CFix↔CPer, PA-WN↔PA-Reach). At the complete-classifier level it is *necessarily* asymmetric: the single complete invariant CFix dualizes to a *hierarchy* (the AOI hierarchy), because SC-Imp proves no single persistent invariant exists. The asymmetry the duality exhibits is a theorem, not a gap.
 
-**Source:** CRPT; from `CNF-Ex`/`CNF-Uniq`/`CNF-Stab` (L2.4.T1–T3) + `CNF=CR` (L2.5.T2) + `CPer-Ex`/`CPer-Uniq`/`CPer-Stab` (L3.3.T6–T8) + `SC-Imp` (L6.3.T1) + `AOI-Unif` (L6.3.D10).
+**Source:** CRPT; from `CNF-Ex`/`CNF-Uniq`/`CNF-Stab` (L2.4.T1–T3) + [`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient) + `CPer-Ex`/`CPer-Uniq`/`CPer-Stab` (L3.3.T6–T8) + [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility) + [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi).
 
 The correspondence:
 
@@ -1615,32 +1615,32 @@ The correspondence:
 |---|---|---|
 | Totality axiom | PA-WN | PA-Reach (universal) |
 | Mode | recurrence (PA-WN, depth d_M); convergence degenerate | recurrence or convergence or composite (PA-Reach realizations, mirrored) |
-| Rank | d_M (`d-WD` (L2.3.T1)) | n_M (`n-Reach` (L3.3.D10)) |
-| Rank decrement | d_M(ρ_M x) = d_M(x)−1 (`Depth-Dec` (L2.3.T2)) | n_M(ρ_M x) = max(n_M(x)−1,0) (`CPer-Stab` (L3.3.T8)) |
+| Rank | d_M ([`d-WD` (L2.3.T1)](CRPT_OMEGA_TOWER_L2.md#d_m-is-well-defined-on-μt_ρm)) | n_M ([`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m)) |
+| Rank decrement | d_M(ρ_M x) = d_M(x)−1 ([`Depth-Dec` (L2.3.T2)](CRPT_OMEGA_TOWER_L2.md#strict-depth-decrease)) | n_M(ρ_M x) = max(n_M(x)−1,0) ([`CPer-Stab` (L3.3.T8)](CRPT_OMEGA_TOWER_L3.md#cper-stability)) |
 | Canonical representative | CFix = ρ_M^{d_M(x)}(x) | CPer = ρ_M^{n_M(x)}(x) |
 | Ex / Uniq / Stab | `CNF-Ex`/`CNF-Uniq`/`CNF-Stab` (L2.4.T1–T3) | `CPer-Ex`/`CPer-Uniq`/`CPer-Stab` (L3.3.T6–T8) |
 | Uniqueness mechanism | confluence (Church–Rosser) | determinism of ρ_M |
-| Complete ≃-classifier | **single** invariant CFix (`CNF=CR` (L2.5.T2)) | **hierarchy** AOI (`AOI-Unif` (L6.3.D10)); no single one (`SC-Imp` (L6.3.T1)) |
+| Complete ≃-classifier | **single** invariant CFix ([`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient)) | **hierarchy** AOI ([`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi)); no single one ([`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility)) |
 | What stabilizes | the orbit (reaches Fix) | the orbit *signature* (orbit continues) |
 
 **(i) Total-representative duality (1:1).** The rows above through "Ex/Uniq/Stab"
-correspond exactly under the substitution σ_dual of `Iso-Dual` (L5.2.T8): each convergent
+correspond exactly under the substitution σ_dual of [`Iso-Dual` (L5.2.T8)](CRPT_OMEGA_TOWER_L5.md#regime-duality-of-restricted-isomorphisms): each convergent
 statement maps to the established persistent statement and back, with PA-WN ↔ PA-Reach as
 the totality precondition. This level of the duality is symmetric.
 
 **(ii) Complete-classifier asymmetry (necessary).** On ↓_M, CFix is a *single* complete
-invariant: x ≃_M y ⟺ CFix(x) = CFix(y) (`CNF=CR` (L2.5.T2)). On ∞_M no single invariant
-exists: `SC-Imp` (L6.3.T1) shows by diagonalisation that no shift-invariant single-class
+invariant: x ≃_M y ⟺ CFix(x) = CFix(y) ([`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient)). On ∞_M no single invariant
+exists: [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility) shows by diagonalisation that no shift-invariant single-class
 function classifies the aperiodic orbits. The complete persistent classifier is therefore
-*necessarily* the multi-level AOI hierarchy (`AOI-Unif` (L6.3.D10), master theorem
-`AOI-Mast` (L6.1.T4)), with CNF∞ (`CNF∞-Def` (L3.3.D6)) as its SC-1 base rung.
+*necessarily* the multi-level AOI hierarchy ([`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi), master theorem
+[`AOI-Mast` (L6.1.T4)](CRPT_OMEGA_TOWER_L6.md#aoi-master-theorem)), with CNF∞ ([`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient)) as its SC-1 base rung.
 
 *Proof.* (i) is the conjunction of `CNF-Ex`/`CNF-Uniq`/`CNF-Stab` (L2.4.T1–T3) with their
 duals `CPer-Ex`/`CPer-Uniq`/`CPer-Stab` (L3.3.T6–T8), matched clause-for-clause by the
-σ_dual table of `Iso-Dual` (L5.2.T8); the totality preconditions PA-WN and PA-Reach are
-dual and each universal on its regime. (ii) is `CNF=CR` (L2.5.T2) on the WF side and
-`SC-Imp` (L6.3.T1) on the NWF side: the latter forbids a single complete invariant, and the
-AOI hierarchy (`AOI-Unif` (L6.3.D10)) supplies the complete classifier that SC-Imp shows
+σ_dual table of [`Iso-Dual` (L5.2.T8)](CRPT_OMEGA_TOWER_L5.md#regime-duality-of-restricted-isomorphisms); the totality preconditions PA-WN and PA-Reach are
+dual and each universal on its regime. (ii) is [`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient) on the WF side and
+[`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility) on the NWF side: the latter forbids a single complete invariant, and the
+AOI hierarchy ([`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi)) supplies the complete classifier that SC-Imp shows
 must be hierarchical. ∎
 
 ### The Asymmetry Is Structural
@@ -1650,13 +1650,13 @@ must be hierarchical. ∎
 | **Remark** | L3.3.R4 | `Asym-Structural` | | **Novel** |
 **Synopsis:** Why the WF/NWF asymmetry is structural (forced by SC-Imp), not a rigor gap.
 
-**Source:** CRPT; from `SC-Imp` (L6.3.T1).
+**Source:** CRPT; from [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility).
 
 The persistent regime is
 *genuinely* richer than the convergent one: a convergent orbit ends (reaches a fixpoint),
 discarding its history, so one terminal value (CFix) suffices; a persistent orbit never
 ends, and its asymptotic behaviour can carry unbounded structure (aperiodic class
-sequences), which `SC-Imp` (L6.3.T1) proves cannot be compressed to a single bisimulation
+sequences), which [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility) proves cannot be compressed to a single bisimulation
 class. Equal rigor on the two sides therefore *requires* the asymmetric presentation — a
 single canonical form on ↓_M, a graded hierarchy on ∞_M. Collapsing the NWF side to one
 CNF∞-style invariant would be a simplification that SC-Imp shows is false.

@@ -19,8 +19,8 @@ Readers are encouraged to read this section before diving into L1–L4, where ma
 **Pitfall:** Treating the reduction relation and the structural relation as interchangeable, or as expressing different "degrees" of relation.
 
 **What they are:**
-- →_ρ (`Sub` (L1.1.D1)): The **reduction strategy** — the projection evolution. This is the relation that drives the canonical form computation; iterating →_ρ via ρ_M produces CNF.
-- →_σ (`Sub` (L1.1.D1)): The **structural connectivity relation** — how elements relate within the CRPT universe, including non-reductive connections.
+- →_ρ ([`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate)): The **reduction strategy** — the projection evolution. This is the relation that drives the canonical form computation; iterating →_ρ via ρ_M produces CNF.
+- →_σ ([`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate)): The **structural connectivity relation** — how elements relate within the CRPT universe, including non-reductive connections.
 
 **Why two relations exist:**  
 To keep projection (→_ρ) semantically distinct from observation/connectivity (→_σ). Under a single relation, bisimulation-equivariance plus confluence (PA-Conf) would force every non-fixpoint to have a unique successor, trivializing PA-NWF and collapsing the persistent regime. The structural relation →_σ also carries cross-regime connectivity — the Gateway structure (L4.2) — that the reduction strategy →_ρ alone cannot express. (PA-Reach itself is a projection property on ∞_M, not a connectivity axiom; see L1.3.)
@@ -65,8 +65,8 @@ In a CRPT model M with universe {a, b, c} where ρ_M(a) = ρ_M(b) = c and ρ_M(c
 **Pitfall:** Assuming ↓_M = "finite elements" and ∞_M = "infinite elements," or that |↓_M| and |∞_M| constrain |𝒰_M|.
 
 **What they are:**
-- `↓_M` (L2.2.D4): The **convergent regime** — elements of 𝒰_M that reach Fix(ρ_M) in finitely many ρ_M-steps.
-- `∞_M` (L2.2.D5): The **persistent regime** — elements that never reach Fix(ρ_M) under iteration of ρ_M.
+- [`↓_M` (L2.2.D4)](CRPT_OMEGA_TOWER_L2.md#convergent-regime-_m): The **convergent regime** — elements of 𝒰_M that reach Fix(ρ_M) in finitely many ρ_M-steps.
+- [`∞_M` (L2.2.D5)](CRPT_OMEGA_TOWER_L2.md#persistent-regime-_m): The **persistent regime** — elements that never reach Fix(ρ_M) under iteration of ρ_M.
 
 **Crucial distinction:**  
 The partition ↓_M ⊔ ∞_M = 𝒰_M is about *termination behavior under ρ_M*, not about the size or structure of 𝒰_M itself.
@@ -103,16 +103,16 @@ This is the *rank* of x in the deterministic ρ_M-induced well-founded order —
 **Pitfall:** Treating H_S, H_I, H_O as three independent boolean flags that can be set in any combination.
 
 **What they are:**
-- H_S(x) (`H_S` (L3.1.D1)): x has **multiple ρ_M-siblings** — the preimage ρ_M^{−1}(ρ_M(x)) contains more than one element.
-- H_I(x) (`H_I` (L3.1.D2)): x's siblings have **identical signatures** — all elements in the fiber of ρ_M(x) have the same the orbit signature value.
-- H_O(x) (`H_O` (L3.1.D4)): x is at **depth exactly 1** — d_M(x) = 1 (boundary layer, one step from a fixpoint).
+- H_S(x) ([`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s)): x has **multiple ρ_M-siblings** — the preimage ρ_M^{−1}(ρ_M(x)) contains more than one element.
+- H_I(x) ([`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i)): x's siblings have **identical signatures** — all elements in the fiber of ρ_M(x) have the same the orbit signature value.
+- H_O(x) ([`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o)): x is at **depth exactly 1** — d_M(x) = 1 (boundary layer, one step from a fixpoint).
 
 **Dependency structure:**
 - H_I(x) is meaningful only when H_S(x) = ⊤. When H_S(x) = ⊥ (unique preimage), H_I is vacuously true or undefined — there are no "other siblings" to compare signatures with. In the six-class partition, the combination H_S = ⊥ ∧ H_I = ⊤ does not arise as a distinct class.
 - H_O is a convenience predicate (shorthand for derivation height = 1); it is **not** a primary horizon. H_S and H_I are the fundamental ones.
 
 **Boolean structure:**  
-Of the 2³ = 8 boolean combinations of (H_S, H_I, H_O), only 5 non-empty classes appear in deterministic CRPT models. Class F (H_S = ⊥ ∧ H_I = ⊤ ∧ H_O = ⊥, roughly) is provably empty by `F=∅` (L3.2.T2).
+Of the 2³ = 8 boolean combinations of (H_S, H_I, H_O), only 5 non-empty classes appear in deterministic CRPT models. Class F (H_S = ⊥ ∧ H_I = ⊤ ∧ H_O = ⊥, roughly) is provably empty by [`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model).
 
 **Correct usage:**
 - Always check H_S first; proceed to H_I only if H_S = ⊤.
@@ -171,7 +171,7 @@ Lift ⊣ Collapse (proved in L7.2.4, `Lift-Endo` L7.2, and `Coll-Adj` L7.2). Lif
 **Pitfall:** Using the canonical form map, CFix(ρ_M), and the normal-form fiber interchangeably.
 
 **What they are:**
-- CNF_M(x) (`CFix-NM` (L2.4.D1)): The **canonical normal form** of x — the element that ρ_M^n(x) reaches as n → ∞ (the endpoint of the ρ_M-orbit from x). Defined for x ∈ ↓_M.
+- CNF_M(x) ([`CFix-NM` (L2.4.D1)](CRPT_OMEGA_TOWER_L2.md#canonical-normal-form-map--native-form)): The **canonical normal form** of x — the element that ρ_M^n(x) reaches as n → ∞ (the endpoint of the ρ_M-orbit from x). Defined for x ∈ ↓_M.
 - `CFix(ρ_M)(x)`: The **canonical fixpoint** of x — explicitly the element f ∈ Fix(ρ_M) such that ρ_M^{d_M(x)}(x) = f. In deterministic models, CNF_M(x) = CFix(ρ_M)(x) always (they coincide).
 - `the normal-form fiber NFC_M(f)` (L2.1.D1 / L2.5.D1): The **normal-form fiber** of f — the set of all elements in 𝒰_M that canonicalize to f:
   ```

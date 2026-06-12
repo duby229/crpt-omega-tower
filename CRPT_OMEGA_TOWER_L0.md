@@ -59,7 +59,7 @@ equality of CNF_π values). The equivalence class [x]_{≃_π} = L_π(x).
 | **Remark** | L0.1.R1 | `Fiber-InfoComp` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `Fiber` (L0.1.D2).
+**Source:** CRPT; from [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence).
 
 L_π(x) collects every element
 that π cannot distinguish from x at the canonical level. The larger L_π(x), the
@@ -72,7 +72,7 @@ the observability boundary at x — established formally by L0.1.T1 below.
 | **Definition** | L0.1.D3 | `Obs_π` | Obs_π(I, x) | **Novel** |
 **Synopsis:** An invariant I is π-observable at x when it is constant on x's fiber — ∀z ∈ L_π(x): I(z) = I(x). Observability is the property of being determined by the projection image rather than by the specific element.
 
-**Source:** CRPT; from `Fiber` (L0.1.D2).
+**Source:** CRPT; from [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence).
 
 An invariant I : 𝒰 → S (for any set S) is:
 ```
@@ -87,7 +87,7 @@ globally π-observable  :⟺  π-observable at every x ∈ 𝒰
 | **Theorem** | L0.1.T1 | `Fiber-Compl` | | **Novel** |
 **Synopsis:** The Fiber Completeness theorem establishes the exact equivalence between three things: x and y being in the same fiber, the invariant f failing to be π-observable at x, and the projection factoring through the quotient 𝒰/≃_π. These are not merely related — they are logically equivalent. Fiber membership, observability failure, and quotient factoring are the same phenomenon viewed differently.
 
-**Source:** CRPT; from `Fiber` (L0.1.D2) + `Obs_π` (L0.1.D3).
+**Source:** CRPT; from [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence) + [`Obs_π` (L0.1.D3)](CRPT_OMEGA_TOWER_L0.md#l01d3--π-observability).
 
 *For any projection system Π = (𝒰, π, →_σ) and any x ∈ 𝒰:*
 
@@ -141,7 +141,7 @@ then L_{π₁}(x) ⊆ L_{π₂}(x) for all x. Finer projections produce smaller 
 | **Theorem** | L0.1.T3 | `CRPT-Fiber` | | **Novel** |
 **Synopsis:** This theorem confirms that the CRPT normal-form fiber NFC_M(f) is exactly the L0 fiber construction instantiated to the CRPT projection operator. Every result proved for fibers in L0 applies directly to normal-form fibers in L2 and above.
 
-**Source:** CRPT; from `Fiber` (L0.1.D2) + `NFC-NM` (L2.5.D1).
+**Source:** CRPT; from [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence) + [`NFC-NM` (L2.5.D1)](CRPT_OMEGA_TOWER_L2.md#normal-form-fiber--native-form).
 
 *The CRPT substrate (𝒰, →_ρ, →_σ, 𝒯) with projection operator ρ_M (L2.1.D1)
 is a projection system Π with π := ρ_M and structural relation the structural relation. The fibers are:*
@@ -149,7 +149,7 @@ is a projection system Π with π := ρ_M and structural relation the structural
 L_{ρ_M}(x) = NFC_M(CNF_M(x))    for any x ∈ 𝒰
 L_{ρ_M}(f) = NFC_M(f)            for f ∈ Fix(ρ_M)
 ```
-*`Fiber-Compl` (L0.1.T1) is the universal grounding of the horizon predicates H_S,
+*[`Fiber-Compl` (L0.1.T1)](CRPT_OMEGA_TOWER_L0.md#l01t1--fiber-completeness) is the universal grounding of the horizon predicates H_S,
 H_I, H_O (L0.3.D1) and the six-class partition (L0.4.T1).*
 
 *Cross-reference: the normal-form fiber (L2.5.D1); CFix (L2.4.D1).*
@@ -187,7 +187,7 @@ defined by L0.8.
 | **Remark** | L0.2.R1 | `Reg-PreAx` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `Conv`, `Pers` (L0.2.D1).
+**Source:** CRPT; from `Conv`, [`Pers` (L0.2.D1)](CRPT_OMEGA_TOWER_L0.md#l02d1--convergent-and-persistent-elements).
 
 The dichotomy Conv(π) ∪ Pers(π) = 𝒰 is a
 logical consequence of the definition of Conv(π) and excluded middle. No axiom
@@ -201,7 +201,7 @@ dichotomy's existence.
 | **Theorem** | L0.2.T1 | `Regime-Dich` | | **Novel** |
 **Synopsis:** The regime dichotomy theorem establishes that Conv(π) ∪ Pers(π) = 𝒰 is a logical truth following from the definition of iteration and excluded middle, not from any axiom. This means the regime partition is prior to and independent of the PA-* axiom system of L1.
 
-**Source:** CRPT; from `Conv`, `Pers` (L0.2.D1).
+**Source:** CRPT; from `Conv`, [`Pers` (L0.2.D1)](CRPT_OMEGA_TOWER_L0.md#l02d1--convergent-and-persistent-elements).
 
 *For any projection system Π:*
 1. *Conv(π) ∪ Pers(π) = 𝒰  (exhaustive)*
@@ -217,7 +217,7 @@ dichotomy's existence.
 | **Theorem** | L0.2.T2 | `Ax-Cov-U` | | **Novel** |
 **Synopsis:** Any complete theory of a projection system — one that proves all true statements about convergent elements, persistent elements, and their interaction — must include at least three families of axioms: one governing the convergent regime, one governing the persistent regime, and one governing the interface between them. This metatheorem motivates the three-family structure of the PA-* axioms in L1.
 
-**Source:** CRPT; from `Regime-Dich` (L0.2.T1).
+**Source:** CRPT; from [`Regime-Dich` (L0.2.T1)](CRPT_OMEGA_TOWER_L0.md#l02t1--universal-regime-dichotomy).
 
 *Any formal theory T(Π) that completely characterises a projection system Π must
 contain axioms of exactly three kinds:*
@@ -232,7 +232,7 @@ principles, productivity of the orbit, behavioral equivalence via the structural
 
 *No property of 𝒰 lies outside this tripartite coverage.*
 
-*Proof.* Any property P of Π concerns some x ∈ 𝒰. By `Regime-Dich` (L0.2.T1):
+*Proof.* Any property P of Π concerns some x ∈ 𝒰. By [`Regime-Dich` (L0.2.T1)](CRPT_OMEGA_TOWER_L0.md#l02t1--universal-regime-dichotomy):
 
 If x ∈ Conv(π): P concerns orbit-terminating behavior. The minimal axiomatic
 requirements are: (a) termination (the orbit halts in Fix(π)), (b) uniqueness of
@@ -273,17 +273,17 @@ If n ≥ 1: π^{n−1}(π(x)) = π^n(x) ∈ Fix(π), so π(x) ∈ Conv(π). ∎
 | **Theorem** | L0.2.T3 | `CRPT-Regimes` | | **Novel** |
 **Synopsis:** This instance theorem confirms that the PA-* axiom families in L1 — convergent-regime (PA-WN, PA-Conf, PA-Fix) and persistent-regime (PA-NWF, PA-CoInd, PA-Prod, PA-WN_top, PA-Bisim, PA-Reach) — together with the Gateway structure governing the regime interface, correspond exactly to the coverage classes required by the Tripartite Coverage metatheorem.
 
-**Source:** CRPT; from `Ax-Cov-U` (L0.2.T2); CRPT instance with ↓_M, ∞_M.
+**Source:** CRPT; from [`Ax-Cov-U` (L0.2.T2)](CRPT_OMEGA_TOWER_L0.md#l02t2--universal-axiom-coverage); CRPT instance with ↓_M, ∞_M.
 
 *The CRPT axiom system with Conv(ρ_M) = ↓_M and Pers(ρ_M) = ∞_M is the canonical
-realization of `Ax-Cov-U` (L0.2.T2):*
+realization of [`Ax-Cov-U` (L0.2.T2)](CRPT_OMEGA_TOWER_L0.md#l02t2--universal-axiom-coverage):*
 
 - *PA-WN + PA-Conf + PA-Fix cover Conv(ρ_M) = ↓_M  [type (i)]*
 - *PA-NWF + PA-CoInd + PA-Prod + PA-Bisim cover Pers(ρ_M) = ∞_M  [type (ii)]*
 - *PA-Reach ensures recursive projection in Pers(ρ_M) reaches horizon-stable representatives, bridging finite observability with infinite production  [type (iii), constraint on projection on substrate ∞_M]*
 
-*`Regime-Dich` (L0.2.T1) is the universal grounding for `Reg-Exh` (L2.2.T8) and
-`Ax-Cov` (L2.2.T9) of the anchor.*
+*[`Regime-Dich` (L0.2.T1)](CRPT_OMEGA_TOWER_L0.md#l02t1--universal-regime-dichotomy) is the universal grounding for [`Reg-Exh` (L2.2.T8)](CRPT_OMEGA_TOWER_L2.md#regime-exhaustiveness) and
+[`Ax-Cov` (L2.2.T9)](CRPT_OMEGA_TOWER_L2.md#axiom-coverage) of the anchor.*
 
 *Cross-reference: regime definitions L2.2.D4–D2 (L2.2.1); axiom system L1.2.1–L1.2.4.*
 
@@ -302,7 +302,7 @@ any projection system.*
 | **Definition** | L0.3.D1 | `H_S^π`, `H_I^π`, `H_O^π` | | **Novel** |
 **Synopsis:** The universal horizon predicates H_S^π, H_I^π, H_O^π are the projection-system-level forms of the structural, invariant, and depth horizons, defined for any projection system Π via fibers and the projection map. They specialize to the CRPT horizons H_S, H_I, H_O.
 
-**Source:** CRPT; from `Fiber` (L0.1.D2).
+**Source:** CRPT; from [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence).
 
 For any projection system Π = (𝒰, π, →_σ) and any x ∈ Conv(π):
 
@@ -341,7 +341,7 @@ invisible.
 | **Remark** | L0.3.R1 | `BdyLayer-HO` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `H_S^π`, `H_I^π`, `H_O^π` (L0.3.D1).
+**Source:** CRPT; from `H_S^π`, `H_I^π`, [`H_O^π` (L0.3.D1)](CRPT_OMEGA_TOWER_L0.md#l03d1--universal-horizon-predicates).
 
 The boundary layer predicate
 H_∂^π(x) := (d_π(x) = 1) — "x is one π-step from its canonical form" — is
@@ -355,7 +355,7 @@ positions in 𝒰 and must not be conflated.
 | **Theorem** | L0.3.T1 | `Horiz-Ind` | | **Novel** |
 **Synopsis:** The Universal Horizon Indicators theorem proves that H_S^π, H_I^π, and H_O^π are the three minimal independent boolean predicates that together classify every element's position in the fiber structure of any projection system. Any finer classification would require additional non-fiber information.
 
-**Source:** CRPT; from `H_S^π`, `H_I^π`, `H_O^π` (L0.3.D1) + `Fiber-Compl` (L0.1.T1).
+**Source:** CRPT; from `H_S^π`, `H_I^π`, [`H_O^π` (L0.3.D1)](CRPT_OMEGA_TOWER_L0.md#l03d1--universal-horizon-predicates) + [`Fiber-Compl` (L0.1.T1)](CRPT_OMEGA_TOWER_L0.md#l01t1--fiber-completeness).
 
 *In any projection system Π = (𝒰, π, →_σ):*
 
@@ -372,7 +372,7 @@ The fiber is non-trivial but the ramification is invisible to sig_π.*
 distinguishable members — the projection collapses them but they differ in
 their observable derived properties (depth or signature).*
 
-*Proof.* (a) is `Fiber-Compl` (L0.1.T1) by definition of H_S^π.
+*Proof.* (a) is [`Fiber-Compl` (L0.1.T1)](CRPT_OMEGA_TOWER_L0.md#l01t1--fiber-completeness) by definition of H_S^π.
 (b) follows directly from H_O^π(x) := x ∈ Fix(π) ∧ H_S^π(x).
 (c) and (d) are the two exhaustive cases under H_S^π = ⊤ by definition of H_I^π. ∎
 
@@ -382,7 +382,7 @@ their observable derived properties (depth or signature).*
 | **Theorem** | L0.3.T2 | `H_I-WD-U` | | **Novel** |
 **Synopsis:** H_I^π is well-defined — its value does not depend on which representative of a fiber one picks to compare signatures. This is proved by the two-case kernel theorem: when a fiber is a singleton (H_S^π = ⊥), H_I^π is vacuously satisfied; when the fiber is non-trivial, signature uniformity is a property of the fiber, not of any particular element.
 
-**Source:** CRPT; from `H_S^π`, `H_I^π`, `H_O^π` (L0.3.D1).
+**Source:** CRPT; from `H_S^π`, `H_I^π`, [`H_O^π` (L0.3.D1)](CRPT_OMEGA_TOWER_L0.md#l03d1--universal-horizon-predicates).
 
 *For any fiber K = L_π(π(x)) with |K| ≥ 2, the definition of H_I^π over K
 has a unique consistent solution:*
@@ -411,7 +411,7 @@ z ∈ K. Uniqueness: the ⊥ assignment is the only one satisfying the condition
 | **Theorem** | L0.3.T3 | `H-Orbit-NonInv` | | **Novel** |
 **Synopsis:** The orbit non-invariance theorem establishes that H_S^π and H_I^π are generally not preserved under projection steps — an element's horizon class can change as its orbit progresses. Only H_O^π is orbit-invariant in one direction (it becomes ⊥ after one step). This shows that horizon predicates classify positions in the graph, not properties of individual elements.
 
-**Source:** CRPT; from `H_S^π`, `H_I^π`, `H_O^π` (L0.3.D1).
+**Source:** CRPT; from `H_S^π`, `H_I^π`, [`H_O^π` (L0.3.D1)](CRPT_OMEGA_TOWER_L0.md#l03d1--universal-horizon-predicates).
 
 *In any projection system Π:*
 
@@ -440,7 +440,7 @@ any non-degenerate projection system.
 | **Theorem** | L0.3.T4 | `H_I-SOL` | | **Novel** |
 **Synopsis:** H_I^π = ⊤ is the exact condition under which the theory T(Π) requires second-order logic to express certain structural properties. When fibers are non-uniform (H_I^π = ⊥), the structural differences between siblings are first-order expressible. This connects the horizon predicates to the logical expressive power of the theory.
 
-**Source:** CRPT; from `H_S^π`, `H_I^π`, `H_O^π` (L0.3.D1) + `SOL-Nec-U` (L0.7.T1).
+**Source:** CRPT; from `H_S^π`, `H_I^π`, [`H_O^π` (L0.3.D1)](CRPT_OMEGA_TOWER_L0.md#l03d1--universal-horizon-predicates) + [`SOL-Nec-U` (L0.7.T1)](CRPT_OMEGA_TOWER_L0.md#l07t1--universal-sol-necessity).
 
 *In any projection system Π with associated formal theory T(Π): H_I^π(x) = ⊤ iff
 the second-order logic content of T(Π) is active and non-trivial at x. If H_I^π
@@ -457,7 +457,7 @@ L0.3.T2), so any two elements in any fiber are distinguished by their depth,
 a FO-definable property. The theory T(Π) can express all fiber structure in
 terms of d_π comparisons — no bisimilarity quantification is needed. ∎
 
-*Cross-reference: Full proof at `SOL-Nec-U` (L0.7.T1); CRPT instance: `H_I-WD` L3.1.T2.*
+*Cross-reference: Full proof at [`SOL-Nec-U` (L0.7.T1)](CRPT_OMEGA_TOWER_L0.md#l07t1--universal-sol-necessity); CRPT instance: `H_I-WD` L3.1.T2.*
 
 ### L0.3.T5 — CRPT Horizon Instance
 | Type | Label | Tag | Notation | Status |
@@ -465,13 +465,13 @@ terms of d_π comparisons — no bisimilarity quantification is needed. ∎
 | **Theorem** | L0.3.T5 | `CRPT-Horiz` | | **Novel** |
 **Synopsis:** This instance theorem confirms that the CRPT horizon predicates H_S, H_I, H_O defined in L3 are exact instances of H_S^π, H_I^π, H_O^π with π = the projection operator and the fiber structure given by normal-form fibers.
 
-**Source:** CRPT; from `Horiz-Ind` (L0.3.T1) + `H_S` (L3.1.D1) + `H_I` (L3.1.D2).
+**Source:** CRPT; from [`Horiz-Ind` (L0.3.T1)](CRPT_OMEGA_TOWER_L0.md#l03t1--universal-horizon-indicators) + [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) + [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i).
 
 *The CRPT horizon predicates H_S (L3.1.D1), H_I (L3.1.D2),
-H_O (L3.1.D4) are the canonical realization of `H_S^π`, `H_I^π`, `H_O^π`
-(L0.3.D1) for the CRPT substrate with π := ρ_M. The CRPT structural signature
+H_O (L3.1.D4) are the canonical realization of `H_S^π`, `H_I^π`, [`H_O^π`
+(L0.3.D1)](CRPT_OMEGA_TOWER_L0.md#l03d1--universal-horizon-predicates) for the CRPT substrate with π := ρ_M. The CRPT structural signature
 the orbit signature (L3.1.D5) is the CRPT instance of sig_π. `H_I-WD` (L3.1.T2,
-L3.1.2a) is the CRPT instance of `H_I-WD-U` (L0.3.T2).*
+L3.1.2a) is the CRPT instance of [`H_I-WD-U` (L0.3.T2)](CRPT_OMEGA_TOWER_L0.md#l03t2--h_i-well-definedness--universal-kernel-theorem).*
 
 ---
 
@@ -488,7 +488,7 @@ system, and that no coarser scheme preserves all observability distinctions.*
 | **Definition** | L0.4.D1 | `Q1`, `Q2`, `Q3` | | **Novel** |
 **Synopsis:** The classification predicate Q1(x) = (x ∈ Fix(π)) identifies fixed points — elements the projection operator leaves unchanged. These are the anchors of the fiber structure and the reference points for all other classification predicates.
 
-**Source:** CRPT; from `H_S^π`, `H_I^π`, `H_O^π` (L0.3.D1).
+**Source:** CRPT; from `H_S^π`, `H_I^π`, [`H_O^π` (L0.3.D1)](CRPT_OMEGA_TOWER_L0.md#l03d1--universal-horizon-predicates).
 
 For x ∈ 𝒰 of any projection system Π with Conv(π) ≠ ∅:
 ```
@@ -503,7 +503,7 @@ Q3(x)  :=  H_I^π(x)           [invisible ramification; defined only when Q2(x) 
 | **Theorem** | L0.4.T1 | `Bool-Strat` | | **Novel** |
 **Synopsis:** The Boolean Stratification theorem proves that the six Boolean combinations of Q1, Q2, Q3 yield exactly five non-empty classes — the sixth (Class F: Q2 = ⊥ ∧ Q3 = ⊤) is logically empty. This is the universal proof that the CRPT six-class partition is complete and non-redundant.
 
-**Source:** CRPT; from `Q1`, `Q2`, `Q3` (L0.4.D1).
+**Source:** CRPT; from `Q1`, `Q2`, [`Q3` (L0.4.D1)](CRPT_OMEGA_TOWER_L0.md#l04d1--classification-predicates).
 
 *The joint classification by (Q1, Q2, Q3) yields exactly six logically distinct,
 jointly exhaustive, pairwise disjoint classes:*
@@ -547,7 +547,7 @@ Contradiction with Q2(f) = ⊤. Class F = ∅. ✓ ∎
 | **Theorem** | L0.4.T2 | `Six-Uniq` | | **Novel** |
 **Synopsis:** The minimality theorem proves that the five-class scheme is the minimum: no proper subset of five classes suffices to classify all elements of all projection systems. Every class has a witness model where it is non-empty. The classification is neither over-fine nor under-fine.
 
-**Source:** CRPT; from `Bool-Strat` (L0.4.T1).
+**Source:** CRPT; from [`Bool-Strat` (L0.4.T1)](CRPT_OMEGA_TOWER_L0.md#l04t1--boolean-stratification-theorem).
 
 *No classification by fewer than five non-empty classes is sufficient to distinguish
 all observationally distinct structural roles in a projection system with both
@@ -563,7 +563,7 @@ Conv(π) ≠ ∅ and at least one element with H_S^π = ⊤. The five non-empty 
 - Collapsing D and E: conflates observable fixpoints with fixpoints that serve
   as canonical images of hidden structural content; loses H_O information.
 Any merger of two distinct classes removes a distinction that is required by
-`Horiz-Ind` (L0.3.T1) to be maintained for a complete HOA. ∎
+[`Horiz-Ind` (L0.3.T1)](CRPT_OMEGA_TOWER_L0.md#l03t1--universal-horizon-indicators) to be maintained for a complete HOA. ∎
 
 ### L0.4.T3 — CRPT Classification Instance
 | Type | Label | Tag | Notation | Status |
@@ -571,14 +571,14 @@ Any merger of two distinct classes removes a distinction that is required by
 | **Theorem** | L0.4.T3 | `CRPT-Class` | | **Novel** |
 **Synopsis:** This instance theorem connects the L0 universal Boolean stratification to the CRPT six-class partition in L3, confirming that the CRPT partition inherits the completeness, non-redundancy, and minimality properties proved in L0.
 
-**Source:** CRPT; from `Bool-Strat` (L0.4.T1) + `Bool-Pred` (L3.2.D2).
+**Source:** CRPT; from [`Bool-Strat` (L0.4.T1)](CRPT_OMEGA_TOWER_L0.md#l04t1--boolean-stratification-theorem) + [`Bool-Pred` (L3.2.D2)](CRPT_OMEGA_TOWER_L3.md#independent-boolean-predicates).
 
 *The CRPT six-class partition {A, B, C, D, E, F} (`Bool-Pred` L3.2.D2) is the
-canonical realization of `Bool-Strat` (L0.4.T1). Class F = ∅ by `F=∅` (L3.2.T2,
+canonical realization of [`Bool-Strat` (L0.4.T1)](CRPT_OMEGA_TOWER_L0.md#l04t1--boolean-stratification-theorem). Class F = ∅ by `F=∅` (L3.2.T2,
 L3.2.2), confirmed by the universal argument of L0.4.T1 via C1 (L2.1.D1,
 idempotence condition).*
 
-*Cross-reference: six-class partition `Bool-Pred` (L3.2.D2); `F=∅` (L3.2.T2).*
+*Cross-reference: six-class partition [`Bool-Pred` (L3.2.D2)](CRPT_OMEGA_TOWER_L3.md#independent-boolean-predicates); [`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model).*
 
 ---
 
@@ -597,7 +597,7 @@ of this duality.*
 | **Definition** | L0.5.D1 | `TowerLift` | Lift(Π) | **Novel** |
 **Synopsis:** The Universal Tower Lift construction builds a new projection system from an existing one by taking the free monoidal algebra over the fiber-equivalence classes of the original. This is the universal template for the CRPT Lift operator defined concretely in L8.
 
-**Source:** CRPT; from `Fiber` (L0.1.D2); free-monoid left-strip construction.
+**Source:** CRPT; from [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence); free-monoid left-strip construction.
 
 Given Π = (𝒰, π, →_σ), the *tower lift* Lift(Π) = (𝒰', π', →_{σ'}) is:
 ```
@@ -617,7 +617,7 @@ The orbit depth d_{π'}(a₁ · … · aₙ) = n − 1.
 | **Theorem** | L0.5.T1 | `Inf-Dual-U` | | **Novel** |
 **Synopsis:** The Universal Infinity Duality theorem establishes that horizontal infinity (non-trivial fibers, H_S^π = ⊤ throughout) and vertical infinity (non-terminating orbits, persistent regime) are dual in any projection system: each implies structural complexity in the other. This is the universal form of the CRPT tower's horizontal-vertical duality.
 
-**Source:** CRPT; from `TowerLift` (L0.5.D1).
+**Source:** CRPT; from [`TowerLift` (L0.5.D1)](CRPT_OMEGA_TOWER_L0.md#l05d1--tower-lift-of-a-projection-system).
 
 *Let Π have a tower lift Lift(Π). Then:*
 
@@ -645,7 +645,7 @@ related by →_{σ'} (by definition of →_{σ'} as the →_σ-induced relation 
 consecutive fiber representatives). This gives an infinite →_{σ'}-chain —
 horizontal structure.
 
-(c) By `Lift-Quot-Inv` (L0.5.T2) below, the quotient 𝒰/≃_π is preserved under
+(c) By [`Lift-Quot-Inv` (L0.5.T2)](CRPT_OMEGA_TOWER_L0.md#l05t2--lift-quotient-invariant) below, the quotient 𝒰/≃_π is preserved under
 tower lift. Double application recovers the original quotient structure. ∎
 
 ### L0.5.T2 — Lift Quotient Invariant
@@ -654,7 +654,7 @@ tower lift. Double application recovers the original quotient structure. ∎
 | **Theorem** | L0.5.T2 | `Lift-Quot-Inv` | | **Novel** |
 **Synopsis:** The query signature — the abstraction quotient consisting of fiber-equivalence classes — is invariant under the Tower Lift: the fiber structure of the lifted system is isomorphic to the fiber structure of the original. This universal theorem is the foundation for the NFC Tower Invariance theorem proved concretely in L8.4.
 
-**Source:** CRPT; from `TowerLift` (L0.5.D1).
+**Source:** CRPT; from [`TowerLift` (L0.5.D1)](CRPT_OMEGA_TOWER_L0.md#l05d1--tower-lift-of-a-projection-system).
 
 *𝒰/≃_π ≅ 𝒰'/≃_{π'}: the abstraction quotient is invariant under tower lift.
 The isomorphism is canonical: ι([x]_{≃_π}) ↦ [ι([x]_{≃_π})]_{≃_{π'}}.*
@@ -670,13 +670,13 @@ structure by construction of π'. ∎
 | **Theorem** | L0.5.T3 | `CRPT-InfDual` | | **Novel** |
 **Synopsis:** Instance theorem: the CRPT horizontal-vertical duality proved in L8.6 is the CRPT instantiation of the Universal Infinity Duality.
 
-**Source:** CRPT; from `Inf-Dual-U` (L0.5.T1) + `Lift-Def` (L8.2.D2).
+**Source:** CRPT; from [`Inf-Dual-U` (L0.5.T1)](CRPT_OMEGA_TOWER_L0.md#l05t1--universal-inf-dual) + [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m).
 
 *The CRPT Lift construction (`Lift-Def` L8.2.D2) with free monoid algebra
 FMA(Q_M), projection ρ_{Lift(M)}, and embedding ι_M is the canonical realization of
-`TowerLift` (L0.5.D1) for the CRPT substrate. `Inf-Dual` (L2.2.T7) is the
-CRPT instance of `Inf-Dual-U` (L0.5.T1). `NFC-TInv` (L8.4.T2) is the
-CRPT instance of `Lift-Quot-Inv` (L0.5.T2).*
+[`TowerLift` (L0.5.D1)](CRPT_OMEGA_TOWER_L0.md#l05d1--tower-lift-of-a-projection-system) for the CRPT substrate. [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality) is the
+CRPT instance of [`Inf-Dual-U` (L0.5.T1)](CRPT_OMEGA_TOWER_L0.md#l05t1--universal-inf-dual). [`NFC-TInv` (L8.4.T2)](CRPT_OMEGA_TOWER_L8.md#nfc-partition-is-a-tower-invariant) is the
+CRPT instance of [`Lift-Quot-Inv` (L0.5.T2)](CRPT_OMEGA_TOWER_L0.md#l05t2--lift-quotient-invariant).*
 
 ---
 
@@ -686,7 +686,7 @@ CRPT instance of `Lift-Quot-Inv` (L0.5.T2).*
 distinct from the dynamic tower duality of L0.5. This section states the static
 version, which grounds the two-relation substrate design of L1. **Scope division
 (three homes of the duality):** this section owns the **universal template**; the
-model-level statement is `Inf-Dual` (L2.2.T7); the tower-level theory is L8.6.*
+model-level statement is [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality); the tower-level theory is L8.6.*
 
 ### L0.6.T1 — Static Horizontal-Vertical Duality
 | Type | Label | Tag | Notation | Status |
@@ -694,7 +694,7 @@ model-level statement is `Inf-Dual` (L2.2.T7); the tower-level theory is L8.6.*
 | **Theorem** | L0.6.T1 | `HV-Dual-Static` | | **Novel** |
 **Synopsis:** The static horizontal-vertical duality theorem establishes that in any projection system the reduction relation governs the vertical (observable, canonical-form) dimension while the structural relation governs the horizontal (unobservable, within-fiber) dimension. These two dimensions are structurally independent.
 
-**Source:** CRPT; from `ProjSys` (L0.1.D1).
+**Source:** CRPT; from [`ProjSys` (L0.1.D1)](CRPT_OMEGA_TOWER_L0.md#l01d1--projection-system).
 
 *In any projection system Π = (𝒰, π, →_σ):*
 
@@ -727,11 +727,11 @@ position (the horizontal record differs). ∎
 | **Remark** | L0.6.R1 | `HVDual-InfDual` | | **Novel** |
 **Synopsis:** How the static HV-duality (L0.6.T1) relates to the dynamic Inf-Dual.
 
-**Source:** CRPT; from `HV-Dual-Static` (L0.6.T1) + `Inf-Dual-U` (L0.5.T1).
+**Source:** CRPT; from [`HV-Dual-Static` (L0.6.T1)](CRPT_OMEGA_TOWER_L0.md#l06t1--static-horizontal-vertical-duality) + [`Inf-Dual-U` (L0.5.T1)](CRPT_OMEGA_TOWER_L0.md#l05t1--universal-inf-dual).
 
-`HV-Dual-Static` (L0.6.T1) is the
+[`HV-Dual-Static` (L0.6.T1)](CRPT_OMEGA_TOWER_L0.md#l06t1--static-horizontal-vertical-duality) is the
 static version: horizontal = unobservable, vertical = observable, at a fixed tower
-level. `Inf-Dual-U` (L0.5.T1) is the dynamic version: the two kinds of infinity
+level. [`Inf-Dual-U` (L0.5.T1)](CRPT_OMEGA_TOWER_L0.md#l05t1--universal-inf-dual) is the dynamic version: the two kinds of infinity
 exchange roles across consecutive tower levels. Both are needed. L0.6.T1 grounds
 the two-relation design of the CRPT substrate (L1.1.D1) — the split between the reduction relation
 (vertical, observable) and the structural relation (horizontal, unobservable). L0.5.T1 grounds the
@@ -743,7 +743,7 @@ full categorical HV-Duality theorem of L8 (L8.6.T1).
 | **Theorem** | L0.6.T2 | `CRPT-HV-Static` | | **Novel** |
 **Synopsis:** Instance theorem: the CRPT horizontal-vertical duality is the instantiation of the static duality to the CRPT substrate.
 
-**Source:** CRPT; from `HV-Dual-Static` (L0.6.T1) + `Sub` (L1.1.D1).
+**Source:** CRPT; from [`HV-Dual-Static` (L0.6.T1)](CRPT_OMEGA_TOWER_L0.md#l06t1--static-horizontal-vertical-duality) + [`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate).
 
 *In the CRPT substrate: the reduction relation governs the vertical (reduction, observable) dimension;
 the structural relation governs the horizontal (structural, unobservable) dimension. The inclusion
@@ -844,23 +844,23 @@ model (though not FO-definable over the class of all models). ∎
 | **Theorem** | L0.7.T3 | `CRPT-SOL` | | **Novel** |
 **Synopsis:** Instance theorem: the 14 SOL-requiring assumptions in T_CRPT (listed in L5) map exactly to the two universal SOL sources, confirming that the CRPT theory requires no additional logical resources beyond what any projection-system theory needs.
 
-**Source:** CRPT; from `SOL-Nec-U` (L0.7.T1) + `T_CRPT` (L5.3.D11).
+**Source:** CRPT; from [`SOL-Nec-U` (L0.7.T1)](CRPT_OMEGA_TOWER_L0.md#l07t1--universal-sol-necessity) + [`T_CRPT` (L5.3.D11)](CRPT_OMEGA_TOWER_L5.md#crpt-theory-t_crpt).
 
 *The 14 SOL assumptions of T_CRPT (`T_CRPT` L5.3.D11) are the canonical
-realizations of `SOL-Nec-U` (L0.7.T1) for the CRPT substrate:*
+realizations of [`SOL-Nec-U` (L0.7.T1)](CRPT_OMEGA_TOWER_L0.md#l07t1--universal-sol-necessity) for the CRPT substrate:*
 
 - *Source 1 generates: SOL-1 (→_ρ\* transitive closure), SOL-2 (Div divergence
   witness), SOL-6 (bisimilarity as greatest bisimulation), and their downstream
   consequences SOL-7 through SOL-12 via the causality chain documented in
-  `T_CRPT` (L5.3.D11).*
+  [`T_CRPT` (L5.3.D11)](CRPT_OMEGA_TOWER_L5.md#crpt-theory-t_crpt).*
 
 - *Source 2 generates: SOL-3 (PA-CoInd second-order coinduction schema), SOL-4
   (PA-NWF infinite path witness), SOL-5 (PA-Prod ω-productivity), and SOL-13,
   SOL-14 (CNF∞ Cauchy conditions over ℝ^ℕ). All 14 assumptions are enumerated
-  and individually justified in `T_CRPT` (L5.3.D11) and the Scope
+  and individually justified in [`T_CRPT` (L5.3.D11)](CRPT_OMEGA_TOWER_L5.md#crpt-theory-t_crpt) and the Scope
   Boundaries section (`Scope-Bd` L5.2, L5.3).*
 
-*`Finite-Collapse` (L0.7.T2) is the universal grounding for `FOL-Fin` (L5.3.T4,
+*[`Finite-Collapse` (L0.7.T2)](CRPT_OMEGA_TOWER_L0.md#l07t2--finite-model-collapse) is the universal grounding for `FOL-Fin` (L5.3.T4,
 L5.3): T_CRPT restricted to finite CRPT models is equivalent to its FOL fragment.*
 
 *Cross-reference: T_CRPT (L5.3.D11); Scope Boundaries (L5.2, L5.3).*
@@ -881,7 +881,7 @@ an asymptotic canonical form and proves the three-tier stratification that resul
 | **Definition** | L0.8.D1 | `SC-Form` | L_∞^π(x) | **Novel** |
 **Synopsis:** The Stable Canonical Form for persistent elements is the topological limit of the projection orbit — the point in the universe (if it exists) that the orbit accumulates at. This pre-axiomatic notion provides the target for PA-CoInd's coinductive canonical form before any axiom system is invoked.
 
-**Source:** CRPT; from `Pers` (L0.2.D1) + topological limit (Munkres [2000]).
+**Source:** CRPT; from [`Pers` (L0.2.D1)](CRPT_OMEGA_TOWER_L0.md#l02d1--convergent-and-persistent-elements) + topological limit (Munkres [2000]).
 
 For Π with topology 𝒯 on 𝒰 and x ∈ Pers(π): a *stable canonical form* for x is a
 limit point L_∞^π(x) ∈ 𝒰 such that:
@@ -897,7 +897,7 @@ canonical form.
 | **Theorem** | L0.8.T1 | `SC-Strat-U` | | **Novel** |
 **Synopsis:** Persistent elements stratify into three tiers by how their orbit behaves asymptotically: unconditionally stable (orbit is eventually constant), Cauchy-convergent (orbit is Cauchy in the topology), and axiom-requiring (neither of the above — requires PA-CoInd for any canonical treatment). This stratification is universal, not CRPT-specific.
 
-**Source:** CRPT; from `SC-Form` (L0.8.D1).
+**Source:** CRPT; from [`SC-Form` (L0.8.D1)](CRPT_OMEGA_TOWER_L0.md#l08d1--stable-canonical-form-for-persistent-elements).
 
 *Elements of Pers(π) stratify into exactly three tiers:*
 
@@ -921,7 +921,7 @@ are provably outside SC(Π) for any shift-invariant assignment.*
 
 Tier classification: Tier 1 ⊆ Tier 2 ⊆ Tier 3 by implication strength of
 convergence conditions. Tier 3 requires topological axioms not present at L0
-level; it is realized in the CRPT substrate by PA-WN_top (L1.7.Ax1).
+level; it is realized in the CRPT substrate by [PA-WN_top (L1.7.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn_top--topological-weak-normalisation--asymptotic-convergence).
 
 Asymptotically periodic elements: Let x be asymptotically π-periodic with period k.
 Any shift-invariant stable form L must satisfy L = L_∞^π(π^k(x)) = L_∞^π(x) (by
@@ -936,18 +936,18 @@ condition. Therefore x ∉ SC(Π). ∎
 | **Theorem** | L0.8.T2 | `CRPT-SC` | | **Novel** |
 **Synopsis:** Instance theorem: the CRPT persistent canonical form CNF∞_M and the scope conditions SC-1 through SC-4 are the CRPT instantiation of the universal three-tier stratification.
 
-**Source:** CRPT; from `SC-Strat-U` (L0.8.T1) + `SC-1` (L3.3.D2).
+**Source:** CRPT; from [`SC-Strat-U` (L0.8.T1)](CRPT_OMEGA_TOWER_L0.md#l08t1--universal-stability-three-tier-stratification) + [`SC-1` (L3.3.D2)](CRPT_OMEGA_TOWER_L3.md#sc-1-ω-limit-bisimulation-fixation).
 
 *CRPT's SC-1 through SC-4 conditions (L3.3.D2–D5, L3) and the three-tier ∞_M
 framework (`3-Tier` L6.2.D2) are the canonical realization of
-`SC-Strat-U` (L0.8.T1) in the CRPT substrate:*
+[`SC-Strat-U` (L0.8.T1)](CRPT_OMEGA_TOWER_L0.md#l08t1--universal-stability-three-tier-stratification) in the CRPT substrate:*
 
 - *Tier 1 = SC-1 ∩ SC-2 elements (unconditional convergence in 𝒯)*
 - *Tier 2 = SC-3 elements (Cauchy orbit in the metric of 𝒯)*
 - *Tier 3 = SC-4 elements (PA-WN_top required — L1.2.Ax2)*
 
 *CNF∞_M (`CNF∞-Def` L3.3.D6, L3) is the CRPT stable canonical form for Tier 1
-and Tier 2 elements. `SC-Imp` (L6.3.T1) is the CRPT instance of the
+and Tier 2 elements. [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility) is the CRPT instance of the
 asymptotically periodic impossibility result.*
 
 *Cross-reference: SC-1 (L3.3.D2, L3); SC-2 (L3.3.D3, L3); SC-3 (L3.3.D4, L3);
@@ -1014,7 +1014,7 @@ Category laws are inherited from function composition. ∎
 | **Theorem** | L0.9.T2 | `CRPT-ModCat` | | **Novel** |
 **Synopsis:** This theorem formally establishes Mod_CRPT as a full subcategory of ProjSys: every CRPT model is a projection system, and every CRPT homomorphism is a projection system morphism. The CRPT category inherits the categorical structure of ProjSys.
 
-**Source:** CRPT; from `ProjSys-Cat` (L0.9.T1) + `ProjMor` (L0.9.D1); the model-level category is presented at `Mod-Cat` (L5.2.T1) with `Hom` (L5.2.D1).
+**Source:** CRPT; from [`ProjSys-Cat` (L0.9.T1)](CRPT_OMEGA_TOWER_L0.md#l09t1--universal-projection-category-projsys) + [`ProjMor` (L0.9.D1)](CRPT_OMEGA_TOWER_L0.md#l09d1--morphism-of-projection-systems); the model-level category is presented at [`Mod-Cat` (L5.2.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-models-form-category-mod_crpt) with [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂).
 
 *Mod_CRPT (`Mod-Cat` L5.2.T1) is the full subcategory of* **ProjSys** *on
 projection systems satisfying the CRPT substrate axioms (L1.2.1–L1.2.4) and
@@ -1034,7 +1034,7 @@ and establishes the universal orbit non-invariance result needed by any HOA
 implementation. **Scope division:** this section owns the **universal-level
 template** of self-consistency (Π applied to CRPT's own L0 structure); the
 tower-level certificate — the ω-tower as a CRPT model — is Lω.5, anchored on
-`CRPT-Self-Cons` (L0.10.T2).*
+[`CRPT-Self-Cons` (L0.10.T2)](CRPT_OMEGA_TOWER_L0.md#l010t2--crpt-self-consistency).*
 
 ### L0.10.T1 — Meta-HOA Self-Consistency
 | Type | Label | Tag | Notation | Status |
@@ -1042,7 +1042,7 @@ tower-level certificate — the ω-tower as a CRPT model — is Lω.5, anchored 
 | **Theorem** | L0.10.T1 | `HOA-Self-Cons` | | **Novel** |
 **Synopsis:** When the CRPT classification machinery (the HOA — the Horizon-Observer Architecture) is applied to the collection of all L0 constructs as elements of a projection system, it terminates. The unique fixed point is L0.1.D1 (the projection system definition itself), classified as Class E. This foreshadows the full self-application proved in Lω.
 
-**Source:** CRPT; from `ProjSys-Cat` (L0.9.T1) + `Bool-Strat` (L0.4.T1).
+**Source:** CRPT; from [`ProjSys-Cat` (L0.9.T1)](CRPT_OMEGA_TOWER_L0.md#l09t1--universal-projection-category-projsys) + [`Bool-Strat` (L0.4.T1)](CRPT_OMEGA_TOWER_L0.md#l04t1--boolean-stratification-theorem).
 
 *The Universal HOA (L0.1–L0.9), treated as a projection system Π_{HOA} over the
 universe 𝒰_{HOA} of HOA-type documents with dependency projection π_{HOA}
@@ -1073,7 +1073,7 @@ sig_{π_{HOA}} values differ. No infinite regress: the dependency relation on
 | **Theorem** | L0.10.T2 | `CRPT-Self-Cons` | | **Novel** |
 **Synopsis:** This theorem confirms that the ω-tower anchor, when treated as a projection system under its own dependency relation, satisfies all L0 projection-system axioms and has the level-index function as its rank. The self-application of Lω follows directly.
 
-**Source:** CRPT; from `HOA-Self-Cons` (L0.10.T1).
+**Source:** CRPT; from [`HOA-Self-Cons` (L0.10.T1)](CRPT_OMEGA_TOWER_L0.md#l010t1--meta-hoa-self-consistency).
 
 *The CRPT anchor, treated as the self-substrate 𝒰_{CRPT} with dependency relation
 →_{ρ_{CRPT}}, satisfies:*

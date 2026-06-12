@@ -289,43 +289,43 @@
 ## Part II — Index by Concept
 
 ### Projection & Fibers
-`ProjSys` (L0.1.D1) · `Fiber` (L0.1.D2) · `Obs_π` (L0.1.D3) · `ρ_M` (L2.1.D1) · `Rec-Proj` (L2.1.D4) · `NFC-NM` (L2.5.D1) · `CNF=CR` (L2.5.T2) · `Ab-Quot-28` (L8.2.D1)
+[`ProjSys` (L0.1.D1)](CRPT_OMEGA_TOWER_L0.md#l01d1--projection-system) · [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence) · [`Obs_π` (L0.1.D3)](CRPT_OMEGA_TOWER_L0.md#l01d3--π-observability) · [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) · [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) · [`NFC-NM` (L2.5.D1)](CRPT_OMEGA_TOWER_L2.md#normal-form-fiber--native-form) · [`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient) · [`Ab-Quot-28` (L8.2.D1)](CRPT_OMEGA_TOWER_L8.md#abstraction-quotient)
 
 ### Regimes (↓_M, ∞_M)
-`Conv`, `Pers` (L0.2.D1) · `Regime-Dich` (L0.2.T1) · `↓_M` (L2.2.D4) · `∞_M` (L2.2.D5) · `Inf-Dual` (L2.2.T7) · `Reg-Exh` (L2.2.T8) · `CRPT-WF` (Lω.7.T1)
+`Conv`, [`Pers` (L0.2.D1)](CRPT_OMEGA_TOWER_L0.md#l02d1--convergent-and-persistent-elements) · [`Regime-Dich` (L0.2.T1)](CRPT_OMEGA_TOWER_L0.md#l02t1--universal-regime-dichotomy) · [`↓_M` (L2.2.D4)](CRPT_OMEGA_TOWER_L2.md#convergent-regime-_m) · [`∞_M` (L2.2.D5)](CRPT_OMEGA_TOWER_L2.md#persistent-regime-_m) · [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality) · [`Reg-Exh` (L2.2.T8)](CRPT_OMEGA_TOWER_L2.md#regime-exhaustiveness) · [`CRPT-WF` (Lω.7.T1)](CRPT_OMEGA_TOWER_Lω.md#lω7t1--crpt-wf-the-self-application-is-pure-well-founded)
 
 ### Canonical Forms & Depth
-`NF` (L1.1.D2) · `Fix` (L2.1.D3) · `Fix=NF` (L2.1.T2) · `CFix-NM` (L2.4.D1) · `CNF-Uniq` (L2.4.T2) · `d_M` (L2.3.D2) · `d-WD` (L2.3.T1) · `CNF∞-Def` (L3.3.D6)
+[`NF` (L1.1.D2)](CRPT_OMEGA_TOWER_L1.md#normal-form) · [`Fix` (L2.1.D3)](CRPT_OMEGA_TOWER_L2.md#fixpoint-set) · [`Fix=NF` (L2.1.T2)](CRPT_OMEGA_TOWER_L2.md#fix--nf) · [`CFix-NM` (L2.4.D1)](CRPT_OMEGA_TOWER_L2.md#canonical-normal-form-map--native-form) · [`CNF-Uniq` (L2.4.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-uniqueness--orbit-scoped-uniqueness) · [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m) · [`d-WD` (L2.3.T1)](CRPT_OMEGA_TOWER_L2.md#d_m-is-well-defined-on-μt_ρm) · [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient)
 
 ### Horizons (H_S, H_I, H_O)
-`H_S` (L3.1.D1) · `H_I` (L3.1.D2) · `H_O` (L3.1.D4) · `sig_M-NM` (L3.1.D5) · `H_I-WD` (L3.1.T2) · `H_I-WD-U` (L0.3.T2) · `Hor-Abs` (L3.1.T3) · `Hor-Lift` (L8.2.T2)
+[`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) · [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) · [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o) · [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form) · [`H_I-WD` (L3.1.T2)](CRPT_OMEGA_TOWER_L3.md#h_i-well-definedness--general-kernel-theorem) · [`H_I-WD-U` (L0.3.T2)](CRPT_OMEGA_TOWER_L0.md#l03t2--h_i-well-definedness--universal-kernel-theorem) · [`Hor-Abs` (L3.1.T3)](CRPT_OMEGA_TOWER_L3.md#horizons-as-abstraction-limits) · [`Hor-Lift` (L8.2.T2)](CRPT_OMEGA_TOWER_L8.md#horizon-inheritance-under-lift)
 
 ### Six-Class Partition
-`Bool-Pred` (L3.2.D2) · `6-Part` (L3.2.T1) · `F=∅` (L3.2.T2)
+[`Bool-Pred` (L3.2.D2)](CRPT_OMEGA_TOWER_L3.md#independent-boolean-predicates) · [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification) · [`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model)
 
 ### Observer Architecture
-`Obs-Triple` (L4.1.D5) · `Obs-Const` (L4.1.T1) · `GW` (L4.2.D1) · `Reg-Conn` (L4.2.T1) · `PV1` (L4.3.T1) · `SP1` (L4.6.T1)
+[`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple) · [`Obs-Const` (L4.1.T1)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-is-fully-derived--constructible) · [`GW` (L4.2.D1)](CRPT_OMEGA_TOWER_L4.md#gateway) · [`Reg-Conn` (L4.2.T1)](CRPT_OMEGA_TOWER_L4.md#regime-connectedness--rt) · [`PV1` (L4.3.T1)](CRPT_OMEGA_TOWER_L4.md#pv-1-wf-existence) · [`SP1` (L4.6.T1)](CRPT_OMEGA_TOWER_L4.md#sp-1-closure)
 
 ### Model Algebra & Homomorphisms
-`CRPT-Mod-18` (L5.1.D1) · `Hom` (L5.2.D1) · `Mod-Cat` (L5.2.T1) · `Mod_CRPT` (L7.2.D1) · `Mod-Cat-Q` (L7.2.T1) · `Iso` (L5.2.D2) · `R-Iso` (L5.2.D3) · `Inst-Emb` (L5.2.D4) · `Iso-Sat` (L5.2.T7) · `R-Iso∞` (L5.2.D5) · `Iso-Dual` (L5.2.T8)
+[`CRPT-Mod-18` (L5.1.D1)](CRPT_OMEGA_TOWER_L5.md#crpt-model) · [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) · [`Mod-Cat` (L5.2.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-models-form-category-mod_crpt) · [`Mod_CRPT` (L7.2.D1)](CRPT_OMEGA_TOWER_L7.md#category-mod_crpt) · [`Mod-Cat-Q` (L7.2.T1)](CRPT_OMEGA_TOWER_L7.md#mod_crpt-is-a-category-with--quotient-hom-sets) · [`Iso` (L5.2.D2)](CRPT_OMEGA_TOWER_L5.md#isomorphism) · [`R-Iso` (L5.2.D3)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism) · [`Inst-Emb` (L5.2.D4)](CRPT_OMEGA_TOWER_L5.md#instantiation-as-faithful-embedding) · [`Iso-Sat` (L5.2.T7)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism--saturated-faithful-embedding) · [`R-Iso∞` (L5.2.D5)](CRPT_OMEGA_TOWER_L5.md#persistent-regime-restricted-isomorphism) · [`Iso-Dual` (L5.2.T8)](CRPT_OMEGA_TOWER_L5.md#regime-duality-of-restricted-isomorphisms)
 
 ### Categorical Structures (Adjunctions, Functors)
-`GI` (L7.1.D1) · `GC` (L7.1.T1) · `Abs-Coll` (L7.1.T3) · `Collapse-Model` (L7.1.T4) · `GI∞` (L7.1.D5) · `GC∞` (L7.1.T5) · `Lift-Endo` (L7.2.T3) · `Coll-F` (L7.2.D5) · `Lift⊣Coll` (L7.2.T4) · `F-Func` (L7.3.T1)
+[`GI` (L7.1.D1)](CRPT_OMEGA_TOWER_L7.md#galois-insertion--recursive-projection-pair) · [`GC` (L7.1.T1)](CRPT_OMEGA_TOWER_L7.md#galois-connection--full-biconditional) · [`Abs-Coll` (L7.1.T3)](CRPT_OMEGA_TOWER_L7.md#abstraction-collapse-duality--functorial-representation) · [`Collapse-Model` (L7.1.T4)](CRPT_OMEGA_TOWER_L7.md#collapse-is-a-crpt-model) · [`GI∞` (L7.1.D5)](CRPT_OMEGA_TOWER_L7.md#persistent-galois-insertion-α--γ) · [`GC∞` (L7.1.T5)](CRPT_OMEGA_TOWER_L7.md#persistent-galois-connection) · [`Lift-Endo` (L7.2.T3)](CRPT_OMEGA_TOWER_L7.md#lift-is-an-endofunctor-on-mod_crpt) · [`Coll-F` (L7.2.D5)](CRPT_OMEGA_TOWER_L7.md#collapse-functor-collapse--mod_crpt--mod_crpt) · [`Lift⊣Coll` (L7.2.T4)](CRPT_OMEGA_TOWER_L7.md#lift--collapse-is-an-adjoint-pair) · [`F-Func` (L7.3.T1)](CRPT_OMEGA_TOWER_L7.md#f-is-a-functor-mod_crpt--ωcat)
 
 ### Lift Operator & Tower Construction
-`Lift-Def` (L8.2.D2) · `Tower` (L8.4.D1) · `Twr-Ex` (L8.4.T1) · `NFC-TInv` (L8.4.T2) · `Faith-Emb` (L8.4.T3) · `Lift-Red-Struc` (L8.10.T1) · `Lift-Pure-WF` (L8.10.C1) · `Tower-Inf` (L8.10.T2) · `Q_M-Card` (L8.10.R3)
+[`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m) · [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m) · [`Twr-Ex` (L8.4.T1)](CRPT_OMEGA_TOWER_L8.md#tower-existence) · [`NFC-TInv` (L8.4.T2)](CRPT_OMEGA_TOWER_L8.md#nfc-partition-is-a-tower-invariant) · [`Faith-Emb` (L8.4.T3)](CRPT_OMEGA_TOWER_L8.md#faithful-embedding) · [`Lift-Red-Struc` (L8.10.T1)](CRPT_OMEGA_TOWER_L8.md#l810t1--lift-red-struc-reduction-includes-in-structure-for-lift) · [`Lift-Pure-WF` (L8.10.C1)](CRPT_OMEGA_TOWER_L8.md#l810c1--lift-pure-wf-lift-of-any-model-is-pure-wf) · [`Tower-Inf` (L8.10.T2)](CRPT_OMEGA_TOWER_L8.md#l810t2--tower-inf-the-crpt-tower-is-strictly-infinite) · [`Q_M-Card` (L8.10.R3)](CRPT_OMEGA_TOWER_L8.md#q_m-card-cardinality-of-the-query-signature)
 
 ### Well-Foundedness of Lift
-`FMA-WF` (L8.1.L1) · `Lift-WN` (L8.3.T1) · `Lift-Conf` (L8.3.T2) · `Lift-Compat` (L8.3.T4) · `Prop-σ-Lift` (L8.10.L1)
+[`FMA-WF` (L8.1.L1)](CRPT_OMEGA_TOWER_L8.md#well-foundedness-of-fma) · [`Lift-WN` (L8.3.T1)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-wn) · [`Lift-Conf` (L8.3.T2)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-conf) · [`Lift-Compat` (L8.3.T4)](CRPT_OMEGA_TOWER_L8.md#lift-of-a-crpt-model-is-crpt-compatible) · [`Prop-σ-Lift` (L8.10.L1)](CRPT_OMEGA_TOWER_L8.md#properties-of-_σlift)
 
 ### Horizontal-Vertical Duality
-`HV-Dual` (L8.6.T1) · `Info-Loss` (L8.6.T3) · `σ-Not3rd` (L8.6.T4) · `Twr-Hor` (L8.6.T2)
+[`HV-Dual` (L8.6.T1)](CRPT_OMEGA_TOWER_L8.md#horizontal-vertical-duality) · [`Info-Loss` (L8.6.T3)](CRPT_OMEGA_TOWER_L8.md#information-loss-at-the-tower-horizon) · [`σ-Not3rd` (L8.6.T4)](CRPT_OMEGA_TOWER_L8.md#σ-paths-within-_m-fibers-are-not-a-third-regime) · [`Twr-Hor` (L8.6.T2)](CRPT_OMEGA_TOWER_L8.md#tower-horizon-characterization)
 
 ### Fractal & Self-Similarity
-`Twr-Tail-Sim` (L8.9.T1) · `CRPT-Fractal` (L8.9.D2) · `Twr-Fractal` (L8.9.T2) · `Anchor-Fractal` (Lω.6.T1)
+[`Twr-Tail-Sim` (L8.9.T1)](CRPT_OMEGA_TOWER_L8.md#l89t1--tower-tail-self-similarity) · [`CRPT-Fractal` (L8.9.D2)](CRPT_OMEGA_TOWER_L8.md#l89d2--crpt-fractal-projection-system) · [`Twr-Fractal` (L8.9.T2)](CRPT_OMEGA_TOWER_L8.md#l89t2--crpt-tower-fractality) · [`Anchor-Fractal` (Lω.6.T1)](CRPT_OMEGA_TOWER_Lω.md#anchor-fractal-closure)
 
 ### Self-Application (Lω)
-`U_CRPT` (Lω.1.D1) · `Self-Model` (Lω.1.T1) · `Self-Horiz` (Lω.2.T1) · `m_CRPT` (Lω.3.D1) · `Tower-of-Towers` (Lω.4.T1) · `Self-FP` (Lω.5.T1) · `CRPT-Acyclic` (Lω.7.L1) · `CRPT-WF` (Lω.7.T1) · `Lω-FixedPt-Unique` (Lω.7.T2)
+[`U_CRPT` (Lω.1.D1)](CRPT_OMEGA_TOWER_Lω.md#lω1d1--self-substrate-𝒰_crpt-with-topology-and-bisimilarity) · [`Self-Model` (Lω.1.T1)](CRPT_OMEGA_TOWER_Lω.md#lω1t1--self-substrate-is-a-crpt-model) · [`Self-Horiz` (Lω.2.T1)](CRPT_OMEGA_TOWER_Lω.md#lω2t1--self-horizon-classification-of-the-anchor) · [`m_CRPT` (Lω.3.D1)](CRPT_OMEGA_TOWER_Lω.md#lω3d1--rank-function-m_crpt) · [`Tower-of-Towers` (Lω.4.T1)](CRPT_OMEGA_TOWER_Lω.md#lω4t1--tower-of-towers-structure) · [`Self-FP` (Lω.5.T1)](CRPT_OMEGA_TOWER_Lω.md#lω5t1--self-consistency-fixed-point) · [`CRPT-Acyclic` (Lω.7.L1)](CRPT_OMEGA_TOWER_Lω.md#lω7l1--crpt-acyclic-the-self-reduction-is-acyclic) · [`CRPT-WF` (Lω.7.T1)](CRPT_OMEGA_TOWER_Lω.md#lω7t1--crpt-wf-the-self-application-is-pure-well-founded) · [`Lω-FixedPt-Unique` (Lω.7.T2)](CRPT_OMEGA_TOWER_Lω.md#lω7t2--lω-fixedpt-unique-l11d1-is-the-unique-projective-fixed-point)
 
 ---
 

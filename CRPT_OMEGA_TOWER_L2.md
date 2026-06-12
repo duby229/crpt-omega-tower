@@ -49,12 +49,12 @@ congruence condition with respect to ≈ (Milner [1980] §5: bisimulation equiva
 | **Remark** | L2.1.R1 | `Proj-vs-Abs` | | **Novel** |
 **Synopsis:** Why ρ_M is the projection operator, and how projection differs from abstraction.
 
-**Source:** CRPT; from `RP=Abs` (L2.1.T4) + `ρ_M` (L2.1.D1).
+**Source:** CRPT; from [`RP=Abs` (L2.1.T4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection--abstraction) + [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
 That ρ_M is the projection operator is
 established by definition (C1–C2). That the recursive projection CFix(ρ_M)(x) :=
 ρ_M^{d_M(x)}(x) is the *abstraction function* in the sense of Cousot & Cousot
-(1977) is a theorem (`RP=Abs` (L2.1.T4)), not part of the definition (`ρ_M` (L2.1.D1)). The two claims are
+(1977) is a theorem ([`RP=Abs` (L2.1.T4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection--abstraction)), not part of the definition ([`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m)). The two claims are
 distinct: ρ_M is defined as the projection operator; CFix(ρ_M) being the abstraction
 is derived from the PA-* axioms via the Galois connection theorem.
 
@@ -65,10 +65,10 @@ is derived from the PA-* axioms via the Galois connection theorem.
 | **Remark** | L2.1.R2 | `Rho-RegNeutral` | | **Novel** |
 **Synopsis:** ρ_M acts uniformly on both regimes — it is regime-neutral.
 
-**Source:** CRPT; from `ρ_M` (L2.1.D1) + `Reg-Strat` (L2.2.D3).
+**Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) + [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification).
 
 
-In the native regime-stratified framework (`Reg-Strat` (L2.2.D3), L1.2–L1.5), ρ_M operates
+In the native regime-stratified framework ([`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification), L1.2–L1.5), ρ_M operates
 identically in both ↓_M and ∞_M. What changes between regimes is the mode of
 convergence of the projection:
 
@@ -78,7 +78,7 @@ convergence of the projection:
  **asymptotically** in topology 𝒯 (PA-WN_top).
 
 In both cases CFix(ρ_M)(x) is the canonical projection limit. All theorems about
-ρ_M's properties (equivariance C2, depth decrease `Depth-Dec` (L2.3.T2), etc.) apply
+ρ_M's properties (equivariance C2, depth decrease [`Depth-Dec` (L2.3.T2)](CRPT_OMEGA_TOWER_L2.md#strict-depth-decrease), etc.) apply
 uniformly in both regimes.
 
 ### C3 â Idempotence on Fixpoints
@@ -88,7 +88,7 @@ uniformly in both regimes.
 | **Remark** | L2.1.R3 | `C3-Idem` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `ρ_M` (L2.1.D1).
+**Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
 For any x ∈ Fix(ρ_M), ρ_M(x) = x,
 so ρ_M(ρ_M(x)) = ρ_M(x). This is immediate from the definition of Fix(ρ_M) and
@@ -144,11 +144,11 @@ So x ∈ Fix(ρ_M). ∎
 | **Theorem** | L2.1.T2 | `Fix=NF` | | **Novel** |
 **Synopsis:** Under PA-Fix, the converse also holds: every fixed point is a normal form. This axiom closes the equivalence Fix(ρ_M) = NF(→_ρ), making the two notions interchangeable in any CRPT model satisfying PA-Fix.
 
-**Source:** CRPT; from PA-Fix (L1.2.Ax3) + `NF` (L1.1.D2).
+**Source:** CRPT; from [PA-Fix (L1.2.Ax3)](CRPT_OMEGA_TOWER_L1.md#pa-fix--projection-fixpoint-stratification) + [`NF` (L1.1.D2)](CRPT_OMEGA_TOWER_L1.md#normal-form).
 
 Fix(ρ_M) = NF(→_ρ).
 
-*Proof.* NF ⊆ Fix by `NF⊆Fix` (L2.1.T1). For Fix ⊆ NF: if x ∈ Fix(ρ_M) then ρ_M(x) = x.
+*Proof.* NF ⊆ Fix by [`NF⊆Fix` (L2.1.T1)](CRPT_OMEGA_TOWER_L2.md#nf--fix). For Fix ⊆ NF: if x ∈ Fix(ρ_M) then ρ_M(x) = x.
 By C1, ρ_M(x) = x requires NF(x). Hence x ∈ NF(→_ρ). ∎
 
 ### Dead-End Lemma
@@ -157,19 +157,19 @@ By C1, ρ_M(x) = x requires NF(x). Hence x ∈ NF(→_ρ). ∎
 | **Theorem** | L2.1.T3 | `Dead-End` | | **Novel** |
 **Synopsis:** Dead-end fixed points are fixed points that are reachable only from themselves — no other element's projection orbit passes through them. These are the 'absorbing' or 'sink' nodes of the reduction graph. Classifying fixed points into dead-ends and non-dead-ends is relevant for the NFC fiber structure.
 
-**Source:** CRPT; from `Fix` (L2.1.D3) + `NF` (L1.1.D2).
+**Source:** CRPT; from [`Fix` (L2.1.D3)](CRPT_OMEGA_TOWER_L2.md#fixpoint-set) + [`NF` (L1.1.D2)](CRPT_OMEGA_TOWER_L1.md#normal-form).
 
 If x ∈ NF(→_ρ) then ρ_M(x) = x and
 d_M(x) = 0. If x ∉ NF(→_ρ) and x ∈ ↓_M, then ρ_M(x) ∈ ↓_M and
 d_M(ρ_M(x)) = d_M(x) - 1.
 
-*Proof.* (Here d_M(x) := min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)}, formalized as the rank function in `d_M` (L2.3.D2).)
+*Proof.* (Here d_M(x) := min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)}, formalized as the rank function in [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m).)
 
-*First clause:* x ∈ NF(→_ρ) implies ρ_M(x) = x by `NF⊆Fix` (L2.1.T1). Since x ∈ Fix(ρ_M),
+*First clause:* x ∈ NF(→_ρ) implies ρ_M(x) = x by [`NF⊆Fix` (L2.1.T1)](CRPT_OMEGA_TOWER_L2.md#nf--fix). Since x ∈ Fix(ρ_M),
 we have ρ_M^0(x) = x ∈ Fix(ρ_M), so 0 ∈ {n | ρ_M^n(x) ∈ Fix(ρ_M)} and d_M(x) = 0. ✓
 
 *Second clause:* Let x ∉ NF(→_ρ) with x ∈ ↓_M, so d_M(x) = k for some k ∈ ℕ.
-Since x ∉ Fix(ρ_M) (by `Fix=NF` (L2.1.T2)), k ≥ 1. Now ρ_M^k(x) ∈ Fix(ρ_M), so
+Since x ∉ Fix(ρ_M) (by [`Fix=NF` (L2.1.T2)](CRPT_OMEGA_TOWER_L2.md#fix--nf)), k ≥ 1. Now ρ_M^k(x) ∈ Fix(ρ_M), so
 ρ_M^{k-1}(ρ_M(x)) = ρ_M^k(x) ∈ Fix(ρ_M), giving d_M(ρ_M(x)) ≤ k − 1.
 If d_M(ρ_M(x)) = j < k − 1, then ρ_M^j(ρ_M(x)) = ρ_M^{j+1}(x) ∈ Fix(ρ_M) with
 j + 1 < k, contradicting k = min{n | ρ_M^n(x) ∈ Fix}. So d_M(ρ_M(x)) = k − 1
@@ -189,11 +189,11 @@ Cousot [1977] §2.2.
 | **Definition** | L2.1.D4 | `Rec-Proj` | CFix(ρ_M) | **Novel** |
 **Synopsis:** The canonical fixpoint map CFix(ρ_M)(x) sends each convergent element x to the unique fixed point that its projection orbit reaches. It is equivalent to CNF_M(x) and provides an alternative notation emphasising the fixpoint (rather than the canonical form) perspective.
 
-**Source:** CRPT; from `ρ_M` (L2.1.D1) + `d_M` (L2.3.D2).
+**Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) + [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m).
 
 [Note: CFix(ρ_M)(x) := ρ_M^{d_M(x)}(x) is a CRPT-novel construction.
 The abstraction-function concept is imported from Cousot & Cousot [1977] §2.2;
-that CFix(ρ_M) instantiates it is proved in `RP=Abs` (L2.1.T4), not assumed here.
+that CFix(ρ_M) instantiates it is proved in [`RP=Abs` (L2.1.T4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection--abstraction), not assumed here.
 The status "Imported" would be misleading; the definition is a novel CRPT construct.]
 
 The
@@ -204,7 +204,7 @@ CFix(ρ_M)(x) := ρ_M^{d_M(x)}(x)
 the result of applying the projection operator ρ_M exactly d_M(x) times. CFix(ρ_M)(x) is
 the *canonical normal form* of x (standard ARS terminology: Baader &
 Nipkow [1998] §2.1 Thm. 2.1.15). The NWF analog CNF∞_M(x) for x ∈ ∞_M is the
-*co-recursive projection* (`CNF∞-Def` (L3.3.D6)).
+*co-recursive projection* ([`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient)).
 
 ### Fixpoints are ρ_M-stable
 | Type | Label | Tag | Notation | Status |
@@ -217,7 +217,7 @@ Nipkow [1998] §2.1 Thm. 2.1.15). The NWF analog CNF∞_M(x) for x ∈ ∞_M is 
 For all f ∈ Fix(ρ_M)
 and all k ∈ ℕ: ρ_M^k(f) = f.
 
-*Proof.* By induction on k. Base k = 0: ρ_M^0(f) = f by `ρ^n` (L2.1.D2). Step:
+*Proof.* By induction on k. Base k = 0: ρ_M^0(f) = f by [`ρ^n` (L2.1.D2)](CRPT_OMEGA_TOWER_L2.md#strategy-iteration-ρ_mⁿ). Step:
 ρ_M^{k+1}(f) = ρ_M(ρ_M^k(f)) = ρ_M(f) = f [IH, then f ∈ Fix(ρ_M)]. ∎
 
 ### Unique Reachable Fixpoint
@@ -226,7 +226,7 @@ and all k ∈ ℕ: ρ_M^k(f) = f.
 | **Lemma** | L2.1.L2 | `UF` | | **Novel** |
 **Synopsis:** Under PA-WN and scoped confluence, every convergent element x has a unique fixed point that its projection orbit reaches. Two different projection paths from x cannot lead to two different fixed points. This is the uniqueness half of the canonical form theorem.
 
-**Source:** CRPT; from PA-WN (L1.2.Ax1) + PA-Conf (L1.2.Ax2) + `Depth-Dec` (L2.3.T2).
+**Source:** CRPT; from [PA-WN (L1.2.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn--weak-normalisation) + [PA-Conf (L1.2.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-conf--confluence--church-rosser) + [`Depth-Dec` (L2.3.T2)](CRPT_OMEGA_TOWER_L2.md#strict-depth-decrease).
 
 Under PA-WN + PA-Conf + C1,
 for all x ∈ ↓_M:
@@ -238,20 +238,20 @@ The recursive projection CFix(ρ_M)(x) is the unique fixpoint reachable from x b
 
 *Proof.* We show the set equals exactly {CFix(ρ_M)(x)}.
 
-*CFix(ρ_M)(x) ∈ Fix(ρ_M).* By `Rec-Proj` (L2.1.D4), CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x).
-By `d_M` (L2.3.D2) (used here via its informal pre-introduction in L1.2–L1.5): d_M(x) =
+*CFix(ρ_M)(x) ∈ Fix(ρ_M).* By [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection), CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x).
+By [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m) (used here via its informal pre-introduction in L1.2–L1.5): d_M(x) =
 min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)}, so ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M) by definition of
 the minimum. Hence CFix(ρ_M)(x) ∈ Fix(ρ_M). ✓
 
-*CFix(ρ_M)(x) is in the set.* By the above, CFix(ρ_M)(x) ∈ Fix(ρ_M). By `Rec-Proj`
-(L2.1.D4), CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x), so taking k = d_M(x) witnesses
-x ≤_ρ CFix(ρ_M)(x) (by definition of ≤_ρ at `≤_ρ` (L2.3.D1): ∃k : ρ_M^k(x) = CFix(ρ_M)(x)). ✓
+*CFix(ρ_M)(x) is in the set.* By the above, CFix(ρ_M)(x) ∈ Fix(ρ_M). By [`Rec-Proj`
+(L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection), CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x), so taking k = d_M(x) witnesses
+x ≤_ρ CFix(ρ_M)(x) (by definition of ≤_ρ at [`≤_ρ` (L2.3.D1)](CRPT_OMEGA_TOWER_L2.md#ρ_m-reachability-preorder): ∃k : ρ_M^k(x) = CFix(ρ_M)(x)). ✓
 
 *k-Step depth decrease (used below).* We establish by induction on k that for
 x ∈ ↓_M and k ≤ d_M(x): d_M(ρ_M^k(x)) = d_M(x) − k.
 Base k = 0: d_M(ρ_M^0(x)) = d_M(x) = d_M(x) − 0. ✓
 Step: Assume d_M(ρ_M^k(x)) = d_M(x) − k with k < d_M(x), so ρ_M^k(x) ∉ Fix(ρ_M)
-(since d_M(ρ_M^k(x)) ≥ 1). By `Depth-Dec` (L2.3.T2) applied to ρ_M^k(x):
+(since d_M(ρ_M^k(x)) ≥ 1). By [`Depth-Dec` (L2.3.T2)](CRPT_OMEGA_TOWER_L2.md#strict-depth-decrease) applied to ρ_M^k(x):
 d_M(ρ_M^{k+1}(x)) = d_M(ρ_M^k(x)) − 1 = (d_M(x) − k) − 1 = d_M(x) − (k+1). ✓
 
 *Nothing else is in the set.* Let f ∈ Fix(ρ_M) with x ≤_ρ f, so ∃k ∈ ℕ :
@@ -259,7 +259,7 @@ d_M(ρ_M^{k+1}(x)) = d_M(ρ_M^k(x)) − 1 = (d_M(x) − k) − 1 = d_M(x) − (k
 
 — Case k < d_M(x): By the k-step depth decrease proved above, d_M(ρ_M^k(x)) =
 d_M(x) − k ≥ 1 (since k < d_M(x)). But d_M(y) ≥ 1 implies y ∉ Fix(ρ_M) (for if
-y ∈ Fix(ρ_M) then d_M(y) = 0 by `Fix-D0` (L2.3.T3), contradicting d_M(y) ≥ 1).
+y ∈ Fix(ρ_M) then d_M(y) = 0 by [`Fix-D0` (L2.3.T3)](CRPT_OMEGA_TOWER_L2.md#fixpoints-have-depth-zero), contradicting d_M(y) ≥ 1).
 Hence ρ_M^k(x) ∉ Fix(ρ_M). But ρ_M^k(x) = f ∈ Fix(ρ_M). Contradiction.
 This case is impossible. ✓
 
@@ -269,7 +269,7 @@ This case is impossible. ✓
 ```
 f = ρ_M^k(x) = ρ_M^j(ρ_M^{d_M(x)}(x)) = ρ_M^j(CFix(ρ_M)(x)) = CFix(ρ_M)(x)
 ```
-where the last equality uses `Fix-Stab` (L2.1.L1) (since CFix(ρ_M)(x) ∈ Fix(ρ_M),
+where the last equality uses [`Fix-Stab` (L2.1.L1)](CRPT_OMEGA_TOWER_L2.md#fixpoints-are-ρ_m-stable) (since CFix(ρ_M)(x) ∈ Fix(ρ_M),
 proved above, and Fix-Stab states ρ_M^j(f') = f' for all f' ∈ Fix(ρ_M), j ∈ ℕ). ✓
 
 In every admissible case f = CFix(ρ_M)(x). ∎
@@ -280,7 +280,7 @@ In every admissible case f = CFix(ρ_M)(x). ∎
 | **Theorem** | L2.1.T4 | `RP=Abs` | | **Novel** |
 **Synopsis:** Recursive Projection equals Abstraction: the canonical fixpoint map CFix(ρ_M) is exactly the abstraction map α_M of the Galois insertion α_M ⊣ γ_M proved in L7. Computing the canonical form by iterating the projection operator is the same operation as abstracting an element to its equivalence class.
 
-**Source:** CRPT; from `Rec-Proj` (L2.1.D4) + PA-WN (L1.2.Ax1) + PA-Conf (L1.2.Ax2).
+**Source:** CRPT; from [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) + [PA-WN (L1.2.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn--weak-normalisation) + [PA-Conf (L1.2.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-conf--confluence--church-rosser).
 
 Under PA-WN + PA-Conf,
 the pair:
@@ -297,11 +297,11 @@ Therefore (α_M, γ_M) is a Galois insertion, and CFix(ρ_M) is the abstraction 
 
 *Proof.*
 
-*(→)* Assume CFix(ρ_M)(x) = f. By `Rec-Proj` (L2.1.D4), CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x), so
+*(→)* Assume CFix(ρ_M)(x) = f. By [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection), CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x), so
 ρ_M^{d_M(x)}(x) = f. Taking k = d_M(x): ρ_M^k(x) = f, hence x ≤_ρ f by
-`≤_ρ` (L2.3.D1). ✓
+[`≤_ρ` (L2.3.D1)](CRPT_OMEGA_TOWER_L2.md#ρ_m-reachability-preorder). ✓
 
-*(←)* Assume f ∈ Fix(ρ_M) and x ≤_ρ f. By `UF` (L2.1.L2):
+*(←)* Assume f ∈ Fix(ρ_M) and x ≤_ρ f. By [`UF` (L2.1.L2)](CRPT_OMEGA_TOWER_L2.md#unique-reachable-fixpoint):
 {f ∈ Fix(ρ_M) | x ≤_ρ f} = {CFix(ρ_M)(x)}, so f = CFix(ρ_M)(x). ✓ ∎
 
 ### No New Axioms (RP=Abs)
@@ -311,14 +311,14 @@ Therefore (α_M, γ_M) is a Galois insertion, and CFix(ρ_M) is the abstraction 
 | **Remark** | L2.1.R4 | `RPAbs-NoNewAx` | | **Novel** |
 **Synopsis:** RP=Abs introduces no axioms beyond PA-WN, PA-Conf, and C1.
 
-**Source:** CRPT; from `RP=Abs` (L2.1.T4); background in Cousot & Cousot [1977].
+**Source:** CRPT; from [`RP=Abs` (L2.1.T4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection--abstraction); background in Cousot & Cousot [1977].
 
-`RP=Abs` (L2.1.T4) uses PA-WN (existence of d_M(x) ∈ ℕ,
-used in `UF` (L2.1.L2) via `Depth-Dec` (L2.3.T2) and `Fix-D0` (L2.3.T3)),
+[`RP=Abs` (L2.1.T4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection--abstraction) uses PA-WN (existence of d_M(x) ∈ ℕ,
+used in [`UF` (L2.1.L2)](CRPT_OMEGA_TOWER_L2.md#unique-reachable-fixpoint) via [`Depth-Dec` (L2.3.T2)](CRPT_OMEGA_TOWER_L2.md#strict-depth-decrease) and [`Fix-D0` (L2.3.T3)](CRPT_OMEGA_TOWER_L2.md#fixpoints-have-depth-zero)),
 PA-Conf (uniqueness of the fixpoint reached, via confluence), C1 (for the Step-or-Fix
-property underpinning `Depth-Dec` (L2.3.T2) and `Fix-D0` (L2.3.T3)), and
-the definitions of ≤_ρ (`≤_ρ` (L2.3.D1)), derivation height (`d_M` (L2.3.D2)), and CFix(ρ_M)
-(`Rec-Proj` (L2.1.D4)). No conditions on what "abstraction" means are introduced
+property underpinning [`Depth-Dec` (L2.3.T2)](CRPT_OMEGA_TOWER_L2.md#strict-depth-decrease) and [`Fix-D0` (L2.3.T3)](CRPT_OMEGA_TOWER_L2.md#fixpoints-have-depth-zero)), and
+the definitions of ≤_ρ ([`≤_ρ` (L2.3.D1)](CRPT_OMEGA_TOWER_L2.md#ρ_m-reachability-preorder)), derivation height ([`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m)), and CFix(ρ_M)
+([`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection)). No conditions on what "abstraction" means are introduced
 alongside the PA-* system. The definition of Galois connection is imported from
 Cousot & Cousot [1977] §2.2 without modification.
 
@@ -329,12 +329,12 @@ Cousot & Cousot [1977] §2.2 without modification.
 | **Remark** | L2.1.R5 | `Mono-Deriv` | | **Novel** |
 **Synopsis:** Monotonicity of the projection is derivable, not a separate assumption.
 
-**Source:** CRPT; from `UF` (L2.1.L2).
+**Source:** CRPT; from [`UF` (L2.1.L2)](CRPT_OMEGA_TOWER_L2.md#unique-reachable-fixpoint).
 
 The standard Moore closure definition
 requires extensiveness, monotonicity, idempotence, and abstract range. In the CRPT
 setting, monotonicity is redundant: any map satisfying the other three conditions
-equals CFix(ρ_M) by `UF` (L2.1.L2), and CFix(ρ_M) is monotone (if x ≤_ρ y then CFix(ρ_M)(x) =
+equals CFix(ρ_M) by [`UF` (L2.1.L2)](CRPT_OMEGA_TOWER_L2.md#unique-reachable-fixpoint), and CFix(ρ_M) is monotone (if x ≤_ρ y then CFix(ρ_M)(x) =
 CFix(ρ_M)(y) by Lemma L-CNF, proved in L2.4). The derivability of monotonicity from
 the determinism of ρ_M via C1 is specific to CRPT's orbit structure.
 
@@ -345,7 +345,7 @@ the determinism of ρ_M via C1 is specific to CRPT's orbit structure.
 | **Remark** | L2.1.R6 | `Disc-Proj` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `ρ_M` (L2.1.D1).
+**Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
 Each step of the projection operator
 ρ_M systematically erases indiscernible structure. The recursive projection
@@ -414,7 +414,7 @@ preserve inclusion. Hence both operators are monotone. ∎
 | **Definition** | L2.2.D3 | `Reg-Strat` | | **Novel** |
 **Synopsis:** Native regime stratification is the methodological principle of treating the two regimes with different proof methods: induction for convergent elements (using derivation height as the induction measure) and coinduction for persistent elements (using PA-CoInd / the asymptotic orbit invariant). All proofs in L3–L8 follow this regime-stratified strategy implicitly.
 
-**Source:** CRPT; from `ρ_M` (L2.1.D1) + the regime partition (L2.2).
+**Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) + the regime partition (L2.2).
 
 A substrate (𝒰_M, →_ρ, →_σ, ρ_M) satisfies *native regime stratification* if:
 
@@ -424,11 +424,11 @@ A substrate (𝒰_M, →_ρ, →_σ, ρ_M) satisfies *native regime stratificati
 ∞_M := 𝒰_M ∖ ↓_M (complement)
 ```
 
-(ii) The partition satisfies **properties of regime closure** (`↓-Closed` (L2.2.T1), `∞-Closed` (L2.2.T2) below):
+(ii) The partition satisfies **properties of regime closure** ([`↓-Closed` (L2.2.T1)](CRPT_OMEGA_TOWER_L2.md#_m-is-ρ_m-closed), [`∞-Closed` (L2.2.T2)](CRPT_OMEGA_TOWER_L2.md#_m-is-ρ_m-closed-1) below):
 - ρ_M(↓_M) ⊆ ↓_M (convergent regime is closed under ρ_M)
 - ρ_M(∞_M) ⊆ ∞_M (persistent regime is closed under ρ_M)
 
-(iii) The partition admits the **native axiom system**: the convergent-regime axioms on ↓_M (global PA-WN, with regime-sensitive use via scope semantics) and the persistent-regime axioms on ∞_M (PA-NWF, PA-CoInd, PA-Prod, and the optional PA-WN_top). Canonicalization then proceeds by recurrence on ↓_M (termination at depth d_M) and on ∞_M by the realizations of PA-Reach (L1.3.Ax2) — recurrence, or convergence wherever PA-WN_top holds, or their composite (`Mode` (L1.4.D1)).
+(iii) The partition admits the **native axiom system**: the convergent-regime axioms on ↓_M (global PA-WN, with regime-sensitive use via scope semantics) and the persistent-regime axioms on ∞_M (PA-NWF, PA-CoInd, PA-Prod, and the optional PA-WN_top). Canonicalization then proceeds by recurrence on ↓_M (termination at depth d_M) and on ∞_M by the realizations of [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization) — recurrence, or convergence wherever PA-WN_top holds, or their composite ([`Mode` (L1.4.D1)](CRPT_OMEGA_TOWER_L1.md#regimes-and-canonicalization-modes)).
 
 ### The Regime Partition Adds No Axiom
 
@@ -437,7 +437,7 @@ A substrate (𝒰_M, →_ρ, →_σ, ρ_M) satisfies *native regime stratificati
 | **Remark** | L2.2.R1 | `RegPart-NoAxiom` | | **Novel** |
 **Synopsis:** The regime partition is not an axiom constraint: ↓_M and ∞_M are definitions, and their exhaustiveness and disjointness are theorem consequences of those definitions.
 
-**Source:** CRPT; from `Reg-Strat` (L2.2.D3) + `Part` (L2.2.T3).
+**Source:** CRPT; from [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification) + [`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition).
 
 This is not a new axiom constraint. The regime partition is specified by definitions (↓_M and ∞_M), and its exhaustiveness/disjointness are theorem consequences of those definitions. It is essential for native regime stratification (L1.2–L1.5) but automatically satisfied in pure WF/NWF models.
 
@@ -449,7 +449,7 @@ This is not a new axiom constraint. The regime partition is specified by definit
 | **Definition** | L2.2.D4 | `↓_M` | ↓_M | **Novel** |
 **Synopsis:** The convergent regime ↓_M contains every element of 𝒰_M whose ρ_M-orbit eventually reaches a fixed point in finitely many steps. Elements in ↓_M are the well-founded part of the model — they have canonical forms, derivation heights, and participate in the six-class partition of L3.
 
-**Source:** CRPT; from `ρ_M` (L2.1.D1) + `Fix` (L2.1.D3).
+**Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) + [`Fix` (L2.1.D3)](CRPT_OMEGA_TOWER_L2.md#fixpoint-set).
 
 
 The *convergent regime* (elements with finite abstraction depth) is the least fixed point of T_{ρ,M}^{conv}:
@@ -466,7 +466,7 @@ x ∈ ↓_M iff some iterate of ρ_M(x) reaches a fixpoint. The notation ↓_M (
 | **Definition** | L2.2.D5 | `∞_M` | ∞_M | **Novel** |
 **Synopsis:** The persistent regime ∞_M is the complement of ↓_M: elements whose ρ_M-orbit never terminates. These are the non-well-founded elements. They cannot be assigned a finite derivation height, and their 'canonical form' (if any) is defined coinductively via the persistent canonical form CNF∞_M of L3.3.
 
-**Source:** CRPT; from `↓_M` (L2.2.D4).
+**Source:** CRPT; from [`↓_M` (L2.2.D4)](CRPT_OMEGA_TOWER_L2.md#convergent-regime-_m).
 
 
 The *persistent regime* (elements with infinite abstraction depth) is the greatest fixed point of T_{ρ,M}^{pers}:
@@ -484,17 +484,17 @@ x ∈ ∞_M iff no iterate of ρ_M(x) reaches a fixpoint. The notation ∞_M ("i
 | **Remark** | L2.2.R2 | `RegOps-PureNative` | | **Novel** |
 **Synopsis:** How the regime operators behave in pure-WF versus native stratified settings.
 
-**Source:** CRPT; from `Reg-Strat` (L2.2.D3) + `Mode` (L1.4.D1).
+**Source:** CRPT; from [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification) + [`Mode` (L1.4.D1)](CRPT_OMEGA_TOWER_L1.md#regimes-and-canonicalization-modes).
 
 
 
 The regime operators use Fix(ρ_M), not NF(→_ρ), because the partition is defined via ρ_M-orbits. The distinction is important in both settings:
 
-**Pure-WF profile (§L1.1–3):** Fix(ρ_M) = NF(→_ρ) (`Fix=NF` (L2.1.T2)), so the two coincide. Under PA-WN, all elements are weakly normalizing, and Definitions 4.1–4.2 reduce to: ↓_M = 𝒰_M and ∞_M = ∅.
+**Pure-WF profile (§L1.1–3):** Fix(ρ_M) = NF(→_ρ) ([`Fix=NF` (L2.1.T2)](CRPT_OMEGA_TOWER_L2.md#fix--nf)), so the two coincide. Under PA-WN, all elements are weakly normalizing, and Definitions 4.1–4.2 reduce to: ↓_M = 𝒰_M and ∞_M = ∅.
 
 **Native CRPT (L1.2–L1.5, regime-stratified):** With the convergent-regime axioms on ↓_M (global PA-WN, used via scope semantics) and the persistent-regime axioms (PA-NWF, PA-CoInd, PA-Prod, and the optional PA-WN_top) on ∞_M:
 - Elements in ↓_M reach Fix(ρ_M) in finitely many steps (finitary mode).
-- Elements in ∞_M never reach Fix(ρ_M); their asymptotic destination is reached by recurrence — or by convergence to a 𝒯-limit wherever PA-WN_top holds, or by their composite (PA-Reach (L1.3.Ax2), `Mode` (L1.4.D1)) — and is analysed by the orbit invariant `AOI-Unif` (L6.3.D10) in either mode.
+- Elements in ∞_M never reach Fix(ρ_M); their asymptotic destination is reached by recurrence — or by convergence to a 𝒯-limit wherever PA-WN_top holds, or by their composite ([PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization), [`Mode` (L1.4.D1)](CRPT_OMEGA_TOWER_L1.md#regimes-and-canonicalization-modes)) — and is analysed by the orbit invariant [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi) in either mode.
 - Partitioning via Fix(ρ_M) captures both regimes: an element either reaches a fixpoint (↓_M) or never does (∞_M).
 
 **Self-loop elements:** Fixed-point elements (in Fix(ρ_M)) are classified as convergent (they reach a fixpoint in 0 steps) even though they have outgoing →_ρ-edges. This is correct in both settings: they are normal forms, so they should not be classified as diverging.
@@ -551,9 +551,9 @@ middle on the predicate x ∈ ↓_M. Disjointness: immediate from the definition
 | **Remark** | L2.2.R3 | `Part-Taut` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `Part` (L2.2.T3).
+**Source:** CRPT; from [`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition).
 
-`Part` (L2.2.T3) is a logical tautology given the definitions. It requires
+[`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition) is a logical tautology given the definitions. It requires
 no axiom. It is stated as a theorem (rather than a remark) only because it is a
 named result that appears in cross-references.
 
@@ -583,8 +583,8 @@ Under PA-NWF, the persistent regime is
 non-empty.
 
 *Proof.* PA-NWF states exactly:
-∃x ∈ 𝒰 : ∀n ∈ ℕ, ρ_M^n(x) ∉ Fix(ρ_M) (`PA-NWF` (L1.2.Ax4)).
-By definition of ∞_M (`∞_M` (L2.2.D5)), this is equivalent to ∃x ∈ ∞_M.
+∃x ∈ 𝒰 : ∀n ∈ ℕ, ρ_M^n(x) ∉ Fix(ρ_M) ([`PA-NWF` (L1.2.Ax4)](CRPT_OMEGA_TOWER_L1.md#pa-nwf--non-well-foundedness--divergence-existence)).
+By definition of ∞_M ([`∞_M` (L2.2.D5)](CRPT_OMEGA_TOWER_L2.md#persistent-regime-_m)), this is equivalent to ∃x ∈ ∞_M.
 Therefore the persistent regime is non-empty. ∎
 
 ### Discernibility: Regime
@@ -594,7 +594,7 @@ Therefore the persistent regime is non-empty. ∎
 | **Remark** | L2.2.R4 | `Disc-Regime` | | **Novel** |
 **Synopsis:** Reading the regime partition as a discernibility classification.
 
-**Source:** CRPT; from `↓_M` (L2.2.D4) + `∞_M` (L2.2.D5).
+**Source:** CRPT; from [`↓_M` (L2.2.D4)](CRPT_OMEGA_TOWER_L2.md#convergent-regime-_m) + [`∞_M` (L2.2.D5)](CRPT_OMEGA_TOWER_L2.md#persistent-regime-_m).
 
 The regime partition classifies elements
 by the **limit of their discernible content under abstraction**: ↓_M elements have
@@ -610,13 +610,13 @@ continuously reveals or cycles through distinctions).
 | **Theorem** | L2.2.T6 | `Reg-Compl` |  | **Novel** |
 **Synopsis:** Under PA-WN, every element has a terminating path to a normal form. This is a direct restatement of PA-WN: the axiom asserts that the convergent regime is all of 𝒰_M when ∞_M = ∅, or that every element in ↓_M has a terminating reduction path.
 
-**Source:** CRPT; from PA-WN (L1.2.Ax1) + `Reg-Strat` (L2.2.D3).
+**Source:** CRPT; from [PA-WN (L1.2.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn--weak-normalisation) + [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification).
 
 On any fixed
-model M with projection operator ρ_M (= abstraction function by `RP=Abs` (L2.1.T4)), there are exactly two abstraction regimes:
+model M with projection operator ρ_M (= abstraction function by [`RP=Abs` (L2.1.T4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection--abstraction)), there are exactly two abstraction regimes:
 ↓_M and ∞_M. No third regime exists.
 
-*Formal statement.* The partition 𝒰_M = ↓_M ∐ ∞_M (`Part` (L2.2.T3)) is exhaustive and
+*Formal statement.* The partition 𝒰_M = ↓_M ∐ ∞_M ([`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition)) is exhaustive and
 irreducible: no predicate P on 𝒰_M satisfying the ρ_M-closure conditions (Theorems
 4.1 and 4.2) produces a strictly finer partition into three or more non-empty classes.
 
@@ -634,7 +634,7 @@ Now let y ∈ B₂ (the other part). By the same argument, CFix(ρ_M)(y) ∈ B�
 B₁ ∩ B₂ = ∅, we have CFix(ρ_M)(x) ≠ CFix(ρ_M)(y) for x ∈ B₁, y ∈ B₂. Therefore
 B₁ and B₂ are separated by canonical form: B₁ = ⋃_{f ∈ Fix(ρ_M) ∩ B₁} the normal-form fiber NFC_M(f) and
 B₂ = ⋃_{f ∈ Fix(ρ_M) ∩ B₂} the normal-form fiber NFC_M(f). (Every element of ↓_M lies in exactly one
-the normal-form fiber NFC_M(f) by `UF` (L2.1.L2); each the normal-form fiber NFC_M(f) lies entirely within B₁ or B₂ by
+the normal-form fiber NFC_M(f) by [`UF` (L2.1.L2)](CRPT_OMEGA_TOWER_L2.md#unique-reachable-fixpoint); each the normal-form fiber NFC_M(f) lies entirely within B₁ or B₂ by
 forward closure as shown above.) This is internal sub-classification of ↓_M by
 fixpoint identity — not a new regime.
 
@@ -660,7 +660,7 @@ existing regime, determined by CFix(ρ_M) (convergent case) or orbit containment
 | **Remark** | L2.2.R5 | `Reg-Nota` |  | **Novel** |
 **Synopsis:** The canonical regime notation: ↓_M (convergent) and ∞_M (persistent) are the primary CRPT notations. The fixed-point theory notations μT_{ρ,M} and νT_{ρ,M} are alternative formal definitions equivalent to ↓_M and ∞_M respectively, used when the fixed-point theoretic perspective clarifies a proof.
 
-**Source:** CRPT; notation for `↓_M` (L2.2.D4) + `∞_M` (L2.2.D5).
+**Source:** CRPT; notation for [`↓_M` (L2.2.D4)](CRPT_OMEGA_TOWER_L2.md#convergent-regime-_m) + [`∞_M` (L2.2.D5)](CRPT_OMEGA_TOWER_L2.md#persistent-regime-_m).
 
 The regime notation is:
 - **↓_M** (downward): The CANONICAL primary notation for the convergent regime with finite abstraction depth
@@ -718,13 +718,13 @@ Elements can be:
 | **Theorem** | L2.2.T7 | `Inf-Dual` | | **Novel** |
 **Synopsis:** The Infinity Duality theorem establishes that horizontal infinity (having infinitely many elements in a fiber, H_S = ⊤ at every level) and vertical infinity (having an infinite projection orbit, ∞_M ≠ ∅) are dual in CRPT: each implies the other in any non-degenerate model. A model with no persistent elements necessarily has trivial fiber structure.
 
-**Source:** CRPT; from `∞_M` (L2.2.D5) + `Lift-Def` (L8.2.D2).
+**Source:** CRPT; from [`∞_M` (L2.2.D5)](CRPT_OMEGA_TOWER_L2.md#persistent-regime-_m) + [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m).
 
 *Three homes of the duality.* This is the **model-level statement**; its universal
 template is L0.6, and its tower-level theory is L8.6 — three distinct constructs in
 three strata, ι-related across levels, each owned by its stratum's section.
 
-Let M satisfy PA-WN + PA-Conf, and let Lift(M) be its free lift (`Lift-Def` (L8.2.D2)). Then:
+Let M satisfy PA-WN + PA-Conf, and let Lift(M) be its free lift ([`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m)). Then:
 
 **(i) Horizontal infinity in M maps to vertical infinity in Lift(M):**
 If x ∈ ↓_M ∩ (⋃_{f ∈ Fix(ρ_M)} G(f)) where G(f) = {y ∈ the normal-form fiber NFC_M(f) | ∃ a σ-path from y visiting infinitely many distinct ≃_M-classes} (elements whose fiber opens onto an infinite atom supply), then the depths of the compositions are unbounded:
@@ -749,13 +749,13 @@ regardless of whether elements within f had infinite σ-structure. The entire ho
 - **The mapping:** Horizontal σ-structure of fiber f in Mₙ ↦ Horizontal σ-structure among fiber-atoms {ι_Mₙ(f) · ι_Mₙ(f')} in Mₙ₊₁
 - **Net effect:** The σ-infinity of ONE fiber at level Mₙ becomes the (potentially infinite) depth of multi-fiber compositions at level Mₙ₊₁
 
-*Proof.* (Parts (i) and (iv) reference the Lift construction of L8.1; see `Lift-Def` (L8.2.D2) for the free monoidal algebra FMA(Q_M) and the last-atom-strip reduction ρ_{Lift(M)} (strip the rightmost atom each step).)
+*Proof.* (Parts (i) and (iv) reference the Lift construction of L8.1; see [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m) for the free monoidal algebra FMA(Q_M) and the last-atom-strip reduction ρ_{Lift(M)} (strip the rightmost atom each step).)
 
-(i) Let y ∈ G(f): a σ-path from y visits infinitely many distinct ≃_M-classes [a₁], [a₂], … (the hypothesis). By construction of Lift(M) (`Lift-Def` (L8.2.D2)), each visited class maps to an atom ι_M([aᵢ]) ∈ FMA(Q_M), and distinct classes yield distinct atoms — so the σ-path supplies an infinite atom stock. For any n ∈ ℕ form the n-fold composition t_n := ι_M([a₁]) · ι_M([a₂]) · ... · ι_M([aₙ]) ∈ FMA(Q_M) from the first n classes visited. The reduction ρ_{Lift(M)} removes the last atom at each step: ρ_{Lift(M)}(t_n) = ι_M([a₁]) · ... · ι_M([a_{n−1}]), so d_{Lift(M)}(t_n) = n − 1. As n → ∞, d_{Lift(M)}(t_n) → ∞: the supremum of the depths is ∞. ✓
+(i) Let y ∈ G(f): a σ-path from y visits infinitely many distinct ≃_M-classes [a₁], [a₂], … (the hypothesis). By construction of Lift(M) ([`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m)), each visited class maps to an atom ι_M([aᵢ]) ∈ FMA(Q_M), and distinct classes yield distinct atoms — so the σ-path supplies an infinite atom stock. For any n ∈ ℕ form the n-fold composition t_n := ι_M([a₁]) · ι_M([a₂]) · ... · ι_M([aₙ]) ∈ FMA(Q_M) from the first n classes visited. The reduction ρ_{Lift(M)} removes the last atom at each step: ρ_{Lift(M)}(t_n) = ι_M([a₁]) · ... · ι_M([a_{n−1}]), so d_{Lift(M)}(t_n) = n − 1. As n → ∞, d_{Lift(M)}(t_n) → ∞: the supremum of the depths is ∞. ✓
 
-(ii) By `NFC-TInv` (L8.4.T2): Q_{Mₙ₊₁} = Q_{Mₙ} (abstraction quotient invariant), so the fixpoint stock is tower-invariant. An element reaching no fixpoint at level Mₙ reaches none at level Mₙ₊₁; hence x ∈ ∞_M lies in ∞_{Mₙ} at every level — the persistent regime persists up the tower. ✓
+(ii) By [`NFC-TInv` (L8.4.T2)](CRPT_OMEGA_TOWER_L8.md#nfc-partition-is-a-tower-invariant): Q_{Mₙ₊₁} = Q_{Mₙ} (abstraction quotient invariant), so the fixpoint stock is tower-invariant. An element reaching no fixpoint at level Mₙ reaches none at level Mₙ₊₁; hence x ∈ ∞_M lies in ∞_{Mₙ} at every level — the persistent regime persists up the tower. ✓
 
-(iii) By `Fix-Bas` (L8.2.T1): Every fixpoint of Mₙ maps to depth 0 in Lift(Mₙ). This holds independent of internal structure. ✓
+(iii) By [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics): Every fixpoint of Mₙ maps to depth 0 in Lift(Mₙ). This holds independent of internal structure. ✓
 
 (iv) Combining (i)–(iii): At level Mₙ, a fiber f with infinite σ-structure has elements that compose into terms of unbounded depth at level Mₙ₊₁ (by (i)). Yet each fiber — including its infinite σ-structure — collapses to a single depth-0 atom at level Mₙ₊₁ (by (iii)). The infinite σ-structure at level Mₙ is thus not lost but re-encoded: the composition of atoms from distinct fibers at Mₙ₊₁ recreates a new horizontal σ-dimension among those atoms, and the depth of their compositions constitutes the new vertical structure. By (ii), any element that was vertically infinite at Mₙ remains so at Mₙ₊₁. Therefore horizontal infinity at one level becomes vertical infinity at the next, completing the duality. ✓ ∎
 
@@ -766,9 +766,9 @@ regardless of whether elements within f had infinite σ-structure. The entire ho
 | **Remark** | L2.2.R7 | `Infinity-Cycle` | | **Novel** |
 **Synopsis:** Horizontal (σ-branching within a fiber) and vertical (unbounded composition depth) infinity are dual facets of one phenomenon, transformed into one another at successive tower levels.
 
-**Source:** CRPT; from `Inf-Dual` (L2.2.T7).
+**Source:** CRPT; from [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality).
 
-`Inf-Dual` (L2.2.T7) reveals a deep symmetry: infinities are not lost in the tower, they are **transformed**. Horizontal infinity (σ-branching within a fiber) at level Mₙ becomes vertical infinity (unbounded composition depth) at level Mₙ₊₁, which then becomes horizontal infinity again (σ-structure among composite atoms) when viewed at that level. The two notions of infinity are **dual facets of the same phenomenon**, expressed in different directions at consecutive tower levels.
+[`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality) reveals a deep symmetry: infinities are not lost in the tower, they are **transformed**. Horizontal infinity (σ-branching within a fiber) at level Mₙ becomes vertical infinity (unbounded composition depth) at level Mₙ₊₁, which then becomes horizontal infinity again (σ-structure among composite atoms) when viewed at that level. The two notions of infinity are **dual facets of the same phenomenon**, expressed in different directions at consecutive tower levels.
 
 This explains why:
 - **Regimes capture vertical infinity:** The ↓_M/∞_M partition asks whether x eventually reaches fixpoint under ρ-iteration (termination question at one level).
@@ -782,11 +782,11 @@ This explains why:
 | **Remark** | L2.2.R8 | `InfDual-DepNote` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `Inf-Dual` (L2.2.T7) + `Lift-Def` (L8.2.D2).
+**Source:** CRPT; from [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality) + [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m).
 
-`Inf-Dual` (L2.2.T7) uses `Lift-Def` (L8.2.D2),
-`Fix-Bas` (L8.2.T1), and `NFC-TInv` (L8.4.T2). This dependency is non-circular:
-L8.1 does not depend on `Inf-Dual` (L2.2.T7). The placement in L2.2 is expository,
+[`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality) uses [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m),
+[`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics), and [`NFC-TInv` (L8.4.T2)](CRPT_OMEGA_TOWER_L8.md#nfc-partition-is-a-tower-invariant). This dependency is non-circular:
+L8.1 does not depend on [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality). The placement in L2.2 is expository,
 while proof dependencies remain fully internal to this anchor.
 
 ---
@@ -800,7 +800,7 @@ while proof dependencies remain fully internal to this anchor.
 | **Theorem** | L2.2.T8 | `Reg-Exh` | | **Novel** |
 **Synopsis:** The regime exhaustion theorem confirms ↓_M ∪ ∞_M = 𝒰_M: every element is either convergent or persistent, with no third possibility. This follows from the universal regime dichotomy (L0.2.T1) instantiated to the CRPT projection operator.
 
-**Source:** CRPT; from `Reg-Strat` (L2.2.D3); instance of `Regime-Dich` (L0.2.T1).
+**Source:** CRPT; from [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification); instance of [`Regime-Dich` (L0.2.T1)](CRPT_OMEGA_TOWER_L0.md#l02t1--universal-regime-dichotomy).
 
 *Let (𝒰, →_ρ, →_σ, 𝒯) be a substrate satisfying →_ρ ⊆ →_σ, and let ρ_M : 𝒰 → 𝒰
 be an abstraction operator (step-or-fix) satisfying the structural conditions
@@ -840,7 +840,7 @@ definitions, not of any axiom. ∎
 | **Theorem** | L2.2.T9 | `Ax-Cov` |  | **Novel** |
 **Synopsis:** The axiom coverage theorem: the convergent-regime axioms (PA-WN, PA-Conf, PA-Fix) and persistent-regime axioms (PA-NWF, PA-CoInd, PA-Prod, PA-WN_top, PA-Bisim, PA-Reach), together with the Gateway structure (→_σ interface), cover all structurally distinct cases of the regime partition.
 
-**Source:** CRPT; from `Reg-Exh` (L2.2.T8); instance of `Ax-Cov-U` (L0.2.T2).
+**Source:** CRPT; from [`Reg-Exh` (L2.2.T8)](CRPT_OMEGA_TOWER_L2.md#regime-exhaustiveness); instance of [`Ax-Cov-U` (L0.2.T2)](CRPT_OMEGA_TOWER_L0.md#l02t2--universal-axiom-coverage).
 
 *The PA-* axiom system partitions all structural commitments on (𝒰, →_ρ, →_σ, 𝒯)
 as follows:*
@@ -871,12 +871,12 @@ Any property P of (𝒰, →_ρ, →_σ, ρ_M) falls into one of three categorie
 
 3. **P concerns the relationship between ↓_M and ∞_M.** Then P is governed by the
    Gateway structure — the Gateway predicate GW (L4.2.D1) and the Gateway Reachability
-   property, both stated over →_σ. Theorem `Reg-Conn` (L4.2.T1) derives
-   regime-connectedness from Gateway Reachability, and `CPEP-Ind` (L4.7.T1) and `Refl-Abs-T` (L4.7.T2) govern
+   property, both stated over →_σ. Theorem [`Reg-Conn` (L4.2.T1)](CRPT_OMEGA_TOWER_L4.md#regime-connectedness--rt) derives
+   regime-connectedness from Gateway Reachability, and [`CPEP-Ind` (L4.7.T1)](CRPT_OMEGA_TOWER_L4.md#cpep-is-independent-of-pa-) and [`Refl-Abs-T` (L4.7.T2)](CRPT_OMEGA_TOWER_L4.md#reflectiveabsorbing-dichotomy) govern
    cross-regime perturbations.
 
 The three categories are exhaustive because every element of 𝒰 is in ↓_M or ∞_M
-(`Reg-Compl` (L2.2.T6)), and every property either concerns one regime or their interaction. ∎
+([`Reg-Compl` (L2.2.T6)](CRPT_OMEGA_TOWER_L2.md#regime-completeness--two-regimes-exactly)), and every property either concerns one regime or their interaction. ∎
 
 ### No Third Paradigm Within the Substrate Interface
 | Type | Label | Tag | Notation | Status |
@@ -884,17 +884,17 @@ The three categories are exhaustive because every element of 𝒰 is in ↓_M or
 | **Theorem** | L2.2.T10 | `No-3rd` |  | **Novel** |
 **Synopsis:** The no-third-regime theorem: there is no consistent axiom system that would introduce a third regime beyond ↓_M and ∞_M. Any proposed third class 𝒫_M would either be a subset of ↓_M, a subset of ∞_M, or empty — the regime dichotomy is logically exhaustive.
 
-**Source:** CRPT; from `Reg-Exh` (L2.2.T8).
+**Source:** CRPT; from [`Reg-Exh` (L2.2.T8)](CRPT_OMEGA_TOWER_L2.md#regime-exhaustiveness).
 
 *A "third model-level paradigm" beyond WF and NWF would require one of:*
 
-1. *A third regime 𝒫_M ⊆ 𝒰 with 𝒫_M ∩ ↓_M = ∅ and 𝒫_M ∩ ∞_M = ∅ — impossible by `Reg-Compl` (L2.2.T6).*
+1. *A third regime 𝒫_M ⊆ 𝒰 with 𝒫_M ∩ ↓_M = ∅ and 𝒫_M ∩ ∞_M = ∅ — impossible by [`Reg-Compl` (L2.2.T6)](CRPT_OMEGA_TOWER_L2.md#regime-completeness--two-regimes-exactly).*
 2. *A substrate with more than two primitive relations — possible in principle, but outside CRPT's substrate interface.*
 3. *An abstraction operator ρ_M that is not step-or-fix — possible in principle, but outside CRPT's structural conditions C1/C2 (Bisimulation Equivariance)/C3.*
 
 *Proof.*
 
-Option (1) is ruled out by `Reg-Compl` (L2.2.T6): ↓_M ∪ ∞_M = 𝒰, so no element can be
+Option (1) is ruled out by [`Reg-Compl` (L2.2.T6)](CRPT_OMEGA_TOWER_L2.md#regime-completeness--two-regimes-exactly): ↓_M ∪ ∞_M = 𝒰, so no element can be
 in neither regime.
 
 Options (2) and (3) are *logically possible* but require changing the substrate
@@ -959,7 +959,7 @@ Under PA-Conf (Church-Rosser),
 ≤_ρ is reflexive, transitive, and antisymmetric on μT_{ρ,M}. Therefore (μT_{ρ,M}, ≤_ρ) is a **poset**
 (partially ordered set).
 
-*Proof.* (Here d_M(x) := min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)}, formalized in `d_M` (L2.3.D2).)
+*Proof.* (Here d_M(x) := min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)}, formalized in [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m).)
 
 - *Reflexivity:* ρ_M⁰(x) = x, so x ≤_ρ x. ✓
 - *Transitivity:* x ≤_ρ y and y ≤_ρ z imply ∃k, ℓ : ρ_M^k(x) = y and ρ_M^ℓ(y) = z.
@@ -978,7 +978,7 @@ Under PA-Conf (Church-Rosser),
 | **Remark** | L2.3.R1 | `leq-Antisym` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `d_M` (L2.3.D2).
+**Source:** CRPT; from [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m).
 
 Antisymmetry of ≤_ρ follows from the deterministic (functional) nature of ρ_M and the
 finite reachability of fixpoints in μT_{ρ,M}. PA-Conf is included in the hypothesis for consistency with
@@ -1017,7 +1017,7 @@ to collapse x down to its canonical abstraction CFix(ρ_M)(x).
 | **Remark** | L2.3.R2 | `dM-Domain` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `d_M` (L2.3.D2).
+**Source:** CRPT; from [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m).
 
 derivation height is defined only on μT_{ρ,M}. For x ∈ νT_{ρ,M}, the set {n | ρ_M^n(x) ∈ Fix(ρ_M)} is
 empty, so d_M(x) is undefined. The rank function has no meaning for persistent/diverging elements.
@@ -1029,19 +1029,19 @@ empty, so d_M(x) is undefined. The rank function has no meaning for persistent/d
 | **Remark** | L2.3.R3 | `dM-Native` | | **Novel** |
 **Synopsis:** How derivation height extends across both regimes in the native framework.
 
-**Source:** CRPT; from `d-WD` (L2.3.T1) + `Reg-Strat` (L2.2.D3).
+**Source:** CRPT; from [`d-WD` (L2.3.T1)](CRPT_OMEGA_TOWER_L2.md#d_m-is-well-defined-on-μt_ρm) + [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification).
 
 
-In the native regime-stratified setting (L1.2–L1.5, `Reg-Strat` (L2.2.D3)), the concept of derivation height extends to all elements:
+In the native regime-stratified setting (L1.2–L1.5, [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification)), the concept of derivation height extends to all elements:
 
-- **For x ∈ ↓_M:** d_M(x) ∈ ℕ (finite derivation height), measured as the number of ρ_M iterations to reach a fixpoint. All existing theorems on d_M (`d-WD` (L2.3.T1), `Depth-Dec` (L2.3.T2), `Fix-D0` (L2.3.T3)) apply directly.
+- **For x ∈ ↓_M:** d_M(x) ∈ ℕ (finite derivation height), measured as the number of ρ_M iterations to reach a fixpoint. All existing theorems on d_M ([`d-WD` (L2.3.T1)](CRPT_OMEGA_TOWER_L2.md#d_m-is-well-defined-on-μt_ρm), [`Depth-Dec` (L2.3.T2)](CRPT_OMEGA_TOWER_L2.md#strict-depth-decrease), [`Fix-D0` (L2.3.T3)](CRPT_OMEGA_TOWER_L2.md#fixpoints-have-depth-zero)) apply directly.
 - **For x ∈ ∞_M:** d_M(x) := ∞ (infinite derivation), reflecting that the orbit never reaches Fix(ρ_M) in finitely many steps. Instead, x has a well-defined **topological depth** d_M^{top}(x, ε) for ε > 0, defined as:
  ```
  d_M^{top}(x, ε) := min { N ∈ ℕ | ∀n ≥ N : d_𝒯(ρ_M^n(x), CFix(ρ_M)(x)) < ε }
  ```
  This measures how many ρ_M-iterations are needed to come within ε-distance of the limit point CFix(ρ_M)(x). As ε → 0, derivation height^{top}(x, ε) → ∞ in a controlled way, capturing the convergence rate.
 
-`d-WD` (L2.3.T1) transfers: derivation height is well-defined on all of 𝒰, with ℕ-values on ↓_M and ∞ on ∞_M. The model includes the persistent regime via this extension.
+[`d-WD` (L2.3.T1)](CRPT_OMEGA_TOWER_L2.md#d_m-is-well-defined-on-μt_ρm) transfers: derivation height is well-defined on all of 𝒰, with ℕ-values on ↓_M and ∞ on ∞_M. The model includes the persistent regime via this extension.
 
 ### d_M is Well-Defined on μT_{ρ,M}
 | Type | Label | Tag | Notation | Status |
@@ -1099,7 +1099,7 @@ The relation
 {(x, ρ_M(x)) | x ∈ μT_{ρ,M}, x ∉ Fix(ρ_M)} is well-founded. derivation height is the corresponding
 measure: derivation height strictly decreases along ρ_M-orbits in μT_{ρ,M}.
 
-*Proof.* Immediate from `Depth-Dec` (L2.3.T2) and the fact that derivation height ∈ ℕ. ∎
+*Proof.* Immediate from [`Depth-Dec` (L2.3.T2)](CRPT_OMEGA_TOWER_L2.md#strict-depth-decrease) and the fact that derivation height ∈ ℕ. ∎
 
 ---
 
@@ -1116,7 +1116,7 @@ measure: derivation height strictly decreases along ρ_M-orbits in μT_{ρ,M}.
 | **Definition** | L2.4.D1 | `CFix-NM` |  | **Novel** |
 **Synopsis:** The canonical fixpoint map CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x) is the unique fixed point reachable from x by the canonical number of projection steps. This is the explicit computation that the canonical form map performs.
 
-**Source:** CRPT; from `Rec-Proj` (L2.1.D4) + `d_M` (L2.3.D2).
+**Source:** CRPT; from [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) + [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m).
 
 The map CFix(ρ_M) : 𝒰 → (NF(→_ρ) ∪ Limits(𝒯)) is defined in a regime-dependent manner:
 
@@ -1127,7 +1127,7 @@ CFix(ρ_M)(x) := {
 }
 ```
 
-where the limit for ∞_M elements is taken in the model topology 𝒯 specified as part of the substrate (`Sub` (L1.1.D1), L1.2).
+where the limit for ∞_M elements is taken in the model topology 𝒯 specified as part of the substrate ([`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate), L1.2).
 
 ### Existence and Uniqueness (Native Form)
 
@@ -1136,19 +1136,19 @@ where the limit for ∞_M elements is taken in the model topology 𝒯 specified
 | **Remark** | L2.4.R1 | `CFix-ExUniq-Nat` | | **Novel** |
 **Synopsis:** Existence and uniqueness of the canonical form in native (both-regime) form.
 
-**Source:** CRPT; from `CNF-Ex` (L2.4.T1) + `TopSep-Uniq` (L1.7.T1).
+**Source:** CRPT; from [`CNF-Ex` (L2.4.T1)](CRPT_OMEGA_TOWER_L2.md#cnf-existence) + [`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep).
 
 **Existence and Uniqueness in Native Form:**
 
-- **For x ∈ ↓_M:** CFix(ρ_M)(x) ∈ NF(→_ρ) exists by `CNF-Ex` (L2.4.T1).
+- **For x ∈ ↓_M:** CFix(ρ_M)(x) ∈ NF(→_ρ) exists by [`CNF-Ex` (L2.4.T1)](CRPT_OMEGA_TOWER_L2.md#cnf-existence).
  Uniqueness holds for the deterministic ρ_M-orbit (C1–C2). If PA-Conf is assumed
  globally then uniqueness also extends to arbitrary →_ρ*-paths (Church–Rosser).
  See L1.4 (Scope Sufficiency for CFix(ρ_M)) for the `Scoped(ρ_M-orbits)` formulation used by some instantiations.
-- **For x ∈ ∞_M:** The limit lim_{n→∞} ρ_M^n(x) exists in (𝒰, 𝒯) by PA-WN_top (`PA-Scope` (L1.5.D1), L1.4). Uniqueness follows formally from `TopSep-Uniq` (L1.7.T1), i.e. from the explicit TopSep(𝒯) condition required by PA-WN_top. Thus CFix(ρ_M) is single-valued on all of 𝒰.
+- **For x ∈ ∞_M:** The limit lim_{n→∞} ρ_M^n(x) exists in (𝒰, 𝒯) by PA-WN_top ([`PA-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration), L1.4). Uniqueness follows formally from [`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep), i.e. from the explicit TopSep(𝒯) condition required by PA-WN_top. Thus CFix(ρ_M) is single-valued on all of 𝒰.
 
 The definition unifies both regimes: CFix(ρ_M) is a total function on 𝒰, with finitary normal form on ↓_M and topological limit on ∞_M.
 
-*Standard name.* In standard (pure WF) CRPT: CFix(ρ_M) is the canonical normal-form map (Baader & Nipkow §2.1, Church-Rosser normal form). In native CRPT: CFix(ρ_M) extends to analytic models via topological closure, generalizing the Church-Rosser property to topological limit convergence. Both are called **canonical** because they are unique: finitary uniqueness follows from PA-Conf, while topological uniqueness follows from `TopSep-Uniq` (L1.7.T1), i.e. PA-WN_top together with the explicit TopSep(𝒯) assumption. They represent the maximal abstraction of their fiber.
+*Standard name.* In standard (pure WF) CRPT: CFix(ρ_M) is the canonical normal-form map (Baader & Nipkow §2.1, Church-Rosser normal form). In native CRPT: CFix(ρ_M) extends to analytic models via topological closure, generalizing the Church-Rosser property to topological limit convergence. Both are called **canonical** because they are unique: finitary uniqueness follows from PA-Conf, while topological uniqueness follows from [`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep), i.e. PA-WN_top together with the explicit TopSep(𝒯) assumption. They represent the maximal abstraction of their fiber.
 
 ### Discernibility: Canonical Form
 
@@ -1157,7 +1157,7 @@ The definition unifies both regimes: CFix(ρ_M) is a total function on 𝒰, wit
 | **Remark** | L2.4.R2 | `Disc-CFix` | | **Novel** |
 **Synopsis:** Reading CFix(ρ_M)(x) as the canonical discernible representative of x.
 
-**Source:** CRPT; from `CFix-NM` (L2.4.D1).
+**Source:** CRPT; from [`CFix-NM` (L2.4.D1)](CRPT_OMEGA_TOWER_L2.md#canonical-normal-form-map--native-form).
 
 CFix(ρ_M)(x) is the **canonical discernible
 residue** of x: the unique representative that encodes all and only the discernible
@@ -1177,8 +1177,8 @@ Baader & Nipkow [1998] §6.1
 
 For each x ∈ μT_{ρ,M}: ρ_M^{d_M(x)}(x) ∈ NF(→_ρ).
 
-*Proof.* Let n = d_M(x). By `d_M` (L2.3.D2), ρ_M^n(x) ∈ Fix(ρ_M). Under PA-WN,
-Fix(ρ_M) = NF(→_ρ) by `Fix=NF` (L2.1.T2). So ρ_M^n(x) ∈ NF(→_ρ). ∎
+*Proof.* Let n = d_M(x). By [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m), ρ_M^n(x) ∈ Fix(ρ_M). Under PA-WN,
+Fix(ρ_M) = NF(→_ρ) by [`Fix=NF` (L2.1.T2)](CRPT_OMEGA_TOWER_L2.md#fix--nf). So ρ_M^n(x) ∈ NF(→_ρ). ∎
 
 ### Fix = NF Unconditionally
 
@@ -1187,9 +1187,9 @@ Fix(ρ_M) = NF(→_ρ) by `Fix=NF` (L2.1.T2). So ρ_M^n(x) ∈ NF(→_ρ). ∎
 | **Remark** | L2.4.R3 | `FixNF-Uncond` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `Fix=NF` (L2.1.T2).
+**Source:** CRPT; from [`Fix=NF` (L2.1.T2)](CRPT_OMEGA_TOWER_L2.md#fix--nf).
 
-Fix(ρ_M) = NF(→_ρ) unconditionally (`Fix=NF` (L2.1.T2), from the strengthened
+Fix(ρ_M) = NF(→_ρ) unconditionally ([`Fix=NF` (L2.1.T2)](CRPT_OMEGA_TOWER_L2.md#fix--nf), from the strengthened
 C1 condition). So ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M) = NF(→_ρ) in all settings.
 
 ### CNF Uniqueness — Orbit-Scoped Uniqueness
@@ -1198,10 +1198,10 @@ C1 condition). So ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M) = NF(→_ρ) in all settings.
 | **Theorem** | L2.4.T2 | `CNF-Uniq` | | **Novel** |
 **Synopsis:** Under PA-WN and scoped confluence, the canonical form map CNF_M(x) = ρ_M^{d_M(x)}(x) is the unique element of Fix(ρ_M) reachable from x. Two elements x, y have the same canonical form if and only if they are observationally equivalent (x ≃_M y).
 
-**Source:** CRPT; from PA-Conf (L1.2.Ax2) + PA-WN (L1.2.Ax1); background in Church & Rosser [1936], Baader & Nipkow [1998] §6.1.
+**Source:** CRPT; from [PA-Conf (L1.2.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-conf--confluence--church-rosser) + [PA-WN (L1.2.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn--weak-normalisation); background in Church & Rosser [1936], Baader & Nipkow [1998] §6.1.
 
 Under C1–C2
-(`ρ_M` (L2.1.D1) (ρ_M a deterministic strategy), for each x ∈ μT_{ρ,M} the ρ_M-orbit
+([`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) (ρ_M a deterministic strategy), for each x ∈ μT_{ρ,M} the ρ_M-orbit
 of x reaches at most one element of NF(→_ρ): the element ρ_M^{d_M(x)}(x). Equivalently,
 the ρ_M-orbit contains a unique normal form.
 
@@ -1210,7 +1210,7 @@ When PA-Conf is declared `Scoped(ρ_M-orbits)` (see L1.4, Scope Sufficiency for 
 orbit-scoped uniqueness stated here is sufficient for CFix(ρ_M) to be well-defined on μT_{ρ,M}.
 
 *Proof.* The ρ_M-orbit of x is the deterministic sequence (ρ_M^n(x))_{n∈ℕ}. If
-x ∈ μT_{ρ,M}, then by `d_M` (L2.3.D2) there is a minimal d_M(x) with
+x ∈ μT_{ρ,M}, then by [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m) there is a minimal d_M(x) with
 ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M) = NF(→_ρ). Since ρ_M is a function, this orbit is
 unique and therefore reaches a single NF element, namely f := ρ_M^{d_M(x)}(x).
 Hence no two distinct normal forms can be reached along the ρ_M-orbit. ∎
@@ -1222,9 +1222,9 @@ Hence no two distinct normal forms can be reached along the ρ_M-orbit. ∎
 | **Remark** | L2.4.R4 | `CNFUniq-CR` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `CNF-Uniq` (L2.4.T2); background in Baader & Nipkow [1998].
+**Source:** CRPT; from [`CNF-Uniq` (L2.4.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-uniqueness--orbit-scoped-uniqueness); background in Baader & Nipkow [1998].
 
-`CNF-Uniq` (L2.4.T2) is the Church-Rosser theorem (Baader & Nipkow Thm 2.1.15)
+[`CNF-Uniq` (L2.4.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-uniqueness--orbit-scoped-uniqueness) is the Church-Rosser theorem (Baader & Nipkow Thm 2.1.15)
 for the abstract reduction system (𝒰_M, →_ρ). Under PA-WN + PA-Conf, CFix(ρ_M) is a
 well-defined total function μT_{ρ,M} → NF(→_ρ).
 
@@ -1238,8 +1238,8 @@ Baader & Nipkow [1998] §6.1
 
 Under PA-Conf: CFix(ρ_M)(CFix(ρ_M)(x)) = CFix(ρ_M)(x).
 
-*Proof.* CFix(ρ_M)(x) ∈ NF(→_ρ) (`CNF-Ex` (L2.4.T1)). By `NF⊆Fix` (L2.1.T1), CFix(ρ_M)(x) ∈ Fix(ρ_M),
-so ρ_M(CFix(ρ_M)(x)) = CFix(ρ_M)(x). Then d_M(CFix(ρ_M)(x)) = 0 (`Fix-D0` (L2.3.T3)) and
+*Proof.* CFix(ρ_M)(x) ∈ NF(→_ρ) ([`CNF-Ex` (L2.4.T1)](CRPT_OMEGA_TOWER_L2.md#cnf-existence)). By [`NF⊆Fix` (L2.1.T1)](CRPT_OMEGA_TOWER_L2.md#nf--fix), CFix(ρ_M)(x) ∈ Fix(ρ_M),
+so ρ_M(CFix(ρ_M)(x)) = CFix(ρ_M)(x). Then d_M(CFix(ρ_M)(x)) = 0 ([`Fix-D0` (L2.3.T3)](CRPT_OMEGA_TOWER_L2.md#fixpoints-have-depth-zero)) and
 CFix(ρ_M)(CFix(ρ_M)(x)) = ρ_M⁰(CFix(ρ_M)(x)) = CFix(ρ_M)(x). ∎
 
 ### of the Church-Rosser Theorem
@@ -1254,8 +1254,8 @@ Under PA-WN + PA-Conf, every x ∈ 𝒰_M
 reaches CFix(ρ_M)(x) in exactly d_M(x) steps and no fewer.
 
 *Proof.* This is the definition of d_M(x) = min{n | ρ_M^n(x) ∈ Fix(ρ_M)} combined
-with `CNF-Ex` (L2.4.T1) and `CNF-Uniq` (L2.4.T2). No additional argument is required. The claim follows
-immediately from the definitions and the Church-Rosser theorem (`CNF-Uniq` (L2.4.T2)). ∎
+with [`CNF-Ex` (L2.4.T1)](CRPT_OMEGA_TOWER_L2.md#cnf-existence) and [`CNF-Uniq` (L2.4.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-uniqueness--orbit-scoped-uniqueness). No additional argument is required. The claim follows
+immediately from the definitions and the Church-Rosser theorem ([`CNF-Uniq` (L2.4.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-uniqueness--orbit-scoped-uniqueness)). ∎
 
 ### Provenance of the CR Corollary
 
@@ -1264,13 +1264,13 @@ immediately from the definitions and the Church-Rosser theorem (`CNF-Uniq` (L2.4
 | **Remark** | L2.4.R5 | `CRCor-Prov` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `CR-Cor` (L2.4.C1).
+**Source:** CRPT; from [`CR-Cor` (L2.4.C1)](CRPT_OMEGA_TOWER_L2.md#of-the-church-rosser-theorem).
 
-`CR-Cor` (L2.4.C1) is a direct consequence of the Church-Rosser theorem applied to ρ_M.
+[`CR-Cor` (L2.4.C1)](CRPT_OMEGA_TOWER_L2.md#of-the-church-rosser-theorem) is a direct consequence of the Church-Rosser theorem applied to ρ_M.
 
 ### Abstraction as Recursive Projection
 
-**Provenance.** This subsection synthesizes `Rec-Proj` (L2.1.D4) with the regime partition
+**Provenance.** This subsection synthesizes [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) with the regime partition
 (L2.2) to give a single characterization of abstraction as recursive projection by ρ_M.
 All ingredients are established in §L1.2–L1.5–6. No new axioms are introduced.
 
@@ -1280,7 +1280,7 @@ All ingredients are established in §L1.2–L1.5–6. No new axioms are introduc
 | **Definition** | L2.4.D2 | `Abs-L0` |  | **Novel** |
 **Synopsis:** The abstraction quotient at L2 (restated from L0): the map x ↦ NFC_M(CNF_M(x)) sends each element to its fiber equivalence class. This is the same construction as the L0 quotient 𝒰/≃_π instantiated to the CRPT projection operator.
 
-**Source:** CRPT; restates the L0 abstraction (`Fiber` (L0.1.D2)) via `NFC-NM` (L2.5.D1).
+**Source:** CRPT; restates the L0 abstraction ([`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence)) via [`NFC-NM` (L2.5.D1)](CRPT_OMEGA_TOWER_L2.md#normal-form-fiber--native-form).
 
 Let M be a CRPT model with substrate
 (𝒰_M, →_ρ, →_σ), reduction strategy ρ_M, and regime partition 𝒰 = ↓_M ∐ ∞_M.
@@ -1288,7 +1288,7 @@ Define the *abstraction* of x ∈ 𝒰_M by:
 ```
 Abs_M(x) := CFix(ρ_M)(x)
 ```
-where CFix(ρ_M) is the canonical normal form map of `Rec-Proj` (L2.1.D4).
+where CFix(ρ_M) is the canonical normal form map of [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection).
 
 ### Abstraction = Recursive Projection
 | Type | Label | Tag | Notation | Status |
@@ -1296,7 +1296,7 @@ where CFix(ρ_M) is the canonical normal form map of `Rec-Proj` (L2.1.D4).
 | **Theorem** | L2.4.T4 | `Abs=RP` |  | **Novel** |
 **Synopsis:** Abstraction equals recursive projection: the abstraction map Abs_M(x) is computed by iterating ρ_M — ρ_M^{d_M(x)}(x) on ↓_M (reaching the fixpoint) and lim_{n→∞} ρ_M^n(x) on ∞_M (the topological limit). Abstraction is recursive projection to the canonical form.
 
-**Source:** CRPT; from `Rec-Proj` (L2.1.D4) + `d_M` (L2.3.D2).
+**Source:** CRPT; from [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) + [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m).
 
 For all x ∈ 𝒰_M:
 ```
@@ -1308,17 +1308,17 @@ Abs_M(x) = {
 
 *Proof.*
 
-**Case 1: x ∈ ↓_M.** By `Reg-Strat` (L2.2.D3) and PA-WN, there exists a finite
+**Case 1: x ∈ ↓_M.** By [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification) and PA-WN, there exists a finite
 d_M(x) ∈ ℕ such that ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M), and ρ_M^k(x) ∉ Fix(ρ_M) for
-all k < d_M(x) (`PA-WN-Tot` (L2.2.T4), `d_M` (L2.3.D2)). By `Fix=NF` (L2.1.T2), Fix(ρ_M) = NF(→_ρ)
-under PA-WN. By `Rec-Proj` (L2.1.D4), CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x). Hence
+all k < d_M(x) ([`PA-WN-Tot` (L2.2.T4)](CRPT_OMEGA_TOWER_L2.md#pa-wn-gives-terminating-path-witnesses), [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m)). By [`Fix=NF` (L2.1.T2)](CRPT_OMEGA_TOWER_L2.md#fix--nf), Fix(ρ_M) = NF(→_ρ)
+under PA-WN. By [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection), CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x). Hence
 Abs_M(x) = CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x). ✓
 
-**Case 2: x ∈ ∞_M.** By `Reg-Strat` (L2.2.D3) and PA-NWF, ρ_M^n(x) ∉ Fix(ρ_M) for all
-n ∈ ℕ. By PA-WN_top (`PA-Scope` (L1.5.D1)), the sequence (ρ_M^n(x))_{n∈ℕ} converges
-in (𝒰, 𝒯) to a limit L. Uniqueness of the limit follows from `TopSep-Uniq` (L1.7.T1),
+**Case 2: x ∈ ∞_M.** By [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification) and PA-NWF, ρ_M^n(x) ∉ Fix(ρ_M) for all
+n ∈ ℕ. By PA-WN_top ([`PA-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration)), the sequence (ρ_M^n(x))_{n∈ℕ} converges
+in (𝒰, 𝒯) to a limit L. Uniqueness of the limit follows from [`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep),
 which uses the explicit TopSep(𝒯) condition required by PA-WN_top. By
-`Rec-Proj` (L2.1.D4), CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) = L. Hence
+[`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection), CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) = L. Hence
 Abs_M(x) = CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x). ✓
 
 In both cases, Abs_M(x) is the result of recursive projection by ρ_M — finite
@@ -1331,11 +1331,11 @@ iteration to a fixpoint (↓_M) or infinite iteration to a topological limit (�
 | **Remark** | L2.4.R6 | `Why-RecProj` | | **Novel** |
 **Synopsis:** Why the term "recursive projection" is precise.
 
-**Source:** CRPT; from `CNF-Stab` (L2.4.T3).
+**Source:** CRPT; from [`CNF-Stab` (L2.4.T3)](CRPT_OMEGA_TOWER_L2.md#cnf-stability).
 
 The term "projection" is precise: each
 application of ρ_M projects along the →_ρ relation toward a canonical form, and
-ρ_M² = ρ_M on Fix(ρ_M) (idempotence on fixpoints, `CNF-Stab` (L2.4.T3)). The recursion is
+ρ_M² = ρ_M on Fix(ρ_M) (idempotence on fixpoints, [`CNF-Stab` (L2.4.T3)](CRPT_OMEGA_TOWER_L2.md#cnf-stability)). The recursion is
 the iteration ρ_M, ρ_M², ρ_M³, ...; the projection is the collapse from fiber to
 canonical representative. Together they yield the abstraction map Abs_M = CFix(ρ_M).
 
@@ -1349,18 +1349,18 @@ canonical representative. Together they yield the abstraction map Abs_M = CFix(�
 | **Theorem** | L2.4.T5 | `WF-Canon-Pf` |  | **Novel** |
 **Synopsis:** The well-founded canonicalisation proof: under PA-WN and scoped confluence, the canonical form map CNF_M is well-defined on all of ↓_M. The proof proceeds by well-founded induction on derivation height: the base case (fixed points) is immediate, and the inductive step uses scoped confluence to show all reduction paths from x agree on their canonical form.
 
-**Source:** CRPT; from PA-WN (L1.2.Ax1) + PA-Conf (L1.2.Ax2) + `CNF-Ex` (L2.4.T1) + `CNF-Uniq` (L2.4.T2).
+**Source:** CRPT; from [PA-WN (L1.2.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn--weak-normalisation) + [PA-Conf (L1.2.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-conf--confluence--church-rosser) + [`CNF-Ex` (L2.4.T1)](CRPT_OMEGA_TOWER_L2.md#cnf-existence) + [`CNF-Uniq` (L2.4.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-uniqueness--orbit-scoped-uniqueness).
 
 *(Formal proof of the well-founded canonicalisation theorem, deferred to this
 point where all dependencies are in scope.)*
 
 **WF-Canon-1:** ∀x ∈ ↓_M : CFix(ρ_M)(x) ∈ Fix(ρ_M).
 
-*Proof.* Let x ∈ ↓_M. By `Rec-Proj` (L2.1.D4):
+*Proof.* Let x ∈ ↓_M. By [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection):
 ```
 CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x)
 ```
-By `d-WD` (L2.3.T1), d_M(x) ∈ ℕ is well-defined. By `d_M` (L2.3.D2),
+By [`d-WD` (L2.3.T1)](CRPT_OMEGA_TOWER_L2.md#d_m-is-well-defined-on-μt_ρm), d_M(x) ∈ ℕ is well-defined. By [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m),
 d_M(x) = min{n ∈ ℕ | ρ_M^n(x) ∈ Fix(ρ_M)}. Therefore, by the definition of
 minimum, ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M). Hence CFix(ρ_M)(x) ∈ Fix(ρ_M). ∎
 
@@ -1368,11 +1368,11 @@ minimum, ρ_M^{d_M(x)}(x) ∈ Fix(ρ_M). Hence CFix(ρ_M)(x) ∈ Fix(ρ_M). ∎
 
 *Proof.* Let f ∈ Fix(ρ_M). We exhibit x := f as the required witness.
 
-*Step 1: f ∈ ↓_M.* By `d_M` (L2.3.D2), ↓_M = {x ∈ 𝒰_M | ∃n ∈ ℕ : ρ_M^n(x) ∈ Fix(ρ_M)}.
+*Step 1: f ∈ ↓_M.* By [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m), ↓_M = {x ∈ 𝒰_M | ∃n ∈ ℕ : ρ_M^n(x) ∈ Fix(ρ_M)}.
 Take n = 0: ρ_M^0(f) = f ∈ Fix(ρ_M). Hence f ∈ ↓_M. ✓
 
-*Step 2: CFix(ρ_M)(f) = f.* By `Fix-D0` (L2.3.T3), d_M(f) = 0 for all f ∈ Fix(ρ_M).
-By `Rec-Proj` (L2.1.D4):
+*Step 2: CFix(ρ_M)(f) = f.* By [`Fix-D0` (L2.3.T3)](CRPT_OMEGA_TOWER_L2.md#fixpoints-have-depth-zero), d_M(f) = 0 for all f ∈ Fix(ρ_M).
+By [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection):
 ```
 CFix(ρ_M)(f) = ρ_M^{d_M(f)}(f) = ρ_M^0(f) = f
 ```
@@ -1386,16 +1386,16 @@ Therefore every fixpoint is the CFix-image of itself, witnessed by itself. ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.4.R7 | `CFix-Surj` | | **Novel** |
-**Synopsis:** CFix(ρ_M) : ↓_M → Fix(ρ_M) is surjective — immediate from Fix(ρ_M) ⊆ ↓_M (fixpoints have depth 0, `Fix-D0` (L2.3.T3)), with no model-specific assumptions.
+**Synopsis:** CFix(ρ_M) : ↓_M → Fix(ρ_M) is surjective — immediate from Fix(ρ_M) ⊆ ↓_M (fixpoints have depth 0, [`Fix-D0` (L2.3.T3)](CRPT_OMEGA_TOWER_L2.md#fixpoints-have-depth-zero)), with no model-specific assumptions.
 
-**Source:** CRPT; from `WF-Canon-Pf` (L2.4.T5) + `Fix-D0` (L2.3.T3).
+**Source:** CRPT; from [`WF-Canon-Pf` (L2.4.T5)](CRPT_OMEGA_TOWER_L2.md#wf-canon-complete-proof) + [`Fix-D0` (L2.3.T3)](CRPT_OMEGA_TOWER_L2.md#fixpoints-have-depth-zero).
 
 WF-Canon-2 shows that CFix(ρ_M) : ↓_M → Fix(ρ_M) is surjective (every
 fixpoint is in the range). This is non-trivial only if one imagines models where
 Fix(ρ_M) ⊄ ↓_M — but in CRPT, Fix(ρ_M) ⊆ ↓_M universally (fixpoints have
 depth 0, hence are convergent), and every fixpoint is trivially its own witness.
 The surjectivity content of WF-Canon-2 is therefore an immediate consequence of
-Fix(ρ_M) ⊆ ↓_M together with `Fix-D0` (L2.3.T3). No model-specific assumptions
+Fix(ρ_M) ⊆ ↓_M together with [`Fix-D0` (L2.3.T3)](CRPT_OMEGA_TOWER_L2.md#fixpoints-have-depth-zero). No model-specific assumptions
 are required.
 
 ---
@@ -1413,7 +1413,7 @@ are required.
 | **Definition** | L2.5.D1 | `NFC-NM` |  | **Novel** |
 **Synopsis:** The normal-form fiber NFC_M(f) is the complete preimage of fixed point f under the canonical form map: NFC_M(f) = {x ∈ 𝒰_M | CNF_M(x) = f}. This is the named partition block corresponding to f, containing every element whose projection orbit terminates at f. Fibers partition ↓_M into disjoint observable equivalence classes.
 
-**Source:** CRPT; from `Rec-Proj` (L2.1.D4).
+**Source:** CRPT; from [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection).
 
 For any element y in the range of CFix(ρ_M) (i.e., y ∈ NF(→_ρ) ∪ Limits(𝒯)):
 ```
@@ -1431,9 +1431,9 @@ Together: NFC_M(y) partitions 𝒰 by destination (normal forms or limits).
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L2.5.D2 | `≃_M` | ≃_M | **Novel** |
-**Synopsis:** Observable (orbit) equivalence: x ≃_M y holds when x and y share the same canonical form, CFix(ρ_M)(x) = CFix(ρ_M)(y). It is total and unconditional on ↓_M (CFix is the finitary normal form). On ∞_M, CFix is the topological limit and so requires PA-WN_top; without it the regime-general observable equivalence is persistent orbit equivalence ≃∞ (`≃∞` (L3.3.D7)), with which ≃_M agrees on the PA-WN_top sub-class.
+**Synopsis:** Observable (orbit) equivalence: x ≃_M y holds when x and y share the same canonical form, CFix(ρ_M)(x) = CFix(ρ_M)(y). It is total and unconditional on ↓_M (CFix is the finitary normal form). On ∞_M, CFix is the topological limit and so requires PA-WN_top; without it the regime-general observable equivalence is persistent orbit equivalence ≃∞ ([`≃∞` (L3.3.D7)](CRPT_OMEGA_TOWER_L3.md#--persistent-orbit-equivalence)), with which ≃_M agrees on the PA-WN_top sub-class.
 
-**Source:** CRPT; from `Rec-Proj` (L2.1.D4).
+**Source:** CRPT; from [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection).
 
 Define the relation ≃_M on 𝒰:
 ```
@@ -1441,18 +1441,18 @@ x ≃_M y :⟺ CFix(ρ_M)(x) = CFix(ρ_M)(y)
 ```
 x and y are *orbit-equivalent* if they have the same canonical normal form (or limit point).
 
-*Regime-aware reading.* On **↓_M**, CFix(ρ_M)(x) is the finitary normal form (`CNF-Ex` (L2.4.T1)), so ≃_M is total and is exactly CFix-equality. On **∞_M**, CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) is the topological limit, which exists only under PA-WN_top (`TopSep-Uniq` (L1.7.T1)); so ≃_M is **partial** on ∞_M, defined precisely on the PA-WN_top sub-class. Where PA-WN_top is absent, the regime-general observable equivalence on ∞_M is persistent orbit equivalence ≃∞ (`≃∞` (L3.3.D7)), comparing ω-limit sets. The two **agree** on the PA-WN_top sub-class — a single topological limit L is exactly the singleton ω-limit set {[L]_≈}. Accordingly, `PA-Bisim` (L1.3.Ax1)'s conclusion x ≃_M y reads as CFix-equality on ↓_M and as ≃∞ on ∞_M where PA-WN_top is absent.
+*Regime-aware reading.* On **↓_M**, CFix(ρ_M)(x) is the finitary normal form ([`CNF-Ex` (L2.4.T1)](CRPT_OMEGA_TOWER_L2.md#cnf-existence)), so ≃_M is total and is exactly CFix-equality. On **∞_M**, CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) is the topological limit, which exists only under PA-WN_top ([`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep)); so ≃_M is **partial** on ∞_M, defined precisely on the PA-WN_top sub-class. Where PA-WN_top is absent, the regime-general observable equivalence on ∞_M is persistent orbit equivalence ≃∞ ([`≃∞` (L3.3.D7)](CRPT_OMEGA_TOWER_L3.md#--persistent-orbit-equivalence)), comparing ω-limit sets. The two **agree** on the PA-WN_top sub-class — a single topological limit L is exactly the singleton ω-limit set {[L]_≈}. Accordingly, [`PA-Bisim` (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence)'s conclusion x ≃_M y reads as CFix-equality on ↓_M and as ≃∞ on ∞_M where PA-WN_top is absent.
 
 ### ≃_M and Orbit-Coincidence
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.5.R1 | `EquivM-OrbitCoin` | | **Novel** |
-**Synopsis:** Under PA-Conf, ≃_M coincides with the orbit-coincidence characterisation (`CNF=CR` (L2.5.T2)) and extends directly to the native regime-stratified setting.
+**Synopsis:** Under PA-Conf, ≃_M coincides with the orbit-coincidence characterisation ([`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient)) and extends directly to the native regime-stratified setting.
 
-**Source:** CRPT; from `≃_M` (L2.5.D2) + `CNF=CR` (L2.5.T2).
+**Source:** CRPT; from [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m) + [`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient).
 
-Under PA-Conf, this definition is equivalent to the orbit-coincidence characterization (`CNF=CR` (L2.5.T2)), and it extends directly to the native regime-stratified setting. ≃_M is regime-agnostic: it works identically on both finitary (↓_M) and topological (∞_M) regimes.
+Under PA-Conf, this definition is equivalent to the orbit-coincidence characterization ([`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient)), and it extends directly to the native regime-stratified setting. ≃_M is regime-agnostic: it works identically on both finitary (↓_M) and topological (∞_M) regimes.
 
 ### ≃_M is an Equivalence Relation
 | Type | Label | Tag | Notation | Status |
@@ -1460,7 +1460,7 @@ Under PA-Conf, this definition is equivalent to the orbit-coincidence characteri
 | **Theorem** | L2.5.T1 | `≃-Eq` |  | **Novel** |
 **Synopsis:** ≃_M is an equivalence relation: observable equivalence is reflexive, symmetric, and transitive on 𝒰_M — immediate from equality of canonical forms CFix(ρ_M).
 
-**Source:** CRPT; from `≃_M` (L2.5.D2).
+**Source:** CRPT; from [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m).
 
 ≃_M is reflexive, symmetric,
 and transitive on all of 𝒰.
@@ -1475,7 +1475,7 @@ Transitivity: if CFix(ρ_M)(x) = CFix(ρ_M)(y) and CFix(ρ_M)(y) = CFix(ρ_M)(z)
 | **Lemma** | L2.5.L1 | `Orb-Bic` |  | **Novel** |
 **Synopsis:** Orbit-coincidence biconditional: for convergent x, y, they have the same canonical form iff their orbits reach a common reduct — CFix(ρ_M)(x) = CFix(ρ_M)(y) ⟺ ∃z with x →_ρ* z and y →_ρ* z. This is the Church-Rosser characterization underlying ≃_M.
 
-**Source:** CRPT; from PA-WN (L1.2.Ax1) + PA-Conf (L1.2.Ax2) + `≃_M` (L2.5.D2).
+**Source:** CRPT; from [PA-WN (L1.2.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn--weak-normalisation) + [PA-Conf (L1.2.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-conf--confluence--church-rosser) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m).
 
 For x, y ∈ ↓_M, under PA-WN and PA-Conf:
 ```
@@ -1483,9 +1483,9 @@ CFix(ρ_M)(x) = CFix(ρ_M)(y) ⟺ ∃z ∈ 𝒰 : x →_ρ* z ∧ y →_ρ* z
 ```
 
 *Proof.*
-(⇒) Let CFix(ρ_M)(x) = CFix(ρ_M)(y) = c. By `Rec-Proj` (L2.1.D4), c = ρ_M^{d_M(x)}(x); since each ρ_M-step is a →_ρ-step, x →_ρ* c. Symmetrically y →_ρ* c. Hence c witnesses the existential. ✓
+(⇒) Let CFix(ρ_M)(x) = CFix(ρ_M)(y) = c. By [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection), c = ρ_M^{d_M(x)}(x); since each ρ_M-step is a →_ρ-step, x →_ρ* c. Symmetrically y →_ρ* c. Hence c witnesses the existential. ✓
 
-(⇐) Let z satisfy x →_ρ* z and y →_ρ* z. By PA-WN, pick c₁ ∈ NF(→_ρ) with z →_ρ* c₁; composing paths gives x →_ρ* c₁ and y →_ρ* c₁. Since x →_ρ* CFix(ρ_M)(x) (by `Rec-Proj` (L2.1.D4)) and CFix(ρ_M)(x) ∈ NF(→_ρ), PA-Conf applied to x yields w with CFix(ρ_M)(x) →_ρ* w and c₁ →_ρ* w. Both CFix(ρ_M)(x) and c₁ are normal forms, so they cannot reduce further; hence w = CFix(ρ_M)(x) = c₁. By the identical argument applied to y, CFix(ρ_M)(y) = c₁. Therefore CFix(ρ_M)(x) = CFix(ρ_M)(y). ✓ ∎
+(⇐) Let z satisfy x →_ρ* z and y →_ρ* z. By PA-WN, pick c₁ ∈ NF(→_ρ) with z →_ρ* c₁; composing paths gives x →_ρ* c₁ and y →_ρ* c₁. Since x →_ρ* CFix(ρ_M)(x) (by [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection)) and CFix(ρ_M)(x) ∈ NF(→_ρ), PA-Conf applied to x yields w with CFix(ρ_M)(x) →_ρ* w and c₁ →_ρ* w. Both CFix(ρ_M)(x) and c₁ are normal forms, so they cannot reduce further; hence w = CFix(ρ_M)(x) = c₁. By the identical argument applied to y, CFix(ρ_M)(y) = c₁. Therefore CFix(ρ_M)(x) = CFix(ρ_M)(y). ✓ ∎
 
 ### CNF-Fiber = Church-Rosser Quotient
 | Type | Label | Tag | Notation | Status |
@@ -1493,15 +1493,15 @@ CFix(ρ_M)(x) = CFix(ρ_M)(y) ⟺ ∃z ∈ 𝒰 : x →_ρ* z ∧ y →_ρ* z
 | **Theorem** | L2.5.T2 | `CNF=CR` | | **Novel** |
 **Synopsis:** The canonical representative fiber theorem: CNF_M(x) = CNF_M(y) if and only if x ≃_M y. This is the fundamental connection between the canonical form computation and observational equivalence. The canonical form map is exactly the quotient map from 𝒰_M to its observational equivalence classes.
 
-**Source:** CRPT; from `Rec-Proj` (L2.1.D4) + `NFC-NM` (L2.5.D1); background in Church & Rosser [1936], Baader & Nipkow [1998] §2.7.
+**Source:** CRPT; from [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) + [`NFC-NM` (L2.5.D1)](CRPT_OMEGA_TOWER_L2.md#normal-form-fiber--native-form); background in Church & Rosser [1936], Baader & Nipkow [1998] §2.7.
 
 Under PA-WN and PA-Conf, for all x, y ∈ ↓_M:
 ```
 x ≃_M y ⟺ ∃z ∈ 𝒰 : x →_ρ* z ∧ y →_ρ* z
 ```
-That is, the CNF-equality relation ≃_M (`≃_M` (L2.5.D2)) coincides with the orbit-coincidence relation — the Church-Rosser quotient of the reduction relation restricted to ↓_M. (For x, y ∈ ∞_M, orbit-coincidence is topological limit-coincidence, which equals CFix(ρ_M)-equality by `Rec-Proj` (L2.1.D4) and PA-WN_top.)
+That is, the CNF-equality relation ≃_M ([`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m)) coincides with the orbit-coincidence relation — the Church-Rosser quotient of the reduction relation restricted to ↓_M. (For x, y ∈ ∞_M, orbit-coincidence is topological limit-coincidence, which equals CFix(ρ_M)-equality by [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) and PA-WN_top.)
 
-*Proof.* x ≃_M y iff CFix(ρ_M)(x) = CFix(ρ_M)(y) by `≃_M` (L2.5.D2). By `Orb-Bic` (L2.5.L1), CFix(ρ_M)(x) = CFix(ρ_M)(y) iff ∃z ∈ 𝒰 : x →_ρ* z ∧ y →_ρ* z. The composition of these equivalences gives the stated biconditional. ∎
+*Proof.* x ≃_M y iff CFix(ρ_M)(x) = CFix(ρ_M)(y) by [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m). By [`Orb-Bic` (L2.5.L1)](CRPT_OMEGA_TOWER_L2.md#orbit-coincidence-biconditional-under-pa-wn--pa-conf), CFix(ρ_M)(x) = CFix(ρ_M)(y) iff ∃z ∈ 𝒰 : x →_ρ* z ∧ y →_ρ* z. The composition of these equivalences gives the stated biconditional. ∎
 
 ### Partition into NFC Classes — Native Form
 | Type | Label | Tag | Notation | Status |
@@ -1509,7 +1509,7 @@ That is, the CNF-equality relation ≃_M (`≃_M` (L2.5.D2)) coincides with the 
 | **Corollary** | L2.5.C1 | `NFC-Part-NM` |  | **Novel** |
 **Synopsis:** The normal-form fiber partition at L2: the collection {NFC_M(f) | f ∈ Fix(ρ_M)} is a partition of ↓_M. Non-emptiness: each f ∈ NFC_M(f). Disjointness: NFC_M(f₁) ∩ NFC_M(f₂) = ∅ when f₁ ≠ f₂. Exhaustiveness: every x ∈ ↓_M belongs to NFC_M(CNF_M(x)). The index set of this partition is Fix(ρ_M) = Q_M.
 
-**Source:** CRPT; from `NFC-NM` (L2.5.D1) + `≃-Eq` (L2.5.T1).
+**Source:** CRPT; from [`NFC-NM` (L2.5.D1)](CRPT_OMEGA_TOWER_L2.md#normal-form-fiber--native-form) + [`≃-Eq` (L2.5.T1)](CRPT_OMEGA_TOWER_L2.md#_m-is-an-equivalence-relation).
 
 Under PA-Conf:
 ```
@@ -1517,6 +1517,6 @@ Under PA-Conf:
 ```
 The NFC classes partition all of 𝒰; they are the ≃_M equivalence classes.
 
-*Proof.* Exhaustiveness: every x ∈ 𝒰 is in NFC_M(CFix(ρ_M)(x)) (by `NFC-NM` (L2.5.D1), since CFix(ρ_M)(x) is in the range of CFix(ρ_M)). Disjointness: if x ∈ NFC_M(y₁) ∩ NFC_M(y₂), then CFix(ρ_M)(x) = y₁ and CFix(ρ_M)(x) = y₂, so y₁ = y₂ (CFix(ρ_M) single-valued). ∎
+*Proof.* Exhaustiveness: every x ∈ 𝒰 is in NFC_M(CFix(ρ_M)(x)) (by [`NFC-NM` (L2.5.D1)](CRPT_OMEGA_TOWER_L2.md#normal-form-fiber--native-form), since CFix(ρ_M)(x) is in the range of CFix(ρ_M)). Disjointness: if x ∈ NFC_M(y₁) ∩ NFC_M(y₂), then CFix(ρ_M)(x) = y₁ and CFix(ρ_M)(x) = y₂, so y₁ = y₂ (CFix(ρ_M) single-valued). ∎
 
 ---

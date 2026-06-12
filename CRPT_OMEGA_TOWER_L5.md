@@ -20,12 +20,12 @@ the component models are CRPT models.
 | **Definition** | L5.1.D1 | `CRPT-Mod-18` |  | **Novel** |
 **Synopsis:** A CRPT model (restated at L5 for the model algebra context): a substrate (𝒰_M, →_ρ, →_σ, 𝒯) satisfying the PA-* axioms of L1, with non-trivial universe and the axiom profile Profile(M) satisfying consistency. This is the object type for all six model algebra operations.
 
-**Source:** CRPT; from `Sub` (L1.1.D1) + the PA-* axioms (L1.2–L1.3).
+**Source:** CRPT; from [`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate) + the PA-* axioms (L1.2–L1.3).
 
 A *CRPT model* M is
 a substrate (𝒰_M, →_ρ, →_σ, ρ_M) satisfying the substrate
 conditions (L1.1), equipped with an axiom profile Profile(M) = (PA-Profile_M, LA_M)
-satisfying the three conditions of `CRPT-Mod-18` (L5.1.D1). Model-local axioms LA_M may extend the abstract PA-* system with
+satisfying the three conditions of [`CRPT-Mod-18` (L5.1.D1)](CRPT_OMEGA_TOWER_L5.md#crpt-model). Model-local axioms LA_M may extend the abstract PA-* system with
 model-specific commitments.
 
 ### Model Composition M₁ ∘ M₂
@@ -68,11 +68,11 @@ Universe 𝒰_{M₁} ∩ 𝒰_{M₂}, relations
 | **Theorem** | L5.1.T2 | `∩-Dec` |  | **Novel** |
 **Synopsis:** Intersection strictly decreases the universe: |𝒰_{M₁ ∩ M₂}| ≤ min(|𝒰_{M₁}|, |𝒰_{M₂}|). Intersection can never produce a model with more elements than either component. When 𝒰_{M₁} ∩ 𝒰_{M₂} = ∅, the intersection is the empty model (a degenerate case excluded by the non-triviality condition).
 
-**Source:** CRPT; from `Mod-∩` (L5.1.D3).
+**Source:** CRPT; from [`Mod-∩` (L5.1.D3)](CRPT_OMEGA_TOWER_L5.md#model-intersection-m₁--m₂).
 
 𝒰_{M₁∩M₂} ⊆ 𝒰_{M₁} and ⊆ 𝒰_{M₂}.
 
-*Proof.* 𝒰_{M₁∩M₂} = 𝒰_{M₁} ∩ 𝒰_{M₂} by `Mod-∩` (L5.1.D3). The set intersection
+*Proof.* 𝒰_{M₁∩M₂} = 𝒰_{M₁} ∩ 𝒰_{M₂} by [`Mod-∩` (L5.1.D3)](CRPT_OMEGA_TOWER_L5.md#model-intersection-m₁--m₂). The set intersection
 𝒰_{M₁} ∩ 𝒰_{M₂} ⊆ 𝒰_{M₁} and ⊆ 𝒰_{M₂} by definition of intersection. ∎
 
 ### Model Product M₁ × M₂
@@ -97,7 +97,7 @@ componentwise reduction and ρ_{M₁×M₂}(x,y) = (ρ_{M₁}(x), ρ_{M₂}(y)).
 π_{M₁} : M₁ × M₂ → M₁ and π_{M₂} : M₁ × M₂ → M₂
 defined by π_{M₁}(x,y) = x and π_{M₂}(x,y) = y are model homomorphisms (L5.2).
 
-*Proof.* Verify `Hom` (L5.2.D1) for π_{M₁} (π_{M₂} symmetric):
+*Proof.* Verify [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) for π_{M₁} (π_{M₂} symmetric):
 - Φ_R: (x,y) →_ρ (x',y') iff x →_ρ x' ∧ y →_ρ y'. Then π_{M₁}(x,y) = x →_ρ x' = π_{M₁}(x',y'). ✓
 - Φ_E: (x,y) ≃_{M₁×M₂} (x',y') iff x ≃_{M₁} x' ∧ y ≃_{M₂} y'. Then π_{M₁}(x,y) = x ≃_{M₁} x' = π_{M₁}(x',y'). ✓
 - Φ_ρ: π_{M₁}(ρ_{M₁×M₂}(x,y)) = π_{M₁}(ρ_{M₁}(x),ρ_{M₂}(y)) = ρ_{M₁}(x) = ρ_{M₁}(π_{M₁}(x,y)) ≃_{M₁} ρ_{M₁}(π_{M₁}(x,y)). ✓ ∎
@@ -152,7 +152,7 @@ The *zero model* 𝟘 = (∅, ∅, undefined): M ∩ 𝟘 = 𝟘.
 | **Theorem** | L5.1.T5 | `CNF∞-BQF` |  | **Novel** |
 **Synopsis:** The model algebra (Mod_CRPT, ∘, ∩, ×, /, ∪) satisfies the standard algebraic identities for a distributive lattice with product. This places the collection of CRPT models inside a well-understood algebraic structure, enabling model-algebraic proofs alongside category-theoretic ones.
 
-**Source:** CRPT; from PA-NWF (L1.2.Ax4) + PA-Bisim (L1.3.Ax1) + `SC-1` (L3.3.D2).
+**Source:** CRPT; from [PA-NWF (L1.2.Ax4)](CRPT_OMEGA_TOWER_L1.md#pa-nwf--non-well-foundedness--divergence-existence) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence) + [`SC-1` (L3.3.D2)](CRPT_OMEGA_TOWER_L3.md#sc-1-ω-limit-bisimulation-fixation).
 
 Under PA-NWF + PA-Bisim
 + SC-1: CNF∞_M(x) is a fixpoint of the induced map ρ̄_M : 𝒰_M/≈ → 𝒰_M/≈
@@ -171,7 +171,7 @@ defined by ρ̄_M([x]_≈) = [ρ_M(x)]_≈. PA-Bisim ensures ρ̄_M is well-defi
 | **Definition** | L5.2.D1 | `Hom` | | **Novel** |
 **Synopsis:** A CRPT model homomorphism from M₁ to M₂ is a function φ: 𝒰_{M₁} → 𝒰_{M₂} that preserves all four substrate components: the reduction relation (Φ_R), observable equivalence (Φ_E), the projection operator (Φ_ρ), and the local axiom conditions (Φ_LA). Homomorphisms are the morphisms of the category Mod_CRPT; they make precise what it means for one CRPT model to be a 'structure-preserving image' of another.
 
-**Source:** CRPT; from `Sub` (L1.1.D1) + `≃_M` (L2.5.D2).
+**Source:** CRPT; from [`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m).
 
 
 A *model homomorphism* is a function Φ_U : 𝒰_{M₁} → 𝒰_{M₂} satisfying:
@@ -191,7 +191,7 @@ A *model homomorphism* is a function Φ_U : 𝒰_{M₁} → 𝒰_{M₂} satisfyi
 | **Remark** | L5.2.R1 | `PhiLA-Compat` | | **Novel** |
 **Synopsis:** Φ_LA is a compatibility condition, not full local-axiom transport.
 
-**Source:** CRPT; from `Hom` (L5.2.D1).
+**Source:** CRPT; from [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂).
 
 Φ_LA does not
 require that every local axiom of M₁ become a theorem of M₂. It requires only that
@@ -207,7 +207,7 @@ characterises *LA-faithful morphisms*, a distinguished subclass.
 | **Theorem** | L5.2.T1 | `Mod-Cat` | | **Novel** |
 **Synopsis:** The category Mod_CRPT has CRPT models as objects and CRPT homomorphisms as morphisms. Its existence (identity morphisms exist, composition is associative and closed) validates the claim that CRPT is a category-theoretically coherent theory. The Lift operator (L8) and Collapse functor (L7) are endofunctors on Mod_CRPT, and their adjunction Lift ⊣ Collapse is a theorem within this category.
 
-**Source:** CRPT; from `Hom` (L5.2.D1).
+**Source:** CRPT; from [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂).
 
 
 CRPT models with model homomorphisms
@@ -259,9 +259,9 @@ with Ψ ∘ Φ = id_{M₁} and Φ ∘ Ψ = id_{M₂}.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.2.D3 | `R-Iso` |  | **Novel** |
-**Synopsis:** A regime-restricted isomorphism is a bijection between the convergent strata ℬ_M of two models that preserves ρ_M, derivation height d_M, and the canonical form CNF_M up to isomorphism. It compares models on their well-founded parts only, ignoring the persistent regime. It is the surjective (CRPT-saturated) special case of the faithful instantiation embedding `Inst-Emb` (L5.2.D4) — see `Iso-Sat` (L5.2.T7) — and its persistent dual is `R-Iso∞` (L5.2.D5) via `Iso-Dual` (L5.2.T8).
+**Synopsis:** A regime-restricted isomorphism is a bijection between the convergent strata ℬ_M of two models that preserves ρ_M, derivation height d_M, and the canonical form CNF_M up to isomorphism. It compares models on their well-founded parts only, ignoring the persistent regime. It is the surjective (CRPT-saturated) special case of the faithful instantiation embedding [`Inst-Emb` (L5.2.D4)](CRPT_OMEGA_TOWER_L5.md#instantiation-as-faithful-embedding) — see [`Iso-Sat` (L5.2.T7)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism--saturated-faithful-embedding) — and its persistent dual is [`R-Iso∞` (L5.2.D5)](CRPT_OMEGA_TOWER_L5.md#persistent-regime-restricted-isomorphism) via [`Iso-Dual` (L5.2.T8)](CRPT_OMEGA_TOWER_L5.md#regime-duality-of-restricted-isomorphisms).
 
-**Source:** CRPT; regime restriction of `Iso` (L5.2.D2) (coalgebra iso after Rutten [2000]).
+**Source:** CRPT; regime restriction of [`Iso` (L5.2.D2)](CRPT_OMEGA_TOWER_L5.md#isomorphism) (coalgebra iso after Rutten [2000]).
 
 Φ : ℬ_{M₁} → ℬ_{M₂} is a
 *regime-restricted isomorphism* if Φ restricted to ℬ_{M₁} is a bijection onto ℬ_{M₂}
@@ -273,7 +273,7 @@ preserving ρ_{M₁}/ρ_{M₂}, d_{M₁}/d_{M₂}, and CNF_{M₁}/CNF_{M₂} up 
 | **Theorem** | L5.2.T2 | `Φ_ZC` |  | **Novel** |
 **Synopsis:** On finite structures, Φ_ZC : ZFC_finite ≅ Cat_discrete sends each hereditarily finite set to the discrete category on its elements. The isomorphism preserves ρ (element removal ↔ object removal), derivation height (cardinality), and CFix (∅ ↔ 0_Cat).
 
-**Source:** CRPT; instance of `Iso` (L5.2.D2).
+**Source:** CRPT; instance of [`Iso` (L5.2.D2)](CRPT_OMEGA_TOWER_L5.md#isomorphism).
 
 On finite discrete
 structures: Φ_ZC : ZFC_finite ≅ Cat_discrete via Φ_ZC(X) = discrete category on X.
@@ -294,7 +294,7 @@ object is terminal; choose the terminal object corresponding to min(X) under the
 well-order transferred by Φ_ZC. Then:
 Φ_ZC(ρ_ZFC(X)) = Disc(X \ {min(X)}) = Disc(X) \ {min(X)} = ρ_Cat(Φ_ZC(X)). ✓
 
-**RRI-2 (Rank preservation):** d_ZFC(X) = |X| (`↓-Closed` (L2.2.T1) applied to ZFC).
+**RRI-2 (Rank preservation):** d_ZFC(X) = |X| ([`↓-Closed` (L2.2.T1)](CRPT_OMEGA_TOWER_L2.md#_m-is-ρ_m-closed) applied to ZFC).
 d_Cat(Disc(X)) = |Ob(Disc(X))| = |X|. Equal. ✓
 
 **RRI-3 (CNF correspondence):** Φ_ZC(CNF_ZFC) = Φ_ZC(∅) = Disc(∅) = 0_Cat = CNF_Cat. ✓
@@ -309,7 +309,7 @@ finite discrete category C is Disc(Ob(C)). The inverse is Ψ_ZC(C) = Ob(C). ✓ 
 | **Theorem** | L5.2.T3 | `Φ_CH` |  | **Novel** |
 **Synopsis:** On discrete structures, Φ_CH : Cat_small ≅ HoTT_discrete sends each category to the classifying type of its nerve. The isomorphism preserves ρ, derivation height, and CFix (0_Cat ↔ 𝟘).
 
-**Source:** CRPT; instance of `Iso` (L5.2.D2).
+**Source:** CRPT; instance of [`Iso` (L5.2.D2)](CRPT_OMEGA_TOWER_L5.md#isomorphism).
 
 On small/discrete
 structures: Φ_CH : Cat_small ≅ HoTT_discrete via Φ_CH(C) = classifying type of C.
@@ -342,7 +342,7 @@ with no elements). CNF_HoTT = 𝟘. ✓
 | **Theorem** | L5.2.T4 | `Φ_ZH` |  | **Novel** |
 **Synopsis:** Φ_ZH = Φ_CH ∘ Φ_ZC is the composite isomorphism ZFC_finite ≅ HoTT_discrete, witnessing that these foundational systems carry the same finite CRPT structure (same ρ, depth, and canonical forms).
 
-**Source:** CRPT; composition `Φ_CH` (L5.2.T3) ∘ `Φ_ZC` (L5.2.T2).
+**Source:** CRPT; composition [`Φ_CH` (L5.2.T3)](CRPT_OMEGA_TOWER_L5.md#φ_ch--category-theory-to-hott-restricted) ∘ [`Φ_ZC` (L5.2.T2)](CRPT_OMEGA_TOWER_L5.md#φ_zc--zfc-to-category-theory-restricted).
 
 Φ_ZH = Φ_CH ∘ Φ_ZC : ZFC_finite ≅ HoTT_discrete.
 
@@ -354,7 +354,7 @@ with no elements). CNF_HoTT = 𝟘. ✓
 | **Theorem** | L5.2.T5 | `Iso-Hor` |  | **Novel** |
 **Synopsis:** Regime-restricted isomorphisms preserve the horizon predicates: for Φ ∈ {Φ_ZC, Φ_CH, Φ_ZH}, H_S, H_I, and the orbit signature sig_M are invariant under Φ. Isomorphic foundations therefore have identical horizon structure.
 
-**Source:** CRPT; from `Φ_ZC` (L5.2.T2) + `Φ_CH` (L5.2.T3) + `H_S` (L3.1.D1) + `H_I` (L3.1.D2).
+**Source:** CRPT; from [`Φ_ZC` (L5.2.T2)](CRPT_OMEGA_TOWER_L5.md#φ_zc--zfc-to-category-theory-restricted) + [`Φ_CH` (L5.2.T3)](CRPT_OMEGA_TOWER_L5.md#φ_ch--category-theory-to-hott-restricted) + [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) + [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i).
 
 For Φ ∈ {Φ_ZC, Φ_CH, Φ_ZH}: H_S(x) = H_S(Φ(x)), H_I(x) = H_I(Φ(x)),
 sig_M(x) = sig_M(Φ(x)) (within the restricted models).
@@ -362,7 +362,7 @@ sig_M(x) = sig_M(Φ(x)) (within the restricted models).
 *Proof.* We verify each predicate is preserved.
 
 **H_S(x) = H_S(Φ(x)):** H_S(x) = ⊤ iff |{z | ρ_M(z) = ρ_M(x)}| > 1. Under Φ_ZC:
-ρ_Cat(Φ_ZC(x)) = Φ_ZC(ρ_ZFC(x)) (Φ_ρ, proved in `Φ_ZC` (L5.2.T2)). The number of
+ρ_Cat(Φ_ZC(x)) = Φ_ZC(ρ_ZFC(x)) (Φ_ρ, proved in [`Φ_ZC` (L5.2.T2)](CRPT_OMEGA_TOWER_L5.md#φ_zc--zfc-to-category-theory-restricted)). The number of
 preimages of ρ_ZFC(x) under ρ_ZFC equals the number of preimages of ρ_Cat(Φ_ZC(x))
 under ρ_Cat, because Φ_ZC is a bijection that commutes with ρ (Φ_ρ). Therefore
 |ρ_ZFC⁻¹(ρ_ZFC(x))| = |ρ_Cat⁻¹(ρ_Cat(Φ_ZC(x)))|, giving H_S(x) = H_S(Φ_ZC(x)). ✓
@@ -387,18 +387,18 @@ derivation height preserved (RRI-2). ✓ ∎
 | **Theorem** | L5.2.T6 | `Coll-Fix` |  | **Novel** |
 **Synopsis:** The collapse-to-fixpoints map κ_M(x) := CFix(ρ_M)(x) sends each convergent element to its canonical fixpoint. Under PA-WN + PA-Conf it is surjective onto Fix(ρ_M) and in general non-injective (many elements share a canonical form).
 
-**Source:** CRPT; from `Rec-Proj` (L2.1.D4) + `Fix-D0` (L2.3.T3).
+**Source:** CRPT; from [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) + [`Fix-D0` (L2.3.T3)](CRPT_OMEGA_TOWER_L2.md#fixpoints-have-depth-zero).
 
 Under PA-WN + PA-Conf, define
 κ_M : μT_{ρ,M} → Fix(ρ_M) by κ_M(x) := CFix(ρ_M)(x). Then κ_M is surjective and, in
 general, non-injective.
 
-*Proof.* Surjectivity: let f ∈ Fix(ρ_M). By `Fix-D0` (L2.3.T3), d_M(f)=0, so
+*Proof.* Surjectivity: let f ∈ Fix(ρ_M). By [`Fix-D0` (L2.3.T3)](CRPT_OMEGA_TOWER_L2.md#fixpoints-have-depth-zero), d_M(f)=0, so
 κ_M(f)=CFix(ρ_M)(f)=ρ_M^0(f)=f. Hence every fixpoint has a preimage.
 
 Non-injectivity in general: if there exist distinct x,y ∈ μT_{ρ,M} with CFix(ρ_M)(x)=CFix(ρ_M)(y),
 then κ_M(x)=κ_M(y) with x≠y, so κ_M is not injective. Such pairs occur exactly when
-some NFC fiber has size >1 (`NFC-NM` (L2.5.D1)), which is the generic non-degenerate
+some NFC fiber has size >1 ([`NFC-NM` (L2.5.D1)](CRPT_OMEGA_TOWER_L2.md#normal-form-fiber--native-form)), which is the generic non-degenerate
 collapse case in CRPT. Therefore κ_M is generally many-to-one. ∎
 
 ---
@@ -407,16 +407,16 @@ collapse case in CRPT. Therefore κ_M is generally many-to-one. ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.2.D4 | `Inst-Emb` | CRPT ↪ D | **Novel** |
-**Synopsis:** A CRPT instantiation is a *faithful embedding* of CRPT structure into a domain model D — not an isomorphism: an injective homomorphism that both preserves and *reflects* the CRPT-visible structure (ρ, ≃, the regime partition, and the regime invariants — d_M/CFix on ↓_M, and on ∞_M the total canonical representative CPer (`CPer` (L1.3.D1)) together with the AOI-hierarchy classifier, which is necessarily multi-level by `SC-Imp` (L6.3.T1)), while D may carry further structure invisible to ρ_D. The regime-restricted isomorphisms Φ_ZC/Φ_CH/Φ_ZH are the special case where such an embedding is additionally surjective (`Iso-Sat` (L5.2.T7)).
+**Synopsis:** A CRPT instantiation is a *faithful embedding* of CRPT structure into a domain model D — not an isomorphism: an injective homomorphism that both preserves and *reflects* the CRPT-visible structure (ρ, ≃, the regime partition, and the regime invariants — d_M/CFix on ↓_M, and on ∞_M the total canonical representative CPer ([`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative)) together with the AOI-hierarchy classifier, which is necessarily multi-level by [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility)), while D may carry further structure invisible to ρ_D. The regime-restricted isomorphisms Φ_ZC/Φ_CH/Φ_ZH are the special case where such an embedding is additionally surjective ([`Iso-Sat` (L5.2.T7)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism--saturated-faithful-embedding)).
 
-**Source:** CRPT; from `Hom` (L5.2.D1) + `≃_M` (L2.5.D2); embedding order `⪯` (L5.4.D2).
+**Source:** CRPT; from [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m); embedding order [`⪯` (L5.4.D2)](CRPT_OMEGA_TOWER_L5.md#expressiveness-).
 
-A homomorphism Φ : M → D (`Hom` (L5.2.D1)) is a **faithful CRPT embedding**, written M ↪ D, if:
+A homomorphism Φ : M → D ([`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂)) is a **faithful CRPT embedding**, written M ↪ D, if:
 ```
 (Emb)    Φ_U is injective;
 (Faith)  Φ reflects ≃ :  Φ(x) ≃_D Φ(y)  ⟹  x ≃_M y.
 ```
-Combined with Φ_E (preservation of ≃), (Faith) gives x ≃_M y ⟺ Φ(x) ≃_D Φ(y): the embedding neither merges nor splits CRPT-equivalence classes. Equivalently, Φ reflects the complete invariant of ≃ in each regime — but those invariants are of *different shape* in the two regimes: on ↓_M a **single** complete invariant, d_M/CFix (`CNF=CR` (L2.5.T2)); on ∞_M, where `SC-Imp` (L6.3.T1) proves *no single* bisimulation-invariant can classify the regime, the **AOI hierarchy** (`AOI-Unif` (L6.3.D10)) together with the total canonical representative CPer (`CPer` (L1.3.D1)). The convergent invariant is single; the persistent one is necessarily hierarchical (see `WF-NWF-Dual` (L3.3.T9)).
+Combined with Φ_E (preservation of ≃), (Faith) gives x ≃_M y ⟺ Φ(x) ≃_D Φ(y): the embedding neither merges nor splits CRPT-equivalence classes. Equivalently, Φ reflects the complete invariant of ≃ in each regime — but those invariants are of *different shape* in the two regimes: on ↓_M a **single** complete invariant, d_M/CFix ([`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient)); on ∞_M, where [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility) proves *no single* bisimulation-invariant can classify the regime, the **AOI hierarchy** ([`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi)) together with the total canonical representative CPer ([`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative)). The convergent invariant is single; the persistent one is necessarily hierarchical (see [`WF-NWF-Dual` (L3.3.T9)](CRPT_OMEGA_TOWER_L3.md#wfnwf-canonical-form-duality)).
 
 ### Why Embedding, Not Isomorphism
 
@@ -425,7 +425,7 @@ Combined with Φ_E (preservation of ≃), (Faith) gives x ≃_M y ⟺ Φ(x) ≃_
 | **Remark** | L5.2.R2 | `Why-Embed` | | **Novel** |
 **Synopsis:** Why a CRPT instantiation is a faithful embedding, not an isomorphism.
 
-**Source:** CRPT; from `Inst-Emb` (L5.2.D4).
+**Source:** CRPT; from [`Inst-Emb` (L5.2.D4)](CRPT_OMEGA_TOWER_L5.md#instantiation-as-faithful-embedding).
 
 A domain D realising CRPT generally carries structure that ρ_D cannot see: in **Cat** the morphism dimension (bisimulation is "cardinality-blind to morphisms" — any two categories with equal |Ob| are ρ-bisimilar), in **HoTT** the higher paths, in **ZFA** the membership graph/decoration. The CRPT-reduct quotients this invisible structure away. Hence the instantiation map is injective and structure-reflecting (faithful) but not surjective: D does not collapse onto its CRPT-image wherever the invisible structure is non-trivial. CRPT is the faithful *image*, not the whole of D.
 
@@ -433,14 +433,14 @@ A domain D realising CRPT generally carries structure that ρ_D cannot see: in *
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L5.2.T7 | `Iso-Sat` | | **Novel** |
-**Synopsis:** A regime-restricted isomorphism (`R-Iso` (L5.2.D3)) is exactly a faithful CRPT embedding (`Inst-Emb` (L5.2.D4)) that is also surjective on the stratum — an embedding into a *CRPT-saturated* fragment, where D's ρ-invisible structure is trivial. Φ_ZC/Φ_CH/Φ_ZH are isomorphisms precisely because the finite **discrete** fragment is saturated (discreteness kills morphisms); off it, the instantiation is a faithful embedding only.
+**Synopsis:** A regime-restricted isomorphism ([`R-Iso` (L5.2.D3)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism)) is exactly a faithful CRPT embedding ([`Inst-Emb` (L5.2.D4)](CRPT_OMEGA_TOWER_L5.md#instantiation-as-faithful-embedding)) that is also surjective on the stratum — an embedding into a *CRPT-saturated* fragment, where D's ρ-invisible structure is trivial. Φ_ZC/Φ_CH/Φ_ZH are isomorphisms precisely because the finite **discrete** fragment is saturated (discreteness kills morphisms); off it, the instantiation is a faithful embedding only.
 
-**Source:** CRPT; from `R-Iso` (L5.2.D3) + `Inst-Emb` (L5.2.D4) + `Φ_ZC` (L5.2.T2).
+**Source:** CRPT; from [`R-Iso` (L5.2.D3)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism) + [`Inst-Emb` (L5.2.D4)](CRPT_OMEGA_TOWER_L5.md#instantiation-as-faithful-embedding) + [`Φ_ZC` (L5.2.T2)](CRPT_OMEGA_TOWER_L5.md#φ_zc--zfc-to-category-theory-restricted).
 
-On a stratum (ℬ_M for the convergent regime), a map Φ is an `R-Iso` iff it is a faithful embedding (`Inst-Emb` (L5.2.D4)) that is surjective onto the stratum.
+On a stratum (ℬ_M for the convergent regime), a map Φ is an `R-Iso` iff it is a faithful embedding ([`Inst-Emb` (L5.2.D4)](CRPT_OMEGA_TOWER_L5.md#instantiation-as-faithful-embedding)) that is surjective onto the stratum.
 
 *Proof.*
-(⇒) An `R-Iso` (L5.2.D3) is a bijection preserving ρ, d_M, CNF. Bijective ⟹ injective (Emb) and surjective; a bijection preserving ρ/d_M/CNF has a two-sided inverse, so it also reflects ≃ (Faith), because d_M and CNF are the complete ≃-invariants on ↓_M (`CNF=CR` (L2.5.T2)). Hence an R-Iso is a surjective faithful embedding.
+(⇒) An [`R-Iso` (L5.2.D3)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism) is a bijection preserving ρ, d_M, CNF. Bijective ⟹ injective (Emb) and surjective; a bijection preserving ρ/d_M/CNF has a two-sided inverse, so it also reflects ≃ (Faith), because d_M and CNF are the complete ≃-invariants on ↓_M ([`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient)). Hence an R-Iso is a surjective faithful embedding.
 (⇐) A surjective faithful embedding on the stratum is injective (Emb) + surjective = bijective, and preserves *and* reflects ρ, d_M, CNF (Faith), hence is an `R-Iso`.
 
 **Saturation.** Call D *CRPT-saturated* on a stratum when its ρ-invisible structure is trivial there — equivalently, every faithful embedding into the stratum is surjective. Φ_ZC : ZFC_finite ≅ Cat_discrete is an R-Iso because Cat_discrete is saturated: discreteness forces Hom(a,b) ∈ {∅, {id}}, so no two distinct objects of equal cardinality escape identification — the embedding is onto. On full **Cat** saturation fails (cardinality-blindness): distinct morphism-structures of equal |Ob| are ρ-bisimilar, so CRPT ↪ Cat is faithful but not surjective, and no R-Iso exists there — only an `Inst-Emb`. ∎
@@ -449,19 +449,19 @@ On a stratum (ℬ_M for the convergent regime), a map Φ is an `R-Iso` iff it is
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.2.D5 | `R-Iso∞` | | **Novel** |
-**Synopsis:** The persistent dual of `R-Iso` (L5.2.D3): a bijection between the persistent strata ∞_M of two models preserving ρ_M, the reachability depth n_M and canonical persistent representative CPer (`CPer` (L1.3.D1)), and the AOI-hierarchy invariant (`AOI-Unif` (L6.3.D10)), up to bisimulation. Where R-Iso compares well-founded parts by the *single* invariant (d_M, CFix), R-Iso∞ compares persistent parts by the *necessarily hierarchical* (n_M, CPer, AOI) — the asymmetry forced by `SC-Imp` (L6.3.T1). On the SC-1 sub-class the AOI invariant reduces to CNF∞.
+**Synopsis:** The persistent dual of [`R-Iso` (L5.2.D3)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism): a bijection between the persistent strata ∞_M of two models preserving ρ_M, the reachability depth n_M and canonical persistent representative CPer ([`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative)), and the AOI-hierarchy invariant ([`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi)), up to bisimulation. Where R-Iso compares well-founded parts by the *single* invariant (d_M, CFix), R-Iso∞ compares persistent parts by the *necessarily hierarchical* (n_M, CPer, AOI) — the asymmetry forced by [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility). On the SC-1 sub-class the AOI invariant reduces to CNF∞.
 
-**Source:** CRPT; regime dual of `R-Iso` (L5.2.D3); from `CPer` (L1.3.D1) + `AOI-Unif` (L6.3.D10) + `SC-Imp` (L6.3.T1) + PA-Reach (L1.3.Ax2).
+**Source:** CRPT; regime dual of [`R-Iso` (L5.2.D3)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism); from [`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative) + [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi) + [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility) + [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization).
 
-Φ : ∞_{M₁} → ∞_{M₂} is a **persistent regime-restricted isomorphism** if Φ is a bijection preserving ρ_{M₁}/ρ_{M₂}, the reachability depth n_M, the canonical persistent representative CPer, and the AOI-hierarchy invariant (`AOI-Unif` (L6.3.D10)) up to ≃ (`≃_M` (L2.5.D2)); on SC-1 elements this includes CNF∞ (`CNF∞-Def` (L3.3.D6)). The faithful-embedding reading of `Inst-Emb`/`Iso-Sat` transfers verbatim, with the single invariant (d_M, CFix) replaced by the hierarchical (n_M, CPer, AOI) and "discrete" replaced by "skeletal-persistent" (orbit-type Type P, where the AOI hierarchy collapses to a single class).
+Φ : ∞_{M₁} → ∞_{M₂} is a **persistent regime-restricted isomorphism** if Φ is a bijection preserving ρ_{M₁}/ρ_{M₂}, the reachability depth n_M, the canonical persistent representative CPer, and the AOI-hierarchy invariant ([`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi)) up to ≃ ([`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m)); on SC-1 elements this includes CNF∞ ([`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient)). The faithful-embedding reading of `Inst-Emb`/`Iso-Sat` transfers verbatim, with the single invariant (d_M, CFix) replaced by the hierarchical (n_M, CPer, AOI) and "discrete" replaced by "skeletal-persistent" (orbit-type Type P, where the AOI hierarchy collapses to a single class).
 
 ### Regime Duality of Restricted Isomorphisms
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L5.2.T8 | `Iso-Dual` | | **Novel** |
-**Synopsis:** R-Iso and R-Iso∞ are exchanged by the WF/NWF regime duality. The duality is **graded**: at the total-representative level it is a clean 1:1 correspondence (d_M ↔ n_M, CFix ↔ CPer, PA-WN ↔ PA-Reach); at the complete-classifier level it is *necessarily* asymmetric — a single invariant (CFix, `CNF=CR`) on ↓_M dualizes to a *hierarchy* (the AOI hierarchy) on ∞_M, because `SC-Imp` (L6.3.T1) proves no single persistent invariant exists. So the finite cross-foundation isomorphisms have genuine persistent duals; concrete instances (ZFA, persistent categories, coinductive types) follow once those persistent models are built.
+**Synopsis:** R-Iso and R-Iso∞ are exchanged by the WF/NWF regime duality. The duality is **graded**: at the total-representative level it is a clean 1:1 correspondence (d_M ↔ n_M, CFix ↔ CPer, PA-WN ↔ PA-Reach); at the complete-classifier level it is *necessarily* asymmetric — a single invariant (CFix, `CNF=CR`) on ↓_M dualizes to a *hierarchy* (the AOI hierarchy) on ∞_M, because [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility) proves no single persistent invariant exists. So the finite cross-foundation isomorphisms have genuine persistent duals; concrete instances (ZFA, persistent categories, coinductive types) follow once those persistent models are built.
 
-**Source:** CRPT; from `R-Iso` (L5.2.D3) + `R-Iso∞` (L5.2.D5) + the regime/mode duality (L1.4) + `d-WD` (L2.3.T1) + `CPer` (L1.3.D1) + `SC-Imp` (L6.3.T1) + `WF-NWF-Dual` (L3.3.T9).
+**Source:** CRPT; from [`R-Iso` (L5.2.D3)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism) + [`R-Iso∞` (L5.2.D5)](CRPT_OMEGA_TOWER_L5.md#persistent-regime-restricted-isomorphism) + the regime/mode duality (L1.4) + [`d-WD` (L2.3.T1)](CRPT_OMEGA_TOWER_L2.md#d_m-is-well-defined-on-μt_ρm) + [`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative) + [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility) + [`WF-NWF-Dual` (L3.3.T9)](CRPT_OMEGA_TOWER_L3.md#wfnwf-canonical-form-duality).
 
 Let σ_dual be the regime-duality substitution exchanging, clause for clause,
 ```
@@ -471,15 +471,15 @@ CFix (terminal fixpoint, total)    ↔ CPer (signature-stabilized representative
 CNF=CR (single complete invariant) ↔ AOI hierarchy (complete classifier, necessarily multi-level: SC-Imp),
 precondition PA-WN                 ↔ precondition PA-Reach (PA-WN_top for the topological sub-mode).
 ```
-Then σ_dual maps the definition of `R-Iso` (L5.2.D3) onto that of `R-Iso∞` (L5.2.D5), and `Iso-Sat` (L5.2.T7) onto its persistent analogue.
+Then σ_dual maps the definition of [`R-Iso` (L5.2.D3)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism) onto that of [`R-Iso∞` (L5.2.D5)](CRPT_OMEGA_TOWER_L5.md#persistent-regime-restricted-isomorphism), and [`Iso-Sat` (L5.2.T7)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism--saturated-faithful-embedding) onto its persistent analogue.
 
 *Proof.* Each defining clause corresponds under σ_dual, and each side is well-defined under its precondition:
 - *Bijection on the stratum* and *ρ-preservation* are self-dual: ρ_M acts on both regimes, and σ_dual merely exchanges the strata it is restricted to.
-- *d_M ↔ n_M.* d_M is the total WF rank (steps to Fix, defined under PA-WN, `d-WD` (L2.3.T1)); n_M is the total NWF rank (steps to signature-stabilization, defined under the universal PA-Reach, `n-Reach` (L3.3.D10)). Both total; dual under σ_dual.
+- *d_M ↔ n_M.* d_M is the total WF rank (steps to Fix, defined under PA-WN, [`d-WD` (L2.3.T1)](CRPT_OMEGA_TOWER_L2.md#d_m-is-well-defined-on-μt_ρm)); n_M is the total NWF rank (steps to signature-stabilization, defined under the universal PA-Reach, [`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m)). Both total; dual under σ_dual.
 - *CFix ↔ CPer.* CFix is the terminal-fixpoint canonical representative (PA-WN + PA-Conf, total with `CNF-Ex`/`CNF-Uniq`/`CNF-Stab`); CPer = ρ_M^{n_M(x)}(x) is the signature-stabilized canonical representative (PA-Reach, total with `CPer-Ex`/`CPer-Uniq`/`CPer-Stab` (L3.3.T6–T8)). σ_dual exchanges them.
-- *single complete invariant ↔ hierarchical classifier.* On ↓_M, CFix is a **single** complete ≃-invariant (`CNF=CR` (L2.5.T2)). On ∞_M this is **provably impossible** (`SC-Imp` (L6.3.T1)); the dual complete classifier is therefore the **AOI hierarchy** (`AOI-Unif` (L6.3.D10)). The duality is thus graded — 1:1 at the representative level, single↔hierarchy at the classifier level — and this asymmetry is *necessary*, not a defect (`WF-NWF-Dual` (L3.3.T9)).
+- *single complete invariant ↔ hierarchical classifier.* On ↓_M, CFix is a **single** complete ≃-invariant ([`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient)). On ∞_M this is **provably impossible** ([`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility)); the dual complete classifier is therefore the **AOI hierarchy** ([`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi)). The duality is thus graded — 1:1 at the representative level, single↔hierarchy at the classifier level — and this asymmetry is *necessary*, not a defect ([`WF-NWF-Dual` (L3.3.T9)](CRPT_OMEGA_TOWER_L3.md#wfnwf-canonical-form-duality)).
 
-Hence Φ is an `R-Iso` iff σ_dual(Φ) is an `R-Iso∞`. The saturation characterisation transfers: on the skeletal-persistent fragment (orbit-type Type P, where the AOI hierarchy collapses to the single class CNF∞ = cardinality class) a persistent faithful embedding is surjective iff the persistent domain is CRPT-saturated — the verbatim dual of `Iso-Sat` (L5.2.T7). ∎
+Hence Φ is an `R-Iso` iff σ_dual(Φ) is an `R-Iso∞`. The saturation characterisation transfers: on the skeletal-persistent fragment (orbit-type Type P, where the AOI hierarchy collapses to the single class CNF∞ = cardinality class) a persistent faithful embedding is surjective iff the persistent domain is CRPT-saturated — the verbatim dual of [`Iso-Sat` (L5.2.T7)](CRPT_OMEGA_TOWER_L5.md#regime-restricted-isomorphism--saturated-faithful-embedding). ∎
 
 ### Scope and Deferred Instances
 
@@ -488,7 +488,7 @@ Hence Φ is an `R-Iso` iff σ_dual(Φ) is an `R-Iso∞`. The saturation characte
 | **Remark** | L5.2.R3 | `IsoDual-Scope` | | **Novel** |
 **Synopsis:** Scope of Iso-Dual and the deferred concrete persistent instances.
 
-**Source:** CRPT; from `Iso-Dual` (L5.2.T8).
+**Source:** CRPT; from [`Iso-Dual` (L5.2.T8)](CRPT_OMEGA_TOWER_L5.md#regime-duality-of-restricted-isomorphisms).
 
 `Iso-Dual` establishes the *duality of the notions* and that each finite R-Iso has a persistent dual on the shift-convergent skeleton; it does **not** assert concrete persistent foundational isomorphisms. An instance Φ_ZC^∞ : ZFA ≅ Cat_{∞,sc} ≅ HoTT_{∞,sc} requires those domains as complete CRPT persistent models — separate work. (In the category instantiation the dual invariant is already pinned down: CNF∞ = cardinality class of Ob, orbit-type Type P — the exact NWF-dual of d_Cat = |Ob| with terminal 0_Cat.)
 
@@ -539,7 +539,7 @@ A signature with a single sort is a *one-sorted* or *single-sorted signature*.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.3.D2 | `L-Str` |  | **Imported** |
-**Synopsis:** An L-structure interprets a signature: a carrier for each sort, a function on carriers for each function symbol, and a relation for each relation symbol. This is the standard model-theoretic notion of structure — the semantic half of the syntax/semantics pair. CRPT's instance is the Σ_CRPT-structure (`Σ_CRPT` (L5.3.D10)).
+**Synopsis:** An L-structure interprets a signature: a carrier for each sort, a function on carriers for each function symbol, and a relation for each relation symbol. This is the standard model-theoretic notion of structure — the semantic half of the syntax/semantics pair. CRPT's instance is the Σ_CRPT-structure ([`Σ_CRPT` (L5.3.D10)](CRPT_OMEGA_TOWER_L5.md#crpt-signature-σ_crpt)).
 
 **Source:** Chang & Keisler [1990] §1.3; Hodges [1997] §1.1 — L-structure.
 
@@ -558,7 +558,7 @@ symbol of L.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.3.D3 | `L-Th` |  | **Imported** |
-**Synopsis:** An L-theory is a set of L-sentences over a signature; its models are the L-structures satisfying every sentence. This is the standard model-theoretic notion of theory — the syntactic half of the syntax/semantics pair. CRPT's instance is T_CRPT, the theory of the PA-* axioms over Σ_CRPT, whose model correspondence is `Mod-Corr` (L5.3.T1).
+**Synopsis:** An L-theory is a set of L-sentences over a signature; its models are the L-structures satisfying every sentence. This is the standard model-theoretic notion of theory — the syntactic half of the syntax/semantics pair. CRPT's instance is T_CRPT, the theory of the PA-* axioms over Σ_CRPT, whose model correspondence is [`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence).
 
 **Source:** Chang & Keisler [1990] §1.5; Hodges [1997] §2.4 — L-theory.
 
@@ -641,7 +641,7 @@ standard and preserves the Tarski definition on the restricted model.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.3.D8 | `L-Hom` |  | **Imported** |
-**Synopsis:** An L-homomorphism is a sort-indexed family of maps between L-structures that preserves every function symbol and every relation symbol of the signature. It is the model-theoretic counterpart of the CRPT model homomorphism `Hom` (L5.2.D1).
+**Synopsis:** An L-homomorphism is a sort-indexed family of maps between L-structures that preserves every function symbol and every relation symbol of the signature. It is the model-theoretic counterpart of the CRPT model homomorphism [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂).
 
 **Source:** Hodges [1997] §1.3; Chang & Keisler [1990] §3.4 — L-homomorphism.
 
@@ -659,7 +659,7 @@ L-homomorphism.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.3.D9 | `L-ModCat` |  | **Imported** |
-**Synopsis:** The category Mod(L, T) has the models of an L-theory T as objects and L-homomorphisms as morphisms. It is the model-theoretic category that the Model Correspondence Theorem (`Mod-Corr` (L5.3.T1)) compares with the category Mod_CRPT.
+**Synopsis:** The category Mod(L, T) has the models of an L-theory T as objects and L-homomorphisms as morphisms. It is the model-theoretic category that the Model Correspondence Theorem ([`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence)) compares with the category Mod_CRPT.
 
 **Source:** Chang & Keisler [1990] §3.4; Hodges [1997] §3.6 — category of L-models.
 
@@ -680,7 +680,7 @@ The resulting structure is a (large) category in the sense of MacLane [1971].
 | **Definition** | L5.3.D10 | `Σ_CRPT` | Σ_CRPT | **Novel** |
 **Synopsis:** The CRPT signature Σ_CRPT is many-sorted: sorts U (universe), Open (open sets of the substrate topology, with membership In), O (observable contents, pointed by the constant 0), and Bool; function symbols ρ : U → U and Observable : U → O; relation symbols →_ρ, →_σ, Fix, and In. The observation labelling obs, observable equivalence ≃, and bisimilarity ≈ are *not* signature primitives — obs is Σ_CRPT-definable from Fix, ρ, and Observable, and ≃/≈ are defined relations. All derived notions (H_S, H_I, H_O, CNF_M, d_M, etc.) are Σ_CRPT-definable.
 
-**Source:** CRPT; from `Lang-Sig` (L5.3.D1) + `Sub` (L1.1.D1).
+**Source:** CRPT; from [`Lang-Sig` (L5.3.D1)](CRPT_OMEGA_TOWER_L5.md#many-sorted-signature--language) + [`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate).
 
 The *CRPT signature* is the many-sorted signature:
 ```
@@ -693,7 +693,7 @@ where:
   CRPT instantiation (abstract elements, terms, coalgebras, etc.).
 - `Open` — the sort of open sets of the substrate topology 𝒯 on `U`.
 - `O` — the sort of *observable contents*: the pointed codomain (O_M, 0) of the
-  Observable Contract (PA-Prod (L1.2.Ax6)), with a distinguished constant `0 : O`
+  Observable Contract ([PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content)), with a distinguished constant `0 : O`
   ("no content"). The two-element instance O = {⊤, ⊥} with 0 = ⊥ is the minimal
   form, recovering Observable as a predicate.
 - `Bool` — the standard two-element sort {⊤, ⊥}. (Used for predicate
@@ -713,14 +713,14 @@ where:
 - `In ⊆ U × Open` — point-membership in open sets: In(x, O) means x ∈ O.
 
 *Remark L5.3.1.1.* The bisimilarity relation ≈ is not in Σ_CRPT because it is
-defined from the reduction relation (`Bisim~` (L1.1.D7) of the anchor): x ≈ y iff there exists a
+defined from the reduction relation ([`Bisim~` (L1.1.D7)](CRPT_OMEGA_TOWER_L1.md#bisimilarity) of the anchor): x ≈ y iff there exists a
 bisimulation containing (x, y). It is definable in L^(2)(Σ_CRPT) by
 second-order quantification over bisimulation relations. Likewise the observation
-labelling obs (`Obs-Lab` (L1.1.D8)) is not a primitive: it is the Σ_CRPT-definable
+labelling obs ([`Obs-Lab` (L1.1.D8)](CRPT_OMEGA_TOWER_L1.md#observation-labelling)) is not a primitive: it is the Σ_CRPT-definable
 function obs(x) = x for Fix(x), obs(x) = Observable(ρ(x)) otherwise
-(`Obs-Lab-WD` (L1.1.T1)(iv)). The labelled bisimulation `Bisim` (L1.1.D6) and
+([`Obs-Lab-WD` (L1.1.T1)](CRPT_OMEGA_TOWER_L1.md#observation-labelling-is-well-defined-and-anchored)(iv)). The labelled bisimulation [`Bisim` (L1.1.D6)](CRPT_OMEGA_TOWER_L1.md#bisimulation) and
 PA-Bisim therefore read only derived structure, and satisfaction-as-model-hood
-(`Mod-Corr` (L5.3.T1)) is well-posed over this signature. Treating ≈ and obs as
+([`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence)) is well-posed over this signature. Treating ≈ and obs as
 defined preserves the minimality of Σ_CRPT.
 
 *Remark L5.3.1.2.* Topology is intrinsic to the substrate and is represented
@@ -745,7 +745,7 @@ No axioms are imposed by the signature alone; those come from T_CRPT (L5.2).
 | **Definition** | L5.3.D11 | `T_CRPT` | T_CRPT | **Novel** |
 **Synopsis:** The formal theory T_CRPT is the set of Σ_CRPT-sentences that are true in all CRPT models. It is axiomatised by the nine PA-* axiom schemas together with the model-local axiom schema LA_M. T_CRPT is a first-order theory with recursive axiom set; its second-order extension T_CRPT^{SOL} adds the bisimulation and transitive closure axioms.
 
-**Source:** CRPT; from `Σ_CRPT` (L5.3.D10) + the PA-* axiom system (L1.2–L1.3).
+**Source:** CRPT; from [`Σ_CRPT` (L5.3.D10)](CRPT_OMEGA_TOWER_L5.md#crpt-signature-σ_crpt) + the PA-* axiom system (L1.2–L1.3).
 
 The *CRPT theory* T_CRPT is the following set of sentences in L^(2)(Σ_CRPT).
 Each sentence is labelled by the anchor construct it formalizes.
@@ -775,7 +775,7 @@ T_CRPT: Hausdorff separation and continuity of the projection map ρ.
 
 **L5.3.2.2 Projection Operator Conditions (L2.1 of anchor).**
 
-Let NF(x) abbreviate ¬∃y:U (x →_ρ y) (`NF` (L1.1.D2) of anchor).
+Let NF(x) abbreviate ¬∃y:U (x →_ρ y) ([`NF` (L1.1.D2)](CRPT_OMEGA_TOWER_L1.md#normal-form) of anchor).
 
 ```
 (C1)     ∀x:U : ((x →_ρ ρ(x)) ∨ (ρ(x) = x ∧ NF(x)))
@@ -792,11 +792,11 @@ Let NF(x) abbreviate ¬∃y:U (x →_ρ y) (`NF` (L1.1.D2) of anchor).
 | **Remark** | L5.3.R1 | `C2-SOL` | | **Novel** |
 **Synopsis:** C2 (bisimulation equivariance) is a well-formed second-order sentence: bisimilarity is the definable predicate ∃R[(R is a bisimulation) ∧ R(x,y)] in L²(Σ_CRPT).
 
-**Source:** CRPT; from `Bisim` (L1.1.D6) + `SO-Ext` (L5.3.D6).
+**Source:** CRPT; from [`Bisim` (L1.1.D6)](CRPT_OMEGA_TOWER_L1.md#bisimulation) + [`SO-Ext` (L5.3.D6)](CRPT_OMEGA_TOWER_L5.md#second-order-extension).
 
 The bisimilarity ≈ is the definable second-order predicate
 ∃R[(R-bisim) ∧ R(x, y)] where R-bisim expresses "R is a bisimulation on
-(U, the reduction relation)" (`Bisim` (L1.1.D6) of anchor). Since bisimulation is expressible in
+(U, the reduction relation)" ([`Bisim` (L1.1.D6)](CRPT_OMEGA_TOWER_L1.md#bisimulation) of anchor). Since bisimulation is expressible in
 L^(2)(Σ_CRPT), C2 is a well-formed second-order sentence.
 
 **L5.3.2.3 PA-WN (Finitary Termination; L1.2 of anchor).**
@@ -819,7 +819,7 @@ x ∈ ↓_M  :⟺  ∃n ∈ ℕ : Fix(ρ^n(x))
 This definition does not make PA-WN tautological: PA-WN constrains termination
 of the reduction relation paths globally, while ↓_M classifies ρ-orbit behavior. In stratified
 models, scope assignment may restrict PA-WN application to ↓_M via
-`Scope-Sat` (L5.3.D12) without changing PA-WN's formula.
+[`Scope-Sat` (L5.3.D12)](CRPT_OMEGA_TOWER_L5.md#scope-aware-satisfaction) without changing PA-WN's formula.
 
 **L5.3.2.3A PA-Fix (Fixpoint/Normal-Form Boundary; L1.2 of anchor).**
 
@@ -836,7 +836,7 @@ Together with (S-Fix), this yields the canonical equivalence
 (PA-Conf) ∀x y z:U : (x →_ρ* y) ∧ (x →_ρ* z) → ∃w:U : (y →_ρ* w) ∧ (z →_ρ* w)
 ```
 
-where →_ρ* is the reflexive-transitive closure of →_ρ (`RT*` (L1.1.D4) of anchor),
+where →_ρ* is the reflexive-transitive closure of →_ρ ([`RT*` (L1.1.D4)](CRPT_OMEGA_TOWER_L1.md#reflexive-transitive-closure) of anchor),
 definable in L^(2)(Σ_CRPT) as: x →_ρ* y ↔ ∃R:(R is a transitive relation
 containing →_ρ and the identity) ∧ (x, y) ∈ R. This is a second-order sentence.
 
@@ -906,7 +906,7 @@ PA-WN_top is a single topological convergence axiom over the substrate topology
 ```
 
 Existence is asserted by PA-WN_top; uniqueness follows from (S-TopSep)
-(equivalently `TopSep-Uniq` (L1.7.T1)). When ∞_M = ∅, PA-WN_top is vacuously
+(equivalently [`TopSep-Uniq` (L1.7.T1)](CRPT_OMEGA_TOWER_L1.md#uniqueness-of-topological-limits-under-topsep)). When ∞_M = ∅, PA-WN_top is vacuously
 satisfied.
 
 **L5.3.2.9A Unified CFix Definition (Regime-Total).**
@@ -946,17 +946,17 @@ and outside PA-axiom namespace.
 
 where ∞_M = {x ∈ 𝒰 | ∀k ∈ ℕ : ρ_M^k(x) ∉ Fix(ρ_M)} is the persistent regime,
 ρ_M is the projection operator, and ω_≈(x) is the ω-limit set of the ≈-class orbit
-(PA-Reach (L1.3.Ax2): classes visited cofinally, or classes of 𝒯-accumulation points).
+([PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization): classes visited cofinally, or classes of 𝒯-accumulation points).
 The axiom is the meaning itself — recursive projection reaches the canonical persistent
-representative CPer_M(x) (`CPer` (L1.3.D1)), the canonical representative of the
-destination. The reach mechanisms are theorems: recurrence (`PA-Reach-Fin` (L1.3.T2),
-with reachability depth n_M, `n-Reach` (L3.3.D10)), convergence
-(`PA-Reach-Top` (L1.3.T3)), and their composite (`PA-Reach-Decomp` (L1.3.T4)).
+representative CPer_M(x) ([`CPer` (L1.3.D1)](CRPT_OMEGA_TOWER_L1.md#canonical-persistent-representative)), the canonical representative of the
+destination. The reach mechanisms are theorems: recurrence ([`PA-Reach-Fin` (L1.3.T2)](CRPT_OMEGA_TOWER_L1.md#finitary-realization-of-pa-reach),
+with reachability depth n_M, [`n-Reach` (L3.3.D10)](CRPT_OMEGA_TOWER_L3.md#reachability-depth-n_m)), convergence
+([`PA-Reach-Top` (L1.3.T3)](CRPT_OMEGA_TOWER_L1.md#topological-realization-of-pa-reach)), and their composite ([`PA-Reach-Decomp` (L1.3.T4)](CRPT_OMEGA_TOWER_L1.md#decomposition-of-pa-reach-realizations)).
 
 Expressible in L^(2)(Σ_CRPT) by: second-order quantification over bisimulations for ≈
 (Remark L5.3.1.1), iteration of ρ for the cofinal-visit clause, and the sort Open with
 In for the accumulation clause; the persistent orbit signature the destination finitely
-presents is `sig_M-NM` (L3.1.D5), with obs grounded in the Observable Contract
+presents is [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form), with obs grounded in the Observable Contract
 (L5.2.9–10).
 
 **Semantic consequence (Observer Extraction):** For anyx ∈ ∞_M satisfying PA-Reach,
@@ -968,13 +968,13 @@ descriptor of the infinite element x that the observer can extract.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.3.D12 | `Scope-Sat` |  | **Novel** |
-**Synopsis:** Scope-aware satisfaction M ⊧_S PA-X interprets a PA-* axiom relative to a declared scope S via relativization: the axiom may hold globally, hold on S (Scoped(S)), be vacuous, or fail. This is the model-theoretic reading of the four-valued scope semantics of `PA-Scope` (L1.5.D1).
+**Synopsis:** Scope-aware satisfaction M ⊧_S PA-X interprets a PA-* axiom relative to a declared scope S via relativization: the axiom may hold globally, hold on S (Scoped(S)), be vacuous, or fail. This is the model-theoretic reading of the four-valued scope semantics of [`PA-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration).
 
-**Source:** CRPT; from `Rel-Sent` (L5.3.D7) + `PA-Scope` (L1.5.D1).
+**Source:** CRPT; from [`Rel-Sent` (L5.3.D7)](CRPT_OMEGA_TOWER_L5.md#relativized-sentence) + [`PA-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration).
 
 Let M be a Σ_CRPT-structure and PA-X an axiom of T_CRPT with scope S ⊆ U^M.
 We say *M satisfies PA-X on scope S* (written M ⊧_S PA-X) if M ⊧ (PA-X)|_S
-(using `Rel-Sent` (L5.3.D7)).
+(using [`Rel-Sent` (L5.3.D7)](CRPT_OMEGA_TOWER_L5.md#relativized-sentence)).
 
 A *scope-aware T_CRPT-satisfaction* for a scope assignment
 σ = {PA-X ↦ S_{PA-X} | PA-X ∈ T_CRPT, S_{PA-X} ∈ {Global, Scoped(S), Vacuous, Fails}}
@@ -982,7 +982,7 @@ is: M ⊧_σ T_CRPT iff for every PA-X with σ(PA-X) ≠ Fails (and ≠ Vacuous)
 M ⊧_{S_{PA-X}} PA-X, and for σ(PA-X) = Vacuous: the antecedent of PA-X is
 never triggered in M (i.e., the universal antecedent is vacuously false).
 
-This exactly captures the PA-* scope declarations of `PA-Scope` (L1.5.D1).
+This exactly captures the PA-* scope declarations of [`PA-Scope` (L1.5.D1)](CRPT_OMEGA_TOWER_L1.md#pa--scope-declaration).
 
 ---
 
@@ -994,19 +994,19 @@ This exactly captures the PA-* scope declarations of `PA-Scope` (L1.5.D1).
 | **Theorem** | L5.3.T1 | `Mod-Corr` |  | **Novel** |
 **Synopsis:** The Model Correspondence theorem: the category of T_CRPT-models (structures satisfying all PA-* axioms) is equivalent as a category to Mod_CRPT. The equivalence sends each T_CRPT-model to its corresponding CRPT model and each T_CRPT-homomorphism to the corresponding CRPT homomorphism. Model theory and categorical model theory give the same objects.
 
-**Source:** CRPT; from `Scope-Sat` (L5.3.D12) + `CRPT-Mod-18` (L5.1.D1).
+**Source:** CRPT; from [`Scope-Sat` (L5.3.D12)](CRPT_OMEGA_TOWER_L5.md#scope-aware-satisfaction) + [`CRPT-Mod-18` (L5.1.D1)](CRPT_OMEGA_TOWER_L5.md#crpt-model).
 
-A Σ_CRPT-structure M is a CRPT model (in the sense of `CRPT-Mod-18` (L5.1.D1) of the anchor) if and only if M is a scope-aware model of T_CRPT
-(`Scope-Sat` (L5.3.D12)), i.e., there exists a scope assignment σ such that
-M ⊧_σ T_CRPT and σ satisfies the three conditions of `CRPT-Mod-18` (L5.1.D1).
+A Σ_CRPT-structure M is a CRPT model (in the sense of [`CRPT-Mod-18` (L5.1.D1)](CRPT_OMEGA_TOWER_L5.md#crpt-model) of the anchor) if and only if M is a scope-aware model of T_CRPT
+([`Scope-Sat` (L5.3.D12)](CRPT_OMEGA_TOWER_L5.md#scope-aware-satisfaction)), i.e., there exists a scope assignment σ such that
+M ⊧_σ T_CRPT and σ satisfies the three conditions of [`CRPT-Mod-18` (L5.1.D1)](CRPT_OMEGA_TOWER_L5.md#crpt-model).
 
 *Proof.*
 
 **(⟹) Every CRPT model is a scope-aware model of T_CRPT.**
 
-Let N be a CRPT model. By `CRPT-Mod-18` (L5.1.D1), N has:
+Let N be a CRPT model. By [`CRPT-Mod-18` (L5.1.D1)](CRPT_OMEGA_TOWER_L5.md#crpt-model), N has:
 1. A substrate (𝒰_N, →_ρ, →_σ) satisfying L1.1 substrate conditions.
-2. A projection operator ρ_N satisfying C1 and C2 (`ρ_M` (L2.1.D1).
+2. A projection operator ρ_N satisfying C1 and C2 ([`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 3. An axiom profile PA-Profile_N assigning each PA-X a scope.
 4. A set of model-local axioms LA_N (possibly empty).
 5. Non-triviality: at least one PA-X is declared Global or Scoped(S ≠ ∅).
@@ -1022,7 +1022,7 @@ LA_N subject to the observable contract OC-1/OC-2.
 
 We verify each sentence of T_CRPT:
 
-- **(S-Inc):** The inclusion constraint →_ρ ⊆ →_σ holds by `Sub` (L1.1.D1) of the
+- **(S-Inc):** The inclusion constraint →_ρ ⊆ →_σ holds by [`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate) of the
   anchor (the inclusion constraint is part of the substrate definition, enforced
   at construction). Hence Str(N) ⊧ (S-Inc). ✓
 
@@ -1033,18 +1033,18 @@ We verify each sentence of T_CRPT:
 - **(C2):** ρ_N satisfies C2 by Def (Projection Operator on (𝒰_M,→_ρ) of the anchor. Str(N) ⊧ (C2). ✓
 
 - **PA-WN through PA-Reach:** For each PA-X with PA-Profile_N(PA-X) ≠ Fails:
-  By `CRPT-Mod-18` (L5.1.D1) Conditions 2 and 3 (consistency + witness), the non-failed
+  By [`CRPT-Mod-18` (L5.1.D1)](CRPT_OMEGA_TOWER_L5.md#crpt-model) Conditions 2 and 3 (consistency + witness), the non-failed
   scoped PA-* axioms are satisfied by N itself. Specifically:
   - If PA-Profile_N(PA-X) = Global: N ⊧ PA-X (holds for all of 𝒰_N). ✓
   - If PA-Profile_N(PA-X) = Scoped(S): N ⊧ (PA-X)|_S (holds on S). ✓
   - If PA-Profile_N(PA-X) = Vacuous: the antecedent of PA-X is never triggered
     in N (e.g., ↓_M = 𝒰_N for PA-NWF/PA-WN_top/PA-CoInd in pure WF models).
-    By `⊧` (L5.3.D4) (universal quantification over empty range is vacuously
+    By [`⊧` (L5.3.D4)](CRPT_OMEGA_TOWER_L5.md#satisfaction-) (universal quantification over empty range is vacuously
     true), Str(N) ⊧_Vacuous PA-X. ✓
   - If PA-Profile_N(PA-X) = Fails: not included in T_CRPT for this model.
     Excluded from Str(N)'s model obligations by the scope assignment σ. ✓
 
-  By `Scope-Sat` (L5.3.D12), Str(N) ⊧_σ T_CRPT for the scope assignment
+  By [`Scope-Sat` (L5.3.D12)](CRPT_OMEGA_TOWER_L5.md#scope-aware-satisfaction), Str(N) ⊧_σ T_CRPT for the scope assignment
   σ = PA-Profile_N. ✓
 
 Therefore Str(N) ⊧_σ T_CRPT, hence N is a scope-aware model of T_CRPT. ∎ (⟹)
@@ -1055,7 +1055,7 @@ Let M be a Σ_CRPT-structure and σ a scope assignment such that M ⊧_σ T_CRPT
 We construct a CRPT model Mdl(M) from M:
 
 - **Substrate:** Set 𝒰_{Mdl(M)} := U^M, →_ρ := →_ρ^M, →_σ := →_σ^M.
-  Then (S-Inc) gives →_ρ ⊆ →_σ, satisfying `Sub` (L1.1.D1) of the anchor. ✓
+  Then (S-Inc) gives →_ρ ⊆ →_σ, satisfying [`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate) of the anchor. ✓
 - **Projection operator:** Set ρ_{Mdl(M)} := ρ^M.
   - C1 holds by M ⊧ (C1). ✓
   - C2 holds by M ⊧ (C2). ✓
@@ -1065,11 +1065,11 @@ We construct a CRPT model Mdl(M) from M:
 - **model-local axioms:** Set LA_{Mdl(M)} ⊇ {the Observable contract for
   Observable^M} plus any other instantiation commitments. ✓
 
-Verify the three conditions of `CRPT-Mod-18` (L5.1.D1):
+Verify the three conditions of [`CRPT-Mod-18` (L5.1.D1)](CRPT_OMEGA_TOWER_L5.md#crpt-model):
 
 1. **Non-triviality:** This is checked at PA-profile level. By construction,
    PA-Profile_{Mdl(M)}(PA-X) := σ(PA-X). If σ has at least one PA-X with scope
-   Global or `Scoped(S ≠ ∅)`, then Condition 1 of `CRPT-Mod-18` (L5.1.D1) holds.
+   Global or `Scoped(S ≠ ∅)`, then Condition 1 of [`CRPT-Mod-18` (L5.1.D1)](CRPT_OMEGA_TOWER_L5.md#crpt-model) holds.
    This is exactly the non-triviality side-condition used in the correspondence. ✓
 
 2. **Consistency:** M⊧_σ T_CRPT is the consistency witness: M satisfies all
@@ -1086,13 +1086,13 @@ Therefore Mdl(M) is a CRPT model. ∎ (⟸) ∎
 | **Corollary** | L5.3.C1 | `Term-Just1` |  | **Novel** |
 **Synopsis:** Justifies the term "CRPT model": by the Model Correspondence, the CRPT models are exactly the scope-aware models of the theory T_CRPT, so the categorical and logical notions of "model" coincide.
 
-**Source:** CRPT; corollary of `Mod-Corr` (L5.3.T1).
+**Source:** CRPT; corollary of [`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence).
 
-Under `Mod-Corr` (L5.3.T1), the class of
+Under [`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence), the class of
 CRPT models and the class of scope-aware models of T_CRPT coincide.
 Therefore, calling a CRPT model a *CRPT model* is justified: it is
-literally a model of the CRPT theory T_CRPT in the sense of `L-Mod` (L5.3.D5),
-with scope-aware satisfaction (`Scope-Sat` (L5.3.D12)).
+literally a model of the CRPT theory T_CRPT in the sense of [`L-Mod` (L5.3.D5)](CRPT_OMEGA_TOWER_L5.md#l-model-of-a-theory),
+with scope-aware satisfaction ([`Scope-Sat` (L5.3.D12)](CRPT_OMEGA_TOWER_L5.md#scope-aware-satisfaction)).
 
 ---
 
@@ -1104,29 +1104,29 @@ with scope-aware satisfaction (`Scope-Sat` (L5.3.D12)).
 | **Theorem** | L5.3.T2 | `Hom-Corr` |  | **Novel** |
 **Synopsis:** The Homomorphism Correspondence theorem: every CRPT model homomorphism is an L(Σ_CRPT)-homomorphism that additionally preserves the canonical form (Φ ∘ CNF = CNF ∘ Φ). Morphisms therefore correspond on both sides of the model/theory equivalence.
 
-**Source:** CRPT; from `Hom` (L5.2.D1) + `L-Hom` (L5.3.D8).
+**Source:** CRPT; from [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) + [`L-Hom` (L5.3.D8)](CRPT_OMEGA_TOWER_L5.md#l-homomorphism).
 
-Let N₁, N₂ be CRPT models (= CRPT models, by `Term-Just1` (L5.3.C1)) and
-let Φ : N₁ → N₂ be a model homomorphism (`Hom` (L5.2.D1) of the anchor). Then Φ
+Let N₁, N₂ be CRPT models (= CRPT models, by [`Term-Just1` (L5.3.C1)](CRPT_OMEGA_TOWER_L5.md#terminology-justified)) and
+let Φ : N₁ → N₂ be a model homomorphism ([`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) of the anchor). Then Φ
 is an L(Σ_CRPT)-homomorphism from Str(N₁) to Str(N₂) (in the sense of Definition
-`L-Mod` (L5.3.D5)) that additionally preserves the canonical form:
+[`L-Mod` (L5.3.D5)](CRPT_OMEGA_TOWER_L5.md#l-model-of-a-theory)) that additionally preserves the canonical form:
 Φ ∘ CNF_{N₁} = CNF_{N₂} ∘ Φ.
 
 *Proof.*
 
-A model homomorphism Φ : N₁ → N₂ (`Hom` (L5.2.D1) of the anchor) is a function
+A model homomorphism Φ : N₁ → N₂ ([`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) of the anchor) is a function
 Φ_U : 𝒰_{D₁} → 𝒰_{D₂} satisfying:
 - (Φ_R) Reduction preservation: x →_ρ^{D₁} y ⟹ Φ(x) →_ρ^{D₂} Φ(y).
 - (Φ_E) Equivalence preservation: x ≃_{N₁} y ⟹ Φ(x) ≃_{N₂} Φ(y).
 - (Φ_ρ) Commutativity with ρ: Φ(ρ_{N₁}(x)) ≃_{N₂} ρ_{N₂}(Φ(x)) for all x.
 - (Φ_LA) Local axiom coherence: Φ respects all declared LA_{N₁} and LA_{N₂}.
 
-We verify Φ is a Σ_CRPT-homomorphism (`L-Hom` (L5.3.D8)):
+We verify Φ is a Σ_CRPT-homomorphism ([`L-Hom` (L5.3.D8)](CRPT_OMEGA_TOWER_L5.md#l-homomorphism)):
 
 - **Function ρ:** L(Σ_CRPT)-homomorphism condition for ρ requires
   Φ(ρ^{D₁}(x)) = ρ^{D₂}(Φ(x)) or up to ≃_{N₂}. Condition (Φ_ρ) provides
   the ≃_{N₂}-version, which is the anchor's standard (up to CNF-equivalence).
-  Since CFix(ρ_M) is well-defined (`RP=Abs` (L2.1.T4) of anchor) and ≃_{N₂} is exactly
+  Since CFix(ρ_M) is well-defined ([`RP=Abs` (L2.1.T4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection--abstraction) of anchor) and ≃_{N₂} is exactly
   CNF-equivalence, (Φ_ρ) gives the required homomorphism condition. ✓
 
 - **Relations →_ρ and →_σ:** (Φ_R) directly gives the homomorphism condition
@@ -1142,9 +1142,9 @@ We verify Φ is a Σ_CRPT-homomorphism (`L-Hom` (L5.3.D8)):
   Φ(x) = Φ(ρ_{N₁}(x)) ≃_{N₂} ρ_{N₂}(Φ(x)), Φ(x) is a fixpoint of ≃_{N₂}
   (hence Fix^{D₂}(Φ(x)) holds up to ≃). ✓
 
-- **CNF preservation:** The anchor's `Hom` (L5.2.D1) requires Φ(CNF_{N₁}(x)) =
+- **CNF preservation:** The anchor's [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) requires Φ(CNF_{N₁}(x)) =
   CNF_{N₂}(Φ(x)) explicitly (condition Φ_ρ already implies this for elements
-  in ↓_M by `Mod-Cat` (L5.2.T1) of the anchor). ✓
+  in ↓_M by [`Mod-Cat` (L5.2.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-models-form-category-mod_crpt) of the anchor). ✓
 
 Therefore Φ is an L(Σ_CRPT)-homomorphism preserving CNF. ∎
 
@@ -1154,11 +1154,11 @@ Therefore Φ is an L(Σ_CRPT)-homomorphism preserving CNF. ∎
 | **Corollary** | L5.3.C2 | `Term-Just2` |  | **Novel** |
 **Synopsis:** Justifies the term "model homomorphism": by the Homomorphism Correspondence, CRPT model morphisms are exactly the CNF-preserving L(Σ_CRPT)-homomorphisms between the corresponding theory-models.
 
-**Source:** CRPT; corollary of `Hom-Corr` (L5.3.T2).
+**Source:** CRPT; corollary of [`Hom-Corr` (L5.3.T2)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-correspondence).
 
 model morphisms Φ : N₁ → N₂ are
 justified as *model homomorphisms* between CRPT models. The name "model
-morphism" is equivalent to "CRPT model homomorphism" per `Hom-Corr` (L5.3.T2).
+morphism" is equivalent to "CRPT model homomorphism" per [`Hom-Corr` (L5.3.T2)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-correspondence).
 
 ---
 
@@ -1170,9 +1170,9 @@ morphism" is equivalent to "CRPT model homomorphism" per `Hom-Corr` (L5.3.T2).
 | **Theorem** | L5.3.T3 | `Cat-Eq` |  | **Novel** |
 **Synopsis:** The Category Equivalence theorem: Mod_CRPT is equivalent (as a category) to the category of T_CRPT-models with elementary embeddings as morphisms. An elementary embedding is a homomorphism that preserves and reflects all T_CRPT-sentences. The equivalence uses the Keisler-Shelah isomorphism theorem to identify isomorphic objects.
 
-**Source:** CRPT; from `Mod-Corr` (L5.3.T1) + `Hom-Corr` (L5.3.T2).
+**Source:** CRPT; from [`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence) + [`Hom-Corr` (L5.3.T2)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-correspondence).
 
-The category Mod_CRPT of CRPT models and model homomorphisms (`Hom` (L5.2.D1) of the anchor; L5.2) is isomorphic to the category Mod(Σ_CRPT, T_CRPT) of
+The category Mod_CRPT of CRPT models and model homomorphisms ([`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) of the anchor; L5.2) is isomorphic to the category Mod(Σ_CRPT, T_CRPT) of
 scope-aware Σ_CRPT-models of T_CRPT with CNF-preserving L(Σ_CRPT)-homomorphisms.
 
 *Proof.*
@@ -1180,19 +1180,19 @@ scope-aware Σ_CRPT-models of T_CRPT with CNF-preserving L(Σ_CRPT)-homomorphism
 Define two functors:
 
 **F : Mod_CRPT → Mod(Σ_CRPT, T_CRPT):**
-- On objects: F(D) = Str(N) (the Σ_CRPT-structure of `Mod-Corr` (L5.3.T1), ⟹ direction).
+- On objects: F(D) = Str(N) (the Σ_CRPT-structure of [`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence), ⟹ direction).
 - On morphisms: F(Φ) = Φ_U (the underlying function, which is an
-  L(Σ_CRPT)-homomorphism by `Hom-Corr` (L5.3.T2)).
-F is well-defined: Str(N) ⊧ T_CRPT by `Mod-Corr` (L5.3.T1); Φ_U is a homomorphism by
-`Hom-Corr` (L5.3.T2).
+  L(Σ_CRPT)-homomorphism by [`Hom-Corr` (L5.3.T2)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-correspondence)).
+F is well-defined: Str(N) ⊧ T_CRPT by [`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence); Φ_U is a homomorphism by
+[`Hom-Corr` (L5.3.T2)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-correspondence).
 
 **G : Mod(Σ_CRPT, T_CRPT) → Mod_CRPT:**
-- On objects: G(M) = Mdl(M) (the CRPT model of `Mod-Corr` (L5.3.T1), ⟸ direction).
+- On objects: G(M) = Mdl(M) (the CRPT model of [`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence), ⟸ direction).
 - On morphisms: G(h) = h (an L(Σ_CRPT)-homomorphism; checking it satisfies Φ_R,
   Φ_E, Φ_ρ, Φ_LA requires that h preserves the structures used in those
   conditions, which follows from h being an L(Σ_CRPT)-homomorphism with CNF
   preservation).
-G is well-defined by the ⟸ direction of `Mod-Corr` (L5.3.T1).
+G is well-defined by the ⟸ direction of [`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence).
 
 **F ∘ G = id:** G(M) constructs Mdl(M) from M; then F(Mdl(M)) reconstructs a
 Σ_CRPT-structure from Mdl(M). By construction, F(G(M)) = M (same carrier,
@@ -1212,7 +1212,7 @@ as categories. ∎
 | **Corollary** | L5.3.C3 | `Mod=T` |  | **Novel** |
 **Synopsis:** Confirms that the notation Mod_CRPT for the category of CRPT models is consistent with standard model-theoretic usage Mod(T): by the Category Equivalence, Mod_CRPT is literally the category of models of the theory T_CRPT.
 
-**Source:** CRPT; corollary of `Cat-Eq` (L5.3.T3).
+**Source:** CRPT; corollary of [`Cat-Eq` (L5.3.T3)](CRPT_OMEGA_TOWER_L5.md#categorical-equivalence).
 
 The category Mod_CRPT
 the *category of CRPT models*, consistent with standard model-theoretic notation
@@ -1228,7 +1228,7 @@ the *category of CRPT models*, consistent with standard model-theoretic notation
 | **Remark** | L5.3.R2 | `T-2nd-Ord` |  | **Novel** |
 **Synopsis:** T_CRPT is a genuinely second-order theory (PA-CoInd, C2, PA-Reach, and the LA_M schemas quantify over sets/functions). Consequently Gödel completeness, compactness, and Löwenheim–Skolem do not apply — but CRPT's claims are semantic, not proof-theoretic, so this is not a limitation on its content.
 
-**Source:** CRPT; from `SO-Ext` (L5.3.D6) + `T_CRPT` (L5.3.D11).
+**Source:** CRPT; from [`SO-Ext` (L5.3.D6)](CRPT_OMEGA_TOWER_L5.md#second-order-extension) + [`T_CRPT` (L5.3.D11)](CRPT_OMEGA_TOWER_L5.md#crpt-theory-t_crpt).
 
 The CRPT theory T_CRPT
 is a second-order theory (it uses quantification over sets and functions in PA-CoInd,
@@ -1251,7 +1251,7 @@ are purely semantic (the axioms hold in specific structures), not proof-theoreti
 | **Remark** | L5.3.R3 | `CRPT-Mod-Scope` |  | **Novel** |
 **Synopsis:** Clarifies what "CRPT model" means: a Σ_CRPT-structure satisfying the PA-* axioms in their declared scopes. It is not an informal analogy or simplification, and it need not satisfy every axiom globally — scope declarations (Scoped / Vacuous / Fails) are first-class.
 
-**Source:** CRPT; from `Scope-Sat` (L5.3.D12) + `CRPT-Mod-18` (L5.1.D1).
+**Source:** CRPT; from [`Scope-Sat` (L5.3.D12)](CRPT_OMEGA_TOWER_L5.md#scope-aware-satisfaction) + [`CRPT-Mod-18` (L5.1.D1)](CRPT_OMEGA_TOWER_L5.md#crpt-model).
 
 A *CRPT model* (= CRPT model) is a scope-aware model of T_CRPT.
 This means:
@@ -1270,7 +1270,7 @@ This means:
 | **Remark** | L5.3.R4 | `PA-WN_top-Import` |  | **Novel** |
 **Synopsis:** Topology 𝒯 is part of every CRPT substrate. For native stratified models (∞_M ≠ ∅), PA-WN_top makes each persistent ρ-orbit converge in 𝒯, and the global conditions TopSep(𝒯) and continuity of ρ make the topological branch of CFix well-defined and unique.
 
-**Source:** CRPT; from `Sub` (L1.1.D1) + PA-WN_top (L1.7.Ax1).
+**Source:** CRPT; from [`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate) + [PA-WN_top (L1.7.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn_top--topological-weak-normalisation--asymptotic-convergence).
 
 Topology is part of substrate data for every CRPT model:
 Sub = (𝒰, →_ρ, →_σ, 𝒯). For native stratified models (∞_M ≠ ∅), PA-WN_top
@@ -1299,11 +1299,11 @@ categories [MacLane 1971 §I.6].
 | **Theorem** | L5.3.T4 | `FOL-Fin` |  | **Novel** |
 **Synopsis:** The FOL-finiteness theorem: on finite CRPT models, T_CRPT collapses to its first-order fragment (every second-order assumption reduces to a first-order approximation schema), so finite CRPT models are exactly the finite models of T_CRPT^{FOL}. For infinite models the full SOL form is required.
 
-**Source:** CRPT; from `Mod-Corr` (L5.3.T1) + `SO-Ext` (L5.3.D6); CRPT instance of `Finite-Collapse` (L0.7.T2).
+**Source:** CRPT; from [`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence) + [`SO-Ext` (L5.3.D6)](CRPT_OMEGA_TOWER_L5.md#second-order-extension); CRPT instance of [`Finite-Collapse` (L0.7.T2)](CRPT_OMEGA_TOWER_L0.md#l07t2--finite-model-collapse).
 
 *T_CRPT restricted to finite CRPT models is equivalent to its first-order fragment.
-Precisely: a finite Σ_CRPT-structure M is a CRPT model (satisfies `Mod-Corr`
-(L5.3.T1)) if and only if M ⊧ T_CRPT^{FOL}, where T_CRPT^{FOL} is the
+Precisely: a finite Σ_CRPT-structure M is a CRPT model (satisfies [`Mod-Corr`
+(L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence)) if and only if M ⊧ T_CRPT^{FOL}, where T_CRPT^{FOL} is the
 restriction of T_CRPT (L5.3.D11) obtained by replacing each SOL formula Φ_i with
 its first-order approximation schema Φ_i^{FOL} defined as follows:*
 
@@ -1322,7 +1322,7 @@ For each Φ_i of the form  ∀R. Ψ(R)  (universal second-order / induction sche
 
 *(⟹) Every finite CRPT model satisfies T_CRPT^{FOL}:*
 
-Let M be a finite Σ_CRPT-structure satisfying `Mod-Corr` (L5.3.T1). We verify
+Let M be a finite Σ_CRPT-structure satisfying [`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence). We verify
 that each SOL assumption in T_CRPT reduces to its FOL approximation:
 
 - **SOL-3 (PA-CoInd, L1.2.Ax5):** On a finite structure, the coinduction schema
@@ -1362,12 +1362,12 @@ each Φ_i^{FOL} is satisfied iff the corresponding original SOL condition Φ_i h
 on M. (In the finite setting, "existential over relations" reduces to "existential
 over explicitly enumerable relations on |M|² or |M|^k for bounded k," which the
 FOL approximation captures exactly.) Therefore M ⊧ T_CRPT under scope-aware
-satisfaction (`Scope-Sat` L5.3.D12), so M is a CRPT model by `Mod-Corr`
-(L5.3.T1). ✓
+satisfaction (`Scope-Sat` L5.3.D12), so M is a CRPT model by [`Mod-Corr`
+(L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence). ✓
 
-*Remark (Grounding of L0.7.T2).* `Finite-Collapse` (L0.7.T2) states universally
+*Remark (Grounding of L0.7.T2).* [`Finite-Collapse` (L0.7.T2)](CRPT_OMEGA_TOWER_L0.md#l07t2--finite-model-collapse) states universally
 that for any projection system Π satisfying the SOL-Nec conditions, the finite-
-model restriction is FOL-equivalent. `FOL-Fin` (L5.3.T4) is the CRPT instance
+model restriction is FOL-equivalent. [`FOL-Fin` (L5.3.T4)](CRPT_OMEGA_TOWER_L5.md#fol-completeness-for-finite-crpt-models) is the CRPT instance
 of that universal theorem, confirming it for the specific 14 SOL assumptions of
 T_CRPT. ∎
 
@@ -1379,36 +1379,36 @@ T_CRPT. ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.3.D13 | `CRPT-Mod-L5.3` |  | **Novel** |
-**Synopsis:** Formal-theory restatement of "CRPT model": a scope-aware model of T_CRPT realised as a Σ_CRPT-structure satisfying the substrate conditions, C1, C2, and the applicable PA-* axioms in their declared scopes. Equivalent to `CRPT-Mod-18` (L5.1.D1).
+**Synopsis:** Formal-theory restatement of "CRPT model": a scope-aware model of T_CRPT realised as a Σ_CRPT-structure satisfying the substrate conditions, C1, C2, and the applicable PA-* axioms in their declared scopes. Equivalent to [`CRPT-Mod-18` (L5.1.D1)](CRPT_OMEGA_TOWER_L5.md#crpt-model).
 
-**Source:** CRPT; from `T_CRPT` (L5.3.D11) + `Scope-Sat` (L5.3.D12); restates `CRPT-Mod-18` (L5.1.D1).
+**Source:** CRPT; from [`T_CRPT` (L5.3.D11)](CRPT_OMEGA_TOWER_L5.md#crpt-theory-t_crpt) + [`Scope-Sat` (L5.3.D12)](CRPT_OMEGA_TOWER_L5.md#scope-aware-satisfaction); restates [`CRPT-Mod-18` (L5.1.D1)](CRPT_OMEGA_TOWER_L5.md#crpt-model).
 
-A *CRPT model* is a scope-aware model of T_CRPT (`T_CRPT` (L5.3.D11)), equipoised
-with a Σ_CRPT-structure (`Σ_CRPT` (L5.3.D10)) satisfying the substrate conditions,
+A *CRPT model* is a scope-aware model of T_CRPT ([`T_CRPT` (L5.3.D11)](CRPT_OMEGA_TOWER_L5.md#crpt-theory-t_crpt)), equipoised
+with a Σ_CRPT-structure ([`Σ_CRPT` (L5.3.D10)](CRPT_OMEGA_TOWER_L5.md#crpt-signature-σ_crpt)) satisfying the substrate conditions,
 C1, C2, and the applicable PA-* axioms in their declared scopes.
 
 ### CRPT Model Homomorphism
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.3.D14 | `CRPT-Hom` |  | **Novel** |
-**Synopsis:** Formal-theory restatement of "CRPT model homomorphism": a model homomorphism Φ : N₁ → N₂, equivalently a CNF-preserving L(Σ_CRPT)-homomorphism. Equivalent to `Hom` (L5.2.D1).
+**Synopsis:** Formal-theory restatement of "CRPT model homomorphism": a model homomorphism Φ : N₁ → N₂, equivalently a CNF-preserving L(Σ_CRPT)-homomorphism. Equivalent to [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂).
 
-**Source:** CRPT; restates `Hom` (L5.2.D1) via `L-Hom` (L5.3.D8).
+**Source:** CRPT; restates [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) via [`L-Hom` (L5.3.D8)](CRPT_OMEGA_TOWER_L5.md#l-homomorphism).
 
-A *CRPT model homomorphism* is a model homomorphism Φ : N₁ → N₂ (`Hom` (L5.2.D1)
-of the anchor). Equivalently, it is an L(Σ_CRPT)-homomorphism (`L-Hom` (L5.3.D8))
+A *CRPT model homomorphism* is a model homomorphism Φ : N₁ → N₂ ([`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂)
+of the anchor). Equivalently, it is an L(Σ_CRPT)-homomorphism ([`L-Hom` (L5.3.D8)](CRPT_OMEGA_TOWER_L5.md#l-homomorphism))
 preserving CNF.
 
 ### Category Mod_CRPT
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.3.D15 | `Mod_CRPT-L5.3` | Mod_CRPT | **Novel** |
-**Synopsis:** Formal-theory restatement of the category Mod_CRPT — CRPT models and CRPT model homomorphisms — which by `Cat-Eq` (L5.3.T3) is isomorphic to the category of scope-aware Σ_CRPT-models of T_CRPT.
+**Synopsis:** Formal-theory restatement of the category Mod_CRPT — CRPT models and CRPT model homomorphisms — which by [`Cat-Eq` (L5.3.T3)](CRPT_OMEGA_TOWER_L5.md#categorical-equivalence) is isomorphic to the category of scope-aware Σ_CRPT-models of T_CRPT.
 
-**Source:** CRPT; from `Cat-Eq` (L5.3.T3); restates `Mod_CRPT` (L7.2.D1).
+**Source:** CRPT; from [`Cat-Eq` (L5.3.T3)](CRPT_OMEGA_TOWER_L5.md#categorical-equivalence); restates [`Mod_CRPT` (L7.2.D1)](CRPT_OMEGA_TOWER_L7.md#category-mod_crpt).
 
 The *category Mod_CRPT* is the category of CRPT models and CRPT model
-homomorphisms. By `Cat-Eq` (L5.3.T3), it is isomorphic to the category of scope-aware
+homomorphisms. By [`Cat-Eq` (L5.3.T3)](CRPT_OMEGA_TOWER_L5.md#categorical-equivalence), it is isomorphic to the category of scope-aware
 Σ_CRPT-models of T_CRPT with homomorphisms.
 
 ---
@@ -1432,7 +1432,7 @@ M₁ ⊑ M₂ if 𝒰_{M₁} ⊆ 𝒰_{M₂},
 | **Theorem** | L5.4.T1 | `⊑-PO` |  | **Novel** |
 **Synopsis:** The refinement order ⊑ is a partial order on CRPT models: reflexive, transitive, and antisymmetric. Models related by mutual refinement agree on all their defining data, hence are equal.
 
-**Source:** CRPT; from `⊑` (L5.4.D1).
+**Source:** CRPT; from [`⊑` (L5.4.D1)](CRPT_OMEGA_TOWER_L5.md#refinement-order-).
 
 (Models, ⊑) is a poset: reflexive
 (M ⊑ M via inclusions), transitive (chain of inclusions), antisymmetric.
@@ -1465,7 +1465,7 @@ M₁ ⪯ M₂ if ∃ embedding Φ : M₁ → M₂ with
 | **Theorem** | L5.4.T2 | `⪯-Pre` |  | **Novel** |
 **Synopsis:** The expressiveness order ⪯ is a preorder (reflexive and transitive) but not antisymmetric in general: distinct presentations of isomorphic structures can embed injectively into each other without being identical model descriptions.
 
-**Source:** CRPT; from `⪯` (L5.4.D2).
+**Source:** CRPT; from [`⪯` (L5.4.D2)](CRPT_OMEGA_TOWER_L5.md#expressiveness-).
 
 (Models, ⪯) is reflexive and transitive but
 not antisymmetric in general.
@@ -1506,7 +1506,7 @@ is a bounded lattice. ∎
 | **Theorem** | L5.4.T4 | `Sub-Ord` |  | **Novel** |
 **Synopsis:** The refinement order ⊑ descends to isomorphism classes of models: [M₁] ⊑ [M₂] is well-defined independent of representatives, because isomorphisms transport all the data defining ⊑. The order is therefore substrate-neutral.
 
-**Source:** CRPT; from `⊑` (L5.4.D1) + `Iso` (L5.2.D2).
+**Source:** CRPT; from [`⊑` (L5.4.D1)](CRPT_OMEGA_TOWER_L5.md#refinement-order-) + [`Iso` (L5.2.D2)](CRPT_OMEGA_TOWER_L5.md#isomorphism).
 
 The refinement order ⊑ descends
 to equivalence classes [M] under model isomorphism: [M₁] ⊑ [M₂] iff some
@@ -1536,29 +1536,29 @@ instantiation, composition, and model transformation.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.5.D1 | `Mod_CRPT-Cat` | Mod_CRPT | **Novel** |
-**Synopsis:** The category of CRPT models: objects are the CRPT models, morphisms are the canonical model homomorphisms, composition is function composition of underlying maps, and identities are the identity morphisms. The data is assembled here; closure of composition is `Comp-Closed` (L5.5.T1), the laws are `Cat-Laws` (L5.5.T2).
+**Synopsis:** The category of CRPT models: objects are the CRPT models, morphisms are the canonical model homomorphisms, composition is function composition of underlying maps, and identities are the identity morphisms. The data is assembled here; closure of composition is [`Comp-Closed` (L5.5.T1)](CRPT_OMEGA_TOWER_L5.md#composition-closure), the laws are [`Cat-Laws` (L5.5.T2)](CRPT_OMEGA_TOWER_L5.md#category-laws).
 
-**Source:** CRPT; from `Hom` (L5.2.D1) + `Id-Mor` (L5.5.D2) + `Comp-Closed` (L5.5.T1).
+**Source:** CRPT; from [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) + [`Id-Mor` (L5.5.D2)](CRPT_OMEGA_TOWER_L5.md#identity-morphism) + [`Comp-Closed` (L5.5.T1)](CRPT_OMEGA_TOWER_L5.md#composition-closure).
 
 The **category of CRPT models** Mod_CRPT is defined as:
 
 **Objects:**  All CRPT models M = (𝒰_M, →_ρ, →_σ, ρ_M, ≃_M, axiom profile) satisfying 
 the PA-axiom system (PA-WN, PA-Conf, PA-Fix, etc., with regime-specific profiles).
 
-**Morphisms:** A morphism Φ : M₁ → M₂ is a CRPT model homomorphism in the canonical sense of `Hom` (L5.2.D1): a function Φ_𝒰 : 𝒰_{M₁} → 𝒰_{M₂} satisfying its four conditions —
+**Morphisms:** A morphism Φ : M₁ → M₂ is a CRPT model homomorphism in the canonical sense of [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂): a function Φ_𝒰 : 𝒰_{M₁} → 𝒰_{M₂} satisfying its four conditions —
 
 - **Φ_R (reduction):**  x →_ρ y in M₁ ⟹ Φ_𝒰(x) →_ρ Φ_𝒰(y) in M₂
 - **Φ_E (equivalence):**  x ≃_{M₁} y ⟹ Φ_𝒰(x) ≃_{M₂} Φ_𝒰(y)
 - **Φ_ρ (projection):**  Φ_𝒰(ρ_{M₁}(x)) ≃_{M₂} ρ_{M₂}(Φ_𝒰(x)) for all x ∈ 𝒰_{M₁}
 - **Φ_LA (local-axiom compatibility):**  the pushforward of each local axiom of M₁ is consistent with LA_{M₂}
 
-No separate →_σ-preservation condition is imposed; this is exactly `Hom` (L5.2.D1).
+No separate →_σ-preservation condition is imposed; this is exactly [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂).
 
-**Composition:** the composite of `Hom`-morphisms, closed by `Comp-Closed` (L5.5.T1).
+**Composition:** the composite of `Hom`-morphisms, closed by [`Comp-Closed` (L5.5.T1)](CRPT_OMEGA_TOWER_L5.md#composition-closure).
 
-**Identities:** the identity morphisms `Id-Mor` (L5.5.D2).
+**Identities:** the identity morphisms [`Id-Mor` (L5.5.D2)](CRPT_OMEGA_TOWER_L5.md#identity-morphism).
 
-The category laws hold by `Cat-Laws` (L5.5.T2).
+The category laws hold by [`Cat-Laws` (L5.5.T2)](CRPT_OMEGA_TOWER_L5.md#category-laws).
 
 ### Identity Morphism
 
@@ -1567,7 +1567,7 @@ The category laws hold by `Cat-Laws` (L5.5.T2).
 | **Definition** | L5.5.D2 | `Id-Mor` | id_M | **Novel** |
 **Synopsis:** The identity morphism on a CRPT model M is the identity function on its universe; it satisfies all four homomorphism conditions trivially, giving every object of Mod_CRPT its unit.
 
-**Source:** CRPT; from `Hom` (L5.2.D1).
+**Source:** CRPT; from [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂).
 
 For each CRPT model M, the **identity morphism** id_M : M → M is
 ```
@@ -1584,7 +1584,7 @@ the identity is LA_M itself, consistent with LA_M. All four conditions hold with
 | **Theorem** | L5.5.T1 | `Comp-Closed` | Ψ ∘ Φ | **Novel** |
 **Synopsis:** The composite of two CRPT model homomorphisms is a CRPT model homomorphism: each of the four conditions Φ_R, Φ_E, Φ_ρ, Φ_LA passes through function composition. Composition is therefore an operation of Mod_CRPT, not merely of underlying functions.
 
-**Source:** CRPT; from `Hom` (L5.2.D1) + `Id-Mor` (L5.5.D2).
+**Source:** CRPT; from [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) + [`Id-Mor` (L5.5.D2)](CRPT_OMEGA_TOWER_L5.md#identity-morphism).
 
 For homomorphisms Φ : M₁ → M₂ and Ψ : M₂ → M₃, the composite
 ```
@@ -1608,19 +1608,19 @@ then Ψ's Φ_LA). ✓ ∎
 | **Theorem** | L5.5.T2 | `Cat-Laws` | | **Novel** |
 **Synopsis:** Mod_CRPT satisfies the category axioms: composition is associative and the identity morphisms are two-sided units. With Comp-Closed this completes the proof that Mod_CRPT is a category — the structure named by Mod-Cat (L5.2.T1) is hereby verified.
 
-**Source:** CRPT; from `Mod_CRPT-Cat` (L5.5.D1) + `Comp-Closed` (L5.5.T1) + `Id-Mor` (L5.5.D2).
+**Source:** CRPT; from [`Mod_CRPT-Cat` (L5.5.D1)](CRPT_OMEGA_TOWER_L5.md#the-category-mod_crpt-1) + [`Comp-Closed` (L5.5.T1)](CRPT_OMEGA_TOWER_L5.md#composition-closure) + [`Id-Mor` (L5.5.D2)](CRPT_OMEGA_TOWER_L5.md#identity-morphism).
 
 Mod_CRPT is a category:
 
 (i) **Associativity:** (Χ ∘ Ψ) ∘ Φ = Χ ∘ (Ψ ∘ Φ) for all composable Φ, Ψ, Χ.
 (ii) **Units:** for any Φ : M₁ → M₂, Φ ∘ id_{M₁} = Φ and id_{M₂} ∘ Φ = Φ.
 
-*Proof.* Morphisms are determined by their underlying functions (`Hom` (L5.2.D1)).
+*Proof.* Morphisms are determined by their underlying functions ([`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂)).
 **(i)** Both sides have underlying function Χ_𝒰 ∘ Ψ_𝒰 ∘ Φ_𝒰 — function composition is
-associative — and both are homomorphisms by `Comp-Closed` (L5.5.T1) applied twice; equal
+associative — and both are homomorphisms by [`Comp-Closed` (L5.5.T1)](CRPT_OMEGA_TOWER_L5.md#composition-closure) applied twice; equal
 underlying functions give equal morphisms. **(ii)** (Φ ∘ id_{M₁})_𝒰 = Φ_𝒰 ∘ id_{𝒰_{M₁}} =
-Φ_𝒰 and (id_{M₂} ∘ Φ)_𝒰 = id_{𝒰_{M₂}} ∘ Φ_𝒰 = Φ_𝒰 (`Id-Mor` (L5.5.D2)). Together with
-closure (`Comp-Closed` (L5.5.T1)) and the data of `Mod_CRPT-Cat` (L5.5.D1), Mod_CRPT is a
+Φ_𝒰 and (id_{M₂} ∘ Φ)_𝒰 = id_{𝒰_{M₂}} ∘ Φ_𝒰 = Φ_𝒰 ([`Id-Mor` (L5.5.D2)](CRPT_OMEGA_TOWER_L5.md#identity-morphism)). Together with
+closure ([`Comp-Closed` (L5.5.T1)](CRPT_OMEGA_TOWER_L5.md#composition-closure)) and the data of [`Mod_CRPT-Cat` (L5.5.D1)](CRPT_OMEGA_TOWER_L5.md#the-category-mod_crpt-1), Mod_CRPT is a
 category. ∎
 
 ### Model Homomorphisms Preserve Structural Properties
@@ -1630,7 +1630,7 @@ category. ∎
 | **Theorem** | L5.5.T3 | `Hom-Pres` | | **Novel** |
 **Synopsis:** CRPT model homomorphisms preserve structural properties: a homomorphism never increases abstraction depth (d_{M₂}(Φx) ≤ d_{M₁}(x)) and respects fixpoints, regimes, and canonical forms. Structure-preserving maps cannot manufacture new structure.
 
-**Source:** CRPT; from `Hom` (L5.2.D1).
+**Source:** CRPT; from [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂).
 
 Let Φ : M₁ → M₂ be a model homomorphism. Then:
 

@@ -43,4 +43,8 @@ Start with the front matter, then the levels in order:
 
 Every formal item carries a stable label `L⟨level⟩.⟨section⟩.⟨kind⟩⟨n⟩` (e.g. `L1.2.Ax1`,
 `L3.3.T9`) and a short tag (e.g. `` `PA-WN` ``, `` `WF-NWF-Dual` ``). Cross-references cite
-both, as `` `Tag` (Label) ``.
+both, as `` `Tag` (Label) ``, and every cross-reference is a **hyperlink** to the cited
+construct's subsection (projection axioms are cited without backticks, `PA-X (Label)`,
+likewise hyperlinked). Labels are placed by the fiber discipline of `Self-Sect` (Lω.8.T1):
+a construct lives in the section of its primary Source anchor, and the section map
+(CRPT_OMEGA_TOWER_SECTION_MAP.md) records the resulting census.
