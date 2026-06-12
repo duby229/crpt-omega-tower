@@ -119,7 +119,7 @@ The set Div(→_ρ) := {x ∈ 𝒰 | x ∈ Div(→_ρ)}.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.1.R2 | `Div-NotDet` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** The substrate leaves Div(→_ρ) undetermined: whether divergence is empty or inhabited is decided by the axioms of L1.2–L1.5, not by the substrate definition.
 
 **Source:** CRPT; from [`Div` (L1.1.D5)](CRPT_OMEGA_TOWER_L1.md#diverging-elements).
 
@@ -255,7 +255,7 @@ transitive.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L1.1.R3 | `Bisim-NotEq` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** The substrate does not identify bisimilar elements: x ≈ y ⟹ x = y is never assumed at substrate level; the axiom-level link between bisimilarity and observable equivalence is PA-Bisim.
 
 **Source:** CRPT; from [`Bisim~` (L1.1.D7)](CRPT_OMEGA_TOWER_L1.md#bisimilarity) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence).
 
@@ -1072,7 +1072,7 @@ and pure NWF foundational models).
 
 The Observable Contract (OC-1,
 OC-2) of [`PA-Prod` (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content) is the existing instance of this pattern: a model-specific
-predicate Observable : 𝒰_M → {⊤, ⊥} subject to two local conditions. [`LA_M` (L1.5.D2)](CRPT_OMEGA_TOWER_L1.md#model-local-axiom-schema-la_m) generalises this to an arbitrary finite set of such commitments.
+observable-content function Observable : 𝒰_M → (O_M, 0) (minimal instance {⊤, ⊥}) subject to two local conditions. [`LA_M` (L1.5.D2)](CRPT_OMEGA_TOWER_L1.md#model-local-axiom-schema-la_m) generalises this to an arbitrary finite set of such commitments.
 
 ### IC_M as proto-LA_M
 | Type | Label | Tag | Notation | Status |
@@ -1218,7 +1218,7 @@ result. ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L1.5.C1 | `Proc-Compliant` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** Deterministic-procedure compliance: a model whose reduction relation is non-confluent but whose projection operator is a total deterministic function satisfying C1–C3 is CRPT-compatible, with PA-Conf declared Scoped(ρ_M-orbits) in its profile — no reinterpretation of the substrate is required.
 
 **Source:** CRPT; from [`LA_M` (L1.5.D2)](CRPT_OMEGA_TOWER_L1.md#model-local-axiom-schema-la_m).
 
@@ -1226,6 +1226,8 @@ Any model
 where →_ρ is non-confluent but ρ_M is a total deterministic function satisfying C1–C3
 (L2.1) is CRPT-compatible with PA-Conf declared `Scoped(ρ_M-orbits)`. No stochastic
 reinterpretation is required.
+
+*Proof.* Conditions C1–C3 make the ρ_M-orbit of every element a single determined sequence, so confluence holds trivially along ρ_M-orbits even when →_ρ branches elsewhere. Declaring PA-Conf as Scoped(ρ_M-orbits) in the profile ([`LA_M` (L1.5.D2)](CRPT_OMEGA_TOWER_L1.md#model-local-axiom-schema-la_m)) is therefore sound: every theorem consuming PA-Conf through the orbit reading remains available, and no global confluence of →_ρ is required. ∎
 
 ### LA_M Independence
 | Type | Label | Tag | Notation | Status |

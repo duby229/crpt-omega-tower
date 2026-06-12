@@ -57,7 +57,7 @@ equality of CNF_π values). The equivalence class [x]_{≃_π} = L_π(x).
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L0.1.R1 | `Fiber-InfoComp` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** The fiber L_π(x) measures information compression: it collects everything π cannot distinguish from x at the canonical level, so larger fibers mean coarser projection.
 
 **Source:** CRPT; from [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence).
 
@@ -144,7 +144,7 @@ then L_{π₁}(x) ⊆ L_{π₂}(x) for all x. Finer projections produce smaller 
 **Source:** CRPT; from [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence) + [`NFC-NM` (L2.5.D1)](CRPT_OMEGA_TOWER_L2.md#normal-form-fiber--native-form).
 
 *The CRPT substrate (𝒰, →_ρ, →_σ, 𝒯) with projection operator ρ_M (L2.1.D1)
-is a projection system Π with π := ρ_M and structural relation the structural relation. The fibers are:*
+is a projection system Π with π := ρ_M and structural relation →_σ. The fibers are:*
 ```
 L_{ρ_M}(x) = NFC_M(CNF_M(x))    for any x ∈ 𝒰
 L_{ρ_M}(f) = NFC_M(f)            for f ∈ Fix(ρ_M)
@@ -153,6 +153,8 @@ L_{ρ_M}(f) = NFC_M(f)            for f ∈ Fix(ρ_M)
 H_I, H_O (L0.3.D1) and the six-class partition (L0.4.T1).*
 
 *Cross-reference: the normal-form fiber (L2.5.D1); CFix (L2.4.D1).*
+
+*Proof.* Instantiate Π := (𝒰, ρ_M, →_σ) with π := ρ_M: π is a deterministic projection by C1–C2 ([`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m)), and →_ρ ⊆ →_σ holds by [`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate). For f ∈ Fix(ρ_M) the universal fiber L_π(f) collects the elements whose π-orbit lands at f — exactly the normal-form fiber NFC_M(f) ([`NFC-NM` (L2.5.D1)](CRPT_OMEGA_TOWER_L2.md#normal-form-fiber--native-form)); for general x the orbit lands at CNF_M(x), giving L_{ρ_M}(x) = NFC_M(CNF_M(x)). Each clause of [`Fiber` (L0.1.D2)](CRPT_OMEGA_TOWER_L0.md#l01d2--fiber-and-observable-equivalence) is witnessed by the corresponding L2 construct. ∎
 
 ---
 
@@ -185,7 +187,7 @@ defined by L0.8.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L0.2.R1 | `Reg-PreAx` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** The fate dichotomy is pre-axiomatic: Conv(π) ∪ Pers(π) = 𝒰 follows from the definitions and excluded middle alone; axioms populate the regimes, they never create the dichotomy.
 
 **Source:** CRPT; from `Conv`, [`Pers` (L0.2.D1)](CRPT_OMEGA_TOWER_L0.md#l02d1--convergent-and-persistent-elements).
 
@@ -279,13 +281,15 @@ If n ≥ 1: π^{n−1}(π(x)) = π^n(x) ∈ Fix(π), so π(x) ∈ Conv(π). ∎
 realization of [`Ax-Cov-U` (L0.2.T2)](CRPT_OMEGA_TOWER_L0.md#l02t2--universal-axiom-coverage):*
 
 - *PA-WN + PA-Conf + PA-Fix cover Conv(ρ_M) = ↓_M  [type (i)]*
-- *PA-NWF + PA-CoInd + PA-Prod + PA-Bisim cover Pers(ρ_M) = ∞_M  [type (ii)]*
-- *PA-Reach ensures recursive projection in Pers(ρ_M) reaches horizon-stable representatives, bridging finite observability with infinite production  [type (iii), constraint on projection on substrate ∞_M]*
+- *PA-NWF + PA-CoInd + PA-Prod cover Pers(ρ_M) = ∞_M, with [PA-WN_top (L1.7.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn_top--topological-weak-normalisation--asymptotic-convergence) on its convergence sub-class  [type (ii)]*
+- *the universal axioms PA-Bisim + PA-Reach span both regimes; PA-Reach ensures recursive projection in Pers(ρ_M) reaches its asymptotic destination, bridging finite observability with infinite production  [type (iii), constraint on projection on substrate ∞_M]*
 
 *[`Regime-Dich` (L0.2.T1)](CRPT_OMEGA_TOWER_L0.md#l02t1--universal-regime-dichotomy) is the universal grounding for [`Reg-Exh` (L2.2.T8)](CRPT_OMEGA_TOWER_L2.md#regime-exhaustiveness) and
 [`Ax-Cov` (L2.2.T9)](CRPT_OMEGA_TOWER_L2.md#axiom-coverage) of the anchor.*
 
 *Cross-reference: regime definitions L2.2.D4–D2 (L2.2.1); axiom system L1.2.1–L1.2.4.*
+
+*Proof.* Instantiating π := ρ_M makes Conv(π) = ↓_M and Pers(π) = ∞_M definitionally ([`Conv` (L0.2.D1)](CRPT_OMEGA_TOWER_L0.md#l02d1--convergent-and-persistent-elements); [`↓_M` (L2.2.D4)](CRPT_OMEGA_TOWER_L2.md#convergent-regime-_m), [`∞_M` (L2.2.D5)](CRPT_OMEGA_TOWER_L2.md#persistent-regime-_m)). The coverage types of [`Ax-Cov-U` (L0.2.T2)](CRPT_OMEGA_TOWER_L0.md#l02t2--universal-axiom-coverage) are witnessed clause-by-clause: type (i) by PA-WN + PA-Conf + PA-Fix on ↓_M ([`Mode-Comp` (L1.4.T1)](CRPT_OMEGA_TOWER_L1.md#regime-coexistence-and-mode-coverage)(iii)); type (ii) by PA-NWF + PA-CoInd + PA-Prod on ∞_M, with [PA-WN_top (L1.7.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn_top--topological-weak-normalisation--asymptotic-convergence) on its convergence sub-class; type (iii) by the universal axioms — PA-Reach's destination guarantee makes the persistent regime finitely observable ([`CPer-Ex` (L3.3.T6)](CRPT_OMEGA_TOWER_L3.md#cper-existence)). ∎
 
 ---
 
@@ -339,7 +343,7 @@ invisible.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L0.3.R1 | `BdyLayer-HO` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** The boundary-layer predicate H_∂^π(x) := (d_π(x) = 1) is distinct from H_O^π: it marks non-fixpoints one step from canonical form, not canonical representatives with non-trivial fibers.
 
 **Source:** CRPT; from `H_S^π`, `H_I^π`, [`H_O^π` (L0.3.D1)](CRPT_OMEGA_TOWER_L0.md#l03d1--universal-horizon-predicates).
 
@@ -472,6 +476,8 @@ H_O (L3.1.D4) are the canonical realization of `H_S^π`, `H_I^π`, [`H_O^π`
 (L0.3.D1)](CRPT_OMEGA_TOWER_L0.md#l03d1--universal-horizon-predicates) for the CRPT substrate with π := ρ_M. The CRPT structural signature
 the orbit signature (L3.1.D5) is the CRPT instance of sig_π. `H_I-WD` (L3.1.T2,
 L3.1.2a) is the CRPT instance of [`H_I-WD-U` (L0.3.T2)](CRPT_OMEGA_TOWER_L0.md#l03t2--h_i-well-definedness--universal-kernel-theorem).*
+
+*Proof.* Instantiate π := ρ_M. The universal fiber L_π(x) becomes the kernel fiber ρ_M^{-1}(ρ_M(x)), and the three clauses of `H_S^π`, `H_I^π`, [`H_O^π` (L0.3.D1)](CRPT_OMEGA_TOWER_L0.md#l03d1--universal-horizon-predicates) specialize clause-for-clause to [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) (fiber ramification), [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) (fiber signature-uniformity), and [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o) (depth-1 boundary); sig_π specializes to sig_M ([`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form)). Well-definedness transports along the same instantiation: [`H_I-WD-U` (L0.3.T2)](CRPT_OMEGA_TOWER_L0.md#l03t2--h_i-well-definedness--universal-kernel-theorem) yields [`H_I-WD` (L3.1.T2)](CRPT_OMEGA_TOWER_L3.md#h_i-well-definedness--general-kernel-theorem). ∎
 
 ---
 
@@ -865,6 +871,8 @@ L5.3): T_CRPT restricted to finite CRPT models is equivalent to its FOL fragment
 
 *Cross-reference: T_CRPT (L5.3.D11); Scope Boundaries (L5.2, L5.3).*
 
+*Proof.* By [`SOL-Nec-U` (L0.7.T1)](CRPT_OMEGA_TOWER_L0.md#l07t1--universal-sol-necessity) exactly two universal sources force second-order commitments: reflexive-transitive/limit closure and greatest-fixpoint quantification. Inspecting the enumeration of [`T_CRPT` (L5.3.D11)](CRPT_OMEGA_TOWER_L5.md#crpt-theory-t_crpt): SOL-1 (→_ρ* closure), SOL-2 (divergence witness), and SOL-6 (≈ as greatest bisimulation) instantiate the two sources directly, and SOL-7 through SOL-12 are their downstream consequences via the documented causality chain; the remaining items instantiate the closure source. No item requires a third source, and both sources are exercised — the mapping is exhaustive and exact. ∎
+
 ---
 
 ## L0.8 — Universal Stability Classification
@@ -942,9 +950,9 @@ condition. Therefore x ∉ SC(Π). ∎
 framework (`3-Tier` L6.2.D2) are the canonical realization of
 [`SC-Strat-U` (L0.8.T1)](CRPT_OMEGA_TOWER_L0.md#l08t1--universal-stability-three-tier-stratification) in the CRPT substrate:*
 
-- *Tier 1 = SC-1 ∩ SC-2 elements (unconditional convergence in 𝒯)*
-- *Tier 2 = SC-3 elements (Cauchy orbit in the metric of 𝒯)*
-- *Tier 3 = SC-4 elements (PA-WN_top required — L1.2.Ax2)*
+- *Tier 1 = the unconditional tier (PA-NWF + PA-Bisim only): orbit types AP/EP/P*
+- *Tier 2 = the SC-4 tier: CNF∞_M, CPD, and the NWF class partition*
+- *Tier 3 = the PA-WN_top tier (L1.7.Ax1): topological limit classification*
 
 *CNF∞_M (`CNF∞-Def` L3.3.D6, L3) is the CRPT stable canonical form for Tier 1
 and Tier 2 elements. [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility) is the CRPT instance of the
@@ -953,6 +961,8 @@ asymptotically periodic impossibility result.*
 *Cross-reference: SC-1 (L3.3.D2, L3); SC-2 (L3.3.D3, L3); SC-3 (L3.3.D4, L3);
 SC-4 (L3.3.D5, L3); CNF∞_M (L3.3.D6, L3); three-tier framework (L6.2.D2);
 SC-Imp (L6.3.T1).*
+
+*Proof.* Instantiate the universal stratification [`SC-Strat-U` (L0.8.T1)](CRPT_OMEGA_TOWER_L0.md#l08t1--universal-stability-three-tier-stratification) with π := ρ_M. The universal tiers are graded by assumption strength exactly as [`3-Tier` (L6.2.D2)](CRPT_OMEGA_TOWER_L6.md#three-tier-_m-analysis-framework) grades the persistent theory: the unconditional tier maps to the orbit-type layer (PA-NWF + PA-Bisim only), the stability-conditional tier maps to the SC-4 layer (CNF∞_M, CPD, the NWF partition), and the topology-conditional tier maps to the PA-WN_top layer (L1.7.Ax1). The SC-k family ([`SC-k` (L6.3.D12)](CRPT_OMEGA_TOWER_L6.md#generalised-hierarchy)) realizes the universal stability conditions, clause for clause. ∎
 
 ---
 
@@ -1017,12 +1027,14 @@ Category laws are inherited from function composition. ∎
 **Source:** CRPT; from [`ProjSys-Cat` (L0.9.T1)](CRPT_OMEGA_TOWER_L0.md#l09t1--universal-projection-category-projsys) + [`ProjMor` (L0.9.D1)](CRPT_OMEGA_TOWER_L0.md#l09d1--morphism-of-projection-systems); the model-level category is presented at [`Mod-Cat` (L5.2.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-models-form-category-mod_crpt) with [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂).
 
 *Mod_CRPT (`Mod-Cat` L5.2.T1) is the full subcategory of* **ProjSys** *on
-projection systems satisfying the CRPT substrate axioms (L1.2.1–L1.2.4) and
+projection systems satisfying the CRPT substrate ([`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate)) with the PA-* system (L1.2, L1.3, L1.7) and
 structural conditions C1, C2, C3 (L2.1.D1). The CRPT model homomorphism
 conditions Φ_R, Φ_E, Φ_ρ, Φ_LA (`Hom` L5.2.D1) are the CRPT specialization
 of (Φ-R), (Φ-≃), (Φ-π), (Φ-L) above.*
 
 *Cross-reference: Hom (L5.2.D1); Mod-Cat (L5.2.T1); Cat-Eq (L5.3.T3).*
+
+*Proof.* Objects: every CRPT model is a projection system with π := ρ_M ([`CRPT-Fiber` (L0.1.T3)](CRPT_OMEGA_TOWER_L0.md#l01t3--crpt-fiber-instance)), so the objects of Mod_CRPT form a subclass of ProjSys-objects. Morphisms: the four homomorphism conditions of [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) are the CRPT instances of (Φ-R), (Φ-≃), (Φ-π), (Φ-L) of [`ProjMor` (L0.9.D1)](CRPT_OMEGA_TOWER_L0.md#l09d1--morphism-of-projection-systems). Fullness: a ProjSys-morphism between CRPT models satisfies exactly those four conditions, hence is already a CRPT homomorphism — no morphisms are missing. Composition and identities coincide with the categorical structure verified at [`Cat-Laws` (L5.5.T2)](CRPT_OMEGA_TOWER_L5.md#category-laws). ∎
 
 ---
 

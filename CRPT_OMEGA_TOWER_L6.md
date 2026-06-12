@@ -1074,6 +1074,8 @@ For periodic orbits satisfying SC-1, the orbit spectrum
 OS_M(x) determines CNF∞(x) (as the unique class with frequency 1), and conversely.
 The embedding CNF∞ ↪ OS is therefore faithful.
 
+*Proof.* By [`OS-Per=CNF∞` (L6.3.T8)](CRPT_OMEGA_TOWER_L6.md#periodic-spectrum-recovers-cnf), an SC-1 orbit has OS_M(x) = δ_{CNF∞(x)}: the unique class of frequency 1 is CNF∞(x), so the spectrum determines the persistent canonical form; conversely CNF∞(x) determines the Dirac spectrum. The embedding CNF∞ ↪ OS is therefore injective on SC-1 orbits — faithful. ∎
+
 ### Aperiodic Spectra — Concrete Examples
 
 ### Alternating Stream
@@ -2351,13 +2353,15 @@ within M. ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Corollary** | L6.6.C1 | `ClassTable-Meta` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** The full model-classification table is a meta-level artifact: it classifies instantiations from outside, and by the degenerate-invariant result no single instantiation can generate the full table from within itself.
 
 **Source:** CRPT; from [`Dege-Inv` (L6.6.D1)](CRPT_OMEGA_TOWER_L6.md#degenerate-invariant).
 
 The full model classification table is a meta-level artifact
 derived from this anchor. It classifies implementations and instantiations; no
 implementation or instantiation can produce the full table from within itself.
+
+*Proof.* By [`Dege-Inv` (L6.6.D1)](CRPT_OMEGA_TOWER_L6.md#degenerate-invariant), any single instantiation realizes the invariant profile of its own row only; assembling the full table quantifies over all instantiations, which no single instantiation can perform from within — the table is meta-level by construction. ∎
 
 ### Where to find complete classification
 | Type | Label | Tag | Notation | Status |

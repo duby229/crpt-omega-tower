@@ -874,12 +874,13 @@ whose greatest fixpoint defines the non-terminating regime (then νΦ_∞ = ∅)
 **L5.3.2.7 PA-Prod (Productivity; L1.2 of anchor).**
 
 ```
-(PA-Prod) ∀x:U : ¬Fix(x) → Observable(ρ(x))
+(PA-Prod) ∀x:U : ¬Fix(x) → Observable(ρ(x)) ≠ 0
 ```
 
-where Observable : U → Bool is the predicate in Σ_CRPT subject to the observable
-contract (OC-1): ∀y:U (¬Fix(y) → Observable(y)), and (OC-2): for every x,
-Observable(ρ(x)) implies the step x → ρ(x) has non-zero PV-weight.
+where Observable : U → O is the observable-content function in Σ_CRPT, valued in
+the pointed sort (O, 0), subject to the observable contract (OC-1): ∀y:U
+(¬Fix(y) → Observable(y) ≠ 0), and (OC-2): for every x, Observable(ρ(x)) ≠ 0
+implies the step x → ρ(x) has non-zero PV-weight.
 
 Since Observable is a function symbol in Σ_CRPT, PA-Prod is a first-order sentence
 of L(Σ_CRPT). Its non-trivial content lies in the concrete observable contract
@@ -1094,6 +1095,8 @@ Therefore, calling a CRPT model a *CRPT model* is justified: it is
 literally a model of the CRPT theory T_CRPT in the sense of [`L-Mod` (L5.3.D5)](CRPT_OMEGA_TOWER_L5.md#l-model-of-a-theory),
 with scope-aware satisfaction ([`Scope-Sat` (L5.3.D12)](CRPT_OMEGA_TOWER_L5.md#scope-aware-satisfaction)).
 
+*Proof.* Immediate from [`Mod-Corr` (L5.3.T1)](CRPT_OMEGA_TOWER_L5.md#crpt-model-correspondence): the class of CRPT models and the class of scope-aware models of T_CRPT coincide, so the name transfers along the identity of classes. ∎
+
 ---
 
 ## Model Homomorphisms and Morphism Correspondence
@@ -1160,6 +1163,8 @@ model morphisms Φ : N₁ → N₂ are
 justified as *model homomorphisms* between CRPT models. The name "model
 morphism" is equivalent to "CRPT model homomorphism" per [`Hom-Corr` (L5.3.T2)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-correspondence).
 
+*Proof.* Immediate from [`Hom-Corr` (L5.3.T2)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-correspondence): the two morphism classes coincide, so the terminology is interchangeable. ∎
+
 ---
 
 ## The Category Mod_CRPT
@@ -1217,6 +1222,8 @@ as categories. ∎
 The category Mod_CRPT
 the *category of CRPT models*, consistent with standard model-theoretic notation
 (Mod(T) for the category of models of a theory T; [CK90 §3.4]).
+
+*Proof.* Immediate from [`Cat-Eq` (L5.3.T3)](CRPT_OMEGA_TOWER_L5.md#categorical-equivalence): the categorical equivalence identifies Mod_CRPT with Mod(T_CRPT), so the notation agrees with the standard usage. ∎
 
 ---
 

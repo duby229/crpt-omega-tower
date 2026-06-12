@@ -407,7 +407,7 @@ By induction: Q_{Mₙ} ≅ Q_{M₀} for all n. ✓ ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L8.4.R1 | `FiberCount-Interp` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** The fiber count is a base-model invariant: tower levels never add or remove abstraction fibers; what changes between levels is the composition structure built over them.
 
 **Source:** CRPT; from [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m).
 
@@ -610,6 +610,11 @@ x ∈ 𝒰_{Mₙ} : x is a tower horizon point of level n
 ```
 These are the fixpoints (d_{Mₙ}(x) = 0) at which the collapse map is non-injective.
 
+*Proof.* The tower horizon points of level n are exactly the elements of
+Hor_n := Fix(ρ_{Mₙ}) ∩ {x | H_S^{Mₙ}(x) = ⊤}. By [`F-Func` (L7.3.T1)](CRPT_OMEGA_TOWER_L7.md#f-is-a-functor-mod_crpt--ωcat): all elements of
+Fix(ρ_{Mₙ}) arise as ι_{n-1}(NFC_{Mₙ₋₁}(f)) for some f, and have H_S = ⊤ when
+|Q_{Mₙ₋₁}| ≥ 2 ([`HV-Dual` (L8.6.T1)](CRPT_OMEGA_TOWER_L8.md#horizontal-vertical-duality) iii). ✓ ∎
+
 ### Tower Horizon Points vs. H_O
 
 | Type | Label | Tag | Notation | Status |
@@ -623,10 +628,6 @@ This is distinct from H_O ([`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-
 d_{Mₙ}(x) = 1 (depth-1 elements, not fixpoints). Tower horizon points are at
 derivation height = 0 (Classes E/F, L3.2); H_O-positive elements are at derivation height = 1 (Classes B/C, L3.2).
 
-*Proof.* The tower horizon points of level n are exactly the elements of
-Hor_n := Fix(ρ_{Mₙ}) ∩ {x | H_S^{Mₙ}(x) = ⊤}. By [`F-Func` (L7.3.T1)](CRPT_OMEGA_TOWER_L7.md#f-is-a-functor-mod_crpt--ωcat): all elements of
-Fix(ρ_{Mₙ}) arise as ι_{n-1}(NFC_{Mₙ₋₁}(f)) for some f, and have H_S = ⊤ when
-|Q_{Mₙ₋₁}| ≥ 2 ([`HV-Dual` (L8.6.T1)](CRPT_OMEGA_TOWER_L8.md#horizontal-vertical-duality) iii). ✓ ∎
 
 ### Information Loss at the Tower Horizon
 | Type | Label | Tag | Notation | Status |
@@ -1331,6 +1332,8 @@ The regime partition functor (↓_M, ∞_M for each M) commutes with model homom
 ```
 for any morphism Φ : M₁ → M₂ (or are isomorphic under PA-Conf). This ensures the hybrid framework respects structural homomorphisms.
 
+*Proof.* Convergent preservation: for x ∈ ↓_{M₁} with f := ρ_{M₁}^{d}(x) ∈ Fix(ρ_{M₁}), iterating Φ_ρ gives Φ(f) ≃_{M₂} ρ_{M₂}^{d}(Φ(x)), and Φ_ρ at f gives Φ(f) ≃_{M₂} ρ_{M₂}(Φ(f)) — the orbit of Φ(x) reaches the fixpoint class of Φ(f) ([`Fix-Stab` (L2.1.L1)](CRPT_OMEGA_TOWER_L2.md#fixpoints-are-ρ_m-stable)), so Φ(x) ∈ ↓_{M₂}. Persistent preservation is the regime-partition clause of [`OR5-Func` (L8.8.T3)](CRPT_OMEGA_TOWER_L8.md#hybrid-framework-is-functorial-on-mod_crpt): the hybrid functor transports ↓ ⊔ ∞ componentwise, with the PA-Conf isomorphism noted covering the quotient case. ∎
+
 ### Summary: Integrated Components
 
 The hybrid CRPT framework (Phases 1–7, across L1–L8) specifies:
@@ -1633,7 +1636,7 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L8.10.R1 | `Lift-NWFbase` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** Lift discards the persistent regime by construction: Q_M = ↓_M/≃_M uses only the convergent stratum, so a non-well-founded base contributes nothing to the atom stock.
 
 **Source:** CRPT; from [`Lift-Pure-WF` (L8.10.C1)](CRPT_OMEGA_TOWER_L8.md#l810c1--lift-pure-wf-lift-of-any-model-is-pure-wf).
 
@@ -1680,7 +1683,7 @@ Therefore the tower is strictly infinite. ✓  ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L8.10.R2 | `Lift-TrivialQ` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** Degenerate base: with a single abstraction class, FMA(Q) ≅ ℕ and the lift is isomorphic to the successor model — the tower is non-trivial exactly when |Q| ≥ 2.
 
 **Source:** CRPT; from [`Tower-Inf` (L8.10.T2)](CRPT_OMEGA_TOWER_L8.md#l810t2--tower-inf-the-crpt-tower-is-strictly-infinite).
 

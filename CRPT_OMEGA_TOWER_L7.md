@@ -136,6 +136,8 @@ where Q_M := ↓_M/≃_M = {NFC_M(f) | f ∈ Fix(ρ_M)} is the **abstraction quo
 π_M is surjective onto Q_M: for every fiber
 F ∈ Q_M, there exists x ∈ ↓_M with π_M(x) = F (choose any x ∈ F).
 
+*Proof.* Every F ∈ Q_M is a non-empty ≃_M-class ([`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m)); choosing any x ∈ F gives π_M(x) = F by [`Quot-Proj` (L7.1.D2)](CRPT_OMEGA_TOWER_L7.md#canonical-epimorphism--quotient-projection). ∎
+
 ### Kernel of Epimorphism / Fiber Characterisation
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -155,6 +157,8 @@ For each f ∈ Fix(ρ_M), the preimage fiber is:
 ```
 π_M⁻¹(NFC_M(f)) = NFC_M(f) := {x ∈ ↓_M | CFix(ρ_M)(x) = f}
 ```
+
+*Proof.* The displayed chain: π_M(x) = π_M(x′) iff x and x′ lie in the same quotient class ([`Quot-Proj` (L7.1.D2)](CRPT_OMEGA_TOWER_L7.md#canonical-epimorphism--quotient-projection)) iff x ≃_M x′ iff CFix(ρ_M)(x) = CFix(ρ_M)(x′) ([`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m)). Hence ker(π_M) = ≃_M, and each π_M-fiber is exactly one ≃_M-class — the fibration is by observable equivalence. ∎
 
 ### Abstraction Quotient as Fiber Space
 | Type | Label | Tag | Notation | Status |

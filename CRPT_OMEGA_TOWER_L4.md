@@ -189,7 +189,7 @@ All three components are functions defined on previously established structures.
 | **Remark** | L4.1.R2 | `Coal-Term` |  | **Reframed** |
 **Synopsis:** This remark explains the three alternative names for the observer triple and why 'observer triple' is preferred. 'Orbit characterisation triple' emphasises the orbit-classification function. 'Behavioral signature' emphasises the behavioral identification role. 'Observer triple' is preferred because it captures the epistemological role: it represents what can be known about an element by a projection-based observer.
 
-Rutten [2000] Universal coalgebra; De Nicola & Hennessy [1984] Testing equivalences for processes
+**Source:** Rutten [2000] *Universal Coalgebra*; De Nicola & Hennessy [1984] *Testing Equivalences for Processes*; applied to [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple).
 
 The name "observer triple" originates from De Nicola & Hennessy [1984] **observational congruence** 
 in process algebra: an external observer interacting with a system can only distinguish systems 
@@ -298,7 +298,7 @@ Under Gateway Reachability, μT_{ρ,M} and νT_{ρ,M} are
 | **Definition** | L4.3.D1 | `VS` | V | **Imported** |
 **Synopsis:** The value semiring V = (V, +, ·, 0, 1) is the coefficient domain for the projection valuation. Standard instances: (ℝ₊, +, ×, 0, 1) for real-valued weights, (ℕ, +, ×, 0, 1) for counting, (𝔹, ∨, ∧, ⊥, ⊤) for Boolean reachability. The projection valuation is parametric in the choice of semiring.
 
-Kuich & Salomaa [1986]
+**Source:** Kuich & Salomaa [1986], *Semirings, Automata and Languages* — value semirings; the coefficient domain of [`PV-WF` (L4.3.D4)](CRPT_OMEGA_TOWER_L4.md#projection-valuation--wf).
 
 A *value semiring* is a tuple
 V = (V, +, ·, 0, 1) where (V, +, 0) is a commutative monoid, (V, ·, 1) is a monoid,
@@ -311,7 +311,7 @@ V = (V, +, ·, 0, 1) where (V, +, 0) is a commutative monoid, (V, ·, 1) is a mo
 | **Definition** | L4.3.D2 | `Step-W` | w(x, y) | **Imported** |
 **Synopsis:** The step weighting function w assigns a semiring value to each single reduction step x →_ρ y. Multiplicative composition of step weights along a reduction path gives the weight of the entire path. The projection valuation accumulates these weights using the semiring multiplication.
 
-Kuich & Salomaa [1986]
+**Source:** Kuich & Salomaa [1986] — weighted transitions; applied to [`VS` (L4.3.D1)](CRPT_OMEGA_TOWER_L4.md#value-semiring-v) over →_ρ.
 
 A *step weighting* is a function
 w : →_ρ → V assigning a value to each reduction step.
@@ -322,7 +322,7 @@ w : →_ρ → V assigning a value to each reduction step.
 | **Definition** | L4.3.D3 | `FRH` |  | **Imported** |
 **Synopsis:** The set of finite reduction histories ℋ_finite(x) from x is the tree of all finite reduction paths starting at x. Each node of the tree is a reduction step; each leaf is either a normal form or a maximal finite prefix. The projection valuation is defined by summing over all paths in this tree.
 
-Baader & Nipkow [1998]; Kuich & Salomaa [1986]
+**Source:** Baader & Nipkow [1998] — finite reduction sequences; Kuich & Salomaa [1986]; applied to [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
 The set of *finite reduction
 histories from x* is:
@@ -337,7 +337,7 @@ The empty history ε_x has x₀ = x and n = 0.
 | **Definition** | L4.3.D4 | `PV-WF` |  | **Reframed** |
 **Synopsis:** The finite reduction history set ℋ_finite(x) and its path enumeration: paths in ℋ_finite(x) are finite sequences x = x₀ →_ρ x₁ →_ρ ... →_ρ xₙ. The empty path ε_x (length 0) has weight 1 (the semiring unit). The projection valuation is the sum of weights of all paths.
 
-Kuich & Salomaa [1986]
+**Source:** Kuich & Salomaa [1986] — weighted path valuation; reframed over [`FRH` (L4.3.D3)](CRPT_OMEGA_TOWER_L4.md#finite-reduction-histories) + [`Step-W` (L4.3.D2)](CRPT_OMEGA_TOWER_L4.md#step-weighting).
 
 For x ∈ μT_{ρ,M}:
 ```
@@ -399,7 +399,7 @@ edges along the ρ_M-orbit) and finiteness by PA-WN. ✓ ∎
 | **Definition** | L4.3.D5 | `IRH-x` |  | **Imported** |
 **Synopsis:** The persistent regime projection valuation extends the finite-history valuation to elements of ∞_M using the scope conditions and the coinductive structure from PA-CoInd. For SC-1 elements, the persistent valuation converges to a limit determined by the periodic orbit's accumulated weight.
 
-Baader & Nipkow [1998]
+**Source:** Baader & Nipkow [1998] — infinite reduction sequences; applied to [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m); the persistent counterpart of [`FRH` (L4.3.D3)](CRPT_OMEGA_TOWER_L4.md#finite-reduction-histories).
 
 For x ∈ νT_{ρ,M}:
 ```

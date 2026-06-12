@@ -650,6 +650,8 @@ Combined with finiteness of 𝒰_CRPT (see Lω.7.R2 below), acyclicity implies t
 **Synopsis:** The self-substrate universe 𝒰_CRPT is finite: it consists of all labeled constructs in L1–L8 and Lω, and each level Lk contains finitely many labeled items (definitions, theorems, lemmas, corollaries, remarks). The union over finitely many levels of finite sets is finite. This finiteness, combined with acyclicity, gives ∞_{CRPT} = ∅ without requiring any sophisticated argument.
 
 
+
+**Source:** CRPT; from [`U_CRPT` (Lω.1.D1)](CRPT_OMEGA_TOWER_Lω.md#lω1d1--self-substrate-𝒰_crpt-with-topology-and-bisimilarity).
 The self-substrate 𝒰_CRPT consists of all labeled constructs of the anchor at levels L1–L8 plus Lω. The total number of labeled constructs is finite:
 ```
 |𝒰_CRPT|  <  ω
@@ -705,7 +707,7 @@ Two anchor constructs are bisimilar iff they reduce to the same primitive depend
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | Lω.7.R3 | `RegPart-Extract` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** Formal extraction of the regime-partition claim of Lω.1.T1(5): the self-substrate is purely convergent, proved from finiteness and acyclicity alone.
 
 **Source:** CRPT; from [`CRPT-WF` (Lω.7.T1)](CRPT_OMEGA_TOWER_Lω.md#lω7t1--crpt-wf-the-self-application-is-pure-well-founded).
 

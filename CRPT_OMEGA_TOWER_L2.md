@@ -17,7 +17,7 @@ subscripted by M. The subscript _M is a parameter label, not an acronym.
 | **Definition** | L2.1.D1 | `ρ_M` | ρ_M | **Reframed** |
 **Synopsis:** The projection operator ρ_M is the deterministic, single-valued function that computes canonical form one step at a time. It satisfies three conditions: C1 (determinism: ρ_M selects exactly one successor), C2 (bisimulation equivariance: bisimilar inputs produce bisimilar outputs), and C3 (fixpoint stability: ρ_M(x) = x for all x ∈ Fix(ρ_M)). Iterating the projection operator produces the canonical form.
 
-Cousot & Cousot [1977] POPL
+**Source:** Cousot & Cousot [1977] POPL — the abstraction step; reframed as the deterministic projection strategy over [`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate).
 
 The *projection operator* of M is a total function ρ_M : 𝒰_M → 𝒰_M satisfying:
 
@@ -86,7 +86,7 @@ uniformly in both regimes.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.1.R3 | `C3-Idem` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** Idempotence on fixpoints is automatic: ρ_M(ρ_M(x)) = ρ_M(x) for x ∈ Fix(ρ_M) is immediate from the definition of Fix and needs no extra condition.
 
 **Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
@@ -102,7 +102,7 @@ imposes no constraint. It is not a condition on ρ_M.
 | **Definition** | L2.1.D2 | `ρ^n` | ρ_M^n | **Imported** |
 **Synopsis:** The n-fold application ρ_M^n(x) is the result of applying the projection operator n times in sequence starting from x. For x ∈ ↓_M, there exists n = d_M(x) such that ρ_M^n(x) ∈ Fix(ρ_M). This iterated application is the constructive definition of canonical form computation.
 
-Cousot & Cousot [1977] POPL
+**Source:** Cousot & Cousot [1977] POPL — iterated application; applied to [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
 For n ∈ ℕ:
 ```
@@ -343,7 +343,7 @@ the determinism of ρ_M via C1 is specific to CRPT's orbit structure.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.1.R6 | `Disc-Proj` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** Each projection step erases indiscernible structure: recursive projection is stepwise discernibility-compression, which is what makes its fixpoints canonical observables.
 
 **Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
@@ -372,7 +372,7 @@ monotone regime operators.
 | **Definition** | L2.2.D1 | `Pre_ρ` | Pre_ρ(X) | **Imported** |
 **Synopsis:** The predecessor set Pre_ρ(X) = {y ∈ 𝒰_M | y →_ρ x for some x ∈ X} is the set of all elements that reduce to some element of X in one step. Predecessor sets are used to define convergent and persistent templates and appear in the definition of the horizon predicates.
 
-Cousot & Cousot [1977] POPL
+**Source:** Cousot & Cousot [1977] POPL — the predecessor (pre-) operator; applied to [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
 For X ⊆ 𝒰_M define:
 ```
@@ -386,7 +386,7 @@ the set of elements whose ρ_M-image lies in X.
 | **Definition** | L2.2.D2 | `T^{conv/pers}` | T^{conv}, T^{pers} | **Reframed** |
 **Synopsis:** Convergent and persistent templates partition the predecessor set into elements coming from ↓_M (convergent predecessors, T^{conv}) and elements coming from ∞_M (persistent predecessors, T^{pers}). This typed predecessor partition connects the regime structure to the fiber structure underlying the horizon predicates.
 
-Tarski [1955]; Cousot & Cousot [1977] POPL
+**Source:** Tarski [1955]; Cousot & Cousot [1977] POPL — lattice operators; applied to [`Pre_ρ` (L2.2.D1)](CRPT_OMEGA_TOWER_L2.md#ρ-predecessor-operator).
 
 On the complete lattice
 (𝒫(𝒰_M), ⊆), define:
@@ -401,7 +401,7 @@ T_{ρ,M}^{pers}(X) := (𝒰_M ∖ Fix(ρ_M)) ∩ Pre_ρ(X) (persistent regime op
 | **Lemma** | L2.2.L1 | `L-Mono` |  | **Imported** |
 **Synopsis:** Level monotonicity: the derivation height d_M is strictly monotone under the projection operator on ↓_M: if x ∈ ↓_M and x is not a fixed point, then d_M(ρ_M(x)) = d_M(x) − 1 < d_M(x). Each projection step strictly decreases derivation height, ensuring termination.
 
-Tarski [1955]
+**Source:** Tarski [1955] — monotonicity; applied to [`T^{conv/pers}` (L2.2.D2)](CRPT_OMEGA_TOWER_L2.md#regime-operators-t_conv-and-t_pers).
 
 T_{ρ,M}^{conv} and T_{ρ,M}^{pers} are monotone.
 
@@ -509,7 +509,7 @@ The regime operators use Fix(ρ_M), not NF(→_ρ), because the partition is def
 | **Theorem** | L2.2.T1 | `↓-Closed` |  | **Novel** |
 **Synopsis:** The convergent regime ↓_M is closed under the projection operator: if x ∈ ↓_M and x reduces to y, then y ∈ ↓_M with d_M(y) = d_M(x) − 1. Reduction always moves toward the fixed-point set, never away from it. This is the monotone-depth property of the projection operator.
 
-Tarski [1955]
+**Source:** CRPT; from [`↓_M` (L2.2.D4)](CRPT_OMEGA_TOWER_L2.md#convergent-regime-_m) + [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
 ∀x ∈ ↓_M : ρ_M(x) ∈ ↓_M.
 
@@ -523,7 +523,7 @@ so ρ_M(x) ∈ ↓_M. ∎
 | **Theorem** | L2.2.T2 | `∞-Closed` |  | **Novel** |
 **Synopsis:** The persistent regime ∞_M is also closed under the projection operator: if x ∈ ∞_M then ρ_M(x) ∈ ∞_M. Once an orbit enters the persistent regime it never leaves. This closure makes ↓_M and ∞_M invariant under the projection operator.
 
-Aczel [1988] Ch. 1
+**Source:** CRPT; from [`∞_M` (L2.2.D5)](CRPT_OMEGA_TOWER_L2.md#persistent-regime-_m) + [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
 ∀x ∈ ∞_M : ρ_M(x) ∈ ∞_M.
 
@@ -536,7 +536,7 @@ But then m+1 witnesses x ∈ ↓_M, contradicting x ∈ ∞_M. ∎
 | **Theorem** | L2.2.T3 | `Part` |  | **Novel** |
 **Synopsis:** The regime partition theorem: 𝒰_M = ↓_M ⊔ ∞_M is an exhaustive disjoint partition. Every element is either in the convergent regime or the persistent regime, with no overlap. This follows from the definition of ↓_M and ∞_M as complements.
 
-Baader & Nipkow [1998]
+**Source:** CRPT; from [`↓_M` (L2.2.D4)](CRPT_OMEGA_TOWER_L2.md#convergent-regime-_m) + [`∞_M` (L2.2.D5)](CRPT_OMEGA_TOWER_L2.md#persistent-regime-_m).
 
 𝒰_M = ↓_M ∐ ∞_M (disjoint union).
 
@@ -549,7 +549,7 @@ middle on the predicate x ∈ ↓_M. Disjointness: immediate from the definition
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.2.R3 | `Part-Taut` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** The regime partition is a logical tautology given the definitions — stated as a theorem only for citability; it consumes no axiom.
 
 **Source:** CRPT; from [`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition).
 
@@ -563,7 +563,7 @@ named result that appears in cross-references.
 | **Theorem** | L2.2.T4 | `PA-WN-Tot` |  | **Imported** |
 **Synopsis:** Under PA-WN, every element has a terminating path to a normal form under the reduction relation. This is a direct consequence of PA-WN and confirms that the convergent regime is total when ∞_M = ∅.
 
-Baader & Nipkow [1998] §2.3
+**Source:** Baader & Nipkow [1998] §2.3 — weak normalisation; restates [PA-WN (L1.2.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn--weak-normalisation) over [`NF` (L1.1.D2)](CRPT_OMEGA_TOWER_L1.md#normal-form).
 
 Under PA-WN, every element has a terminating →_ρ-path to a normal form.
 
@@ -577,7 +577,7 @@ needed. ∎
 | **Theorem** | L2.2.T5 | `PA-NWF-NE` |  | **Imported** |
 **Synopsis:** Under PA-NWF, the persistent regime ∞_M is non-empty. This is the minimal content of the non-well-founded axiom.
 
-Aczel [1988] Ch. 1
+**Source:** Aczel [1988] Ch. 1 — non-well-foundedness; restates [PA-NWF (L1.2.Ax4)](CRPT_OMEGA_TOWER_L1.md#pa-nwf--non-well-foundedness--divergence-existence) over [`∞_M` (L2.2.D5)](CRPT_OMEGA_TOWER_L2.md#persistent-regime-_m).
 
 Under PA-NWF, the persistent regime is
 non-empty.
@@ -678,7 +678,7 @@ The regime symbols are canonical: ↓_M and ∞_M are used throughout CRPT.
 | **Remark** | L2.2.R6 | `Vert-Horiz` |  | **Novel** |
 **Synopsis:** This remark establishes that the structural relation →_σ does not create a third regime. Elements connected horizontally (within the same fiber via →_σ) are already classified as convergent or persistent by their position relative to Fix(ρ_M). Horizontal connectivity is not a new regime; it is a within-regime structural property.
 
-Structural Classification
+**Source:** CRPT; from [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification) + [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality).
 
 
 The regime dichotomy (↓_M vs ∞_M) classifies elements by **VERTICAL INFINITY** — the abstraction tower dimension (ρ-reduction direction):
@@ -780,7 +780,7 @@ This explains why:
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.2.R8 | `InfDual-DepNote` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** Dependency note: Inf-Dual's proof consumes the L8 Lift apparatus (Lift-Def, Fix-Bas, NFC-TInv); the dependency is forward but acyclic, so the anchor structure stays well-founded.
 
 **Source:** CRPT; from [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality) + [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m).
 
@@ -939,7 +939,7 @@ CRPT's scope. The scope distinction is explicit.
 | **Definition** | L2.3.D1 | `≤_ρ` | ≤_ρ | **Reframed** |
 **Synopsis:** The derivation-height poset (↓_M, ≤_ρ) orders elements of the convergent regime by their derivation height. This is a well-founded partial order: every non-empty subset has a minimal element (fixed points, at depth 0). It is the induction measure for all structural arguments in L3–L8.
 
-Cousot & Cousot [1977] POPL
+**Source:** Cousot & Cousot [1977] POPL — approximation ordering; reframed over [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
 On μT_{ρ,M}, define:
 ```
@@ -953,7 +953,7 @@ the reflexive-transitive relation "y is reachable from x by ρ_M iteration."
 | **Lemma** | L2.3.L1 | `≤ρ-PO` |  | **Imported** |
 **Synopsis:** The derivation-height order ≤_ρ on ↓_M is a partial order: it is reflexive (d_M(x) ≤ d_M(x)), antisymmetric (x ≤_ρ y and y ≤_ρ x implies d_M(x) = d_M(y)), and transitive. Well-foundedness follows from the fact that d_M takes values in ℕ, which has no infinite descending chains.
 
-Cousot & Cousot [1977] POPL
+**Source:** Cousot & Cousot [1977] POPL — order verification; applied to [`≤_ρ` (L2.3.D1)](CRPT_OMEGA_TOWER_L2.md#ρ_m-reachability-preorder) under [PA-Conf (L1.2.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-conf--confluence--church-rosser).
 
 Under PA-Conf (Church-Rosser),
 ≤_ρ is reflexive, transitive, and antisymmetric on μT_{ρ,M}. Therefore (μT_{ρ,M}, ≤_ρ) is a **poset**
@@ -976,7 +976,7 @@ Under PA-Conf (Church-Rosser),
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.3.R1 | `leq-Antisym` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** Antisymmetry of ≤_ρ comes from determinism of ρ_M and finite reachability of fixpoints; PA-Conf appears in the hypothesis only for uniform citation, not as a logical need.
 
 **Source:** CRPT; from [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m).
 
@@ -1015,7 +1015,7 @@ to collapse x down to its canonical abstraction CFix(ρ_M)(x).
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.3.R2 | `dM-Domain` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** The derivation height is defined exactly on the convergent regime: for persistent x the defining set is empty and d_M(x) is undefined — its persistent counterpart is the reachability depth n_M.
 
 **Source:** CRPT; from [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m).
 
@@ -1173,7 +1173,7 @@ is injective on equivalence classes, ensuring that no discernible information is
 | **Theorem** | L2.4.T1 | `CNF-Ex` |  | **Imported** |
 **Synopsis:** Canonical form existence: every convergent element reaches a normal form — for x ∈ ↓_M, ρ_M^{d_M(x)}(x) ∈ NF(→_ρ). Hence the canonical form CFix(ρ_M)(x) exists and is a genuine normal form.
 
-Baader & Nipkow [1998] §6.1
+**Source:** Baader & Nipkow [1998] §6.1 — normal-form existence under weak normalisation; applied to [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m) + [`Fix=NF` (L2.1.T2)](CRPT_OMEGA_TOWER_L2.md#fix--nf).
 
 For each x ∈ μT_{ρ,M}: ρ_M^{d_M(x)}(x) ∈ NF(→_ρ).
 
@@ -1185,7 +1185,7 @@ Fix(ρ_M) = NF(→_ρ) by [`Fix=NF` (L2.1.T2)](CRPT_OMEGA_TOWER_L2.md#fix--nf). 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.4.R3 | `FixNF-Uncond` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** Fix(ρ_M) = NF(→_ρ) holds unconditionally by the strengthened C1, so canonical forms are normal forms in every setting, not only under PA-WN.
 
 **Source:** CRPT; from [`Fix=NF` (L2.1.T2)](CRPT_OMEGA_TOWER_L2.md#fix--nf).
 
@@ -1220,7 +1220,7 @@ Hence no two distinct normal forms can be reached along the ρ_M-orbit. ∎
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.4.R4 | `CNFUniq-CR` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** CNF-Uniq is exactly the Church–Rosser theorem for (𝒰_M, →_ρ): under PA-WN + PA-Conf the canonical form map is the normal-form function of a confluent, weakly normalising system.
 
 **Source:** CRPT; from [`CNF-Uniq` (L2.4.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-uniqueness--orbit-scoped-uniqueness); background in Baader & Nipkow [1998].
 
@@ -1234,7 +1234,7 @@ well-defined total function μT_{ρ,M} → NF(→_ρ).
 | **Theorem** | L2.4.T3 | `CNF-Stab` |  | **Imported** |
 **Synopsis:** Canonical form stability (idempotence): applying the canonical form map to a canonical form returns it unchanged — CFix(ρ_M)(CFix(ρ_M)(x)) = CFix(ρ_M)(x). Canonical forms are fixed points of the abstraction map.
 
-Baader & Nipkow [1998] §6.1
+**Source:** Baader & Nipkow [1998] §6.1 — idempotence of normalisation; applied to [`CNF-Ex` (L2.4.T1)](CRPT_OMEGA_TOWER_L2.md#cnf-existence).
 
 Under PA-Conf: CFix(ρ_M)(CFix(ρ_M)(x)) = CFix(ρ_M)(x).
 
@@ -1248,7 +1248,7 @@ CFix(ρ_M)(CFix(ρ_M)(x)) = ρ_M⁰(CFix(ρ_M)(x)) = CFix(ρ_M)(x). ∎
 | **Corollary** | L2.4.C1 | `CR-Cor` |  | **Imported** |
 **Synopsis:** The canonical representative corollary: for each fiber NFC_M(f), the element f itself is the canonical representative — the unique element of NFC_M(f) ∩ Fix(ρ_M). The fixed point f is simultaneously a member of its own fiber and the fiber's canonical form.
 
-Church & Rosser [1936]
+**Source:** Church & Rosser [1936]; applied to [`d_M` (L2.3.D2)](CRPT_OMEGA_TOWER_L2.md#rank-function--derivation-height-notation-d_m) + [`CNF-Ex` (L2.4.T1)](CRPT_OMEGA_TOWER_L2.md#cnf-existence).
 
 Under PA-WN + PA-Conf, every x ∈ 𝒰_M
 reaches CFix(ρ_M)(x) in exactly d_M(x) steps and no fewer.
@@ -1262,7 +1262,7 @@ immediately from the definitions and the Church-Rosser theorem ([`CNF-Uniq` (L2.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L2.4.R5 | `CRCor-Prov` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** Provenance note: CR-Cor is a direct consequence of the Church–Rosser theorem applied to ρ_M — imported, not novel.
 
 **Source:** CRPT; from [`CR-Cor` (L2.4.C1)](CRPT_OMEGA_TOWER_L2.md#of-the-church-rosser-theorem).
 

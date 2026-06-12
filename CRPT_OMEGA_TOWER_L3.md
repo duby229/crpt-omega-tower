@@ -126,7 +126,7 @@ in the *boundary layer* ∂μT_{ρ,M} := {x ∈ μT_{ρ,M} | d_M(x) = 1}.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L3.1.R2 | `HO-Notational` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** H_O is notational: it carries no information beyond d_M(x) = 1 and exists for the six-class partition's readability; formal statements may use the depth equation directly.
 
 **Source:** CRPT; from [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o).
 
@@ -467,7 +467,7 @@ CFix(ρ_M)(x) or model-specific identity conditions beyond the orbit signature.
 | **Remark** | L3.1.R10 | `CNF-Suf` |  | **Novel** |
 **Synopsis:** The extended orbit signature sig_M^+(x) = (sig_M(x), CNF_M(x)) is a sufficient discriminant: sig_M^+(x) = sig_M^+(y) implies x ≃_M y. Adding the canonical form to the orbit signature gives a complete observational fingerprint. The plain orbit signature sig_M alone is not sufficient for discrimination across different fibers.
 
-CRPT; Baader & Nipkow [1998]
+**Source:** CRPT; from [`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form) + [`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient).
 
 Define sig_M⁺(x) := (sig_M(x), CFix(ρ_M)(x)).
 Then sig_M⁺(x) = sig_M⁺(y) ⟹ x ≃_M y trivially (CFix(ρ_M)(x) = CFix(ρ_M)(y) is exactly
@@ -814,6 +814,8 @@ Define a partial order ⊑ on classes by:
 Under this ordering, the six classes form a **stratified Boolean poset** (not a lattice in the 
 category-theoretic sense, but a Boolean stratification).
 
+*Proof.* Reflexivity and transitivity are immediate from subset inclusion at each depth. Antisymmetry: mutually refining classes contain the same elements at every depth, hence coincide as classes. The stratification is Boolean because membership at each level is decided by the three Boolean predicates ([`Bool-Pred` (L3.2.D2)](CRPT_OMEGA_TOWER_L3.md#independent-boolean-predicates)), so the order is the implication order of those predicates. ∎
+
 ### Six Classes Partition μT_{ρ,M} as Boolean Stratification
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -945,7 +947,7 @@ The six-class partition (L3.2–9.2) applies to the convergent regime ↓_M. In 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Remark** | L3.2.R4 | `Part-RegStrat` | | **Novel** |
-**Synopsis:** See the remark.
+**Synopsis:** The twelve-class partition is regime-stratified, never regime-mixed: each element belongs to exactly one regime and to one class within that regime's six-class table.
 
 **Source:** CRPT; from [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification).
 
@@ -1099,9 +1101,11 @@ All theorems referencing classes A–F remain unchanged
 The orbit signature sig_M ([`sig_M-NM` (L3.1.D5)](CRPT_OMEGA_TOWER_L3.md#orbit-signature--native-form)-native):
 ```
 ↓_M elements: sig_M(x) = (↓, H_S(x), H_I(x), d_M(x), CFix(ρ_M)(x))
-∞_M elements: sig_M(x) = (∞, CFix(ρ_M)(x), convergence_rate(x))
+∞_M elements: sig_M(x) = (∞, [OT^obs_M(x)]_{~tail})
 ```
 stratifies 𝒰 into 12 classes by (regime, horizon-parameters).
+
+*Proof.* The first component of sig_M is the regime tag, and the regimes partition 𝒰 ([`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification)); within each regime the remaining signature components determine the six-class membership — via (H_S, H_I, d_M, CFix) on ↓_M ([`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification)) and via the trace tail class on ∞_M ([`12-Part` (L3.2.D6)](CRPT_OMEGA_TOWER_L3.md#twelve-class-partition)). The partition is therefore the 2 × 6 grid stated. ∎
 
 ---
 
@@ -1154,7 +1158,7 @@ of this orbit under a quotient map Q is $Q(\text{Orb}(x)) = (Q(x), Q(ρ_M(x)), Q
 | **Definition** | L3.3.D1 | `ω-Lim` | ω(f, x) | **Imported** |
 **Synopsis:** The ω-limit set ω_≈(x) of a persistent element x is the set of bisimulation classes visited infinitely often by the projection orbit: ω_≈(x) = {[y]_≈ | ∀n ∃k ≥ n : [ρ_M^k(x)]_≈ = [y]_≈}. This is the persistent-regime analogue of the canonical form: it captures the 'destination' of the persistent orbit in the long run.
 
-Birkhoff [1927]; Bhatia & Szegő [1970]
+**Source:** Birkhoff [1927]; Bhatia & Szegő [1970] — ω-limit sets of discrete dynamical systems; applied to [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
 For a discrete dynamical system $(X, f)$, the
 *ω-limit set* (or *eventual image*) of x is:
@@ -1245,7 +1249,7 @@ symbolic image of the orbit is ultimately periodic (eventually enters a finite c
 | **Theorem** | L3.3.T1 | `SC4-EP` |  | **Imported** |
 **Synopsis:** SC-4 implies eventual periodicity: an orbit visiting only finitely many bisimulation classes must eventually cycle, so ∃N, p≥1 with [ρ_M^{n+p}(x)]_≈ = [ρ_M^n(x)]_≈ for all n ≥ N. Minimal period 1 gives Type P (SC-1 holds); period ≥ 2 gives Type EP.
 
-Bhatia & Szegő [1970]
+**Source:** Bhatia & Szegő [1970] — recurrence under finite phase decomposition; applied to [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence).
 
 Under PA-NWF + PA-Bisim:
 SC-4(x) implies the quotient orbit is eventually periodic:
