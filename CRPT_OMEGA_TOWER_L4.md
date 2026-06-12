@@ -207,7 +207,7 @@ Alternative terminology (all equivalent):
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L4.1.R4 | `Disc-Obs` | | **Novel** |
+| **Remark** | L4.1.R3 | `Disc-Obs` | | **Novel** |
 **Synopsis:** Reading the observer triple as a discernibility extractor.
 
 **Source:** CRPT; from `Obs-Triple` (L4.1.D5).
@@ -505,7 +505,7 @@ models automatically receive regime-stratified interpretations by this mechanism
 | **Definition** | L4.4.D1 | `Pre_ρ-14` | Pre_ρ(X) | **Imported** |
 **Synopsis:** The ρ-predecessor operator Pre_ρ(X) := { x ∈ 𝒰_M | ρ_M(x) ∈ X } collects the elements whose one-step projection image lands in X. It is the projection-operator instance of the standard predecessor transformer.
 
-**Source:** Cousot & Cousot [1977] POPL — predecessor (pre-) operator.
+**Source:** Cousot & Cousot [1977] POPL — predecessor (pre-) operator; applied to `ρ_M` (L2.1.D1).
 
 For X ⊆ 𝒰_M define:
 ```
@@ -518,7 +518,7 @@ Pre_ρ(X) := { x ∈ 𝒰_M | ρ_M(x) ∈ X }.
 | **Definition** | L4.4.D2 | `Reg-FPO` |  | **Reframed** |
 **Synopsis:** The regime fixpoint operators T_conv(X) := Fix(ρ_M) ∪ Pre_ρ(X) and T_pers(X) := (𝒰_M \ Fix(ρ_M)) ∩ Pre_ρ(X) are monotone transformers on (𝒫(𝒰_M), ⊆) whose least and greatest fixpoints reconstruct the convergent and persistent regimes.
 
-**Source:** Tarski [1955] — lattice fixpoint operators, applied to the regime partition.
+**Source:** Tarski [1955] — lattice fixpoint operators; applied to `Reg-Strat` (L2.2.D3).
 
 On the complete lattice
 (𝒫(𝒰_M), ⊆), define:
@@ -533,7 +533,7 @@ T_pers(X) := (𝒰_M \ Fix(ρ_M)) ∩ Pre_ρ(X).
 | **Lemma** | L4.4.L1 | `T-Mono` |  | **Imported** |
 **Synopsis:** Both regime fixpoint operators T_conv and T_pers are monotone on (𝒫(𝒰_M), ⊆), so by Knaster–Tarski each has well-defined least and greatest fixpoints — the precondition for the regime fixpoint construction.
 
-**Source:** Tarski [1955] — monotonicity (hypothesis of the Knaster–Tarski theorem).
+**Source:** Tarski [1955] — monotonicity (hypothesis of the Knaster–Tarski theorem); applied to `Pre_ρ-14` (L4.4.D1).
 
 T_conv and T_pers are monotone.
 
@@ -546,7 +546,7 @@ preserves inclusion. Hence T_conv(X) ⊆ T_conv(Y) and T_pers(X) ⊆ T_pers(Y). 
 | **Theorem** | L4.4.T1 | `Reg-FP` |  | **Reframed** |
 **Synopsis:** Regimes as fixpoints: the convergent regime ↓_M is the least fixpoint μT_conv and the persistent regime ∞_M is the greatest fixpoint νT_pers of the regime operators. This gives the regime partition an order-theoretic (μ/ν) characterization.
 
-**Source:** Tarski [1955] — least/greatest fixpoints (μ/ν), here characterizing the regimes.
+**Source:** Tarski [1955] — least/greatest fixpoints (μ/ν); applied to `Reg-FPO` (L4.4.D2), characterizing the regimes.
 
 The regime partition is
 exactly the μ/ν decomposition:
@@ -586,7 +586,7 @@ for all n, so x ∈ O. Hence X ⊆ O. Therefore O = νT_pers. ∎
 | **Definition** | L4.4.D3 | `RP-CP1` |  | **Reframed** |
 **Synopsis:** The RP-1/CP-1 conventions name the two fixpoint disciplines of projection reasoning: RP-1 is convergent-regime least-fixpoint reasoning through μT_conv, and CP-1 is persistent-regime greatest-fixpoint reasoning through νT_pers.
 
-**Source:** Cousot & Cousot [1977] POPL — μ/ν fixpoint-reasoning conventions.
+**Source:** Cousot & Cousot [1977] POPL — μ/ν fixpoint-reasoning conventions; applied to `Rec-Proj` (L2.1.D4).
 
 `RP-1` denotes WF least-fixpoint projection reasoning on (𝒫(𝒰_M), ⊆) through μT_conv. 
 `CP-1` denotes NWF greatest-fixpoint projection reasoning on (𝒫(𝒰_M), ⊆) through νT_pers.
@@ -597,7 +597,7 @@ for all n, so x ∈ O. Hence X ⊆ O. Therefore O = νT_pers. ∎
 | **Definition** | L4.4.D4 | `RP-CP2` |  | **Reframed** |
 **Synopsis:** The RP-2/CP-2 conventions name the two proof principles: RP-2 is induction on derivation height over μT_{ρ,M}, and CP-2 is co-induction via Park's Lemma on T_pers (P ⊆ T_pers(P) ⟹ P ⊆ νT_pers).
 
-**Source:** Cousot & Cousot [1977] POPL — induction/coinduction conventions; Park [1981] for the coinduction principle.
+**Source:** Cousot & Cousot [1977] POPL — induction/coinduction conventions; Park [1981] for the coinduction principle; applied to `Rec-Proj` (L2.1.D4).
 
 `RP-2` denotes induction on derivation height over μT_{ρ,M} (= μT_conv). 
 `CP-2` denotes co-induction via Park's Lemma on T_pers: P ⊆ T_pers(P) ⟹ P ⊆ νT_pers.
@@ -608,7 +608,7 @@ for all n, so x ∈ O. Hence X ⊆ O. Therefore O = νT_pers. ∎
 | **Theorem** | L4.4.T2 | `FP-Dual` |  | **Reframed** |
 **Synopsis:** Fixpoint duality (DU-1): convergent-regime recursive projection builds least fixpoints μF, while persistent-regime co-recursive projection builds greatest fixpoints νF; the two are order-duals (smallest pre-fixpoint vs largest post-fixpoint) by Knaster–Tarski. WF reasoning is least-fixpoint reasoning; NWF reasoning is greatest-fixpoint reasoning.
 
-**Source:** Tarski [1955], *A lattice-theoretical fixpoint theorem*; Cousot & Cousot [1977] POPL — μ/ν fixpoint duality.
+**Source:** Tarski [1955], *A lattice-theoretical fixpoint theorem*; Cousot & Cousot [1977] POPL — μ/ν fixpoint duality; applied to `Reg-FP` (L4.4.T1).
 
 In the convergent regime (PA-WN), recursive
 projection constructs *least fixpoints* μF. In the persistent regime (PA-NWF + PA-CoInd),
@@ -626,7 +626,7 @@ reasoning. ∎
 | **Theorem** | L4.4.T3 | `Ind-CoInd` |  | **Imported** |
 **Synopsis:** Induction/co-induction duality (DU-2): well-founded induction over derivation height (RP-2) on the least fixpoint ↓_M and Park-style coinduction (CP-2) on the greatest fixpoint ∞_M are formally dual proof principles, by Knaster–Tarski on the complete lattice (𝒫(𝒰_M), ⊆).
 
-**Source:** Knaster [1928]; Tarski [1955]; Park [1981] LNCS 104 — induction/coinduction duality.
+**Source:** Knaster [1928]; Tarski [1955]; Park [1981] LNCS 104 — induction/coinduction duality; applied to `Reg-FP` (L4.4.T1).
 
 RP-2 (induction) and
 CP-2 (co-induction) are formally dual:
@@ -648,7 +648,7 @@ the complete lattice (𝒫(𝒰_M), ⊆). ∎
 | **Theorem** | L4.4.T4 | `PV-Dual-14` |  | **Novel** |
 **Synopsis:** PV duality (DU-3): the WF path valuation PV (over finite histories) and the NWF limit valuation PV∞ (over infinite histories) are one construction at different granularities — PV∞(h) = lim_{n→∞} PV(h|_n). Finite and persistent valuation coincide in the limit.
 
-**Source:** Kuich & Salomaa [1986], *Semirings, Automata and Languages*; Eilenberg [1974], *Automata, Languages and Machines* Vol. A — formal-power-series valuations.
+**Source:** Kuich & Salomaa [1986], *Semirings, Automata and Languages*; Eilenberg [1974], *Automata, Languages and Machines* Vol. A — formal-power-series valuations; applied to `PV-WF` (L4.3.D4).
 
 PV∞ = lim PV (`PV-Dual` (L4.3.T3) above). The
 WF path valuation PV (`PV1` (L4.3.T1)) and NWF limit valuation PV∞ (`PV2` (L4.3.T2)) are
@@ -1063,59 +1063,5 @@ condition in `CPEP` (L4.7.D2) fails. Therefore ¬CPEP. ✓
 Mixed substrates (neither purely reflective nor absorbing) satisfy partial CPEP —
 some elements admit coherent perturbations, others do not. CPEP fails for mixed
 substrates since the ∀x quantifier in `CPEP` (L4.7.D2) is not satisfied. ∎
-
----
-
-## L4.8 — The Empty Field: Class F = ∅
-
-*Purpose.* This subsection establishes, in the observer setting, that Class F — the fixpoint-stratum atom (Fix, H_S, H_I) = (⊤, ⊤, ⊤), a ramified fixpoint with signature-uniform preimages — is always empty in deterministic CRPT models, recovering `F=∅` (L3.2.T2) and completing the six-class architecture of L3.2.
-
-### Class F: Definition and Characterization
-
-| Type | Label | Tag | Notation | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L4.8.D1 | `ClassF-Def` | | **Novel** |
-**Synopsis:** Class F is the fixpoint-stratum atom (Fix, H_S, H_I) = (⊤, ⊤, ⊤) of the six-class partition: a fixpoint with multiple ρ_M-preimages (H_S = ⊤) whose preimages are signature-uniform (H_I = ⊤). It is the fixpoint-stratum counterpart of Class C; this section elaborates, in the observer setting, why it is always empty (`F=∅` (L3.2.T2)).
-
-**Source:** CRPT; from `6-Part` (L3.2.T1) + `H_S` (L3.1.D1) + `H_I` (L3.1.D2).
-
-Per the canonical six-class partition (`6-Part` (L3.2.T1)), Class F is the fixpoint-stratum atom
-```
-Class_F := { f ∈ Fix(ρ_M) | H_S(f) ∧ H_I(f) },   (Fix, H_S, H_I) = (⊤, ⊤, ⊤)
-```
-a fixpoint that is **ramified** (|ρ_M^{-1}(f)| > 1, `H_S` (L3.1.D1)) and whose preimage kernel is **signature-uniform** (`H_I` (L3.1.D2)). It is the fixpoint-stratum counterpart of the non-fixpoint Class C = (⊥, ⊤, ⊤).
-
-*Note (H_I needs H_S).* H_I is contentful only when H_S = ⊤ (`H_I` (L3.1.D2): H_I(x) := H_S(x) ∧ ∀z ∈ ρ_M^{-1}(ρ_M(x)) : sig_M(z) = sig_M(x)). Class F therefore asks, of a *ramified* fixpoint, whether all of its preimages carry one orbit signature.
-
-### NO-F Theorem: Class F is Always Empty
-
-| Type | Label | Tag | Notation | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L4.8.T1 | `NO-F` | Class_F = ∅ | **Novel** |
-**Synopsis:** In every deterministic CRPT model, Class F is empty: a ramified fixpoint always has discernible preimages and so lands in Class E, never F. Structurally, a fixpoint f is its own preimage at depth 0 while any further preimage is a non-fixpoint at depth ≥ 1; the two carry different orbit signatures, forcing H_I(f) = ⊥. This is the observer-level restatement of `F=∅` (L3.2.T2).
-
-**Source:** CRPT; from `F=∅` (L3.2.T2) + `H_I` (L3.1.D2) + `sig_M-NM` (L3.1.D5) + `Fix-D0` (L2.3.T3).
-
-In every deterministic CRPT model M (conditions C1–C2, `ρ_M` (L2.1.D1)):
-```
-Class_F = ∅
-```
-— equivalently, no fixpoint satisfies (Fix, H_S, H_I) = (⊤, ⊤, ⊤); every ramified fixpoint has H_I = ⊥.
-
-**Corollary.** At most five classes — A, B, C, D, E — are occupied in any deterministic model.
-
-*Proof.* Let f ∈ Fix(ρ_M) with H_S(f) = ⊤, i.e. |ρ_M^{-1}(f)| > 1. Since ρ_M(f) = f, the fixpoint is its own preimage: f ∈ ρ_M^{-1}(f) with d_M(f) = 0 (`Fix-D0` (L2.3.T3)). As H_S(f) = ⊤ there is a further preimage y ∈ ρ_M^{-1}(f), y ≠ f. Then y ∉ Fix(ρ_M) (else ρ_M(y) = y ≠ f), so y is a non-fixpoint with ρ_M(y) = f and d_M(y) ≥ 1.
-
-The orbit signature carries the derivation-height component (`sig_M-NM` (L3.1.D5)), so sig_M(f) ≠ sig_M(y) (depths 0 and ≥ 1 differ). Hence the preimage kernel ρ_M^{-1}(f) is not signature-uniform, and by `H_I` (L3.1.D2), H_I(f) = ⊥.
-
-Thus every ramified fixpoint (H_S = ⊤) has H_I = ⊥: it lies in Class E = (Fix, ⊤, ⊥), never Class F = (Fix, ⊤, ⊤). No element occupies (⊤, ⊤, ⊤), so Class_F = ∅. This is the observer-setting restatement of `F=∅` (L3.2.T2), proved there from kernel d_M-non-uniformity (`H_I-Dec` (L3.1.C1)). ∎
-
-
-**Corollary L4.8.C1 (Five-Class Partition).** The six-class system reduces to a five-class partition.
-Every element x ∈ μT_{ρ,M} belongs to exactly one of Classes A, B, C, D, E.
-
-**Proof.** By `NO-F` (L4.8.T1), Class F is always empty. The remaining five classes
-A, B, C, D, E partition μT_{ρ,M} by the six-class partition theorem applied to 
-non-empty classes. ✓
 
 ---

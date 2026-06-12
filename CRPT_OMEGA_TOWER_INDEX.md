@@ -8,7 +8,7 @@ This is the canonical multi-file specification for the CRPT ω-indexed tower. Ea
   *Substrate-independent statement of all major CRPT theorems for an arbitrary projection system Π. CRPT is instantiated as one example. All L0 Instance theorems carry corrected cross-references into L1–L8.*
 
 - [# L1 — CRPT Substrate, Axioms, Regimes, and Modes](CRPT_OMEGA_TOWER_L1.md)
-  *The substrate definition (L1.1.D1), the nine PA-\* axioms (L1.2–L1.4), and the six axiom profiles (Pure-WF through NWF-Full). Includes WF-Canon (L1.2.T1) and Nat-CC (L1.4.T2).*
+  *The substrate definition (L1.1.D1), the nine PA-\* axioms (L1.2–L1.4), and the six axiom profiles (Pure-WF through NWF-Full). Includes WF-Canon (L1.7.T1) and Nat-CC (L1.4.T2).*
 
 - [# L2 — Projection, Regime, Depth, Canonical Form, and Fibers](CRPT_OMEGA_TOWER_L2.md)
   *The projection operator ρ_M (L2.1.D1), the two-regime partition ↓_M / ∞_M (L2.2.D4–D2), derivation height d_M (L2.3.D2), the canonical form map CFix(ρ_M) (L2.4.D1), and NFC fibers (L2.5.D1). Includes Inf-Dual (L2.2.T7) and Reg-Exh (L2.2.T8).*

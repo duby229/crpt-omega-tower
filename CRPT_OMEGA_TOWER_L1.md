@@ -31,7 +31,8 @@ where:
 
 No further properties of 𝒰, →_ρ, →_σ, or 𝒯 are assumed at substrate-definition level.
 The global topological requirements TopSep(𝒯) and continuity of ρ are imposed
-as axioms in L5.2 (and used by PA-WN_top / CFix in the topological regime).
+as axioms in L5.2; the full interface contract of the topology component — separation,
+limit structure, PA-WN_top, and instantiations — is collected in L1.7.
 The inclusion constraint
 is part of the definition of what it means to be a substrate, not an axiom.
 
@@ -284,7 +285,7 @@ discernibility induced by ≈ and ρ_M.
 
 ## L1.2 — The Axiom System
 
-*Purpose.* The Projection Axiom System. This section introduces seven of the nine PA-* projection axioms in two groups: three convergent-regime axioms (PA-WN, PA-Conf, PA-Fix) governing behaviour in ↓_M; and four persistent-regime axioms (PA-NWF, PA-CoInd, PA-Prod, PA-WN_top) governing behaviour in ∞_M. Of these, PA-WN equips the convergent regime with finitary mode and PA-WN_top equips part of the persistent regime with topological mode (`Mode` (L1.4.D1)). The two universal axioms (PA-Bisim, PA-Reach) follow in L1.3. All axioms use ρ_M, Fix(ρ_M), and the regimes ↓_M / ∞_M, which are formally defined in L2 — forward-referenced here.*
+*Purpose.* The Projection Axiom System. This section introduces six of the nine PA-* projection axioms in two groups: three convergent-regime axioms (PA-WN, PA-Conf, PA-Fix) governing behaviour in ↓_M; and three persistent-regime axioms (PA-NWF, PA-CoInd, PA-Prod) governing behaviour in ∞_M. **Scope criterion:** this section owns the **regime-local step axioms** — the axioms whose carrier is the one-step reduction behaviour of ρ_M within a single regime. The two **regime-universal orbit axioms** (PA-Bisim, PA-Reach), whose carrier is the orbit-level observable quotient, follow in L1.3; the **topology-interface axiom** PA-WN_top is collected with the 𝒯 contract in L1.7. All axioms use ρ_M, Fix(ρ_M), and the regimes ↓_M / ∞_M, which are formally defined in L2 — forward-referenced here.*
 
 ---
 
@@ -318,7 +319,7 @@ Every element has a terminating →_ρ-path:
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L1.2.R2 | `WN-vs-SN` | | **Novel** |
+| **Remark** | L1.2.R1 | `WN-vs-SN` | | **Novel** |
 **Synopsis:** PA-WN asserts the *existence* of a terminating →_ρ-path, not strong normalisation (that *all* →_ρ-paths terminate); regime membership and derivation height are defined via the ρ_M-orbit, not all →_ρ-branches.
 
 **Source:** CRPT; from PA-WN (L1.2.Ax1).
@@ -366,12 +367,12 @@ Fixpoints of the projection strategy coincide with reduction normal forms:
 ### PA Namespace Discipline
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L1.2.R1 | `PA-NS` | | **Novel** |
+| **Remark** | L1.2.R2 | `PA-NS` | | **Novel** |
 **Synopsis:** The PA-* namespace is reserved exclusively for the nine projection axioms; WF-side orbit canonicalization (WF-Canon) is placed as a theorem and existential richness (LA-Rich) as a model-local axiom, so neither occupies a PA-* slot.
 
-**Source:** CRPT; from the PA-* axiom system (L1.2–L1.3).
+**Source:** CRPT; from the PA-* axiom system (L1.2, L1.3, L1.7).
 
-The PA-* namespace is reserved exclusively for Projection Axioms (nine total: PA-WN, PA-Conf, PA-Fix, PA-NWF, PA-CoInd, PA-Prod, PA-WN_top, PA-Bisim, PA-Reach). WF-side orbit canonicalization is placed as a theorem (WF-Canon, at L2), not an axiom. Existential richness is placed as a model-local axiom (LA-Rich(M)), not a PA axiom.
+The PA-* namespace is reserved exclusively for Projection Axioms (nine total: the six regime-local step axioms PA-WN, PA-Conf, PA-Fix, PA-NWF, PA-CoInd, PA-Prod of L1.2; the topology-interface axiom PA-WN_top of L1.7; the two regime-universal orbit axioms PA-Bisim, PA-Reach of L1.3 — the namespace spans its sections; each axiom lives in its carrier's fiber). WF-side orbit canonicalization is placed as a theorem (WF-Canon, at L2), not an axiom. Existential richness is placed as a model-local axiom (LA-Rich(M)), not a PA axiom.
 
 ---
 
@@ -502,100 +503,16 @@ preserves the axiom's logical content for downstream uses (`Obs-Const`
 
 *What it adds:* Excludes "silent divergence" where an element diverges without producing observables. Ensures ∞_M elements are actually productive. On ↓_M, ensures every intermediate ρ_M-step before reaching Fix(ρ_M) produces observable output.
 
-### PA-WN_top — Topological Weak Normalisation / Asymptotic Convergence
-| Type | Label | Tag | Notation | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Axiom** | L1.2.Ax7 | `PA-WN_top` | | **Novel** |
-**Synopsis:** PA-WN_top (Topological Weak Normalisation) requires that every persistent element has a unique topological limit point in 𝒯. This gives persistent orbits a 'destination' even when they never terminate, enabling the coinductive treatment of PA-CoInd. Without PA-WN_top, persistent orbits could wander without any asymptotic structure.
-
-**Source:** CRPT; from PA-NWF (L1.2.Ax4) + topological convergence (Munkres [2000]); the topological-limit axiom is CRPT-original.
-
-
-*Scope and Interpretation.* This axiom is what certifies the **convergence (topological) mode** (`Mode` (L1.4.D1)): where it holds, persistent elements of ∞_M that do not reach fixpoints finitely nonetheless converge to a limit in a topology 𝒯. It is an optional, independent axiom (`WNtop-Ind` (L1.4.T3)) — persistent elements for which it fails reach their asymptotic destination by recurrence (or its composite with convergence) instead, per PA-Reach (L1.3.Ax2). The topology 𝒯 declared as part of the substrate (`Sub` (L1.1.D1)) for topological-mode use must satisfy the **T₂ (Hausdorff) separation axiom** (Definition L1.2.D1 below). This requirement is essential for uniqueness of topological limits: in a non-Hausdorff space a sequence can converge to multiple distinct limit points simultaneously, rendering CFix(ρ_M) on ∞_M multi-valued.
-
-```
-PA-WN_top:
-∀x ∈ ∞_M : ∃!L ∈ 𝒰_M, ∃𝒯-neighborhood basis {U_k}_{k ∈ ℕ} of L :
- ∀k ∈ ℕ ∃N_k ∈ ℕ : ∀n ≥ N_k : ρ_M^n(x) ∈ U_k
-```
-
-The ∃! (unique existence) is justified as follows: existence follows from the convergence
-condition stated; uniqueness is a consequence of the Hausdorff property of 𝒯 (see
-`TopSep-Uniq` (L1.2.T1) below).
-
-*Equivalently:* Every element x ∈ ∞_M has a **unique** limit point L ∈ 𝒰_M in topology 𝒯:
-```
-lim_{n→∞} ρ_M^n(x) = L (unique, in the Hausdorff topology 𝒯)
-```
-
-where 𝒯 is fixed by the substrate Sub = (𝒰, →_ρ, →_σ, 𝒯) and must satisfy TopSep (L1.2.D1).
-
-*Standard Interpretation:* This is **full sequence convergence** (not merely the Bolzano-Weierstrass cluster-point property): the entire orbit sequence ρ_M^n(x) converges to L, not just a subsequence.
-
-### Hausdorff Separation Condition
-| Type | Label | Tag | Notation | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L1.2.D1 | `TopSep` | TopSep(𝒯) | **Imported** |
-**Synopsis:** Topological separation (the Hausdorff / T₂ condition) requires that distinct limit points are separated by disjoint open sets. Under this condition, sequences have at most one limit. This is the minimal separation condition ensuring that topological limits in the substrate are unique — a prerequisite for PA-WN_top.
-
-**Source:** Hausdorff [1914] *Grundzüge der Mengenlehre*; Munkres [2000] *Topology* §17 — T₂ (Hausdorff) separation axiom.
-
-A topology 𝒯 on 𝒰_M satisfies **TopSep** (the Hausdorff / T₂ condition) if:
-```
-TopSep(𝒯) :⟺ ∀L₁, L₂ ∈ 𝒰_M : L₁ ≠ L₂ ⟹
- ∃U₁, U₂ ∈ 𝒯 : L₁ ∈ U₁ ∧ L₂ ∈ U₂ ∧ U₁ ∩ U₂ = ∅
-```
-Any two distinct points can be separated by disjoint open neighborhoods.
-
-*Standard name.* The T₂ separation axiom (Hausdorff [1914]; Munkres [2000] §17).
-All metric spaces satisfy TopSep. Standard instantiation topologies (ℝ, ℝⁿ,
-Banach spaces, metric spaces) are Hausdorff. When PA-WN_top is declared `Vacuous`
-(pure WF case with ∞_M = ∅), TopSep imposes no constraint.
-
-### Uniqueness of Topological Limits under TopSep
-| Type | Label | Tag | Notation | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L1.2.T1 | `TopSep-Uniq` | | **Imported** |
-**Synopsis:** Under the Hausdorff condition TopSep(𝒯), topological limits are unique, so the persistent-regime canonical form CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) is well-defined and single-valued on ∞_M.
-
-**Source:** Munkres [2000] *Topology* Lemma 17.9 — uniqueness of limits in Hausdorff spaces.
-
-If TopSep(𝒯) holds and (ρ_M^n(x))_{n∈ℕ} is a sequence in (𝒰_M, 𝒯) converging to L₁ and also converging to L₂, then L₁ = L₂.
-
-*Proof.* Suppose L₁ ≠ L₂. By TopSep(𝒯), ∃ disjoint open U₁ ∋ L₁, U₂ ∋ L₂.
-Since ρ_M^n(x) → L₁: ∃N₁ : ∀n ≥ N₁ : ρ_M^n(x) ∈ U₁.
-Since ρ_M^n(x) → L₂: ∃N₂ : ∀n ≥ N₂ : ρ_M^n(x) ∈ U₂.
-For n ≥ max(N₁, N₂): ρ_M^n(x) ∈ U₁ ∩ U₂ = ∅. Contradiction. Hence L₁ = L₂. ∎
-
-### Topological Limit via Metric/Order
-| Type | Label | Tag | Notation | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L1.2.D2 | `Top-Lim` | | **Imported** |
-**Synopsis:** The topological limit structure defines what it means for a sequence of elements to converge to a limit point in the topology 𝒯 of the substrate. This includes limit via neighborhood bases, metric convergence when 𝒯 is metrizable, and order-theoretic monotone limits. The substrate's topology must admit a well-defined limit notion for PA-WN_top to have content.
-
-**Source:** Hausdorff [1914] *Grundzüge der Mengenlehre*; Munkres [2000] *Topology* — topological limit via neighbourhood bases.
-
-For concrete instantiations:
-- **Metric spaces:** d(ρ_M^n(x), L) → 0 as n → ∞
-- **Topological spaces:** For every neighborhood U of L, ∃N : ∀n ≥ N, ρ_M^n(x) ∈ U
-- **Lattices/posets:** ρ_M^n(x) ↓ L (monotone decreasing to L) or ρ_M^n(x) ↑ L (monotone increasing)
-
-*Logical Status:*
-- **Pure WF (∞_M = ∅):** Vacuously true. No elements in ∞_M, so the ∀x ∈ ∞_M is satisfied trivially.
-- **Native Stratified:** Substantively true on ∞_M. Required to be explicitly satisfied for topological models (R, metric spaces, etc.).
-- **Pure NWF:** May be true or false depending on whether the model admits a topology with the required convergence property.
-
-*Philosophical Meaning:* PA-WN_top is the **topological dual of PA-WN** in finitary regime:
-- **PA-WN says:** "Finitary iteration converges to fixpoints in ℕ steps"
-- **PA-WN_top says:** "Topological iteration converges to limits in topology 𝒯"
-
-Both express convergence, but in different modes.
-
-*What it adds:* Without PA-WN_top, persistent elements in ∞_M might oscillate indefinitely without converging. With it, all persistent elements have well-defined limit points (in the topology), enabling canonical abstraction CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) to be defined on all ∞_M.
-
----
-
 ## L1.3 — Universal Axioms
+
+*Purpose.* The Regime-Universal Orbit Axioms. **Scope criterion:** this section owns the
+axioms whose carrier is the **orbit-level observable quotient** — they constrain whole-orbit
+behaviour across both regimes at once, which is why they are the universal axioms: PA-Bisim
+binds bisimilarity ≈ to observable equivalence ≃_M; PA-Reach gives every persistent orbit a
+canonically representable asymptotic destination. The section also owns the destination's
+derived theory: the canonical persistent representative `CPer`, the realization theorems
+(recurrence, convergence, decomposition), and the independence witness. Step-level,
+regime-local axioms live in L1.2; the topology interface in L1.7.*
 
 ### PA-Bisim — Bisimulation Congruence
 | Type | Label | Tag | Notation | Status |
@@ -684,7 +601,7 @@ Convergence (`PA-Reach-Top` (L1.3.T3)):   CPer_M(x) := CFix(ρ_M)(x) = lim_{n→
                    the topological limit — the destination is its singleton class
 Composite (`PA-Reach-Decomp` (L1.3.T4)):  CPer_M(x) := the canonical element of the
                    destination's limit cycle {L₀ →_ρ L₁ →_ρ ⋯ →_ρ L_{p−1} →_ρ L₀}
-                   (the phase-aligned subsequence limit; unique by `TopSep-Uniq` (L1.2.T1))
+                   (the phase-aligned subsequence limit; unique by `TopSep-Uniq` (L1.7.T1))
 ```
 PA-Reach asserts the destination exists for every x ∈ ∞_M, making CPer_M(x) well-defined
 on all of ∞_M. Where several realizations apply, they present the same destination —
@@ -789,14 +706,14 @@ is n_M(x). ∎
 | **Theorem** | L1.3.T3 | `PA-Reach-Top` | | **Novel** |
 **Synopsis:** The convergence mechanism realizes PA-Reach: if the orbit 𝒯-converges, the destination is the singleton class of the limit, and the limit is a fixpoint — continuity of ρ_M turns "limit of the orbit" into "fixpoint of the operator", and Hausdorff separation makes it unique. This is the reach that PA-WN_top certifies; CPer_M(x) = CFix(ρ_M)(x).
 
-**Source:** CRPT; from PA-Reach (L1.3.Ax2) + PA-WN_top (L1.2.Ax7) + `TopSep-Uniq` (L1.2.T1).
+**Source:** CRPT; from PA-Reach (L1.3.Ax2) + PA-WN_top (L1.7.Ax1) + `TopSep-Uniq` (L1.7.T1).
 
 If the orbit of x ∈ ∞_M converges in 𝒯 — lim_{n→∞} ρ_M^n(x) = L exists — then:
 ```
 ω_≈(x) = { [L]_≈ },   L ∈ Fix(ρ_M),   CPer_M(x) = CFix(ρ_M)(x) = L
 ```
 
-*Proof.* Convergence gives ω(x) = {L} (Hausdorff uniqueness, `TopSep-Uniq` (L1.2.T1)), so
+*Proof.* Convergence gives ω(x) = {L} (Hausdorff uniqueness, `TopSep-Uniq` (L1.7.T1)), so
 ω_≈(x) = {[L]_≈} on the convergence face; no class is visited cofinally by a strictly
 converging orbit beyond those already in ω_≈, so the destination is the singleton.
 L is a fixpoint: by continuity of ρ_M (the global topological requirement, L5.2),
@@ -899,7 +816,7 @@ Thus M_Reach ⊨ {PA-WN, PA-Conf, PA-Fix, PA-NWF, PA-Prod, PA-Bisim} but M_Reach
 | **Definition** | L1.4.D1 | `Mode` | | **Novel** |
 **Synopsis:** CRPT distinguishes two orthogonal classifications. A **regime** classifies an *element* by the fate of its ρ_M-orbit — convergent ↓_M if the orbit reaches a fixpoint, persistent ∞_M otherwise. A **mode** classifies the *mechanism* by which the orbit's canonical object is reached and certified, and there are exactly **two**: **recurrence** (finitary — equality of iterates in the ≈-quotient at finite depth: PA-WN's fixpoint at depth d_M on ↓_M, PA-Reach's recurrent cycle at depth n_M on ∞_M) and **convergence** (topological — a 𝒯-limit: PA-WN_top, PA-Reach's convergence realization). The same two modes serve both regimes. Asymptotic orbit invariance (AOI) is **not** a mode: it is the *analysis layer* — the invariant theory computed on the destination — available in both modes.
 
-**Source:** CRPT; from `Rec-Proj` (L2.1.D4) + the regime partition (L2.2) + PA-WN (L1.2.Ax1) + PA-WN_top (L1.2.Ax7) + PA-Reach (L1.3.Ax2).
+**Source:** CRPT; from `Rec-Proj` (L2.1.D4) + the regime partition (L2.2) + PA-WN (L1.2.Ax1) + PA-WN_top (L1.7.Ax1) + PA-Reach (L1.3.Ax2).
 
 CRPT separates two distinct axes.
 
@@ -911,7 +828,7 @@ This is the well-founded / non-well-founded dichotomy at the level of element dy
 
 **Mode axis (reach mechanism; two values).** A *mode* is the mechanism by which the ρ_M-orbit of x reaches its canonical object, and the apparatus that certifies the reach:
 - **Recurrence (finitary mode)** — the orbit reaches its canonical object *by visiting it*: equality of iterates in the ≈-quotient at finite depth. On ↓_M this is termination — the orbit reaches Fix(ρ_M) at depth d_M, a recurrent cycle of length 1 at a fixpoint (PA-WN). On ∞_M it is eventual periodicity — the class orbit enters its recurrent cycle at depth n_M (`PA-Reach-Fin` (L1.3.T2)). Certified by finite-depth iterate equality; no topology needed.
-- **Convergence (topological mode)** — the orbit reaches its canonical object *as a 𝒯-limit*: CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) (an element of 𝒰_M). Certified by PA-WN_top with a Hausdorff topology (`TopSep-Uniq` (L1.2.T1)); on ∞_M this is PA-Reach's convergence realization (`PA-Reach-Top` (L1.3.T3)). On ↓_M it degenerates: a reached fixpoint is trivially its own limit.
+- **Convergence (topological mode)** — the orbit reaches its canonical object *as a 𝒯-limit*: CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) (an element of 𝒰_M). Certified by PA-WN_top with a Hausdorff topology (`TopSep-Uniq` (L1.7.T1)); on ∞_M this is PA-Reach's convergence realization (`PA-Reach-Top` (L1.3.T3)). On ↓_M it degenerates: a reached fixpoint is trivially its own limit.
 
 These are the only two mechanisms: every realization of canonical reach is recurrence, convergence, or their composite — convergence onto a recurrent limit cycle — and the composite introduces no third mechanism (`PA-Reach-Decomp` (L1.3.T4)).
 
@@ -919,7 +836,7 @@ These are the only two mechanisms: every realization of canonical reach is recur
 
 **Relationship between the axes.**
 - On ↓_M, recurrence applies coextensively (termination *is* recurrence at a 1-cycle), and convergence degenerates to it. Regime and mode coincide there.
-- On ∞_M the modes genuinely divide the regime: PA-Reach (L1.3.Ax2) guarantees every persistent orbit an asymptotic destination, reached by recurrence, by convergence (exactly where PA-WN_top holds — an *independent*, optional axiom, `WNtop-Ind` (L1.4.T3)), or by their composite:
+- On ∞_M the modes genuinely divide the regime: PA-Reach (L1.3.Ax2) guarantees every persistent orbit an asymptotic destination, reached by recurrence, by convergence (exactly where PA-WN_top holds — an *independent*, optional axiom, `WNtop-Ind` (L1.7.T2)), or by their composite:
 ```
 ∞_M  =  (recurrence part: eventually periodic class orbit)
         ∪ (convergence part: PA-WN_top holds)
@@ -935,7 +852,7 @@ Consequently **regime ≠ mode**: both axes are two-valued but classify differen
 | **Theorem** | L1.4.T1 | `Mode-Comp` | | **Novel** |
 **Synopsis:** Regime coexistence: the WF and NWF axiom profiles are jointly consistent because they govern the disjoint regimes ↓_M and ∞_M, licensing the partition 𝒰_M = ↓_M ⊔ ∞_M and the regime-stratified proof methods. Mode coverage: every element's orbit reaches its canonical object by one of the two modes — recurrence on all of ↓_M (termination) and on the eventually periodic part of ∞_M; convergence where PA-WN_top holds; their composite on the remainder PA-Reach covers.
 
-**Source:** CRPT; from PA-WN (L1.2.Ax1) + PA-NWF (L1.2.Ax4) + PA-WN_top (L1.2.Ax7) + PA-Reach (L1.3.Ax2).
+**Source:** CRPT; from PA-WN (L1.2.Ax1) + PA-NWF (L1.2.Ax4) + PA-WN_top (L1.7.Ax1) + PA-Reach (L1.3.Ax2).
 
 
 In a model M with regime partition 𝒰 = ↓_M ∐ ∞_M:
@@ -954,7 +871,7 @@ In a model M with regime partition 𝒰 = ↓_M ∐ ∞_M:
 
 **(iii) Complementary Axiom Profiles:**
 - On ↓_M: PA-WN is true (recurrence: finitary convergence to a fixpoint); PA-WN_top is vacuous (the fixpoint is its own limit).
-- On ∞_M: PA-WN is false (no finitary termination); PA-Reach guarantees the asymptotic destination unconditionally, and PA-WN_top — an *independent*, optional axiom (`WNtop-Ind` (L1.4.T3)) — certifies the convergence mode on exactly the sub-class of ∞_M whose orbits have a 𝒯-limit. The AOI analysis layer (`AOI-Unif` (L6.3.D10)) runs on all of ∞_M in either mode.
+- On ∞_M: PA-WN is false (no finitary termination); PA-Reach guarantees the asymptotic destination unconditionally, and PA-WN_top — an *independent*, optional axiom (`WNtop-Ind` (L1.7.T2)) — certifies the convergence mode on exactly the sub-class of ∞_M whose orbits have a 𝒯-limit. The AOI analysis layer (`AOI-Unif` (L6.3.D10)) runs on all of ∞_M in either mode.
 
 *Proof.*
 - (i) By `Reg-Strat` (L2.2.D3), 𝒰 = ↓_M ∪ ∞_M. For x ∈ ↓_M: the ρ_M-orbit reaches Fix(ρ_M) by definition of ↓_M; PA-WN ensures the existence of at least one terminating →_ρ-path (`PA-WN-Tot` (L2.2.T4)), so recurrence reaches the canonical object (a 1-cycle at the fixpoint, depth d_M). For x ∈ ∞_M: the ρ_M-orbit never reaches Fix(ρ_M) by definition of ∞_M; PA-NWF asserts such elements exist; PA-Reach (L1.3.Ax2) gives the destination ω_≈(x), realized by recurrence (`PA-Reach-Fin` (L1.3.T2)), by convergence where PA-WN_top holds (`PA-Reach-Top` (L1.3.T3)), or by their composite (`PA-Reach-Decomp` (L1.3.T4)). ✓
@@ -983,7 +900,7 @@ possesses the following properties:
 **(ii) Completeness (Regime-Stratified):** For every element x ∈ 𝒰, a unique canonical abstraction CFix(ρ_M)(x) exists:
 ```
 x ∈ ↓_M ⟹ CFix(ρ_M)(x) ∈ Fix(ρ_M) ∧ x →_ρ* CFix(ρ_M)(x) (finitary case)
- x ∈ ∞_M ⟹ CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) (topological case; existence by PA-WN_top, uniqueness by `TopSep-Uniq` (L1.2.T1) which requires TopSep(𝒯) — the Hausdorff separation condition now formally required by PA-WN_top)
+ x ∈ ∞_M ⟹ CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) (topological case; existence by PA-WN_top, uniqueness by `TopSep-Uniq` (L1.7.T1) which requires TopSep(𝒯) — the Hausdorff separation condition now formally required by PA-WN_top)
 ```
 
 **(iii) WF-Specialization:** When ∞_M = ∅ (pure WF model), the native system reduces exactly to the pure-WF CRPT profile with 8 of the 9 axioms (PA-WN_top is vacuous when ∞_M = ∅). All established theorems and proofs remain unchanged.
@@ -1007,67 +924,12 @@ x ∈ ↓_M ⟹ CFix(ρ_M)(x) ∈ Fix(ρ_M) ∧ x →_ρ* CFix(ρ_M)(x) (finitar
  ```
  CFix(ρ_M)(x) := {
  ρ_M^{d_M(x)}(x) if x ∈ ↓_M
- lim_{n→∞} ρ_M^n(x) if x ∈ ∞_M (exists by PA-WN_top; uniqueness follows from `TopSep-Uniq` (L1.2.T1), i.e. the explicit TopSep(𝒯) condition)
+ lim_{n→∞} ρ_M^n(x) if x ∈ ∞_M (exists by PA-WN_top; uniqueness follows from `TopSep-Uniq` (L1.7.T1), i.e. the explicit TopSep(𝒯) condition)
  }
  ```
- This is well-defined and total on all 𝒰. For x ∈ ↓_M: d_M(x) is finite by definition, so CFix(ρ_M)(x) is a fixpoint. For x ∈ ∞_M: the limit exists by PA-WN_top and uniqueness follows by `TopSep-Uniq` (L1.2.T1), i.e. the explicit TopSep(𝒯) separation assumption. ✓
+ This is well-defined and total on all 𝒰. For x ∈ ↓_M: d_M(x) is finite by definition, so CFix(ρ_M)(x) is a fixpoint. For x ∈ ∞_M: the limit exists by PA-WN_top and uniqueness follows by `TopSep-Uniq` (L1.7.T1), i.e. the explicit TopSep(𝒯) separation assumption. ✓
 
 - (iii) **WF-Specialization:** If ∞_M = ∅, all elements are in ↓_M. PA-WN_top is vacuous. PA-NWF is false, which simply reflects ∞_M = ∅ (no contradiction). The PA family reduces to projection axioms on the WF substrate, and WF-Canon remains theorem-level. This preserves PA-namespace discipline while keeping the pure-WF results unchanged. ✓ ∎
-
-### Independence of PA-WN_top
-| Type | Label | Tag | Notation | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L1.4.T3 | `WNtop-Ind` | | **Novel** |
-**Synopsis:** PA-WN_top is independent of the remaining axioms, witnessed by the model M_ind = (ℤ, decrement, identity, discrete topology). In M_ind, every element is weakly normalizing (integer decrement terminates at 0 by a separate argument), but no element has a topological limit in the discrete topology.
-
-**Source:** CRPT; from PA-WN_top (L1.2.Ax7) + PA-NWF (L1.2.Ax4); independence via the M_ind countermodel.
-
-In the native axiom system, the following hold:
-
-**(i) Mutual Exclusivity in Pure Models:**
-- **Pure WF (∞_M = ∅):** PA-WN globally true; PA-NWF false; PA-WN_top vacuously true.
-- **Pure NWF (↓_M = ∅):** PA-WN false; PA-NWF true; PA-WN_top true (non-vacuous).
-
-**(ii) Complementary Independence in Native Stratified Models (Both regimes):** For native models with ↓_M ≠ ∅ and ∞_M ≠ ∅:
-- PA-WN (on ↓_M) and PA-NWF (on ∞_M) are **conditionally independent**: both are true but govern disjoint parts of 𝒰.
-- PA-NWF and PA-WN_top are **interdependent**: PA-NWF guarantees ∞_M ≠ ∅; PA-WN_top requires non-empty ∞_M.
-- PA-WN (finitary mode) and PA-WN_top (topological mode) are **mode-independent**: they express convergence in different modes and are compatible.
-
-*Proof.*
-
-**(i)** By definitions of ↓_M and ∞_M, and by mutual exclusivity of PA-WN and PA-NWF on pure models. ✓
-
-**(ii)** In native models:
- - PA-WN restricted to ↓_M is true by definition of ↓_M. PA-NWF on ∞_M is true by definition of ∞_M. They govern disjoint regimes, hence conditionally independent.
- - PA-NWF asserts ∞_M ≠ ∅. PA-WN_top requires ∀x ∈ ∞_M : ∃ limit. If ∞_M = ∅, PA-WN_top is vacuous and PA-NWF is false. Thus they are codependent. ✓
- - PA-WN and PA-WN_top are mode-independent: see the independence witness M_ind below. ✓
-
-**(iii) PA-WN_top Independence Witness.** We exhibit a model satisfying the other projection axioms while failing PA-WN_top, thereby proving PA-WN_top is not entailed by the remaining PA-family.
-
-**Model M_ind.** Let 𝒰 = ℤ with ↓_M = ℕ and ∞_M = ℤ_{<0} = {z ∈ ℤ | z < 0}. Define:
-```
-ρ_M(n) = max(n − 1, 0) for n ∈ ℕ
-ρ_M(z) = z − 1 for z < 0
-→_ρ = graph of ρ_M (deterministic)
-→_σ = →_ρ ∪ {(n, z) | n ≥ 1, z < 0}
-𝒯 = discrete topology on ℤ
-```
-
-**Verification:**
-- **PA-WN (on ↓_M):** For n ∈ ℕ, ρ^n_M(n) = 0 ∈ Fix(ρ_M). ✓
-- **PA-Conf:** ρ_M is a total function, so →_ρ is deterministic, hence trivially confluent. ✓
-- **WF-Canon (theorem layer):** WF-Canon-1 holds on ↓_M since every n ∈ ℕ reaches 0 ∈ Fix(ρ_M) under finite iteration. WF-Canon-2 holds since every fixpoint f ∈ Fix(ρ_M) is inhabited by CFix-image (here Fix(ρ_M) = {0}, witnessed by x = 0). ✓
-- **LA-Rich(M_ind):** not declared (LA_M = ∅) in this witness model; no PA-axiom depends on it. ✓
-- **PA-NWF:** ∞_M = ℤ_{<0} ≠ ∅. For z < 0: ρ^n_M(z) = z − n < 0, hence ρ^n_M(z) ∉ Fix(ρ_M) = {0} for all n. ✓
-- **PA-CoInd:** ℤ_{<0} = νT^{NWF} (greatest set S with ρ_M(S) ⊆ S and S ∩ Fix(ρ_M) = ∅). Any superset would include some n ∈ ℕ with ρ^n_M(n) = 0 ∈ Fix(ρ_M). ✓
-- **PA-Prod:** For x ≠ 0: ρ_M(x) ≠ x (predecessor on ℕ≥1 and subtraction on ℤ_{<0}). ✓
-- **PA-Bisim:** ρ_M deterministic → bisimilarity reduces to orbit equivalence ≃_M. ✓
-- **PA-Reach:** For z ∈ ∞_M = ℤ_{<0}, define sig_M(z) to be constant on ℤ_{<0}, e.g. sig_M(w) := (⊥, ⊤, ⊥) for all w ∈ ℤ_{<0}. Then for any z < 0, taking n = 0: ∀j ≥ 0, sig_M(ρ_M^j(z)) = sig_M(z − j) = (⊥, ⊤, ⊥) = constant. PA-Reach is satisfied. ✓
-- **PA-WN_top:** **FAILS.** For z ∈ ∞_M: ρ^n_M(z) = z − n. In the discrete topology, convergence requires eventual constancy; but z − n is strictly decreasing, hence not eventually constant. No L ∈ 𝒰 has ρ^n_M(z) ∈ U for eventually all n and any singleton neighborhood {L}. ✗
-
-Thus M_ind satisfies the remaining PA-family while failing PA-WN_top, establishing PA-WN_top independence relative to that family. ∎
-
----
 
 ### Native Duality Remarks
 
@@ -1103,28 +965,6 @@ Vertical infinity:    ρ-orbit non-termination (persistent dynamics)
 ```
 
 The two exchange roles across tower levels (`Inf-Dual` (L2.2.T7), `σ-Not3rd` (L8.6.T4)): horizontal within-fiber structure at level Mₙ becomes vertical composition depth at Mₙ₊₁, and conversely. This *directional* duality is neither the regime dichotomy (↓_M / ∞_M) nor the recurrence/convergence mode distinction (`Mode` (L1.4.D1)); identifying it with either is a category error.
-
-### Topological Structure as Substrate Data
-| Type | Label | Tag | Notation | Status |
-| :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L1.4.R3 | `Top-Inst` | | **Novel** |
-**Synopsis:** The topology 𝒯 is a free parameter of the CRPT substrate. This remark gives three canonical instantiations: the discrete topology (PA-WN_top vacuous), the metric topology on a complete metric space (PA-WN_top = completeness condition), and the order topology on a complete lattice (PA-WN_top = directed-completeness). All three are valid CRPT substrates.
-
-**Source:** CRPT; from `Sub` (L1.1.D1) + PA-WN_top (L1.2.Ax7).
-
-
-Topology is a structural component of the substrate Sub = (𝒰, →_ρ, →_σ, 𝒯).
-Concrete instantiations supply the specific 𝒯. Examples:
-- **REAL_ANALYSIS:** 𝒯 = standard topology on ℝ
-- **METRIC_SPACES:** 𝒯 = metric topology d(x, y)
-- **FUNCTIONAL_ANALYSIS:** 𝒯 = norm or weak topology on Banach spaces
-- **STREAMS:** 𝒯 = pointwise or uniform convergence
-
-The abstract anchor remains topology-polymorphic over concrete choices of 𝒯,
-subject to the global conditions TopSep(𝒯) and continuity of ρ required by
-the topological branch of CFix.
-
----
 
 ## L1.5 — Model Axiom Profiles
 
@@ -1450,7 +1290,7 @@ Models with LA_M = ∅ may omit the LA_M line.
 | PA-Fix | Axiom | Independent — Countermodel M_Fix (new) |
 | PA-CoInd | Axiom (portable); theorem in full SOL | Derived from PA-NWF under full SOL (proved in `Ax-Ind` (L1.6.T1)) |
 | PA-Prod | Axiom | Independent — Countermodel M_Prod (new) |
-| PA-WN_top | Axiom (conditional scope) | Independent — Countermodel M_ind (`WNtop-Ind` (L1.4.T3)) |
+| PA-WN_top | Axiom (conditional scope) | Independent — Countermodel M_ind (`WNtop-Ind` (L1.7.T2)) |
 | PA-Bisim | Axiom | Independent — Countermodel M_Bisim (new) |
 | PA-Reach | Axiom | Independent — Countermodel M_Reach (new) |
 | WF-Canon | THEOREM (not an axiom) | N/A — derived from PA-WN + PA-Conf + definitions |
@@ -1458,7 +1298,7 @@ Models with LA_M = ∅ may omit the LA_M line.
 **Note on axiom count:** The strict independence basis here has 8 PA axioms
 {PA-WN, PA-NWF, PA-Conf, PA-Fix, PA-Prod, PA-WN_top, PA-Bisim, PA-Reach} — each is
 independent of the conjunction of the other seven (countermodels below, plus
-M_ind for PA-WN_top at `WNtop-Ind` (L1.4.T3)). PA-WN_top **is** part of the minimal
+M_ind for PA-WN_top at `WNtop-Ind` (L1.7.T2)). PA-WN_top **is** part of the minimal
 basis: its vacuity on pure-WF models (∞_M = ∅) is a *scope* property, not
 redundancy — it is not derivable from the other axioms (witness M_ind), so any
 minimal basis must contain it. This is the same conditional-scope situation as
@@ -1715,7 +1555,7 @@ We now have countermodels separating each non-trivial axiom from the rest:
 | PA-Conf | M_Conf: {a, b₁, b₂}, a branches to two NFs | Two normal forms reachable from a |
 | PA-Fix | M_Fix: {a,b}, ρ_M(a)=a but a →_ρ b | Fixpoint not equal to normal form |
 | PA-Prod | M_Prod: {a,b,c,d} with c →_ρ d and Observable(d)=⊥ | One-step productivity failure at convergent boundary |
-| PA-WN_top | M_ind: (ℤ, decrement, discrete topology) (`WNtop-Ind` (L1.4.T3)) | Persistent orbit has no 𝒯-limit in the discrete topology |
+| PA-WN_top | M_ind: (ℤ, decrement, discrete topology) (`WNtop-Ind` (L1.7.T2)) | Persistent orbit has no 𝒯-limit in the discrete topology |
 | PA-Bisim | M_Bisim: {a,b,f,g}, a≈b but CFix(a)≠CFix(b) | Bisimulation ≠ ρ-equivalence |
 | PA-Reach | M_Reach: {f} ∪ {s_n} with H_S(s_n) alternating by parity | Horizon signature never stabilizes |
 
@@ -1723,7 +1563,7 @@ We now have countermodels separating each non-trivial axiom from the rest:
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Theorem** | L1.6.T1 | `Ax-Ind` | | **Novel** |
-**Synopsis:** The full independence matrix for the eight-axiom basis: each of the eight basis axioms is independent of the conjunction of the remaining seven. Six countermodels witness this independence — M_Conf, M_Fix, M_Prod, M_Bisim, M_Reach here, and M_ind for PA-WN_top at `WNtop-Ind` (L1.4.T3) — while PA-WN and PA-NWF are separated by the trivial WF-only / NWF-only duality models. PA-CoInd is the one PA axiom outside the basis: it is derivable from PA-NWF in full second-order logic (Park [1981]).
+**Synopsis:** The full independence matrix for the eight-axiom basis: each of the eight basis axioms is independent of the conjunction of the remaining seven. Six countermodels witness this independence — M_Conf, M_Fix, M_Prod, M_Bisim, M_Reach here, and M_ind for PA-WN_top at `WNtop-Ind` (L1.7.T2) — while PA-WN and PA-NWF are separated by the trivial WF-only / NWF-only duality models. PA-CoInd is the one PA axiom outside the basis: it is derivable from PA-NWF in full second-order logic (Park [1981]).
 
 **Source:** CRPT; from the eight-axiom basis (L1.2–L1.3); independence via the countermodel matrix.
 
@@ -1736,7 +1576,7 @@ the basis.*
 *Proof.*
 
 Independence: for each basis axiom A in the 8-axiom set above, the corresponding
-countermodel listed in the matrix (or M_ind for PA-WN_top, `WNtop-Ind` (L1.4.T3))
+countermodel listed in the matrix (or M_ind for PA-WN_top, `WNtop-Ind` (L1.7.T2))
 satisfies the other seven basis axioms and fails A.
 By soundness, A is not derivable from the other seven.
 
@@ -1760,7 +1600,7 @@ None of the 8 basis axioms can be profitably split into independent sub-axioms:
   cannot be split without changing their logical content.
 - PA-WN_top is a single unique-limit assertion (∀x ∈ ∞_M ∃!L : ρ_M^n(x) → L);
   its existence and uniqueness clauses are not independent — uniqueness is forced
-  by TopSep(𝒯) (`TopSep-Uniq` (L1.2.T1)) rather than by a separable axiom — so no
+  by TopSep(𝒯) (`TopSep-Uniq` (L1.7.T1)) rather than by a separable axiom — so no
   profitable split exists.
 - PA-Conf is a single universal-existential sentence (∀x∀y₁∀y₂ ∃z) — splitting
   it into "local confluence" and "global confluence" is possible but the split is
@@ -1784,3 +1624,185 @@ no profitable splitting.
 ---
 
 ---
+
+## L1.7 — The Substrate Topology
+
+*Purpose.* The interface contract of the topology component 𝒯 declared in the substrate
+(`Sub` (L1.1.D1)). This section collects the 𝒯-apparatus in one fiber: the Hausdorff
+separation requirement, the limit structure, uniqueness of limits, the topology-interface
+axiom PA-WN_top that certifies the convergence (topological) mode, its independence, and
+the canonical instantiations. **Scope criterion:** this is an *interface section* — its
+members are the contract the substrate's 𝒯 must satisfy, anchored on imported topology and
+consumed by the convergence mode (`Mode` (L1.4.D1)) and the topological tiers of L3, L6,
+and L8. Step-level axioms live in L1.2; orbit-level axioms in L1.3.*
+
+### Hausdorff Separation Condition
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Definition** | L1.7.D1 | `TopSep` | TopSep(𝒯) | **Imported** |
+**Synopsis:** Topological separation (the Hausdorff / T₂ condition) requires that distinct limit points are separated by disjoint open sets. Under this condition, sequences have at most one limit. This is the minimal separation condition ensuring that topological limits in the substrate are unique — a prerequisite for PA-WN_top.
+
+**Source:** Hausdorff [1914] *Grundzüge der Mengenlehre*; Munkres [2000] *Topology* §17 — T₂ (Hausdorff) separation axiom.
+
+A topology 𝒯 on 𝒰_M satisfies **TopSep** (the Hausdorff / T₂ condition) if:
+```
+TopSep(𝒯) :⟺ ∀L₁, L₂ ∈ 𝒰_M : L₁ ≠ L₂ ⟹
+ ∃U₁, U₂ ∈ 𝒯 : L₁ ∈ U₁ ∧ L₂ ∈ U₂ ∧ U₁ ∩ U₂ = ∅
+```
+Any two distinct points can be separated by disjoint open neighborhoods.
+
+*Standard name.* The T₂ separation axiom (Hausdorff [1914]; Munkres [2000] §17).
+All metric spaces satisfy TopSep. Standard instantiation topologies (ℝ, ℝⁿ,
+Banach spaces, metric spaces) are Hausdorff. When PA-WN_top is declared `Vacuous`
+(pure WF case with ∞_M = ∅), TopSep imposes no constraint.
+
+### Topological Limit via Metric/Order
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Definition** | L1.7.D2 | `Top-Lim` | | **Imported** |
+**Synopsis:** The topological limit structure defines what it means for a sequence of elements to converge to a limit point in the topology 𝒯 of the substrate. This includes limit via neighborhood bases, metric convergence when 𝒯 is metrizable, and order-theoretic monotone limits. The substrate's topology must admit a well-defined limit notion for PA-WN_top to have content.
+
+**Source:** Hausdorff [1914] *Grundzüge der Mengenlehre*; Munkres [2000] *Topology* — topological limit via neighbourhood bases.
+
+For concrete instantiations:
+- **Metric spaces:** d(ρ_M^n(x), L) → 0 as n → ∞
+- **Topological spaces:** For every neighborhood U of L, ∃N : ∀n ≥ N, ρ_M^n(x) ∈ U
+- **Lattices/posets:** ρ_M^n(x) ↓ L (monotone decreasing to L) or ρ_M^n(x) ↑ L (monotone increasing)
+
+*Logical Status:*
+- **Pure WF (∞_M = ∅):** Vacuously true. No elements in ∞_M, so the ∀x ∈ ∞_M is satisfied trivially.
+- **Native Stratified:** Substantively true on ∞_M. Required to be explicitly satisfied for topological models (R, metric spaces, etc.).
+- **Pure NWF:** May be true or false depending on whether the model admits a topology with the required convergence property.
+
+*Philosophical Meaning:* PA-WN_top is the **topological dual of PA-WN** in finitary regime:
+- **PA-WN says:** "Finitary iteration converges to fixpoints in ℕ steps"
+- **PA-WN_top says:** "Topological iteration converges to limits in topology 𝒯"
+
+Both express convergence, but in different modes.
+
+*What it adds:* Without PA-WN_top, persistent elements in ∞_M might oscillate indefinitely without converging. With it, all persistent elements have well-defined limit points (in the topology), enabling canonical abstraction CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) to be defined on all ∞_M.
+
+---
+
+### Uniqueness of Topological Limits under TopSep
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Theorem** | L1.7.T1 | `TopSep-Uniq` | | **Imported** |
+**Synopsis:** Under the Hausdorff condition TopSep(𝒯), topological limits are unique, so the persistent-regime canonical form CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) is well-defined and single-valued on ∞_M.
+
+**Source:** Munkres [2000] *Topology* Lemma 17.9 — uniqueness of limits in Hausdorff spaces.
+
+If TopSep(𝒯) holds and (ρ_M^n(x))_{n∈ℕ} is a sequence in (𝒰_M, 𝒯) converging to L₁ and also converging to L₂, then L₁ = L₂.
+
+*Proof.* Suppose L₁ ≠ L₂. By TopSep(𝒯), ∃ disjoint open U₁ ∋ L₁, U₂ ∋ L₂.
+Since ρ_M^n(x) → L₁: ∃N₁ : ∀n ≥ N₁ : ρ_M^n(x) ∈ U₁.
+Since ρ_M^n(x) → L₂: ∃N₂ : ∀n ≥ N₂ : ρ_M^n(x) ∈ U₂.
+For n ≥ max(N₁, N₂): ρ_M^n(x) ∈ U₁ ∩ U₂ = ∅. Contradiction. Hence L₁ = L₂. ∎
+
+### PA-WN_top — Topological Weak Normalisation / Asymptotic Convergence
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Axiom** | L1.7.Ax1 | `PA-WN_top` | | **Novel** |
+**Synopsis:** PA-WN_top (Topological Weak Normalisation) requires that every persistent element has a unique topological limit point in 𝒯. This gives persistent orbits a 'destination' even when they never terminate, enabling the coinductive treatment of PA-CoInd. Without PA-WN_top, persistent orbits could wander without any asymptotic structure.
+
+**Source:** CRPT; from PA-NWF (L1.2.Ax4) + topological convergence (Munkres [2000]); the topological-limit axiom is CRPT-original.
+
+
+*Scope and Interpretation.* This axiom is what certifies the **convergence (topological) mode** (`Mode` (L1.4.D1)): where it holds, persistent elements of ∞_M that do not reach fixpoints finitely nonetheless converge to a limit in a topology 𝒯. It is an optional, independent axiom (`WNtop-Ind` (L1.7.T2)) — persistent elements for which it fails reach their asymptotic destination by recurrence (or its composite with convergence) instead, per PA-Reach (L1.3.Ax2). The topology 𝒯 declared as part of the substrate (`Sub` (L1.1.D1)) for topological-mode use must satisfy the **T₂ (Hausdorff) separation axiom** (`TopSep` (L1.7.D1) above). This requirement is essential for uniqueness of topological limits: in a non-Hausdorff space a sequence can converge to multiple distinct limit points simultaneously, rendering CFix(ρ_M) on ∞_M multi-valued.
+
+```
+PA-WN_top:
+∀x ∈ ∞_M : ∃!L ∈ 𝒰_M, ∃𝒯-neighborhood basis {U_k}_{k ∈ ℕ} of L :
+ ∀k ∈ ℕ ∃N_k ∈ ℕ : ∀n ≥ N_k : ρ_M^n(x) ∈ U_k
+```
+
+The ∃! (unique existence) is justified as follows: existence follows from the convergence
+condition stated; uniqueness is a consequence of the Hausdorff property of 𝒯 (see
+`TopSep-Uniq` (L1.7.T1) below).
+
+*Equivalently:* Every element x ∈ ∞_M has a **unique** limit point L ∈ 𝒰_M in topology 𝒯:
+```
+lim_{n→∞} ρ_M^n(x) = L (unique, in the Hausdorff topology 𝒯)
+```
+
+where 𝒯 is fixed by the substrate Sub = (𝒰, →_ρ, →_σ, 𝒯) and must satisfy TopSep (L1.7.D1).
+
+*Standard Interpretation:* This is **full sequence convergence** (not merely the Bolzano-Weierstrass cluster-point property): the entire orbit sequence ρ_M^n(x) converges to L, not just a subsequence.
+
+### Independence of PA-WN_top
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Theorem** | L1.7.T2 | `WNtop-Ind` | | **Novel** |
+**Synopsis:** PA-WN_top is independent of the remaining axioms, witnessed by the model M_ind = (ℤ, decrement, identity, discrete topology). In M_ind, every element is weakly normalizing (integer decrement terminates at 0 by a separate argument), but no element has a topological limit in the discrete topology.
+
+**Source:** CRPT; from PA-WN_top (L1.7.Ax1) + PA-NWF (L1.2.Ax4); independence via the M_ind countermodel.
+
+In the native axiom system, the following hold:
+
+**(i) Mutual Exclusivity in Pure Models:**
+- **Pure WF (∞_M = ∅):** PA-WN globally true; PA-NWF false; PA-WN_top vacuously true.
+- **Pure NWF (↓_M = ∅):** PA-WN false; PA-NWF true; PA-WN_top true (non-vacuous).
+
+**(ii) Complementary Independence in Native Stratified Models (Both regimes):** For native models with ↓_M ≠ ∅ and ∞_M ≠ ∅:
+- PA-WN (on ↓_M) and PA-NWF (on ∞_M) are **conditionally independent**: both are true but govern disjoint parts of 𝒰.
+- PA-NWF and PA-WN_top are **interdependent**: PA-NWF guarantees ∞_M ≠ ∅; PA-WN_top requires non-empty ∞_M.
+- PA-WN (finitary mode) and PA-WN_top (topological mode) are **mode-independent**: they express convergence in different modes and are compatible.
+
+*Proof.*
+
+**(i)** By definitions of ↓_M and ∞_M, and by mutual exclusivity of PA-WN and PA-NWF on pure models. ✓
+
+**(ii)** In native models:
+ - PA-WN restricted to ↓_M is true by definition of ↓_M. PA-NWF on ∞_M is true by definition of ∞_M. They govern disjoint regimes, hence conditionally independent.
+ - PA-NWF asserts ∞_M ≠ ∅. PA-WN_top requires ∀x ∈ ∞_M : ∃ limit. If ∞_M = ∅, PA-WN_top is vacuous and PA-NWF is false. Thus they are codependent. ✓
+ - PA-WN and PA-WN_top are mode-independent: see the independence witness M_ind below. ✓
+
+**(iii) PA-WN_top Independence Witness.** We exhibit a model satisfying the other projection axioms while failing PA-WN_top, thereby proving PA-WN_top is not entailed by the remaining PA-family.
+
+**Model M_ind.** Let 𝒰 = ℤ with ↓_M = ℕ and ∞_M = ℤ_{<0} = {z ∈ ℤ | z < 0}. Define:
+```
+ρ_M(n) = max(n − 1, 0) for n ∈ ℕ
+ρ_M(z) = z − 1 for z < 0
+→_ρ = graph of ρ_M (deterministic)
+→_σ = →_ρ ∪ {(n, z) | n ≥ 1, z < 0}
+𝒯 = discrete topology on ℤ
+```
+
+**Verification:**
+- **PA-WN (on ↓_M):** For n ∈ ℕ, ρ^n_M(n) = 0 ∈ Fix(ρ_M). ✓
+- **PA-Conf:** ρ_M is a total function, so →_ρ is deterministic, hence trivially confluent. ✓
+- **WF-Canon (theorem layer):** WF-Canon-1 holds on ↓_M since every n ∈ ℕ reaches 0 ∈ Fix(ρ_M) under finite iteration. WF-Canon-2 holds since every fixpoint f ∈ Fix(ρ_M) is inhabited by CFix-image (here Fix(ρ_M) = {0}, witnessed by x = 0). ✓
+- **LA-Rich(M_ind):** not declared (LA_M = ∅) in this witness model; no PA-axiom depends on it. ✓
+- **PA-NWF:** ∞_M = ℤ_{<0} ≠ ∅. For z < 0: ρ^n_M(z) = z − n < 0, hence ρ^n_M(z) ∉ Fix(ρ_M) = {0} for all n. ✓
+- **PA-CoInd:** ℤ_{<0} = νT^{NWF} (greatest set S with ρ_M(S) ⊆ S and S ∩ Fix(ρ_M) = ∅). Any superset would include some n ∈ ℕ with ρ^n_M(n) = 0 ∈ Fix(ρ_M). ✓
+- **PA-Prod:** For x ≠ 0: ρ_M(x) ≠ x (predecessor on ℕ≥1 and subtraction on ℤ_{<0}). ✓
+- **PA-Bisim:** ρ_M deterministic → bisimilarity reduces to orbit equivalence ≃_M. ✓
+- **PA-Reach:** For z ∈ ∞_M = ℤ_{<0}, define sig_M(z) to be constant on ℤ_{<0}, e.g. sig_M(w) := (⊥, ⊤, ⊥) for all w ∈ ℤ_{<0}. Then for any z < 0, taking n = 0: ∀j ≥ 0, sig_M(ρ_M^j(z)) = sig_M(z − j) = (⊥, ⊤, ⊥) = constant. PA-Reach is satisfied. ✓
+- **PA-WN_top:** **FAILS.** For z ∈ ∞_M: ρ^n_M(z) = z − n. In the discrete topology, convergence requires eventual constancy; but z − n is strictly decreasing, hence not eventually constant. No L ∈ 𝒰 has ρ^n_M(z) ∈ U for eventually all n and any singleton neighborhood {L}. ✗
+
+Thus M_ind satisfies the remaining PA-family while failing PA-WN_top, establishing PA-WN_top independence relative to that family. ∎
+
+---
+
+### Topological Structure as Substrate Data
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | L1.7.R1 | `Top-Inst` | | **Novel** |
+**Synopsis:** The topology 𝒯 is a free parameter of the CRPT substrate. This remark gives three canonical instantiations: the discrete topology (PA-WN_top vacuous), the metric topology on a complete metric space (PA-WN_top = completeness condition), and the order topology on a complete lattice (PA-WN_top = directed-completeness). All three are valid CRPT substrates.
+
+**Source:** CRPT; from `Sub` (L1.1.D1) + PA-WN_top (L1.7.Ax1).
+
+
+Topology is a structural component of the substrate Sub = (𝒰, →_ρ, →_σ, 𝒯).
+Concrete instantiations supply the specific 𝒯. Examples:
+- **REAL_ANALYSIS:** 𝒯 = standard topology on ℝ
+- **METRIC_SPACES:** 𝒯 = metric topology d(x, y)
+- **FUNCTIONAL_ANALYSIS:** 𝒯 = norm or weak topology on Banach spaces
+- **STREAMS:** 𝒯 = pointwise or uniform convergence
+
+The abstract anchor remains topology-polymorphic over concrete choices of 𝒯,
+subject to the global conditions TopSep(𝒯) and continuity of ρ required by
+the topological branch of CFix.
+
+---
+

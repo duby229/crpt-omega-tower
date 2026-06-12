@@ -434,7 +434,7 @@ A substrate (𝒰_M, →_ρ, →_σ, ρ_M) satisfies *native regime stratificati
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L2.2.R7 | `RegPart-NoAxiom` | | **Novel** |
+| **Remark** | L2.2.R1 | `RegPart-NoAxiom` | | **Novel** |
 **Synopsis:** The regime partition is not an axiom constraint: ↓_M and ∞_M are definitions, and their exhaustiveness and disjointness are theorem consequences of those definitions.
 
 **Source:** CRPT; from `Reg-Strat` (L2.2.D3) + `Part` (L2.2.T3).
@@ -481,7 +481,7 @@ x ∈ ∞_M iff no iterate of ρ_M(x) reaches a fixpoint. The notation ∞_M ("i
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L2.2.R3 | `RegOps-PureNative` | | **Novel** |
+| **Remark** | L2.2.R2 | `RegOps-PureNative` | | **Novel** |
 **Synopsis:** How the regime operators behave in pure-WF versus native stratified settings.
 
 **Source:** CRPT; from `Reg-Strat` (L2.2.D3) + `Mode` (L1.4.D1).
@@ -548,7 +548,7 @@ middle on the predicate x ∈ ↓_M. Disjointness: immediate from the definition
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L2.2.R4 | `Part-Taut` | | **Novel** |
+| **Remark** | L2.2.R3 | `Part-Taut` | | **Novel** |
 **Synopsis:** See the remark.
 
 **Source:** CRPT; from `Part` (L2.2.T3).
@@ -591,7 +591,7 @@ Therefore the persistent regime is non-empty. ∎
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L2.2.R5 | `Disc-Regime` | | **Novel** |
+| **Remark** | L2.2.R4 | `Disc-Regime` | | **Novel** |
 **Synopsis:** Reading the regime partition as a discernibility classification.
 
 **Source:** CRPT; from `↓_M` (L2.2.D4) + `∞_M` (L2.2.D5).
@@ -657,7 +657,7 @@ existing regime, determined by CFix(ρ_M) (convergent case) or orbit containment
 ### Regime Notation - Canonical
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L2.2.R1 | `Reg-Nota` |  | **Novel** |
+| **Remark** | L2.2.R5 | `Reg-Nota` |  | **Novel** |
 **Synopsis:** The canonical regime notation: ↓_M (convergent) and ∞_M (persistent) are the primary CRPT notations. The fixed-point theory notations μT_{ρ,M} and νT_{ρ,M} are alternative formal definitions equivalent to ↓_M and ∞_M respectively, used when the fixed-point theoretic perspective clarifies a proof.
 
 **Source:** CRPT; notation for `↓_M` (L2.2.D4) + `∞_M` (L2.2.D5).
@@ -675,7 +675,7 @@ The regime symbols are canonical: ↓_M and ∞_M are used throughout CRPT.
 ### Vertical vs Horizontal Infinity: Why σ-Structure is NOT a Third Regime
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L2.2.R2 | `Vert-Horiz` |  | **Novel** |
+| **Remark** | L2.2.R6 | `Vert-Horiz` |  | **Novel** |
 **Synopsis:** This remark establishes that the structural relation →_σ does not create a third regime. Elements connected horizontally (within the same fiber via →_σ) are already classified as convergent or persistent by their position relative to Fix(ρ_M). Horizontal connectivity is not a new regime; it is a within-regime structural property.
 
 Structural Classification
@@ -720,6 +720,10 @@ Elements can be:
 
 **Source:** CRPT; from `∞_M` (L2.2.D5) + `Lift-Def` (L8.2.D2).
 
+*Three homes of the duality.* This is the **model-level statement**; its universal
+template is L0.6, and its tower-level theory is L8.6 — three distinct constructs in
+three strata, ι-related across levels, each owned by its stratum's section.
+
 Let M satisfy PA-WN + PA-Conf, and let Lift(M) be its free lift (`Lift-Def` (L8.2.D2)). Then:
 
 **(i) Horizontal infinity in M maps to vertical infinity in Lift(M):**
@@ -759,7 +763,7 @@ regardless of whether elements within f had infinite σ-structure. The entire ho
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L2.2.R8 | `Infinity-Cycle` | | **Novel** |
+| **Remark** | L2.2.R7 | `Infinity-Cycle` | | **Novel** |
 **Synopsis:** Horizontal (σ-branching within a fiber) and vertical (unbounded composition depth) infinity are dual facets of one phenomenon, transformed into one another at successive tower levels.
 
 **Source:** CRPT; from `Inf-Dual` (L2.2.T7).
@@ -775,7 +779,7 @@ This explains why:
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L2.2.R6 | `InfDual-DepNote` | | **Novel** |
+| **Remark** | L2.2.R8 | `InfDual-DepNote` | | **Novel** |
 **Synopsis:** See the remark.
 
 **Source:** CRPT; from `Inf-Dual` (L2.2.T7) + `Lift-Def` (L8.2.D2).
@@ -1132,7 +1136,7 @@ where the limit for ∞_M elements is taken in the model topology 𝒯 specified
 | **Remark** | L2.4.R1 | `CFix-ExUniq-Nat` | | **Novel** |
 **Synopsis:** Existence and uniqueness of the canonical form in native (both-regime) form.
 
-**Source:** CRPT; from `CNF-Ex` (L2.4.T1) + `TopSep-Uniq` (L1.2.T1).
+**Source:** CRPT; from `CNF-Ex` (L2.4.T1) + `TopSep-Uniq` (L1.7.T1).
 
 **Existence and Uniqueness in Native Form:**
 
@@ -1140,11 +1144,11 @@ where the limit for ∞_M elements is taken in the model topology 𝒯 specified
  Uniqueness holds for the deterministic ρ_M-orbit (C1–C2). If PA-Conf is assumed
  globally then uniqueness also extends to arbitrary →_ρ*-paths (Church–Rosser).
  See L1.4 (Scope Sufficiency for CFix(ρ_M)) for the `Scoped(ρ_M-orbits)` formulation used by some instantiations.
-- **For x ∈ ∞_M:** The limit lim_{n→∞} ρ_M^n(x) exists in (𝒰, 𝒯) by PA-WN_top (`PA-Scope` (L1.5.D1), L1.4). Uniqueness follows formally from `TopSep-Uniq` (L1.2.T1), i.e. from the explicit TopSep(𝒯) condition required by PA-WN_top. Thus CFix(ρ_M) is single-valued on all of 𝒰.
+- **For x ∈ ∞_M:** The limit lim_{n→∞} ρ_M^n(x) exists in (𝒰, 𝒯) by PA-WN_top (`PA-Scope` (L1.5.D1), L1.4). Uniqueness follows formally from `TopSep-Uniq` (L1.7.T1), i.e. from the explicit TopSep(𝒯) condition required by PA-WN_top. Thus CFix(ρ_M) is single-valued on all of 𝒰.
 
 The definition unifies both regimes: CFix(ρ_M) is a total function on 𝒰, with finitary normal form on ↓_M and topological limit on ∞_M.
 
-*Standard name.* In standard (pure WF) CRPT: CFix(ρ_M) is the canonical normal-form map (Baader & Nipkow §2.1, Church-Rosser normal form). In native CRPT: CFix(ρ_M) extends to analytic models via topological closure, generalizing the Church-Rosser property to topological limit convergence. Both are called **canonical** because they are unique: finitary uniqueness follows from PA-Conf, while topological uniqueness follows from `TopSep-Uniq` (L1.2.T1), i.e. PA-WN_top together with the explicit TopSep(𝒯) assumption. They represent the maximal abstraction of their fiber.
+*Standard name.* In standard (pure WF) CRPT: CFix(ρ_M) is the canonical normal-form map (Baader & Nipkow §2.1, Church-Rosser normal form). In native CRPT: CFix(ρ_M) extends to analytic models via topological closure, generalizing the Church-Rosser property to topological limit convergence. Both are called **canonical** because they are unique: finitary uniqueness follows from PA-Conf, while topological uniqueness follows from `TopSep-Uniq` (L1.7.T1), i.e. PA-WN_top together with the explicit TopSep(𝒯) assumption. They represent the maximal abstraction of their fiber.
 
 ### Discernibility: Canonical Form
 
@@ -1312,7 +1316,7 @@ Abs_M(x) = CFix(ρ_M)(x) = ρ_M^{d_M(x)}(x). ✓
 
 **Case 2: x ∈ ∞_M.** By `Reg-Strat` (L2.2.D3) and PA-NWF, ρ_M^n(x) ∉ Fix(ρ_M) for all
 n ∈ ℕ. By PA-WN_top (`PA-Scope` (L1.5.D1)), the sequence (ρ_M^n(x))_{n∈ℕ} converges
-in (𝒰, 𝒯) to a limit L. Uniqueness of the limit follows from `TopSep-Uniq` (L1.2.T1),
+in (𝒰, 𝒯) to a limit L. Uniqueness of the limit follows from `TopSep-Uniq` (L1.7.T1),
 which uses the explicit TopSep(𝒯) condition required by PA-WN_top. By
 `Rec-Proj` (L2.1.D4), CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) = L. Hence
 Abs_M(x) = CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x). ✓
@@ -1437,7 +1441,7 @@ x ≃_M y :⟺ CFix(ρ_M)(x) = CFix(ρ_M)(y)
 ```
 x and y are *orbit-equivalent* if they have the same canonical normal form (or limit point).
 
-*Regime-aware reading.* On **↓_M**, CFix(ρ_M)(x) is the finitary normal form (`CNF-Ex` (L2.4.T1)), so ≃_M is total and is exactly CFix-equality. On **∞_M**, CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) is the topological limit, which exists only under PA-WN_top (`TopSep-Uniq` (L1.2.T1)); so ≃_M is **partial** on ∞_M, defined precisely on the PA-WN_top sub-class. Where PA-WN_top is absent, the regime-general observable equivalence on ∞_M is persistent orbit equivalence ≃∞ (`≃∞` (L3.3.D7)), comparing ω-limit sets. The two **agree** on the PA-WN_top sub-class — a single topological limit L is exactly the singleton ω-limit set {[L]_≈}. Accordingly, `PA-Bisim` (L1.3.Ax1)'s conclusion x ≃_M y reads as CFix-equality on ↓_M and as ≃∞ on ∞_M where PA-WN_top is absent.
+*Regime-aware reading.* On **↓_M**, CFix(ρ_M)(x) is the finitary normal form (`CNF-Ex` (L2.4.T1)), so ≃_M is total and is exactly CFix-equality. On **∞_M**, CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) is the topological limit, which exists only under PA-WN_top (`TopSep-Uniq` (L1.7.T1)); so ≃_M is **partial** on ∞_M, defined precisely on the PA-WN_top sub-class. Where PA-WN_top is absent, the regime-general observable equivalence on ∞_M is persistent orbit equivalence ≃∞ (`≃∞` (L3.3.D7)), comparing ω-limit sets. The two **agree** on the PA-WN_top sub-class — a single topological limit L is exactly the singleton ω-limit set {[L]_≈}. Accordingly, `PA-Bisim` (L1.3.Ax1)'s conclusion x ≃_M y reads as CFix-equality on ↓_M and as ≃∞ on ∞_M where PA-WN_top is absent.
 
 ### ≃_M and Orbit-Coincidence
 

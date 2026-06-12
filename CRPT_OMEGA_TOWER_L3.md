@@ -90,7 +90,7 @@ algebraic structure.
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L3.1.R5 | `HI-CatRole` | | **Novel** |
+| **Remark** | L3.1.R1 | `HI-CatRole` | | **Novel** |
 **Synopsis:** The category-theoretic role of H_I, which has no classical ARS counterpart.
 
 **Source:** CRPT; from `H_I` (L3.1.D2).
@@ -125,7 +125,7 @@ in the *boundary layer* ∂μT_{ρ,M} := {x ∈ μT_{ρ,M} | d_M(x) = 1}.
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L3.1.R6 | `HO-Notational` | | **Novel** |
+| **Remark** | L3.1.R2 | `HO-Notational` | | **Novel** |
 **Synopsis:** See the remark.
 
 **Source:** CRPT; from `H_O` (L3.1.D4).
@@ -161,7 +161,7 @@ The persistent operative signature: regime tag (∞) and the **tail class of the
 observation trace** OT^obs_M(x) = (obs(ρ_M^n(x)))_{n∈ℕ} (`Obs-Lab` (L1.1.D8),
 `Tail-Eq` (L6.3.D2)) — what the orbit emits, up to finite prefix. Every comparison the
 signature supports is an equality of traces, matching the theory's native discernibility
-machinery (`Disc-Obs` (L4.1.R4)). Where PA-WN_top holds, the trace's tail class
+machinery (`Disc-Obs` (L4.1.R3)). Where PA-WN_top holds, the trace's tail class
 determines the limit point CFix(ρ_M)(x); the topological data is recovered, not
 postulated.
 
@@ -169,7 +169,7 @@ postulated.
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L3.1.R11 | `sig-Metric` | | **Novel** |
+| **Remark** | L3.1.R3 | `sig-Metric` | | **Novel** |
 **Synopsis:** How metric instantiations supply convergence-rate observables: a model with a metric topology codes its rate data (e.g. distance-to-limit observables, Hölder-class data) into the observable codomain O_M, so the observation trace carries the rates. Rate comparison is then trace tail-equivalence — a CRPT-native equality — and no external ordered-field apparatus (ℝ^ℕ profiles, exponent comparison) enters the signature itself.
 
 **Source:** CRPT; from `sig_M-NM` (L3.1.D5) + `Obs-Lab` (L1.1.D8) + PA-Prod (L1.2.Ax6).
@@ -186,7 +186,7 @@ real sequences or exponents, only traces for equality.
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L3.1.R7 | `sig-RegStrat` | | **Novel** |
+| **Remark** | L3.1.R4 | `sig-RegStrat` | | **Novel** |
 **Synopsis:** The orbit signature is regime-stratified in the native framework.
 
 **Source:** CRPT; from `sig_M-NM` (L3.1.D5).
@@ -199,7 +199,7 @@ For pure-WF specialization: pure WF models have ∞_M = ∅, so sig_M(x) always 
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L3.1.R8 | `Disc-Sig` | | **Novel** |
+| **Remark** | L3.1.R5 | `Disc-Sig` | | **Novel** |
 **Synopsis:** Reading the orbit signature sig_M(x) as a discernibility fingerprint.
 
 **Source:** CRPT; from `Sig-Dep` (L3.1.T1) + `sig_M-NM` (L3.1.D5).
@@ -233,7 +233,7 @@ sig_M(x) = sig_M(y) ⟹ d_M(x) = d_M(y)
 ### sig_M is not a sufficient NFC invariant
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L3.1.R1 | `sig-Insuf` |  | **Novel** |
+| **Remark** | L3.1.R6 | `sig-Insuf` |  | **Novel** |
 **Synopsis:** This remark explains the scope of the signature dependence theorem: the orbit signature has full discriminating power within a single fiber (where all elements share the same canonical form) but does not discriminate between elements of different fibers.
 
 **Source:** CRPT; from `sig_M-NM` (L3.1.D5).
@@ -413,7 +413,7 @@ abstraction depth. No iterative or coinductive computation is needed.
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L3.1.R10 | `HI-CircResolved` | | **Novel** |
+| **Remark** | L3.1.R7 | `HI-CircResolved` | | **Novel** |
 **Synopsis:** The apparent coinductive circularity in H_I (H_I depends on the orbit signature, which contains H_I) is illusory: H_I is uniquely determined by H_S and derivation height alone (kernel d_M-uniformity), for kernels of any cardinality.
 
 **Source:** CRPT; from `H_I-WD` (L3.1.T2) + `H_I-Dec` (L3.1.C1).
@@ -430,7 +430,7 @@ arising in continuous/topological models (e.g., continuous orbit spaces carrying
 ### What sig_M classifies
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L3.1.R2 | `sig-Class` |  | **Novel** |
+| **Remark** | L3.1.R8 | `sig-Class` |  | **Novel** |
 **Synopsis:** Remark on orbit signature independence: sig_M(x) = sig_M(y) does not imply x ≃_M y. Two elements can have the same local structure (same depth, same sibling count) while converging to different fixed points. The orbit signature classifies local position, not global destination.
 
 **Source:** CRPT; from `sig_M-NM` (L3.1.D5).
@@ -448,7 +448,7 @@ imply NFC membership coincidence.
 ### Where sig_M has full discriminating power
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L3.1.R3 | `sig-Full` |  | **Novel** |
+| **Remark** | L3.1.R9 | `sig-Full` |  | **Novel** |
 **Synopsis:** The extended orbit signature sig_M^+(x) = (sig_M(x), CNF_M(x)) is a complete invariant: sig_M^+(x) = sig_M^+(y) implies x ≃_M y. Adding the canonical form to the orbit signature gives the full observational fingerprint. This remark clarifies where the orbit signature alone is insufficient.
 
 **Source:** CRPT; from `sig_M-NM` (L3.1.D5).
@@ -464,7 +464,7 @@ CFix(ρ_M)(x) or model-specific identity conditions beyond the orbit signature.
 ### Correct sufficient invariant
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L3.1.R4 | `CNF-Suf` |  | **Novel** |
+| **Remark** | L3.1.R10 | `CNF-Suf` |  | **Novel** |
 **Synopsis:** The extended orbit signature sig_M^+(x) = (sig_M(x), CNF_M(x)) is a sufficient discriminant: sig_M^+(x) = sig_M^+(y) implies x ≃_M y. Adding the canonical form to the orbit signature gives a complete observational fingerprint. The plain orbit signature sig_M alone is not sufficient for discrimination across different fibers.
 
 CRPT; Baader & Nipkow [1998]
@@ -550,7 +550,7 @@ Abstraction has erased all CFix-level distinctions within each fiber: the kernel
 of ρ_M at ρ_M(x) is a union of ≃_M-congruence classes, each corresponding to a
 single canonical form. ✓
 
-*Note.* Equal signatures do NOT imply same fiber in general (Remark L3.1.R6: sig_M(a) =
+*Note.* Equal signatures do NOT imply same fiber in general (Remark L3.1.R2: sig_M(a) =
 sig_M(c) but CFix(ρ_M)(a) ≠ CFix(ρ_M)(c)). The orbit-equivalence conclusion z ≃_M z'
 requires the additional condition that z, z' share the same canonical form. Within a
 single fiber where all elements share CFix(ρ_M)(z) = f, this holds by definition of
@@ -566,7 +566,7 @@ signature can still distinguish them: the collapse is resolvable. ✓ ∎
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L3.1.R9 | `Hor-InfStory` | | **Novel** |
+| **Remark** | L3.1.R11 | `Hor-InfStory` | | **Novel** |
 **Synopsis:** How horizons are described on the persistent regime ∞_M.
 
 **Source:** CRPT; from `Hor-Abs` (L3.1.T3) + `sig_M-NM` (L3.1.D5).
@@ -987,7 +987,7 @@ H_I^{top}(x) := ⊤ if H_S^{top}(x) = ⊤ AND the observation traces of the orbi
 For ramified limits, measures whether distinct orbits approaching the same limit are
 observationally uniform: "same rate" means tail-equivalent observation traces
 (`Obs-Lab` (L1.1.D8), `Tail-Eq` (L6.3.D2)). Metric instantiations supply rate
-observables through O_M (`sig-Metric` (L3.1.R11)); the predicate itself compares
+observables through O_M (`sig-Metric` (L3.1.R3)); the predicate itself compares
 only traces for equality.
 
 ### Six Classes on ∞_M (Topological Analogues)
@@ -1136,7 +1136,7 @@ CFix(ρ_M) : 𝒰 → (NF(→_ρ) ∪ Limits(𝒯))
  { lim_{n→∞} ρ_M^n(x) [≡ CNF∞_M(x)] if x ∈ ∞_M
 ```
 
-No element of 𝒰 is outside the reach of one of these two forms (`Part` (L2.2.T3): 𝒰 = ↓_M ∐ ∞_M). The persistent regime ∞_M is governed by PA-WN_top (`PA-Scope` (L1.5.D1), L1.4), which guarantees the topological limit exists; uniqueness follows from `TopSep-Uniq` (L1.2.T1), i.e. the explicit TopSep(𝒯) requirement. See also L3.2 for the twelve-class partition stratifying both regimes.
+No element of 𝒰 is outside the reach of one of these two forms (`Part` (L2.2.T3): 𝒰 = ↓_M ∐ ∞_M). The persistent regime ∞_M is governed by PA-WN_top (`PA-Scope` (L1.5.D1), L1.4), which guarantees the topological limit exists; uniqueness follows from `TopSep-Uniq` (L1.7.T1), i.e. the explicit TopSep(𝒯) requirement. See also L3.2 for the twelve-class partition stratifying both regimes.
 
 ### Stabilisation Conditions (Dynamical Systems Formulation)
 
@@ -1557,7 +1557,7 @@ on ↓_M (`CNF-Ex` (L2.4.T1)), with PA-Reach in the role of PA-WN. ∎
 | **Theorem** | L3.3.T7 | `CPer-Uniq` | | **Novel** |
 **Synopsis:** The canonical persistent representative is uniquely determined by x — the NWF dual of CNF-Uniq. Under recurrence, the reachability depth n_M(x) and the recurrent ≈-cycle it enters are unique, by determinism of the strategy ρ_M together with minimality of the transient; under convergence the limit is unique by topological separation. Where WF uniqueness rests on confluence (Church–Rosser), NWF uniqueness rests on determinism and separation.
 
-**Source:** CRPT; from `ρ_M` (L2.1.D1) (determinism, C1–C2) + `Rec-Proj` (L2.1.D4) + `n-Reach` (L3.3.D10) + `TopSep-Uniq` (L1.2.T1); dual of `CNF-Uniq` (L2.4.T2).
+**Source:** CRPT; from `ρ_M` (L2.1.D1) (determinism, C1–C2) + `Rec-Proj` (L2.1.D4) + `n-Reach` (L3.3.D10) + `TopSep-Uniq` (L1.7.T1); dual of `CNF-Uniq` (L2.4.T2).
 
 For x ∈ ∞_M, CPer_M(x) is unique: under recurrence, n_M(x) is the unique least transient
 and the recurrent ≈-cycle entered at CPer_M(x) is the unique extracted observable; under
@@ -1569,7 +1569,7 @@ S(x) = {n : ∃p ≥ 1 : the class orbit from n is p-periodic} is thereby determ
 least element n_M(x) is unique; the class cycle ([ρ_M^{n_M(x)+i}(x)]_≈)_{0 ≤ i < p} with
 minimal period p is the single recurrent behaviour the determined orbit settles into —
 unique. **Convergence:** the limit is unique because 𝒯 is Hausdorff on the relevant
-sub-class (`TopSep-Uniq` (L1.2.T1)). Independence of the chosen orbit representative is
+sub-class (`TopSep-Uniq` (L1.7.T1)). Independence of the chosen orbit representative is
 `Rec-Proj` (L2.1.D4). (Dual mechanism: WF uniqueness comes from *confluence* of →_ρ; NWF
 finitary uniqueness comes from *determinism* of ρ_M, and topological uniqueness from
 *separation* — the faces of the projection strategy.) ∎

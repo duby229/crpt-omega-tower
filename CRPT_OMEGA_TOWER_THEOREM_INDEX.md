@@ -3,7 +3,7 @@
 **Status:** v1.0.0-rc4 (release candidate)  
 **Date:** 2026-06-11  
 **Coverage:** All levels L0–L8, Lω  
-**Total:** 166 definitions · 249 theorems/lemmas/corollaries · 125 remarks · 9 projection axioms
+**Total:** 167 definitions · 251 theorems/lemmas/corollaries · 126 remarks · 9 projection axioms
 
 ---
 
@@ -44,9 +44,6 @@
 | L1.1.T1 | Observation Labelling Well-Defined and Anchored | `Obs-Lab-WD` | Theorem |
 | L1.1.L1 | Bisimulation Union Closure | `Bisim-Union` | Lemma |
 | L1.1.L2 | Bisimilarity is Equivalence Relation | `≈-Eq` | Lemma |
-| L1.2.D2 | Topological Limit Structure | `Top-Lim` | Definition |
-| L1.2.D1 | Topological Separation | `TopSep` | Definition |
-| L1.2.T1 | TopSep Uniqueness | `TopSep-Uniq` | Theorem |
 | L1.3.D1 | Continuous Persistence | `CPer` | Definition |
 | L1.3.T1 | PA-Reach Observable Extension | `PA-Reach-ObsExt` | Theorem |
 | L1.3.T2 | Finitary Realization of PA-Reach | `PA-Reach-Fin` | Theorem |
@@ -55,6 +52,12 @@
 | L1.4.D1 | Regimes and Canonicalization Modes | `Mode` | Definition |
 | L1.4.T1 | Regime Coexistence and Mode Coverage | `Mode-Comp` | Theorem |
 | L1.4.T2 | Native CC | `Nat-CC` | Theorem |
+| L1.7.D1 | Topological Separation | `TopSep` | Definition |
+| L1.7.D2 | Topological Limit Structure | `Top-Lim` | Definition |
+| L1.7.T1 | TopSep Uniqueness | `TopSep-Uniq` | Theorem |
+| L1.7.Ax1 | PA-WN_top — Topological Weak Normalisation | `PA-WN_top` | Axiom |
+| L1.7.T2 | Independence of PA-WN_top | `WNtop-Ind` | Theorem |
+| L1.7.R1 | Topological Structure as Substrate Data | `Top-Inst` | Remark |
 
 ### L2 — Projection, Regime, Depth, Canonical Form, and Fibers
 
@@ -105,7 +108,6 @@
 | L3.2.L1 | Lattice Order | `Lat-Ord` | Lemma |
 | L3.2.T1 | Six-Class Partition | `6-Part` | Theorem |
 | L3.2.T2 | Class F is Empty | `F=∅` | Theorem |
-| L3.4.C1 | Five Active Classes | `5-Active` | Corollary |
 | L3.3.D2–D5 | Scope Conditions SC-1 through SC-4 | `SC-1...SC-4` | Definitions |
 | L3.3.D6 | Persistent Canonical Form CNF∞_M | `CNF∞-Def` | Definition |
 | L3.3.T3–T4 | CNF∞ Existence / Uniqueness (SC-1) | `CNF∞-Ex`/`CNF∞-Uniq` | Theorems |
@@ -138,10 +140,15 @@
 
 | Label | Short Name | Tag | Type |
 |-------|-----------|-----|------|
-| L4.8/L5.1.D1–D7 | Model Algebra Operations (∘, ∩, ×, /, ∪, Spec) | Multiple | Definitions |
-| L4.8/L5.1.T1–T5 | Algebra Law Theorems | Multiple | Theorems |
+| L5.1.D1–D7 | Model Algebra Operations (∘, ∩, ×, /, ∪, Spec) | Multiple | Definitions |
+| L5.1.T1–T5 | Algebra Law Theorems | Multiple | Theorems |
 | L5.2.D1 | Model Homomorphism Hom | `Hom` | Definition |
 | L5.2.T1 | Mod_CRPT Category | `Mod-Cat` | Theorem |
+| L5.5.D1 | The Category Mod_CRPT | `Mod_CRPT-Cat` | Definition |
+| L5.5.D2 | Identity Morphism | `Id-Mor` | Definition |
+| L5.5.T1 | Composition Closure | `Comp-Closed` | Theorem |
+| L5.5.T2 | Category Laws | `Cat-Laws` | Theorem |
+| L5.5.T3 | Homomorphisms Preserve Structure | `Hom-Pres` | Theorem |
 | L5.2.D3 | Regime-Restricted Isomorphism | `R-Iso` | Definition |
 | L5.2.T2–T6 | Φ_ZC / Φ_CH / Φ_ZH, horizon & collapse preservation | Multiple | Theorems |
 | L5.2.D4 | Instantiation = Faithful Embedding | `Inst-Emb` | Definition |
@@ -250,7 +257,7 @@
 | **L8.10.L1** | **Properties of →_σ^{Lift}** | **`Prop-σ-Lift`** | **Lemma** |
 | **L8.6.T1** | **→_ρ^{Lift} ⊆ →_σ^{Lift}** | **`Lift-Red-Struc`** | **Theorem** |
 | **L8.6.C1** | **Substrate Compatibility of Lift** | — | **Corollary** |
-| **L8.10.C2** | **Lift Creates Pure WF Models** | **`Lift-Pure-WF`** | **Corollary** |
+| **L8.10.C1** | **Lift Creates Pure WF Models** | **`Lift-Pure-WF`** | **Corollary** |
 | **L8.6.T3** | **Tower is Strictly Infinite** | **`Tower-Inf`** | **Theorem** |
 | **L8.10.R3** | **Q_M Cardinality** | **`Q_M-Card`** | **Remark** |
 
@@ -268,9 +275,12 @@
 | Lω.6.C1 | Fractal Claim is Internal | `Fractal-Internal` | Corollary |
 | Lω.6.C2 | No Internal ω-State Introduced | `No-Internal-ω-State` | Corollary |
 | **Lω.7.L1** | **→_{ρ_CRPT} is Acyclic** | **`CRPT-Acyclic`** | **Lemma** |
-| **Lω.7.R1** | **Self_CRPT Universe is Finite** | **`Self-CRPT-Finite`** | **Remark** |
+| **Lω.7.R2** | **Self_CRPT Universe is Finite** | **`Self-CRPT-Finite`** | **Remark** |
 | **Lω.7.T1** | **∞_{CRPT} = ∅** | **`CRPT-WF`** | **Theorem** |
 | **Lω.7.T2** | **L1.1.D1 is the Unique Projective Fixed Point** | **`Lω-FixedPt-Unique`** | **Theorem** |
+| **Lω.8.D1** | **The Specification Substrate** | **`Spec-Sub`** | **Definition** |
+| **Lω.8.T1** | **Sections are Fibers** | **`Self-Sect`** | **Theorem** |
+| **Lω.8.R1** | **The Census Discipline** | **`Sect-Census`** | **Remark** |
 
 > **Bold rows** indicate theorems added at the Lω level.
 
@@ -291,19 +301,19 @@
 `H_S` (L3.1.D1) · `H_I` (L3.1.D2) · `H_O` (L3.1.D4) · `sig_M-NM` (L3.1.D5) · `H_I-WD` (L3.1.T2) · `H_I-WD-U` (L0.3.T2) · `Hor-Abs` (L3.1.T3) · `Hor-Lift` (L8.2.T2)
 
 ### Six-Class Partition
-`Bool-Pred` (L3.2.D2) · `6-Part` (L3.2.T1) · `F=∅` (L3.2.T2) · `5-Active` (L3.2.T2)
+`Bool-Pred` (L3.2.D2) · `6-Part` (L3.2.T1) · `F=∅` (L3.2.T2)
 
 ### Observer Architecture
 `Obs-Triple` (L4.1.D5) · `Obs-Const` (L4.1.T1) · `GW` (L4.2.D1) · `Reg-Conn` (L4.2.T1) · `PV1` (L4.3.T1) · `SP1` (L4.6.T1)
 
 ### Model Algebra & Homomorphisms
-`CRPT-Mod-18` (L4.8/L5.1.D1) · `Hom` (L5.2.D1) · `Mod-Cat` (L5.2.T1) · `Mod_CRPT` (L7.2.D1) · `Mod-Cat-Q` (L7.2.T1) · `Iso` (L5.2.D2) · `R-Iso` (L5.2.D3) · `Inst-Emb` (L5.2.D4) · `Iso-Sat` (L5.2.T7) · `R-Iso∞` (L5.2.D5) · `Iso-Dual` (L5.2.T8)
+`CRPT-Mod-18` (L5.1.D1) · `Hom` (L5.2.D1) · `Mod-Cat` (L5.2.T1) · `Mod_CRPT` (L7.2.D1) · `Mod-Cat-Q` (L7.2.T1) · `Iso` (L5.2.D2) · `R-Iso` (L5.2.D3) · `Inst-Emb` (L5.2.D4) · `Iso-Sat` (L5.2.T7) · `R-Iso∞` (L5.2.D5) · `Iso-Dual` (L5.2.T8)
 
 ### Categorical Structures (Adjunctions, Functors)
 `GI` (L7.1.D1) · `GC` (L7.1.T1) · `Abs-Coll` (L7.1.T3) · `Collapse-Model` (L7.1.T4) · `GI∞` (L7.1.D5) · `GC∞` (L7.1.T5) · `Lift-Endo` (L7.2.T3) · `Coll-F` (L7.2.D5) · `Lift⊣Coll` (L7.2.T4) · `F-Func` (L7.3.T1)
 
 ### Lift Operator & Tower Construction
-`Lift-Def` (L8.2.D2) · `Tower` (L8.4.D1) · `Twr-Ex` (L8.4.T1) · `NFC-TInv` (L8.4.T2) · `Faith-Emb` (L8.4.T3) · `Lift-Red-Struc` (L8.10.T1) · `Lift-Pure-WF` (L8.10.C2) · `Tower-Inf` (L8.10.T2) · `Q_M-Card` (L8.10.R3)
+`Lift-Def` (L8.2.D2) · `Tower` (L8.4.D1) · `Twr-Ex` (L8.4.T1) · `NFC-TInv` (L8.4.T2) · `Faith-Emb` (L8.4.T3) · `Lift-Red-Struc` (L8.10.T1) · `Lift-Pure-WF` (L8.10.C1) · `Tower-Inf` (L8.10.T2) · `Q_M-Card` (L8.10.R3)
 
 ### Well-Foundedness of Lift
 `FMA-WF` (L8.1.L1) · `Lift-WN` (L8.3.T1) · `Lift-Conf` (L8.3.T2) · `Lift-Compat` (L8.3.T4) · `Prop-σ-Lift` (L8.10.L1)
@@ -315,7 +325,7 @@
 `Twr-Tail-Sim` (L8.9.T1) · `CRPT-Fractal` (L8.9.D2) · `Twr-Fractal` (L8.9.T2) · `Anchor-Fractal` (Lω.6.T1)
 
 ### Self-Application (Lω)
-`the self-substrate universe` (Lω.1.D1) · `Self-Model` (Lω.1.T1) · `Self-Horiz` (Lω.2.T1) · `m_CRPT` (Lω.3.D1) · `Tower-of-Towers` (Lω.4.T1) · `Self-FP` (Lω.5.T1) · `CRPT-Acyclic` (Lω.7.L1) · `CRPT-WF` (Lω.7.T1) · `Lω-FixedPt-Unique` (Lω.7.T2)
+`U_CRPT` (Lω.1.D1) · `Self-Model` (Lω.1.T1) · `Self-Horiz` (Lω.2.T1) · `m_CRPT` (Lω.3.D1) · `Tower-of-Towers` (Lω.4.T1) · `Self-FP` (Lω.5.T1) · `CRPT-Acyclic` (Lω.7.L1) · `CRPT-WF` (Lω.7.T1) · `Lω-FixedPt-Unique` (Lω.7.T2)
 
 ---
 

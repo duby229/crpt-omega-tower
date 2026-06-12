@@ -19,8 +19,8 @@ Readers are encouraged to read this section before diving into L1–L4, where ma
 **Pitfall:** Treating the reduction relation and the structural relation as interchangeable, or as expressing different "degrees" of relation.
 
 **What they are:**
-- `→_ρ` (L1.1.D1): The **reduction strategy** — the projection evolution. This is the relation that drives the canonical form computation; iterating →_ρ via ρ_M produces CNF.
-- `→_σ` (L1.1.D1): The **structural connectivity relation** — how elements relate within the CRPT universe, including non-reductive connections.
+- →_ρ (`Sub` (L1.1.D1)): The **reduction strategy** — the projection evolution. This is the relation that drives the canonical form computation; iterating →_ρ via ρ_M produces CNF.
+- →_σ (`Sub` (L1.1.D1)): The **structural connectivity relation** — how elements relate within the CRPT universe, including non-reductive connections.
 
 **Why two relations exist:**  
 To keep projection (→_ρ) semantically distinct from observation/connectivity (→_σ). Under a single relation, bisimulation-equivariance plus confluence (PA-Conf) would force every non-fixpoint to have a unique successor, trivializing PA-NWF and collapsing the persistent regime. The structural relation →_σ also carries cross-regime connectivity — the Gateway structure (L4.2) — that the reduction strategy →_ρ alone cannot express. (PA-Reach itself is a projection property on ∞_M, not a connectivity axiom; see L1.3.)
@@ -103,9 +103,9 @@ This is the *rank* of x in the deterministic ρ_M-induced well-founded order —
 **Pitfall:** Treating H_S, H_I, H_O as three independent boolean flags that can be set in any combination.
 
 **What they are:**
-- `H_S(x)` (L3.1.D1): x has **multiple ρ_M-siblings** — the preimage ρ_M^{−1}(ρ_M(x)) contains more than one element.
-- `H_I(x)` (L3.1.D2): x's siblings have **identical signatures** — all elements in the fiber of ρ_M(x) have the same the orbit signature value.
-- `H_O(x)` (L3.1.D3): x is at **depth exactly 1** — d_M(x) = 1 (boundary layer, one step from a fixpoint).
+- H_S(x) (`H_S` (L3.1.D1)): x has **multiple ρ_M-siblings** — the preimage ρ_M^{−1}(ρ_M(x)) contains more than one element.
+- H_I(x) (`H_I` (L3.1.D2)): x's siblings have **identical signatures** — all elements in the fiber of ρ_M(x) have the same the orbit signature value.
+- H_O(x) (`H_O` (L3.1.D4)): x is at **depth exactly 1** — d_M(x) = 1 (boundary layer, one step from a fixpoint).
 
 **Dependency structure:**
 - H_I(x) is meaningful only when H_S(x) = ⊤. When H_S(x) = ⊥ (unique preimage), H_I is vacuously true or undefined — there are no "other siblings" to compare signatures with. In the six-class partition, the combination H_S = ⊥ ∧ H_I = ⊤ does not arise as a distinct class.
@@ -171,7 +171,7 @@ Lift ⊣ Collapse (proved in L7.2.4, `Lift-Endo` L7.2, and `Coll-Adj` L7.2). Lif
 **Pitfall:** Using the canonical form map, CFix(ρ_M), and the normal-form fiber interchangeably.
 
 **What they are:**
-- `CNF_M(x)` (L2.1.D1): The **canonical normal form** of x — the element that ρ_M^n(x) reaches as n → ∞ (the endpoint of the ρ_M-orbit from x). Defined for x ∈ ↓_M.
+- CNF_M(x) (`CFix-NM` (L2.4.D1)): The **canonical normal form** of x — the element that ρ_M^n(x) reaches as n → ∞ (the endpoint of the ρ_M-orbit from x). Defined for x ∈ ↓_M.
 - `CFix(ρ_M)(x)`: The **canonical fixpoint** of x — explicitly the element f ∈ Fix(ρ_M) such that ρ_M^{d_M(x)}(x) = f. In deterministic models, CNF_M(x) = CFix(ρ_M)(x) always (they coincide).
 - `the normal-form fiber NFC_M(f)` (L2.1.D1 / L2.5.D1): The **normal-form fiber** of f — the set of all elements in 𝒰_M that canonicalize to f:
   ```

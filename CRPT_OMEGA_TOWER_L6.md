@@ -136,7 +136,7 @@ theory for general aperiodic orbits, but is approximable for SC-4 orbits. ✓ �
 
 The analysis tools of L3.2, L3.3, and L6.1 for ∞_M elements all depend on stabilisation
 conditions (SC-1 through SC-4) or PA-WN_top. However, PA-WN_top is logically
-independent of the other PA-* axioms (`WNtop-Ind` (L1.4.T3), L1.4): there exist substrates
+independent of the other PA-* axioms (`WNtop-Ind` (L1.7.T2), L1.4): there exist substrates
 satisfying all PA-* axioms except PA-WN_top (e.g., QG instantiations with RG limit
 cycles, proved independent via Theorem 2.5a of CRPT_NATIVE_QG). When PA-WN_top
 fails, ∞_M elements may lack topological convergence, and the twelve-class partition
@@ -233,7 +233,7 @@ Every x ∈ ∞_M falls into exactly one type. ✓ ∎
 | **Definition** | L6.2.D2 | `3-Tier` | | **Novel** |
 **Synopsis:** The Three-Tier Classification Schema organises the persistent regime theory by the strength of assumptions required: Tier 1 (unconditional, PA-NWF + PA-Bisim only) gives orbit types AP/EP/P; Tier 2 (SC-4 conditions) adds CNF∞_M, CPD, and the NWF six-class partition A*–E*; Tier 3 (PA-WN_top) adds topological limit classification.
 
-**Source:** CRPT; from `OTC` (L6.2.D1) + `CNF∞-Def` (L3.3.D6) + PA-WN_top (L1.2.Ax7).
+**Source:** CRPT; from `OTC` (L6.2.D1) + `CNF∞-Def` (L3.3.D6) + PA-WN_top (L1.7.Ax1).
 
 The analysis of ∞_M
 elements is organised into three tiers, each activating with additional structural
@@ -538,7 +538,7 @@ of classes visited, not just a single target class.
 
 ---
 
-## LEVEL 1 — THE ORBIT TRACE INVARIANT
+### LEVEL 1 — THE ORBIT TRACE INVARIANT
 
 ### The Orbit Trace
 
@@ -866,7 +866,7 @@ AOI₁ distinguishes them. ∎
 
 ---
 
-## LEVEL 2 — THE ORBIT SPECTRUM
+### LEVEL 2 — THE ORBIT SPECTRUM
 
 Level 1 (AOI₁) captures the full sequence structure. Level 2 provides a coarser
 but more analytically tractable invariant: the *frequency distribution* of
@@ -897,7 +897,7 @@ integers k < n for which the k-th iterate falls in class C.
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L6.3.D5 | `OS-21B` | OS_M(x) | **Novel** |
-**Synopsis:** Orbit spectrum at L6.3: OS_M(x) : 𝒰_M/≈ → [0,1] defined by C ↦ freq_x(C) on the visited bisimulation classes B̃(x), where the limits exist. The domain is the ≈-class quotient — the reading that bisimulation invariance (`OS-BisInv` (L6.3.T7)) requires; a five-class horizon spectrum, when wanted, is the derived push-forward (`OS-Push` (L6.3.R5)).
+**Synopsis:** Orbit spectrum at L6.3: OS_M(x) : 𝒰_M/≈ → [0,1] defined by C ↦ freq_x(C) on the visited bisimulation classes B̃(x), where the limits exist. The domain is the ≈-class quotient — the reading that bisimulation invariance (`OS-BisInv` (L6.3.T7)) requires; a five-class horizon spectrum, when wanted, is the derived push-forward (`OS-Push` (L6.3.R3)).
 
 **Source:** CRPT; from `Freq` (L6.3.D4) + `OT-21B` (L6.3.D1).
 
@@ -917,7 +917,7 @@ The *full orbit spectrum* is defined when freq_x(C) exists for ALL classes C ∈
 ### Five-Class Spectrum as Push-Forward
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L6.3.R5 | `OS-Push` | | **Novel** |
+| **Remark** | L6.3.R3 | `OS-Push` | | **Novel** |
 **Synopsis:** The horizon-class spectrum over {A,B,C,D,E} is not the primitive object: it is the push-forward of the ≈-class spectrum along the classification map. The ≈-class spectrum is the bisimulation-invariant primitive; the five-class summary is derived from it by summation over each horizon class.
 
 **Source:** CRPT; from `OS-21B` (L6.3.D5) + `6-Part` (L3.2.T1).
@@ -1204,7 +1204,7 @@ freq_x(C) = μ({ω | ω_0 = C}) = μ(cylinder set [C]). This exists μ-a.e. ✓ 
 
 ---
 
-## LEVEL 3 — THE ORBIT COMPLEXITY
+### LEVEL 3 — THE ORBIT COMPLEXITY
 
 Level 3 provides a *universally defined* invariant — it applies to every persistent
 orbit, including those that are neither periodic nor spectrum-definite. It uses
@@ -1879,7 +1879,7 @@ These are tail-equivalent: take m = n, j = 0, then ∀k: [ρ^{n+k}(0)] = [n+k] =
 ### ℕ-Chain as Maximally Aperiodic Orbit
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L6.3.R3 | `ℕ-Worst` | | **Novel** |
+| **Remark** | L6.3.R5 | `ℕ-Worst` | | **Novel** |
 **Synopsis:** ℕ as worst-case: the symbolic system over the five-class alphabet achieves maximum orbit complexity, demonstrating that OC_M is genuinely necessary for the most complex persistent orbits.
 
 **Source:** CRPT; from `AOI-ℕ` (L6.3.T20).
@@ -2132,7 +2132,7 @@ determined by its substrate: whether ρ_M-orbits terminate (WF), all diverge (NW
 or some do each (Mixed) is fixed by ρ_M and the reduction relation, not by the axiom family assumed.
 
 *Proof.* μT_{ρ,M} := {x | ∃n : ρ_M^n(x) ∈ Fix(ρ_M)} is defined purely from ρ_M. The
-partition μT_{ρ,M} ∐ νT_{ρ,M} is determined before any axiom is imposed (Remark L2.2.R4). ∎
+partition μT_{ρ,M} ∐ νT_{ρ,M} is determined before any axiom is imposed (Remark L2.2.R3). ∎
 
 ### Regime Type is Decidable for Finite Substrates
 | Type | Label | Tag | Notation | Status |
@@ -2227,7 +2227,7 @@ this document, which quantifies over all CRPT models simultaneously). ∎
 
 Beyond WF, NWF, and Mixed, there is no fourth
 regime type within the substrate interface. Every substrate has 𝒰_M = ↓_M ∐ ∞_M
-by classical excluded middle (Remark L2.2.R4).
+by classical excluded middle (Remark L2.2.R3).
 
 *Proof.* By `Part` (L2.2.T3), every element of 𝒰_M belongs to exactly one of ↓_M or ∞_M.
 Therefore a substrate is completely determined at regime level by the pair of

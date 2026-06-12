@@ -789,7 +789,7 @@ Let NF(x) abbreviate ¬∃y:U (x →_ρ y) (`NF` (L1.1.D2) of anchor).
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L5.3.R5 | `C2-SOL` | | **Novel** |
+| **Remark** | L5.3.R1 | `C2-SOL` | | **Novel** |
 **Synopsis:** C2 (bisimulation equivariance) is a well-formed second-order sentence: bisimilarity is the definable predicate ∃R[(R is a bisimulation) ∧ R(x,y)] in L²(Σ_CRPT).
 
 **Source:** CRPT; from `Bisim` (L1.1.D6) + `SO-Ext` (L5.3.D6).
@@ -906,7 +906,7 @@ PA-WN_top is a single topological convergence axiom over the substrate topology
 ```
 
 Existence is asserted by PA-WN_top; uniqueness follows from (S-TopSep)
-(equivalently `TopSep-Uniq` (L1.2.T1)). When ∞_M = ∅, PA-WN_top is vacuously
+(equivalently `TopSep-Uniq` (L1.7.T1)). When ∞_M = ∅, PA-WN_top is vacuously
 satisfied.
 
 **L5.3.2.9A Unified CFix Definition (Regime-Total).**
@@ -1225,7 +1225,7 @@ the *category of CRPT models*, consistent with standard model-theoretic notation
 ### The theory T_CRPT is not first-order
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L5.3.R1 | `T-2nd-Ord` |  | **Novel** |
+| **Remark** | L5.3.R2 | `T-2nd-Ord` |  | **Novel** |
 **Synopsis:** T_CRPT is a genuinely second-order theory (PA-CoInd, C2, PA-Reach, and the LA_M schemas quantify over sets/functions). Consequently Gödel completeness, compactness, and Löwenheim–Skolem do not apply — but CRPT's claims are semantic, not proof-theoretic, so this is not a limitation on its content.
 
 **Source:** CRPT; from `SO-Ext` (L5.3.D6) + `T_CRPT` (L5.3.D11).
@@ -1248,7 +1248,7 @@ are purely semantic (the axioms hold in specific structures), not proof-theoreti
 ### What "CRPT model" means and does not mean
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L5.3.R2 | `CRPT-Mod-Scope` |  | **Novel** |
+| **Remark** | L5.3.R3 | `CRPT-Mod-Scope` |  | **Novel** |
 **Synopsis:** Clarifies what "CRPT model" means: a Σ_CRPT-structure satisfying the PA-* axioms in their declared scopes. It is not an informal analogy or simplification, and it need not satisfy every axiom globally — scope declarations (Scoped / Vacuous / Fails) are first-class.
 
 **Source:** CRPT; from `Scope-Sat` (L5.3.D12) + `CRPT-Mod-18` (L5.1.D1).
@@ -1267,10 +1267,10 @@ This means:
 ### Topology import
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L5.3.R3 | `PA-WN_top-Import` |  | **Novel** |
+| **Remark** | L5.3.R4 | `PA-WN_top-Import` |  | **Novel** |
 **Synopsis:** Topology 𝒯 is part of every CRPT substrate. For native stratified models (∞_M ≠ ∅), PA-WN_top makes each persistent ρ-orbit converge in 𝒯, and the global conditions TopSep(𝒯) and continuity of ρ make the topological branch of CFix well-defined and unique.
 
-**Source:** CRPT; from `Sub` (L1.1.D1) + PA-WN_top (L1.2.Ax7).
+**Source:** CRPT; from `Sub` (L1.1.D1) + PA-WN_top (L1.7.Ax1).
 
 Topology is part of substrate data for every CRPT model:
 Sub = (𝒰, →_ρ, →_σ, 𝒯). For native stratified models (∞_M ≠ ∅), PA-WN_top
@@ -1281,7 +1281,7 @@ well-defined and unique.
 ### Category Mod_CRPT is large
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L5.3.R4 | `Mod-Large` |  | **Novel** |
+| **Remark** | L5.3.R5 | `Mod-Large` |  | **Novel** |
 **Synopsis:** Mod_CRPT is a proper-class-sized (large) category, since Σ_CRPT-structures of every cardinality exist. This raises no set-theoretic paradox under the standard treatment of large categories.
 
 **Source:** CRPT; large-category treatment after Mac Lane [1971] §I.6.
@@ -1524,17 +1524,21 @@ representatives). Therefore refinement descends to isomorphism classes. ∎
 ## L5.5 — The Category of CRPT Models
 
 *Purpose.* This section formalizes the category-theoretic structure underlying all CRPT
-models and their interactions. The category Mod_CRPT is the foundational abstraction that
-allows uniform treatment of instantiation, composition, and model transformation.
+models and their interactions: the category object Mod_CRPT, the identity morphisms, the
+closure of composition, and the category laws — proved, not asserted. **Scope criterion:**
+L5.2 owns the *morphism notion* (`Hom` and its preservation theory); this section owns the
+*category structure built on it* — identities, composition closure, and the laws. The
+category Mod_CRPT is the foundational abstraction that allows uniform treatment of
+instantiation, composition, and model transformation.
 
 ### The Category Mod_CRPT
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **Definition** | L5.5.D1 | `Mod_CRPT-Cat` | Mod_CRPT | **Novel** |
-**Synopsis:** This definition formally establishes Mod_CRPT as a category, explicitly verifying identity and associativity. The Hom-Pres theorem confirms that CRPT homomorphisms compose to give CRPT homomorphisms — composition is closed in the category.
+**Synopsis:** The category of CRPT models: objects are the CRPT models, morphisms are the canonical model homomorphisms, composition is function composition of underlying maps, and identities are the identity morphisms. The data is assembled here; closure of composition is `Comp-Closed` (L5.5.T1), the laws are `Cat-Laws` (L5.5.T2).
 
-**Source:** CRPT; from `Hom` (L5.2.D1) + `Mod-Cat` (L5.2.T1).
+**Source:** CRPT; from `Hom` (L5.2.D1) + `Id-Mor` (L5.5.D2) + `Comp-Closed` (L5.5.T1).
 
 The **category of CRPT models** Mod_CRPT is defined as:
 
@@ -1550,29 +1554,80 @@ the PA-axiom system (PA-WN, PA-Conf, PA-Fix, etc., with regime-specific profiles
 
 No separate →_σ-preservation condition is imposed; this is exactly `Hom` (L5.2.D1).
 
-**Composition:** For morphisms Φ : M₁ → M₂ and Ψ : M₂ → M₃, define the composite
-```
-(Ψ ∘ Φ)_𝒰 : 𝒰_{M₁} → 𝒰_{M₃}  by  (Ψ ∘ Φ)_𝒰 := Ψ_𝒰 ∘ Φ_𝒰
-```
-(function composition). This composite satisfies Φ_R–Φ_LA by transitivity.
+**Composition:** the composite of `Hom`-morphisms, closed by `Comp-Closed` (L5.5.T1).
 
-**Identity:** For each model M, the identity morphism id_M : M → M is the identity function
-```
-(id_M)_𝒰 = id_{𝒰_M} : 𝒰_M → 𝒰_M
-```
-which trivially satisfies Φ_R–Φ_LA.
+**Identities:** the identity morphisms `Id-Mor` (L5.5.D2).
 
-**Category axioms:**
-- (Associativity) (χ ∘ ψ) ∘ φ = χ ∘ (ψ ∘ φ) for all composable morphisms (by function-composition associativity).
-- (Identity) For any Φ : M₁ → M₂: Φ ∘ id_{M₁} = Φ and id_{M₂} ∘ Φ = Φ (by function identity).
+The category laws hold by `Cat-Laws` (L5.5.T2).
 
-Therefore Mod_CRPT is a category; the full verification of the category laws is `Mod-Cat` (L5.2.T1).
+### Identity Morphism
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Definition** | L5.5.D2 | `Id-Mor` | id_M | **Novel** |
+**Synopsis:** The identity morphism on a CRPT model M is the identity function on its universe; it satisfies all four homomorphism conditions trivially, giving every object of Mod_CRPT its unit.
+
+**Source:** CRPT; from `Hom` (L5.2.D1).
+
+For each CRPT model M, the **identity morphism** id_M : M → M is
+```
+(id_M)_𝒰 := id_{𝒰_M} : 𝒰_M → 𝒰_M
+```
+It is a homomorphism: **Φ_R** — x →_ρ y ⟹ x →_ρ y; **Φ_E** — x ≃_M y ⟹ x ≃_M y;
+**Φ_ρ** — id(ρ_M(x)) = ρ_M(x) ≃_M ρ_M(id(x)); **Φ_LA** — the pushforward of LA_M along
+the identity is LA_M itself, consistent with LA_M. All four conditions hold with equality.
+
+### Composition Closure
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Theorem** | L5.5.T1 | `Comp-Closed` | Ψ ∘ Φ | **Novel** |
+**Synopsis:** The composite of two CRPT model homomorphisms is a CRPT model homomorphism: each of the four conditions Φ_R, Φ_E, Φ_ρ, Φ_LA passes through function composition. Composition is therefore an operation of Mod_CRPT, not merely of underlying functions.
+
+**Source:** CRPT; from `Hom` (L5.2.D1) + `Id-Mor` (L5.5.D2).
+
+For homomorphisms Φ : M₁ → M₂ and Ψ : M₂ → M₃, the composite
+```
+(Ψ ∘ Φ)_𝒰 : 𝒰_{M₁} → 𝒰_{M₃},   (Ψ ∘ Φ)_𝒰 := Ψ_𝒰 ∘ Φ_𝒰
+```
+is a homomorphism M₁ → M₃.
+
+*Proof.* **Φ_R:** x →_ρ y in M₁ ⟹ Φ_𝒰(x) →_ρ Φ_𝒰(y) in M₂ (Φ's Φ_R) ⟹
+Ψ_𝒰(Φ_𝒰(x)) →_ρ Ψ_𝒰(Φ_𝒰(y)) in M₃ (Ψ's Φ_R). ✓
+**Φ_E:** x ≃_{M₁} y ⟹ Φ_𝒰(x) ≃_{M₂} Φ_𝒰(y) ⟹ Ψ_𝒰(Φ_𝒰(x)) ≃_{M₃} Ψ_𝒰(Φ_𝒰(y)). ✓
+**Φ_ρ:** Ψ_𝒰(Φ_𝒰(ρ_{M₁}(x))) ≃_{M₃} Ψ_𝒰(ρ_{M₂}(Φ_𝒰(x))) (apply Ψ's Φ_E to Φ's Φ_ρ)
+≃_{M₃} ρ_{M₃}(Ψ_𝒰(Φ_𝒰(x))) (Ψ's Φ_ρ); transitivity of ≃_{M₃} closes the chain. ✓
+**Φ_LA:** the pushforward along Ψ_𝒰 ∘ Φ_𝒰 is the pushforward along Ψ_𝒰 of the
+pushforward along Φ_𝒰; each stage is consistent with the target's local axioms (Φ's,
+then Ψ's Φ_LA). ✓ ∎
+
+### Category Laws
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Theorem** | L5.5.T2 | `Cat-Laws` | | **Novel** |
+**Synopsis:** Mod_CRPT satisfies the category axioms: composition is associative and the identity morphisms are two-sided units. With Comp-Closed this completes the proof that Mod_CRPT is a category — the structure named by Mod-Cat (L5.2.T1) is hereby verified.
+
+**Source:** CRPT; from `Mod_CRPT-Cat` (L5.5.D1) + `Comp-Closed` (L5.5.T1) + `Id-Mor` (L5.5.D2).
+
+Mod_CRPT is a category:
+
+(i) **Associativity:** (Χ ∘ Ψ) ∘ Φ = Χ ∘ (Ψ ∘ Φ) for all composable Φ, Ψ, Χ.
+(ii) **Units:** for any Φ : M₁ → M₂, Φ ∘ id_{M₁} = Φ and id_{M₂} ∘ Φ = Φ.
+
+*Proof.* Morphisms are determined by their underlying functions (`Hom` (L5.2.D1)).
+**(i)** Both sides have underlying function Χ_𝒰 ∘ Ψ_𝒰 ∘ Φ_𝒰 — function composition is
+associative — and both are homomorphisms by `Comp-Closed` (L5.5.T1) applied twice; equal
+underlying functions give equal morphisms. **(ii)** (Φ ∘ id_{M₁})_𝒰 = Φ_𝒰 ∘ id_{𝒰_{M₁}} =
+Φ_𝒰 and (id_{M₂} ∘ Φ)_𝒰 = id_{𝒰_{M₂}} ∘ Φ_𝒰 = Φ_𝒰 (`Id-Mor` (L5.5.D2)). Together with
+closure (`Comp-Closed` (L5.5.T1)) and the data of `Mod_CRPT-Cat` (L5.5.D1), Mod_CRPT is a
+category. ∎
 
 ### Model Homomorphisms Preserve Structural Properties
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L5.5.T1 | `Hom-Pres` | | **Novel** |
+| **Theorem** | L5.5.T3 | `Hom-Pres` | | **Novel** |
 **Synopsis:** CRPT model homomorphisms preserve structural properties: a homomorphism never increases abstraction depth (d_{M₂}(Φx) ≤ d_{M₁}(x)) and respects fixpoints, regimes, and canonical forms. Structure-preserving maps cannot manufacture new structure.
 
 **Source:** CRPT; from `Hom` (L5.2.D1).

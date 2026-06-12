@@ -684,7 +684,9 @@ CRPT instance of `Lift-Quot-Inv` (L0.5.T2).*
 
 *The static duality between the two dimensions of any projection system is
 distinct from the dynamic tower duality of L0.5. This section states the static
-version, which grounds the two-relation substrate design of L1.*
+version, which grounds the two-relation substrate design of L1. **Scope division
+(three homes of the duality):** this section owns the **universal template**; the
+model-level statement is `Inf-Dual` (L2.2.T7); the tower-level theory is L8.6.*
 
 ### L0.6.T1 — Static Horizontal-Vertical Duality
 | Type | Label | Tag | Notation | Status |
@@ -919,7 +921,7 @@ are provably outside SC(Π) for any shift-invariant assignment.*
 
 Tier classification: Tier 1 ⊆ Tier 2 ⊆ Tier 3 by implication strength of
 convergence conditions. Tier 3 requires topological axioms not present at L0
-level; it is realized in the CRPT substrate by PA-WN_top (L1.2.Ax7).
+level; it is realized in the CRPT substrate by PA-WN_top (L1.7.Ax1).
 
 Asymptotically periodic elements: Let x be asymptotically π-periodic with period k.
 Any shift-invariant stable form L must satisfy L = L_∞^π(π^k(x)) = L_∞^π(x) (by
@@ -1012,7 +1014,7 @@ Category laws are inherited from function composition. ∎
 | **Theorem** | L0.9.T2 | `CRPT-ModCat` | | **Novel** |
 **Synopsis:** This theorem formally establishes Mod_CRPT as a full subcategory of ProjSys: every CRPT model is a projection system, and every CRPT homomorphism is a projection system morphism. The CRPT category inherits the categorical structure of ProjSys.
 
-**Source:** CRPT; from `Mod-Cat` (L5.2.T1) + `ProjSys-Cat` (L0.9.T1) + `Hom` (L5.2.D1).
+**Source:** CRPT; from `ProjSys-Cat` (L0.9.T1) + `ProjMor` (L0.9.D1); the model-level category is presented at `Mod-Cat` (L5.2.T1) with `Hom` (L5.2.D1).
 
 *Mod_CRPT (`Mod-Cat` L5.2.T1) is the full subcategory of* **ProjSys** *on
 projection systems satisfying the CRPT substrate axioms (L1.2.1–L1.2.4) and
@@ -1029,7 +1031,10 @@ of (Φ-R), (Φ-≃), (Φ-π), (Φ-L) above.*
 *The universal HOA applies to itself. This section proves that the self-application
 terminates without regress, identifies the fixed point of the meta-classification,
 and establishes the universal orbit non-invariance result needed by any HOA
-implementation.*
+implementation. **Scope division:** this section owns the **universal-level
+template** of self-consistency (Π applied to CRPT's own L0 structure); the
+tower-level certificate — the ω-tower as a CRPT model — is Lω.5, anchored on
+`CRPT-Self-Cons` (L0.10.T2).*
 
 ### L0.10.T1 — Meta-HOA Self-Consistency
 | Type | Label | Tag | Notation | Status |

@@ -99,7 +99,7 @@ i.e., α_M(x) = α_M(y). ∎
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L7.1.R2 | `GC-vs-L2.1` | | **Novel** |
+| **Remark** | L7.1.R1 | `GC-vs-L2.1` | | **Novel** |
 **Synopsis:** GC restates the L2.1 Galois connection in the (α_M, γ_M) notation.
 
 **Source:** CRPT; from `GC` (L7.1.T1) + `GI` (L7.1.D1).
@@ -231,7 +231,7 @@ For any x ∈ ↓_M:
 ### Two Complementary Framings of the Same Structure
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L7.1.R1 | `2-Frame` |  | **Novel** |
+| **Remark** | L7.1.R2 | `2-Frame` |  | **Novel** |
 **Synopsis:** The abstraction-collapse duality can be described in two complementary framings. The abstraction framing focuses on the reduction trajectory x → ρ_M(x) → ... → CNF_M(x), treating the projection operator as a reduction strategy. The collapse framing focuses on the quotient map π_M: 𝒰_M → Q_M, treating the canonical form as an equivalence class. Both framings describe the same mathematical object — the Galois insertion — and are interchangeable for all formal purposes.
 
 **Source:** CRPT; from `Abs-Coll` (L7.1.T3).
@@ -682,7 +682,7 @@ Therefore Lift ⊣ Collapse. ∎
 ### Scope of the Two Collapse Adjunctions
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L7.2.R2 | `Coll-Adj-Scope` |  | **Novel** |
+| **Remark** | L7.2.R1 | `Coll-Adj-Scope` |  | **Novel** |
 **Synopsis:** Collapse carries two compatible adjoint roles, stated precisely. It is the *reflector* onto pure-WF models (Collapse ⊣ ι, left adjoint to the inclusion Mod_{CRPT,WF} ↪ Mod_CRPT, `Collapse-Def` (L7.1.D4)) and the *right* adjoint of the free-lift functor (Lift ⊣ Collapse, `Lift⊣Coll` (L7.2.T4)). A functor may be simultaneously a left and a right adjoint to different functors; there is no conflict. Both adjunctions are stated in the ≃-quotient category Mod_CRPT_≃ (`Mod-Cat-Q` (L7.2.T1)), where the triangle identities are strict.
 
 **Source:** CRPT; from `Collapse-Model` (L7.1.T4) + `Lift⊣Coll` (L7.2.T4) + `Mod-Cat-Q` (L7.2.T1).
@@ -709,7 +709,7 @@ identities are strict and the adjunctions are honest (not merely bicategorical).
 ### Regime Invariance of Categorical Structures
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L7.2.R1 | `Reg-Inv` |  | **Novel** |
+| **Remark** | L7.2.R2 | `Reg-Inv` |  | **Novel** |
 **Synopsis:** The Lift ⊣ Collapse adjunction holds in both the WF and NWF settings without modification. The adjunction is regime-invariant: whether models have persistent elements or not, the unit and counit of the adjunction are defined the same way and satisfy the triangle identities. The categorical machinery of L7.2 is regime-oblivious.
 
 **Source:** CRPT; from `Lift⊣Coll` (L7.2.T4).

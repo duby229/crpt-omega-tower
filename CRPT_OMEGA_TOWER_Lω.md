@@ -279,7 +279,7 @@ FMA(Q_{Mₙ}) reach an atomic fixpoint q ∈ Q_{Mₙ} in |w|−1 steps). ∎
 
 ## Lω.5 — Fixed Point of the Meta-Tower
 
-*Purpose.* Self-Consistency Fixed Point. This section proves the culminating theorem: the level structure of the ω-tower is the unique fixed point of the meta-HOA operation. Applying CRPT's classification machinery to 𝒰_CRPT recovers the ω-tower structure exactly. The theory closes without regress.*
+*Purpose.* Self-Consistency Fixed Point. This section proves the culminating theorem: the level structure of the ω-tower is the unique fixed point of the meta-HOA operation. Applying CRPT's classification machinery to 𝒰_CRPT recovers the ω-tower structure exactly. The theory closes without regress. **Scope division:** this section is the canonical home of the **tower-level self-conformance certificate**, anchored on the universal template of L0.10 (`CRPT-Self-Cons` (L0.10.T2)).*
 
 
 ### Lω.5.T1 — Self-Consistency Fixed Point
@@ -353,7 +353,7 @@ of L1.1.D1 is the correct output. The fixed point is unique and stable. ∎
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | Lω.5.R2 | `SelfCons-NotGen` | | **Novel** |
+| **Remark** | Lω.5.R1 | `SelfCons-NotGen` | | **Novel** |
 **Synopsis:** Lω is a self-consistency certificate, not a generative decomposition: the forward dependency projection ρ_CRPT collapses every construct to the single root L1.1.D1, so the self-application reveals no structure finer than the rank strata. Any finer internal organization lives in the co-dependency (in-degree / ramification) direction, orthogonal to ρ_CRPT.
 
 **Source:** CRPT; from `Self-FP` (Lω.5.T1) + `Lω-FixedPt-Unique` (Lω.7.T2) + `Self-Horiz` (Lω.2.T1).
@@ -364,7 +364,7 @@ of L1.1.D1 is the correct output. The fixed point is unique and stable. ∎
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | Lω.5.R1 | `Anchor-SelfConsist` | | **Novel** |
+| **Remark** | Lω.5.R2 | `Anchor-SelfConsist` | | **Novel** |
 **Synopsis:** Self-FP establishes that the anchor is self-consistent.
 
 **Source:** CRPT; from `Self-FP` (Lω.5.T1).
@@ -461,7 +461,7 @@ Lift iterates.*
 
 *Proof.* By `Tower` (L8.4.D1), Tower(M) is the sequence (M₀, M₁, M₂, …) indexed
 by n ∈ ℕ with M_{n+1} := Lift(M_n). No clause of L8.2.D1 defines an object M_ω.
-By `the self-substrate universe` (Lω.1.D1), 𝒰_CRPT contains labelled constructs of the finite anchor
+By `U_CRPT` (Lω.1.D1), 𝒰_CRPT contains labelled constructs of the finite anchor
 levels L1–L8 (plus Lω) used as the self-substrate; it does not contain a tower-limit state.
 `Anchor-Fractal` (Lω.6.T1) applies `Twr-Fractal` only to finite iterates
 Lift^n(Self_CRPT). Therefore the fractal theorem is an external ω-indexed
@@ -631,12 +631,12 @@ Therefore →_{ρ_CRPT} is acyclic. ✓  ∎
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | Lω.7.R4 | `Acyc-Term` | | **Novel** |
+| **Remark** | Lω.7.R1 | `Acyc-Term` | | **Novel** |
 **Synopsis:** Acyclicity together with finiteness of 𝒰_CRPT implies every construct reaches Fix(ρ_CRPT) in finitely many steps — a finite acyclic graph has no infinite descending chains.
 
-**Source:** CRPT; from `CRPT-Acyclic` (Lω.7.L1) + `Self-CRPT-Finite` (Lω.7.R1).
+**Source:** CRPT; from `CRPT-Acyclic` (Lω.7.L1) + `Self-CRPT-Finite` (Lω.7.R2).
 
-Combined with finiteness of 𝒰_CRPT (see Lω.7.R1 below), acyclicity implies that every element of 𝒰_CRPT reaches Fix(ρ_CRPT) in finitely many steps (no infinite descending chains in a finite acyclic graph).
+Combined with finiteness of 𝒰_CRPT (see Lω.7.R2 below), acyclicity implies that every element of 𝒰_CRPT reaches Fix(ρ_CRPT) in finitely many steps (no infinite descending chains in a finite acyclic graph).
 
 ---
 
@@ -646,7 +646,7 @@ Combined with finiteness of 𝒰_CRPT (see Lω.7.R1 below), acyclicity implies t
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | Lω.7.R1 | `Self-CRPT-Finite` | | **Novel** |
+| **Remark** | Lω.7.R2 | `Self-CRPT-Finite` | | **Novel** |
 **Synopsis:** The self-substrate universe 𝒰_CRPT is finite: it consists of all labeled constructs in L1–L8 and Lω, and each level Lk contains finitely many labeled items (definitions, theorems, lemmas, corollaries, remarks). The union over finitely many levels of finite sets is finite. This finiteness, combined with acyclicity, gives ∞_{CRPT} = ∅ without requiring any sophisticated argument.
 
 
@@ -688,7 +688,7 @@ Two anchor constructs are bisimilar iff they reduce to the same primitive depend
 
 **Proof.**
 
-(1) By `Self-CRPT-Finite` (Lω.7.R1): 𝒰_CRPT is finite.
+(1) By `Self-CRPT-Finite` (Lω.7.R2): 𝒰_CRPT is finite.
 
 (2) By `CRPT-Acyclic` (Lω.7.L1): →_{ρ_CRPT} is acyclic.
 
@@ -704,7 +704,7 @@ Two anchor constructs are bisimilar iff they reduce to the same primitive depend
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | Lω.7.R2 | `RegPart-Extract` | | **Novel** |
+| **Remark** | Lω.7.R3 | `RegPart-Extract` | | **Novel** |
 **Synopsis:** See the remark.
 
 **Source:** CRPT; from `CRPT-WF` (Lω.7.T1).
@@ -744,12 +744,120 @@ This theorem is a formal extraction of the claim in Lω.1.T1(5) ("Regime partiti
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | Lω.7.R3 | `FixUniq-Scope` | | **Novel** |
+| **Remark** | Lω.7.R4 | `FixUniq-Scope` | | **Novel** |
 **Synopsis:** The uniqueness claim is specifically for projective fixed points.
 
 **Source:** CRPT; from `Lω-FixedPt-Unique` (Lω.7.T2) + `Self-FP` (Lω.5.T1).
 
 The uniqueness claimed here is specifically for projective fixed points (elements fixed by ρ_CRPT itself). The stronger self-consistency fixed point of `Self-FP` (Lω.5.T1) — uniqueness of the level structure as a fixed point of the meta-HOA operation — is proved there and is a separate (stronger) claim. `Lω-FixedPt-Unique` provides the simpler building block that Fix(ρ_CRPT) is a singleton.
+
+---
+
+## Lω.8 — Self-Sectioning of the Tower
+
+*Purpose.* The tower's own division into sections is not editorial convention: it is the
+fiber structure of the specification read as a CRPT model. This section defines the
+specification substrate, proves that sections are fibers of its anchor projection, and
+derives the sectioning discipline — boundary soundness, the no-reprise law, and the level
+structure — from the theory's own horizon and class machinery. The self-application of
+Lω.1–Lω.5 classifies the tower's *levels*; this section classifies its *boundaries*.*
+
+### The Specification Substrate
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Definition** | Lω.8.D1 | `Spec-Sub` | (𝒰_spec, →_ρ^spec, →_σ^spec, 𝒯_disc) | **Novel** |
+**Synopsis:** The specification substrate reads the tower's own labeled constructs as a CRPT substrate: the universe is the set of labeled items, the structural relation is citation, the reduction relation is the primary Source anchor (each construct projects to the single construct it is the theory of), and the topology is discrete. Fixpoints are the primitives — constructs anchored only on imported mathematics. The anchor relation is well-founded, so the specification substrate is a pure-WF CRPT model.
+
+**Source:** CRPT; from `Sub` (L1.1.D1) + `U_CRPT` (Lω.1.D1).
+
+The *specification substrate* is the quadruple
+```
+Spec-Sub := (𝒰_spec, →_ρ^spec, →_σ^spec, 𝒯_disc)
+```
+where:
+- **𝒰_spec** is the set of labeled constructs of the tower (definitions, theorems,
+  lemmas, corollaries, axioms, remarks);
+- **x →_σ^spec y** iff x cites y (any cross-reference);
+- **x →_ρ^spec y** iff y is x's *primary anchor* — the first construct cited in x's
+  Source line, the construct x is the theory *of*. Each construct has at most one
+  primary anchor, so ρ_spec is a deterministic projection on non-primitives, and
+  →_ρ^spec ⊆ →_σ^spec;
+- **𝒯_disc** is the discrete topology;
+- **Fix(ρ_spec)** = the *primitives*: constructs whose Source cites only imported
+  mathematics. These are the normal forms of the specification.
+
+The anchor relation is well-founded (no Source cycles; every anchor chain reaches a
+primitive in finitely many steps), so Spec-Sub is a **pure-WF CRPT model**: ∞ = ∅,
+every construct has a finite derivation height d(x) (its anchor depth), and every
+construct has a canonical form — the primitive its theory ultimately rests on.
+
+### Sections are Fibers
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Theorem** | Lω.8.T1 | `Self-Sect` | Sec(c) | **Novel** |
+**Synopsis:** The tower's sections are the fibers of the specification substrate, and the sectioning discipline is the horizon theory applied to Spec-Sub: a sound section is the kernel of a carrier with populated, differentiated fiber; sibling sections over one carrier are legal exactly when separated by stated membership criteria; reprise sections are Class-F configurations, provably empty; and a boundary through a kernel is forbidden by kernel congruence. The level structure L0–Lω is the Lift of Spec-Sub.
+
+**Source:** CRPT; from `Spec-Sub` (Lω.8.D1) + `Ker-Cong` (L3.1.D3) + `F=∅` (L3.2.T2) + `Lift-Def` (L8.2.D2).
+
+In Spec-Sub:
+
+**(i) Section = fiber.** A *section* is Sec(c) := {c} ∪ ker(ρ_spec, c) — a *carrier*
+construct together with everything anchored on it (`Ker-Cong` (L3.1.D3)). Membership is
+decidable from Source lines alone.
+
+**(ii) Soundness.** A section boundary is well-drawn iff its carrier c satisfies
+H_S(c) = ⊤ in Spec-Sub (the fiber is populated — the section owns real content) and the
+fiber is differentiated (its members are not pairwise signature-uniform restatements).
+A construct whose own fiber is empty is not a carrier; it is ordinary content of its
+anchor's section.
+
+**(iii) Sibling sections.** Where several sections draw on one carrier (H_O-adjacency in
+Spec-Sub), the division is legal iff the siblings are separated by stated membership
+criteria — the H_I-decision made explicit in the section headers. (The axiom sections
+over the projection operator, and the Lift sections L8.2/L8.6/L8.10, are of this kind.)
+
+**(iv) No reprise sections.** A section whose carrier and content lie in another
+section's fiber while adding no observationally new construct realizes the class
+(Fix, H_S, H_I) = (⊤, ⊤, ⊤) in Spec-Sub — and Class F is empty in every deterministic
+CRPT model (`F=∅` (L3.2.T2)). Reprise sections therefore may not exist: every section
+owns scope or is merged into its anchor's section.
+
+**(v) Levels are the Lift.** The level structure L0–L8, Lω is the tower of Spec-Sub:
+a fiber at one level (a carrier with its derived theory) is horizontal structure that
+the next level treats as an atom (`Lift-Def` (L8.2.D2), `Inf-Dual` (L2.2.T7)). The same
+phenomenon stated at several levels (the horizontal-vertical duality at L0.6, L2.2.T7,
+L8.6; self-consistency at L0.10, Lω.5) is *several constructs* — ι-related, each owned
+by its stratum's fiber.
+
+*Proof.* (i) is definitional given `Spec-Sub` (Lω.8.D1); decidability holds because each
+Source line names its primary anchor. (ii) H_S(c) = ⊤ in Spec-Sub means ker(ρ_spec, c)
+is non-trivial (`H_S` (L3.1.D1) read in Spec-Sub) — an unpopulated carrier bounds no
+content, so the boundary partitions nothing. (iii) is `H_I` (L3.1.D2) read in Spec-Sub:
+siblings sharing a carrier are distinguishable iff their signatures differ — for sections,
+iff a stated criterion separates their membership; absent a criterion the boundary is
+unobservable, hence not a boundary. (iv) Spec-Sub is deterministic (ρ_spec is a function),
+so `F=∅` (L3.2.T2) applies verbatim. (v) is the Lift construction applied to Spec-Sub:
+collapsing each fiber to an atom and re-presenting yields the next level — the tower's
+own architecture. ∎
+
+### The Census Discipline
+
+| Type | Label | Tag | Notation | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Remark** | Lω.8.R1 | `Sect-Census` | | **Novel** |
+**Synopsis:** The fiber structure of Spec-Sub is mechanically computable from Source lines, so the sectioning of the tower is auditable: the census enumerates every carrier, its fiber, and its boundary class, and the soundness conditions of Self-Sect are checked rather than asserted. The companion document CRPT_OMEGA_TOWER_SECTION_MAP records the current census.
+
+**Source:** CRPT; from `Self-Sect` (Lω.8.T1).
+
+Because ρ_spec is read off the Source lines, the entire fiber structure — carriers,
+fibers, depths, primitives, boundary classes — is computable from the document set
+itself. The tower maintains this census in the companion document
+**CRPT_OMEGA_TOWER_SECTION_MAP**, regenerated whenever constructs are added or moved.
+Sectioning disputes are thereby decided by computation against `Self-Sect` (Lω.8.T1):
+a proposed section is admitted iff its carrier's fiber is populated and differentiated,
+sibling criteria are stated, and no reprise configuration arises.
 
 ---
 

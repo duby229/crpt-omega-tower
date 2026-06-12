@@ -79,6 +79,8 @@ for all a ∈ A = Fix(ρ_MMA). ✓ ∎
 
 ## L8.2 — The Lift Operator
 
+*Purpose.* This section defines the Lift operator: given M, construct Lift(M) with universe FMA(Q_M), canonical projection ρ_{Lift(M)}, and structural relation →_σ^{Lift}. It also proves the fixpoints-to-basics theorem (fixed points of Lift(M) are exactly the atoms Q_M) and the horizon inheritance theorem. **Scope criterion (Lift siblings):** L8.2, L8.6, and L8.10 are sibling sections over the Lift carrier — L8.2 owns the **construction itself**; L8.6 owns its **horizontal–vertical duality consequences**; L8.10 owns the **reduction structure of the lifted operator**.*
+
 ### Abstraction Quotient
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -518,7 +520,7 @@ periodic with period CPD(σ) ≥ 1, hence infinite. 𝒪_{Lift^*(M)} ≠ ∅. PA
 
 ## L8.6 — Horizontal-Vertical Duality
 
-*Purpose.* The Lift Operator. This section defines the Lift operator: given M, construct Lift(M) with universe FMA(Q_M), canonical projection ρ_{Lift(M)}, and structural relation →_σ^{Lift}. It also proves the fixpoints-to-basics theorem (fixed points of Lift(M) are exactly the atoms Q_M) and the horizon inheritance theorem.*
+*Purpose.* This section establishes the horizontal-vertical duality of the tower: moving upward (Lift) and moving sideways within a level (following the structural relation) are dual. Information lost by horizontal projection within Mₙ is recoverable by ascending to Mₙ₊₁. Discriminability, information loss, and the tower abstraction thesis are proved here. **Scope criterion:** sibling of L8.2/L8.10 over the Lift carrier — this section owns the **duality consequences** of the construction (`Twr-Img`, `HV-Dual`, `Info-Loss`, `σ-Not3rd`, the abstraction thesis). It is the tower-level theory of the duality whose universal template is L0.6 and whose model-level statement is `Inf-Dual` (L2.2.T7).*
 
 
 **Provenance.** All theorems in this section are original to CRPT, building on the constructs
@@ -612,7 +614,7 @@ These are the fixpoints (d_{Mₙ}(x) = 0) at which the collapse map is non-injec
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L8.6.R6 | `TwrHor-vs-HO` | | **Novel** |
+| **Remark** | L8.6.R2 | `TwrHor-vs-HO` | | **Novel** |
 **Synopsis:** Tower horizon points sit at derivation height 0 (Classes E/F), distinct from H_O-positive elements at derivation height 1 (Classes B/C).
 
 **Source:** CRPT; from `H_O` (L3.1.D4) + `6-Part` (L3.2.T1).
@@ -708,7 +710,7 @@ new morphism in →_σ^{Lift(M)} is induced. ✓ ∎
 ### The Meaning of L8.6 Non-Third-Regime Theorem
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L8.6.R2 | `29.4-Meaning` |  | **Novel** |
+| **Remark** | L8.6.R3 | `29.4-Meaning` |  | **Novel** |
 **Synopsis:** Interpretation of the σ-not-a-third-regime theorem: within-fiber →_σ-structure is not a third regime but is collapsed by the free lift and re-expressed as vertical infinity at the next tower level, linking to Infinity Duality.
 
 **Source:** CRPT; from `σ-Not3rd` (L8.6.T4) + `Inf-Dual` (L2.2.T7).
@@ -790,7 +792,7 @@ exactly one additional level, then is collapsed. ✓ ∎
 ### Resolution of OR-5 Enriched Lift Question
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L8.6.R3 | `OR5-Lift` |  | **Novel** |
+| **Remark** | L8.6.R4 | `OR5-Lift` |  | **Novel** |
 **Synopsis:** OR5 Lift remark: the five Observational Requirements are preserved under each application of the Lift operator. OR5-1 (infinite tower), OR5-2 (query-signature invariance), OR5-3 (faithful embedding), OR5-4 (horizontal-to-vertical resolution), OR5-5 (self-similarity) — each is inherited at every tower level by the Lift construction.
 
 **Source:** CRPT; from `Lift-Min` (L8.6.T5).
@@ -838,7 +840,7 @@ inclusion ι_k (`Can-Incl` (L8.2.D3)).
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L8.6.R4 | `TwrImg-Fix` | | **Novel** |
+| **Remark** | L8.6.R5 | `TwrImg-Fix` | | **Novel** |
 **Synopsis:** The tower image x^{(k)} is always a fixpoint (atom) at its level.
 
 **Source:** CRPT; from `Twr-Img` (L8.6.D1).
@@ -960,7 +962,7 @@ entire tower. ∎
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L8.6.R5 | `Thesis-Plain` | | **Novel** |
+| **Remark** | L8.6.R6 | `Thesis-Plain` | | **Novel** |
 **Synopsis:** The Tower-Horizon Abstraction Thesis stated plainly.
 
 **Source:** CRPT; from `Twr-AThesis` (L8.6.T7).
@@ -1206,7 +1208,7 @@ where the union is disjoint and exhaustive.
 
 (i) *Non-contradiction:* `Nat-CC` (L1.4.T2) exhibits a concrete model (𝒰 = ℕ ∪ (0,1]) satisfying all nine PA axioms simultaneously. A model exists, so the axiom system is consistent. ✓
 
-(ii) *Regime-stratified completeness:* By `Reg-Strat` (L2.2.D3), 𝒰 = ↓_M ∐ ∞_M. For x ∈ ↓_M, CFix(ρ_M)(x) exists by PA-WN + PA-Conf (`CNF-Ex` (L2.4.T1), `CNF-Uniq` (L2.4.T2)). For x ∈ ∞_M with PA-WN_top, CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) exists by PA-WN_top and is unique by `TopSep-Uniq` (L1.2.T1), i.e. the explicit TopSep(𝒯) separation assumption required by PA-WN_top. Without PA-WN_top, CFix(ρ_M) is not defined on ∞_M, but the orbit trace OT(x) is unconditionally well-defined (L6.1). ✓
+(ii) *Regime-stratified completeness:* By `Reg-Strat` (L2.2.D3), 𝒰 = ↓_M ∐ ∞_M. For x ∈ ↓_M, CFix(ρ_M)(x) exists by PA-WN + PA-Conf (`CNF-Ex` (L2.4.T1), `CNF-Uniq` (L2.4.T2)). For x ∈ ∞_M with PA-WN_top, CFix(ρ_M)(x) = lim_{n→∞} ρ_M^n(x) exists by PA-WN_top and is unique by `TopSep-Uniq` (L1.7.T1), i.e. the explicit TopSep(𝒯) separation assumption required by PA-WN_top. Without PA-WN_top, CFix(ρ_M) is not defined on ∞_M, but the orbit trace OT(x) is unconditionally well-defined (L6.1). ✓
 
 (iii) *Classification completeness (tiered):* (iii-a) By `6-Part` (L3.2.T1), classes A–F partition ↓_M. By `OT-Part` (L6.2.T1), orbit types P/EP/AP partition ∞_M unconditionally. Together they partition 𝒰. (iii-b) Under PA-WN_top, `12-Part-EE` (L3.2.T3) provides the full twelve-class partition. ✓
 
@@ -1521,12 +1523,9 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 
 ---
 
-## L8.10 — Supplementary Lemmas and Corollaries
+## L8.10 — The Reduction Structure of Lift(M)
 
-*Purpose.* Horizontal-Vertical Duality. This section establishes the horizontal-vertical duality of the tower: moving upward (Lift) and moving sideways within a level (following the structural relation) are dual. Information lost by horizontal projection within Mₙ is recoverable by ascending to Mₙ₊₁. Discriminability, information loss, and the tower abstraction thesis are proved here.*
-
-
-*This section provides supplementary lemmas and corollaries completing the tower's deductive closure.*
+*Purpose.* This section develops the reduction structure of the lifted operator ρ_{Lift(M)}: how →_σ propagates through the Lift (`Prop-σ-Lift`), the structure theorem for lifted reduction (`Lift-Red-Struc`), pure well-foundedness of the lift (`Lift-Pure-WF`), tower infinity (`Tower-Inf`), and the cardinality of the abstraction quotient. **Scope criterion:** sibling of L8.2/L8.6 over the Lift carrier — this section owns the **derived reduction theory of the lifted operator**, completing the tower's deductive closure.*
 
 ---
 
@@ -1599,11 +1598,11 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 
 ### Lift Creates Pure Well-Founded Models
 
-### L8.10.C2 — Lift-Pure-WF: Lift of Any Model is Pure WF
+### L8.10.C1 — Lift-Pure-WF: Lift of Any Model is Pure WF
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L8.10.C2 | `Lift-Pure-WF` | | **Novel** |
+| **Corollary** | L8.10.C1 | `Lift-Pure-WF` | | **Novel** |
 **Synopsis:** Regardless of whether the base model M has a non-empty persistent regime (∞_M ≠ ∅), its lift Lift(M) is always pure well-founded: ∞_{Lift(M)} = ∅. The reason is that FMA(Q_M) contains only finite words, and ρ_{Lift(M)} strictly decreases word length at each step until reaching atoms (the query signature). There are no infinite FMA-words, so no persistent orbits arise. The NWF theory of the base is absorbed into the atom set Q_M.
 
 **Source:** CRPT; from `FMA-WF` (L8.1.L1) + `Lift-WN` (L8.3.T1).
@@ -1636,7 +1635,7 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 | **Remark** | L8.10.R1 | `Lift-NWFbase` | | **Novel** |
 **Synopsis:** See the remark.
 
-**Source:** CRPT; from `Lift-Pure-WF` (L8.10.C2).
+**Source:** CRPT; from `Lift-Pure-WF` (L8.10.C1).
 
 Even when M is non-well-founded (∞_M ≠ ∅), Lift(M) discards the persistent regime by construction: Q_M := ↓_M/≃_M uses only the convergent stratum. The NWF stratum is handled separately by the extended lift Lift*(M) (L8.5, L8.1.7), which does admit a persistent regime by design.
 

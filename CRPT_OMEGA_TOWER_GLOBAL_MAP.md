@@ -212,7 +212,7 @@ This is **not** a substitute for reading the tower itself—it's a **navigation 
 | CRPT model | M | L1.1.D1 |
 | Reduction relation | →_ρ | L1.1.D1 |
 | Structural relation | →_σ | L1.1.D1 |
-| Projection operator | ρ_M | L1.2.D2 |
+| Projection operator | ρ_M | L2.1.D1 |
 | Regime partition | ↓_M, ∞_M | L2.2.D1, L2.2.D2 |
 | Derivation height | d_M(x) | L2.3.D1 |
 | Canonical normal form | CNF_M(x) | L2.1.D1 |
