@@ -17,6 +17,8 @@ classes). All proofs in this section are self-contained.
 
 **Source:** CRPT; from [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence) + [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
+*Novelty Note.* **Basis (credited):** [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence) + [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m). **New:** The orbit trace OT(x) of a persistent element x is the infinite sequence of bisimulation classes visited by the projection orbit: OT(x) = ([x]_≈, [ρ_M(x)]_≈, [ρ_M²(x)]_≈, ...). **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 For x ∈ νT_{ρ,M}:
 ```
 OT(x) := ([ρ_M^n(x)]_≈)_{n∈ℕ}
@@ -31,6 +33,8 @@ the coinductive sequence of bisimulation classes visited by the orbit.
 
 **Source:** CRPT; from [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence).
 
+*Novelty Note.* **Basis (credited):** [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence). **New:** AOI-1 Bisimulation Invariance: the orbit trace OT(x) is invariant under bisimilarity. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 x ≈ y ⟹ OT(x) = OT(y).
 
 *Proof.* By PA-Bisim, x ≈ y ⟹ ρ_M(x) ≈ ρ_M(y). By induction, ρ_M^n(x) ≈ ρ_M^n(y)
@@ -43,6 +47,8 @@ for all n. Hence [ρ_M^n(x)]_≈ = [ρ_M^n(y)]_≈ for all n, so OT(x) = OT(y). 
 **Synopsis:** AOI-3 extends the persistent canonical form CNF∞_M to aperiodic orbits: for Type AP elements (aperiodic persistent orbits), the orbit trace OT(x) provides a finer invariant than CNF∞_M (which is undefined for AP elements). AOI₁(x) = [OT(x)]_{tail} (the tail-equivalence class of OT(x)) serves as the level-1 asymptotic invariant for all persistent elements.
 
 **Source:** CRPT; from [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient).
+
+*Novelty Note.* **Basis (credited):** [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient). **New:** AOI-3 extends the persistent canonical form CNF∞_M to aperiodic orbits: for Type AP elements (aperiodic persistent orbits), the orbit trace OT(x) provides a finer invariant than CNF∞_M (which is undefined for AP elements). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 For x ∈ νT_{ρ,M} satisfying SC-1:
 OT(x) is eventually constant = (CNF∞_M(x), CNF∞_M(x), ...).
@@ -60,6 +66,8 @@ constant with eventual value CNF∞_M(x). ∎
 
 **Source:** CRPT; from [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set).
 
+*Novelty Note.* **Basis (credited):** [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set). **New:** The orbit spectrum OS_M(x) is the asymptotic frequency distribution over bisimulation classes: OS_M(x)(C) = lim_{n→∞} (1/n)|{k < n | [ρ_M^k(x)]_≈ ∈ C}| for each six-class C. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 For x with well-defined asymptotic visit
 frequencies: OS(x) := the asymptotic frequency distribution over bisimulation classes.
 
@@ -70,6 +78,8 @@ frequencies: OS(x) := the asymptotic frequency distribution over bisimulation cl
 **Synopsis:** AOI-5 Spectrum Bisimulation Invariance: the orbit spectrum OS_M(x) is invariant under bisimilarity. If x ≈ y then OS_M(x) = OS_M(y). This follows from AOI-1 (the orbit traces are identical) and the fact that asymptotic frequencies depend only on the trace.
 
 **Source:** CRPT; from [`OS` (L6.1.D2)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum-osx) + [`AOI1-BisInv` (L6.1.T1)](CRPT_OMEGA_TOWER_L6.md#aoi-1-bisimulation-invariance).
+
+*Novelty Note.* **Basis (credited):** [`OS` (L6.1.D2)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum-osx) + [`AOI1-BisInv` (L6.1.T1)](CRPT_OMEGA_TOWER_L6.md#aoi-1-bisimulation-invariance). **New:** AOI-5 Spectrum Bisimulation Invariance: the orbit spectrum OS_M(x) is invariant under bisimilarity. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 x ≈ y ⟹ OS(x) = OS(y).
 For periodic orbits: OS concentrates on {CNF∞_M(x)}.
@@ -90,6 +100,8 @@ on {CNF∞_M(x)}. ✓ ∎
 
 **Source:** CRPT; from [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx); descriptive set theory (Kechris [1995]).
 
+*Novelty Note.* **Basis (credited):** [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx). **New:** The orbit complexity OC(x) is the Borel rank of the singleton {OT(x)} in the product space Q_M^ω. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 Assume the bisimulation quotient
 the query signature := 𝒰_M/≈ is presented as a standard Borel space; in particular, this holds when
 the query signature is countable discrete. Then the query signature^ω with product topology is Polish. For x ∈ νT_{ρ,M},
@@ -104,6 +116,8 @@ holds.
 **Synopsis:** The AOI Master Theorem: the three-level AOI hierarchy — orbit trace (AOI₁), orbit spectrum (OS_M), orbit complexity (OC) — is the unique minimal bisimulation-invariant classification of persistent orbits. Each level strictly refines the previous: there exist orbits distinguished by AOI₁ but not by OS_M, and orbits distinguished by OC but not by AOI₁.
 
 **Source:** CRPT; from [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx) + [`OS` (L6.1.D2)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum-osx) + [`OC` (L6.1.D3)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity-ocx).
+
+*Novelty Note.* **Basis (credited):** [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx) + [`OS` (L6.1.D2)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum-osx) + [`OC` (L6.1.D3)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity-ocx). **New:** The AOI Master Theorem: the three-level AOI hierarchy — orbit trace (AOI₁), orbit spectrum (OS_M), orbit complexity (OC) — is the unique minimal bisimulation-invariant classification of persistent orbits. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 The triple (OT, OS, OC) satisfies:
 (R1) bisimulation-invariance, (R2) extends CNF∞ for periodic orbits, (R3) each is
@@ -157,6 +171,8 @@ structure is assumed.
 
 **Source:** CRPT; from [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx) + [`SC-1` (L3.3.D2)](CRPT_OMEGA_TOWER_L3.md#sc-1-ω-limit-bisimulation-fixation) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set).
 
+*Novelty Note.* **Basis (credited):** [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx) + [`SC-1` (L3.3.D2)](CRPT_OMEGA_TOWER_L3.md#sc-1-ω-limit-bisimulation-fixation) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set). **New:** The Orbit-Type Classification partitions ∞_M unconditionally into three types based on the qualitative long-run behavior of the projection orbit. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 For x ∈ ∞_M (equivalently,
 x ∈ νT_{ρ,M}), define the **orbit type** of x based on the quotient orbit
 OT(x) = ([ρ_M^n(x)]_≈)_{n ∈ ℕ} ([`OT-21B` (L6.3.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace):
@@ -194,6 +210,8 @@ orbit-trace invariants OT(x), OS(x), OC(x) from L6.1 provide structural informat
 **Synopsis:** The Orbit-Type Partition theorem: {AP, EP, P} is an exhaustive disjoint partition of ∞_M. Every persistent element belongs to exactly one type. The partition requires no scope conditions — it is defined for all persistent elements using only the qualitative behavior of OT(x).
 
 **Source:** CRPT; from [`OTC` (L6.2.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-type-classification) + [PA-NWF (L1.2.Ax4)](CRPT_OMEGA_TOWER_L1.md#pa-nwf--non-well-foundedness--divergence-existence) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence).
+
+*Novelty Note.* **Basis (credited):** [`OTC` (L6.2.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-type-classification) + [PA-NWF (L1.2.Ax4)](CRPT_OMEGA_TOWER_L1.md#pa-nwf--non-well-foundedness--divergence-existence) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence). **New:** The Orbit-Type Partition theorem: {AP, EP, P} is an exhaustive disjoint partition of ∞_M. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 Under PA-NWF +
 PA-Bisim only (no SC conditions, no PA-WN_top):
@@ -235,6 +253,8 @@ Every x ∈ ∞_M falls into exactly one type. ✓ ∎
 
 **Source:** CRPT; from [`OTC` (L6.2.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-type-classification) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient) + [PA-WN_top (L1.7.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn_top--topological-weak-normalisation--asymptotic-convergence).
 
+*Novelty Note.* **Basis (credited):** [`OTC` (L6.2.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-type-classification) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient) + [PA-WN_top (L1.7.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn_top--topological-weak-normalisation--asymptotic-convergence). **New:** The Three-Tier Classification Schema organises the persistent regime theory by the strength of assumptions required: Tier 1 (unconditional, PA-NWF + PA-Bisim only) gives orbit types AP/EP/P; Tier 2 (SC-4 conditions) adds CNF∞_M, CPD, and the NWF six-class partition A*–E*; Tier 3 (PA-WN_top) adds topological limit classification. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 The analysis of ∞_M
 elements is organised into three tiers, each activating with additional structural
 assumptions:
@@ -272,6 +292,8 @@ This tier applies to **all Types** when PA-WN_top holds, and subsumes Tier 2.
 **Synopsis:** The Tier Compatibility theorem: the three tiers are mutually compatible. Tier 2 refines Tier 1 (orbit types remain valid under stronger assumptions); Tier 3 refines both Tier 1 and Tier 2 (topological classification adds to, not contradicts, the combinatorial classification). No tier contradicts any other.
 
 **Source:** CRPT; from [`3-Tier` (L6.2.D2)](CRPT_OMEGA_TOWER_L6.md#three-tier-_m-analysis-framework).
+
+*Novelty Note.* **Basis (credited):** [`3-Tier` (L6.2.D2)](CRPT_OMEGA_TOWER_L6.md#three-tier-_m-analysis-framework). **New:** The Tier Compatibility theorem: the three tiers are mutually compatible. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 The three tiers are compatible:
 
@@ -319,6 +341,8 @@ at Tier 1 or Tier 2. ✓
 **Synopsis:** Type AP Irreducibility: elements with aperiodic persistent orbits (Type AP) cannot be further decomposed by any bisimulation-invariant first-order property. The aperiodic orbit type is the 'hardest' class: it requires second-order resources (the orbit trace OC(x)) to classify. No first-order property distinguishes AP elements beyond their type.
 
 **Source:** CRPT; from [`OTC` (L6.2.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-type-classification) + [`OC` (L6.1.D3)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity-ocx).
+
+*Novelty Note.* **Basis (credited):** [`OTC` (L6.2.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-type-classification) + [`OC` (L6.1.D3)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity-ocx). **New:** Type AP Irreducibility: elements with aperiodic persistent orbits (Type AP) cannot be further decomposed by any bisimulation-invariant first-order property. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 For x ∈ Type_{AP}
 (aperiodic ∞_M elements), the following hold unconditionally:
@@ -369,6 +393,8 @@ apply; the only invariants are from Tier 1 (OT, orbit type, OC). ✓ ∎
 
 **Source:** CRPT; from [`3-Tier` (L6.2.D2)](CRPT_OMEGA_TOWER_L6.md#three-tier-_m-analysis-framework).
 
+*Novelty Note.* **Basis (credited):** [`3-Tier` (L6.2.D2)](CRPT_OMEGA_TOWER_L6.md#three-tier-_m-analysis-framework). **New:** The three-tier framework ([`3-Tier` (L6.2.D2)](CRPT_OMEGA_TOWER_L6.md#three-tier-_m-analysis-framework)) is the structural answer to which analysis tools CRPT provides for ∞_M elements when PA-WN_top fails. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 The three-tier framework ([`3-Tier` (L6.2.D2)](CRPT_OMEGA_TOWER_L6.md#three-tier-_m-analysis-framework)) provides the structurally correct response
 to the question: "What analysis tools does CRPT provide for ∞_M elements when
 PA-WN_top fails?" The answer has three components:
@@ -397,6 +423,8 @@ information that is mathematically extractable under the given assumptions.
 **Synopsis:** The three-tier framework organises the existing ∞_M tools into a hierarchy: orbit-type classification (Tier 1, unconditional), the NWF six-class partition (Tier 2, under SC-4), and the twelve-class partition (Tier 3, under PA-WN_top).
 
 **Source:** CRPT; from [`3-Tier` (L6.2.D2)](CRPT_OMEGA_TOWER_L6.md#three-tier-_m-analysis-framework) + [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification).
+
+*Novelty Note.* **Basis (credited):** [`3-Tier` (L6.2.D2)](CRPT_OMEGA_TOWER_L6.md#three-tier-_m-analysis-framework) + [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification). **New:** The three-tier framework organises the existing ∞_M tools into a hierarchy: orbit-type classification (Tier 1, unconditional), the NWF six-class partition (Tier 2, under SC-4), and the twelve-class partition (Tier 3, under PA-WN_top). **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
 
 The three-tier framework
 organises the pre-existing ∞_M tools into a coherent hierarchy:
@@ -485,6 +513,8 @@ invariant structures.
 
 **Source:** CRPT; from [`OT-21B` (L6.3.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient).
 
+*Novelty Note.* **Basis (credited):** [`OT-21B` (L6.3.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient). **New:** The Single-Class Impossibility theorem: there is no single bisimulation-invariant function f : ∞_M → W (for any well-ordered W) that classifies all persistent elements into a hierarchy terminating at ordinal ω. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 
 Let x ∈ ∞_M be aperiodic (∀N, p ≥ 1 : ∃n ≥ N : ρ_M^{n+p}(x) ≉ ρ_M^n(x)).
 There exists no function Φ : ∞_M → 𝒰_M/≈ (assigning a single bisimulation
@@ -527,6 +557,8 @@ can capture this distinction. ∎
 
 **Source:** CRPT; from [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility).
 
+*Novelty Note.* **Basis (credited):** [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility). **New:** Scope boundary remark for Single-Class Impossibility: the impossibility applies to first-order definable functions. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 The impossibility is specifically for *shift-invariant*
 single-class assignments. If we drop shift-invariance, we can assign an
 arbitrary class, but it would depend on the starting point of the orbit —
@@ -550,6 +582,8 @@ of classes visited, not just a single target class.
 
 **Source:** CRPT; from [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx).
 
+*Novelty Note.* **Basis (credited):** [`OT` (L6.1.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace-otx). **New:** Orbit trace at L6.3: OT(x) treated as a point in the product space Q_M^ω with the product topology. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 
 For x ∈ ∞_M, the *orbit trace* of x is the sequence of bisimulation classes
 visited by the ρ_M-orbit of x:
@@ -564,7 +598,7 @@ class of the n-th iterate of x under ρ_M.
 ### Tail Equivalence on Traces
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L6.3.D2 | `Tail-Eq` | | **Reframed** |
+| **Definition** | L6.3.D2 | `Tail-Eq` | | **Specialized** |
 **Synopsis:** Tail equivalence on Q_M^ω: two sequences s, t are tail-equivalent (s ∼ t) when they agree from some index onward — ∃N : ∀n ≥ N, s(n) = t(n). Tail equivalence captures 'eventual sameness' of infinite sequences, ignoring finite prefixes.
 
 **Source:** CRPT; from [`OT-21B` (L6.3.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace); reframes tail equivalence of sequences.
@@ -631,6 +665,8 @@ Therefore: [ρ_M^{M+k}(x)]_≈ = [ρ_M^{N+k}(z)]_≈ for all k. So OT_M(x) ∼_t
 
 **Source:** CRPT; from [`OT-21B` (L6.3.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace) + [`Tail-Eq` (L6.3.D2)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-on-traces).
 
+*Novelty Note.* **Basis (credited):** [`OT-21B` (L6.3.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace) + [`Tail-Eq` (L6.3.D2)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-on-traces). **New:** The level-1 asymptotic orbit invariant AOI₁(x) is the tail-equivalence class [OT(x)]_∼ of the orbit trace. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 
 For x ∈ ∞_M, the *Asymptotic Orbit Invariant* at Level 1 is the tail-equivalence
 class of the orbit trace:
@@ -646,6 +682,8 @@ AOI₁(x)  :=  [OT_M(x)]_{~_tail}  ∈  (𝒰_M / ≈)^ω / ~_tail
 **Synopsis:** AOI₁ is well-defined: [OT(x)]_∼ depends only on x (not on any choice of representative) and is invariant under ≃_M by AOI-1 bisimulation invariance. AOI₁ is therefore a genuine observable invariant.
 
 **Source:** CRPT; from [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`Tail-EqRel` (L6.3.L1)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-is-an-equivalence-relation).
+
+*Novelty Note.* **Basis (credited):** [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`Tail-EqRel` (L6.3.L1)](CRPT_OMEGA_TOWER_L6.md#tail-equivalence-is-an-equivalence-relation). **New:** AOI₁ is well-defined: [OT(x)]_∼ depends only on x (not on any choice of representative) and is invariant under ≃_M by AOI-1 bisimulation invariance. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 For every x ∈ ∞_M, AOI₁(x) exists and is uniquely determined.
@@ -670,6 +708,8 @@ unique. ∎
 **Synopsis:** AOI bisimulation invariance (full proof): if x ≈ y then AOI₁(x) = AOI₁(y). The proof uses PA-Bisim to show [ρ_M^n(x)]_≈ = [ρ_M^n(y)]_≈ for all n by induction, giving OT(x) = OT(y) pointwise and hence [OT(x)]_∼ = [OT(y)]_∼.
 
 **Source:** CRPT; from [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence).
+
+*Novelty Note.* **Basis (credited):** [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence). **New:** AOI bisimulation invariance (full proof): if x ≈ y then AOI₁(x) = AOI₁(y). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 For x, y ∈ ∞_M: if x ≈ y, then AOI₁(x) = AOI₁(y).
@@ -709,6 +749,8 @@ OT_M(x) ∼_tail OT_M(y) (with m = n = 0). Therefore AOI₁(x) = AOI₁(y). ∎
 
 **Source:** CRPT; from [`AOI-BisInv` (L6.3.T3)](CRPT_OMEGA_TOWER_L6.md#bisimulation-invariance).
 
+*Novelty Note.* **Basis (credited):** [`AOI-BisInv` (L6.3.T3)](CRPT_OMEGA_TOWER_L6.md#bisimulation-invariance). **New:** Pointwise orbit-trace equality: x ≈ y implies [ρ_M^n(x)]_≈ = [ρ_M^n(y)]_≈ for all n ≥ 0, proved by induction on n using PA-Bisim at each step. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 The proof establishes more than tail equivalence: it shows
 pointwise equality of the orbit traces OT_M(x) = OT_M(y). This is strictly
 stronger than tail equivalence. The stronger result holds because bisimulation
@@ -721,6 +763,8 @@ propagates through ρ_M at every step, not just eventually.
 **Synopsis:** AOI₁ extends CNF∞_M: for SC-1 elements, the tail-equivalence class [OT(x)]_∼ completely determines CNF∞_M(x). AOI₁ is therefore at least as fine as CNF∞_M on the SC-1 stratum, and strictly finer on aperiodic elements where CNF∞_M is undefined.
 
 **Source:** CRPT; from [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient).
+
+*Novelty Note.* **Basis (credited):** [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient). **New:** AOI₁ extends CNF∞_M: for SC-1 elements, the tail-equivalence class [OT(x)]_∼ completely determines CNF∞_M(x). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 For x ∈ ∞_M with periodic orbit (period p, transient N), satisfying SC-1:
@@ -752,10 +796,12 @@ and [ρ_M^{N'}(y)]_≈ = CNF∞(y). Therefore CNF∞(x) = CNF∞(y). ∎
 ### CNF∞ Embeds in AOI₁
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L6.3.C1 | `CNF∞⊂AOI₁` | | **Novel** |
+| **Corollary** | L6.3.C1 | `CNF∞⊂AOI₁` | | **Derived** |
 **Synopsis:** CNF∞_M embeds into AOI₁: for SC-1 elements, knowing AOI₁(x) is sufficient to recover CNF∞_M(x). AOI₁ is the natural generalisation of CNF∞_M to all of ∞_M.
 
 **Source:** CRPT; from [`AOI-CNF∞` (L6.3.T4)](CRPT_OMEGA_TOWER_L6.md#extension-of-cnf).
+
+*Derivation:* composed from [`AOI-CNF∞` (L6.3.T4)](CRPT_OMEGA_TOWER_L6.md#extension-of-cnf); no content beyond the composition.
 
 
 Define the embedding ι : CNF∞ → AOI₁ by:
@@ -783,6 +829,8 @@ CNF∞(x) = CNF∞(y) for periodic orbits. ✓ ∎
 **Synopsis:** AOI₁ constructivity: [OT(x)]_∼ is computable from the orbit for SC-3 elements (computable period). For AP elements, AOI₁(x) may be a Π₂⁰ set in the Borel hierarchy — computable in the limit but not in general primitive recursive.
 
 **Source:** CRPT; from [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`SC-3` (L3.3.D4)](CRPT_OMEGA_TOWER_L3.md#sc-3-eventual-periodicity-of-valuation-sequence).
+
+*Novelty Note.* **Basis (credited):** [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`SC-3` (L3.3.D4)](CRPT_OMEGA_TOWER_L3.md#sc-3-eventual-periodicity-of-valuation-sequence). **New:** AOI₁ constructivity: [OT(x)]_∼ is computable from the orbit for SC-3 elements (computable period). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 AOI₁(x) is constructive: it is determined by the orbit trace OT_M(x), which is
@@ -835,6 +883,8 @@ AOI₁ is a *finer* invariant than CNF∞: it distinguishes orbits that CNF∞ c
 
 **Source:** CRPT; from [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`OTC` (L6.2.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-type-classification).
 
+*Novelty Note.* **Basis (credited):** [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`OTC` (L6.2.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-type-classification). **New:** AOI₁ strictly refines CNF∞_M: there exist AP elements x, y with AOI₁(x) ≠ AOI₁(y) but CNF∞_M undefined for both. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 
 There exist x, y ∈ ∞_M with AOI₁(x) ≠ AOI₁(y) but where neither has a
 well-defined CNF∞ (both are aperiodic).
@@ -877,7 +927,7 @@ bisimulation class visits.
 ### Visit Frequency
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L6.3.D4 | `Freq` | freq_x(C) | **Reframed** |
+| **Definition** | L6.3.D4 | `Freq` | freq_x(C) | **Specialized** |
 **Synopsis:** Asymptotic frequency: given sequence s ∈ Q_M^ω and class C, freq(s, C) = lim_{n→∞} (1/n)|{k < n | s(k) ∈ C}| when this limit exists. Standard ergodic-theoretic concept adapted to projection-orbit class-visit sequences.
 
 **Source:** CRPT; from [`OT-21B` (L6.3.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace); reframes asymptotic (Cesàro) frequency.
@@ -901,6 +951,8 @@ integers k < n for which the k-th iterate falls in class C.
 
 **Source:** CRPT; from [`Freq` (L6.3.D4)](CRPT_OMEGA_TOWER_L6.md#visit-frequency) + [`OT-21B` (L6.3.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace).
 
+*Novelty Note.* **Basis (credited):** [`Freq` (L6.3.D4)](CRPT_OMEGA_TOWER_L6.md#visit-frequency) + [`OT-21B` (L6.3.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace). **New:** Orbit spectrum at L6.3: OS_M(x) : 𝒰_M/≈ → [0,1] defined by C ↦ freq_x(C) on the visited bisimulation classes B̃(x), where the limits exist. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 
 For x ∈ ∞_M, the *orbit spectrum* of x is the function:
 
@@ -922,6 +974,8 @@ The *full orbit spectrum* is defined when freq_x(C) exists for ALL classes C ∈
 
 **Source:** CRPT; from [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum) + [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification).
 
+*Novelty Note.* **Basis (credited):** [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum) + [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification). **New:** The horizon-class spectrum over {A,B,C,D,E} is not the primitive object: it is the push-forward of the ≈-class spectrum along the classification map. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 Composing with the horizon classification cl : 𝒰_M/≈ → {A, B, C, D, E} gives the
 *horizon-class spectrum* cl_*(OS_M(x))(K) := Σ_{C : cl(C) = K} OS_M(x)(C) — a derived,
 coarser summary. Invariance properties live at the ≈-class level ([`OS-BisInv` (L6.3.T7)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum-is-bisimulation-invariant));
@@ -934,6 +988,8 @@ the push-forward inherits them but does not determine the primitive spectrum.
 **Synopsis:** Spectrum-definiteness is existence, not normalisation: an orbit is spectrum-definite when freq_x(C) exists for every visited class C ∈ B̃(x). No sum condition is imposed — when B̃(x) is infinite, all frequencies can exist and each equal 0 (every class visited finitely often), a legitimate spectrum-definite orbit whose spectrum sums to 0. The frequencies sum to 1 exactly when B̃(x) is finite ([`Freq-Sum` (L6.3.L2)](CRPT_OMEGA_TOWER_L6.md#frequency-sum)).
 
 **Source:** CRPT; from [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set).
+
+*Novelty Note.* **Basis (credited):** [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set). **New:** Spectrum-definiteness is existence, not normalisation: an orbit is spectrum-definite when freq_x(C) exists for every visited class C ∈ B̃(x). **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 
 An orbit Orb_M(x) is *spectrum-definite* if OS_M(x) is fully defined, i.e.:
@@ -980,6 +1036,8 @@ orbits, so no sum-to-1 clause may be built into spectrum-definiteness.
 
 **Source:** CRPT; from [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum).
 
+*Novelty Note.* **Basis (credited):** [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum). **New:** Orbit Spectrum Shift-Invariance: OS_M(x) = OS_M(ρ_M(x)). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 
 OS_M(ρ_M(x)) = OS_M(x) for all spectrum-definite x ∈ ∞_M.
 
@@ -1005,6 +1063,8 @@ freq_{ρ_M(x)}(C) = lim_{n→∞} (1/n)(|{j < n+1 | [ρ_M^j(x)]_≈ = C}| ± 1)
 
 **Source:** CRPT; from [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum) + [`AOI-BisInv` (L6.3.T3)](CRPT_OMEGA_TOWER_L6.md#bisimulation-invariance).
 
+*Novelty Note.* **Basis (credited):** [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum) + [`AOI-BisInv` (L6.3.T3)](CRPT_OMEGA_TOWER_L6.md#bisimulation-invariance). **New:** Orbit spectrum bisimulation invariance: x ≈ y implies OS_M(x) = OS_M(y). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 
 For spectrum-definite x, y ∈ ∞_M: if x ≈ y, then OS_M(x) = OS_M(y).
 
@@ -1026,6 +1086,8 @@ for all n. Taking limits: freq_x(C) = freq_y(C) for all C. So OS_M(x) = OS_M(y).
 **Synopsis:** For eventually-periodic orbits, the orbit spectrum reduces to a point mass at CNF∞_M(x): OS_M(x) = δ_{CNF∞_M(x)}. The orbit spends all its asymptotic time at the periodic canonical form.
 
 **Source:** CRPT; from [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient).
+
+*Novelty Note.* **Basis (credited):** [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient). **New:** For eventually-periodic orbits, the orbit spectrum reduces to a point mass at CNF∞_M(x): OS_M(x) = δ_{CNF∞_M(x)}. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 For x ∈ ∞_M with periodic orbit (period p, transient N) satisfying SC-1:
@@ -1065,10 +1127,12 @@ Therefore freq_x(C) = lim N/n = 0. ✓
 ### Periodic Spectrum Determines CNF∞
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L6.3.C2 | `OS-Det` | | **Novel** |
+| **Corollary** | L6.3.C2 | `OS-Det` | | **Derived** |
 **Synopsis:** For deterministic convergent orbits (elements of ↓_M), the spectrum is the Dirac delta OS_M(x) = δ_{[CNF_M(x)]_≈}: frequency 1 at the canonical form class, 0 everywhere else.
 
 **Source:** CRPT; from [`OS-Per=CNF∞` (L6.3.T8)](CRPT_OMEGA_TOWER_L6.md#periodic-spectrum-recovers-cnf).
+
+*Derivation:* composed from [`OS-Per=CNF∞` (L6.3.T8)](CRPT_OMEGA_TOWER_L6.md#periodic-spectrum-recovers-cnf); no content beyond the composition.
 
 For periodic orbits satisfying SC-1, the orbit spectrum
 OS_M(x) determines CNF∞(x) (as the unique class with frequency 1), and conversely.
@@ -1111,6 +1175,8 @@ fails.
 **Synopsis:** The orbit spectrum extends beyond SC-1-periodic orbits to all eventually periodic orbits, including those of period p > 1 that visit several distinct bisimulation classes.
 
 **Source:** CRPT; from [`Spec-Def` (L6.3.D6)](CRPT_OMEGA_TOWER_L6.md#spectrum-definite-orbit).
+
+*Novelty Note.* **Basis (credited):** [`Spec-Def` (L6.3.D6)](CRPT_OMEGA_TOWER_L6.md#spectrum-definite-orbit). **New:** The orbit spectrum extends beyond SC-1-periodic orbits to all eventually periodic orbits, including those of period p > 1 that visit several distinct bisimulation classes. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
 
 This shows that the orbit spectrum extends beyond SC-1-periodic orbits
 to all eventually periodic orbits (including those with period p > 1 visiting
@@ -1174,6 +1240,8 @@ and Level 3 (orbit complexity) still apply.
 
 **Source:** CRPT; from [`Spec-Def` (L6.3.D6)](CRPT_OMEGA_TOWER_L6.md#spectrum-definite-orbit) + [`SC4-EP` (L3.3.T1)](CRPT_OMEGA_TOWER_L3.md#sc-4--eventual-periodicity); Birkhoff ergodic theorem.
 
+*Novelty Note.* **Basis (credited):** [`Spec-Def` (L6.3.D6)](CRPT_OMEGA_TOWER_L6.md#spectrum-definite-orbit) + [`SC4-EP` (L3.3.T1)](CRPT_OMEGA_TOWER_L3.md#sc-4--eventual-periodicity). **New:** Orbit Spectrum Sufficiency: for EP orbits, OS_M is a complete bisimulation-invariant. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 
 An orbit Orb_M(x) is spectrum-definite if any of the following hold:
 
@@ -1217,7 +1285,7 @@ descriptive set-theoretic methods to assign a complexity rank.
 ### Recurrence Set
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L6.3.D7 | `Rec-Set` | | **Reframed** |
+| **Definition** | L6.3.D7 | `Rec-Set` | | **Specialized** |
 **Synopsis:** The recurrence set R(x, C) = {n ∈ ℕ | [ρ_M^n(x)]_≈ ∈ C} records the times at which the orbit visits class C. Its density is the asymptotic frequency freq(OT(x), C).
 
 **Source:** CRPT; from [`OT-21B` (L6.3.D1)](CRPT_OMEGA_TOWER_L6.md#orbit-trace); reframes the recurrence set of symbolic dynamics.
@@ -1235,7 +1303,7 @@ The set of times at which the orbit visits class C.
 ### Recurrence Type
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L6.3.D8 | `Rec-Type` | | **Reframed** |
+| **Definition** | L6.3.D8 | `Rec-Type` | | **Specialized** |
 **Synopsis:** Recurrence type classifies R(x, C) by its density and structure: transient (finite), recurrent (infinite), periodic, syndetic (bounded gaps), thick (arbitrarily long intervals). Standard symbolic-dynamics taxonomy adapted for projection orbits.
 
 **Source:** CRPT; from [`Rec-Set` (L6.3.D7)](CRPT_OMEGA_TOWER_L6.md#recurrence-set); reframes the symbolic-dynamics recurrence taxonomy.
@@ -1262,6 +1330,8 @@ by the structure of Rec_x(C):
 **Synopsis:** Orbit Complexity OC_M(x) = (AOI₁(x), OS_M(x), rtype(x)): the complete bisimulation-invariant characterisation combining eventual behavior, long-run frequencies, and recurrence structure.
 
 **Source:** CRPT; from [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum) + [`Rec-Type` (L6.3.D8)](CRPT_OMEGA_TOWER_L6.md#recurrence-type).
+
+*Novelty Note.* **Basis (credited):** [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum) + [`Rec-Type` (L6.3.D8)](CRPT_OMEGA_TOWER_L6.md#recurrence-type). **New:** Orbit Complexity OC_M(x) = (AOI₁(x), OS_M(x), rtype(x)): the complete bisimulation-invariant characterisation combining eventual behavior, long-run frequencies, and recurrence structure. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 
 For x ∈ ∞_M, the *orbit complexity* OC_M(x) is the pair:
@@ -1325,6 +1395,8 @@ Tails^α(x) = Tails^{α+1}(x) (stabilisation).
 
 **Source:** CRPT; from [`OC-21B` (L6.3.D9)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set).
 
+*Novelty Note.* **Basis (credited):** [`OC-21B` (L6.3.D9)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set). **New:** Orbit complexity OC_M(x) is well-defined: AOI₁ requires no scope condition; OS_M and rtype require SC-4. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 
 For all x ∈ ∞_M:
 
@@ -1382,6 +1454,8 @@ Therefore OC_M(x) = OC_M(y). ✓
 
 **Source:** CRPT; from [`OC-21B` (L6.3.D9)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity) + [`SC-1` (L3.3.D2)](CRPT_OMEGA_TOWER_L3.md#sc-1-ω-limit-bisimulation-fixation).
 
+*Novelty Note.* **Basis (credited):** [`OC-21B` (L6.3.D9)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity) + [`SC-1` (L3.3.D2)](CRPT_OMEGA_TOWER_L3.md#sc-1-ω-limit-bisimulation-fixation). **New:** For SC-1 elements, orbit complexity reduces to: AOI₁ = eventual period class, OS_M = Dirac delta at CNF∞_M(x), rtype = periodic for the canonical class and transient for all others. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 
 For x ∈ ∞_M with periodic orbit satisfying SC-1 (transient N, period 1 in
 the bisimulation-class sequence):
@@ -1414,6 +1488,8 @@ Therefore OC_M(x) = (0, 0). ∎
 
 **Source:** CRPT; from [`OC-21B` (L6.3.D9)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set).
 
+*Novelty Note.* **Basis (credited):** [`OC-21B` (L6.3.D9)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set). **New:** For AP elements satisfying SC-4, OC_M(x) captures the full statistical structure of the aperiodic orbit. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 
 For x ∈ ∞_M with eventually periodic orbit, period p > 1, visiting p distinct
 bisimulation classes cyclically (SC-4 holds but SC-1 fails):
@@ -1436,6 +1512,8 @@ Tails(x) is again a finite set (at most N + p distinct tails). ρ(x) = 0. ✓ �
 **Synopsis:** For AP orbits satisfying SC-4, the orbit spectrum OS_M is genuinely non-trivial — a proper probability distribution assigning positive frequency to at least two distinct classes, not a degenerate Dirac measure.
 
 **Source:** CRPT; from [`OC-21B` (L6.3.D9)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity) + [`Spec-Def` (L6.3.D6)](CRPT_OMEGA_TOWER_L6.md#spectrum-definite-orbit).
+
+*Novelty Note.* **Basis (credited):** [`OC-21B` (L6.3.D9)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity) + [`Spec-Def` (L6.3.D6)](CRPT_OMEGA_TOWER_L6.md#spectrum-definite-orbit). **New:** For AP orbits satisfying SC-4, the orbit spectrum OS_M is genuinely non-trivial — a proper probability distribution assigning positive frequency to at least two distinct classes, not a degenerate Dirac measure. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 For x ∈ ∞_M with aperiodic, spectrum-definite orbit (e.g., Champernowne):
@@ -1483,6 +1561,8 @@ always a countable ordinal ≥ 1. ✓ ∎
 
 **Source:** CRPT; from [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum) + [`OC-21B` (L6.3.D9)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity).
 
+*Novelty Note.* **Basis (credited):** [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`OS-21B` (L6.3.D5)](CRPT_OMEGA_TOWER_L6.md#orbit-spectrum) + [`OC-21B` (L6.3.D9)](CRPT_OMEGA_TOWER_L6.md#orbit-complexity). **New:** The Unified AOI(x) = (AOI₁(x), OS_M(x), OC_M(x)) is the complete bisimulation-invariant characterisation of persistent elements. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 
 For x ∈ ∞_M, the *Asymptotic Orbit Invariant* is the triple:
 
@@ -1507,6 +1587,8 @@ where:
 **Synopsis:** AOI Refinement: each level strictly refines the previous. There exist orbits distinguished by spectrum but not by trace-class, and orbits distinguished by recurrence type but not by spectrum.
 
 **Source:** CRPT; from [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi).
+
+*Novelty Note.* **Basis (credited):** [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi). **New:** AOI Refinement: each level strictly refines the previous. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 The three levels form a refinement chain:
@@ -1586,6 +1668,8 @@ both have OC = (2, ρ) for some ρ, but OS(σ) ≠ OS(τ). ✓ ∎
 
 **Source:** CRPT; from [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi) + [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility) + [`AOI-Ref` (L6.3.T14)](CRPT_OMEGA_TOWER_L6.md#refinement).
 
+*Novelty Note.* **Basis (credited):** [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi) + [`SC-Imp` (L6.3.T1)](CRPT_OMEGA_TOWER_L6.md#single-class-impossibility) + [`AOI-Ref` (L6.3.T14)](CRPT_OMEGA_TOWER_L6.md#refinement). **New:** AOI Master Theorem (full proof): (AOI₁, OS_M, OC_M) is the unique minimal hierarchy — each level is necessary (SC-Imp), strictly refining (AOI-Ref), and terminating (no fourth level adds power). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 
 The Asymptotic Orbit Invariant AOI_M satisfies all three requirements:
 
@@ -1625,6 +1709,8 @@ The AOI theory introduces a natural new stabilisation condition that generalises
 
 **Source:** CRPT; from [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`Spec-Def` (L6.3.D6)](CRPT_OMEGA_TOWER_L6.md#spectrum-definite-orbit).
 
+*Novelty Note.* **Basis (credited):** [`AOI₁` (L6.3.D3)](CRPT_OMEGA_TOWER_L6.md#asymptotic-orbit-invariant--level-1) + [`Spec-Def` (L6.3.D6)](CRPT_OMEGA_TOWER_L6.md#spectrum-definite-orbit). **New:** SC-∞: a persistent element satisfies SC-∞ when all three AOI components are well-defined and OC_M is a complete bisimulation-invariant. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 
 An orbit Orb_M(x) satisfies *SC-∞* if the orbit trace OT_M(x) has a well-defined
 tail-equivalence class and the orbit is spectrum-definite:
@@ -1640,6 +1726,8 @@ SC-∞(x)  :⟺  (i) AOI₁(x) is well-defined  ∧  (ii) OS_M(x) is fully defin
 **Synopsis:** SC-∞ implies SC-1: OC_M being well-defined requires SC-4, which requires SC-3, SC-2, SC-1. The scope conditions form a strict linear order with SC-∞ at the top.
 
 **Source:** CRPT; from [`SC-∞` (L6.3.D11)](CRPT_OMEGA_TOWER_L6.md#sc--asymptotic-stabilisation) + [`SC-1` (L3.3.D2)](CRPT_OMEGA_TOWER_L3.md#sc-1-ω-limit-bisimulation-fixation).
+
+*Novelty Note.* **Basis (credited):** [`SC-∞` (L6.3.D11)](CRPT_OMEGA_TOWER_L6.md#sc--asymptotic-stabilisation) + [`SC-1` (L3.3.D2)](CRPT_OMEGA_TOWER_L3.md#sc-1-ω-limit-bisimulation-fixation). **New:** SC-∞ implies SC-1: OC_M being well-defined requires SC-4, which requires SC-3, SC-2, SC-1. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 (a) SC-1(x) ⟹ SC-∞(x).
@@ -1663,6 +1751,8 @@ C₀ and C₁) and OS_M(σ) = (1/2, 1/2) is fully defined. ✓ ∎
 **Synopsis:** The scope condition hierarchy is strict: SC-1 ⊊ SC-2 ⊊ SC-3 ⊊ SC-4 ⊊ SC-∞. Witnesses for each strict inclusion are provided.
 
 **Source:** CRPT; from [`SC-∞` (L6.3.D11)](CRPT_OMEGA_TOWER_L6.md#sc--asymptotic-stabilisation) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set) + [`SC4-EP` (L3.3.T1)](CRPT_OMEGA_TOWER_L3.md#sc-4--eventual-periodicity).
+
+*Novelty Note.* **Basis (credited):** [`SC-∞` (L6.3.D11)](CRPT_OMEGA_TOWER_L6.md#sc--asymptotic-stabilisation) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set) + [`SC4-EP` (L3.3.T1)](CRPT_OMEGA_TOWER_L3.md#sc-4--eventual-periodicity). **New:** The scope condition hierarchy is strict: SC-1 ⊊ SC-2 ⊊ SC-3 ⊊ SC-4 ⊊ SC-∞. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 ```
@@ -1705,6 +1795,8 @@ periodic orbits under SC-1. We extend HTT to all SC-∞ orbits.
 
 **Source:** CRPT; from [`SC-1` (L3.3.D2)](CRPT_OMEGA_TOWER_L3.md#sc-1-ω-limit-bisimulation-fixation)–[`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set) + [`SC-∞` (L6.3.D11)](CRPT_OMEGA_TOWER_L6.md#sc--asymptotic-stabilisation).
 
+*Novelty Note.* **Basis (credited):** [`SC-1` (L3.3.D2)](CRPT_OMEGA_TOWER_L3.md#sc-1-ω-limit-bisimulation-fixation) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set) + [`SC-∞` (L6.3.D11)](CRPT_OMEGA_TOWER_L6.md#sc--asymptotic-stabilisation). **New:** The scope condition family SC-k (k ∈ {1,2,3,4,∞}) collected as a single graded definition, each member defined at its home label: SC-1 = eventually class-constant tail (singleton ω-limit set in 𝒰_M/≈ — not general eventual periodicity, which is SC-4 territory); SC-2 = stable horizon-signature period; SC-3 = stable valuation; SC-4 = convergent asymptotic frequencies; SC-∞ = all AOI components well-defined. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 
 The *scope condition family* collects the graded conditions on a persistent orbit:
 
@@ -1736,6 +1828,8 @@ and stable from that depth.
 **Synopsis:** The AOI hierarchy terminates at level ω (three finite levels): recurrence type classifies all countable subsets of ℕ at the required coarseness, and no fourth invariant adds discriminating power beyond OC_M.
 
 **Source:** CRPT; from [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi) + [`SC-∞` (L6.3.D11)](CRPT_OMEGA_TOWER_L6.md#sc--asymptotic-stabilisation).
+
+*Novelty Note.* **Basis (credited):** [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi) + [`SC-∞` (L6.3.D11)](CRPT_OMEGA_TOWER_L6.md#sc--asymptotic-stabilisation). **New:** The AOI hierarchy terminates at level ω (three finite levels): recurrence type classifies all countable subsets of ℕ at the required coarseness, and no fourth invariant adds discriminating power beyond OC_M. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 Under PA-NWF + PA-Prod + PA-Bisim: for every x ∈ ∞_M satisfying SC-∞, the
@@ -1796,6 +1890,8 @@ stabilisation points of each component). ∎
 
 **Source:** CRPT; from [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi); CRPT instance on the stream substrate.
 
+*Novelty Note.* **Basis (credited):** [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi). **New:** AOI for stream systems: CRPT instantiated on stream processors gives orbit traces as sequences of processing states. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 
 For the stream substrate (α^ω, tail, ρ_STRM), the AOI theory applies to ALL
 persistent orbits:
@@ -1845,6 +1941,8 @@ aperiodic orbit — information that CNF∞ cannot express. ✓ ∎
 
 **Source:** CRPT; from [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi); CRPT instance on the (ℕ, n↦n+1) substrate.
 
+*Novelty Note.* **Basis (credited):** [`AOI-Unif` (L6.3.D10)](CRPT_OMEGA_TOWER_L6.md#unified-aoi). **New:** AOI for ℕ-indexed systems: CRPT on ℕ with decrement has ∞_M = ∅, so the AOI hierarchy is vacuously satisfied. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 
 For the counterexample substrate 𝒰 = ℕ, ρ(n) = n+1:
 
@@ -1885,6 +1983,8 @@ These are tail-equivalent: take m = n, j = 0, then ∀k: [ρ^{n+k}(0)] = [n+k] =
 **Synopsis:** ℕ as worst-case: the symbolic system over the five-class alphabet achieves maximum orbit complexity, demonstrating that OC_M is genuinely necessary for the most complex persistent orbits.
 
 **Source:** CRPT; from [`AOI-ℕ` (L6.3.T20)](CRPT_OMEGA_TOWER_L6.md#ℕ-chain-aoi).
+
+*Novelty Note.* **Basis (credited):** [`AOI-ℕ` (L6.3.T20)](CRPT_OMEGA_TOWER_L6.md#ℕ-chain-aoi). **New:** ℕ as worst-case: the symbolic system over the five-class alphabet achieves maximum orbit complexity, demonstrating that OC_M is genuinely necessary for the most complex persistent orbits. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
 
 The counterexample substrate (ℕ, n ↦ n+1) is the "maximally
 structureless" aperiodic orbit: every element is distinct, no element recurs, and
@@ -2023,6 +2123,8 @@ All proofs in this section are self-contained.
 
 **Source:** CRPT; from [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s); persistent-regime lifting via [`≃∞` (L3.3.D7)](CRPT_OMEGA_TOWER_L3.md#--persistent-orbit-equivalence).
 
+*Novelty Note.* **Basis (credited):** [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) + [`≃∞` (L3.3.D7)](CRPT_OMEGA_TOWER_L3.md#--persistent-orbit-equivalence). **New:** The NWF Structural Horizon H_S*(x) for persistent elements detects an asymptotic co-sibling: H_S*(x) = ⊤ when x has a non-bisimilar element y whose one-step image shares x's persistent orbit class ≃∞. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 For x ∈ νT_{ρ,M} (≉ is non-bisimilarity, [`Bisim` (L1.1.D6)](CRPT_OMEGA_TOWER_L1.md#bisimulation); ≃∞ is persistent orbit equivalence, [`≃∞` (L3.3.D7)](CRPT_OMEGA_TOWER_L3.md#--persistent-orbit-equivalence)):
 ```
 H_S*(x) :⟺ ∃y ∈ ∞_M : y ≉ x ∧ ρ_M(y) ≃∞ ρ_M(x)
@@ -2035,6 +2137,8 @@ H_S*(x) :⟺ ∃y ∈ ∞_M : y ≉ x ∧ ρ_M(y) ≃∞ ρ_M(x)
 **Synopsis:** The NWF Invariant Horizon H_I*(x) detects asymptotic-fiber uniformity for persistent elements: H_I*(x) = ⊤ when all asymptotic co-siblings of x (non-bisimilar elements whose one-step image shares x's ≃∞ class) carry the same persistent orbit signature sig_M*. This is the persistent-regime lifting of H_I, stated with asymptotic invariants only.
 
 **Source:** CRPT; from [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`H_S*` (L6.4.D1)](CRPT_OMEGA_TOWER_L6.md#h_s--structural-co-horizon).
+
+*Novelty Note.* **Basis (credited):** [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`H_S*` (L6.4.D1)](CRPT_OMEGA_TOWER_L6.md#h_s--structural-co-horizon). **New:** The NWF Invariant Horizon H_I*(x) detects asymptotic-fiber uniformity for persistent elements: H_I*(x) = ⊤ when all asymptotic co-siblings of x (non-bisimilar elements whose one-step image shares x's ≃∞ class) carry the same persistent orbit signature sig_M*. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 Writing the persistent orbit signature sig_M*(x) := (H_S*(x), CPD(x)) ([`CPD` (L4.5.D1)](CRPT_OMEGA_TOWER_L4.md#co-projection-depth-cpd)):
 ```
@@ -2049,6 +2153,8 @@ H_I*(x) :⟺ H_S*(x) ∧ ∀y : (y ≉ x ∧ ρ_M(y) ≃∞ ρ_M(x)) ⟹ sig_M*(
 
 **Source:** CRPT; from [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o) + [`CPD` (L4.5.D1)](CRPT_OMEGA_TOWER_L4.md#co-projection-depth-cpd).
 
+*Novelty Note.* **Basis (credited):** [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o) + [`CPD` (L4.5.D1)](CRPT_OMEGA_TOWER_L4.md#co-projection-depth-cpd). **New:** The NWF Depth Horizon H_O*(x) for persistent elements identifies boundary elements: H_O*(x) = ⊤ when the canonical period CPD(σ) = 1 (x has a period-1 persistent orbit, making it 'adjacent' to the fixed-point regime). **Why it does not follow:** the basis supplies one side; the counterpart it names is built where that machinery is absent — the construction itself is the content.
+
 ```
 H_O*(x) :⟺ CPD(x) = 1
 ```
@@ -2061,6 +2167,8 @@ i.e. [ρ_M^{N(x)+1}(x)]_≈ = [ρ_M^{N(x)}(x)]_≈ ([`CPD` (L4.5.D1)](CRPT_OMEGA
 **Synopsis:** The NWF Six-Class Partition A*–F* classifies elements of ∞_M by their NWF horizon predicates (H_S*, H_I*, H_O*). Class A*: all three ⊥. Class B*: H_S* ⊤, H_I* ⊤, H_O* ⊥. Class C*: H_S* ⊤, H_I* ⊥. Class D*: H_O* ⊤, H_S* ⊥. Class E*: H_O* ⊤, H_S* ⊤. Class F*: H_S* ⊥, H_I* ⊤, H_O* ⊥ (provably empty).
 
 **Source:** CRPT; from [`H_S*` (L6.4.D1)](CRPT_OMEGA_TOWER_L6.md#h_s--structural-co-horizon) + [`H_I*` (L6.4.D2)](CRPT_OMEGA_TOWER_L6.md#h_i--invariant-co-horizon) + [`H_O*` (L6.4.D3)](CRPT_OMEGA_TOWER_L6.md#h_o--depth-co-horizon).
+
+*Novelty Note.* **Basis (credited):** [`H_S*` (L6.4.D1)](CRPT_OMEGA_TOWER_L6.md#h_s--structural-co-horizon) + [`H_I*` (L6.4.D2)](CRPT_OMEGA_TOWER_L6.md#h_i--invariant-co-horizon) + [`H_O*` (L6.4.D3)](CRPT_OMEGA_TOWER_L6.md#h_o--depth-co-horizon). **New:** The NWF Six-Class Partition A*–F* classifies elements of ∞_M by their NWF horizon predicates (H_S*, H_I*, H_O*). **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 Classify x ∈ νT_{ρ,M} under PA-NWF + PA-Bisim + SC-4:
 
@@ -2080,6 +2188,8 @@ Classify x ∈ νT_{ρ,M} under PA-NWF + PA-Bisim + SC-4:
 **Synopsis:** The NWF Six-Class Partition theorem: A*–F* is an exhaustive disjoint partition of ∞_M, with Class F* provably empty by the same argument as Class F for ↓_M. Five non-empty classes remain. This theorem is the persistent-regime mirror of the convergent-regime six-class partition theorem.
 
 **Source:** CRPT; from [`A*-F*` (L6.4.D4)](CRPT_OMEGA_TOWER_L6.md#six-nwf-classes-af) + [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification).
+
+*Novelty Note.* **Basis (credited):** [`A*-F*` (L6.4.D4)](CRPT_OMEGA_TOWER_L6.md#six-nwf-classes-af) + [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification). **New:** The NWF Six-Class Partition theorem: A*–F* is an exhaustive disjoint partition of ∞_M, with Class F* provably empty by the same argument as Class F for ↓_M. **Why it does not follow:** the dual side lacks the original's machinery, so the duality is constructed rather than transported; the proof in the body builds the replacement.
 
 Under PA-NWF + PA-Bisim + SC-4:
 A*–F* are mutually exclusive and exhaustive on νT_{ρ,M}.
@@ -2117,6 +2227,8 @@ Exactly 6 satisfiable combinations, covering all x ∈ νT_{ρ,M}. ✓ ∎
 
 **Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) + [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection).
 
+*Novelty Note.* **Basis (credited):** [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) + [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection). **New:** Regime-type determinacy: a substrate's regime type — WF (∞_M = ∅), NWF (↓_M = ∅), or Mixed (both non-empty) — is an objective structural consequence of (𝒰_M, ρ_M), fixed by which elements have ρ_M-orbits that reach Fix(ρ_M). **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 A substrate's regime type
 (WF: νT_{ρ,M} = ∅; NWF: μT_{ρ,M} = ∅; Mixed: both non-empty) is a *structural consequence*
 of the substrate (𝒰_M, →_ρ, →_σ, ρ_M), not a choice.
@@ -2128,6 +2240,8 @@ of the substrate (𝒰_M, →_ρ, →_σ, ρ_M), not a choice.
 **Synopsis:** The regime type of a model is determined by its substrate: the partition ↓_M ⊔ ∞_M is computed from ρ_M and Fix(ρ_M) before any axiom is imposed, so the regime type is read off the substrate rather than selected by the axiom profile.
 
 **Source:** CRPT; from [`RTD` (L6.5.D1)](CRPT_OMEGA_TOWER_L6.md#rtd--regime-type-determinacy) + [`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition).
+
+*Novelty Note.* **Basis (credited):** [`RTD` (L6.5.D1)](CRPT_OMEGA_TOWER_L6.md#rtd--regime-type-determinacy) + [`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition). **New:** The regime type of a model is determined by its substrate: the partition ↓_M ⊔ ∞_M is computed from ρ_M and Fix(ρ_M) before any axiom is imposed, so the regime type is read off the substrate rather than selected by the axiom profile. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 The regime type of a model is
 determined by its substrate: whether ρ_M-orbits terminate (WF), all diverge (NWF),
@@ -2143,6 +2257,8 @@ partition μT_{ρ,M} ∐ νT_{ρ,M} is determined before any axiom is imposed (R
 **Synopsis:** For a finite substrate (|𝒰_M| < ∞) the regime type is decidable: each element's ρ_M-orbit either reaches Fix(ρ_M) within |𝒰_M| steps or enters a fixpoint-free cycle, so ↓_M / ∞_M membership — and hence WF / NWF / Mixed — is decided by bounded orbit exploration.
 
 **Source:** CRPT; from [`RTD` (L6.5.D1)](CRPT_OMEGA_TOWER_L6.md#rtd--regime-type-determinacy) + the regime partition (L2.2).
+
+*Novelty Note.* **Basis (credited):** [`RTD` (L6.5.D1)](CRPT_OMEGA_TOWER_L6.md#rtd--regime-type-determinacy). **New:** For a finite substrate (|𝒰_M| < ∞) the regime type is decidable: each element's ρ_M-orbit either reaches Fix(ρ_M) within |𝒰_M| steps or enters a fixpoint-free cycle, so ↓_M / ∞_M membership — and hence WF / NWF / Mixed — is decided by bounded orbit exploration. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 For finite substrates (|𝒰_M| < ∞):
 the regime type is decidable by exhaustive orbit computation.
@@ -2161,10 +2277,12 @@ Hence regime type is decidable on finite substrates. ∎
 ### Regime Type is Undecidable in General
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L6.5.T3 | `RTD-Und` | | **Novel** |
+| **Theorem** | L6.5.T3 | `RTD-Und` | | **Derived** |
 **Synopsis:** For infinite substrates the regime type is undecidable in general: deciding ↓_M-membership — whether a ρ_M-orbit ever reaches a fixpoint — reduces to the halting problem (Rice's theorem).
 
 **Source:** CRPT; from [`RTD` (L6.5.D1)](CRPT_OMEGA_TOWER_L6.md#rtd--regime-type-determinacy); via Rice's theorem (Rice [1953]).
+
+*Derivation:* composed from [`RTD` (L6.5.D1)](CRPT_OMEGA_TOWER_L6.md#rtd--regime-type-determinacy); no content beyond the composition.
 
 For infinite substrates: regime
 membership (x ∈ ↓_M?) is undecidable in general (reduces to the halting problem).
@@ -2179,6 +2297,8 @@ the function ρ_M viewed as a computable map, hence undecidable. ∎
 **Synopsis:** Regime-type determinacy is not internally expressible: the statement 'every substrate's regime type is determined by its ρ_M' quantifies over all substrates and is a meta-level schema, not a theorem provable inside any single CRPT instantiation (encodings via [`Enc` (L4.6.D1)](CRPT_OMEGA_TOWER_L4.md#admissible-encoding) carry syntactic structure, not semantic orbit structure).
 
 **Source:** CRPT; from [`RTD` (L6.5.D1)](CRPT_OMEGA_TOWER_L6.md#rtd--regime-type-determinacy) + [`Enc` (L4.6.D1)](CRPT_OMEGA_TOWER_L4.md#admissible-encoding) + [`SP3` (L4.6.T3)](CRPT_OMEGA_TOWER_L4.md#sp-3-conditional-universality).
+
+*Novelty Note.* **Basis (credited):** [`RTD` (L6.5.D1)](CRPT_OMEGA_TOWER_L6.md#rtd--regime-type-determinacy) + [`Enc` (L4.6.D1)](CRPT_OMEGA_TOWER_L4.md#admissible-encoding) + [`SP3` (L4.6.T3)](CRPT_OMEGA_TOWER_L4.md#sp-3-conditional-universality). **New:** Regime-type determinacy is not internally expressible: the statement 'every substrate's regime type is determined by its ρ_M' quantifies over all substrates and is a meta-level schema, not a theorem provable inside any single CRPT instantiation (encodings via [`Enc` (L4.6.D1)](CRPT_OMEGA_TOWER_L4.md#admissible-encoding) carry syntactic structure, not semantic orbit structure). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 RTD cannot be expressed as a theorem
 within any single CRPT instantiation: determining the regime type of a substrate M
@@ -2227,6 +2347,8 @@ this document, which quantifies over all CRPT models simultaneously). ∎
 
 **Source:** CRPT; from [`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition).
 
+*Novelty Note.* **Basis (credited):** [`Part` (L2.2.T3)](CRPT_OMEGA_TOWER_L2.md#partition). **New:** Regime-type trichotomy: every substrate is exactly one of WF (∞_M = ∅), NWF (↓_M = ∅), or Mixed (both non-empty) — three regime types, with no fourth. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 Beyond WF, NWF, and Mixed, there is no fourth
 regime type within the substrate interface. Every substrate has 𝒰_M = ↓_M ∐ ∞_M
 by classical excluded middle (Remark L2.2.R3).
@@ -2248,10 +2370,12 @@ discussion have non-empty universe. Hence exactly three regime types exist. ∎
 ### The classification instrument
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L6.6.R1 | `Class-Inst` | | **Novel** |
+| **Remark** | L6.6.R1 | `Class-Inst` | | **Derived** |
 **Synopsis:** This remark confirms that each of the five non-empty classes (A through E) has a canonical instantiation: Class A elements are fixed points (d_M = 0, unique normal form); Class B elements are uniform-sibling non-boundary elements; Class C elements are non-uniform-sibling elements; Class D elements are injective boundary elements; Class E elements are non-injective boundary elements.
 
 **Source:** CRPT; from [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification).
+
+*Derivation:* composed from [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification); no content beyond the composition.
 
 The constructs of §L2.1–23 constitute
 a complete classification instrument for CRPT models. Applying this instrument to any
@@ -2266,6 +2390,8 @@ invariant is trivial or non-trivial in M.
 **Synopsis:** The Degeneracy Invariant: a CRPT model M is degenerate when its six-class partition has fewer than five non-empty classes. Degeneracy arises when structural constraints force some horizon predicates to be constant across 𝒰_M (e.g., if the projection operator is injective everywhere, H_S = ⊥ globally, leaving only Classes A and D).
 
 **Source:** CRPT; from [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification) + [`HP` (L3.1.D6)](CRPT_OMEGA_TOWER_L3.md#horizon-profile-and-class).
+
+*Novelty Note.* **Basis (credited):** [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification) + [`HP` (L3.1.D6)](CRPT_OMEGA_TOWER_L3.md#horizon-profile-and-class). **New:** The Degeneracy Invariant: a CRPT model M is degenerate when its six-class partition has fewer than five non-empty classes. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 An anchor invariant I_M is *degenerate*
 in model M if I_M carries no discriminating information in M. The precise conditions
@@ -2303,6 +2429,8 @@ for each invariant are:
 
 **Source:** CRPT; from [`Dege-Inv` (L6.6.D1)](CRPT_OMEGA_TOWER_L6.md#degenerate-invariant).
 
+*Novelty Note.* **Basis (credited):** [`Dege-Inv` (L6.6.D1)](CRPT_OMEGA_TOWER_L6.md#degenerate-invariant). **New:** Degeneracy is structurally permitted: no axiom in the PA-* system requires all five classes to be non-empty. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 A degenerate invariant in M does not
 mean M is wrong or incomplete. It means M has a structural property that makes that
 invariant carry less information than in a maximally non-degenerate model. The
@@ -2317,6 +2445,8 @@ it is idle.
 
 **Source:** CRPT; from [`Dege-Inv` (L6.6.D1)](CRPT_OMEGA_TOWER_L6.md#degenerate-invariant) + [`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model).
 
+*Novelty Note.* **Basis (credited):** [`Dege-Inv` (L6.6.D1)](CRPT_OMEGA_TOWER_L6.md#degenerate-invariant) + [`F=∅` (L3.2.T2)](CRPT_OMEGA_TOWER_L3.md#class-f---in-every-deterministic-crpt-model). **New:** The empty-class status remark: a class is empty in model M when no element of 𝒰_M satisfies its defining combination of horizon predicates. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 The existence or non-existence of a model that is non-degenerate for every anchor
 invariant is not used as a premise in this anchor. Classification results in L6.4 are
 model-by-model and remain valid independently of any global existence claim.
@@ -2328,6 +2458,8 @@ model-by-model and remain valid independently of any global existence claim.
 **Synopsis:** The Classification Metatheorem: every CRPT model M has a well-defined six-class partition (by the Six-Class Partition theorem in L3.2), possibly degenerate (some classes empty), and this partition is the unique minimal bisimulation-invariant classification structure — no coarser classification captures strictly less information, and no finer classification is needed to express all bisimulation-invariant properties.
 
 **Source:** CRPT; from [`Dege-Inv` (L6.6.D1)](CRPT_OMEGA_TOWER_L6.md#degenerate-invariant) + [`RTD-NI` (L6.5.T4)](CRPT_OMEGA_TOWER_L6.md#regime-type-non-internalisability).
+
+*Novelty Note.* **Basis (credited):** [`Dege-Inv` (L6.6.D1)](CRPT_OMEGA_TOWER_L6.md#degenerate-invariant) + [`RTD-NI` (L6.5.T4)](CRPT_OMEGA_TOWER_L6.md#regime-type-non-internalisability). **New:** The Classification Metatheorem: every CRPT model M has a well-defined six-class partition (by the Six-Class Partition theorem in L3.2), possibly degenerate (some classes empty), and this partition is the unique minimal bisimulation-invariant classification structure — no coarser classification captures strictly less information, and no finer classification is needed to express all bisimulation-invariant properties. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 The degeneracy profile of any
 model M — computed by applying §L2.1–23 to M — is a *meta-level* object. No model M
@@ -2352,10 +2484,12 @@ within M. ∎
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L6.6.C1 | `ClassTable-Meta` | | **Novel** |
+| **Corollary** | L6.6.C1 | `ClassTable-Meta` | | **Derived** |
 **Synopsis:** The full model-classification table is a meta-level artifact: it classifies instantiations from outside, and by the degenerate-invariant result no single instantiation can generate the full table from within itself.
 
 **Source:** CRPT; from [`Dege-Inv` (L6.6.D1)](CRPT_OMEGA_TOWER_L6.md#degenerate-invariant).
+
+*Derivation:* composed from [`Dege-Inv` (L6.6.D1)](CRPT_OMEGA_TOWER_L6.md#degenerate-invariant); no content beyond the composition.
 
 The full model classification table is a meta-level artifact
 derived from this anchor. It classifies implementations and instantiations; no
@@ -2370,6 +2504,8 @@ implementation or instantiation can produce the full table from within itself.
 **Synopsis:** The Classification Refinement remark: the six-class partition can be refined by adding more horizon predicates (e.g., the ω-limit set, the orbit spectrum) to produce finer classifications with more classes. The six-class partition is minimal in the sense that removing any of H_S, H_I, H_O loses a bisimulation-invariant distinction.
 
 **Source:** CRPT; from [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification) + [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) + [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o).
+
+*Novelty Note.* **Basis (credited):** [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification) + [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s) + [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o). **New:** The Classification Refinement remark: the six-class partition can be refined by adding more horizon predicates (e.g., the ω-limit set, the orbit spectrum) to produce finer classifications with more classes. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
 
 The full degeneracy profile of known CRPT models is computed using only the constructs
 of this document. It is a derived meta-level artifact for understanding degeneracy

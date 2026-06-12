@@ -18,6 +18,8 @@ trajectory weighting, structural classification, and regime membership into a un
 
 **Source:** CRPT; from [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content).
 
+*Novelty Note.* **Basis (credited):** [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content). **New:** The Observable(y) predicate used in PA-Prod is the existential shadow of the path-valuation (PV) observable: PA-Prod's Observable Contract (OC-1/OC-2) guarantees every non-fixpoint ρ_M-step carries non-zero trajectory weight, so the behavioral signature PV(orbit(x)) is well-defined on all orbits in both ↓_M and ∞_M. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 The boolean predicate Observable(y)
 used in Axiom [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content) is the *existential shadow* of the PV component defined
 below. PA-Prod's Observable Contract (OC-1, OC-2) guarantees that every non-fixpoint
@@ -120,6 +122,8 @@ at a non-injective collapse point? Is the collapse ambiguous (indistinguishable)
 
 **Source:** CRPT; from the regime partition (`Reg-Strat` L2.2.D3).
 
+*Novelty Note.* **Basis (credited):** the imported foundations cited above. **New:** The regime-dependent observer uses different observation strategies for convergent and persistent elements: induction-based observation for ↓_M elements and coinduction-based observation for ∞_M elements. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 The function:
 ```
 D : 𝒰_M → {WF, NWF} 
@@ -145,6 +149,8 @@ from aperiodic ones (NWF).
 **Synopsis:** The observable triple 𝒪_M = (O_M, Gate_M, the orbit signature) is a formal characterisation of the observability structure inherent in model M. It is not an external measurement device — it reveals the model's own internal observability architecture. O_M specifies which elements are observable; Gate_M controls access between regimes; the orbit signature assigns comparable signatures to observable elements. Together they determine which elements can be distinguished by any query in the query signature.
 
 **Source:** CRPT; from [`PV-Obs` (L4.1.D2)](CRPT_OMEGA_TOWER_L4.md#path-valuation--weighted-trajectory-observable) + [`HC-Obs` (L4.1.D3)](CRPT_OMEGA_TOWER_L4.md#horizon-classifier--structural-observable) + [`RD-Obs` (L4.1.D4)](CRPT_OMEGA_TOWER_L4.md#regime-discriminator--persistence-observable).
+
+*Novelty Note.* **Basis (credited):** [`PV-Obs` (L4.1.D2)](CRPT_OMEGA_TOWER_L4.md#path-valuation--weighted-trajectory-observable) + [`HC-Obs` (L4.1.D3)](CRPT_OMEGA_TOWER_L4.md#horizon-classifier--structural-observable) + [`RD-Obs` (L4.1.D4)](CRPT_OMEGA_TOWER_L4.md#regime-discriminator--persistence-observable). **New:** The observable triple 𝒪_M = (O_M, Gate_M, the orbit signature) is a formal characterisation of the observability structure inherent in model M. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 
 The **observable triple** (formally,
@@ -183,6 +189,8 @@ residue of 𝒪 is exactly the (regime, canonical-form) datum recorded by the se
 
 **Source:** CRPT; from [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple) + [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content).
 
+*Novelty Note.* **Basis (credited):** [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple) + [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content). **New:** The observable triple 𝒪_M = (PV, H, D) is fully derived from prior definitions with no new axioms: PV from the path valuation (L4.3), H from the six-class horizon partition (L3.2), D from the regime partition (L2.2). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 The observable triple 𝒪 = (PV, H, D) is constructible from prior definitions without any new axioms:
 
 *Proof.* 
@@ -200,6 +208,8 @@ All three components are functions defined on previously established structures.
 **Synopsis:** The semantic projection is natural: for every model homomorphism Φ : M₁ → M₂, the square Sem(Φ) ∘ π_sem^{M₁} = π_sem^{M₂} ∘ Φ commutes up to ≃ — regimes map to regimes and canonical classes to canonical classes. This is the precise naturality content of the behavioral functor; it lives on the ≃-quotient category, where Φ_E and Φ_ρ supply exactly the two commutations needed.
 
 **Source:** CRPT; from [`Sem` (L3.3.D9)](CRPT_OMEGA_TOWER_L3.md#unified-semantic-domain-semm) + [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) + [`Reg-Nat` (L8.8.C1)](CRPT_OMEGA_TOWER_L8.md#naturality-of-regime-partition).
+
+*Novelty Note.* **Basis (credited):** [`Sem` (L3.3.D9)](CRPT_OMEGA_TOWER_L3.md#unified-semantic-domain-semm) + [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) + [`Reg-Nat` (L8.8.C1)](CRPT_OMEGA_TOWER_L8.md#naturality-of-regime-partition). **New:** The semantic projection is natural: for every model homomorphism Φ : M₁ → M₂, the square Sem(Φ) ∘ π_sem^{M₁} = π_sem^{M₂} ∘ Φ commutes up to ≃ — regimes map to regimes and canonical classes to canonical classes. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 For every homomorphism Φ : M₁ → M₂ ([`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂)) and every x ∈ 𝒰_{M₁}:
 ```
@@ -225,6 +235,8 @@ class of x maps into that of Φ(x). Both components of π_sem commute; the squar
 
 **Source:** CRPT; from [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple) + [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) + [`Obs-Nat` (L4.1.T2)](CRPT_OMEGA_TOWER_L4.md#naturality-of-the-semantic-residue).
 
+*Novelty Note.* **Basis (credited):** [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple) + [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) + [`Obs-Nat` (L4.1.T2)](CRPT_OMEGA_TOWER_L4.md#naturality-of-the-semantic-residue). **New:** What model homomorphisms preserve of the observable triple, component by component: the regime D always; the canonical class up to ≃ always; the horizon class H and the path valuation PV in general not — no homomorphism condition constrains them, and ≃-equivalent elements already differ in H within a single model. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 For every homomorphism Φ : M₁ → M₂ and x ∈ 𝒰_{M₁}:
 
 (i) **D is preserved:** D(Φ(x)) = D(x) — regimes map to regimes ([`Reg-Nat` (L8.8.C1)](CRPT_OMEGA_TOWER_L8.md#naturality-of-regime-partition)).
@@ -243,7 +255,7 @@ model's own step weighting w ([`Step-W` (L4.3.D2)](CRPT_OMEGA_TOWER_L4.md#step-w
 weight condition; a target model re-weighting the image steps changes PV while
 remaining a homomorphism. *Witness:* identity on the universe with w₂ ≠ w₁.
 
-*Proof.* Clauses (i) and (ii) are `Reg-Nat` (L8.8.C1) and `Obs-Nat` (L4.1.T2) respectively; clauses (iii) and (iv) are established by their stated witnesses (the collapse quotient for H; re-weighting for PV). ∎
+*Proof.* Clauses (i) and (ii) are [`Reg-Nat` (L8.8.C1)](CRPT_OMEGA_TOWER_L8.md#naturality-of-regime-partition) and [`Obs-Nat` (L4.1.T2)](CRPT_OMEGA_TOWER_L4.md#naturality-of-the-semantic-residue) respectively; clauses (iii) and (iv) are established by their stated witnesses (the collapse quotient for H; re-weighting for PV). ∎
 
 *Consequence.* Expectations that homomorphisms transport the full observable triple are
 false by design: the transportable content is exactly the semantic residue (D, canonical
@@ -252,7 +264,7 @@ class) — the natural part ([`Obs-Nat` (L4.1.T2)](CRPT_OMEGA_TOWER_L4.md#natura
 ### Coalgebraic Terminology & Origins
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L4.1.R2 | `Coal-Term` |  | **Reframed** |
+| **Remark** | L4.1.R2 | `Coal-Term` |  | **Specialized** |
 **Synopsis:** This remark explains the three alternative names for the observable triple and why 'observable triple' is preferred. 'Orbit characterisation triple' emphasises the orbit-classification function. 'Behavioral signature' emphasises the behavioral identification role. 'observable triple' is preferred because it captures the epistemological role: it represents what can be known about an element by a projection-based observer.
 
 **Source:** Rutten [2000] *Universal Coalgebra*; De Nicola & Hennessy [1984] *Testing Equivalences for Processes*; applied to [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple).
@@ -273,10 +285,12 @@ Alternative terminology (all equivalent):
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L4.1.R3 | `Disc-Obs` | | **Novel** |
+| **Remark** | L4.1.R3 | `Disc-Obs` | | **Derived** |
 **Synopsis:** Reading the observable triple as a discernibility extractor.
 
 **Source:** CRPT; from [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple).
+
+*Derivation:* composed from [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple); no content beyond the composition.
 
 The observable triple 𝒪 extracts the
 **maximally discernible information** from an element's orbit: trajectory weight (PV),
@@ -304,6 +318,8 @@ construction requires the enriched substrate (𝒰, →_ρ, →_σ, 𝒯).
 
 **Source:** CRPT; from the regime partition (`Reg-Strat` L2.2.D3) + [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple).
 
+*Novelty Note.* **Basis (credited):** [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple). **New:** The gateway GW(x) predicate identifies elements that serve as passage points between the convergent regime ↓_M and the persistent regime ∞_M. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 
 x ∈ μT_{ρ,M} is a *gateway* if:
 ```
@@ -328,6 +344,8 @@ consequence of them. It holds vacuously when ∞_M = ∅.
 
 **Source:** CRPT; from [`GW` (L4.2.D1)](CRPT_OMEGA_TOWER_L4.md#gateway) + [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization).
 
+*Novelty Note.* **Basis (credited):** [`GW` (L4.2.D1)](CRPT_OMEGA_TOWER_L4.md#gateway) + [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization). **New:** Gateway reachability (a →_σ property) versus PA-Reach (a ρ_M property). **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 GR is a →_σ-connectivity property
 and is distinct from PA-Reach. PA-Reach (L1.3) is a projection property: it asserts
 that every persistent ρ_M-orbit has a canonically representable asymptotic destination
@@ -343,6 +361,8 @@ Cross-regime reachability necessarily uses →_σ rather than →_ρ, because �
 **Synopsis:** The regime connectivity theorem: under Gateway Reachability, every persistent element is reachable from some convergent element via a gateway. The two regimes are not completely separate worlds — there is always a →_σ-path from the well-founded side to any persistent element. This is a structural property of →_σ, independent of PA-Reach (which constrains ρ_M on ∞_M).
 
 **Source:** CRPT; from [`GW` (L4.2.D1)](CRPT_OMEGA_TOWER_L4.md#gateway) + [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization).
+
+*Novelty Note.* **Basis (credited):** [`GW` (L4.2.D1)](CRPT_OMEGA_TOWER_L4.md#gateway) + [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization). **New:** The regime connectivity theorem: under Gateway Reachability, every persistent element is reachable from some convergent element via a gateway. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 Under Gateway Reachability, μT_{ρ,M} and νT_{ρ,M} are
 →_σ*-connected: for every x ∈ μT_{ρ,M} \ Fix(ρ_M), there is a →_σ*-path from x to νT_{ρ,M}.
@@ -405,6 +425,8 @@ The empty history ε_x has x₀ = x and n = 0.
 
 **Source:** Kuich & Salomaa [1986] — weighted path valuation; reframed over [`FRH` (L4.3.D3)](CRPT_OMEGA_TOWER_L4.md#finite-reduction-histories) + [`Step-W` (L4.3.D2)](CRPT_OMEGA_TOWER_L4.md#step-weighting).
 
+*Reframing Note.* **Source form:** weighted path valuation over arbitrary runs of an automaton (Kuich & Salomaa). **CRPT form:** the valuation PV over the finite reduction histories ℋ_finite(x) of an element. **The delta:** the path space is the element's own reduction tree. **Justification:** mathematical — anchoring the path space at x turns the valuation into an observable *of the element*, which is what the observable triple consumes.
+
 For x ∈ μT_{ρ,M}:
 ```
 PV : ℋ_finite(x) → V
@@ -423,6 +445,8 @@ PV is the *multiplicative accumulation of step-weights* along the history.
 
 **Source:** CRPT; from [PA-WN (L1.2.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn--weak-normalisation) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m) + semiring valuations (Kuich & Salomaa [1986]).
 
+*Novelty Note.* **Basis (credited):** [PA-WN (L1.2.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn--weak-normalisation) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m). **New:** The Projection Valuation Theorem: for any semiring V and step-weighting function w, the projection valuation PV_M assigns to each element x ∈ ↓_M the sum PV_M(x) = Σ_{h ∈ ℋ_finite(x)} prod_i(w(hᵢ)) over all finite reduction histories from x. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 Under PA-WN: PV is well-defined and
 satisfies **(PV-mult):** PV(h₁ ∘ h₂) = PV(h₁) · PV(h₂) for all composable h₁, h₂.
 
@@ -439,10 +463,12 @@ by associativity of · in V. ✓ ∎
 ### PV-1C: Orbit Valuation
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L4.3.C1 | `PV1C` |  | **Novel** |
+| **Corollary** | L4.3.C1 | `PV1C` |  | **Derived** |
 **Synopsis:** The projection valuation corollary: the projection valuation PV_M is the unique numerical function on 𝒰_M that is (1) invariant under ≃_M, (2) strictly monotone under the projection operator on ↓_M, and (3) constant on persistent orbits after stabilization. These three conditions characterise it up to rescaling.
 
 **Source:** CRPT; from [`PV1` (L4.3.T1)](CRPT_OMEGA_TOWER_L4.md#pv-1-wf-existence) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m).
+
+*Derivation:* composed from [`PV1` (L4.3.T1)](CRPT_OMEGA_TOWER_L4.md#pv-1-wf-existence) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m); no content beyond the composition.
 
 Under PA-WN and C1–C2
 ([`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m) (ρ_M deterministic): define PV_c : μT_{ρ,M} → V by
@@ -480,6 +506,8 @@ For x ∈ νT_{ρ,M}:
 
 **Source:** CRPT; from [`PV-Obs` (L4.1.D2)](CRPT_OMEGA_TOWER_L4.md#path-valuation--weighted-trajectory-observable); topological extension.
 
+*Novelty Note.* **Basis (credited):** [`PV-Obs` (L4.1.D2)](CRPT_OMEGA_TOWER_L4.md#path-valuation--weighted-trajectory-observable). **New:** The infinite projection valuation PV∞(h) := lim_{n→∞} PV(h|_n) extends the projection valuation to infinite reduction histories by taking the limit of finite-prefix valuations in a topologised semiring. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 For x ∈ νT_{ρ,M} with SC-1/2/3, and a
 semiring V with a topology (metric or order) under which limits are defined:
 ```
@@ -494,6 +522,8 @@ where h|_n is the finite prefix of h of length n.
 **Synopsis:** Existence of the persistent valuation: under PA-NWF + PA-Prod + SC-1/2/3, the limit valuation PV∞(h) exists and is well-defined for every infinite history h ∈ ℋ_infinite(x). The finite-prefix valuations PV(h|_n) form a determined sequence whose stabilisation is guaranteed by the scope conditions; PV∞ is its limit. This is the persistent counterpart of the finite-history valuation [`PV1` (L4.3.T1)](CRPT_OMEGA_TOWER_L4.md#pv-1-wf-existence).
 
 **Source:** CRPT; from [`PV∞` (L4.3.D6)](CRPT_OMEGA_TOWER_L4.md#pv--nwf-valuation) + [PA-NWF (L1.2.Ax4)](CRPT_OMEGA_TOWER_L1.md#pa-nwf--non-well-foundedness--divergence-existence) + [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content).
+
+*Novelty Note.* **Basis (credited):** [`PV∞` (L4.3.D6)](CRPT_OMEGA_TOWER_L4.md#pv--nwf-valuation) + [PA-NWF (L1.2.Ax4)](CRPT_OMEGA_TOWER_L1.md#pa-nwf--non-well-foundedness--divergence-existence) + [PA-Prod (L1.2.Ax6)](CRPT_OMEGA_TOWER_L1.md#pa-prod--productivity--guardedness--observable-content). **New:** Existence of the persistent valuation: under PA-NWF + PA-Prod + SC-1/2/3, the limit valuation PV∞(h) exists and is well-defined for every infinite history h ∈ ℋ_infinite(x). **Why it does not follow:** the dual side lacks the original's machinery, so the duality is constructed rather than transported; the proof in the body builds the replacement.
 
 Under PA-NWF + PA-Prod + SC-1/2/3:
 PV∞(h) exists and is well-defined for all h ∈ ℋ_infinite(x).
@@ -512,6 +542,8 @@ semiring's topology. ✓ ∎
 **Synopsis:** The projection valuation duality theorem: the valuation of a convergent element factors through the valuation of its canonical form — PV_M(x) = w-path(x, CNF_M(x)) · PV_M^{fix}(CNF_M(x)), where w-path is the accumulated weight of the canonical reduction path and PV_M^{fix} is the valuation of the fixpoint's own (constant) history. Element valuation = path contribution times canonical-form contribution.
 
 **Source:** CRPT; from [`PV-WF` (L4.3.D4)](CRPT_OMEGA_TOWER_L4.md#projection-valuation--wf) + [`Step-W` (L4.3.D2)](CRPT_OMEGA_TOWER_L4.md#step-weighting) + [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection).
+
+*Novelty Note.* **Basis (credited):** [`PV-WF` (L4.3.D4)](CRPT_OMEGA_TOWER_L4.md#projection-valuation--wf) + [`Step-W` (L4.3.D2)](CRPT_OMEGA_TOWER_L4.md#step-weighting) + [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection). **New:** The projection valuation duality theorem: the valuation of a convergent element factors through the valuation of its canonical form — PV_M(x) = w-path(x, CNF_M(x)) · PV_M^{fix}(CNF_M(x)), where w-path is the accumulated weight of the canonical reduction path and PV_M^{fix} is the valuation of the fixpoint's own (constant) history. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 For x ∈ ↓_M with canonical form f := CNF_M(x) reached along the canonical reduction
 path x →_ρ ρ_M(x) →_ρ ⋯ →_ρ ρ_M^{d_M(x)}(x) = f:
@@ -549,6 +581,8 @@ canonical path is the determined ρ_M-orbit. ∎
 
 **Source:** CRPT; from [PA-WN (L1.2.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn--weak-normalisation) + [PA-NWF (L1.2.Ax4)](CRPT_OMEGA_TOWER_L1.md#pa-nwf--non-well-foundedness--divergence-existence); background in WF rewriting (Baader & Nipkow [1998]) and non-well-founded sets (Aczel [1988]).
 
+*Novelty Note.* **Basis (credited):** [PA-WN (L1.2.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-wn--weak-normalisation) + [PA-NWF (L1.2.Ax4)](CRPT_OMEGA_TOWER_L1.md#pa-nwf--non-well-foundedness--divergence-existence). **New:** PA-WN and PA-NWF are mutually exclusive only when stated as global axioms over an undifferentiated substrate; in regime-stratified models they coexist by scope, PA-WN ranging over the convergent regime ↓_M and PA-NWF over the persistent regime ∞_M. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 PA-WN and PA-NWF are **mutually exclusive when both are stated as global axioms
 over an undifferentiated substrate without regime stratification.** That is:
 - In pure WF models (∞_M = ∅): PA-WN holds globally, PA-NWF is false.
@@ -581,7 +615,7 @@ Pre_ρ(X) := { x ∈ 𝒰_M | ρ_M(x) ∈ X }.
 ### Regime Fixpoint Operators
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L4.4.D2 | `Reg-FPO` |  | **Reframed** |
+| **Definition** | L4.4.D2 | `Reg-FPO` |  | **Specialized** |
 **Synopsis:** The regime fixpoint operators T_conv(X) := Fix(ρ_M) ∪ Pre_ρ(X) and T_pers(X) := (𝒰_M \ Fix(ρ_M)) ∩ Pre_ρ(X) are monotone transformers on (𝒫(𝒰_M), ⊆) whose least and greatest fixpoints reconstruct the convergent and persistent regimes.
 
 **Source:** Tarski [1955] — lattice fixpoint operators; applied to [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification).
@@ -609,7 +643,7 @@ preserves inclusion. Hence T_conv(X) ⊆ T_conv(Y) and T_pers(X) ⊆ T_pers(Y). 
 ### Regimes as Least/Greatest Fixpoints
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L4.4.T1 | `Reg-FP` |  | **Reframed** |
+| **Theorem** | L4.4.T1 | `Reg-FP` |  | **Specialized** |
 **Synopsis:** Regimes as fixpoints: the convergent regime ↓_M is the least fixpoint μT_conv and the persistent regime ∞_M is the greatest fixpoint νT_pers of the regime operators. This gives the regime partition an order-theoretic (μ/ν) characterization.
 
 **Source:** Tarski [1955] — least/greatest fixpoints (μ/ν); applied to [`Reg-FPO` (L4.4.D2)](CRPT_OMEGA_TOWER_L4.md#regime-fixpoint-operators), characterizing the regimes.
@@ -649,7 +683,7 @@ for all n, so x ∈ O. Hence X ⊆ O. Therefore O = νT_pers. ∎
 ### RP-1 / CP-1 Convention
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L4.4.D3 | `RP-CP1` |  | **Reframed** |
+| **Definition** | L4.4.D3 | `RP-CP1` |  | **Specialized** |
 **Synopsis:** The RP-1/CP-1 conventions name the two fixpoint disciplines of projection reasoning: RP-1 is convergent-regime least-fixpoint reasoning through μT_conv, and CP-1 is persistent-regime greatest-fixpoint reasoning through νT_pers.
 
 **Source:** Cousot & Cousot [1977] POPL — μ/ν fixpoint-reasoning conventions; applied to [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection).
@@ -660,7 +694,7 @@ for all n, so x ∈ O. Hence X ⊆ O. Therefore O = νT_pers. ∎
 ### RP-2 / CP-2 Convention
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Definition** | L4.4.D4 | `RP-CP2` |  | **Reframed** |
+| **Definition** | L4.4.D4 | `RP-CP2` |  | **Specialized** |
 **Synopsis:** The RP-2/CP-2 conventions name the two proof principles: RP-2 is induction on derivation height over μT_{ρ,M}, and CP-2 is co-induction via Park's Lemma on T_pers (P ⊆ T_pers(P) ⟹ P ⊆ νT_pers).
 
 **Source:** Cousot & Cousot [1977] POPL — induction/coinduction conventions; Park [1981] for the coinduction principle; applied to [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection).
@@ -671,7 +705,7 @@ for all n, so x ∈ O. Hence X ⊆ O. Therefore O = νT_pers. ∎
 ### DU-1: Fixpoint Duality
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Theorem** | L4.4.T2 | `FP-Dual` |  | **Reframed** |
+| **Theorem** | L4.4.T2 | `FP-Dual` |  | **Specialized** |
 **Synopsis:** Fixpoint duality (DU-1): convergent-regime recursive projection builds least fixpoints μF, while persistent-regime co-recursive projection builds greatest fixpoints νF; the two are order-duals (smallest pre-fixpoint vs largest post-fixpoint) by Knaster–Tarski. WF reasoning is least-fixpoint reasoning; NWF reasoning is greatest-fixpoint reasoning.
 
 **Source:** Tarski [1955], *A lattice-theoretical fixpoint theorem*; Cousot & Cousot [1977] POPL — μ/ν fixpoint duality; applied to [`Reg-FP` (L4.4.T1)](CRPT_OMEGA_TOWER_L4.md#regimes-as-leastgreatest-fixpoints).
@@ -715,6 +749,8 @@ the complete lattice (𝒫(𝒰_M), ⊆). ∎
 **Synopsis:** PV duality (DU-3): the WF path valuation PV (over finite histories) and the NWF limit valuation PV∞ (over infinite histories) are one construction at different granularities — PV∞(h) = lim_{n→∞} PV(h|_n). Finite and persistent valuation coincide in the limit.
 
 **Source:** Kuich & Salomaa [1986], *Semirings, Automata and Languages*; Eilenberg [1974], *Automata, Languages and Machines* Vol. A — formal-power-series valuations; applied to [`PV-WF` (L4.3.D4)](CRPT_OMEGA_TOWER_L4.md#projection-valuation--wf).
+
+*Novelty Note.* **Basis (credited):** Kuich & Salomaa [1986], *Semirings, Automata and Languages*; [`PV-WF` (L4.3.D4)](CRPT_OMEGA_TOWER_L4.md#projection-valuation--wf). **New:** PV duality (DU-3): the WF path valuation PV (over finite histories) and the NWF limit valuation PV∞ (over infinite histories) are one construction at different granularities — PV∞(h) = lim_{n→∞} PV(h|_n). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 PV∞ = lim PV ([`PV-Dual` (L4.3.T3)](CRPT_OMEGA_TOWER_L4.md#pv-duality--du-3) above). The
 WF path valuation PV ([`PV1` (L4.3.T1)](CRPT_OMEGA_TOWER_L4.md#pv-1-wf-existence)) and NWF limit valuation PV∞ ([`PV2` (L4.3.T2)](CRPT_OMEGA_TOWER_L4.md#pv-2-nwf-existence)) are
@@ -768,6 +804,8 @@ d_M(ρ_M(x)) = d_M(x) − 1.
 
 **Source:** CRPT; from [`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient).
 
+*Novelty Note.* **Basis (credited):** [`CNF=CR` (L2.5.T2)](CRPT_OMEGA_TOWER_L2.md#cnf-fiber--church-rosser-quotient). **New:** Orbit non-injectivity beyond the horizon: for j > d_M(x), ρ_M^j collapses x to its canonical fixpoint, so the j-step pre-image of x is exactly its NFC class NFC_M(CFix(ρ_M)(x)). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 Under PA-WN + PA-Conf:
 for j > d_M(x): {y ∈ μT_{ρ,M} | ρ_M^j(y) = ρ_M^j(x)} = NFC_M(CFix(ρ_M)(x)).
 
@@ -785,6 +823,8 @@ elements within it. ∎
 **Synopsis:** The inversion horizon H(x) := d_M(x) is the depth beyond which ρ_M^j cannot invert x: for every j > H(x), x's entire NFC class maps to a single point. It marks where one-step invertibility is irrecoverably lost.
 
 **Source:** CRPT; from [`PD4` (L4.5.T1)](CRPT_OMEGA_TOWER_L4.md#pd-4-orbit-non-injectivity-beyond-horizon).
+
+*Novelty Note.* **Basis (credited):** [`PD4` (L4.5.T1)](CRPT_OMEGA_TOWER_L4.md#pd-4-orbit-non-injectivity-beyond-horizon). **New:** The inversion horizon H(x) := d_M(x) is the depth beyond which ρ_M^j cannot invert x: for every j > H(x), x's entire NFC class maps to a single point. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 Under PA-WN + PA-Conf:
 H(x) := d_M(x) is the inversion horizon of x ∈ μT_{ρ,M}. For j > H(x):
@@ -807,10 +847,12 @@ H(x) = d_M(x) ∈ ℕ for all x ∈ μT_{ρ,M}.
 ### IH-1.2
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L4.5.C3 | `IH1.2` |  | **Novel** |
+| **Corollary** | L4.5.C3 | `IH1.2` |  | **Derived** |
 **Synopsis:** The structural horizon coincides with the one-step inversion ambiguity: H_S(x) = ⊤ iff x is not uniquely recoverable from ρ_M(x). The ramification locus is exactly where one-step projection loses injectivity.
 
 **Source:** CRPT; from [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s); background in Baader & Nipkow [1998], Park [1981].
+
+*Derivation:* composed from [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s); no content beyond the composition.
 
 H_S(x) = ⊤ iff x is not uniquely recoverable from
 ρ_M(x): the one-step inversion ambiguity is precisely the ramification locus.
@@ -825,6 +867,8 @@ H_S(x) = ⊤ iff x is not uniquely recoverable from
 **Synopsis:** The Canonical Period CPD(σ) is the minimal period of a periodic persistent orbit in orbit class σ. For SC-1 elements, CPD(σ) is the first p ≥ 1 such that ρ_M^p(x) ≃_M x for x in class σ. CPD generalises derivation height d_M to the persistent regime.
 
 **Source:** CRPT; from [`SC4-EP` (L3.3.T1)](CRPT_OMEGA_TOWER_L3.md#sc-4--eventual-periodicity) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m).
+
+*Novelty Note.* **Basis (credited):** [`SC4-EP` (L3.3.T1)](CRPT_OMEGA_TOWER_L3.md#sc-4--eventual-periodicity) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m). **New:** The Canonical Period CPD(σ) is the minimal period of a periodic persistent orbit in orbit class σ. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 For x ∈ νT_{ρ,M} satisfying SC-4,
 let N(x) := min{N ∈ ℕ | ∃p ≥ 1 : ∀n ≥ N : [ρ_M^{n+p}(x)]_≈ = [ρ_M^n(x)]_≈} (the
@@ -842,6 +886,8 @@ index. For Type EP elements (SC-4 ∧ ¬SC-1), CPD(x) ≥ 2 ([`OTC` (L6.2.D1)](C
 **Synopsis:** The canonical period is finite: under PA-NWF + PA-Bisim + SC-4, CPD(x) ∈ ℕ for every x in the persistent regime satisfying SC-4. The bisimulation-quotient orbit is eventually periodic with a finite minimal period.
 
 **Source:** CRPT; from [`CPD` (L4.5.D1)](CRPT_OMEGA_TOWER_L4.md#co-projection-depth-cpd) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set).
+
+*Novelty Note.* **Basis (credited):** [`CPD` (L4.5.D1)](CRPT_OMEGA_TOWER_L4.md#co-projection-depth-cpd) + [PA-Bisim (L1.3.Ax1)](CRPT_OMEGA_TOWER_L1.md#pa-bisim--bisimulation-congruence) + [`SC-4-Def` (L3.3.D5)](CRPT_OMEGA_TOWER_L3.md#sc-4-finite-symbolic-orbit-bounded-ω-limit-set). **New:** The canonical period is finite: under PA-NWF + PA-Bisim + SC-4, CPD(x) ∈ ℕ for every x in the persistent regime satisfying SC-4. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 Under PA-NWF + PA-Bisim + SC-4:
 for all x ∈ νT_{ρ,M} satisfying SC-4, CPD(x) ∈ ℕ.
@@ -862,6 +908,8 @@ and finite. N(x) exists in ℕ by [`SC4-EP` (L3.3.T1)](CRPT_OMEGA_TOWER_L3.md#sc
 **Synopsis:** The Canonical Inversion Horizon CIH(x) is the derivation height at which the orbit of x reaches its canonical inversion point. Elements with CIH(x) = 1 are at the boundary between the convergent and persistent regimes; those with larger CIH have a longer convergent prefix before entering their persistent cycle.
 
 **Source:** CRPT; from [`CPD` (L4.5.D1)](CRPT_OMEGA_TOWER_L4.md#co-projection-depth-cpd) + [`SC4-EP` (L3.3.T1)](CRPT_OMEGA_TOWER_L3.md#sc-4--eventual-periodicity) + [`CPD-Fin` (L4.5.T3)](CRPT_OMEGA_TOWER_L4.md#cpd-1-co-projection-depth-is-finite).
+
+*Novelty Note.* **Basis (credited):** [`CPD` (L4.5.D1)](CRPT_OMEGA_TOWER_L4.md#co-projection-depth-cpd) + [`SC4-EP` (L3.3.T1)](CRPT_OMEGA_TOWER_L3.md#sc-4--eventual-periodicity) + [`CPD-Fin` (L4.5.T3)](CRPT_OMEGA_TOWER_L4.md#cpd-1-co-projection-depth-is-finite). **New:** The Canonical Inversion Horizon CIH(x) is the derivation height at which the orbit of x reaches its canonical inversion point. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 Under PA-NWF + PA-Bisim + SC-4:
 CIH(x) := N(x) + CPD(x) ∈ ℕ, and for all n ≥ CIH(x):
@@ -902,6 +950,8 @@ WF projections are RP-1 (least-fixpoint based) and NWF projections are CP-1
 **Synopsis:** The self-projection theorem: the observable triple 𝒪_M, when treated as an element of a suitable CRPT model of observable triples, is a fixed point of the projection operator on that model. The observer structure is self-consistent: observing the observer produces the same observer. This is the first instance of CRPT's self-referential closure, culminating in Lω.
 
 **Source:** CRPT; from [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple).
+
+*Novelty Note.* **Basis (credited):** [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple). **New:** The self-projection theorem: the observable triple 𝒪_M, when treated as an element of a suitable CRPT model of observable triples, is a fixed point of the projection operator on that model. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 For any two projection operators proj₁, proj₂
 each derived from PA-WN (RP-1) or PA-NWF (CP-1), the composition proj₂ ∘ proj₁
@@ -949,6 +999,8 @@ In all four cases the composition is a valid projection operator. ∎
 
 **Source:** CRPT; from [`SP1` (L4.6.T1)](CRPT_OMEGA_TOWER_L4.md#sp-1-closure).
 
+*Novelty Note.* **Basis (credited):** [`SP1` (L4.6.T1)](CRPT_OMEGA_TOWER_L4.md#sp-1-closure). **New:** Self-Projection Theorem SP2: the observable triple 𝒪_M, when regarded as an element of the meta-observer model, satisfies the observer consistency condition with respect to its own classification. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 For any projection operator proj derived from
 PA-WN or PA-NWF: ∃x ∈ 𝒰_M : proj(proj(x)) ≈ proj(x).
 
@@ -963,6 +1015,8 @@ proj(xₖ) = xₖ. NWF case: PA-CoInd gives νF.(νF.x) ≃_M νF.x (maximality)
 **Synopsis:** An admissible encoding Enc : Terms(CRPT) × 𝒰_M → 𝒰_M represents CRPT-computable terms as substrate elements, subject to injectivity on terms, WF and NWF faithfulness (it reduces to the term's projection result in each regime), and compositionality.
 
 **Source:** CRPT; from [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m).
+
+*Novelty Note.* **Basis (credited):** [`Rec-Proj` (L2.1.D4)](CRPT_OMEGA_TOWER_L2.md#recursive-projection) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m). **New:** An admissible encoding Enc : Terms(CRPT) × 𝒰_M → 𝒰_M represents CRPT-computable terms as substrate elements, subject to injectivity on terms, WF and NWF faithfulness (it reduces to the term's projection result in each regime), and compositionality. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 An *admissible encoding* is a function
 Enc : Terms(CRPT) × 𝒰_M → 𝒰_M where Terms(CRPT) is the set of CRPT-computable
@@ -988,6 +1042,8 @@ terms (built from variables, ρ_M, composition, and fixpoint constructors), sati
 
 **Source:** CRPT; from [`Enc` (L4.6.D1)](CRPT_OMEGA_TOWER_L4.md#admissible-encoding) + [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple).
 
+*Novelty Note.* **Basis (credited):** [`Enc` (L4.6.D1)](CRPT_OMEGA_TOWER_L4.md#admissible-encoding) + [`Obs-Triple` (L4.1.D5)](CRPT_OMEGA_TOWER_L4.md#coalgebraic-observable-triple). **New:** Self-Projection Theorem SP3: under the encoding Enc, the image Enc(𝒪_M) is a fixed point of the projection operator on M'. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 Assuming an admissible encoding
 Enc ([`Enc` (L4.6.D1)](CRPT_OMEGA_TOWER_L4.md#admissible-encoding)): for every CRPT-computable projection operator proj, there
 exists c_proj ∈ 𝒰_M such that for all x ∈ 𝒰_M: ρ_M*(Enc(c_proj, x)) ≃_M proj(x).
@@ -1004,6 +1060,8 @@ gives the infinite path approximating proj(x). Compositions: Enc-4. ∎
 **Synopsis:** SP-3 holds as a theorem under the explicit Enc (encoding) hypothesis.
 
 **Source:** CRPT; from [`SP1` (L4.6.T1)](CRPT_OMEGA_TOWER_L4.md#sp-1-closure).
+
+*Novelty Note.* **Basis (credited):** [`SP1` (L4.6.T1)](CRPT_OMEGA_TOWER_L4.md#sp-1-closure). **New:** SP-3 holds as a theorem under the explicit Enc (encoding) hypothesis. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
 
 SP-3 is a theorem under the explicit Enc hypothesis. Enc is not guaranteed
 by PA-* axioms; it is an additional realization structure (analogous to Gödel numbering).
@@ -1025,6 +1083,8 @@ Enc is verified for λ-calculus (Church encoding), ZFC (ordinal coding), and coa
 
 **Source:** CRPT; from [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m).
 
+*Novelty Note.* **Basis (credited):** [`ρ_M` (L2.1.D1)](CRPT_OMEGA_TOWER_L2.md#projection-operator-ρ_m). **New:** A perturbation of the projection operator ρ_M is a map ρ'_M satisfying C1–C2 that differs from ρ_M at only finitely many points. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 A *perturbation* of ρ_M is a function
 ρ'_M : 𝒰_M → 𝒰_M satisfying C1 and C2, with
 |{x ∈ 𝒰_M | ρ'_M(x) ≠ ρ_M(x)}| < ∞ (finitely many points differ).
@@ -1036,6 +1096,8 @@ A *perturbation* of ρ_M is a function
 **Synopsis:** A substrate has the Coherent Perturbation Existence Property (CPEP) if every ρ_M-perturbation leaves the persistent canonical orbit invariant CNF∞ unchanged — i.e. no finite perturbation of ρ_M is detectable in the orbit tails of the persistent regime.
 
 **Source:** CRPT; from [`Perturb` (L4.7.D1)](CRPT_OMEGA_TOWER_L4.md#ρ_m-perturbation) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient).
+
+*Novelty Note.* **Basis (credited):** [`Perturb` (L4.7.D1)](CRPT_OMEGA_TOWER_L4.md#ρ_m-perturbation) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient). **New:** A substrate has the Coherent Perturbation Existence Property (CPEP) if every ρ_M-perturbation leaves the persistent canonical orbit invariant CNF∞ unchanged — i.e. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 A substrate (𝒰_M, →_ρ, →_σ) satisfies the
 *Coherent Perturbation Existence Property* (CPEP) if for every ρ_M-perturbation ρ'_M:
@@ -1049,6 +1111,8 @@ perturbation-stable).
 **Synopsis:** CPEP independence: the Coherent Perturbation Extension Property is independent of the PA-* axioms — neither CPEP nor ¬CPEP is provable from PA-WN…PA-Reach. Witnessed by two models (M_cohere satisfying CPEP, M_absorb failing it) that both satisfy all PA-* axioms.
 
 **Source:** CRPT; from [`CPEP` (L4.7.D2)](CRPT_OMEGA_TOWER_L4.md#cpep); independence via the M_cohere / M_absorb countermodels.
+
+*Novelty Note.* **Basis (credited):** [`CPEP` (L4.7.D2)](CRPT_OMEGA_TOWER_L4.md#cpep). **New:** CPEP independence: the Coherent Perturbation Extension Property is independent of the PA-* axioms — neither CPEP nor ¬CPEP is provable from PA-WN…PA-Reach. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 CPEP is not provable from PA-WN
 through PA-Reach, and ¬CPEP is not provable from them either. There exist substrates
@@ -1098,6 +1162,8 @@ CPEP holds trivially. ✓ ∎
 
 **Source:** CRPT; from [`Perturb` (L4.7.D1)](CRPT_OMEGA_TOWER_L4.md#ρ_m-perturbation) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient).
 
+*Novelty Note.* **Basis (credited):** [`Perturb` (L4.7.D1)](CRPT_OMEGA_TOWER_L4.md#ρ_m-perturbation) + [`CNF∞-Def` (L3.3.D6)](CRPT_OMEGA_TOWER_L3.md#canonical-orbit-invariant-cnf_m-ω-limit-quotient). **New:** A substrate is *reflective* if every non-fixpoint convergent element admits a coherent perturbation into the persistent regime whose persistent canonical form CNF∞ matches its convergent canonical form; it is *absorbing* if no such perturbation exists. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 A substrate is *reflective* if for every
 x ∈ μT_{ρ,M} \ Fix(ρ_M) there exists a perturbation x →_σ* x' ∈ νT_{ρ,M} such that
 CNF∞_M(x') = [CFix(ρ_M)(x)]_≈. It is *absorbing* if for all such perturbations:
@@ -1110,6 +1176,8 @@ CNF∞_M(x') ≠ [CFix(ρ_M)(x)]_≈.
 **Synopsis:** The reflective/absorbing dichotomy determines CPEP: a reflective substrate satisfies CPEP, an absorbing substrate fails it, and mixed substrates satisfy only partial CPEP (the ∀x condition fails). This links the perturbation-propagation classification to the coherent-perturbation property.
 
 **Source:** CRPT; from [`Refl-Abs-D` (L4.7.D3)](CRPT_OMEGA_TOWER_L4.md#reflectiveabsorbing) + [`CPEP` (L4.7.D2)](CRPT_OMEGA_TOWER_L4.md#cpep).
+
+*Novelty Note.* **Basis (credited):** [`Refl-Abs-D` (L4.7.D3)](CRPT_OMEGA_TOWER_L4.md#reflectiveabsorbing) + [`CPEP` (L4.7.D2)](CRPT_OMEGA_TOWER_L4.md#cpep). **New:** The reflective/absorbing dichotomy determines CPEP: a reflective substrate satisfies CPEP, an absorbing substrate fails it, and mixed substrates satisfy only partial CPEP (the ∀x condition fails). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 A substrate is *reflective* if
 ρ'_M perturbations propagate to affect the orbit tails; *absorbing* if perturbations

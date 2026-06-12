@@ -55,6 +55,8 @@ a unique pair (t₁, t₂) with t = (t₁ · t₂). *Proof.* By the inductive de
 
 **Source:** CRPT; left-canonical reduction strategy (Baader & Nipkow [1998] §2.1).
 
+*Novelty Note.* **Basis (credited):** the imported foundations cited above. **New:** The canonical projection on FMA(Q_M) is defined by: atoms map to themselves (fixed points), and a non-atomic word maps to the word with its **last** atom stripped, so iterating converges to the **first** (leftmost) atom. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 *ARS standard name:* reduction strategy (Baader & Nipkow L1.2 Def. 2.1.19); proved
 to be the abstraction function on FMA(A) in [`Lift-Compat` (L8.3.T4)](CRPT_OMEGA_TOWER_L8.md#lift-of-a-crpt-model-is-crpt-compatible) below.
 ```
@@ -73,6 +75,8 @@ The canonical form of a word is therefore its first (leftmost) atom: CFix(ρ_FMA
 
 **Source:** CRPT; from [`FMA-Proj` (L8.1.D2)](CRPT_OMEGA_TOWER_L8.md#canonical-projection-strategy-on-fmaa).
 
+*Novelty Note.* **Basis (credited):** [`FMA-Proj` (L8.1.D2)](CRPT_OMEGA_TOWER_L8.md#canonical-projection-strategy-on-fmaa). **New:** The canonical projection on FMA(Q_M) satisfies conditions C1 (determinism: exactly one projection step from each element) and C3 (fixpoint stability: atoms are fixed points) required by the CRPT substrate definition. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 *Proof.* C1: atomic terms satisfy C1's
 fixpoint branch; composites satisfy the step branch (t₁ · t₂ →_ρ t₁). C3: ρ_MMA(a)=a
 for all a ∈ A = Fix(ρ_MMA). ✓ ∎
@@ -88,6 +92,8 @@ for all a ∈ A = Fix(ρ_MMA). ✓ ∎
 **Synopsis:** The abstraction quotient Q_M = ↓_M/≃_M at L8: this is the same object as L7.1.D3 (Ab-Quot), restated at L8 for use in the Lift definition. Q_M is the set of fiber equivalence classes; its elements become the atoms of FMA(Q_M).
 
 **Source:** CRPT; from [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m) + [`Fix` (L2.1.D3)](CRPT_OMEGA_TOWER_L2.md#fixpoint-set).
+
+*Novelty Note.* **Basis (credited):** [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m) + [`Fix` (L2.1.D3)](CRPT_OMEGA_TOWER_L2.md#fixpoint-set). **New:** The abstraction quotient Q_M = ↓_M/≃_M at L8: this is the same object as L7.1.D3 (Ab-Quot), restated at L8 for use in the Lift definition. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 For a
 model M satisfying PA-WN + PA-Conf:
@@ -106,6 +112,8 @@ domain is Sem(M) = Q_M ⊔ Q∞_M ([`Sem` (L3.3.D9)](CRPT_OMEGA_TOWER_L3.md#unif
 **Synopsis:** The Lift operator takes a CRPT model M and constructs a new, strictly richer CRPT model Lift(M) whose universe is FMA(Q_M) — the free monoidal algebra on M's query signature. Lift does not step inside M; it ascends above M, treating M's canonical equivalence classes as atomic generators and building all formal compositions thereof. Repeating Lift produces the tower Tower(M) = {M, Lift(M), Lift²(M), …}.
 
 **Source:** CRPT; from [`FMA` (L8.1.D1)](CRPT_OMEGA_TOWER_L8.md#free-monoidal-algebra-fmaa) + [`Ab-Quot` (L7.1.D3)](CRPT_OMEGA_TOWER_L7.md#abstraction-quotient-as-fiber-space).
+
+*Novelty Note.* **Basis (credited):** [`FMA` (L8.1.D1)](CRPT_OMEGA_TOWER_L8.md#free-monoidal-algebra-fmaa) + [`Ab-Quot` (L7.1.D3)](CRPT_OMEGA_TOWER_L7.md#abstraction-quotient-as-fiber-space). **New:** The Lift operator takes a CRPT model M and constructs a new, strictly richer CRPT model Lift(M) whose universe is FMA(Q_M) — the free monoidal algebra on M's query signature. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 
 The *free lift* of M is the model:
@@ -127,6 +135,8 @@ where:
 
 **Source:** CRPT; from [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m).
 
+*Novelty Note.* **Basis (credited):** [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m). **New:** The canonical inclusion ι_M : Q_M ↪ FMA(Q_M) sends each fiber equivalence class q ∈ Q_M to the one-atom word 'q' in FMA(Q_M). **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 The map ι_M : Q_M ↪ 𝒰_{Lift(M)} sends
 each q ∈ Q_M to the corresponding atomic term atom(q) ∈ FMA(Q_M). ι_M is injective
 by [`FMA-UD` (L8.1.L2)](CRPT_OMEGA_TOWER_L8.md#unique-decomposition).
@@ -138,6 +148,8 @@ by [`FMA-UD` (L8.1.L2)](CRPT_OMEGA_TOWER_L8.md#unique-decomposition).
 **Synopsis:** The Fixpoints-to-Basics theorem establishes Fix(ρ_{Lift(M)}) = ι_M(Q_M): the fixed points of the projection operator on Lift(M) are exactly the one-atom words — the images of the original canonical observables under the canonical inclusion. 'Basics' in the name refers to these atomic fixed points.
 
 **Source:** CRPT; from [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m) + [`FMA-Proj` (L8.1.D2)](CRPT_OMEGA_TOWER_L8.md#canonical-projection-strategy-on-fmaa).
+
+*Novelty Note.* **Basis (credited):** [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m) + [`FMA-Proj` (L8.1.D2)](CRPT_OMEGA_TOWER_L8.md#canonical-projection-strategy-on-fmaa). **New:** The Fixpoints-to-Basics theorem establishes Fix(ρ_{Lift(M)}) = ι_M(Q_M): the fixed points of the projection operator on Lift(M) are exactly the one-atom words — the images of the original canonical observables under the canonical inclusion. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 Let M satisfy PA-WN + PA-Conf. Then:
 
@@ -174,6 +186,8 @@ f := CFix(ρ_M)(x). ✓ ∎
 
 **Source:** CRPT; from [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics).
 
+*Novelty Note.* **Basis (credited):** [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics). **New:** Fixpoints-to-Basics interpretation: the theorem Fix(ρ_{Lift(M)}) = ι_M(Q_M) can be read in two directions. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics) states that the
 entire abstraction trajectory of x within M — including d_M(x), which may be
 arbitrarily large — is forgotten in Lift(M). What is preserved is precisely and only
@@ -187,10 +201,12 @@ and all finer distinctions are collapsed.
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L8.2.R2 | `Disc-Lift` | | **Novel** |
+| **Remark** | L8.2.R2 | `Disc-Lift` | | **Derived** |
 **Synopsis:** Reading the Lift operator as a discernibility mechanism.
 
 **Source:** CRPT; from [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m).
+
+*Derivation:* composed from [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m); no content beyond the composition.
 
 The Lift is a **discernibility mechanism**:
 at each tower level, distinctions are erased (the entire fiber NFC_M(f) collapses
@@ -203,10 +219,12 @@ whose compositions create new discernible structure.
 ### Abstraction Depth in Lift(M) Measures Fiber Composition
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L8.2.C1 | `Lift-Depth` | | **Novel** |
+| **Corollary** | L8.2.C1 | `Lift-Depth` | | **Derived** |
 **Synopsis:** Derivation height in Lift(M) equals word length in FMA(Q_M): d_{Lift(M)}(w) = |w| - 1 for words of length |w| ≥ 1 (atoms have depth 0). Each projection step strips one atom, so depth counts exactly how many stripping steps remain.
 
 **Source:** CRPT; from [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics).
+
+*Derivation:* composed from [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics); no content beyond the composition.
 
 For t = (ι_M(q₁)·(ι_M(q₂)·(...·ι_M(qₖ))...)) ∈ 𝒰_{Lift(M)} (k atomic factors):
 ```
@@ -226,6 +244,8 @@ are from §L2.5–8 (NFC fibers, horizons) and L8.2 (Fixpoints-to-Basics). No ne
 **Synopsis:** Horizon Inheritance under Lift: the horizon class of a word in Lift(M) is determined by the horizon class of the word's first atom in M. Specifically, a word w has H_S = ⊤ in Lift(M) if and only if its first atom has H_S = ⊤ in M. This means the tower inherits the complete horizon structure from the base model.
 
 **Source:** CRPT; from [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics) + [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization).
+
+*Novelty Note.* **Basis (credited):** [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics) + [PA-Reach (L1.3.Ax2)](CRPT_OMEGA_TOWER_L1.md#pa-reach--recursive-projection-horizon-stabilization). **New:** Horizon Inheritance under Lift: the horizon class of a word in Lift(M) is determined by the horizon class of the word's first atom in M. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 For each level k ≥ 0 of
 the tower Tower(M₀) = (M₀, M₁, M₂, ...) with Mₙ₊₁ = Lift(Mₙ):
@@ -265,10 +285,12 @@ equivalence class maps to a single atom a_f ∈ 𝒰_{M^{(k+1)}}. Therefore:
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L8.2.R3 | `HI-Irrev` | | **Novel** |
+| **Remark** | L8.2.R3 | `HI-Irrev` | | **Derived** |
 **Synopsis:** Why the H_I collapse under Lift is irreversible.
 
 **Source:** CRPT; from [`Hor-Lift` (L8.2.T2)](CRPT_OMEGA_TOWER_L8.md#horizon-inheritance-under-lift).
+
+*Derivation:* composed from [`Hor-Lift` (L8.2.T2)](CRPT_OMEGA_TOWER_L8.md#horizon-inheritance-under-lift); no content beyond the composition.
 
 [`Hor-Lift` (L8.2.T2)](CRPT_OMEGA_TOWER_L8.md#horizon-inheritance-under-lift) establishes
 a **one-way gate** in the tower: once elements become H_I-indiscernible at level k,
@@ -288,6 +310,8 @@ of no return in the tower.
 
 **Source:** CRPT; from [`FMA-WF` (L8.1.L1)](CRPT_OMEGA_TOWER_L8.md#well-foundedness-of-fma) + [`FMA-Proj` (L8.1.D2)](CRPT_OMEGA_TOWER_L8.md#canonical-projection-strategy-on-fmaa).
 
+*Novelty Note.* **Basis (credited):** [`FMA-WF` (L8.1.L1)](CRPT_OMEGA_TOWER_L8.md#well-foundedness-of-fma) + [`FMA-Proj` (L8.1.D2)](CRPT_OMEGA_TOWER_L8.md#canonical-projection-strategy-on-fmaa). **New:** Lift preserves PA-WN: if M satisfies PA-WN (every element in ↓_M reaches a fixed point), then Lift(M) satisfies PA-WN. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 If M satisfies PA-WN, Lift(M) does.
 
 *Proof.* Every t ∈ FMA(Q_M) has depth_MMA(t) ∈ ℕ ([`FMA-WF` (L8.1.L1)](CRPT_OMEGA_TOWER_L8.md#well-foundedness-of-fma)). Each ρ_{Lift(M)}-step
@@ -302,6 +326,8 @@ Since depth_MMA ∈ ℕ and strictly decreases at each step, no infinite chain e
 
 **Source:** CRPT; from [`FMA-UD` (L8.1.L2)](CRPT_OMEGA_TOWER_L8.md#unique-decomposition) + [`FMA-Proj` (L8.1.D2)](CRPT_OMEGA_TOWER_L8.md#canonical-projection-strategy-on-fmaa).
 
+*Novelty Note.* **Basis (credited):** [`FMA-UD` (L8.1.L2)](CRPT_OMEGA_TOWER_L8.md#unique-decomposition) + [`FMA-Proj` (L8.1.D2)](CRPT_OMEGA_TOWER_L8.md#canonical-projection-strategy-on-fmaa). **New:** Lift preserves PA-Conf: if M satisfies PA-Conf (all projection paths from any element converge), then Lift(M) satisfies PA-Conf. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 If M satisfies PA-Conf, Lift(M) does.
 
 *Proof.* ρ_{Lift(M)} is a total function (each non-atomic element has exactly one
@@ -312,10 +338,12 @@ there is no branching, so all paths trivially converge. ✓
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L8.3.R1 | `Conf-Deg-Lift` | | **Novel** |
+| **Remark** | L8.3.R1 | `Conf-Deg-Lift` | | **Derived** |
 **Synopsis:** Why PA-Conf is degenerate in Lift(M).
 
 **Source:** CRPT; from [`Lift-Conf` (L8.3.T2)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-conf).
+
+*Derivation:* composed from [`Lift-Conf` (L8.3.T2)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-conf); no content beyond the composition.
 
 PA-Conf in Lift(M) is degenerate —
 ρ_{Lift(M)} does not branch. This reflects the fact that FMA(Q_M) was designed to be
@@ -330,6 +358,8 @@ reductions (Graph Rewriting L2.1, Proof Nets L2.1). ∎
 **Synopsis:** Lift preserves the WF-Canon structure: if M is a WF-Canon model (satisfying PA-WN + PA-Conf + PA-Fix, from which WF-Canon follows as a theorem at L2), then Lift(M) is also a WF-Canon model. All three axioms are verified for the free monoidal algebra with its canonical projection.
 
 **Source:** CRPT; from [`Lift-WN` (L8.3.T1)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-wn) + [`Lift-Conf` (L8.3.T2)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-conf).
+
+*Novelty Note.* **Basis (credited):** [`Lift-WN` (L8.3.T1)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-wn) + [`Lift-Conf` (L8.3.T2)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-conf). **New:** Lift preserves the WF-Canon structure: if M is a WF-Canon model (satisfying PA-WN + PA-Conf + PA-Fix, from which WF-Canon follows as a theorem at L2), then Lift(M) is also a WF-Canon model. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 If M satisfies PA-WN, PA-Conf, and PA-Fix (hence WF-Canon hypotheses), Lift(M)
 preserves the WF canonicalization structure on its WF stratum.
@@ -349,6 +379,8 @@ WF-Canon-1/2 behavior under Lift on the WF stratum. ✓ ∎
 
 **Source:** CRPT; from [`Lift-WN` (L8.3.T1)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-wn) + [`Lift-Conf` (L8.3.T2)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-conf) + [`Lift-WFCanon` (L8.3.T3)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-wf-canon-structure-on-the-wf-stratum).
 
+*Novelty Note.* **Basis (credited):** [`Lift-WN` (L8.3.T1)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-wn) + [`Lift-Conf` (L8.3.T2)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-conf) + [`Lift-WFCanon` (L8.3.T3)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-wf-canon-structure-on-the-wf-stratum). **New:** Lift compatibility asserts that Lift(M) is itself a valid CRPT model — it inherits all the structural properties (PA-WN, PA-Conf, PA-Fix, the substrate conditions) from M. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 
 
 *Proof.* Follows from [`Lift-WN` (L8.3.T1)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-wn), [`Lift-Conf` (L8.3.T2)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-conf), [`Lift-WFCanon` (L8.3.T3)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-wf-canon-structure-on-the-wf-stratum) and [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m). ✓ ∎
@@ -362,6 +394,8 @@ WF-Canon-1/2 behavior under Lift on the WF stratum. ✓ ∎
 **Synopsis:** The tower Tower(M₀) = (M₀, M₁, M₂, …) where Mₙ₊₁ = Lift(Mₙ) is the central object of L8. Each level properly embeds in the next — growth in the embedding order, never surjective — while from level 1 onward the isomorphism type stabilizes ([`Twr-Growth` (L8.4.T4)](CRPT_OMEGA_TOWER_L8.md#tower-growth-resolution)): the tower grows in embedding structure and compositional depth, not in isomorphism type, with the same observational vocabulary at every level (Q_{Mₙ} ≅ Q_{M₀} by L8.4.T2). The tower is infinite (L8.10.T2) and fractal (L8.9.T2): its tail is self-similar to the whole.
 
 **Source:** CRPT; from [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m) + [`Lift-Compat` (L8.3.T4)](CRPT_OMEGA_TOWER_L8.md#lift-of-a-crpt-model-is-crpt-compatible).
+
+*Novelty Note.* **Basis (credited):** [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m) + [`Lift-Compat` (L8.3.T4)](CRPT_OMEGA_TOWER_L8.md#lift-of-a-crpt-model-is-crpt-compatible). **New:** The tower Tower(M₀) = (M₀, M₁, M₂, …) where Mₙ₊₁ = Lift(Mₙ) is the central object of L8. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 
 For M₀ satisfying PA-WN + PA-Conf:
@@ -378,6 +412,8 @@ where Mₙ₊₁ := Lift(Mₙ), with canonical inclusions ι_n : Q_{Mₙ} ↪ �
 
 **Source:** CRPT; from [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m) + [`Lift-Compat` (L8.3.T4)](CRPT_OMEGA_TOWER_L8.md#lift-of-a-crpt-model-is-crpt-compatible).
 
+*Novelty Note.* **Basis (credited):** [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m) + [`Lift-Compat` (L8.3.T4)](CRPT_OMEGA_TOWER_L8.md#lift-of-a-crpt-model-is-crpt-compatible). **New:** Tower Existence: for any CRPT model M₀, the tower Tower(M₀) = (M₀, M₁, M₂, ...) with M_{n+1} = Lift(Mₙ) exists as a well-defined infinite sequence of CRPT models. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 From any M₀ satisfying PA-WN + PA-Conf,
 Tower(M₀) is well-defined and every level Mₙ satisfies PA-WN + PA-Conf.
 
@@ -391,6 +427,8 @@ PA-Conf ([`Lift-WN` (L8.3.T1)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-wn), [`L
 **Synopsis:** The NFC Tower Invariance theorem: Q_{M_n} ≅ Q_{M₀} for all n ≥ 0. The query signature is preserved across all tower levels. The atoms of Lift(Mₙ) are exactly the canonical observables of Mₙ, which are isomorphic to those of M₀. The tower grows in universe size but not in observational vocabulary.
 
 **Source:** CRPT; from [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics) + [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m).
+
+*Novelty Note.* **Basis (credited):** [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics) + [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m). **New:** The NFC Tower Invariance theorem: Q_{M_n} ≅ Q_{M₀} for all n ≥ 0. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 For all n ≥ 0:
 ```
@@ -411,6 +449,8 @@ By induction: Q_{Mₙ} ≅ Q_{M₀} for all n. ✓ ∎
 
 **Source:** CRPT; from [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m).
 
+*Novelty Note.* **Basis (credited):** [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m). **New:** The fiber count is a base-model invariant: tower levels never add or remove abstraction fibers; what changes between levels is the composition structure built over them. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 The number of abstraction fibers is fixed by the base
 model M₀. What changes between tower levels is the *composition structure* of those
 fibers: Mₙ encodes all depth-n compositions of the base fibers.
@@ -424,6 +464,8 @@ fibers: Mₙ encodes all depth-n compositions of the base fibers.
 **Synopsis:** The faithful embedding theorem: for each n, the canonical inclusion ι_{M_n} : Q_{M_n} ↪ 𝒰_{M_{n+1}} is a faithful CRPT homomorphism — it preserves all four substrate components and is injective. This means each tower level embeds into the next as an observationally distinguishable sub-model.
 
 **Source:** Mac Lane [1971] *Categories for the Working Mathematician* §I.3 — faithful embedding functor, reframed for tower-level embeddings; proof CRPT-original.
+
+*Reframing Note.* **Source form:** faithful embedding functor (Mac Lane §I.3). **CRPT form:** the canonical tower inclusions ι_{0→n} as faithful model homomorphisms. **The delta:** faithfulness is established for the concrete tower maps with the four [`Hom` (L5.2.D1)](CRPT_OMEGA_TOWER_L5.md#model-homomorphism-φ--m₁--m₂) conditions as the preserved structure; the proof is CRPT-original. **Justification:** mathematical — this is the embedding order in which the tower genuinely grows ([`Twr-Growth` (L8.4.T4)](CRPT_OMEGA_TOWER_L8.md#tower-growth-resolution)(i)).
 
 For each n, the inclusion ι_{0→n} : Q_{M₀} ↪ 𝒰_{Mₙ} (the
 composition of n embedding maps) is a faithful model homomorphism.
@@ -444,6 +486,8 @@ Preservation of the model homomorphism conditions ([`Hom` (L5.2.D1)](CRPT_OMEGA_
 **Synopsis:** The tower-growth trichotomy: (i) every level properly embeds in the next — the canonical inclusion is injective and never surjective, so the tower grows strictly in the embedding order at every step; (ii) the isomorphism type stabilizes after one Lift — Mₙ₊₁ ≅ Mₙ for all n ≥ 1, the element-wise form of tail self-similarity; (iii) at the base, M₀ ≅ M₁ exactly when M₀ is itself free on its own query signature — in particular every finite model has M₀ ≇ M₁. Consequently there is no strictness theorem Mₙ ≇ Mₙ₊₁ for n ≥ 1: its negation is a theorem, and "growth" means embedding structure and compositional depth, never cardinality or isomorphism type.
 
 **Source:** CRPT; from [`NFC-TInv` (L8.4.T2)](CRPT_OMEGA_TOWER_L8.md#nfc-partition-is-a-tower-invariant) + [`FMA-UD` (L8.1.L2)](CRPT_OMEGA_TOWER_L8.md#unique-decomposition) + [`Can-Incl` (L8.2.D3)](CRPT_OMEGA_TOWER_L8.md#canonical-inclusion).
+
+*Novelty Note.* **Basis (credited):** [`NFC-TInv` (L8.4.T2)](CRPT_OMEGA_TOWER_L8.md#nfc-partition-is-a-tower-invariant) + [`FMA-UD` (L8.1.L2)](CRPT_OMEGA_TOWER_L8.md#unique-decomposition) + [`Can-Incl` (L8.2.D3)](CRPT_OMEGA_TOWER_L8.md#canonical-inclusion). **New:** The tower-growth trichotomy: (i) every level properly embeds in the next — the canonical inclusion is injective and never surjective, so the tower grows strictly in the embedding order at every step; (ii) the isomorphism type stabilizes after one Lift — Mₙ₊₁ ≅ Mₙ for all n ≥ 1, the element-wise form of tail self-similarity; (iii) at the base, M₀ ≅ M₁ exactly when M₀ is itself free on its own query signature — in particular every finite model has M₀ ≇ M₁. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 For Tower(M₀) with Mₙ₊₁ = Lift(Mₙ) = FMA(Q_{Mₙ}):
 
@@ -489,6 +533,8 @@ what fractality requires.
 
 **Source:** CRPT; from [`Q∞` (L3.3.D8)](CRPT_OMEGA_TOWER_L3.md#persistent-orbit-quotient-q_m) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m).
 
+*Novelty Note.* **Basis (credited):** [`Q∞` (L3.3.D8)](CRPT_OMEGA_TOWER_L3.md#persistent-orbit-quotient-q_m) + [`≃_M` (L2.5.D2)](CRPT_OMEGA_TOWER_L2.md#church-rosser-orbit-equivalence-notation-_m). **New:** The NWF abstraction quotient Q_M^* is the analogue of Q_M for the persistent regime: Q_M^* = ∞_M / ≃∞_M is the set of persistent orbit equivalence classes. **Why it does not follow:** the basis supplies one side; the counterpart it names is built where that machinery is absent — the construction itself is the content.
+
 For a mixed model M (satisfying all
 9 PA-* axioms including PA-NWF), the *NWF abstraction quotient* is the
 SC-4-restricted subquotient of the persistent orbit quotient [`Q∞` (L3.3.D8)](CRPT_OMEGA_TOWER_L3.md#persistent-orbit-quotient-q_m):
@@ -510,6 +556,8 @@ Q_M^* = Q∞_M.
 
 **Source:** CRPT; from [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m) + [`Q∞` (L3.3.D8)](CRPT_OMEGA_TOWER_L3.md#persistent-orbit-quotient-q_m); cofree coalgebra after Rutten [2000].
 
+*Novelty Note.* **Basis (credited):** [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m) + [`Q∞` (L3.3.D8)](CRPT_OMEGA_TOWER_L3.md#persistent-orbit-quotient-q_m). **New:** The NWF-extended Lift Lift∞(M) has universe FMA(Q_M ⊔ Q_M^*), where Q_M^* is the persistent abstraction quotient. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 For a mixed model M:
 ```
 Lift^*(M) := (FMA(Q_M) ∪ FMA_∞(Q_M^*), →_ρ^{Lift^*}, →_σ^{Lift^*}, ρ_{Lift^*(M)})
@@ -526,6 +574,8 @@ with minimal period CPD(σ) (as defined in [`CPD` (L4.5.D1)](CRPT_OMEGA_TOWER_L4
 **Synopsis:** The NWF Periodicity theorem: for each persistent orbit class σ ∈ Q_M^*, the corresponding element ι^*_M(σ) ∈ 𝒰_{Lift*(M)} has a periodic projection orbit with period exactly CPD(σ). The extended lift faithfully represents the periodic structure of persistent orbits as actual periodicity in the lifted model.
 
 **Source:** CRPT; from [`Lift∞` (L8.5.D2)](CRPT_OMEGA_TOWER_L8.md#nwf-extended-lift) + [`CPD` (L4.5.D1)](CRPT_OMEGA_TOWER_L4.md#co-projection-depth-cpd); cofree coalgebra after Rutten [2000], Jacobs [2016].
+
+*Novelty Note.* **Basis (credited):** [`Lift∞` (L8.5.D2)](CRPT_OMEGA_TOWER_L8.md#nwf-extended-lift) + [`CPD` (L4.5.D1)](CRPT_OMEGA_TOWER_L4.md#co-projection-depth-cpd). **New:** The NWF Periodicity theorem: for each persistent orbit class σ ∈ Q_M^*, the corresponding element ι^*_M(σ) ∈ 𝒰_{Lift*(M)} has a periodic projection orbit with period exactly CPD(σ). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 For each
 σ ∈ Q_M^*: the element ι^*_M(σ) ∈ FMA_∞(Q_M^*) satisfies:
@@ -545,6 +595,8 @@ construction (Rutten 2000; Jacobs 2016 L3.2) guarantees this. ✓ ∎
 **Synopsis:** Lift∞(M) satisfies PA-NWF: its persistent regime ∞_{Lift∞(M)} is non-empty. Every atom ι^*_M(σ) for σ ∈ Q_M^* with CPD(σ) ≥ 1 belongs to ∞_{Lift∞(M)} because its projection orbit is periodic and thus infinite. The NWF-extended lift is genuinely non-well-founded by construction.
 
 **Source:** CRPT; from [`Lift∞` (L8.5.D2)](CRPT_OMEGA_TOWER_L8.md#nwf-extended-lift) + [PA-NWF (L1.2.Ax4)](CRPT_OMEGA_TOWER_L1.md#pa-nwf--non-well-foundedness--divergence-existence).
+
+*Novelty Note.* **Basis (credited):** [`Lift∞` (L8.5.D2)](CRPT_OMEGA_TOWER_L8.md#nwf-extended-lift) + [PA-NWF (L1.2.Ax4)](CRPT_OMEGA_TOWER_L1.md#pa-nwf--non-well-foundedness--divergence-existence). **New:** Lift∞(M) satisfies PA-NWF: its persistent regime ∞_{Lift∞(M)} is non-empty. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 For any mixed model M satisfying PA-WN + PA-Conf + PA-Fix + PA-NWF + PA-CoInd:
 ```
@@ -575,6 +627,8 @@ of §L7.1–26. The relationship between NFC partition and tower structure is ne
 **Synopsis:** The horizontal-vertical duality theorem establishes that moving upward in the tower (vertical: adding abstraction layers via Lift) and moving sideways within a single level (horizontal: following the structural relation connections) are dual operations. Information that is lost when projecting horizontally within level Mₙ is recoverable by ascending to level Mₙ₊₁. This duality is the precise sense in which the tower 'resolves' the observational ambiguities of any single level.
 
 **Source:** CRPT; from [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics) + [`Ab-Quot` (L7.1.D3)](CRPT_OMEGA_TOWER_L7.md#abstraction-quotient-as-fiber-space).
+
+*Novelty Note.* **Basis (credited):** [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics) + [`Ab-Quot` (L7.1.D3)](CRPT_OMEGA_TOWER_L7.md#abstraction-quotient-as-fiber-space). **New:** The horizontal-vertical duality theorem establishes that moving upward in the tower (vertical: adding abstraction layers via Lift) and moving sideways within a single level (horizontal: following the structural relation connections) are dual operations. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 Let M satisfy PA-WN + PA-Conf,
@@ -623,6 +677,8 @@ H_I = ⊤. Class C. ✓ ∎
 
 **Source:** CRPT; from [`HV-Dual` (L8.6.T1)](CRPT_OMEGA_TOWER_L8.md#horizontal-vertical-duality).
 
+*Novelty Note.* **Basis (credited):** [`HV-Dual` (L8.6.T1)](CRPT_OMEGA_TOWER_L8.md#horizontal-vertical-duality). **New:** Plain-language statement of Horizontal-Vertical Duality: what the projection operator cannot distinguish within one tower level (elements in the same fiber, H_S = ⊤), the next tower level can distinguish (their fiber classes become distinct atoms). **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 The horizontal structure (six-class
 partition, NFC fibers, the orbit signature) and the vertical structure (tower levels, Lift, depth
 in Lift) are dual facets of the same construction:
@@ -643,6 +699,8 @@ in Lift) are dual facets of the same construction:
 **Synopsis:** The Tower Horizon Characterization: an element x ∈ Mₙ is at the tower horizon if and only if it is at the H_O boundary layer (d_{M_n}(x) = 1) of Mₙ. Tower-horizon elements are exactly those one step from the fixed points of Mₙ — these fixed points become the atoms of Mₙ₊₁.
 
 **Source:** CRPT; from [`F-Func` (L7.3.T1)](CRPT_OMEGA_TOWER_L7.md#f-is-a-functor-mod_crpt--ωcat) + [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s).
+
+*Novelty Note.* **Basis (credited):** [`F-Func` (L7.3.T1)](CRPT_OMEGA_TOWER_L7.md#f-is-a-functor-mod_crpt--ωcat) + [`H_S` (L3.1.D1)](CRPT_OMEGA_TOWER_L3.md#structural-horizon-h_s). **New:** The Tower Horizon Characterization: an element x ∈ Mₙ is at the tower horizon if and only if it is at the H_O boundary layer (d_{M_n}(x) = 1) of Mₙ. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 The
 tower horizon points of level n are characterized by Fix ∧ H_S:
@@ -666,6 +724,8 @@ Fix(ρ_{Mₙ}) arise as ι_{n-1}(NFC_{Mₙ₋₁}(f)) for some f, and have H_S =
 
 **Source:** CRPT; from [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o) + [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification).
 
+*Novelty Note.* **Basis (credited):** [`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o) + [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification). **New:** Tower horizon points sit at derivation height 0 (Classes E/F), distinct from H_O-positive elements at derivation height 1 (Classes B/C). **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 This is distinct from H_O ([`H_O` (L3.1.D4)](CRPT_OMEGA_TOWER_L3.md#abstraction-depth-horizon-h_o)), which characterises
 d_{Mₙ}(x) = 1 (depth-1 elements, not fixpoints). Tower horizon points are at
 derivation height = 0 (Classes E/F, L3.2); H_O-positive elements are at derivation height = 1 (Classes B/C, L3.2).
@@ -678,6 +738,8 @@ derivation height = 0 (Classes E/F, L3.2); H_O-positive elements are at derivati
 **Synopsis:** The Information Loss at Tower Horizon theorem quantifies what is lost when projecting within a tower level: elements that are observationally equivalent (≃_{M_n}) but structurally distinct (not equal) become indistinguishable by the canonical form map. The information encoded in their structural differences is the information that the next tower level recovers.
 
 **Source:** CRPT; from [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics) + [`Can-Incl` (L8.2.D3)](CRPT_OMEGA_TOWER_L8.md#canonical-inclusion).
+
+*Novelty Note.* **Basis (credited):** [`Fix-Bas` (L8.2.T1)](CRPT_OMEGA_TOWER_L8.md#fixpoints-to-basics) + [`Can-Incl` (L8.2.D3)](CRPT_OMEGA_TOWER_L8.md#canonical-inclusion). **New:** The Information Loss at Tower Horizon theorem quantifies what is lost when projecting within a tower level: elements that are observationally equivalent (≃_{M_n}) but structurally distinct (not equal) become indistinguishable by the canonical form map. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 From level n+1,
 the internal structure of level n is not recoverable: the collapse map
@@ -696,6 +758,8 @@ is not expressible in 𝒰_{Mₙ₊₁}. ✓ ∎
 **Synopsis:** The σ-paths-are-not-a-third-regime theorem: elements connected by the structural relation →_σ but not by the reduction relation →_ρ are not a third regime of the CRPT model. They are part of the existing regime structure — specifically, they are elements in the same fiber (H_S = ⊤) but on different 'branches' of the fiber.
 
 **Source:** CRPT; from [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`Info-Loss` (L8.6.T3)](CRPT_OMEGA_TOWER_L8.md#information-loss-at-the-tower-horizon).
+
+*Novelty Note.* **Basis (credited):** [`H_I` (L3.1.D2)](CRPT_OMEGA_TOWER_L3.md#invariant-horizon--kernel-congruence-predicate-h_i) + [`Info-Loss` (L8.6.T3)](CRPT_OMEGA_TOWER_L8.md#information-loss-at-the-tower-horizon). **New:** The σ-paths-are-not-a-third-regime theorem: elements connected by the structural relation →_σ but not by the reduction relation →_ρ are not a third regime of the CRPT model. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 Let M be a CRPT model. Let x ∈ ↓_M with CFix(ρ_M)(x) = f, and
 suppose there exist infinite σ-paths within the normal-form fiber NFC_M(f): sequences
@@ -758,6 +822,8 @@ new morphism in →_σ^{Lift(M)} is induced. ✓ ∎
 
 **Source:** CRPT; from [`σ-Not3rd` (L8.6.T4)](CRPT_OMEGA_TOWER_L8.md#σ-paths-within-_m-fibers-are-not-a-third-regime) + [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality).
 
+*Novelty Note.* **Basis (credited):** [`σ-Not3rd` (L8.6.T4)](CRPT_OMEGA_TOWER_L8.md#σ-paths-within-_m-fibers-are-not-a-third-regime) + [`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality). **New:** Interpretation of the σ-not-a-third-regime theorem: within-fiber →_σ-structure is not a third regime but is collapsed by the free lift and re-expressed as vertical infinity at the next tower level, linking to Infinity Duality. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 [`σ-Not3rd` (L8.6.T4)](CRPT_OMEGA_TOWER_L8.md#σ-paths-within-_m-fibers-are-not-a-third-regime) establishes
 rigorously what the Infinity-Duality analysis ([`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical-infinity-duality)) states conceptually: σ-paths within a μ-fiber are NOT
 a third regime, and they are NOT automatically carried forward by the free lift.
@@ -780,6 +846,8 @@ tower unfolds ([`Inf-Dual` (L2.2.T7)](CRPT_OMEGA_TOWER_L2.md#horizontal-vertical
 **Synopsis:** The free lift is categorically minimal among CRPT-compatible enriched lifts: any enriched lift either equals the free lift or adds model-specific data that the next tower level discards.
 
 **Source:** CRPT; from [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m) + [`Info-Loss` (L8.6.T3)](CRPT_OMEGA_TOWER_L8.md#information-loss-at-the-tower-horizon).
+
+*Novelty Note.* **Basis (credited):** [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m) + [`Info-Loss` (L8.6.T3)](CRPT_OMEGA_TOWER_L8.md#information-loss-at-the-tower-horizon). **New:** The free lift is categorically minimal among CRPT-compatible enriched lifts: any enriched lift either equals the free lift or adds model-specific data that the next tower level discards. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 Let M be a CRPT model satisfying PA-WN + PA-Conf. Define an *enriched lift*
 of M to be any model Lift*(M) together with a map ι* : Q_M → 𝒰_{Lift*(M)} such that:
@@ -840,6 +908,8 @@ exactly one additional level, then is collapsed. ✓ ∎
 
 **Source:** CRPT; from [`Lift-Min` (L8.6.T5)](CRPT_OMEGA_TOWER_L8.md#enriched-lift-resolution-free-lift-is-categorically-minimal).
 
+*Novelty Note.* **Basis (credited):** [`Lift-Min` (L8.6.T5)](CRPT_OMEGA_TOWER_L8.md#enriched-lift-resolution-free-lift-is-categorically-minimal). **New:** OR5 Lift remark: the five Observational Requirements are preserved under each application of the Lift operator. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 [`Lift-Min` (L8.6.T5)](CRPT_OMEGA_TOWER_L8.md#enriched-lift-resolution-free-lift-is-categorically-minimal) resolves the
 enriched lift question raised in this section. The free lift Lift(M) is not merely a
 convenient choice — it is the categorically minimal (initial) lift satisfying CRPT
@@ -868,6 +938,8 @@ established in prior sections. No new axioms.
 
 **Source:** CRPT; from [`Can-Incl` (L8.2.D3)](CRPT_OMEGA_TOWER_L8.md#canonical-inclusion) + [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m).
 
+*Novelty Note.* **Basis (credited):** [`Can-Incl` (L8.2.D3)](CRPT_OMEGA_TOWER_L8.md#canonical-inclusion) + [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m). **New:** The tower image Img_n(M₀) is the image of the n-th canonical inclusion ι_{M_0} ∘ . **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 Let Tower(M₀) = (M^{(0)}, M^{(1)}, M^{(2)}, ...) with
 M^{(k+1)} = Lift(M^{(k)}). For x ∈ 𝒰^{(0)} = 𝒰_{M₀}, define the *tower image* of x
 at level k by:
@@ -888,6 +960,8 @@ inclusion ι_k ([`Can-Incl` (L8.2.D3)](CRPT_OMEGA_TOWER_L8.md#canonical-inclusio
 
 **Source:** CRPT; from [`Twr-Img` (L8.6.D1)](CRPT_OMEGA_TOWER_L8.md#tower-image).
 
+*Novelty Note.* **Basis (credited):** [`Twr-Img` (L8.6.D1)](CRPT_OMEGA_TOWER_L8.md#tower-image). **New:** The tower image x^{(k)} is always a fixpoint (atom) at its level. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 The tower image x^{(k)} is always a fixpoint (atom) in M^{(k)} for
 k ≥ 1, because ι_k maps into Fix(ρ_{M^{(k+1)}}). It records which equivalence class
 x belonged to at each level — the "identity as seen from level k." Two elements
@@ -901,6 +975,8 @@ level k-1, i.e., CNF_{M^{(k-1)}}(x^{(k-1)}) = CNF_{M^{(k-1)}}(y^{(k-1)}).
 **Synopsis:** Tower discriminability measures whether two elements that are indistinguishable at level Mₙ become distinguishable at a higher level Mₖ (k > n). An element pair (x, y) is eventually discriminated if there exists k such that the tower image at level k distinguishes x and y. Discriminability is the tower's resolution power.
 
 **Source:** CRPT; from [`Twr-Img` (L8.6.D1)](CRPT_OMEGA_TOWER_L8.md#tower-image) + [`Bisim~` (L1.1.D7)](CRPT_OMEGA_TOWER_L1.md#bisimilarity).
+
+*Novelty Note.* **Basis (credited):** [`Twr-Img` (L8.6.D1)](CRPT_OMEGA_TOWER_L8.md#tower-image) + [`Bisim~` (L1.1.D7)](CRPT_OMEGA_TOWER_L1.md#bisimilarity). **New:** Tower discriminability measures whether two elements that are indistinguishable at level Mₙ become distinguishable at a higher level Mₖ (k > n). **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
 
 Let x, y ∈ 𝒰^{(0)}. For each k ≥ 0:
 
@@ -923,6 +999,8 @@ Let x, y ∈ 𝒰^{(0)}. For each k ≥ 0:
 **Synopsis:** Discriminability Survival: if two elements are distinguishable at level Mₙ, they remain distinguishable at all higher levels Mₖ (k > n). The tower never collapses distinctions — it can only create new distinctions. The tower's discriminability is monotone increasing.
 
 **Source:** CRPT; from [`Lift-Endo` (L7.2.T3)](CRPT_OMEGA_TOWER_L7.md#lift-is-an-endofunctor-on-mod_crpt) + [`NFC-TInv` (L8.4.T2)](CRPT_OMEGA_TOWER_L8.md#nfc-partition-is-a-tower-invariant).
+
+*Novelty Note.* **Basis (credited):** [`Lift-Endo` (L7.2.T3)](CRPT_OMEGA_TOWER_L7.md#lift-is-an-endofunctor-on-mod_crpt) + [`NFC-TInv` (L8.4.T2)](CRPT_OMEGA_TOWER_L8.md#nfc-partition-is-a-tower-invariant). **New:** Discriminability Survival: if two elements are distinguishable at level Mₙ, they remain distinguishable at all higher levels Mₖ (k > n). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 For x, y ∈ 𝒰^{(0)}:
 
@@ -965,6 +1043,8 @@ structure at any level separates them. ✓ ∎
 **Synopsis:** The Tower Abstraction Thesis: every structural distinction between elements that is expressible in the language of CRPT is eventually made visible at some tower level. The tower has complete discriminability: it separates every structurally distinct pair. This is the CRPT completeness theorem for the tower.
 
 **Source:** CRPT; from [`Disc-Surv` (L8.6.T6)](CRPT_OMEGA_TOWER_L8.md#discernibility-as-survival-under-recursive-projection-and-lift).
+
+*Novelty Note.* **Basis (credited):** [`Disc-Surv` (L8.6.T6)](CRPT_OMEGA_TOWER_L8.md#discernibility-as-survival-under-recursive-projection-and-lift). **New:** The Tower Abstraction Thesis: every structural distinction between elements that is expressible in the language of CRPT is eventually made visible at some tower level. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 Let M be a CRPT model
 with tower Tower(M) = (M^{(k)})_{k≥0}. Then:
@@ -1010,6 +1090,8 @@ entire tower. ∎
 
 **Source:** CRPT; from [`Twr-AThesis` (L8.6.T7)](CRPT_OMEGA_TOWER_L8.md#tower-horizon-abstraction-thesis).
 
+*Novelty Note.* **Basis (credited):** [`Twr-AThesis` (L8.6.T7)](CRPT_OMEGA_TOWER_L8.md#tower-horizon-abstraction-thesis). **New:** The Tower-Horizon Abstraction Thesis stated plainly. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 The Tower-Horizon Abstraction Thesis says:
 **abstraction is recursive projection; horizons are its limits; emergence is Lift;
 discernibility is survival.** Every element of 𝒰 is characterized by what survives
@@ -1054,6 +1136,8 @@ satisfying globularity, associativity, unit, and interchange axioms (Street [198
 
 **Source:** CRPT; from [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m) + [`ω-Cat-Str` (L8.7.D1)](CRPT_OMEGA_TOWER_L8.md#strict-ω-category).
 
+*Novelty Note.* **Basis (credited):** [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m) + [`ω-Cat-Str` (L8.7.D1)](CRPT_OMEGA_TOWER_L8.md#strict-ω-category). **New:** The tower ω-category is the ω-dimensional categorical structure whose n-cells are the n-natural-transformations between n-1-functors between tower-level models. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 Given Tower(M₀):
 - **n-cells:** elements of 𝒰_{Mₙ}
 - **Source/target:** for a →_ρ-reduction path φ : x →_ρ* y within Mₙ, sₙ(φ) := x, tₙ(φ) := y
@@ -1079,6 +1163,8 @@ Given Tower(M₀):
 **Synopsis:** The Tower ω-Category Theorem: Tower(M₀) with the Lift maps as 1-cells, natural transformations as 2-cells, and modifications as 3-cells (and so on) is a strict ω-category in the sense of Leinster [2004], with the interchange law established on the realizable horizontal fragment: left whiskering in-level, full horizontal structure through the tower embeddings. All coherence conditions on that fragment are automatic because the Lift maps compose strictly.
 
 **Source:** CRPT (Street [1987] ω-category framework); from [`ω-Cat-Str` (L8.7.D1)](CRPT_OMEGA_TOWER_L8.md#strict-ω-category) + [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m).
+
+*Novelty Note.* **Basis (credited):** [`ω-Cat-Str` (L8.7.D1)](CRPT_OMEGA_TOWER_L8.md#strict-ω-category) + [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m). **New:** The Tower ω-Category Theorem: Tower(M₀) with the Lift maps as 1-cells, natural transformations as 2-cells, and modifications as 3-cells (and so on) is a strict ω-category in the sense of Leinster [2004], with the interchange law established on the realizable horizontal fragment: left whiskering in-level, full horizontal structure through the tower embeddings. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 𝒞^Tower_{M₀} is a strict ω-category.
 
@@ -1114,10 +1200,10 @@ maps arise. 𝒞^Tower_{M₀} is strict. ✓ ∎
 ### Strict ω-categories are rare
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Remark** | L8.7.R1 | `ω-Cat-Rare` |  | **Reframed** |
+| **Remark** | L8.7.R1 | `ω-Cat-Rare` |  | **Specialized** |
 **Synopsis:** Strict ω-categories are rare among naturally-occurring ones (most are weak); the CRPT tower is strict because the free monoidal algebra imposes no non-identity coherence morphisms.
 
-**Source:** Leinster [2004] §7.1 — strict ω-categories are rare among naturally-occurring ones; noted here because the CRPT tower is strict by freeness of the FMA construction.
+**Source:** Leinster [2004] §7.1 — strict ω-categories are rare among naturally-occurring ones; applied to the tower because the CRPT tower is strict by freeness of the FMA construction.
 
 Most naturally occurring ω-categories are *weak* (with non-identity coherence
 morphisms). The CRPT tower is strict, which means it has a canonical form requiring
@@ -1131,6 +1217,8 @@ algebra construction.
 **Synopsis:** The Self-Ontological Soundness theorem: the tower ω-category structure is self-ontologically sound — it can describe itself as an object within the theory. The tower's own structure is a 0-cell in the ω-category of ω-categories. This is the tower's contribution to Lω's self-application.
 
 **Source:** CRPT; from [`Twr-ωCat-T` (L8.7.T1)](CRPT_OMEGA_TOWER_L8.md#the-tower-is-a-strict-ω-category).
+
+*Novelty Note.* **Basis (credited):** [`Twr-ωCat-T` (L8.7.T1)](CRPT_OMEGA_TOWER_L8.md#the-tower-is-a-strict-ω-category). **New:** The Self-Ontological Soundness theorem: the tower ω-category structure is self-ontologically sound — it can describe itself as an object within the theory. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 Let the CRPT self-substrate dependency hierarchy be organized as an 11-rank tower
 Tower(M₀), with ranks indexed by 0..10, where M₀ = rank 0 (the substrate quadruple itself),
@@ -1166,6 +1254,8 @@ follows from using individual ranks as blocks. ✓ ∎
 **Synopsis:** A reference table of the notation introduced across L7–L8 — the Galois maps α_M/γ_M, the quotient projection π_M, the abstraction quotient Q_M, and the tower and Lift symbols.
 
 **Source:** CRPT (notation reference for L7–L8).
+
+*Novelty Note.* **Basis (credited):** the imported foundations cited above. **New:** A reference table of the notation introduced across L7–L8 — the Galois maps α_M/γ_M, the quotient projection π_M, the abstraction quotient Q_M, and the tower and Lift symbols. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
 
 The following symbols are defined in
 L7–L8:
@@ -1204,6 +1294,8 @@ The preceding sections (§L1.1–30) develop the native CRPT framework stratifie
 **Synopsis:** The Axiom Completeness-Consistency theorem for the tower: the nine PA-* axioms are complete for the tower construction (every CRPT model has a well-defined tower) and consistent with it (the tower does not introduce any axiom violations). The tower is axiomatically conservative over the base theory.
 
 **Source:** CRPT; from [`Nat-CC` (L1.4.T2)](CRPT_OMEGA_TOWER_L1.md#native-structure-consistency-and-completeness) + [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification) + [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification).
+
+*Novelty Note.* **Basis (credited):** [`Nat-CC` (L1.4.T2)](CRPT_OMEGA_TOWER_L1.md#native-structure-consistency-and-completeness) + [`Reg-Strat` (L2.2.D3)](CRPT_OMEGA_TOWER_L2.md#native-regime-stratification) + [`6-Part` (L3.2.T1)](CRPT_OMEGA_TOWER_L3.md#six-classes-partition-μt_ρm-as-boolean-stratification). **New:** The Axiom Completeness-Consistency theorem for the tower: the nine PA-* axioms are complete for the tower construction (every CRPT model has a well-defined tower) and consistent with it (the tower does not introduce any axiom violations). **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 Let M = (𝒰, →_ρ, →_σ, 𝒯) be a substrate ([`Sub` (L1.1.D1)](CRPT_OMEGA_TOWER_L1.md#substrate)). Let the native axiom system comprise:
 - PA-WN (global finitary weak normalisation; scope-sensitive use on ↓_M)
@@ -1276,6 +1368,8 @@ Thus the native system is a **conservative extension** of the pure-WF profile: i
 
 **Source:** CRPT; from [`Ax-CC` (L8.8.T1)](CRPT_OMEGA_TOWER_L8.md#native-axiom-system-consistency-and-completeness).
 
+*Novelty Note.* **Basis (credited):** [`Ax-CC` (L8.8.T1)](CRPT_OMEGA_TOWER_L8.md#native-axiom-system-consistency-and-completeness). **New:** OR5 Coverage: the five Observational Requirement 5 conditions (the tower must (1) be infinite, (2) preserve the query signature, (3) embed faithfully, (4) resolve horizontal ambiguity, and (5) be self-similar) are all satisfied by the CRPT tower. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 The three analytic models from the OR-5 test-instantiation suite satisfy the hybrid axiom system:
 
 **(i) REAL_ANALYSIS model (real numbers ℝ with limit operations):**
@@ -1345,6 +1439,8 @@ Therefore each of the three OR-5 test models satisfies the hybrid axiom system, 
 
 **Source:** CRPT; from [`Twr-Func` (L7.3.T2)](CRPT_OMEGA_TOWER_L7.md#tower-functoriality) + [`F-Func` (L7.3.T1)](CRPT_OMEGA_TOWER_L7.md#f-is-a-functor-mod_crpt--ωcat).
 
+*Novelty Note.* **Basis (credited):** [`Twr-Func` (L7.3.T2)](CRPT_OMEGA_TOWER_L7.md#tower-functoriality) + [`F-Func` (L7.3.T1)](CRPT_OMEGA_TOWER_L7.md#f-is-a-functor-mod_crpt--ωcat). **New:** OR5 Functoriality: the five OR5 coverage conditions are preserved under CRPT homomorphisms — if φ : M₁ → M₂ is a CRPT homomorphism, the induced tower map Tower(φ) : Tower(M₁) → Tower(M₂) satisfies all five OR5 conditions component-wise. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 The hybrid CRPT framework extends to a functor from the category Mod_CRPT_hybrid (CRPT models with topological structure) to the category Mod_CRPT (models of the hybrid axiom system):
 
 ```
@@ -1367,6 +1463,8 @@ The functor preserves:
 **Synopsis:** Regime Naturality corollary: the regime partition ↓_M ⊔ ∞_M is natural in M — for every CRPT homomorphism φ : M₁ → M₂, φ maps ↓_{M₁} into ↓_{M₂} and ∞_{M₁} into ∞_{M₂}. The regime assignment is a natural transformation from the identity functor to itself.
 
 **Source:** CRPT; corollary of [`OR5-Func` (L8.8.T3)](CRPT_OMEGA_TOWER_L8.md#hybrid-framework-is-functorial-on-mod_crpt).
+
+*Derivation:* composed from [`OR5-Func` (L8.8.T3)](CRPT_OMEGA_TOWER_L8.md#hybrid-framework-is-functorial-on-mod_crpt); no content beyond the composition.
 
 The regime partition functor (↓_M, ∞_M for each M) commutes with model homomorphisms:
 ```
@@ -1406,6 +1504,8 @@ specifies a coherent theorem architecture over the substrate quadruple.
 **Synopsis:** The discernibility reading of the Tower-Horizon Abstraction Thesis.
 
 **Source:** CRPT; from [`Twr-AThesis` (L8.6.T7)](CRPT_OMEGA_TOWER_L8.md#tower-horizon-abstraction-thesis).
+
+*Novelty Note.* **Basis (credited):** [`Twr-AThesis` (L8.6.T7)](CRPT_OMEGA_TOWER_L8.md#tower-horizon-abstraction-thesis). **New:** The discernibility reading of the Tower-Horizon Abstraction Thesis. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
 
 The Tower-Horizon Abstraction Thesis
 ([`Twr-AThesis` (L8.6.T7)](CRPT_OMEGA_TOWER_L8.md#tower-horizon-abstraction-thesis)) establishes that CRPT is a theory of **abstraction** whose core
@@ -1458,6 +1558,8 @@ with the inherited transition maps Lift : M_{k+i} → M_{k+i+1}.
 
 **Source:** CRPT; from [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m) + [`Twr-Tail` (L8.9.D1)](CRPT_OMEGA_TOWER_L8.md#tower-tail).
 
+*Novelty Note.* **Basis (credited):** [`Tower` (L8.4.D1)](CRPT_OMEGA_TOWER_L8.md#crpt-tower-generated-by-m) + [`Twr-Tail` (L8.9.D1)](CRPT_OMEGA_TOWER_L8.md#tower-tail). **New:** The Tower Tail Self-Similarity theorem: for any n ≥ 0, the tower tail (Mₙ, Mₙ₊₁, Mₙ₊₂, ...) is isomorphic to the original tower (M₀, M₁, M₂, ...) as a sequence of CRPT models. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
+
 *For any CRPT model M₀ for which Tower(M₀) is defined, and for every k ∈ ℕ:*
 ```
 Tower(M_k)  ≅  Tail_k(Tower(M₀))
@@ -1493,6 +1595,8 @@ maps, giving an isomorphism of ω-indexed diagrams. ∎
 
 **Source:** CRPT; from [`Twr-Tail-Sim` (L8.9.T1)](CRPT_OMEGA_TOWER_L8.md#l89t1--tower-tail-self-similarity) + [`NFC-TInv` (L8.4.T2)](CRPT_OMEGA_TOWER_L8.md#nfc-partition-is-a-tower-invariant).
 
+*Novelty Note.* **Basis (credited):** [`Twr-Tail-Sim` (L8.9.T1)](CRPT_OMEGA_TOWER_L8.md#l89t1--tower-tail-self-similarity) + [`NFC-TInv` (L8.4.T2)](CRPT_OMEGA_TOWER_L8.md#nfc-partition-is-a-tower-invariant). **New:** A CRPT-Fractal projection system is a projection system in which the tower construction produces a tail-self-similar tower. **Why it does not follow:** the basis supplies the ingredients; the notion assembled from them, and the role it is defined to play in the theory, is introduced here rather than entailed.
+
 A CRPT model M is a *CRPT-fractal projection system* iff its generated tower
 Tower(M) satisfies all four conditions:
 
@@ -1522,6 +1626,8 @@ This definition adds no axiom to CRPT. It names the joint content of Lift closur
 **Synopsis:** Every CRPT tower is fractal in the precise sense that the query signature and the structural relations of Lift(M) mirror those of M — the tower's local structure at any level replicates the structure of the base. This is not a metaphor: it is a theorem proved from the definition of Lift and the FMA construction. The fractality of the tower is what allows the self-application of Lω to close consistently.
 
 **Source:** CRPT; from [`CRPT-Fractal` (L8.9.D2)](CRPT_OMEGA_TOWER_L8.md#l89d2--crpt-fractal-projection-system) + [`Twr-Tail-Sim` (L8.9.T1)](CRPT_OMEGA_TOWER_L8.md#l89t1--tower-tail-self-similarity).
+
+*Novelty Note.* **Basis (credited):** [`CRPT-Fractal` (L8.9.D2)](CRPT_OMEGA_TOWER_L8.md#l89d2--crpt-fractal-projection-system) + [`Twr-Tail-Sim` (L8.9.T1)](CRPT_OMEGA_TOWER_L8.md#l89t1--tower-tail-self-similarity). **New:** Every CRPT tower is fractal in the precise sense that the query signature and the structural relations of Lift(M) mirror those of M — the tower's local structure at any level replicates the structure of the base. **Why it does not follow:** the dual side lacks the original's machinery, so the duality is constructed rather than transported; the proof in the body builds the replacement.
 
 
 *For every CRPT model M for which Tower(M) is defined, M is a CRPT-fractal
@@ -1558,6 +1664,8 @@ Therefore Tower(M) satisfies all clauses of L8.9.D2, so Frac(M). ∎
 
 **Source:** CRPT; from [`Twr-Fractal` (L8.9.T2)](CRPT_OMEGA_TOWER_L8.md#l89t2--crpt-tower-fractality).
 
+*Novelty Note.* **Basis (credited):** [`Twr-Fractal` (L8.9.T2)](CRPT_OMEGA_TOWER_L8.md#l89t2--crpt-tower-fractality). **New:** The tower's linear spine versus its fractal, self-similar tail. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 Tower(M) is linearly
 indexed by ℕ, but its proof structure is self-similar: every tail is again a
 Tower generated by the same Lift operator, the quotient Q is invariant across
@@ -1588,6 +1696,8 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 **Synopsis:** This lemma catalogues the four key structural properties of the lifted structural relation →_σ^{Lift}: it is non-reflexive, partially symmetric (symmetric on the commutativity component, asymmetric on the reduction component), not transitively closed, and contains →_ρ^{Lift} as a subset. These properties ensure →_σ^{Lift} behaves correctly as a structural relation in Lift(M), satisfying the substrate conditions of L1.1.D1.
 
 **Source:** CRPT; from [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m).
+
+*Novelty Note.* **Basis (credited):** [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m). **New:** This lemma catalogues the four key structural properties of the lifted structural relation →_σ^{Lift}: it is non-reflexive, partially symmetric (symmetric on the commutativity component, asymmetric on the reduction component), not transitively closed, and contains →_ρ^{Lift} as a subset. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 *For Lift(M) as defined in L8.1.2, →_σ*
@@ -1627,6 +1737,8 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 
 **Source:** CRPT; from [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m); mirrors substrate inclusion →_ρ ⊆ →_σ (L1.1.D1).
 
+*Novelty Note.* **Basis (credited):** [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m). **New:** The inclusion →_ρ^{Lift} ⊆ →_σ^{Lift} for the lifted model mirrors the fundamental substrate requirement →_ρ ⊆ →_σ of L1.1.D1. **Why it does not follow:** the dual side lacks the original's machinery, so the duality is constructed rather than transported; the proof in the body builds the replacement.
+
 
 *For Lift(M):*
 ```
@@ -1647,10 +1759,12 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 
 | Type | Label | Tag | Notation | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **Corollary** | L8.10.C1 | `Lift-Pure-WF` | | **Novel** |
+| **Corollary** | L8.10.C1 | `Lift-Pure-WF` | | **Derived** |
 **Synopsis:** Regardless of whether the base model M has a non-empty persistent regime (∞_M ≠ ∅), its lift Lift(M) is always pure well-founded: ∞_{Lift(M)} = ∅. The reason is that FMA(Q_M) contains only finite words, and ρ_{Lift(M)} strictly decreases word length at each step until reaching atoms (the query signature). There are no infinite FMA-words, so no persistent orbits arise. The NWF theory of the base is absorbed into the atom set Q_M.
 
 **Source:** CRPT; from [`FMA-WF` (L8.1.L1)](CRPT_OMEGA_TOWER_L8.md#well-foundedness-of-fma) + [`Lift-WN` (L8.3.T1)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-wn).
+
+*Derivation:* composed from [`FMA-WF` (L8.1.L1)](CRPT_OMEGA_TOWER_L8.md#well-foundedness-of-fma) + [`Lift-WN` (L8.3.T1)](CRPT_OMEGA_TOWER_L8.md#lift-preserves-pa-wn); no content beyond the composition.
 
 
 *For any CRPT model M (regardless of whether ∞_M = ∅ or ∞_M ≠ ∅):*
@@ -1682,6 +1796,8 @@ Thus the ω-indexed tower is the linear presentation of the CRPT fractal.
 
 **Source:** CRPT; from [`Lift-Pure-WF` (L8.10.C1)](CRPT_OMEGA_TOWER_L8.md#l810c1--lift-pure-wf-lift-of-any-model-is-pure-wf).
 
+*Novelty Note.* **Basis (credited):** [`Lift-Pure-WF` (L8.10.C1)](CRPT_OMEGA_TOWER_L8.md#l810c1--lift-pure-wf-lift-of-any-model-is-pure-wf). **New:** Lift discards the persistent regime by construction: Q_M = ↓_M/≃_M uses only the convergent stratum, so a non-well-founded base contributes nothing to the atom stock. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 Even when M is non-well-founded (∞_M ≠ ∅), Lift(M) discards the persistent regime by construction: Q_M := ↓_M/≃_M uses only the convergent stratum. The NWF stratum is handled separately by the extended lift Lift*(M) (L8.5, L8.1.7), which does admit a persistent regime by design.
 
 ---
@@ -1696,6 +1812,8 @@ Even when M is non-well-founded (∞_M ≠ ∅), Lift(M) discards the persistent
 **Synopsis:** The tower Tower(M₀) is strictly infinite: no two distinct levels Mₙ and Mₖ (n ≠ k) are isomorphic as CRPT models. The proof is by cardinality: 𝒰_{Lift(M)} = FMA(Q_M) is strictly larger than 𝒰_M when |Q_M| ≥ 2, because FMA contains all finite compositions of the query signature elements, not just the query signature itself. The tower never 'loops back' to a previously seen level.
 
 **Source:** CRPT; from [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m) + free-monoid cardinality.
+
+*Novelty Note.* **Basis (credited):** [`Lift-Def` (L8.2.D2)](CRPT_OMEGA_TOWER_L8.md#free-lift-of-m). **New:** The tower Tower(M₀) is strictly infinite: no two distinct levels Mₙ and Mₖ (n ≠ k) are isomorphic as CRPT models. **Why it does not follow:** the statement is not an unfolding of the basis; the proof in the body supplies the argument that connects them.
 
 
 *For any CRPT base model M₀ with non-trivial query signature (|Q_{M₀}| ≥ 2):*
@@ -1729,6 +1847,8 @@ Therefore the tower is strictly infinite. ✓  ∎
 
 **Source:** CRPT; from [`Tower-Inf` (L8.10.T2)](CRPT_OMEGA_TOWER_L8.md#l810t2--tower-inf-the-crpt-tower-is-strictly-infinite).
 
+*Novelty Note.* **Basis (credited):** [`Tower-Inf` (L8.10.T2)](CRPT_OMEGA_TOWER_L8.md#l810t2--tower-inf-the-crpt-tower-is-strictly-infinite). **New:** Degenerate base: with a single abstraction class, FMA(Q) ≅ ℕ and the lift is isomorphic to the successor model — the tower is non-trivial exactly when |Q| ≥ 2. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
+
 If |Q_{M₀}| = 1 (single-query model), then FMA(Q_{M₀}) ≅ ℕ (the free monoid on one generator), and Lift(M₀) is isomorphic to ℕ with successor, which is isomorphic to M₀ in the degenerate case. This is a degenerate model; all non-degenerate CRPT models have |Q_{M₀}| ≥ 2.
 
 ---
@@ -1743,6 +1863,8 @@ If |Q_{M₀}| = 1 (single-query model), then FMA(Q_{M₀}) ≅ ℕ (the free mon
 **Synopsis:** The query signature Q_M may have any cardinality. For finite Q_M (|Q_M| < ω): FMA(Q_M) is countably infinite. For countably infinite Q_M: FMA(Q_M) is also countably infinite. For uncountable Q_M: FMA(Q_M) is uncountable. In all cases the tower is well-defined and all structural theorems hold; cardinality only affects the scale of the tower, not its existence or properties.
 
 **Source:** CRPT; from [`Ab-Quot` (L7.1.D3)](CRPT_OMEGA_TOWER_L7.md#abstraction-quotient-as-fiber-space) + [`FMA` (L8.1.D1)](CRPT_OMEGA_TOWER_L8.md#free-monoidal-algebra-fmaa).
+
+*Novelty Note.* **Basis (credited):** [`Ab-Quot` (L7.1.D3)](CRPT_OMEGA_TOWER_L7.md#abstraction-quotient-as-fiber-space) + [`FMA` (L8.1.D1)](CRPT_OMEGA_TOWER_L8.md#free-monoidal-algebra-fmaa). **New:** The query signature Q_M may have any cardinality. **Why it does not follow:** the stated observation is the contribution; the basis does not state it.
 
 The query signature Q_M (defined in L8.2.D1 as Q_M := ↓_M/≃_M = {NFC_M(f) | f ∈ Fix(ρ_M)}) may have varying cardinality. The cardinality of Q_M determines the scale of the tower but not its existence or structural properties:
 
