@@ -8,21 +8,19 @@ level (Lω) in which the theory is applied to itself.
 
 ## Status
 
-**v1.0.0-rc4** — release candidate. The projection-axiom basis, the WF/NWF duality, and the
+**v1.0.0-rc6** — release candidate. The projection-axiom basis, the WF/NWF duality, and the
 categorical self-structure are audited for internal consistency (cross-references, labelling,
-axiom-count, and proof rigor). rc4 resolves twenty-one post-rc3 findings from the
-implementation audit and sharpens the axiomatic core: the observation labelling is *derived*
-from PA-Prod's Observable Contract (no new primitive; satisfaction-as-model-hood well-posed);
-PA-Reach states its meaning — every persistent orbit has a canonically representable
-asymptotic destination — with recurrence and convergence as realization *theorems*; the mode
-axis has exactly two values (recurrence/finitary, convergence/topological), with asymptotic
-orbit invariance re-housed as the analysis layer available in both modes; the persistent
-signature, horizons, spectrum, and complexity are stated in CRPT-native trace terms; and the
-persistent Class F_∞ emptiness claim is withdrawn. rc3 resolved seven post-rc2 findings
-(labelled bisimilarity, regime-aware ≃_M, asymptotic NWF horizons) and promoted the remaining
-inline remarks. rc2 repaired table rendering, gave every labelled item its own subsection,
-canonicalised the Class F and homomorphism definitions, resolved the L0 self-substrate
-status, and made the tower model-neutral, legacy-free, and engine-free.
+axiom-count, and proof rigor). rc6 applies CRPT to its own specification: the new
+Self-Sectioning theory (Lω.8) reads the spec as a pure-WF CRPT model whose sections are
+fibers of the Source-anchor projection, with boundary soundness decided by the theory's own
+horizon predicates and reprise sections emptied by `F=∅`; the section set is re-drawn
+accordingly (new topology-interface section L1.7; L4.8 retired; L5.5's category laws proved;
+Lift-sibling criteria stated), labels are normalized to the fiber structure, every
+cross-reference is a validated hyperlink, and a final correctness audit supplied all missing
+proofs, sources, and synopses. rc4 derived the observation labelling from PA-Prod, restated
+PA-Reach as its meaning with realization theorems, and resolved the two-mode question. rc3
+and rc2 established the labelled bisimilarity, regime-aware equivalences, rendering, and the
+model-neutral, legacy-free, engine-free presentation.
 
 ## Reading order
 

@@ -1,10 +1,79 @@
 # CRPT ω-Tower — Release Notes
 
-**Status:** v1.0.0-rc4 (release candidate)  
-**Date:** 2026-06-11  
+**Status:** v1.0.0-rc6 (release candidate)  
+**Date:** 2026-06-12  
 **Document set:** CRPT_OMEGA_TOWER_*.md (L0–L8, Lω, and support files)
 
 ---
+
+## Version 1.0.0-rc6 (2026-06-12)
+
+Changes since rc4 (rc5 was an internal milestone, folded into this release):
+
+- **Self-Sectioning (new theory).** The tower now carries its own sectioning discipline: `Spec-Sub` (Lω.8.D1) reads the specification as a pure-WF CRPT model (constructs as universe, primary Source anchors as ρ, citations as →_σ); `Self-Sect` (Lω.8.T1) proves sections are fibers, boundary soundness is the H_S/H_I criterion, sibling sections require stated membership criteria, and reprise sections are Class-F configurations — empty by `F=∅`; `Sect-Census` (Lω.8.R1) makes sectioning computable. Companion artifact: CRPT_OMEGA_TOWER_SECTION_MAP.md (the generated fiber census).
+- **Boundary rulings.** New section L1.7 "The Substrate Topology" collects the 𝒯-interface fiber (TopSep, Top-Lim, TopSep-Uniq, PA-WN_top — now L1.7.Ax1 — WNtop-Ind, Top-Inst); L1.2/L1.3 headers state their membership criteria (regime-local step axioms vs regime-universal orbit axioms); L8.2/L8.6/L8.10 are declared Lift siblings with stated criteria, L8.10 retitled "The Reduction Structure of Lift(M)", and the shifted purpose paragraphs of L8.2/L8.6/L8.10 restored; L4.8 retired (a self-declared restatement of `F=∅` — the no-reprise law applied to itself); L5.5 re-scoped as the category-laws theory with new constructs `Id-Mor`, `Comp-Closed`, `Cat-Laws` (Mod_CRPT's category-hood proved, not asserted); Inf-Dual's three homes (L0.6 / L2.2.T7 / L8.6) and the self-consistency pair (L0.10 / Lω.5) carry explicit scope divisions.
+- **Hyperlinked references.** All cross-references — 1,961 at release — are markdown hyperlinks to the cited construct's subsection, in both convention forms (backticked tags and PA-* axiom citations), with GitHub-compatible anchors validated against the actual heading slug sets. Link text preserves the `Tag` (Label) convention.
+- **Final correctness audit.** 26 constructs carried pre-convention bare citation lines (or none): all now have convention-conformant Sources with internal anchors. 17 theorems/lemmas/corollaries lacked proofs (the six L0 instance theorems among them): rigorous proofs supplied; Twr-Hor's proof relocated into its own block. 22 placeholder synopses replaced with real ones. Regressions repaired: Sig-Strat's pre-rc4 persistent-signature form, L0.8.T2's tier mapping (now aligned with `3-Tier` and citing L1.7.Ax1), L0.2.T3's coverage bullets, Bool-typed Observable leftovers in the formal PA-Prod statement and an LA_M example, plus substitution artifacts in L0.1.T3 and L0.9.T2.
+- **Label normalization (54 relabels).** Labels now reflect the fiber structure: topology constructs moved to L1.7; remark sequences renumbered to physical order in eleven sections; L5.5 theorem numbering normalized; L8.10.C2 → C1. Reference rewriting was map-driven and collision-safe; historical release notes untouched. Migration map:
+
+| Old label | New label |
+|---|---|
+| L1.2.Ax7 | L1.7.Ax1 |
+| L1.2.D1 | L1.7.D1 |
+| L1.2.D2 | L1.7.D2 |
+| L1.2.R1 | L1.2.R2 |
+| L1.2.R2 | L1.2.R1 |
+| L1.2.T1 | L1.7.T1 |
+| L1.4.R3 | L1.7.R1 |
+| L1.4.T3 | L1.7.T2 |
+| L2.2.R1 | L2.2.R5 |
+| L2.2.R2 | L2.2.R6 |
+| L2.2.R3 | L2.2.R2 |
+| L2.2.R4 | L2.2.R3 |
+| L2.2.R5 | L2.2.R4 |
+| L2.2.R6 | L2.2.R8 |
+| L2.2.R7 | L2.2.R1 |
+| L2.2.R8 | L2.2.R7 |
+| L3.1.R1 | L3.1.R6 |
+| L3.1.R10 | L3.1.R7 |
+| L3.1.R11 | L3.1.R3 |
+| L3.1.R2 | L3.1.R8 |
+| L3.1.R3 | L3.1.R9 |
+| L3.1.R4 | L3.1.R10 |
+| L3.1.R5 | L3.1.R1 |
+| L3.1.R6 | L3.1.R2 |
+| L3.1.R7 | L3.1.R4 |
+| L3.1.R8 | L3.1.R5 |
+| L3.1.R9 | L3.1.R11 |
+| L4.1.R4 | L4.1.R3 |
+| L5.3.R1 | L5.3.R2 |
+| L5.3.R2 | L5.3.R3 |
+| L5.3.R3 | L5.3.R4 |
+| L5.3.R4 | L5.3.R5 |
+| L5.3.R5 | L5.3.R1 |
+| L5.5.T1 | L5.5.T3 |
+| L5.5.T2 | L5.5.T1 |
+| L5.5.T3 | L5.5.T2 |
+| L6.3.R3 | L6.3.R5 |
+| L6.3.R5 | L6.3.R3 |
+| L7.1.R1 | L7.1.R2 |
+| L7.1.R2 | L7.1.R1 |
+| L7.2.R1 | L7.2.R2 |
+| L7.2.R2 | L7.2.R1 |
+| L8.10.C2 | L8.10.C1 |
+| L8.6.R2 | L8.6.R3 |
+| L8.6.R3 | L8.6.R4 |
+| L8.6.R4 | L8.6.R5 |
+| L8.6.R5 | L8.6.R6 |
+| L8.6.R6 | L8.6.R2 |
+| Lω.5.R1 | Lω.5.R2 |
+| Lω.5.R2 | Lω.5.R1 |
+| Lω.7.R1 | Lω.7.R2 |
+| Lω.7.R2 | Lω.7.R3 |
+| Lω.7.R3 | Lω.7.R4 |
+| Lω.7.R4 | Lω.7.R1 |
+
+- **Audit at release.** 553 constructs (167 definitions · 251 theorems/lemmas/corollaries · 126 remarks · 9 projection axioms); 0 dangling references, 0 tag mismatches, 0 duplicate labels or tags, 0 order/gap violations, 0 broken links, every theorem proved, every construct sourced, anchor DAG well-founded.
 
 ## Version 1.0.0-rc4 (2026-06-11)
 

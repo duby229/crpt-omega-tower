@@ -1,7 +1,7 @@
 # CRPT ω-Tower — Theorem & Definition Index
 
-**Status:** v1.0.0-rc4 (release candidate)  
-**Date:** 2026-06-11  
+**Status:** v1.0.0-rc6 (release candidate)  
+**Date:** 2026-06-12  
 **Coverage:** All levels L0–L8, Lω  
 **Total:** 167 definitions · 251 theorems/lemmas/corollaries · 126 remarks · 9 projection axioms
 
