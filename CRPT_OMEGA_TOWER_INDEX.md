@@ -17,7 +17,7 @@ This is the canonical multi-file specification for the CRPT ω-indexed tower. Ea
   *Horizon predicates H_S, H_I, H_O (L3.1.D1–D4), orbit signature sig_M (L3.1.D5), H_I-WD kernel theorem (L3.1.T2), the six-class partition (L3.2.D2, L3.2.T1), the twelve-class native extension (L3.4), and CNF∞_M (L3.3.D6) with SC-1 through SC-4 (L3.3.D2–D5).*
 
 - [# L4 — Observer, Gateway, Valuation, Duality, Self-Projection, and Perturbation](CRPT_OMEGA_TOWER_L4.md)
-  *The Observer Triple 𝒪 (L4.1), Gateway / PA-Reach (L4.2), Projection Valuation (L4.3), the five Duality theorems (L4.4), Inversion Horizon / CPD / CIH (L4.5), Self-Projection (L4.6), and Coherent Perturbation (L4.7).*
+  *The Observable Triple 𝒪 (L4.1), Gateway / PA-Reach (L4.2), Projection Valuation (L4.3), the five Duality theorems (L4.4), Inversion Horizon / CPD / CIH (L4.5), Self-Projection (L4.6), and Coherent Perturbation (L4.7).*
 
 - [# L5 — Model Algebra, Model Theory, Homomorphisms, and Model Order](CRPT_OMEGA_TOWER_L5.md)
   *Model Algebra (L4.8/L5.1), Homomorphisms and Mod_CRPT (L5.2), the CRPT formal theory T_CRPT / Σ_CRPT (L5.2–L5.2) including Mod-Corr (L5.3.T1), Cat-Eq (L5.3.T3), Scope Boundaries (L5.2), and FOL-Fin (L5.3.T4). Model Order (L5.3).*

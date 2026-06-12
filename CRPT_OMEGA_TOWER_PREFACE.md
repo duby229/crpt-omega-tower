@@ -100,11 +100,11 @@ L3 introduces three **horizon predicates**:
 
 These partition the universe into regions. An observer looking from outside can **only safely interact** at the horizon boundary, not deep inside.
 
-L4 introduces the **observer triple O_M** and the **six-class partition**: The interaction between the model and the external world can be classified into 6 categories (Boolean lattice: each state either is/isn't in each of three key sets). In deterministic models, one class (F) is always empty.
+L4 introduces the **observable triple O_M** and the **six-class partition**: The interaction between the model and the external world can be classified into 6 categories (Boolean lattice: each state either is/isn't in each of three key sets). In deterministic models, one class (F) is always empty.
 
 **Why matters:**
 - For *safety* (formal verification): horizons tell us which internal states are "hidden" from an observer
-- For *pragmatics* (implementing CRPT in a language): the observer triple tells us exactly how to expose CRPT to external code
+- For *pragmatics* (implementing CRPT in a language): the observable triple tells us exactly how to expose CRPT to external code
 
 **Authority:** Novel to CRPT, grounded in fixpoint theory and abstract automata.
 

@@ -8,7 +8,7 @@ level (Lω) in which the theory is applied to itself.
 
 ## Status
 
-**v1.0.0-rc6** — release candidate. The projection-axiom basis, the WF/NWF duality, and the
+**v1.0.0-rc7** — release candidate. rc7 resolves the external-review findings: the tower-growth trichotomy (`Twr-Growth`), the completed axiom matrix, the repaired model algebra (partial meet; honest product; composition deleted), the scoped observer naturality with its preservation profile, the five-status provenance system, the PA-namespace discipline, the rank stratification and the ranks-versus-levels duality (`Rank-vs-Level`), and the text-artifact repairs (mojibake, tildes, L0 anchors). rc6: The projection-axiom basis, the WF/NWF duality, and the
 categorical self-structure are audited for internal consistency (cross-references, labelling,
 axiom-count, and proof rigor). rc6 applies CRPT to its own specification: the new
 Self-Sectioning theory (Lω.8) reads the spec as a pure-WF CRPT model whose sections are

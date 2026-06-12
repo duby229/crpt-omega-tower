@@ -1,10 +1,24 @@
 # CRPT ω-Tower — Release Notes
 
-**Status:** v1.0.0-rc6 (release candidate)  
+**Status:** v1.0.0-rc7 (release candidate)  
 **Date:** 2026-06-12  
 **Document set:** CRPT_OMEGA_TOWER_*.md (L0–L8, Lω, and support files)
 
 ---
+
+## Version 1.0.0-rc7 (2026-06-12)
+
+Changes since rc6 — the external-review resolution release:
+
+- **Tower growth closed negatively.** New `Twr-Growth` (L8.4.T4): the trichotomy — every level properly embeds in the next (never surjective); the isomorphism type stabilizes after one Lift (Mₙ₊₁ ≅ Mₙ for n ≥ 1, from `NFC-TInv` + freeness — the element-wise form of fractality); at the base M₀ ≅ M₁ iff M₀ is free on its own query signature. The strictness conjecture Mₙ ≇ Mₙ₊₁ is false for n ≥ 1, and `Tower` (L8.4.D1)'s synopsis ("strictly richer: more elements") is corrected.
+- **Axiom matrix completed.** L1.6 now carries the 9-row derivable / independent (witness) / removable (what falls) matrix; a draft artifact in M_Conf (a failed first construction left in the text) removed.
+- **Model algebra repaired.** `Mod-∘` deleted — it duplicated the Mac Lane product under the name "composition" and promised interaction it never defined. `Mod-×` rewritten with explicit componentwise interleaved →_ρ/→_σ clauses; new `×-Mon` (L5.1.T2) cartesian-monoidal theorem; `Mod-∩` is a **partial meet** (defined iff universes intersect non-trivially and close under ρ — forced by the non-empty-carrier import of `L-Str` that `Mod-Corr` rides on); `Dist-Laws` restated over × with partiality. L5.1 renumbered: D3→D2, D4→D3, D5→D4, D6→D5, D7→D6, T2→T1.
+- **Observer obligations discharged.** `Obs-Nat` (L4.1.T2): the semantic residue π_sem is natural on Mod_CRPT_≃ — proved; the full observable triple is not. `Obs-Pres` (L4.1.T3): the exact preservation profile under homomorphisms (D always; canonical class up to ≃; H and PV not in general, with witnesses). `Behav-F`'s naturality claim scoped accordingly. "Observable triple" adopted as the primary name; H_O*'s "Ontological Co-Horizon" renamed "Depth Co-Horizon".
+- **The status system.** `Status` (Lω.8.D3): five provenance statuses — Imported, Specialized, Reframed, Derived, Novel — each with a mandatory body obligation, as part of the Spec-Sub self-model. Migration pass 1: 21 Imported→Specialized, 8 Novel→Derived; flagship notes written (ρ_M's Reframing Note — the theory's founding move stated in full; PV-Obs; Inst-Emb; HC-Obs). Distribution: 443 Novel / 53 Imported / 32 Reframed / 21 Specialized / 9 Derived. Full Novelty-Note backfill is the next census pass.
+- **PA-namespace repair.** Fourteen non-axiom tags squatting in the reserved PA-* namespace renamed: per-axiom theorems/remarks drop the prefix (`Reach-Fin`, `Reach-Top`, `Reach-Decomp`, `Reach-ObsExt`, `Reach-Role`, `Reach-Indep`, `WN-Tot`, `NWF-NE`, `Prod-Conn`, `WN_top-Import`); meta-constructs about the axiom system take Ax- (`Ax-NS`, `Ax-Scope`, `Ax-Profile`, `Ax-Lat`). `Ax-NS` now states the discipline; axiom citations are backtick-free by convention.
+- **Rank theory.** `Spec-Rank` (Lω.8.D2): the rank of a construct is its derivation height in Spec-Sub (currently 8 strata, 0–7; the count is revision-relative). `Rank-vs-Level` (Lω.8.T2): levels and ranks do not coincide in either direction — levels are the section/Lift stratification, ranks the depth stratification, and their relation is Inf-Dual self-applied. The tower self-levels twice: by depth and by fiber.
+- **Text artifacts.** Ten double-encoded mojibake sequences repaired byte-level (four were live heading anchors); 61 bare tildes → ∼ (U+223C; GFM strikethrough hazard); 38 L0 label-style headings normalized to meaning-names; all 1,981+ links stripped and regenerated against the corrected anchors.
+- **Audit at release.** 558 constructs (168 definitions · 255 theorems/lemmas/corollaries · 126 remarks · 9 projection axioms); 0 problems in every audited class (type-letters, statuses, synopses, sources, proofs, tag uniqueness, order/gaps, anchor-DAG well-foundedness); 0 mismatches, 0 dangling references, 0 broken links.
 
 ## Version 1.0.0-rc6 (2026-06-12)
 
